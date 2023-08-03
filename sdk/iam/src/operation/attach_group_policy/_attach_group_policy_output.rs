@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachGroupPolicyOutput {
 }
 impl AttachGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachGroupPolicyOutput`](crate::operation::attach_group_policy::AttachGroupPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_group_policy::builders::AttachGroupPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::attach_group_policy::builders::AttachGroupPolicyOutputBuilder {
         crate::operation::attach_group_policy::builders::AttachGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachGroupPolicyOutput`](crate::operation::attach_group_policy::AttachGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachGroupPolicyOutputBuilder {
     _request_id: Option<String>,
 }

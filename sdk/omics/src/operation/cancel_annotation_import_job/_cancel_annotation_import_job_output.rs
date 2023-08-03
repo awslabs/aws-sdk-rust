@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelAnnotationImportJobOutput {
 }
 impl CancelAnnotationImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelAnnotationImportJobOutput`](crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput).
-    pub fn builder() -> crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobOutputBuilder {
         crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelAnnotationImportJobOutput`](crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelAnnotationImportJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CancelAnnotationImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelAnnotationImportJobOutput`](crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput {
+    pub fn build(self) -> crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput {
         crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput {
             _request_id: self._request_id,
         }

@@ -22,9 +22,7 @@ impl StopImportInput {
 
 /// A builder for [`StopImportInput`](crate::operation::stop_import::StopImportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StopImportInputBuilder {
         &self.import_id
     }
     /// Consumes the builder and constructs a [`StopImportInput`](crate::operation::stop_import::StopImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_import::StopImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_import::StopImportInput {
-            import_id: self.import_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_import::StopImportInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_import::StopImportInput { import_id: self.import_id })
     }
 }

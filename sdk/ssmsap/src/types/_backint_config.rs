@@ -30,9 +30,7 @@ impl BackintConfig {
 
 /// A builder for [`BackintConfig`](crate::types::BackintConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackintConfigBuilder {
     pub(crate) backint_mode: ::std::option::Option<crate::types::BackintMode>,
     pub(crate) ensure_no_backup_in_process: ::std::option::Option<bool>,
@@ -44,10 +42,7 @@ impl BackintConfigBuilder {
         self
     }
     /// <p>AWS service for your database backup.</p>
-    pub fn set_backint_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::BackintMode>,
-    ) -> Self {
+    pub fn set_backint_mode(mut self, input: ::std::option::Option<crate::types::BackintMode>) -> Self {
         self.backint_mode = input;
         self
     }

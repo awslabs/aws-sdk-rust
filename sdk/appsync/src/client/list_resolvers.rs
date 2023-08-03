@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resolvers(Option<Vec<Resolver>>)`](crate::operation::list_resolvers::ListResolversOutput::resolvers): <p>The <code>Resolver</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resolvers::ListResolversOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListResolversError>`](crate::operation::list_resolvers::ListResolversError)
-    pub fn list_resolvers(
-        &self,
-    ) -> crate::operation::list_resolvers::builders::ListResolversFluentBuilder {
-        crate::operation::list_resolvers::builders::ListResolversFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resolvers(&self) -> crate::operation::list_resolvers::builders::ListResolversFluentBuilder {
+        crate::operation::list_resolvers::builders::ListResolversFluentBuilder::new(self.handle.clone())
     }
 }

@@ -25,12 +25,9 @@ impl SlotDefaultValueSpec {
 
 /// A builder for [`SlotDefaultValueSpec`](crate::types::SlotDefaultValueSpec).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotDefaultValueSpecBuilder {
-    pub(crate) default_value_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
+    pub(crate) default_value_list: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpecBuilder {
     /// Appends an item to `default_value_list`.
@@ -47,18 +44,13 @@ impl SlotDefaultValueSpecBuilder {
     }
     /// <p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p>
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
-    pub fn set_default_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
-    ) -> Self {
+    pub fn set_default_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>) -> Self {
         self.default_value_list = input;
         self
     }
     /// <p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p>
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
-    pub fn get_default_value_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>> {
+    pub fn get_default_value_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>> {
         &self.default_value_list
     }
     /// Consumes the builder and constructs a [`SlotDefaultValueSpec`](crate::types::SlotDefaultValueSpec).

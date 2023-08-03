@@ -117,9 +117,7 @@ impl DistributionConfig {
         self.origin_groups.as_ref()
     }
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
-    pub fn default_cache_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultCacheBehavior> {
+    pub fn default_cache_behavior(&self) -> ::std::option::Option<&crate::types::DefaultCacheBehavior> {
         self.default_cache_behavior.as_ref()
     }
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
@@ -132,9 +130,7 @@ impl DistributionConfig {
     /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn custom_error_responses(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomErrorResponses> {
+    pub fn custom_error_responses(&self) -> ::std::option::Option<&crate::types::CustomErrorResponses> {
         self.custom_error_responses.as_ref()
     }
     /// <p>A comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
@@ -216,10 +212,7 @@ impl ::std::fmt::Debug for DistributionConfig {
         formatter.field("web_acl_id", &self.web_acl_id);
         formatter.field("http_version", &self.http_version);
         formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
-        formatter.field(
-            "continuous_deployment_policy_id",
-            &self.continuous_deployment_policy_id,
-        );
+        formatter.field("continuous_deployment_policy_id", &self.continuous_deployment_policy_id);
         formatter.field("staging", &self.staging);
         formatter.finish()
     }
@@ -259,20 +252,14 @@ impl DistributionConfigBuilder {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_reference = input;
         self
     }
@@ -302,10 +289,7 @@ impl DistributionConfigBuilder {
     /// <p>To delete the default root object from an existing distribution, update the distribution configuration and include an empty <code>DefaultRootObject</code> element.</p>
     /// <p>To replace the default root object, update the distribution configuration and specify the new object.</p>
     /// <p>For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn default_root_object(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_root_object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_root_object = ::std::option::Option::Some(input.into());
         self
     }
@@ -315,10 +299,7 @@ impl DistributionConfigBuilder {
     /// <p>To delete the default root object from an existing distribution, update the distribution configuration and include an empty <code>DefaultRootObject</code> element.</p>
     /// <p>To replace the default root object, update the distribution configuration and specify the new object.</p>
     /// <p>For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_default_root_object(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_root_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_root_object = input;
         self
     }
@@ -351,10 +332,7 @@ impl DistributionConfigBuilder {
         self
     }
     /// <p>A complex type that contains information about origin groups for this distribution.</p>
-    pub fn set_origin_groups(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginGroups>,
-    ) -> Self {
+    pub fn set_origin_groups(mut self, input: ::std::option::Option<crate::types::OriginGroups>) -> Self {
         self.origin_groups = input;
         self
     }
@@ -368,17 +346,12 @@ impl DistributionConfigBuilder {
         self
     }
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
-    pub fn set_default_cache_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultCacheBehavior>,
-    ) -> Self {
+    pub fn set_default_cache_behavior(mut self, input: ::std::option::Option<crate::types::DefaultCacheBehavior>) -> Self {
         self.default_cache_behavior = input;
         self
     }
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
-    pub fn get_default_cache_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultCacheBehavior> {
+    pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::DefaultCacheBehavior> {
         &self.default_cache_behavior
     }
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
@@ -387,10 +360,7 @@ impl DistributionConfigBuilder {
         self
     }
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
-    pub fn set_cache_behaviors(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheBehaviors>,
-    ) -> Self {
+    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<crate::types::CacheBehaviors>) -> Self {
         self.cache_behaviors = input;
         self
     }
@@ -414,10 +384,7 @@ impl DistributionConfigBuilder {
     /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_custom_error_responses(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomErrorResponses>,
-    ) -> Self {
+    pub fn set_custom_error_responses(mut self, input: ::std::option::Option<crate::types::CustomErrorResponses>) -> Self {
         self.custom_error_responses = input;
         self
     }
@@ -427,9 +394,7 @@ impl DistributionConfigBuilder {
     /// <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li>
     /// </ul>
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn get_custom_error_responses(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomErrorResponses> {
+    pub fn get_custom_error_responses(&self) -> &::std::option::Option<crate::types::CustomErrorResponses> {
         &self.custom_error_responses
     }
     /// <p>A comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
@@ -454,10 +419,7 @@ impl DistributionConfigBuilder {
     }
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
     /// <p>For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_logging(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfig>,
-    ) -> Self {
+    pub fn set_logging(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
         self.logging = input;
         self
     }
@@ -476,10 +438,7 @@ impl DistributionConfigBuilder {
     /// <p>The price class that corresponds with the maximum price that you want to pay for CloudFront service. If you specify <code>PriceClass_All</code>, CloudFront responds to requests for your objects from all CloudFront edge locations.</p>
     /// <p>If you specify a price class other than <code>PriceClass_All</code>, CloudFront serves your objects from the CloudFront edge location that has the lowest latency among the edge locations in your price class. Viewers who are in or near regions that are excluded from your specified price class may encounter slower performance.</p>
     /// <p>For more information about price classes, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.</p>
-    pub fn set_price_class(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceClass>,
-    ) -> Self {
+    pub fn set_price_class(mut self, input: ::std::option::Option<crate::types::PriceClass>) -> Self {
         self.price_class = input;
         self
     }
@@ -509,17 +468,12 @@ impl DistributionConfigBuilder {
         self
     }
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
-    pub fn set_viewer_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::ViewerCertificate>,
-    ) -> Self {
+    pub fn set_viewer_certificate(mut self, input: ::std::option::Option<crate::types::ViewerCertificate>) -> Self {
         self.viewer_certificate = input;
         self
     }
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
-    pub fn get_viewer_certificate(
-        &self,
-    ) -> &::std::option::Option<crate::types::ViewerCertificate> {
+    pub fn get_viewer_certificate(&self) -> &::std::option::Option<crate::types::ViewerCertificate> {
         &self.viewer_certificate
     }
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
@@ -528,10 +482,7 @@ impl DistributionConfigBuilder {
         self
     }
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
-    pub fn set_restrictions(
-        mut self,
-        input: ::std::option::Option<crate::types::Restrictions>,
-    ) -> Self {
+    pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::Restrictions>) -> Self {
         self.restrictions = input;
         self
     }
@@ -566,10 +517,7 @@ impl DistributionConfigBuilder {
     /// <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an earlier HTTP version.</p>
     /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name Indication (SNI).</p>
     /// <p>For viewers and CloudFront to use HTTP/3, viewers must support TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection migration to allow the viewer to switch networks without losing connection. For more information about connection migration, see <a href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>.</p>
-    pub fn set_http_version(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpVersion>,
-    ) -> Self {
+    pub fn set_http_version(mut self, input: ::std::option::Option<crate::types::HttpVersion>) -> Self {
         self.http_version = input;
         self
     }
@@ -618,25 +566,17 @@ impl DistributionConfigBuilder {
         &self.is_ipv6_enabled
     }
     /// <p>The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.</p>
-    pub fn continuous_deployment_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continuous_deployment_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continuous_deployment_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.</p>
-    pub fn set_continuous_deployment_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continuous_deployment_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continuous_deployment_policy_id = input;
         self
     }
     /// <p>The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.</p>
-    pub fn get_continuous_deployment_policy_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_continuous_deployment_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.continuous_deployment_policy_id
     }
     /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
@@ -698,10 +638,7 @@ impl ::std::fmt::Debug for DistributionConfigBuilder {
         formatter.field("web_acl_id", &self.web_acl_id);
         formatter.field("http_version", &self.http_version);
         formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
-        formatter.field(
-            "continuous_deployment_policy_id",
-            &self.continuous_deployment_policy_id,
-        );
+        formatter.field("continuous_deployment_policy_id", &self.continuous_deployment_policy_id);
         formatter.field("staging", &self.staging);
         formatter.finish()
     }

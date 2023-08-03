@@ -37,9 +37,7 @@ impl CreateReadinessCheckFluentBuilder {
         }
     }
     /// Access the CreateReadinessCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_readiness_check::builders::CreateReadinessCheckInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_readiness_check::builders::CreateReadinessCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateReadinessCheckFluentBuilder {
             crate::operation::create_readiness_check::CreateReadinessCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_readiness_check::CreateReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_readiness_check::CreateReadinessCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateReadinessCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateReadinessCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_readiness_check::CreateReadinessCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_readiness_check::CreateReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_readiness_check::CreateReadinessCheckError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateReadinessCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_readiness_check::CreateReadinessCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_readiness_check::CreateReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_readiness_check::CreateReadinessCheckError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateReadinessCheckFluentBuilder {
             crate::operation::create_readiness_check::CreateReadinessCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_readiness_check::CreateReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_readiness_check::CreateReadinessCheckError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the readiness check to create.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.readiness_check_name(input.into());
         self
     }
     /// <p>The name of the readiness check to create.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_readiness_check_name(input);
         self
     }
@@ -143,18 +124,12 @@ impl CreateReadinessCheckFluentBuilder {
         self.inner.get_readiness_check_name()
     }
     /// <p>The name of the resource set to check.</p>
-    pub fn resource_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_set_name(input.into());
         self
     }
     /// <p>The name of the resource set to check.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_set_name(input);
         self
     }
@@ -167,30 +142,17 @@ impl CreateReadinessCheckFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

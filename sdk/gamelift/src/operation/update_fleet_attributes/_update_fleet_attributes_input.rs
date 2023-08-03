@@ -21,8 +21,7 @@ pub struct UpdateFleetAttributesInput {
     pub new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     #[doc(hidden)]
-    pub resource_creation_limit_policy:
-        ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
+    pub resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
     #[doc(hidden)]
     pub metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -48,15 +47,11 @@ impl UpdateFleetAttributesInput {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn new_game_session_protection_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
+    pub fn new_game_session_protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
     }
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
-    pub fn resource_creation_limit_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceCreationLimitPolicy> {
+    pub fn resource_creation_limit_policy(&self) -> ::std::option::Option<&crate::types::ResourceCreationLimitPolicy> {
         self.resource_creation_limit_policy.as_ref()
     }
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
@@ -64,34 +59,26 @@ impl UpdateFleetAttributesInput {
         self.metric_groups.as_deref()
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    pub fn anywhere_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
+    pub fn anywhere_configuration(&self) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
         self.anywhere_configuration.as_ref()
     }
 }
 impl UpdateFleetAttributesInput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetAttributesInput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesInputBuilder {
         crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetAttributesInput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetAttributesInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) new_game_session_protection_policy:
-        ::std::option::Option<crate::types::ProtectionPolicy>,
-    pub(crate) resource_creation_limit_policy:
-        ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
+    pub(crate) new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
+    pub(crate) resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     pub(crate) metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
 }
@@ -143,10 +130,7 @@ impl UpdateFleetAttributesInputBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn new_game_session_protection_policy(
-        mut self,
-        input: crate::types::ProtectionPolicy,
-    ) -> Self {
+    pub fn new_game_session_protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.new_game_session_protection_policy = ::std::option::Option::Some(input);
         self
     }
@@ -155,10 +139,7 @@ impl UpdateFleetAttributesInputBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn set_new_game_session_protection_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionPolicy>,
-    ) -> Self {
+    pub fn set_new_game_session_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.new_game_session_protection_policy = input;
         self
     }
@@ -167,31 +148,21 @@ impl UpdateFleetAttributesInputBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn get_new_game_session_protection_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+    pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.new_game_session_protection_policy
     }
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
-    pub fn resource_creation_limit_policy(
-        mut self,
-        input: crate::types::ResourceCreationLimitPolicy,
-    ) -> Self {
+    pub fn resource_creation_limit_policy(mut self, input: crate::types::ResourceCreationLimitPolicy) -> Self {
         self.resource_creation_limit_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
-    pub fn set_resource_creation_limit_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
-    ) -> Self {
+    pub fn set_resource_creation_limit_policy(mut self, input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>) -> Self {
         self.resource_creation_limit_policy = input;
         self
     }
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
-    pub fn get_resource_creation_limit_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
+    pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         &self.resource_creation_limit_policy
     }
     /// Appends an item to `metric_groups`.
@@ -199,27 +170,19 @@ impl UpdateFleetAttributesInputBuilder {
     /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
     ///
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    pub fn metric_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_groups.unwrap_or_default();
         v.push(input.into());
         self.metric_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    pub fn set_metric_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_groups = input;
         self
     }
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    pub fn get_metric_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_groups
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
@@ -228,36 +191,27 @@ impl UpdateFleetAttributesInputBuilder {
         self
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    pub fn set_anywhere_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AnywhereConfiguration>,
-    ) -> Self {
+    pub fn set_anywhere_configuration(mut self, input: ::std::option::Option<crate::types::AnywhereConfiguration>) -> Self {
         self.anywhere_configuration = input;
         self
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    pub fn get_anywhere_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
+    pub fn get_anywhere_configuration(&self) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
         &self.anywhere_configuration
     }
     /// Consumes the builder and constructs a [`UpdateFleetAttributesInput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_fleet_attributes::UpdateFleetAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_fleet_attributes::UpdateFleetAttributesInput {
-                fleet_id: self.fleet_id,
-                name: self.name,
-                description: self.description,
-                new_game_session_protection_policy: self.new_game_session_protection_policy,
-                resource_creation_limit_policy: self.resource_creation_limit_policy,
-                metric_groups: self.metric_groups,
-                anywhere_configuration: self.anywhere_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_fleet_attributes::UpdateFleetAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_fleet_attributes::UpdateFleetAttributesInput {
+            fleet_id: self.fleet_id,
+            name: self.name,
+            description: self.description,
+            new_game_session_protection_policy: self.new_game_session_protection_policy,
+            resource_creation_limit_policy: self.resource_creation_limit_policy,
+            metric_groups: self.metric_groups,
+            anywhere_configuration: self.anywhere_configuration,
+        })
     }
 }

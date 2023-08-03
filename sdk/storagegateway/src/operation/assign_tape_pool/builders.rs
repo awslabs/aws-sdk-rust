@@ -10,10 +10,7 @@ impl AssignTapePoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::assign_tape_pool::AssignTapePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_tape_pool::AssignTapePoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_tape_pool::AssignTapePoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.assign_tape_pool();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AssignTapePoolFluentBuilder {
         }
     }
     /// Access the AssignTapePool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::assign_tape_pool::builders::AssignTapePoolInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::assign_tape_pool::builders::AssignTapePoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AssignTapePoolFluentBuilder {
             crate::operation::assign_tape_pool::AssignTapePool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_tape_pool::AssignTapePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_tape_pool::AssignTapePoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AssignTapePoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AssignTapePoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assign_tape_pool::AssignTapePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_tape_pool::AssignTapePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_tape_pool::AssignTapePoolError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AssignTapePoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assign_tape_pool::AssignTapePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_tape_pool::AssignTapePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_tape_pool::AssignTapePoolError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AssignTapePoolFluentBuilder {
             crate::operation::assign_tape_pool::AssignTapePool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_tape_pool::AssignTapePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_tape_pool::AssignTapePoolError>,
     > {
         self.customize_middleware().await
     }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConnectionStateType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ConnectionStateType {
             "DISCONNECTED" => ConnectionStateType::Disconnected,
             "DISCONNECTING" => ConnectionStateType::Disconnecting,
             "FAILED" => ConnectionStateType::Failed,
-            other => ConnectionStateType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConnectionStateType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ConnectionStateType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONNECTED",
-            "CONNECTING",
-            "DISCONNECTED",
-            "DISCONNECTING",
-            "FAILED",
-        ]
+        &["CONNECTED", "CONNECTING", "DISCONNECTED", "DISCONNECTING", "FAILED"]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectionStateType {

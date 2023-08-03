@@ -53,16 +53,14 @@ impl ListAvailableManagedRuleGroupVersionsInput {
 }
 impl ListAvailableManagedRuleGroupVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupVersionsInput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput).
-    pub fn builder() -> crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsInputBuilder {
         crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableManagedRuleGroupVersionsInput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupVersionsInputBuilder {
     pub(crate) vendor_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -157,20 +155,20 @@ impl ListAvailableManagedRuleGroupVersionsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupVersionsInput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput {
-                vendor_name: self.vendor_name
-                ,
-                name: self.name
-                ,
-                scope: self.scope
-                ,
-                next_marker: self.next_marker
-                ,
-                limit: self.limit
-                ,
-            }
+                vendor_name: self.vendor_name,
+                name: self.name,
+                scope: self.scope,
+                next_marker: self.next_marker,
+                limit: self.limit,
+            },
         )
     }
 }

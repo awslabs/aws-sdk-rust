@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SuspendProcessesOutput {
 }
 impl SuspendProcessesOutput {
     /// Creates a new builder-style object to manufacture [`SuspendProcessesOutput`](crate::operation::suspend_processes::SuspendProcessesOutput).
-    pub fn builder() -> crate::operation::suspend_processes::builders::SuspendProcessesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::suspend_processes::builders::SuspendProcessesOutputBuilder {
         crate::operation::suspend_processes::builders::SuspendProcessesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SuspendProcessesOutput`](crate::operation::suspend_processes::SuspendProcessesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuspendProcessesOutputBuilder {
     _request_id: Option<String>,
 }

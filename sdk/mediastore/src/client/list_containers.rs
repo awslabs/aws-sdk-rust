@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`containers(Option<Vec<Container>>)`](crate::operation::list_containers::ListContainersOutput::containers): <p>The names of the containers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_containers::ListContainersOutput::next_token): <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
     /// - On failure, responds with [`SdkError<ListContainersError>`](crate::operation::list_containers::ListContainersError)
-    pub fn list_containers(
-        &self,
-    ) -> crate::operation::list_containers::builders::ListContainersFluentBuilder {
-        crate::operation::list_containers::builders::ListContainersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_containers(&self) -> crate::operation::list_containers::builders::ListContainersFluentBuilder {
+        crate::operation::list_containers::builders::ListContainersFluentBuilder::new(self.handle.clone())
     }
 }

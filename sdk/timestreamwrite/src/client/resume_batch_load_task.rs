@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder::set_task_id): <p>The ID of the batch load task to resume.</p>
     /// - On success, responds with [`ResumeBatchLoadTaskOutput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskOutput)
     /// - On failure, responds with [`SdkError<ResumeBatchLoadTaskError>`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskError)
-    pub fn resume_batch_load_task(
-        &self,
-    ) -> crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder {
-        crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resume_batch_load_task(&self) -> crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder {
+        crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder::new(self.handle.clone())
     }
 }

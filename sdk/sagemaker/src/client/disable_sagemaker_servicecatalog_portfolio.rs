@@ -5,7 +5,11 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioFluentBuilder::send) it.
     /// - On success, responds with [`DisableSagemakerServicecatalogPortfolioOutput`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput)
     /// - On failure, responds with [`SdkError<DisableSagemakerServicecatalogPortfolioError>`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioError)
-    pub fn disable_sagemaker_servicecatalog_portfolio(&self) -> crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioFluentBuilder{
-        crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioFluentBuilder::new(self.handle.clone())
+    pub fn disable_sagemaker_servicecatalog_portfolio(
+        &self,
+    ) -> crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioFluentBuilder {
+        crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

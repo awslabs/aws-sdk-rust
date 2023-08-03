@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DefineExpressionOutput {
 }
 impl DefineExpressionOutput {
     /// Creates a new builder-style object to manufacture [`DefineExpressionOutput`](crate::operation::define_expression::DefineExpressionOutput).
-    pub fn builder() -> crate::operation::define_expression::builders::DefineExpressionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::define_expression::builders::DefineExpressionOutputBuilder {
         crate::operation::define_expression::builders::DefineExpressionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DefineExpressionOutput`](crate::operation::define_expression::DefineExpressionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefineExpressionOutputBuilder {
     pub(crate) expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl DefineExpressionOutputBuilder {
         self
     }
     /// <p>The value of an <code>Expression</code> and its current status.</p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpressionStatus>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<crate::types::ExpressionStatus>) -> Self {
         self.expression = input;
         self
     }

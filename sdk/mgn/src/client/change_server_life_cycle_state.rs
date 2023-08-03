@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`user_provided_id(Option<String>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<ChangeServerLifeCycleStateError>`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError)
-    pub fn change_server_life_cycle_state(&self) -> crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateFluentBuilder{
+    pub fn change_server_life_cycle_state(
+        &self,
+    ) -> crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateFluentBuilder {
         crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateFluentBuilder::new(self.handle.clone())
     }
 }

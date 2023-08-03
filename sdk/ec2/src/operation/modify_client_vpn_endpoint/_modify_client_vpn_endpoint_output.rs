@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyClientVpnEndpointOutput {
 }
 impl ModifyClientVpnEndpointOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClientVpnEndpointOutput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_client_vpn_endpoint::builders::ModifyClientVpnEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_client_vpn_endpoint::builders::ModifyClientVpnEndpointOutputBuilder {
         crate::operation::modify_client_vpn_endpoint::builders::ModifyClientVpnEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClientVpnEndpointOutput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClientVpnEndpointOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl ModifyClientVpnEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyClientVpnEndpointOutput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput {
+    pub fn build(self) -> crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput {
         crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

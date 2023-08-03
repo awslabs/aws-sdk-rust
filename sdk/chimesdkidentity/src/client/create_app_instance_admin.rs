@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`app_instance_admin(Option<Identity>)`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput::app_instance_admin): <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput::app_instance_arn): <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceAdminError>`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminError)
-    pub fn create_app_instance_admin(
-        &self,
-    ) -> crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminFluentBuilder
-    {
+    pub fn create_app_instance_admin(&self) -> crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminFluentBuilder {
         crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminFluentBuilder::new(self.handle.clone())
     }
 }

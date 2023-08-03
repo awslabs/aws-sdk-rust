@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`channel_name(Option<String>)`](crate::operation::get_channel_policy::GetChannelPolicyOutput::channel_name): <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_channel_policy::GetChannelPolicyOutput::policy): <p>The policy assigned to the channel.</p>
     /// - On failure, responds with [`SdkError<GetChannelPolicyError>`](crate::operation::get_channel_policy::GetChannelPolicyError)
-    pub fn get_channel_policy(
-        &self,
-    ) -> crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder {
-        crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_channel_policy(&self) -> crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder {
+        crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder::new(self.handle.clone())
     }
 }

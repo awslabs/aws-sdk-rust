@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAvailableManagementCidrRangesOutp
 }
 impl ListAvailableManagementCidrRangesOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagementCidrRangesOutput`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput).
-    pub fn builder() -> crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesOutputBuilder{
+    pub fn builder() -> crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesOutputBuilder {
         crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableManagementCidrRangesOutput`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableManagementCidrRangesOutputBuilder {
-    pub(crate) management_cidr_ranges:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) management_cidr_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,27 +47,19 @@ impl ListAvailableManagementCidrRangesOutputBuilder {
     /// To override the contents of this collection use [`set_management_cidr_ranges`](Self::set_management_cidr_ranges).
     ///
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
-    pub fn management_cidr_ranges(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn management_cidr_ranges(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.management_cidr_ranges.unwrap_or_default();
         v.push(input.into());
         self.management_cidr_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
-    pub fn set_management_cidr_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_management_cidr_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.management_cidr_ranges = input;
         self
     }
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
-    pub fn get_management_cidr_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_management_cidr_ranges(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.management_cidr_ranges
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -97,12 +86,10 @@ impl ListAvailableManagementCidrRangesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAvailableManagementCidrRangesOutput`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput).
-    pub fn build(self) -> crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput{
+    pub fn build(self) -> crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput {
         crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput {
-            management_cidr_ranges: self.management_cidr_ranges
-            ,
-            next_token: self.next_token
-            ,
+            management_cidr_ranges: self.management_cidr_ranges,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

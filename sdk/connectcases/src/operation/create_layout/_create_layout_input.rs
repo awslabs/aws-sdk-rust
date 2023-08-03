@@ -36,9 +36,7 @@ impl CreateLayoutInput {
 
 /// A builder for [`CreateLayoutInput`](crate::operation::create_layout::CreateLayoutInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLayoutInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl CreateLayoutInputBuilder {
         self
     }
     /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
         self.content = input;
         self
     }
@@ -91,12 +86,7 @@ impl CreateLayoutInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`CreateLayoutInput`](crate::operation::create_layout::CreateLayoutInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_layout::CreateLayoutInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_layout::CreateLayoutInput {
             domain_id: self.domain_id,
             name: self.name,

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`num_results(Option<i32>)`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput::num_results): <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
     ///   - [`hi_ts(Option<Vec<Hit>>)`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput::hi_ts): <p> The list of HIT elements returned by the query.</p>
     /// - On failure, responds with [`SdkError<ListReviewableHITsError>`](crate::operation::list_reviewable_hi_ts::ListReviewableHITsError)
-    pub fn list_reviewable_hi_ts(
-        &self,
-    ) -> crate::operation::list_reviewable_hi_ts::builders::ListReviewableHITsFluentBuilder {
-        crate::operation::list_reviewable_hi_ts::builders::ListReviewableHITsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_reviewable_hi_ts(&self) -> crate::operation::list_reviewable_hi_ts::builders::ListReviewableHITsFluentBuilder {
+        crate::operation::list_reviewable_hi_ts::builders::ListReviewableHITsFluentBuilder::new(self.handle.clone())
     }
 }

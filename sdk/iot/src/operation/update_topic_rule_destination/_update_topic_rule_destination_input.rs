@@ -74,16 +74,14 @@ impl UpdateTopicRuleDestinationInput {
 }
 impl UpdateTopicRuleDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateTopicRuleDestinationInput`](crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput).
-    pub fn builder() -> crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationInputBuilder{
+    pub fn builder() -> crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationInputBuilder {
         crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTopicRuleDestinationInput`](crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTopicRuleDestinationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TopicRuleDestinationStatus>,
@@ -161,10 +159,7 @@ impl UpdateTopicRuleDestinationInputBuilder {
     /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRuleDestinationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TopicRuleDestinationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -205,11 +200,9 @@ impl UpdateTopicRuleDestinationInputBuilder {
         crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput {
-                arn: self.arn,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput {
+            arn: self.arn,
+            status: self.status,
+        })
     }
 }

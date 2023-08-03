@@ -15,16 +15,13 @@ pub struct InputDescription {
     pub in_app_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
     #[doc(hidden)]
-    pub input_processing_configuration_description:
-        ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
+    pub input_processing_configuration_description: ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
     /// <p>If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
     #[doc(hidden)]
-    pub kinesis_streams_input_description:
-        ::std::option::Option<crate::types::KinesisStreamsInputDescription>,
+    pub kinesis_streams_input_description: ::std::option::Option<crate::types::KinesisStreamsInputDescription>,
     /// <p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
     #[doc(hidden)]
-    pub kinesis_firehose_input_description:
-        ::std::option::Option<crate::types::KinesisFirehoseInputDescription>,
+    pub kinesis_firehose_input_description: ::std::option::Option<crate::types::KinesisFirehoseInputDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created. </p>
     #[doc(hidden)]
     pub input_schema: ::std::option::Option<crate::types::SourceSchema>,
@@ -33,8 +30,7 @@ pub struct InputDescription {
     pub input_parallelism: ::std::option::Option<crate::types::InputParallelism>,
     /// <p>Point at which the application is configured to read from the input stream.</p>
     #[doc(hidden)]
-    pub input_starting_position_configuration:
-        ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
+    pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl InputDescription {
     /// <p>Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each input configuration you add to your application. </p>
@@ -50,21 +46,15 @@ impl InputDescription {
         self.in_app_stream_names.as_deref()
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-    pub fn input_processing_configuration_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputProcessingConfigurationDescription> {
+    pub fn input_processing_configuration_description(&self) -> ::std::option::Option<&crate::types::InputProcessingConfigurationDescription> {
         self.input_processing_configuration_description.as_ref()
     }
     /// <p>If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
-    pub fn kinesis_streams_input_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisStreamsInputDescription> {
+    pub fn kinesis_streams_input_description(&self) -> ::std::option::Option<&crate::types::KinesisStreamsInputDescription> {
         self.kinesis_streams_input_description.as_ref()
     }
     /// <p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
-    pub fn kinesis_firehose_input_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisFirehoseInputDescription> {
+    pub fn kinesis_firehose_input_description(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseInputDescription> {
         self.kinesis_firehose_input_description.as_ref()
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created. </p>
@@ -76,9 +66,7 @@ impl InputDescription {
         self.input_parallelism.as_ref()
     }
     /// <p>Point at which the application is configured to read from the input stream.</p>
-    pub fn input_starting_position_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
+    pub fn input_starting_position_configuration(&self) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
     }
 }
@@ -91,23 +79,17 @@ impl InputDescription {
 
 /// A builder for [`InputDescription`](crate::types::InputDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDescriptionBuilder {
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) in_app_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) input_processing_configuration_description:
-        ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
-    pub(crate) kinesis_streams_input_description:
-        ::std::option::Option<crate::types::KinesisStreamsInputDescription>,
-    pub(crate) kinesis_firehose_input_description:
-        ::std::option::Option<crate::types::KinesisFirehoseInputDescription>,
+    pub(crate) input_processing_configuration_description: ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
+    pub(crate) kinesis_streams_input_description: ::std::option::Option<crate::types::KinesisStreamsInputDescription>,
+    pub(crate) kinesis_firehose_input_description: ::std::option::Option<crate::types::KinesisFirehoseInputDescription>,
     pub(crate) input_schema: ::std::option::Option<crate::types::SourceSchema>,
     pub(crate) input_parallelism: ::std::option::Option<crate::types::InputParallelism>,
-    pub(crate) input_starting_position_configuration:
-        ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
+    pub(crate) input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl InputDescriptionBuilder {
     /// <p>Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each input configuration you add to your application. </p>
@@ -143,34 +125,23 @@ impl InputDescriptionBuilder {
     /// To override the contents of this collection use [`set_in_app_stream_names`](Self::set_in_app_stream_names).
     ///
     /// <p>Returns the in-application stream names that are mapped to the stream source.</p>
-    pub fn in_app_stream_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn in_app_stream_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.in_app_stream_names.unwrap_or_default();
         v.push(input.into());
         self.in_app_stream_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns the in-application stream names that are mapped to the stream source.</p>
-    pub fn set_in_app_stream_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_in_app_stream_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.in_app_stream_names = input;
         self
     }
     /// <p>Returns the in-application stream names that are mapped to the stream source.</p>
-    pub fn get_in_app_stream_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_in_app_stream_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.in_app_stream_names
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-    pub fn input_processing_configuration_description(
-        mut self,
-        input: crate::types::InputProcessingConfigurationDescription,
-    ) -> Self {
+    pub fn input_processing_configuration_description(mut self, input: crate::types::InputProcessingConfigurationDescription) -> Self {
         self.input_processing_configuration_description = ::std::option::Option::Some(input);
         self
     }
@@ -183,53 +154,35 @@ impl InputDescriptionBuilder {
         self
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-    pub fn get_input_processing_configuration_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputProcessingConfigurationDescription> {
+    pub fn get_input_processing_configuration_description(&self) -> &::std::option::Option<crate::types::InputProcessingConfigurationDescription> {
         &self.input_processing_configuration_description
     }
     /// <p>If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
-    pub fn kinesis_streams_input_description(
-        mut self,
-        input: crate::types::KinesisStreamsInputDescription,
-    ) -> Self {
+    pub fn kinesis_streams_input_description(mut self, input: crate::types::KinesisStreamsInputDescription) -> Self {
         self.kinesis_streams_input_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
-    pub fn set_kinesis_streams_input_description(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisStreamsInputDescription>,
-    ) -> Self {
+    pub fn set_kinesis_streams_input_description(mut self, input: ::std::option::Option<crate::types::KinesisStreamsInputDescription>) -> Self {
         self.kinesis_streams_input_description = input;
         self
     }
     /// <p>If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
-    pub fn get_kinesis_streams_input_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisStreamsInputDescription> {
+    pub fn get_kinesis_streams_input_description(&self) -> &::std::option::Option<crate::types::KinesisStreamsInputDescription> {
         &self.kinesis_streams_input_description
     }
     /// <p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
-    pub fn kinesis_firehose_input_description(
-        mut self,
-        input: crate::types::KinesisFirehoseInputDescription,
-    ) -> Self {
+    pub fn kinesis_firehose_input_description(mut self, input: crate::types::KinesisFirehoseInputDescription) -> Self {
         self.kinesis_firehose_input_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
-    pub fn set_kinesis_firehose_input_description(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisFirehoseInputDescription>,
-    ) -> Self {
+    pub fn set_kinesis_firehose_input_description(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseInputDescription>) -> Self {
         self.kinesis_firehose_input_description = input;
         self
     }
     /// <p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
-    pub fn get_kinesis_firehose_input_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisFirehoseInputDescription> {
+    pub fn get_kinesis_firehose_input_description(&self) -> &::std::option::Option<crate::types::KinesisFirehoseInputDescription> {
         &self.kinesis_firehose_input_description
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created. </p>
@@ -238,10 +191,7 @@ impl InputDescriptionBuilder {
         self
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created. </p>
-    pub fn set_input_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceSchema>,
-    ) -> Self {
+    pub fn set_input_schema(mut self, input: ::std::option::Option<crate::types::SourceSchema>) -> Self {
         self.input_schema = input;
         self
     }
@@ -255,10 +205,7 @@ impl InputDescriptionBuilder {
         self
     }
     /// <p>Describes the configured parallelism (number of in-application streams mapped to the streaming source).</p>
-    pub fn set_input_parallelism(
-        mut self,
-        input: ::std::option::Option<crate::types::InputParallelism>,
-    ) -> Self {
+    pub fn set_input_parallelism(mut self, input: ::std::option::Option<crate::types::InputParallelism>) -> Self {
         self.input_parallelism = input;
         self
     }
@@ -267,10 +214,7 @@ impl InputDescriptionBuilder {
         &self.input_parallelism
     }
     /// <p>Point at which the application is configured to read from the input stream.</p>
-    pub fn input_starting_position_configuration(
-        mut self,
-        input: crate::types::InputStartingPositionConfiguration,
-    ) -> Self {
+    pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.input_starting_position_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -283,9 +227,7 @@ impl InputDescriptionBuilder {
         self
     }
     /// <p>Point at which the application is configured to read from the input stream.</p>
-    pub fn get_input_starting_position_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
+    pub fn get_input_starting_position_configuration(&self) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
         &self.input_starting_position_configuration
     }
     /// Consumes the builder and constructs a [`InputDescription`](crate::types::InputDescription).
@@ -294,8 +236,7 @@ impl InputDescriptionBuilder {
             input_id: self.input_id,
             name_prefix: self.name_prefix,
             in_app_stream_names: self.in_app_stream_names,
-            input_processing_configuration_description: self
-                .input_processing_configuration_description,
+            input_processing_configuration_description: self.input_processing_configuration_description,
             kinesis_streams_input_description: self.kinesis_streams_input_description,
             kinesis_firehose_input_description: self.kinesis_firehose_input_description,
             input_schema: self.input_schema,

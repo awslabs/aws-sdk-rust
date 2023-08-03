@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for CreateBackendAuthOutput {
 }
 impl CreateBackendAuthOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthOutput`](crate::operation::create_backend_auth::CreateBackendAuthOutput).
-    pub fn builder(
-    ) -> crate::operation::create_backend_auth::builders::CreateBackendAuthOutputBuilder {
+    pub fn builder() -> crate::operation::create_backend_auth::builders::CreateBackendAuthOutputBuilder {
         crate::operation::create_backend_auth::builders::CreateBackendAuthOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBackendAuthOutput`](crate::operation::create_backend_auth::CreateBackendAuthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendAuthOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -92,18 +89,12 @@ impl CreateBackendAuthOutputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResiliencyPoliciesOutput {
 }
 impl ListResiliencyPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListResiliencyPoliciesOutput`](crate::operation::list_resiliency_policies::ListResiliencyPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesOutputBuilder {
         crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResiliencyPoliciesOutput`](crate::operation::list_resiliency_policies::ListResiliencyPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResiliencyPoliciesOutputBuilder {
-    pub(crate) resiliency_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
+    pub(crate) resiliency_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListResiliencyPoliciesOutputBuilder {
         self
     }
     /// <p>The resiliency policies for the Resilience Hub applications.</p>
-    pub fn set_resiliency_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
-    ) -> Self {
+    pub fn set_resiliency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>) -> Self {
         self.resiliency_policies = input;
         self
     }
     /// <p>The resiliency policies for the Resilience Hub applications.</p>
-    pub fn get_resiliency_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>> {
+    pub fn get_resiliency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>> {
         &self.resiliency_policies
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

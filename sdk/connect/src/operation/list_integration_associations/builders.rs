@@ -26,7 +26,7 @@ impl ListIntegrationAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIntegrationAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_integration_associations::builders::ListIntegrationAssociationsInputBuilder,
+    inner: crate::operation::list_integration_associations::builders::ListIntegrationAssociationsInputBuilder,
 }
 impl ListIntegrationAssociationsFluentBuilder {
     /// Creates a new `ListIntegrationAssociations`.
@@ -37,7 +37,7 @@ impl ListIntegrationAssociationsFluentBuilder {
         }
     }
     /// Access the ListIntegrationAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_integration_associations::builders::ListIntegrationAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_integration_associations::builders::ListIntegrationAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListIntegrationAssociationsFluentBuilder {
             crate::operation::list_integration_associations::ListIntegrationAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_integration_associations::ListIntegrationAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_integration_associations::ListIntegrationAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListIntegrationAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListIntegrationAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_integration_associations::ListIntegrationAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_integration_associations::ListIntegrationAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_integration_associations::ListIntegrationAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListIntegrationAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_integration_associations::ListIntegrationAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_integration_associations::ListIntegrationAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_integration_associations::ListIntegrationAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListIntegrationAssociationsFluentBuilder {
             crate::operation::list_integration_associations::ListIntegrationAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_integration_associations::ListIntegrationAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_integration_associations::ListIntegrationAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_integration_associations::paginator::ListIntegrationAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_integration_associations::paginator::ListIntegrationAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_integration_associations::paginator::ListIntegrationAssociationsPaginator {
         crate::operation::list_integration_associations::paginator::ListIntegrationAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -146,10 +135,7 @@ impl ListIntegrationAssociationsFluentBuilder {
         self
     }
     /// <p>The integration type.</p>
-    pub fn set_integration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegrationType>,
-    ) -> Self {
+    pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
         self.inner = self.inner.set_integration_type(input);
         self
     }

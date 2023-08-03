@@ -14,7 +14,9 @@ impl super::Client {
     /// - On success, responds with [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput) with field(s):
     ///   - [`datapoints(Option<Vec<Datapoint>>)`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput::datapoints): <p>The data points to return.</p>
     /// - On failure, responds with [`SdkError<GetScalingPlanResourceForecastDataError>`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError)
-    pub fn get_scaling_plan_resource_forecast_data(&self) -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataFluentBuilder{
+    pub fn get_scaling_plan_resource_forecast_data(
+        &self,
+    ) -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataFluentBuilder {
         crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataFluentBuilder::new(self.handle.clone())
     }
 }

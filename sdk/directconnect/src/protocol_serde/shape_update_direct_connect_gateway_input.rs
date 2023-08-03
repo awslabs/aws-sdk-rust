@@ -7,9 +7,7 @@ pub fn ser_update_direct_connect_gateway_input(
         object.key("directConnectGatewayId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.new_direct_connect_gateway_name {
-        object
-            .key("newDirectConnectGatewayName")
-            .string(var_2.as_str());
+        object.key("newDirectConnectGatewayName").string(var_2.as_str());
     }
     Ok(())
 }

@@ -15,33 +15,25 @@ impl DisassociateSubnetCidrBlockInput {
 }
 impl DisassociateSubnetCidrBlockInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSubnetCidrBlockInput`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockInput).
-    pub fn builder() -> crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder {
         crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSubnetCidrBlockInput`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSubnetCidrBlockInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSubnetCidrBlockInputBuilder {
     /// <p>The association ID for the CIDR block.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID for the CIDR block.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DisassociateSubnetCidrBlockInputBuilder {
         crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockInput {
-                association_id: self.association_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockInput {
+            association_id: self.association_id,
+        })
     }
 }

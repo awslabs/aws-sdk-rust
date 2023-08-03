@@ -26,8 +26,7 @@ impl ListDefaultVocabulariesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDefaultVocabulariesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesInputBuilder,
+    inner: crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesInputBuilder,
 }
 impl ListDefaultVocabulariesFluentBuilder {
     /// Creates a new `ListDefaultVocabularies`.
@@ -38,10 +37,7 @@ impl ListDefaultVocabulariesFluentBuilder {
         }
     }
     /// Access the ListDefaultVocabularies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListDefaultVocabulariesFluentBuilder {
             crate::operation::list_default_vocabularies::ListDefaultVocabularies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_default_vocabularies::ListDefaultVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_default_vocabularies::ListDefaultVocabulariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListDefaultVocabulariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListDefaultVocabulariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_default_vocabularies::ListDefaultVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_default_vocabularies::ListDefaultVocabulariesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListDefaultVocabulariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_default_vocabularies::ListDefaultVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_default_vocabularies::ListDefaultVocabulariesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListDefaultVocabulariesFluentBuilder {
             crate::operation::list_default_vocabularies::ListDefaultVocabularies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_default_vocabularies::ListDefaultVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_default_vocabularies::ListDefaultVocabulariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_default_vocabularies::paginator::ListDefaultVocabulariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_default_vocabularies::paginator::ListDefaultVocabulariesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_default_vocabularies::paginator::ListDefaultVocabulariesPaginator {
         crate::operation::list_default_vocabularies::paginator::ListDefaultVocabulariesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -153,17 +135,12 @@ impl ListDefaultVocabulariesFluentBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         self.inner.get_language_code()
     }
     /// <p>The maximum number of results to return per page.</p>

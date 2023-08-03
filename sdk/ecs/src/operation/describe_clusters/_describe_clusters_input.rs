@@ -32,17 +32,14 @@ impl DescribeClustersInput {
 }
 impl DescribeClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
-    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
         crate::operation::describe_clusters::builders::DescribeClustersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClustersInputBuilder {
     pub(crate) clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::ClusterField>>,
@@ -60,10 +57,7 @@ impl DescribeClustersInputBuilder {
         self
     }
     /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn set_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.clusters = input;
         self
     }
@@ -93,10 +87,7 @@ impl DescribeClustersInputBuilder {
     /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
     /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
     /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterField>>) -> Self {
         self.include = input;
         self
     }
@@ -106,18 +97,13 @@ impl DescribeClustersInputBuilder {
     /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
     /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
     /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterField>> {
         &self.include
     }
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_clusters::DescribeClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_clusters::DescribeClustersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_clusters::DescribeClustersInput {
             clusters: self.clusters,
             include: self.include,

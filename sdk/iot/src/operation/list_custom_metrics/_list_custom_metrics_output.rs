@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCustomMetricsOutput {
 }
 impl ListCustomMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomMetricsOutput`](crate::operation::list_custom_metrics::ListCustomMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_metrics::builders::ListCustomMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::list_custom_metrics::builders::ListCustomMetricsOutputBuilder {
         crate::operation::list_custom_metrics::builders::ListCustomMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomMetricsOutput`](crate::operation::list_custom_metrics::ListCustomMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomMetricsOutputBuilder {
     pub(crate) metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListCustomMetricsOutputBuilder {
         self
     }
     /// <p> The name of the custom metric. </p>
-    pub fn set_metric_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_names = input;
         self
     }
     /// <p> The name of the custom metric. </p>
-    pub fn get_metric_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_names
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>

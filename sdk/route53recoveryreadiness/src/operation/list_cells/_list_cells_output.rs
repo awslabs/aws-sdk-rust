@@ -35,9 +35,7 @@ impl ListCellsOutput {
 
 /// A builder for [`ListCellsOutput`](crate::operation::list_cells::ListCellsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCellsOutputBuilder {
     pub(crate) cells: ::std::option::Option<::std::vec::Vec<crate::types::CellOutput>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListCellsOutputBuilder {
         self
     }
     /// <p>A list of cells.</p>
-    pub fn set_cells(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CellOutput>>,
-    ) -> Self {
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CellOutput>>) -> Self {
         self.cells = input;
         self
     }

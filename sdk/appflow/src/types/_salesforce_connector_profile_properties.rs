@@ -97,9 +97,7 @@ impl SalesforceConnectorProfileProperties {
 
 /// A builder for [`SalesforceConnectorProfileProperties`](crate::types::SalesforceConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SalesforceConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
     pub(crate) is_sandbox_environment: ::std::option::Option<bool>,
@@ -200,10 +198,7 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn set_use_private_link_for_metadata_and_authorization(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_private_link_for_metadata_and_authorization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_private_link_for_metadata_and_authorization = input;
         self
     }
@@ -238,9 +233,7 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn get_use_private_link_for_metadata_and_authorization(
-        &self,
-    ) -> &::std::option::Option<bool> {
+    pub fn get_use_private_link_for_metadata_and_authorization(&self) -> &::std::option::Option<bool> {
         &self.use_private_link_for_metadata_and_authorization
     }
     /// Consumes the builder and constructs a [`SalesforceConnectorProfileProperties`](crate::types::SalesforceConnectorProfileProperties).
@@ -248,9 +241,7 @@ impl SalesforceConnectorProfilePropertiesBuilder {
         crate::types::SalesforceConnectorProfileProperties {
             instance_url: self.instance_url,
             is_sandbox_environment: self.is_sandbox_environment.unwrap_or_default(),
-            use_private_link_for_metadata_and_authorization: self
-                .use_private_link_for_metadata_and_authorization
-                .unwrap_or_default(),
+            use_private_link_for_metadata_and_authorization: self.use_private_link_for_metadata_and_authorization.unwrap_or_default(),
         }
     }
 }

@@ -72,9 +72,7 @@ impl MediaPlacement {
 
 /// A builder for [`MediaPlacement`](crate::types::MediaPlacement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaPlacementBuilder {
     pub(crate) audio_host_url: ::std::option::Option<::std::string::String>,
     pub(crate) audio_fallback_url: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct MediaPlacementBuilder {
 }
 impl MediaPlacementBuilder {
     /// <p>The audio host URL.</p>
-    pub fn audio_host_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audio_host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_host_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio host URL.</p>
-    pub fn set_audio_host_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audio_host_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_host_url = input;
         self
     }
@@ -107,18 +99,12 @@ impl MediaPlacementBuilder {
         &self.audio_host_url
     }
     /// <p>The audio fallback URL.</p>
-    pub fn audio_fallback_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audio_fallback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_fallback_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio fallback URL.</p>
-    pub fn set_audio_fallback_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audio_fallback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_fallback_url = input;
         self
     }
@@ -127,18 +113,12 @@ impl MediaPlacementBuilder {
         &self.audio_fallback_url
     }
     /// <p>The signaling URL.</p>
-    pub fn signaling_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signaling_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signaling_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signaling URL.</p>
-    pub fn set_signaling_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signaling_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signaling_url = input;
         self
     }
@@ -147,18 +127,12 @@ impl MediaPlacementBuilder {
         &self.signaling_url
     }
     /// <p>The turn control URL.</p>
-    pub fn turn_control_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn turn_control_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.turn_control_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The turn control URL.</p>
-    pub fn set_turn_control_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_turn_control_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.turn_control_url = input;
         self
     }
@@ -167,18 +141,12 @@ impl MediaPlacementBuilder {
         &self.turn_control_url
     }
     /// <p>The screen data URL.</p>
-    pub fn screen_data_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn screen_data_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_data_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The screen data URL.</p>
-    pub fn set_screen_data_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_screen_data_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.screen_data_url = input;
         self
     }
@@ -187,18 +155,12 @@ impl MediaPlacementBuilder {
         &self.screen_data_url
     }
     /// <p>The screen viewing URL.</p>
-    pub fn screen_viewing_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn screen_viewing_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_viewing_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The screen viewing URL.</p>
-    pub fn set_screen_viewing_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_screen_viewing_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.screen_viewing_url = input;
         self
     }
@@ -207,18 +169,12 @@ impl MediaPlacementBuilder {
         &self.screen_viewing_url
     }
     /// <p>The screen sharing URL.</p>
-    pub fn screen_sharing_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn screen_sharing_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_sharing_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The screen sharing URL.</p>
-    pub fn set_screen_sharing_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_screen_sharing_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.screen_sharing_url = input;
         self
     }
@@ -227,18 +183,12 @@ impl MediaPlacementBuilder {
         &self.screen_sharing_url
     }
     /// <p>The event ingestion URL.</p>
-    pub fn event_ingestion_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_ingestion_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_ingestion_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event ingestion URL.</p>
-    pub fn set_event_ingestion_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_ingestion_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_ingestion_url = input;
         self
     }

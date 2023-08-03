@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeprovisionIpamPoolCidrOutput {
 }
 impl DeprovisionIpamPoolCidrOutput {
     /// Creates a new builder-style object to manufacture [`DeprovisionIpamPoolCidrOutput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrOutputBuilder {
         crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeprovisionIpamPoolCidrOutput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprovisionIpamPoolCidrOutputBuilder {
     pub(crate) ipam_pool_cidr: ::std::option::Option<crate::types::IpamPoolCidr>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeprovisionIpamPoolCidrOutputBuilder {
         self
     }
     /// <p>The deprovisioned pool CIDR.</p>
-    pub fn set_ipam_pool_cidr(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolCidr>,
-    ) -> Self {
+    pub fn set_ipam_pool_cidr(mut self, input: ::std::option::Option<crate::types::IpamPoolCidr>) -> Self {
         self.ipam_pool_cidr = input;
         self
     }
@@ -65,9 +58,7 @@ impl DeprovisionIpamPoolCidrOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeprovisionIpamPoolCidrOutput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput {
+    pub fn build(self) -> crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput {
         crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput {
             ipam_pool_cidr: self.ipam_pool_cidr,
             _request_id: self._request_id,

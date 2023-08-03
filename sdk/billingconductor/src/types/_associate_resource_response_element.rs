@@ -30,9 +30,7 @@ impl AssociateResourceResponseElement {
 
 /// A builder for [`AssociateResourceResponseElement`](crate::types::AssociateResourceResponseElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResourceResponseElementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<crate::types::AssociateResourceError>,
@@ -58,10 +56,7 @@ impl AssociateResourceResponseElementBuilder {
         self
     }
     /// <p>An <code>AssociateResourceError</code> that will populate if the resource association fails.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociateResourceError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::AssociateResourceError>) -> Self {
         self.error = input;
         self
     }

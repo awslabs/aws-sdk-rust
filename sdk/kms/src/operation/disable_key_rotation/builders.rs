@@ -10,10 +10,7 @@ impl DisableKeyRotationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_key_rotation::DisableKeyRotationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_key_rotation::DisableKeyRotationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_key_rotation::DisableKeyRotationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable_key_rotation();
         fluent_builder.inner = self;
@@ -49,9 +46,7 @@ impl DisableKeyRotationFluentBuilder {
         }
     }
     /// Access the DisableKeyRotation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_key_rotation::builders::DisableKeyRotationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_key_rotation::builders::DisableKeyRotationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +58,7 @@ impl DisableKeyRotationFluentBuilder {
             crate::operation::disable_key_rotation::DisableKeyRotation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_key_rotation::DisableKeyRotationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_key_rotation::DisableKeyRotationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +68,7 @@ impl DisableKeyRotationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +77,7 @@ impl DisableKeyRotationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_key_rotation::DisableKeyRotationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_key_rotation::DisableKeyRotationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_key_rotation::DisableKeyRotationError>,
     > {
         let op = self
             .inner
@@ -112,9 +100,7 @@ impl DisableKeyRotationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_key_rotation::DisableKeyRotationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_key_rotation::DisableKeyRotationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_key_rotation::DisableKeyRotationError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +114,7 @@ impl DisableKeyRotationFluentBuilder {
             crate::operation::disable_key_rotation::DisableKeyRotation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_key_rotation::DisableKeyRotationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_key_rotation::DisableKeyRotationError>,
     > {
         self.customize_middleware().await
     }

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`gateway_instance_arn(Option<String>)`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput::gateway_instance_arn): The Amazon Resource Name (ARN) of the instance.
     ///   - [`instance_state(Option<InstanceState>)`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput::instance_state): The status of the instance.
     /// - On failure, responds with [`SdkError<DeregisterGatewayInstanceError>`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError)
-    pub fn deregister_gateway_instance(&self) -> crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceFluentBuilder{
+    pub fn deregister_gateway_instance(&self) -> crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceFluentBuilder {
         crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceFluentBuilder::new(self.handle.clone())
     }
 }

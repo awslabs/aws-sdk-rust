@@ -10,10 +10,7 @@ impl GetImagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_images::GetImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_images::GetImagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_images();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetImagesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_images::GetImages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_images::GetImages, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetImagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetImagesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_images::GetImages,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_images::GetImages, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError>,
     > {
         self.customize_middleware().await
@@ -146,17 +134,12 @@ impl GetImagesFluentBuilder {
         self
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn set_image_selector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageSelectorType>,
-    ) -> Self {
+    pub fn set_image_selector_type(mut self, input: ::std::option::Option<crate::types::ImageSelectorType>) -> Self {
         self.inner = self.inner.set_image_selector_type(input);
         self
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn get_image_selector_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageSelectorType> {
+    pub fn get_image_selector_type(&self) -> &::std::option::Option<crate::types::ImageSelectorType> {
         self.inner.get_image_selector_type()
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
@@ -165,10 +148,7 @@ impl GetImagesFluentBuilder {
         self
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_timestamp(input);
         self
     }
@@ -182,10 +162,7 @@ impl GetImagesFluentBuilder {
         self
     }
     /// <p>The end timestamp for the range of images to be generated.</p>
-    pub fn set_end_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_timestamp(input);
         self
     }
@@ -232,30 +209,20 @@ impl GetImagesFluentBuilder {
     /// To override the contents of this collection use [`set_format_config`](Self::set_format_config).
     ///
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn format_config(
-        mut self,
-        k: crate::types::FormatConfigKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_config(mut self, k: crate::types::FormatConfigKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format_config(k, v.into());
         self
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
     pub fn set_format_config(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_format_config(input);
         self
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn get_format_config(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>,
-    > {
+    pub fn get_format_config(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>> {
         self.inner.get_format_config()
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>

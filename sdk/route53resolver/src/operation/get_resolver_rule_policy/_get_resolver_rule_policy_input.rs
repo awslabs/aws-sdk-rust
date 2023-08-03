@@ -15,18 +15,14 @@ impl GetResolverRulePolicyInput {
 }
 impl GetResolverRulePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetResolverRulePolicyInput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyInputBuilder {
         crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverRulePolicyInput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverRulePolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetResolverRulePolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetResolverRulePolicyInput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput {
-                arn: self.arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput { arn: self.arn })
     }
 }

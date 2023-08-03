@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`usage_state(Option<UsageState>)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::usage_state): <p>Usage state of the function package.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<CreateSolFunctionPackageError>`](crate::operation::create_sol_function_package::CreateSolFunctionPackageError)
-    pub fn create_sol_function_package(&self) -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder{
+    pub fn create_sol_function_package(&self) -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder {
         crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder::new(self.handle.clone())
     }
 }

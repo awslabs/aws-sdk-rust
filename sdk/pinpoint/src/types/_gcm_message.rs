@@ -21,9 +21,7 @@ pub struct GcmMessage {
     pub collapse_key: ::std::option::Option<::std::string::String>,
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
     #[doc(hidden)]
-    pub data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The icon image name of the asset saved in your app.</p>
     #[doc(hidden)]
     pub icon_reference: ::std::option::Option<::std::string::String>,
@@ -56,9 +54,7 @@ pub struct GcmMessage {
     pub sound: ::std::option::Option<::std::string::String>,
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     #[doc(hidden)]
-    pub substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p>
     /// <p>Amazon Pinpoint specifies this value in the FCM time_to_live parameter when it sends the notification message to FCM.</p>
     #[doc(hidden)]
@@ -90,11 +86,7 @@ impl GcmMessage {
         self.collapse_key.as_deref()
     }
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.data.as_ref()
     }
     /// <p>The icon image name of the asset saved in your app.</p>
@@ -139,9 +131,7 @@ impl GcmMessage {
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     pub fn substitutions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p>
@@ -167,16 +157,12 @@ impl GcmMessage {
 
 /// A builder for [`GcmMessage`](crate::types::GcmMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GcmMessageBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) collapse_key: ::std::option::Option<::std::string::String>,
-    pub(crate) data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) icon_reference: ::std::option::Option<::std::string::String>,
     pub(crate) image_icon_url: ::std::option::Option<::std::string::String>,
     pub(crate) image_url: ::std::option::Option<::std::string::String>,
@@ -186,9 +172,7 @@ pub struct GcmMessageBuilder {
     pub(crate) silent_push: ::std::option::Option<bool>,
     pub(crate) small_image_icon_url: ::std::option::Option<::std::string::String>,
     pub(crate) sound: ::std::option::Option<::std::string::String>,
-    pub(crate) substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) time_to_live: ::std::option::Option<i32>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -259,47 +243,28 @@ impl GcmMessageBuilder {
     /// To override the contents of this collection use [`set_data`](Self::set_data).
     ///
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.data = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.data = input;
         self
     }
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn get_data(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.data
     }
     /// <p>The icon image name of the asset saved in your app.</p>
-    pub fn icon_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn icon_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.icon_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The icon image name of the asset saved in your app.</p>
-    pub fn set_icon_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_icon_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.icon_reference = input;
         self
     }
@@ -308,18 +273,12 @@ impl GcmMessageBuilder {
         &self.icon_reference
     }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
-    pub fn image_icon_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
-    pub fn set_image_icon_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_icon_url = input;
         self
     }
@@ -379,18 +338,12 @@ impl GcmMessageBuilder {
         &self.raw_content
     }
     /// <p>The package name of the application where registration tokens must match in order for the recipient to receive the message.</p>
-    pub fn restricted_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restricted_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restricted_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package name of the application where registration tokens must match in order for the recipient to receive the message.</p>
-    pub fn set_restricted_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_restricted_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restricted_package_name = input;
         self
     }
@@ -413,18 +366,12 @@ impl GcmMessageBuilder {
         &self.silent_push
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
-    pub fn small_image_icon_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn small_image_icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.small_image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
-    pub fn set_small_image_icon_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_small_image_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.small_image_icon_url = input;
         self
     }
@@ -451,11 +398,7 @@ impl GcmMessageBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.substitutions = ::std::option::Option::Some(hash_map);
@@ -464,12 +407,7 @@ impl GcmMessageBuilder {
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     pub fn set_substitutions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.substitutions = input;
         self
@@ -477,9 +415,7 @@ impl GcmMessageBuilder {
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     pub fn get_substitutions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.substitutions
     }
     /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p>

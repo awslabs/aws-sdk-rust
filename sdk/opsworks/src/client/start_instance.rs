@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::start_instance::builders::StartInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::start_instance::builders::StartInstanceFluentBuilder::set_instance_id): <p>The instance ID.</p>
     /// - On success, responds with [`StartInstanceOutput`](crate::operation::start_instance::StartInstanceOutput)
     /// - On failure, responds with [`SdkError<StartInstanceError>`](crate::operation::start_instance::StartInstanceError)
-    pub fn start_instance(
-        &self,
-    ) -> crate::operation::start_instance::builders::StartInstanceFluentBuilder {
-        crate::operation::start_instance::builders::StartInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_instance(&self) -> crate::operation::start_instance::builders::StartInstanceFluentBuilder {
+        crate::operation::start_instance::builders::StartInstanceFluentBuilder::new(self.handle.clone())
     }
 }

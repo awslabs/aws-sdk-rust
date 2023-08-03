@@ -15,18 +15,14 @@ impl InvalidateProjectCacheInput {
 }
 impl InvalidateProjectCacheInput {
     /// Creates a new builder-style object to manufacture [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
-    pub fn builder(
-    ) -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheInputBuilder
-    {
+    pub fn builder() -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheInputBuilder {
         crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheInputBuilder::default()
     }
 }
 
 /// A builder for [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidateProjectCacheInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl InvalidateProjectCacheInputBuilder {
     /// Consumes the builder and constructs a [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::invalidate_project_cache::InvalidateProjectCacheInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::invalidate_project_cache::InvalidateProjectCacheInput {
-                project_name: self.project_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::invalidate_project_cache::InvalidateProjectCacheInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::invalidate_project_cache::InvalidateProjectCacheInput {
+            project_name: self.project_name,
+        })
     }
 }

@@ -44,9 +44,7 @@ impl VerifyMacOutput {
 
 /// A builder for [`VerifyMacOutput`](crate::operation::verify_mac::VerifyMacOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyMacOutputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) mac_valid: ::std::option::Option<bool>,
@@ -91,10 +89,7 @@ impl VerifyMacOutputBuilder {
         self
     }
     /// <p>The MAC algorithm used in the verification.</p>
-    pub fn set_mac_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::MacAlgorithmSpec>,
-    ) -> Self {
+    pub fn set_mac_algorithm(mut self, input: ::std::option::Option<crate::types::MacAlgorithmSpec>) -> Self {
         self.mac_algorithm = input;
         self
     }

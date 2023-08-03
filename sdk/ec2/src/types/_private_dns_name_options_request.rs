@@ -37,9 +37,7 @@ impl PrivateDnsNameOptionsRequest {
 
 /// A builder for [`PrivateDnsNameOptionsRequest`](crate::types::PrivateDnsNameOptionsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrivateDnsNameOptionsRequestBuilder {
     pub(crate) hostname_type: ::std::option::Option<crate::types::HostnameType>,
     pub(crate) enable_resource_name_dns_a_record: ::std::option::Option<bool>,
@@ -52,10 +50,7 @@ impl PrivateDnsNameOptionsRequestBuilder {
         self
     }
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    pub fn set_hostname_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HostnameType>,
-    ) -> Self {
+    pub fn set_hostname_type(mut self, input: ::std::option::Option<crate::types::HostnameType>) -> Self {
         self.hostname_type = input;
         self
     }
@@ -69,10 +64,7 @@ impl PrivateDnsNameOptionsRequestBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn set_enable_resource_name_dns_a_record(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_resource_name_dns_a_record(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_resource_name_dns_a_record = input;
         self
     }
@@ -86,10 +78,7 @@ impl PrivateDnsNameOptionsRequestBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    pub fn set_enable_resource_name_dns_aaaa_record(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_resource_name_dns_aaaa_record(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_resource_name_dns_aaaa_record = input;
         self
     }

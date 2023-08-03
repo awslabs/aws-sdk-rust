@@ -58,9 +58,7 @@ impl DescribeRuleGroupMetadataOutput {
         self.capacity
     }
     /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
-    pub fn stateful_rule_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatefulRuleOptions> {
+    pub fn stateful_rule_options(&self) -> ::std::option::Option<&crate::types::StatefulRuleOptions> {
         self.stateful_rule_options.as_ref()
     }
     /// <p>The last time that the rule group was changed.</p>
@@ -75,16 +73,14 @@ impl ::aws_http::request_id::RequestId for DescribeRuleGroupMetadataOutput {
 }
 impl DescribeRuleGroupMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataOutput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput).
-    pub fn builder() -> crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataOutputBuilder {
         crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRuleGroupMetadataOutput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupMetadataOutputBuilder {
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
@@ -98,19 +94,13 @@ pub struct DescribeRuleGroupMetadataOutputBuilder {
 impl DescribeRuleGroupMetadataOutputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
@@ -121,19 +111,13 @@ impl DescribeRuleGroupMetadataOutputBuilder {
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_name = input;
         self
     }
@@ -199,17 +183,12 @@ impl DescribeRuleGroupMetadataOutputBuilder {
         self
     }
     /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
-    pub fn set_stateful_rule_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StatefulRuleOptions>,
-    ) -> Self {
+    pub fn set_stateful_rule_options(mut self, input: ::std::option::Option<crate::types::StatefulRuleOptions>) -> Self {
         self.stateful_rule_options = input;
         self
     }
     /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
-    pub fn get_stateful_rule_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::StatefulRuleOptions> {
+    pub fn get_stateful_rule_options(&self) -> &::std::option::Option<crate::types::StatefulRuleOptions> {
         &self.stateful_rule_options
     }
     /// <p>The last time that the rule group was changed.</p>
@@ -218,10 +197,7 @@ impl DescribeRuleGroupMetadataOutputBuilder {
         self
     }
     /// <p>The last time that the rule group was changed.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -239,9 +215,7 @@ impl DescribeRuleGroupMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataOutput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
+    pub fn build(self) -> crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
         crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
             rule_group_arn: self.rule_group_arn,
             rule_group_name: self.rule_group_name,

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartLendingAnalysisOutput`](crate::operation::start_lending_analysis::StartLendingAnalysisOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_lending_analysis::StartLendingAnalysisOutput::job_id): <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     /// - On failure, responds with [`SdkError<StartLendingAnalysisError>`](crate::operation::start_lending_analysis::StartLendingAnalysisError)
-    pub fn start_lending_analysis(
-        &self,
-    ) -> crate::operation::start_lending_analysis::builders::StartLendingAnalysisFluentBuilder {
-        crate::operation::start_lending_analysis::builders::StartLendingAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_lending_analysis(&self) -> crate::operation::start_lending_analysis::builders::StartLendingAnalysisFluentBuilder {
+        crate::operation::start_lending_analysis::builders::StartLendingAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

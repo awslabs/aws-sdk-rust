@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteNotificationRuleOutput`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
     /// - On failure, responds with [`SdkError<DeleteNotificationRuleError>`](crate::operation::delete_notification_rule::DeleteNotificationRuleError)
-    pub fn delete_notification_rule(
-        &self,
-    ) -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleFluentBuilder
-    {
+    pub fn delete_notification_rule(&self) -> crate::operation::delete_notification_rule::builders::DeleteNotificationRuleFluentBuilder {
         crate::operation::delete_notification_rule::builders::DeleteNotificationRuleFluentBuilder::new(self.handle.clone())
     }
 }

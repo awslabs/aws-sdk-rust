@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisableEbsEncryptionByDefaultOutput {
 }
 impl DisableEbsEncryptionByDefaultOutput {
     /// Creates a new builder-style object to manufacture [`DisableEbsEncryptionByDefaultOutput`](crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput).
-    pub fn builder() -> crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultOutputBuilder{
+    pub fn builder() -> crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultOutputBuilder {
         crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableEbsEncryptionByDefaultOutput`](crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableEbsEncryptionByDefaultOutputBuilder {
     pub(crate) ebs_encryption_by_default: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl DisableEbsEncryptionByDefaultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableEbsEncryptionByDefaultOutput`](crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput
-    {
+    pub fn build(self) -> crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput {
         crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput {
             ebs_encryption_by_default: self.ebs_encryption_by_default,
             _request_id: self._request_id,

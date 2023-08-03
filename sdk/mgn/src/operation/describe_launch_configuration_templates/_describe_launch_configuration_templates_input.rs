@@ -5,8 +5,7 @@
 pub struct DescribeLaunchConfigurationTemplatesInput {
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
     #[doc(hidden)]
-    pub launch_configuration_template_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub launch_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,9 +15,7 @@ pub struct DescribeLaunchConfigurationTemplatesInput {
 }
 impl DescribeLaunchConfigurationTemplatesInput {
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_i_ds(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn launch_configuration_template_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.launch_configuration_template_i_ds.as_deref()
     }
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
@@ -32,19 +29,16 @@ impl DescribeLaunchConfigurationTemplatesInput {
 }
 impl DescribeLaunchConfigurationTemplatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationTemplatesInput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput).
-    pub fn builder() -> crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesInputBuilder {
         crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLaunchConfigurationTemplatesInput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationTemplatesInputBuilder {
-    pub(crate) launch_configuration_template_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) launch_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,27 +48,19 @@ impl DescribeLaunchConfigurationTemplatesInputBuilder {
     /// To override the contents of this collection use [`set_launch_configuration_template_i_ds`](Self::set_launch_configuration_template_i_ds).
     ///
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_template_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.launch_configuration_template_i_ds.unwrap_or_default();
         v.push(input.into());
         self.launch_configuration_template_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn set_launch_configuration_template_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_launch_configuration_template_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.launch_configuration_template_i_ds = input;
         self
     }
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn get_launch_configuration_template_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_configuration_template_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.launch_configuration_template_i_ds
     }
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
@@ -106,17 +92,18 @@ impl DescribeLaunchConfigurationTemplatesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeLaunchConfigurationTemplatesInput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput {
-                launch_configuration_template_i_ds: self.launch_configuration_template_i_ds
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                launch_configuration_template_i_ds: self.launch_configuration_template_i_ds,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }

@@ -36,16 +36,14 @@ impl ListServiceNetworkVpcAssociationsInput {
 }
 impl ListServiceNetworkVpcAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListServiceNetworkVpcAssociationsInput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsInput).
-    pub fn builder() -> crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsInputBuilder {
         crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceNetworkVpcAssociationsInput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceNetworkVpcAssociationsInputBuilder {
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_identifier: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListServiceNetworkVpcAssociationsInputBuilder {
 }
 impl ListServiceNetworkVpcAssociationsInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_identifier = input;
         self
     }
@@ -74,18 +66,12 @@ impl ListServiceNetworkVpcAssociationsInputBuilder {
         &self.service_network_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
-    pub fn vpc_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
-    pub fn set_vpc_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_identifier = input;
         self
     }
@@ -122,18 +108,19 @@ impl ListServiceNetworkVpcAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServiceNetworkVpcAssociationsInput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsInput {
-                service_network_identifier: self.service_network_identifier
-                ,
-                vpc_identifier: self.vpc_identifier
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                service_network_identifier: self.service_network_identifier,
+                vpc_identifier: self.vpc_identifier,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

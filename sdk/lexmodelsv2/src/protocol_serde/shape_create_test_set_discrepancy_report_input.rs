@@ -6,7 +6,10 @@ pub fn ser_create_test_set_discrepancy_report_input(
     if let Some(var_1) = &input.target {
         #[allow(unused_mut)]
         let mut object_2 = object.key("target").start_object();
-        crate::protocol_serde::shape_test_set_discrepancy_report_resource_target::ser_test_set_discrepancy_report_resource_target(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_test_set_discrepancy_report_resource_target::ser_test_set_discrepancy_report_resource_target(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     Ok(())

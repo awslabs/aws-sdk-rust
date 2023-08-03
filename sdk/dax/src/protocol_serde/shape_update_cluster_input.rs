@@ -10,9 +10,7 @@ pub fn ser_update_cluster_input(
         object.key("Description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.preferred_maintenance_window {
-        object
-            .key("PreferredMaintenanceWindow")
-            .string(var_3.as_str());
+        object.key("PreferredMaintenanceWindow").string(var_3.as_str());
     }
     if let Some(var_4) = &input.notification_topic_arn {
         object.key("NotificationTopicArn").string(var_4.as_str());

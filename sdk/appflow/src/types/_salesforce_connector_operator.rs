@@ -57,13 +57,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SalesforceConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -135,9 +129,7 @@ impl ::std::convert::From<&str> for SalesforceConnectorOperator {
             "VALIDATE_NON_NULL" => SalesforceConnectorOperator::ValidateNonNull,
             "VALIDATE_NON_ZERO" => SalesforceConnectorOperator::ValidateNonZero,
             "VALIDATE_NUMERIC" => SalesforceConnectorOperator::ValidateNumeric,
-            other => SalesforceConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SalesforceConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

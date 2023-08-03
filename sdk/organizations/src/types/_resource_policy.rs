@@ -13,9 +13,7 @@ pub struct ResourcePolicy {
 }
 impl ResourcePolicy {
     /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
-    pub fn resource_policy_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourcePolicySummary> {
+    pub fn resource_policy_summary(&self) -> ::std::option::Option<&crate::types::ResourcePolicySummary> {
         self.resource_policy_summary.as_ref()
     }
     /// <p>The policy text of the resource policy.</p>
@@ -32,9 +30,7 @@ impl ResourcePolicy {
 
 /// A builder for [`ResourcePolicy`](crate::types::ResourcePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourcePolicyBuilder {
     pub(crate) resource_policy_summary: ::std::option::Option<crate::types::ResourcePolicySummary>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl ResourcePolicyBuilder {
         self
     }
     /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
-    pub fn set_resource_policy_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourcePolicySummary>,
-    ) -> Self {
+    pub fn set_resource_policy_summary(mut self, input: ::std::option::Option<crate::types::ResourcePolicySummary>) -> Self {
         self.resource_policy_summary = input;
         self
     }
     /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
-    pub fn get_resource_policy_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourcePolicySummary> {
+    pub fn get_resource_policy_summary(&self) -> &::std::option::Option<crate::types::ResourcePolicySummary> {
         &self.resource_policy_summary
     }
     /// <p>The policy text of the resource policy.</p>

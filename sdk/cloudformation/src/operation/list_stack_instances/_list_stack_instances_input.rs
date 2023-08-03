@@ -67,17 +67,14 @@ impl ListStackInstancesInput {
 }
 impl ListStackInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesInput`](crate::operation::list_stack_instances::ListStackInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_stack_instances::builders::ListStackInstancesInputBuilder {
+    pub fn builder() -> crate::operation::list_stack_instances::builders::ListStackInstancesInputBuilder {
         crate::operation::list_stack_instances::builders::ListStackInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackInstancesInput`](crate::operation::list_stack_instances::ListStackInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackInstancesInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -89,18 +86,12 @@ pub struct ListStackInstancesInputBuilder {
 }
 impl ListStackInstancesInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -148,32 +139,21 @@ impl ListStackInstancesInputBuilder {
         self
     }
     /// <p>The filter to apply to stack instances</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filter to apply to stack instances</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstanceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstanceFilter>> {
         &self.filters
     }
     /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
-    pub fn stack_instance_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_instance_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_instance_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
-    pub fn set_stack_instance_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_instance_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_instance_account = input;
         self
     }
@@ -182,18 +162,12 @@ impl ListStackInstancesInputBuilder {
         &self.stack_instance_account
     }
     /// <p>The name of the Region where you want to list stack instances.</p>
-    pub fn stack_instance_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_instance_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_instance_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Region where you want to list stack instances.</p>
-    pub fn set_stack_instance_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_instance_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_instance_region = input;
         self
     }
@@ -233,20 +207,15 @@ impl ListStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListStackInstancesInput`](crate::operation::list_stack_instances::ListStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stack_instances::ListStackInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_stack_instances::ListStackInstancesInput {
-                stack_set_name: self.stack_set_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-                stack_instance_account: self.stack_instance_account,
-                stack_instance_region: self.stack_instance_region,
-                call_as: self.call_as,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_stack_instances::ListStackInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_stack_instances::ListStackInstancesInput {
+            stack_set_name: self.stack_set_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+            stack_instance_account: self.stack_instance_account,
+            stack_instance_region: self.stack_instance_region,
+            call_as: self.call_as,
+        })
     }
 }

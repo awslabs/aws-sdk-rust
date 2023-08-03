@@ -5,15 +5,12 @@
 pub struct UpdateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
     #[doc(hidden)]
-    pub detector_model_configuration:
-        ::std::option::Option<crate::types::DetectorModelConfiguration>,
+    pub detector_model_configuration: ::std::option::Option<crate::types::DetectorModelConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
-    pub fn detector_model_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DetectorModelConfiguration> {
+    pub fn detector_model_configuration(&self) -> ::std::option::Option<&crate::types::DetectorModelConfiguration> {
         self.detector_model_configuration.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for UpdateDetectorModelOutput {
 }
 impl UpdateDetectorModelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorModelOutput`](crate::operation::update_detector_model::UpdateDetectorModelOutput).
-    pub fn builder(
-    ) -> crate::operation::update_detector_model::builders::UpdateDetectorModelOutputBuilder {
-        crate::operation::update_detector_model::builders::UpdateDetectorModelOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_detector_model::builders::UpdateDetectorModelOutputBuilder {
+        crate::operation::update_detector_model::builders::UpdateDetectorModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDetectorModelOutput`](crate::operation::update_detector_model::UpdateDetectorModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDetectorModelOutputBuilder {
-    pub(crate) detector_model_configuration:
-        ::std::option::Option<crate::types::DetectorModelConfiguration>,
+    pub(crate) detector_model_configuration: ::std::option::Option<crate::types::DetectorModelConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateDetectorModelOutputBuilder {
     /// <p>Information about how the detector model is configured.</p>
-    pub fn detector_model_configuration(
-        mut self,
-        input: crate::types::DetectorModelConfiguration,
-    ) -> Self {
+    pub fn detector_model_configuration(mut self, input: crate::types::DetectorModelConfiguration) -> Self {
         self.detector_model_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about how the detector model is configured.</p>
-    pub fn set_detector_model_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorModelConfiguration>,
-    ) -> Self {
+    pub fn set_detector_model_configuration(mut self, input: ::std::option::Option<crate::types::DetectorModelConfiguration>) -> Self {
         self.detector_model_configuration = input;
         self
     }
     /// <p>Information about how the detector model is configured.</p>
-    pub fn get_detector_model_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectorModelConfiguration> {
+    pub fn get_detector_model_configuration(&self) -> &::std::option::Option<crate::types::DetectorModelConfiguration> {
         &self.detector_model_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

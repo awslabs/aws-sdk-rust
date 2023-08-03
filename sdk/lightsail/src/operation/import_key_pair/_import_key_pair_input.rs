@@ -29,27 +29,19 @@ impl ImportKeyPairInput {
 
 /// A builder for [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportKeyPairInputBuilder {
     pub(crate) key_pair_name: ::std::option::Option<::std::string::String>,
     pub(crate) public_key_base64: ::std::option::Option<::std::string::String>,
 }
 impl ImportKeyPairInputBuilder {
     /// <p>The name of the key pair for which you want to import the public key.</p>
-    pub fn key_pair_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the key pair for which you want to import the public key.</p>
-    pub fn set_key_pair_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_pair_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pair_name = input;
         self
     }
@@ -58,18 +50,12 @@ impl ImportKeyPairInputBuilder {
         &self.key_pair_name
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_key_base64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_base64 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn set_public_key_base64(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_key_base64(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key_base64 = input;
         self
     }
@@ -80,10 +66,7 @@ impl ImportKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_key_pair::ImportKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::import_key_pair::ImportKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_key_pair::ImportKeyPairInput {
             key_pair_name: self.key_pair_name,
             public_key_base64: self.public_key_base64,

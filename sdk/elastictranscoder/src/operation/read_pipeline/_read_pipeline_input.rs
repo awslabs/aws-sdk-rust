@@ -23,9 +23,7 @@ impl ReadPipelineInput {
 
 /// A builder for [`ReadPipelineInput`](crate::operation::read_pipeline::ReadPipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadPipelineInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl ReadPipelineInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ReadPipelineInput`](crate::operation::read_pipeline::ReadPipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::read_pipeline::ReadPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::read_pipeline::ReadPipelineInput {
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::read_pipeline::ReadPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::read_pipeline::ReadPipelineInput { id: self.id })
     }
 }

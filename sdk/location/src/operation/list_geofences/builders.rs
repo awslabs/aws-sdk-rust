@@ -10,10 +10,7 @@ impl ListGeofencesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_geofences::ListGeofencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofences::ListGeofencesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geofences::ListGeofencesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_geofences();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListGeofencesFluentBuilder {
         }
     }
     /// Access the ListGeofences as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_geofences::builders::ListGeofencesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_geofences::builders::ListGeofencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListGeofencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl ListGeofencesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_geofences::paginator::ListGeofencesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_geofences::paginator::ListGeofencesPaginator {
-        crate::operation::list_geofences::paginator::ListGeofencesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_geofences::paginator::ListGeofencesPaginator {
+        crate::operation::list_geofences::paginator::ListGeofencesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the geofence collection storing the list of geofences.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
     /// <p>The name of the geofence collection storing the list of geofences.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }

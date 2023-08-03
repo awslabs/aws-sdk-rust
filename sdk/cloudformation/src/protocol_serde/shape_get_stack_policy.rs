@@ -4,17 +4,10 @@ pub fn de_get_stack_policy_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_stack_policy::GetStackPolicyOutput,
-    crate::operation::get_stack_policy::GetStackPolicyError,
-> {
+) -> std::result::Result<crate::operation::get_stack_policy::GetStackPolicyOutput, crate::operation::get_stack_policy::GetStackPolicyError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_stack_policy::GetStackPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_stack_policy::GetStackPolicyError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::get_stack_policy::GetStackPolicyError::generic(generic))
@@ -25,22 +18,13 @@ pub fn de_get_stack_policy_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_stack_policy::GetStackPolicyOutput,
-    crate::operation::get_stack_policy::GetStackPolicyError,
-> {
+) -> std::result::Result<crate::operation::get_stack_policy::GetStackPolicyOutput, crate::operation::get_stack_policy::GetStackPolicyError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_stack_policy::builders::GetStackPolicyOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_stack_policy::de_get_stack_policy(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::get_stack_policy::GetStackPolicyError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::get_stack_policy::builders::GetStackPolicyOutputBuilder::default();
+        output = crate::protocol_serde::shape_get_stack_policy::de_get_stack_policy(_response_body, output)
+            .map_err(crate::operation::get_stack_policy::GetStackPolicyError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -49,10 +33,7 @@ pub fn de_get_stack_policy_http_response_with_props(
 pub fn de_get_stack_policy(
     inp: &[u8],
     mut builder: crate::operation::get_stack_policy::builders::GetStackPolicyOutputBuilder,
-) -> Result<
-    crate::operation::get_stack_policy::builders::GetStackPolicyOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_stack_policy::builders::GetStackPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -92,9 +73,7 @@ pub fn de_get_stack_policy(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected GetStackPolicyResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected GetStackPolicyResult tag"));
     };
     Ok(builder)
 }

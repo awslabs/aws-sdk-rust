@@ -38,13 +38,7 @@
 /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmafClientCache {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CmafClientCache {
         match s {
             "DISABLED" => CmafClientCache::Disabled,
             "ENABLED" => CmafClientCache::Enabled,
-            other => {
-                CmafClientCache::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CmafClientCache::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

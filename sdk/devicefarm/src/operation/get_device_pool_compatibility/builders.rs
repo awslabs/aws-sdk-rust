@@ -26,7 +26,7 @@ impl GetDevicePoolCompatibilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder,
+    inner: crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder,
 }
 impl GetDevicePoolCompatibilityFluentBuilder {
     /// Creates a new `GetDevicePoolCompatibility`.
@@ -37,7 +37,7 @@ impl GetDevicePoolCompatibilityFluentBuilder {
         }
     }
     /// Access the GetDevicePoolCompatibility as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetDevicePoolCompatibilityFluentBuilder {
             crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibility,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetDevicePoolCompatibilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetDevicePoolCompatibilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetDevicePoolCompatibilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetDevicePoolCompatibilityFluentBuilder {
             crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibility,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The device pool's ARN.</p>
-    pub fn device_pool_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_pool_arn(input.into());
         self
     }
     /// <p>The device pool's ARN.</p>
-    pub fn set_device_pool_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_pool_arn(input);
         self
     }
@@ -251,17 +234,12 @@ impl GetDevicePoolCompatibilityFluentBuilder {
         self
     }
     /// <p>An object that contains information about the settings for a run.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleRunConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>An object that contains information about the settings for a run.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
         self.inner.get_configuration()
     }
 }

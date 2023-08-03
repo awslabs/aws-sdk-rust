@@ -34,32 +34,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -67,72 +51,84 @@ where
     }
 }
 impl From<crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError> for Error {
-    fn from(
-        err: crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError,
-    ) -> Self {
+    fn from(err: crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError) -> Self {
         match err {
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError> for Error {
     fn from(err: crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError) -> Self {
         match err {
-            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_delete_geofence::BatchDeleteGeofenceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_geofence::BatchDeleteGeofenceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -143,40 +139,28 @@ impl From<crate::operation::batch_delete_geofence::BatchDeleteGeofenceError> for
     fn from(err: crate::operation::batch_delete_geofence::BatchDeleteGeofenceError) -> Self {
         match err {
             crate::operation::batch_delete_geofence::BatchDeleteGeofenceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::batch_delete_geofence::BatchDeleteGeofenceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_delete_geofence::BatchDeleteGeofenceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_delete_geofence::BatchDeleteGeofenceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -186,41 +170,31 @@ where
 impl From<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError> for Error {
     fn from(err: crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError) -> Self {
         match err {
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_device_position::BatchGetDevicePositionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_get_device_position::BatchGetDevicePositionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -230,41 +204,31 @@ where
 impl From<crate::operation::batch_get_device_position::BatchGetDevicePositionError> for Error {
     fn from(err: crate::operation::batch_get_device_position::BatchGetDevicePositionError) -> Self {
         match err {
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_get_device_position::BatchGetDevicePositionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_device_position::BatchGetDevicePositionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_get_device_position::BatchGetDevicePositionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::batch_get_device_position::BatchGetDevicePositionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_get_device_position::BatchGetDevicePositionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_get_device_position::BatchGetDevicePositionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_geofence::BatchPutGeofenceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_put_geofence::BatchPutGeofenceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_geofence::BatchPutGeofenceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_put_geofence::BatchPutGeofenceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -283,80 +247,54 @@ impl From<crate::operation::batch_put_geofence::BatchPutGeofenceError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_update_device_position::BatchUpdateDevicePositionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_update_device_position::BatchUpdateDevicePositionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::batch_update_device_position::BatchUpdateDevicePositionError>
-    for Error
-{
-    fn from(
-        err: crate::operation::batch_update_device_position::BatchUpdateDevicePositionError,
-    ) -> Self {
+impl From<crate::operation::batch_update_device_position::BatchUpdateDevicePositionError> for Error {
+    fn from(err: crate::operation::batch_update_device_position::BatchUpdateDevicePositionError) -> Self {
         match err {
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::batch_update_device_position::BatchUpdateDevicePositionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::calculate_route::CalculateRouteError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::calculate_route::CalculateRouteError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::calculate_route::CalculateRouteError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::calculate_route::CalculateRouteError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -366,53 +304,25 @@ where
 impl From<crate::operation::calculate_route::CalculateRouteError> for Error {
     fn from(err: crate::operation::calculate_route::CalculateRouteError) -> Self {
         match err {
-            crate::operation::calculate_route::CalculateRouteError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::calculate_route::CalculateRouteError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::calculate_route::CalculateRouteError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::calculate_route::CalculateRouteError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::calculate_route::CalculateRouteError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::calculate_route::CalculateRouteError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::calculate_route::CalculateRouteError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::calculate_route::CalculateRouteError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::calculate_route::CalculateRouteError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::calculate_route::CalculateRouteError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::calculate_route::CalculateRouteError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::calculate_route::CalculateRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::calculate_route_matrix::CalculateRouteMatrixError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::calculate_route_matrix::CalculateRouteMatrixError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -423,40 +333,28 @@ impl From<crate::operation::calculate_route_matrix::CalculateRouteMatrixError> f
     fn from(err: crate::operation::calculate_route_matrix::CalculateRouteMatrixError) -> Self {
         match err {
             crate::operation::calculate_route_matrix::CalculateRouteMatrixError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::calculate_route_matrix::CalculateRouteMatrixError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::calculate_route_matrix::CalculateRouteMatrixError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::calculate_route_matrix::CalculateRouteMatrixError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::calculate_route_matrix::CalculateRouteMatrixError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::calculate_route_matrix::CalculateRouteMatrixError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::calculate_route_matrix::CalculateRouteMatrixError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::calculate_route_matrix::CalculateRouteMatrixError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_geofence_collection::CreateGeofenceCollectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_geofence_collection::CreateGeofenceCollectionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -464,38 +362,38 @@ where
     }
 }
 impl From<crate::operation::create_geofence_collection::CreateGeofenceCollectionError> for Error {
-    fn from(
-        err: crate::operation::create_geofence_collection::CreateGeofenceCollectionError,
-    ) -> Self {
+    fn from(err: crate::operation::create_geofence_collection::CreateGeofenceCollectionError) -> Self {
         match err {
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::create_geofence_collection::CreateGeofenceCollectionError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_geofence_collection::CreateGeofenceCollectionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::create_geofence_collection::CreateGeofenceCollectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -505,48 +403,26 @@ where
 impl From<crate::operation::create_key::CreateKeyError> for Error {
     fn from(err: crate::operation::create_key::CreateKeyError) -> Self {
         match err {
-            crate::operation::create_key::CreateKeyError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_key::CreateKeyError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_key::CreateKeyError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::create_key::CreateKeyError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::create_key::CreateKeyError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_key::CreateKeyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::create_key::CreateKeyError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_key::CreateKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_key::CreateKeyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_key::CreateKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_key::CreateKeyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_key::CreateKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_key::CreateKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_key::CreateKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_map::CreateMapError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_map::CreateMapError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::create_map::CreateMapError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_map::CreateMapError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -556,56 +432,26 @@ where
 impl From<crate::operation::create_map::CreateMapError> for Error {
     fn from(err: crate::operation::create_map::CreateMapError) -> Self {
         match err {
-            crate::operation::create_map::CreateMapError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_map::CreateMapError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_map::CreateMapError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::create_map::CreateMapError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::create_map::CreateMapError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_map::CreateMapError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::create_map::CreateMapError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_map::CreateMapError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_map::CreateMapError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_map::CreateMapError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_map::CreateMapError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_map::CreateMapError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_map::CreateMapError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_map::CreateMapError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_place_index::CreatePlaceIndexError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_place_index::CreatePlaceIndexError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_place_index::CreatePlaceIndexError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_place_index::CreatePlaceIndexError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -618,39 +464,25 @@ impl From<crate::operation::create_place_index::CreatePlaceIndexError> for Error
             crate::operation::create_place_index::CreatePlaceIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_place_index::CreatePlaceIndexError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_place_index::CreatePlaceIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_place_index::CreatePlaceIndexError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_place_index::CreatePlaceIndexError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_place_index::CreatePlaceIndexError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_place_index::CreatePlaceIndexError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_place_index::CreatePlaceIndexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_calculator::CreateRouteCalculatorError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_route_calculator::CreateRouteCalculatorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_calculator::CreateRouteCalculatorError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_route_calculator::CreateRouteCalculatorError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -660,42 +492,32 @@ where
 impl From<crate::operation::create_route_calculator::CreateRouteCalculatorError> for Error {
     fn from(err: crate::operation::create_route_calculator::CreateRouteCalculatorError) -> Self {
         match err {
-            crate::operation::create_route_calculator::CreateRouteCalculatorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_route_calculator::CreateRouteCalculatorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::create_route_calculator::CreateRouteCalculatorError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_route_calculator::CreateRouteCalculatorError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_route_calculator::CreateRouteCalculatorError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_route_calculator::CreateRouteCalculatorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_route_calculator::CreateRouteCalculatorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_route_calculator::CreateRouteCalculatorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_route_calculator::CreateRouteCalculatorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_route_calculator::CreateRouteCalculatorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tracker::CreateTrackerError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_tracker::CreateTrackerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tracker::CreateTrackerError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_tracker::CreateTrackerError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -705,56 +527,26 @@ where
 impl From<crate::operation::create_tracker::CreateTrackerError> for Error {
     fn from(err: crate::operation::create_tracker::CreateTrackerError) -> Self {
         match err {
-            crate::operation::create_tracker::CreateTrackerError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_tracker::CreateTrackerError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_tracker::CreateTrackerError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::create_tracker::CreateTrackerError::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_tracker::CreateTrackerError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_tracker::CreateTrackerError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::create_tracker::CreateTrackerError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_tracker::CreateTrackerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_tracker::CreateTrackerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_tracker::CreateTrackerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_tracker::CreateTrackerError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_tracker::CreateTrackerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_tracker::CreateTrackerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_tracker::CreateTrackerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -762,37 +554,37 @@ where
     }
 }
 impl From<crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError> for Error {
-    fn from(
-        err: crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError,
-    ) -> Self {
+    fn from(err: crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError) -> Self {
         match err {
-            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_key::DeleteKeyError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_key::DeleteKeyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_key::DeleteKeyError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_key::DeleteKeyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -802,45 +594,25 @@ where
 impl From<crate::operation::delete_key::DeleteKeyError> for Error {
     fn from(err: crate::operation::delete_key::DeleteKeyError) -> Self {
         match err {
-            crate::operation::delete_key::DeleteKeyError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_key::DeleteKeyError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::delete_key::DeleteKeyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_key::DeleteKeyError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_key::DeleteKeyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_key::DeleteKeyError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_key::DeleteKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_key::DeleteKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_key::DeleteKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_key::DeleteKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_key::DeleteKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_key::DeleteKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_map::DeleteMapError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_map::DeleteMapError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_map::DeleteMapError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_map::DeleteMapError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -850,53 +622,25 @@ where
 impl From<crate::operation::delete_map::DeleteMapError> for Error {
     fn from(err: crate::operation::delete_map::DeleteMapError) -> Self {
         match err {
-            crate::operation::delete_map::DeleteMapError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_map::DeleteMapError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::delete_map::DeleteMapError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_map::DeleteMapError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_map::DeleteMapError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_map::DeleteMapError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_map::DeleteMapError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_map::DeleteMapError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_map::DeleteMapError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_map::DeleteMapError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_map::DeleteMapError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_map::DeleteMapError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_place_index::DeletePlaceIndexError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_place_index::DeletePlaceIndexError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_place_index::DeletePlaceIndexError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_place_index::DeletePlaceIndexError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -915,32 +659,16 @@ impl From<crate::operation::delete_place_index::DeletePlaceIndexError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_route_calculator::DeleteRouteCalculatorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_route_calculator::DeleteRouteCalculatorError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -950,41 +678,31 @@ where
 impl From<crate::operation::delete_route_calculator::DeleteRouteCalculatorError> for Error {
     fn from(err: crate::operation::delete_route_calculator::DeleteRouteCalculatorError) -> Self {
         match err {
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_route_calculator::DeleteRouteCalculatorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_route_calculator::DeleteRouteCalculatorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_route_calculator::DeleteRouteCalculatorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_route_calculator::DeleteRouteCalculatorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_route_calculator::DeleteRouteCalculatorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_route_calculator::DeleteRouteCalculatorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_tracker::DeleteTrackerError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_tracker::DeleteTrackerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_tracker::DeleteTrackerError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_tracker::DeleteTrackerError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -994,97 +712,63 @@ where
 impl From<crate::operation::delete_tracker::DeleteTrackerError> for Error {
     fn from(err: crate::operation::delete_tracker::DeleteTrackerError) -> Self {
         match err {
-            crate::operation::delete_tracker::DeleteTrackerError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_tracker::DeleteTrackerError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::delete_tracker::DeleteTrackerError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_tracker::DeleteTrackerError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_tracker::DeleteTrackerError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_tracker::DeleteTrackerError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_tracker::DeleteTrackerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_tracker::DeleteTrackerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_tracker::DeleteTrackerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_tracker::DeleteTrackerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_tracker::DeleteTrackerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_tracker::DeleteTrackerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError>
-    for Error
-{
-    fn from(
-        err: crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError,
-    ) -> Self {
+impl From<crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError> for Error {
+    fn from(err: crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError) -> Self {
         match err {
-            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::describe_key::DescribeKeyError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_key::DescribeKeyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_key::DescribeKeyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_key::DescribeKeyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1094,49 +778,25 @@ where
 impl From<crate::operation::describe_key::DescribeKeyError> for Error {
     fn from(err: crate::operation::describe_key::DescribeKeyError) -> Self {
         match err {
-            crate::operation::describe_key::DescribeKeyError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::describe_key::DescribeKeyError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_key::DescribeKeyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::describe_key::DescribeKeyError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::describe_key::DescribeKeyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::describe_key::DescribeKeyError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_key::DescribeKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_key::DescribeKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_key::DescribeKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_key::DescribeKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_key::DescribeKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_key::DescribeKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::describe_map::DescribeMapError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_map::DescribeMapError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_map::DescribeMapError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_map::DescribeMapError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1146,53 +806,25 @@ where
 impl From<crate::operation::describe_map::DescribeMapError> for Error {
     fn from(err: crate::operation::describe_map::DescribeMapError) -> Self {
         match err {
-            crate::operation::describe_map::DescribeMapError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::describe_map::DescribeMapError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_map::DescribeMapError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::describe_map::DescribeMapError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::describe_map::DescribeMapError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::describe_map::DescribeMapError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_map::DescribeMapError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_map::DescribeMapError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_map::DescribeMapError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_map::DescribeMapError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_map::DescribeMapError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_map::DescribeMapError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_place_index::DescribePlaceIndexError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_place_index::DescribePlaceIndexError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_place_index::DescribePlaceIndexError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_place_index::DescribePlaceIndexError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1204,39 +836,25 @@ impl From<crate::operation::describe_place_index::DescribePlaceIndexError> for E
         match err {
             crate::operation::describe_place_index::DescribePlaceIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::describe_place_index::DescribePlaceIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_place_index::DescribePlaceIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_place_index::DescribePlaceIndexError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_place_index::DescribePlaceIndexError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_place_index::DescribePlaceIndexError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_place_index::DescribePlaceIndexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_route_calculator::DescribeRouteCalculatorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_route_calculator::DescribeRouteCalculatorError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1244,45 +862,37 @@ where
     }
 }
 impl From<crate::operation::describe_route_calculator::DescribeRouteCalculatorError> for Error {
-    fn from(
-        err: crate::operation::describe_route_calculator::DescribeRouteCalculatorError,
-    ) -> Self {
+    fn from(err: crate::operation::describe_route_calculator::DescribeRouteCalculatorError) -> Self {
         match err {
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_route_calculator::DescribeRouteCalculatorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::describe_route_calculator::DescribeRouteCalculatorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tracker::DescribeTrackerError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_tracker::DescribeTrackerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tracker::DescribeTrackerError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_tracker::DescribeTrackerError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1292,101 +902,63 @@ where
 impl From<crate::operation::describe_tracker::DescribeTrackerError> for Error {
     fn from(err: crate::operation::describe_tracker::DescribeTrackerError) -> Self {
         match err {
-            crate::operation::describe_tracker::DescribeTrackerError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::describe_tracker::DescribeTrackerError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::describe_tracker::DescribeTrackerError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_tracker::DescribeTrackerError::ThrottlingException(
-                inner,
-            ) => Error::ThrottlingException(inner),
-            crate::operation::describe_tracker::DescribeTrackerError::ValidationException(
-                inner,
-            ) => Error::ValidationException(inner),
-            crate::operation::describe_tracker::DescribeTrackerError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_tracker::DescribeTrackerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_tracker::DescribeTrackerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_tracker::DescribeTrackerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_tracker::DescribeTrackerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_tracker::DescribeTrackerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_tracker::DescribeTrackerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError>
-    for Error
-{
-    fn from(
-        err: crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError,
-    ) -> Self {
+impl From<crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError> for Error {
+    fn from(err: crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError) -> Self {
         match err {
-            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position::GetDevicePositionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_device_position::GetDevicePositionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position::GetDevicePositionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_device_position::GetDevicePositionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1398,39 +970,25 @@ impl From<crate::operation::get_device_position::GetDevicePositionError> for Err
         match err {
             crate::operation::get_device_position::GetDevicePositionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_device_position::GetDevicePositionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_device_position::GetDevicePositionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_device_position::GetDevicePositionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_device_position::GetDevicePositionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_device_position::GetDevicePositionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_device_position::GetDevicePositionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_device_position_history::GetDevicePositionHistoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_device_position_history::GetDevicePositionHistoryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1438,41 +996,37 @@ where
     }
 }
 impl From<crate::operation::get_device_position_history::GetDevicePositionHistoryError> for Error {
-    fn from(
-        err: crate::operation::get_device_position_history::GetDevicePositionHistoryError,
-    ) -> Self {
+    fn from(err: crate::operation::get_device_position_history::GetDevicePositionHistoryError) -> Self {
         match err {
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_device_position_history::GetDevicePositionHistoryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_device_position_history::GetDevicePositionHistoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_device_position_history::GetDevicePositionHistoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_device_position_history::GetDevicePositionHistoryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_device_position_history::GetDevicePositionHistoryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::get_device_position_history::GetDevicePositionHistoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::get_geofence::GetGeofenceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_geofence::GetGeofenceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geofence::GetGeofenceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_geofence::GetGeofenceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1482,50 +1036,25 @@ where
 impl From<crate::operation::get_geofence::GetGeofenceError> for Error {
     fn from(err: crate::operation::get_geofence::GetGeofenceError) -> Self {
         match err {
-            crate::operation::get_geofence::GetGeofenceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_geofence::GetGeofenceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_geofence::GetGeofenceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_geofence::GetGeofenceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_geofence::GetGeofenceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_geofence::GetGeofenceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_geofence::GetGeofenceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_geofence::GetGeofenceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_geofence::GetGeofenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_geofence::GetGeofenceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_geofence::GetGeofenceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_geofence::GetGeofenceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<crate::operation::get_map_glyphs::GetMapGlyphsError, R>,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_map_glyphs::GetMapGlyphsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_glyphs::GetMapGlyphsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_map_glyphs::GetMapGlyphsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1535,53 +1064,25 @@ where
 impl From<crate::operation::get_map_glyphs::GetMapGlyphsError> for Error {
     fn from(err: crate::operation::get_map_glyphs::GetMapGlyphsError) -> Self {
         match err {
-            crate::operation::get_map_glyphs::GetMapGlyphsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_map_glyphs::GetMapGlyphsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_map_glyphs::GetMapGlyphsError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_map_glyphs::GetMapGlyphsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_map_glyphs::GetMapGlyphsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_map_glyphs::GetMapGlyphsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_map_glyphs::GetMapGlyphsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_map_glyphs::GetMapGlyphsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_map_glyphs::GetMapGlyphsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_map_glyphs::GetMapGlyphsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_map_glyphs::GetMapGlyphsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_map_glyphs::GetMapGlyphsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_sprites::GetMapSpritesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_sprites::GetMapSpritesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_map_sprites::GetMapSpritesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1591,53 +1092,25 @@ where
 impl From<crate::operation::get_map_sprites::GetMapSpritesError> for Error {
     fn from(err: crate::operation::get_map_sprites::GetMapSpritesError) -> Self {
         match err {
-            crate::operation::get_map_sprites::GetMapSpritesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_map_sprites::GetMapSpritesError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::get_map_sprites::GetMapSpritesError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_map_sprites::GetMapSpritesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_map_sprites::GetMapSpritesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_map_sprites::GetMapSpritesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_map_sprites::GetMapSpritesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_map_sprites::GetMapSpritesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_map_sprites::GetMapSpritesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_map_sprites::GetMapSpritesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_map_sprites::GetMapSpritesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_map_sprites::GetMapSpritesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1647,37 +1120,31 @@ where
 impl From<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError> for Error {
     fn from(err: crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError) -> Self {
         match err {
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::get_map_tile::GetMapTileError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_map_tile::GetMapTileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_tile::GetMapTileError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_map_tile::GetMapTileError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1687,45 +1154,25 @@ where
 impl From<crate::operation::get_map_tile::GetMapTileError> for Error {
     fn from(err: crate::operation::get_map_tile::GetMapTileError) -> Self {
         match err {
-            crate::operation::get_map_tile::GetMapTileError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_map_tile::GetMapTileError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_map_tile::GetMapTileError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_map_tile::GetMapTileError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_map_tile::GetMapTileError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_map_tile::GetMapTileError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_map_tile::GetMapTileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_map_tile::GetMapTileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_map_tile::GetMapTileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_map_tile::GetMapTileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_map_tile::GetMapTileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_map_tile::GetMapTileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1735,51 +1182,25 @@ where
 impl From<crate::operation::get_place::GetPlaceError> for Error {
     fn from(err: crate::operation::get_place::GetPlaceError) -> Self {
         match err {
-            crate::operation::get_place::GetPlaceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_place::GetPlaceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_place::GetPlaceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_place::GetPlaceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_place::GetPlaceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::get_place::GetPlaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_place::GetPlaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_place::GetPlaceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_place::GetPlaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_place::GetPlaceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_place::GetPlaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_positions::ListDevicePositionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_device_positions::ListDevicePositionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_positions::ListDevicePositionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_device_positions::ListDevicePositionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1790,39 +1211,25 @@ impl From<crate::operation::list_device_positions::ListDevicePositionsError> for
     fn from(err: crate::operation::list_device_positions::ListDevicePositionsError) -> Self {
         match err {
             crate::operation::list_device_positions::ListDevicePositionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_device_positions::ListDevicePositionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_device_positions::ListDevicePositionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_device_positions::ListDevicePositionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_device_positions::ListDevicePositionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_device_positions::ListDevicePositionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_geofence_collections::ListGeofenceCollectionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_geofence_collections::ListGeofenceCollectionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1830,44 +1237,34 @@ where
     }
 }
 impl From<crate::operation::list_geofence_collections::ListGeofenceCollectionsError> for Error {
-    fn from(
-        err: crate::operation::list_geofence_collections::ListGeofenceCollectionsError,
-    ) -> Self {
+    fn from(err: crate::operation::list_geofence_collections::ListGeofenceCollectionsError) -> Self {
         match err {
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_geofence_collections::ListGeofenceCollectionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_geofence_collections::ListGeofenceCollectionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_geofence_collections::ListGeofenceCollectionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_geofence_collections::ListGeofenceCollectionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_geofence_collections::ListGeofenceCollectionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_geofence_collections::ListGeofenceCollectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofences::ListGeofencesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_geofences::ListGeofencesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geofences::ListGeofencesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_geofences::ListGeofencesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1877,45 +1274,25 @@ where
 impl From<crate::operation::list_geofences::ListGeofencesError> for Error {
     fn from(err: crate::operation::list_geofences::ListGeofencesError) -> Self {
         match err {
-            crate::operation::list_geofences::ListGeofencesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_geofences::ListGeofencesError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::list_geofences::ListGeofencesError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_geofences::ListGeofencesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_geofences::ListGeofencesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_geofences::ListGeofencesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_geofences::ListGeofencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_geofences::ListGeofencesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_geofences::ListGeofencesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_geofences::ListGeofencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_geofences::ListGeofencesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_geofences::ListGeofencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_keys::ListKeysError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_keys::ListKeysError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::list_keys::ListKeysError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_keys::ListKeysError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1925,40 +1302,24 @@ where
 impl From<crate::operation::list_keys::ListKeysError> for Error {
     fn from(err: crate::operation::list_keys::ListKeysError) -> Self {
         match err {
-            crate::operation::list_keys::ListKeysError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_keys::ListKeysError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_keys::ListKeysError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_keys::ListKeysError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_keys::ListKeysError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_keys::ListKeysError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_keys::ListKeysError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_keys::ListKeysError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_keys::ListKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_maps::ListMapsError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_maps::ListMapsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::list_maps::ListMapsError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_maps::ListMapsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1968,48 +1329,24 @@ where
 impl From<crate::operation::list_maps::ListMapsError> for Error {
     fn from(err: crate::operation::list_maps::ListMapsError) -> Self {
         match err {
-            crate::operation::list_maps::ListMapsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_maps::ListMapsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_maps::ListMapsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_maps::ListMapsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_maps::ListMapsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_maps::ListMapsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_maps::ListMapsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_maps::ListMapsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_maps::ListMapsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_place_indexes::ListPlaceIndexesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_place_indexes::ListPlaceIndexesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_place_indexes::ListPlaceIndexesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_place_indexes::ListPlaceIndexesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2027,32 +1364,16 @@ impl From<crate::operation::list_place_indexes::ListPlaceIndexesError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_route_calculators::ListRouteCalculatorsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_route_calculators::ListRouteCalculatorsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_route_calculators::ListRouteCalculatorsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_route_calculators::ListRouteCalculatorsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2063,39 +1384,25 @@ impl From<crate::operation::list_route_calculators::ListRouteCalculatorsError> f
     fn from(err: crate::operation::list_route_calculators::ListRouteCalculatorsError) -> Self {
         match err {
             crate::operation::list_route_calculators::ListRouteCalculatorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_route_calculators::ListRouteCalculatorsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_route_calculators::ListRouteCalculatorsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_route_calculators::ListRouteCalculatorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_route_calculators::ListRouteCalculatorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_route_calculators::ListRouteCalculatorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2106,40 +1413,28 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tracker_consumers::ListTrackerConsumersError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tracker_consumers::ListTrackerConsumersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tracker_consumers::ListTrackerConsumersError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tracker_consumers::ListTrackerConsumersError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2150,36 +1445,28 @@ impl From<crate::operation::list_tracker_consumers::ListTrackerConsumersError> f
     fn from(err: crate::operation::list_tracker_consumers::ListTrackerConsumersError) -> Self {
         match err {
             crate::operation::list_tracker_consumers::ListTrackerConsumersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_tracker_consumers::ListTrackerConsumersError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_tracker_consumers::ListTrackerConsumersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tracker_consumers::ListTrackerConsumersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tracker_consumers::ListTrackerConsumersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tracker_consumers::ListTrackerConsumersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tracker_consumers::ListTrackerConsumersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tracker_consumers::ListTrackerConsumersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_trackers::ListTrackersError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_trackers::ListTrackersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trackers::ListTrackersError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_trackers::ListTrackersError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2189,46 +1476,24 @@ where
 impl From<crate::operation::list_trackers::ListTrackersError> for Error {
     fn from(err: crate::operation::list_trackers::ListTrackersError) -> Self {
         match err {
-            crate::operation::list_trackers::ListTrackersError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_trackers::ListTrackersError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_trackers::ListTrackersError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_trackers::ListTrackersError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_trackers::ListTrackersError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_trackers::ListTrackersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_trackers::ListTrackersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_trackers::ListTrackersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_trackers::ListTrackersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_trackers::ListTrackersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::put_geofence::PutGeofenceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_geofence::PutGeofenceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_geofence::PutGeofenceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_geofence::PutGeofenceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2238,133 +1503,107 @@ where
 impl From<crate::operation::put_geofence::PutGeofenceError> for Error {
     fn from(err: crate::operation::put_geofence::PutGeofenceError) -> Self {
         match err {
-            crate::operation::put_geofence::PutGeofenceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::put_geofence::PutGeofenceError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::put_geofence::PutGeofenceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::put_geofence::PutGeofenceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::put_geofence::PutGeofenceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::put_geofence::PutGeofenceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::put_geofence::PutGeofenceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::put_geofence::PutGeofenceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_geofence::PutGeofenceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_geofence::PutGeofenceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_geofence::PutGeofenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_geofence::PutGeofenceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_geofence::PutGeofenceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_geofence::PutGeofenceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError>
-    for Error
-{
-    fn from(
-        err: crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError,
-    ) -> Self {
+impl From<crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError> for Error {
+    fn from(err: crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError) -> Self {
         match err {
-            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError, R>>
     for Error
-{
-    fn from(
-        err: crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError,
-    ) -> Self {
-        match err {
-            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-            R,
-        >,
-    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError> for Error {
+    fn from(err: crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError) -> Self {
+        match err {
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2372,41 +1611,37 @@ where
     }
 }
 impl From<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError> for Error {
-    fn from(
-        err: crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-    ) -> Self {
+    fn from(err: crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError) -> Self {
         match err {
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2416,53 +1651,25 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2472,53 +1679,25 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_geofence_collection::UpdateGeofenceCollectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_geofence_collection::UpdateGeofenceCollectionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2526,37 +1705,37 @@ where
     }
 }
 impl From<crate::operation::update_geofence_collection::UpdateGeofenceCollectionError> for Error {
-    fn from(
-        err: crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
-    ) -> Self {
+    fn from(err: crate::operation::update_geofence_collection::UpdateGeofenceCollectionError) -> Self {
         match err {
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_geofence_collection::UpdateGeofenceCollectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2566,45 +1745,25 @@ where
 impl From<crate::operation::update_key::UpdateKeyError> for Error {
     fn from(err: crate::operation::update_key::UpdateKeyError) -> Self {
         match err {
-            crate::operation::update_key::UpdateKeyError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::update_key::UpdateKeyError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::update_key::UpdateKeyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_key::UpdateKeyError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::update_key::UpdateKeyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::update_key::UpdateKeyError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_key::UpdateKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_key::UpdateKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_key::UpdateKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_key::UpdateKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_key::UpdateKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_key::UpdateKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_map::UpdateMapError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_map::UpdateMapError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::update_map::UpdateMapError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_map::UpdateMapError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2614,53 +1773,25 @@ where
 impl From<crate::operation::update_map::UpdateMapError> for Error {
     fn from(err: crate::operation::update_map::UpdateMapError) -> Self {
         match err {
-            crate::operation::update_map::UpdateMapError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::update_map::UpdateMapError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::update_map::UpdateMapError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_map::UpdateMapError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::update_map::UpdateMapError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::update_map::UpdateMapError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_map::UpdateMapError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_map::UpdateMapError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_map::UpdateMapError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_map::UpdateMapError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_map::UpdateMapError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_map::UpdateMapError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_place_index::UpdatePlaceIndexError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_place_index::UpdatePlaceIndexError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_place_index::UpdatePlaceIndexError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_place_index::UpdatePlaceIndexError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2679,32 +1810,16 @@ impl From<crate::operation::update_place_index::UpdatePlaceIndexError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_route_calculator::UpdateRouteCalculatorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_route_calculator::UpdateRouteCalculatorError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2714,41 +1829,31 @@ where
 impl From<crate::operation::update_route_calculator::UpdateRouteCalculatorError> for Error {
     fn from(err: crate::operation::update_route_calculator::UpdateRouteCalculatorError) -> Self {
         match err {
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_route_calculator::UpdateRouteCalculatorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_route_calculator::UpdateRouteCalculatorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_route_calculator::UpdateRouteCalculatorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_route_calculator::UpdateRouteCalculatorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_route_calculator::UpdateRouteCalculatorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_route_calculator::UpdateRouteCalculatorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tracker::UpdateTrackerError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_tracker::UpdateTrackerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tracker::UpdateTrackerError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_tracker::UpdateTrackerError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2758,24 +1863,12 @@ where
 impl From<crate::operation::update_tracker::UpdateTrackerError> for Error {
     fn from(err: crate::operation::update_tracker::UpdateTrackerError) -> Self {
         match err {
-            crate::operation::update_tracker::UpdateTrackerError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::update_tracker::UpdateTrackerError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::update_tracker::UpdateTrackerError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_tracker::UpdateTrackerError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::update_tracker::UpdateTrackerError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::update_tracker::UpdateTrackerError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_tracker::UpdateTrackerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_tracker::UpdateTrackerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_tracker::UpdateTrackerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_tracker::UpdateTrackerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_tracker::UpdateTrackerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_tracker::UpdateTrackerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -30,9 +30,7 @@ impl MinTopRenditionSize {
 
 /// A builder for [`MinTopRenditionSize`](crate::types::MinTopRenditionSize).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MinTopRenditionSizeBuilder {
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) width: ::std::option::Option<i32>,

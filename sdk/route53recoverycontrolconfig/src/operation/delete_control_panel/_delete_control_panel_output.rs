@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteControlPanelOutput {
 }
 impl DeleteControlPanelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteControlPanelOutput`](crate::operation::delete_control_panel::DeleteControlPanelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_control_panel::builders::DeleteControlPanelOutputBuilder {
+    pub fn builder() -> crate::operation::delete_control_panel::builders::DeleteControlPanelOutputBuilder {
         crate::operation::delete_control_panel::builders::DeleteControlPanelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteControlPanelOutput`](crate::operation::delete_control_panel::DeleteControlPanelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteControlPanelOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`custom_entity_types(Option<Vec<CustomEntityType>>)`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput::custom_entity_types): <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
     ///   - [`custom_entity_types_not_found(Option<Vec<String>>)`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput::custom_entity_types_not_found): <p>A list of the names of custom patterns that were not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetCustomEntityTypesError>`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError)
-    pub fn batch_get_custom_entity_types(&self) -> crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesFluentBuilder{
+    pub fn batch_get_custom_entity_types(&self) -> crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesFluentBuilder {
         crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesFluentBuilder::new(self.handle.clone())
     }
 }

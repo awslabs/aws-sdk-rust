@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     ///   - [`world_tags(Option<HashMap<String, String>>)`](crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput::world_tags): <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     /// - On failure, responds with [`SdkError<CreateWorldGenerationJobError>`](crate::operation::create_world_generation_job::CreateWorldGenerationJobError)
-    pub fn create_world_generation_job(&self) -> crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobFluentBuilder{
+    pub fn create_world_generation_job(&self) -> crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobFluentBuilder {
         crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobFluentBuilder::new(self.handle.clone())
     }
 }

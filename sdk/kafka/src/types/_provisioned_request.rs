@@ -37,15 +37,11 @@ pub struct ProvisionedRequest {
 }
 impl ProvisionedRequest {
     /// <p>Information about the brokers.</p>
-    pub fn broker_node_group_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BrokerNodeGroupInfo> {
+    pub fn broker_node_group_info(&self) -> ::std::option::Option<&crate::types::BrokerNodeGroupInfo> {
         self.broker_node_group_info.as_ref()
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn client_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientAuthentication> {
+    pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ClientAuthentication> {
         self.client_authentication.as_ref()
     }
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
@@ -90,9 +86,7 @@ impl ProvisionedRequest {
 
 /// A builder for [`ProvisionedRequest`](crate::types::ProvisionedRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedRequestBuilder {
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
@@ -112,17 +106,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Information about the brokers.</p>
-    pub fn set_broker_node_group_info(
-        mut self,
-        input: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
-    ) -> Self {
+    pub fn set_broker_node_group_info(mut self, input: ::std::option::Option<crate::types::BrokerNodeGroupInfo>) -> Self {
         self.broker_node_group_info = input;
         self
     }
     /// <p>Information about the brokers.</p>
-    pub fn get_broker_node_group_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
+    pub fn get_broker_node_group_info(&self) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
         &self.broker_node_group_info
     }
     /// <p>Includes all client authentication information.</p>
@@ -131,17 +120,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn set_client_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthentication>,
-    ) -> Self {
+    pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::ClientAuthentication>) -> Self {
         self.client_authentication = input;
         self
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn get_client_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+    pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::ClientAuthentication> {
         &self.client_authentication
     }
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
@@ -150,17 +134,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
-    pub fn set_configuration_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationInfo>,
-    ) -> Self {
+    pub fn set_configuration_info(mut self, input: ::std::option::Option<crate::types::ConfigurationInfo>) -> Self {
         self.configuration_info = input;
         self
     }
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
-    pub fn get_configuration_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+    pub fn get_configuration_info(&self) -> &::std::option::Option<crate::types::ConfigurationInfo> {
         &self.configuration_info
     }
     /// <p>Includes all encryption-related information.</p>
@@ -169,10 +148,7 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn set_encryption_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionInfo>,
-    ) -> Self {
+    pub fn set_encryption_info(mut self, input: ::std::option::Option<crate::types::EncryptionInfo>) -> Self {
         self.encryption_info = input;
         self
     }
@@ -186,17 +162,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn set_enhanced_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::EnhancedMonitoring>,
-    ) -> Self {
+    pub fn set_enhanced_monitoring(mut self, input: ::std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
         self.enhanced_monitoring = input;
         self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn get_enhanced_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+    pub fn get_enhanced_monitoring(&self) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
         &self.enhanced_monitoring
     }
     /// <p>The settings for open monitoring.</p>
@@ -205,10 +176,7 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenMonitoringInfo>,
-    ) -> Self {
+    pub fn set_open_monitoring(mut self, input: ::std::option::Option<crate::types::OpenMonitoringInfo>) -> Self {
         self.open_monitoring = input;
         self
     }
@@ -217,18 +185,12 @@ impl ProvisionedRequestBuilder {
         &self.open_monitoring
     }
     /// <p>The Apache Kafka version that you want for the cluster.</p>
-    pub fn kafka_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kafka_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Apache Kafka version that you want for the cluster.</p>
-    pub fn set_kafka_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kafka_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kafka_version = input;
         self
     }
@@ -242,10 +204,7 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Log delivery information for the cluster.</p>
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
@@ -273,10 +232,7 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
-    pub fn set_storage_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageMode>,
-    ) -> Self {
+    pub fn set_storage_mode(mut self, input: ::std::option::Option<crate::types::StorageMode>) -> Self {
         self.storage_mode = input;
         self
     }

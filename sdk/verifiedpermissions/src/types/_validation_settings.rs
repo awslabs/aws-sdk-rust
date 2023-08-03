@@ -38,9 +38,7 @@ impl ValidationSettings {
 
 /// A builder for [`ValidationSettings`](crate::types::ValidationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationSettingsBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::ValidationMode>,
 }

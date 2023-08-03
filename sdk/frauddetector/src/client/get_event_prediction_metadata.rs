@@ -25,7 +25,9 @@ impl super::Client {
     ///   - [`evaluated_external_models(Option<Vec<EvaluatedExternalModel>>)`](crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataOutput::evaluated_external_models): <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
     ///   - [`prediction_timestamp(Option<String>)`](crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataOutput::prediction_timestamp): <p>The timestamp that defines when the prediction was generated. </p>
     /// - On failure, responds with [`SdkError<GetEventPredictionMetadataError>`](crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError)
-    pub fn get_event_prediction_metadata(&self) -> crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataFluentBuilder{
+    pub fn get_event_prediction_metadata(
+        &self,
+    ) -> crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataFluentBuilder {
         crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataFluentBuilder::new(self.handle.clone())
     }
 }

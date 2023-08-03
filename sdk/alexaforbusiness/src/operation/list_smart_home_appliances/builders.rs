@@ -27,8 +27,7 @@ impl ListSmartHomeAppliancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSmartHomeAppliancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesInputBuilder,
+    inner: crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesInputBuilder,
 }
 impl ListSmartHomeAppliancesFluentBuilder {
     /// Creates a new `ListSmartHomeAppliances`.
@@ -39,10 +38,7 @@ impl ListSmartHomeAppliancesFluentBuilder {
         }
     }
     /// Access the ListSmartHomeAppliances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListSmartHomeAppliancesFluentBuilder {
             crate::operation::list_smart_home_appliances::ListSmartHomeAppliances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListSmartHomeAppliancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListSmartHomeAppliancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListSmartHomeAppliancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +106,14 @@ impl ListSmartHomeAppliancesFluentBuilder {
             crate::operation::list_smart_home_appliances::ListSmartHomeAppliances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_smart_home_appliances::paginator::ListSmartHomeAppliancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_smart_home_appliances::paginator::ListSmartHomeAppliancesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_smart_home_appliances::paginator::ListSmartHomeAppliancesPaginator {
         crate::operation::list_smart_home_appliances::paginator::ListSmartHomeAppliancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The room that the appliances are associated with.</p>

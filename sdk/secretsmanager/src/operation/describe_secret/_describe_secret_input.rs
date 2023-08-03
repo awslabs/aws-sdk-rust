@@ -24,9 +24,7 @@ impl DescribeSecretInput {
 
 /// A builder for [`DescribeSecretInput`](crate::operation::describe_secret::DescribeSecretInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecretInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,12 +49,7 @@ impl DescribeSecretInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSecretInput`](crate::operation::describe_secret::DescribeSecretInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_secret::DescribeSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_secret::DescribeSecretInput {
-            secret_id: self.secret_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_secret::DescribeSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_secret::DescribeSecretInput { secret_id: self.secret_id })
     }
 }

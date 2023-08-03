@@ -28,7 +28,7 @@ impl UpdateApplicationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder,
+    inner: crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder,
 }
 impl UpdateApplicationVersionFluentBuilder {
     /// Creates a new `UpdateApplicationVersion`.
@@ -39,10 +39,7 @@ impl UpdateApplicationVersionFluentBuilder {
         }
     }
     /// Access the UpdateApplicationVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl UpdateApplicationVersionFluentBuilder {
             crate::operation::update_application_version::UpdateApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_version::UpdateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_version::UpdateApplicationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl UpdateApplicationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl UpdateApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_version::UpdateApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_version::UpdateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_version::UpdateApplicationVersionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl UpdateApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_version::UpdateApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_version::UpdateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_version::UpdateApplicationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -119,27 +107,19 @@ impl UpdateApplicationVersionFluentBuilder {
             crate::operation::update_application_version::UpdateApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_version::UpdateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_version::UpdateApplicationVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -150,19 +130,13 @@ impl UpdateApplicationVersionFluentBuilder {
     }
     /// <p>The name of the version to update.</p>
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
     /// <p>The name of the version to update.</p>
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }

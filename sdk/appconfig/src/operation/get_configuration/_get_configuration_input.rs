@@ -51,17 +51,14 @@ impl GetConfigurationInput {
 }
 impl GetConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
-    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationInputBuilder {
         crate::operation::get_configuration::builders::GetConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigurationInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) environment: ::std::option::Option<::std::string::String>,
@@ -99,18 +96,12 @@ impl GetConfigurationInputBuilder {
         &self.environment
     }
     /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
@@ -137,10 +128,7 @@ impl GetConfigurationInputBuilder {
     /// <p>To avoid excess charges, we recommend you use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html">StartConfigurationSession</a> and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html">GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to continue using <code>GetConfiguration</code>, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to <code>GetConfiguration</code>.</p>
     /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn client_configuration_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_configuration_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -149,10 +137,7 @@ impl GetConfigurationInputBuilder {
     /// <p>To avoid excess charges, we recommend you use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html">StartConfigurationSession</a> and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html">GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to continue using <code>GetConfiguration</code>, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to <code>GetConfiguration</code>.</p>
     /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn set_client_configuration_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_configuration_version = input;
         self
     }
@@ -161,18 +146,13 @@ impl GetConfigurationInputBuilder {
     /// <p>To avoid excess charges, we recommend you use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html">StartConfigurationSession</a> and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html">GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to continue using <code>GetConfiguration</code>, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to <code>GetConfiguration</code>.</p>
     /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn get_client_configuration_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_client_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_configuration_version
     }
     /// Consumes the builder and constructs a [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configuration::GetConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_configuration::GetConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_configuration::GetConfigurationInput {
             application: self.application,
             environment: self.environment,

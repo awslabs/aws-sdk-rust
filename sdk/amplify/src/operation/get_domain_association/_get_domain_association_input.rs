@@ -23,17 +23,14 @@ impl GetDomainAssociationInput {
 }
 impl GetDomainAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetDomainAssociationInput`](crate::operation::get_domain_association::GetDomainAssociationInput).
-    pub fn builder(
-    ) -> crate::operation::get_domain_association::builders::GetDomainAssociationInputBuilder {
+    pub fn builder() -> crate::operation::get_domain_association::builders::GetDomainAssociationInputBuilder {
         crate::operation::get_domain_association::builders::GetDomainAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDomainAssociationInput`](crate::operation::get_domain_association::GetDomainAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainAssociationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,11 @@ impl GetDomainAssociationInputBuilder {
     /// Consumes the builder and constructs a [`GetDomainAssociationInput`](crate::operation::get_domain_association::GetDomainAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_association::GetDomainAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_domain_association::GetDomainAssociationInput {
-                app_id: self.app_id,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_domain_association::GetDomainAssociationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_domain_association::GetDomainAssociationInput {
+            app_id: self.app_id,
+            domain_name: self.domain_name,
+        })
     }
 }

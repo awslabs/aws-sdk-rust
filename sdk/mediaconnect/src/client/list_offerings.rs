@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_offerings::ListOfferingsOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     ///   - [`offerings(Option<Vec<Offering>>)`](crate::operation::list_offerings::ListOfferingsOutput::offerings): A list of offerings that are available to this account in the current AWS Region.
     /// - On failure, responds with [`SdkError<ListOfferingsError>`](crate::operation::list_offerings::ListOfferingsError)
-    pub fn list_offerings(
-        &self,
-    ) -> crate::operation::list_offerings::builders::ListOfferingsFluentBuilder {
-        crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_offerings(&self) -> crate::operation::list_offerings::builders::ListOfferingsFluentBuilder {
+        crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

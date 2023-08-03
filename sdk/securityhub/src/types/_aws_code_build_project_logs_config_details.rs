@@ -6,24 +6,18 @@
 pub struct AwsCodeBuildProjectLogsConfigDetails {
     /// <p>Information about CloudWatch Logs for the build project.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs:
-        ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>,
+    pub cloud_watch_logs: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>,
     /// <p>Information about logs built to an S3 bucket for a build project.</p>
     #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails>,
 }
 impl AwsCodeBuildProjectLogsConfigDetails {
     /// <p>Information about CloudWatch Logs for the build project.</p>
-    pub fn cloud_watch_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>
-    {
+    pub fn cloud_watch_logs(&self) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails> {
         self.cloud_watch_logs.as_ref()
     }
     /// <p>Information about logs built to an S3 bucket for a build project.</p>
-    pub fn s3_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails> {
+    pub fn s3_logs(&self) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails> {
         self.s3_logs.as_ref()
     }
 }
@@ -36,61 +30,38 @@ impl AwsCodeBuildProjectLogsConfigDetails {
 
 /// A builder for [`AwsCodeBuildProjectLogsConfigDetails`](crate::types::AwsCodeBuildProjectLogsConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectLogsConfigDetailsBuilder {
-    pub(crate) cloud_watch_logs:
-        ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>,
-    pub(crate) s3_logs:
-        ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails>,
+    pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>,
+    pub(crate) s3_logs: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails>,
 }
 impl AwsCodeBuildProjectLogsConfigDetailsBuilder {
     /// <p>Information about CloudWatch Logs for the build project.</p>
-    pub fn cloud_watch_logs(
-        mut self,
-        input: crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails,
-    ) -> Self {
+    pub fn cloud_watch_logs(mut self, input: crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails) -> Self {
         self.cloud_watch_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about CloudWatch Logs for the build project.</p>
-    pub fn set_cloud_watch_logs(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails,
-        >,
-    ) -> Self {
+    pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>) -> Self {
         self.cloud_watch_logs = input;
         self
     }
     /// <p>Information about CloudWatch Logs for the build project.</p>
-    pub fn get_cloud_watch_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>
-    {
+    pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails> {
         &self.cloud_watch_logs
     }
     /// <p>Information about logs built to an S3 bucket for a build project.</p>
-    pub fn s3_logs(
-        mut self,
-        input: crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails,
-    ) -> Self {
+    pub fn s3_logs(mut self, input: crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails) -> Self {
         self.s3_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about logs built to an S3 bucket for a build project.</p>
-    pub fn set_s3_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails>,
-    ) -> Self {
+    pub fn set_s3_logs(mut self, input: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails>) -> Self {
         self.s3_logs = input;
         self
     }
     /// <p>Information about logs built to an S3 bucket for a build project.</p>
-    pub fn get_s3_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails> {
+    pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails> {
         &self.s3_logs
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigDetails`](crate::types::AwsCodeBuildProjectLogsConfigDetails).

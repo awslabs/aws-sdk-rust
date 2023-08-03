@@ -37,9 +37,7 @@ impl Computer {
 
 /// A builder for [`Computer`](crate::types::Computer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputerBuilder {
     pub(crate) computer_id: ::std::option::Option<::std::string::String>,
     pub(crate) computer_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ComputerBuilder {
         &self.computer_id
     }
     /// <p>The computer name.</p>
-    pub fn computer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The computer name.</p>
-    pub fn set_computer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_computer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.computer_name = input;
         self
     }
@@ -92,17 +84,12 @@ impl ComputerBuilder {
         self
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    pub fn set_computer_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_computer_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.computer_attributes = input;
         self
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    pub fn get_computer_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_computer_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.computer_attributes
     }
     /// Consumes the builder and constructs a [`Computer`](crate::types::Computer).

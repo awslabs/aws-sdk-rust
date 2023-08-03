@@ -55,9 +55,7 @@ impl Rule {
 
 /// A builder for [`Rule`](crate::types::Rule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -122,17 +120,12 @@ impl RuleBuilder {
         self
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-    pub fn set_predicates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
-    ) -> Self {
+    pub fn set_predicates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>) -> Self {
         self.predicates = input;
         self
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-    pub fn get_predicates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+    pub fn get_predicates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
         &self.predicates
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).

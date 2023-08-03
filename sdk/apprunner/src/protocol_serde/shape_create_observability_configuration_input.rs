@@ -4,17 +4,12 @@ pub fn ser_create_observability_configuration_input(
     input: &crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.observability_configuration_name {
-        object
-            .key("ObservabilityConfigurationName")
-            .string(var_1.as_str());
+        object.key("ObservabilityConfigurationName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.trace_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("TraceConfiguration").start_object();
-        crate::protocol_serde::shape_trace_configuration::ser_trace_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_trace_configuration::ser_trace_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.tags {

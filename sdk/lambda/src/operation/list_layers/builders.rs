@@ -10,10 +10,7 @@ impl ListLayersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_layers::ListLayersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_layers::ListLayersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_layers();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListLayersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_layers::ListLayers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_layers::ListLayers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListLayersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListLayersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_layers::ListLayers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_layers::ListLayers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError>,
     > {
         self.customize_middleware().await
@@ -126,10 +114,7 @@ impl ListLayersFluentBuilder {
     }
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn set_compatible_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::Runtime>,
-    ) -> Self {
+    pub fn set_compatible_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
         self.inner = self.inner.set_compatible_runtime(input);
         self
     }
@@ -172,17 +157,12 @@ impl ListLayersFluentBuilder {
         self
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn set_compatible_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_compatible_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.inner = self.inner.set_compatible_architecture(input);
         self
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn get_compatible_architecture(
-        &self,
-    ) -> &::std::option::Option<crate::types::Architecture> {
+    pub fn get_compatible_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
         self.inner.get_compatible_architecture()
     }
 }

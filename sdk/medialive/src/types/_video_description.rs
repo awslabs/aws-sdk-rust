@@ -40,15 +40,11 @@ impl VideoDescription {
         self.name.as_deref()
     }
     /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
-    pub fn respond_to_afd(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VideoDescriptionRespondToAfd> {
+    pub fn respond_to_afd(&self) -> ::std::option::Option<&crate::types::VideoDescriptionRespondToAfd> {
         self.respond_to_afd.as_ref()
     }
     /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
-    pub fn scaling_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VideoDescriptionScalingBehavior> {
+    pub fn scaling_behavior(&self) -> ::std::option::Option<&crate::types::VideoDescriptionScalingBehavior> {
         self.scaling_behavior.as_ref()
     }
     /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
@@ -69,16 +65,13 @@ impl VideoDescription {
 
 /// A builder for [`VideoDescription`](crate::types::VideoDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoDescriptionBuilder {
     pub(crate) codec_settings: ::std::option::Option<crate::types::VideoCodecSettings>,
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) respond_to_afd: ::std::option::Option<crate::types::VideoDescriptionRespondToAfd>,
-    pub(crate) scaling_behavior:
-        ::std::option::Option<crate::types::VideoDescriptionScalingBehavior>,
+    pub(crate) scaling_behavior: ::std::option::Option<crate::types::VideoDescriptionScalingBehavior>,
     pub(crate) sharpness: ::std::option::Option<i32>,
     pub(crate) width: ::std::option::Option<i32>,
 }
@@ -89,10 +82,7 @@ impl VideoDescriptionBuilder {
         self
     }
     /// Video codec settings.
-    pub fn set_codec_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoCodecSettings>,
-    ) -> Self {
+    pub fn set_codec_settings(mut self, input: ::std::option::Option<crate::types::VideoCodecSettings>) -> Self {
         self.codec_settings = input;
         self
     }
@@ -134,39 +124,26 @@ impl VideoDescriptionBuilder {
         self
     }
     /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
-    pub fn set_respond_to_afd(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoDescriptionRespondToAfd>,
-    ) -> Self {
+    pub fn set_respond_to_afd(mut self, input: ::std::option::Option<crate::types::VideoDescriptionRespondToAfd>) -> Self {
         self.respond_to_afd = input;
         self
     }
     /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
-    pub fn get_respond_to_afd(
-        &self,
-    ) -> &::std::option::Option<crate::types::VideoDescriptionRespondToAfd> {
+    pub fn get_respond_to_afd(&self) -> &::std::option::Option<crate::types::VideoDescriptionRespondToAfd> {
         &self.respond_to_afd
     }
     /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
-    pub fn scaling_behavior(
-        mut self,
-        input: crate::types::VideoDescriptionScalingBehavior,
-    ) -> Self {
+    pub fn scaling_behavior(mut self, input: crate::types::VideoDescriptionScalingBehavior) -> Self {
         self.scaling_behavior = ::std::option::Option::Some(input);
         self
     }
     /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
-    pub fn set_scaling_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoDescriptionScalingBehavior>,
-    ) -> Self {
+    pub fn set_scaling_behavior(mut self, input: ::std::option::Option<crate::types::VideoDescriptionScalingBehavior>) -> Self {
         self.scaling_behavior = input;
         self
     }
     /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
-    pub fn get_scaling_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::VideoDescriptionScalingBehavior> {
+    pub fn get_scaling_behavior(&self) -> &::std::option::Option<crate::types::VideoDescriptionScalingBehavior> {
         &self.scaling_behavior
     }
     /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.

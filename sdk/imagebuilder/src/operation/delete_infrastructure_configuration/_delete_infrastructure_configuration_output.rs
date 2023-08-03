@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteInfrastructureConfigurationOutp
 }
 impl DeleteInfrastructureConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInfrastructureConfigurationOutput`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationOutputBuilder {
         crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInfrastructureConfigurationOutput`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInfrastructureConfigurationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
@@ -59,25 +57,17 @@ impl DeleteInfrastructureConfigurationOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
-    pub fn infrastructure_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
-    pub fn set_infrastructure_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
-    pub fn get_infrastructure_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -90,12 +80,10 @@ impl DeleteInfrastructureConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteInfrastructureConfigurationOutput`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput {
         crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput {
-            request_id: self.request_id
-            ,
-            infrastructure_configuration_arn: self.infrastructure_configuration_arn
-            ,
+            request_id: self.request_id,
+            infrastructure_configuration_arn: self.infrastructure_configuration_arn,
             _request_id: self._request_id,
         }
     }

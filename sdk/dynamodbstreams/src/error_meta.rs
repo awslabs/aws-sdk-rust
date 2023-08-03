@@ -39,32 +39,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream::DescribeStreamError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_stream::DescribeStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream::DescribeStreamError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_stream::DescribeStreamError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -74,36 +58,22 @@ where
 impl From<crate::operation::describe_stream::DescribeStreamError> for Error {
     fn from(err: crate::operation::describe_stream::DescribeStreamError) -> Self {
         match err {
-            crate::operation::describe_stream::DescribeStreamError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::operation::describe_stream::DescribeStreamError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_stream::DescribeStreamError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_stream::DescribeStreamError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_stream::DescribeStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_stream::DescribeStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_records::GetRecordsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -113,53 +83,25 @@ where
 impl From<crate::operation::get_records::GetRecordsError> for Error {
     fn from(err: crate::operation::get_records::GetRecordsError) -> Self {
         match err {
-            crate::operation::get_records::GetRecordsError::ExpiredIteratorException(inner) => {
-                Error::ExpiredIteratorException(inner)
-            }
-            crate::operation::get_records::GetRecordsError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::operation::get_records::GetRecordsError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::get_records::GetRecordsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_records::GetRecordsError::TrimmedDataAccessException(inner) => {
-                Error::TrimmedDataAccessException(inner)
-            }
-            crate::operation::get_records::GetRecordsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_records::GetRecordsError::ExpiredIteratorException(inner) => Error::ExpiredIteratorException(inner),
+            crate::operation::get_records::GetRecordsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_records::GetRecordsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_records::GetRecordsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_records::GetRecordsError::TrimmedDataAccessException(inner) => Error::TrimmedDataAccessException(inner),
+            crate::operation::get_records::GetRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -171,33 +113,23 @@ impl From<crate::operation::get_shard_iterator::GetShardIteratorError> for Error
         match err {
             crate::operation::get_shard_iterator::GetShardIteratorError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::get_shard_iterator::GetShardIteratorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_shard_iterator::GetShardIteratorError::TrimmedDataAccessException(inner) => Error::TrimmedDataAccessException(inner),
+            crate::operation::get_shard_iterator::GetShardIteratorError::TrimmedDataAccessException(inner) => {
+                Error::TrimmedDataAccessException(inner)
+            }
             crate::operation::get_shard_iterator::GetShardIteratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_streams::ListStreamsError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_streams::ListStreamsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streams::ListStreamsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_streams::ListStreamsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -207,15 +139,9 @@ where
 impl From<crate::operation::list_streams::ListStreamsError> for Error {
     fn from(err: crate::operation::list_streams::ListStreamsError) -> Self {
         match err {
-            crate::operation::list_streams::ListStreamsError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::operation::list_streams::ListStreamsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_streams::ListStreamsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_streams::ListStreamsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_streams::ListStreamsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_streams::ListStreamsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

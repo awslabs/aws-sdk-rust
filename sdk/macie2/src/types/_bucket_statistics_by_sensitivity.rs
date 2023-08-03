@@ -19,9 +19,7 @@ pub struct BucketStatisticsBySensitivity {
 }
 impl BucketStatisticsBySensitivity {
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of -1.</p>
-    pub fn classification_error(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SensitivityAggregations> {
+    pub fn classification_error(&self) -> ::std::option::Option<&crate::types::SensitivityAggregations> {
         self.classification_error.as_ref()
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 50.</p>
@@ -46,9 +44,7 @@ impl BucketStatisticsBySensitivity {
 
 /// A builder for [`BucketStatisticsBySensitivity`](crate::types::BucketStatisticsBySensitivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketStatisticsBySensitivityBuilder {
     pub(crate) classification_error: ::std::option::Option<crate::types::SensitivityAggregations>,
     pub(crate) not_classified: ::std::option::Option<crate::types::SensitivityAggregations>,
@@ -62,17 +58,12 @@ impl BucketStatisticsBySensitivityBuilder {
         self
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of -1.</p>
-    pub fn set_classification_error(
-        mut self,
-        input: ::std::option::Option<crate::types::SensitivityAggregations>,
-    ) -> Self {
+    pub fn set_classification_error(mut self, input: ::std::option::Option<crate::types::SensitivityAggregations>) -> Self {
         self.classification_error = input;
         self
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of -1.</p>
-    pub fn get_classification_error(
-        &self,
-    ) -> &::std::option::Option<crate::types::SensitivityAggregations> {
+    pub fn get_classification_error(&self) -> &::std::option::Option<crate::types::SensitivityAggregations> {
         &self.classification_error
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 50.</p>
@@ -81,17 +72,12 @@ impl BucketStatisticsBySensitivityBuilder {
         self
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 50.</p>
-    pub fn set_not_classified(
-        mut self,
-        input: ::std::option::Option<crate::types::SensitivityAggregations>,
-    ) -> Self {
+    pub fn set_not_classified(mut self, input: ::std::option::Option<crate::types::SensitivityAggregations>) -> Self {
         self.not_classified = input;
         self
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 50.</p>
-    pub fn get_not_classified(
-        &self,
-    ) -> &::std::option::Option<crate::types::SensitivityAggregations> {
+    pub fn get_not_classified(&self) -> &::std::option::Option<crate::types::SensitivityAggregations> {
         &self.not_classified
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 1-49.</p>
@@ -100,17 +86,12 @@ impl BucketStatisticsBySensitivityBuilder {
         self
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 1-49.</p>
-    pub fn set_not_sensitive(
-        mut self,
-        input: ::std::option::Option<crate::types::SensitivityAggregations>,
-    ) -> Self {
+    pub fn set_not_sensitive(mut self, input: ::std::option::Option<crate::types::SensitivityAggregations>) -> Self {
         self.not_sensitive = input;
         self
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 1-49.</p>
-    pub fn get_not_sensitive(
-        &self,
-    ) -> &::std::option::Option<crate::types::SensitivityAggregations> {
+    pub fn get_not_sensitive(&self) -> &::std::option::Option<crate::types::SensitivityAggregations> {
         &self.not_sensitive
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 51-100.</p>
@@ -119,10 +100,7 @@ impl BucketStatisticsBySensitivityBuilder {
         self
     }
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 51-100.</p>
-    pub fn set_sensitive(
-        mut self,
-        input: ::std::option::Option<crate::types::SensitivityAggregations>,
-    ) -> Self {
+    pub fn set_sensitive(mut self, input: ::std::option::Option<crate::types::SensitivityAggregations>) -> Self {
         self.sensitive = input;
         self
     }

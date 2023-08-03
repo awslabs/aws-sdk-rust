@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetServiceSettingOutput {
 }
 impl GetServiceSettingOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingOutput`](crate::operation::get_service_setting::GetServiceSettingOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_setting::builders::GetServiceSettingOutputBuilder {
+    pub fn builder() -> crate::operation::get_service_setting::builders::GetServiceSettingOutputBuilder {
         crate::operation::get_service_setting::builders::GetServiceSettingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceSettingOutput`](crate::operation::get_service_setting::GetServiceSettingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceSettingOutputBuilder {
     pub(crate) service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl GetServiceSettingOutputBuilder {
         self
     }
     /// <p>The query result of the current service setting.</p>
-    pub fn set_service_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceSetting>,
-    ) -> Self {
+    pub fn set_service_setting(mut self, input: ::std::option::Option<crate::types::ServiceSetting>) -> Self {
         self.service_setting = input;
         self
     }

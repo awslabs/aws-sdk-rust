@@ -23,9 +23,7 @@ impl ArchiveRule {
 
 /// A builder for [`ArchiveRule`](crate::types::ArchiveRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchiveRuleBuilder {
     pub(crate) retain_rule: ::std::option::Option<crate::types::ArchiveRetainRule>,
 }
@@ -36,10 +34,7 @@ impl ArchiveRuleBuilder {
         self
     }
     /// <p>Information about the retention period for the snapshot archiving rule.</p>
-    pub fn set_retain_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::ArchiveRetainRule>,
-    ) -> Self {
+    pub fn set_retain_rule(mut self, input: ::std::option::Option<crate::types::ArchiveRetainRule>) -> Self {
         self.retain_rule = input;
         self
     }

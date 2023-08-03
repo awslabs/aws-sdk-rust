@@ -17,9 +17,7 @@ pub fn ser_tag(
     Ok(())
 }
 
-pub fn de_tag(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Tag, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Tag, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Tag::builder();
     while let Some(mut tag) = decoder.next_tag() {

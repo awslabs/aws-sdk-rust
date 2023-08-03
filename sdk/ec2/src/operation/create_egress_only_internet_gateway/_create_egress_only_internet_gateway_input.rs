@@ -36,22 +36,19 @@ impl CreateEgressOnlyInternetGatewayInput {
 }
 impl CreateEgressOnlyInternetGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateEgressOnlyInternetGatewayInput`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayInput).
-    pub fn builder() -> crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayInputBuilder{
+    pub fn builder() -> crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayInputBuilder {
         crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEgressOnlyInternetGatewayInput`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEgressOnlyInternetGatewayInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateEgressOnlyInternetGatewayInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -108,17 +105,12 @@ impl CreateEgressOnlyInternetGatewayInputBuilder {
         self
     }
     /// <p>The tags to assign to the egress-only internet gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to the egress-only internet gateway.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateEgressOnlyInternetGatewayInput`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayInput).
@@ -130,15 +122,11 @@ impl CreateEgressOnlyInternetGatewayInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayInput {
-                client_token: self.client_token
-                ,
-                dry_run: self.dry_run
-                ,
-                vpc_id: self.vpc_id
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-            }
+                client_token: self.client_token,
+                dry_run: self.dry_run,
+                vpc_id: self.vpc_id,
+                tag_specifications: self.tag_specifications,
+            },
         )
     }
 }

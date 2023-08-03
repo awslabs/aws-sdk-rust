@@ -13,9 +13,7 @@ pub struct AwsApiGatewayCanarySettings {
     /// <p>Stage variables that are overridden in the canary release deployment. The variables include new stage variables that are introduced in the canary.</p>
     /// <p>Each variable is represented as a string-to-string map between the stage variable name and the variable value.</p>
     #[doc(hidden)]
-    pub stage_variable_overrides: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub stage_variable_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether the canary deployment uses the stage cache.</p>
     #[doc(hidden)]
     pub use_stage_cache: bool,
@@ -31,11 +29,7 @@ impl AwsApiGatewayCanarySettings {
     }
     /// <p>Stage variables that are overridden in the canary release deployment. The variables include new stage variables that are introduced in the canary.</p>
     /// <p>Each variable is represented as a string-to-string map between the stage variable name and the variable value.</p>
-    pub fn stage_variable_overrides(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn stage_variable_overrides(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stage_variable_overrides.as_ref()
     }
     /// <p>Indicates whether the canary deployment uses the stage cache.</p>
@@ -52,15 +46,11 @@ impl AwsApiGatewayCanarySettings {
 
 /// A builder for [`AwsApiGatewayCanarySettings`](crate::types::AwsApiGatewayCanarySettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayCanarySettingsBuilder {
     pub(crate) percent_traffic: ::std::option::Option<f64>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) stage_variable_overrides: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) stage_variable_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) use_stage_cache: ::std::option::Option<bool>,
 }
 impl AwsApiGatewayCanarySettingsBuilder {
@@ -79,18 +69,12 @@ impl AwsApiGatewayCanarySettingsBuilder {
         &self.percent_traffic
     }
     /// <p>The deployment identifier for the canary deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment identifier for the canary deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -118,20 +102,14 @@ impl AwsApiGatewayCanarySettingsBuilder {
     /// <p>Each variable is represented as a string-to-string map between the stage variable name and the variable value.</p>
     pub fn set_stage_variable_overrides(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.stage_variable_overrides = input;
         self
     }
     /// <p>Stage variables that are overridden in the canary release deployment. The variables include new stage variables that are introduced in the canary.</p>
     /// <p>Each variable is represented as a string-to-string map between the stage variable name and the variable value.</p>
-    pub fn get_stage_variable_overrides(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_stage_variable_overrides(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.stage_variable_overrides
     }
     /// <p>Indicates whether the canary deployment uses the stage cache.</p>

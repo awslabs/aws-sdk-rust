@@ -30,13 +30,10 @@ impl DetectTextFilters {
 
 /// A builder for [`DetectTextFilters`](crate::types::DetectTextFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectTextFiltersBuilder {
     pub(crate) word_filter: ::std::option::Option<crate::types::DetectionFilter>,
-    pub(crate) regions_of_interest:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
+    pub(crate) regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
 }
 impl DetectTextFiltersBuilder {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
@@ -45,10 +42,7 @@ impl DetectTextFiltersBuilder {
         self
     }
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
-    pub fn set_word_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectionFilter>,
-    ) -> Self {
+    pub fn set_word_filter(mut self, input: ::std::option::Option<crate::types::DetectionFilter>) -> Self {
         self.word_filter = input;
         self
     }
@@ -68,17 +62,12 @@ impl DetectTextFiltersBuilder {
         self
     }
     /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-    pub fn set_regions_of_interest(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
-    ) -> Self {
+    pub fn set_regions_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>) -> Self {
         self.regions_of_interest = input;
         self
     }
     /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-    pub fn get_regions_of_interest(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
+    pub fn get_regions_of_interest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
         &self.regions_of_interest
     }
     /// Consumes the builder and constructs a [`DetectTextFilters`](crate::types::DetectTextFilters).

@@ -10,10 +10,7 @@ impl StartMatchingJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_matching_job::StartMatchingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matching_job::StartMatchingJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matching_job::StartMatchingJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_matching_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartMatchingJobFluentBuilder {
         }
     }
     /// Access the StartMatchingJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_matching_job::builders::StartMatchingJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_matching_job::builders::StartMatchingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartMatchingJobFluentBuilder {
             crate::operation::start_matching_job::StartMatchingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matching_job::StartMatchingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matching_job::StartMatchingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartMatchingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartMatchingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_matching_job::StartMatchingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matching_job::StartMatchingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matching_job::StartMatchingJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartMatchingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_matching_job::StartMatchingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matching_job::StartMatchingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matching_job::StartMatchingJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartMatchingJobFluentBuilder {
             crate::operation::start_matching_job::StartMatchingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matching_job::StartMatchingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matching_job::StartMatchingJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the matching job to be retrieved.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_name(input.into());
         self
     }
     /// <p>The name of the matching job to be retrieved.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_name(input);
         self
     }

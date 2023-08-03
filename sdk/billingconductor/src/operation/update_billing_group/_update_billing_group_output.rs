@@ -73,9 +73,7 @@ impl UpdateBillingGroupOutput {
         self.status_reason.as_deref()
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn account_grouping(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateBillingGroupAccountGrouping> {
+    pub fn account_grouping(&self) -> ::std::option::Option<&crate::types::UpdateBillingGroupAccountGrouping> {
         self.account_grouping.as_ref()
     }
 }
@@ -103,8 +101,7 @@ impl ::aws_http::request_id::RequestId for UpdateBillingGroupOutput {
 }
 impl UpdateBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBillingGroupOutput`](crate::operation::update_billing_group::UpdateBillingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_billing_group::builders::UpdateBillingGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_billing_group::builders::UpdateBillingGroupOutputBuilder {
         crate::operation::update_billing_group::builders::UpdateBillingGroupOutputBuilder::default()
     }
 }
@@ -122,8 +119,7 @@ pub struct UpdateBillingGroupOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::BillingGroupStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) account_grouping:
-        ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
+    pub(crate) account_grouping: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
     _request_id: Option<String>,
 }
 impl UpdateBillingGroupOutputBuilder {
@@ -170,18 +166,12 @@ impl UpdateBillingGroupOutputBuilder {
         &self.description
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn primary_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn set_primary_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_account_id = input;
         self
     }
@@ -190,18 +180,12 @@ impl UpdateBillingGroupOutputBuilder {
         &self.primary_account_id
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
-    pub fn pricing_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
-    pub fn set_pricing_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pricing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_plan_arn = input;
         self
     }
@@ -243,10 +227,7 @@ impl UpdateBillingGroupOutputBuilder {
         self
     }
     /// <p> The status of the billing group. Only one of the valid values can be used. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BillingGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -255,18 +236,12 @@ impl UpdateBillingGroupOutputBuilder {
         &self.status
     }
     /// <p> The reason why the billing group is in its current status. </p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason why the billing group is in its current status. </p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -275,25 +250,17 @@ impl UpdateBillingGroupOutputBuilder {
         &self.status_reason
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn account_grouping(
-        mut self,
-        input: crate::types::UpdateBillingGroupAccountGrouping,
-    ) -> Self {
+    pub fn account_grouping(mut self, input: crate::types::UpdateBillingGroupAccountGrouping) -> Self {
         self.account_grouping = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn set_account_grouping(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
-    ) -> Self {
+    pub fn set_account_grouping(mut self, input: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>) -> Self {
         self.account_grouping = input;
         self
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn get_account_grouping(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping> {
+    pub fn get_account_grouping(&self) -> &::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping> {
         &self.account_grouping
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

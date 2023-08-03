@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`time_series_replacements_data_source(Option<TimeSeriesReplacementsDataSource>)`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastOutput::time_series_replacements_data_source): <p>An array of <code>S3Config</code>, <code>Schema</code>, and <code>Format</code> elements that describe the replacement time series.</p>
     ///   - [`forecast_types(Option<Vec<String>>)`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastOutput::forecast_types): <p>The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeWhatIfForecastError>`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastError)
-    pub fn describe_what_if_forecast(
-        &self,
-    ) -> crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastFluentBuilder
-    {
+    pub fn describe_what_if_forecast(&self) -> crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastFluentBuilder {
         crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastFluentBuilder::new(self.handle.clone())
     }
 }

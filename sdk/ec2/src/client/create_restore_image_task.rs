@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRestoreImageTaskOutput`](crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput) with field(s):
     ///   - [`image_id(Option<String>)`](crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput::image_id): <p>The AMI ID.</p>
     /// - On failure, responds with [`SdkError<CreateRestoreImageTaskError>`](crate::operation::create_restore_image_task::CreateRestoreImageTaskError)
-    pub fn create_restore_image_task(
-        &self,
-    ) -> crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskFluentBuilder
-    {
+    pub fn create_restore_image_task(&self) -> crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskFluentBuilder {
         crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskFluentBuilder::new(self.handle.clone())
     }
 }

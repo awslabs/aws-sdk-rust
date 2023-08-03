@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`sending_enabled(bool)`](crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsFluentBuilder::sending_enabled) / [`set_sending_enabled(Option<bool>)`](crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsFluentBuilder::set_sending_enabled): <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     /// - On success, responds with [`PutConfigurationSetSendingOptionsOutput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationSetSendingOptionsError>`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsError)
-    pub fn put_configuration_set_sending_options(&self) -> crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsFluentBuilder{
+    pub fn put_configuration_set_sending_options(
+        &self,
+    ) -> crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsFluentBuilder {
         crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsFluentBuilder::new(self.handle.clone())
     }
 }

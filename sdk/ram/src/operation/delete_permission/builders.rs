@@ -10,10 +10,7 @@ impl DeletePermissionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_permission::DeletePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission::DeletePermissionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission::DeletePermissionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_permission();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeletePermissionFluentBuilder {
         }
     }
     /// Access the DeletePermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_permission::builders::DeletePermissionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_permission::builders::DeletePermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeletePermissionFluentBuilder {
             crate::operation::delete_permission::DeletePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission::DeletePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission::DeletePermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeletePermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeletePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission::DeletePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission::DeletePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission::DeletePermissionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeletePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission::DeletePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission::DeletePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission::DeletePermissionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeletePermissionFluentBuilder {
             crate::operation::delete_permission::DeletePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_permission::DeletePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_permission::DeletePermissionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission that you want to delete.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission that you want to delete.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_arn(input);
         self
     }

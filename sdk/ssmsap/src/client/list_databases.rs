@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`databases(Option<Vec<DatabaseSummary>>)`](crate::operation::list_databases::ListDatabasesOutput::databases): <p>The SAP HANA databases of an application.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_databases::ListDatabasesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListDatabasesError>`](crate::operation::list_databases::ListDatabasesError)
-    pub fn list_databases(
-        &self,
-    ) -> crate::operation::list_databases::builders::ListDatabasesFluentBuilder {
-        crate::operation::list_databases::builders::ListDatabasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_databases(&self) -> crate::operation::list_databases::builders::ListDatabasesFluentBuilder {
+        crate::operation::list_databases::builders::ListDatabasesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,9 +7,7 @@ pub fn ser_ibm3624_natural_pin(
         object.key("DecimalizationTable").string(var_1.as_str());
     }
     if let Some(var_2) = &input.pin_validation_data_pad_character {
-        object
-            .key("PinValidationDataPadCharacter")
-            .string(var_2.as_str());
+        object.key("PinValidationDataPadCharacter").string(var_2.as_str());
     }
     if let Some(var_3) = &input.pin_validation_data {
         object.key("PinValidationData").string(var_3.as_str());

@@ -35,9 +35,7 @@ impl ListTasksOutput {
 
 /// A builder for [`ListTasksOutput`](crate::operation::list_tasks::ListTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTasksOutputBuilder {
     pub(crate) task_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListTasksOutputBuilder {
         self
     }
     /// <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
-    pub fn set_task_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.task_arns = input;
         self
     }

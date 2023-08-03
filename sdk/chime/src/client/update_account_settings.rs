@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`account_settings(AccountSettings)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::account_settings) / [`set_account_settings(Option<AccountSettings>)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::set_account_settings): <p>The Amazon Chime account settings to update.</p>
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::operation::update_account_settings::UpdateAccountSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::operation::update_account_settings::UpdateAccountSettingsError)
-    pub fn update_account_settings(
-        &self,
-    ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder
-    {
-        crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_account_settings(&self) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder {
+        crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::new(self.handle.clone())
     }
 }

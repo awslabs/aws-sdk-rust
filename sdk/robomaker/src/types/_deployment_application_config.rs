@@ -37,9 +37,7 @@ impl DeploymentApplicationConfig {
 
 /// A builder for [`DeploymentApplicationConfig`](crate::types::DeploymentApplicationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentApplicationConfigBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl DeploymentApplicationConfigBuilder {
         &self.application
     }
     /// <p>The version of the application.</p>
-    pub fn application_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the application.</p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_version = input;
         self
     }
@@ -86,17 +78,12 @@ impl DeploymentApplicationConfigBuilder {
         self
     }
     /// <p>The launch configuration.</p>
-    pub fn set_launch_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentLaunchConfig>,
-    ) -> Self {
+    pub fn set_launch_config(mut self, input: ::std::option::Option<crate::types::DeploymentLaunchConfig>) -> Self {
         self.launch_config = input;
         self
     }
     /// <p>The launch configuration.</p>
-    pub fn get_launch_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentLaunchConfig> {
+    pub fn get_launch_config(&self) -> &::std::option::Option<crate::types::DeploymentLaunchConfig> {
         &self.launch_config
     }
     /// Consumes the builder and constructs a [`DeploymentApplicationConfig`](crate::types::DeploymentApplicationConfig).

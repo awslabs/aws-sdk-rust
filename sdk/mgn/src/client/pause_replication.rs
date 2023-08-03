@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`user_provided_id(Option<String>)`](crate::operation::pause_replication::PauseReplicationOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::pause_replication::PauseReplicationOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<PauseReplicationError>`](crate::operation::pause_replication::PauseReplicationError)
-    pub fn pause_replication(
-        &self,
-    ) -> crate::operation::pause_replication::builders::PauseReplicationFluentBuilder {
-        crate::operation::pause_replication::builders::PauseReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn pause_replication(&self) -> crate::operation::pause_replication::builders::PauseReplicationFluentBuilder {
+        crate::operation::pause_replication::builders::PauseReplicationFluentBuilder::new(self.handle.clone())
     }
 }

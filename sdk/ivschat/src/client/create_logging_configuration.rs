@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`state(Option<CreateLoggingConfigurationState>)`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput::state): <p>The state of the logging configuration. When the state is <code>ACTIVE</code>, the configuration is ready to log chat content.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput::tags): <p>Tags attached to the resource, from the request (if specified). Array of maps, each of the form <code>string:string (key:value)</code>.</p>
     /// - On failure, responds with [`SdkError<CreateLoggingConfigurationError>`](crate::operation::create_logging_configuration::CreateLoggingConfigurationError)
-    pub fn create_logging_configuration(&self) -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationFluentBuilder{
+    pub fn create_logging_configuration(&self) -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationFluentBuilder {
         crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

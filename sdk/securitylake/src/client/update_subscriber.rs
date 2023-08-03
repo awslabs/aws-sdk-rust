@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput) with field(s):
     ///   - [`subscriber(Option<SubscriberResource>)`](crate::operation::update_subscriber::UpdateSubscriberOutput::subscriber): <p>The updated subscriber information.</p>
     /// - On failure, responds with [`SdkError<UpdateSubscriberError>`](crate::operation::update_subscriber::UpdateSubscriberError)
-    pub fn update_subscriber(
-        &self,
-    ) -> crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder {
-        crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_subscriber(&self) -> crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder {
+        crate::operation::update_subscriber::builders::UpdateSubscriberFluentBuilder::new(self.handle.clone())
     }
 }

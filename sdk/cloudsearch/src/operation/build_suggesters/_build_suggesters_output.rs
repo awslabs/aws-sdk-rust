@@ -29,9 +29,7 @@ impl BuildSuggestersOutput {
 
 /// A builder for [`BuildSuggestersOutput`](crate::operation::build_suggesters::BuildSuggestersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildSuggestersOutputBuilder {
     pub(crate) field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -49,17 +47,12 @@ impl BuildSuggestersOutputBuilder {
         self
     }
     /// <p>A list of field names.</p>
-    pub fn set_field_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_field_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.field_names = input;
         self
     }
     /// <p>A list of field names.</p>
-    pub fn get_field_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_field_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.field_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

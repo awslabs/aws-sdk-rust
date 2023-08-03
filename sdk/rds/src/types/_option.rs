@@ -27,12 +27,10 @@ pub struct Option {
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>,
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
     #[doc(hidden)]
-    pub db_security_group_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
+    pub db_security_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
     #[doc(hidden)]
-    pub vpc_security_group_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub vpc_security_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
 }
 impl Option {
     /// <p>The name of the option.</p>
@@ -64,15 +62,11 @@ impl Option {
         self.option_settings.as_deref()
     }
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
-    pub fn db_security_group_memberships(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DbSecurityGroupMembership]> {
+    pub fn db_security_group_memberships(&self) -> ::std::option::Option<&[crate::types::DbSecurityGroupMembership]> {
         self.db_security_group_memberships.as_deref()
     }
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
-    pub fn vpc_security_group_memberships(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
+    pub fn vpc_security_group_memberships(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
         self.vpc_security_group_memberships.as_deref()
     }
 }
@@ -85,9 +79,7 @@ impl Option {
 
 /// A builder for [`Option`](crate::types::Option).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionBuilder {
     pub(crate) option_name: ::std::option::Option<::std::string::String>,
     pub(crate) option_description: ::std::option::Option<::std::string::String>,
@@ -96,10 +88,8 @@ pub struct OptionBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) option_version: ::std::option::Option<::std::string::String>,
     pub(crate) option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>,
-    pub(crate) db_security_group_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
-    pub(crate) vpc_security_group_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub(crate) db_security_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
+    pub(crate) vpc_security_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
 }
 impl OptionBuilder {
     /// <p>The name of the option.</p>
@@ -117,18 +107,12 @@ impl OptionBuilder {
         &self.option_name
     }
     /// <p>The description of the option.</p>
-    pub fn option_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the option.</p>
-    pub fn set_option_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_description = input;
         self
     }
@@ -179,18 +163,12 @@ impl OptionBuilder {
         &self.port
     }
     /// <p>The version of the option.</p>
-    pub fn option_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the option.</p>
-    pub fn set_option_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_version = input;
         self
     }
@@ -210,17 +188,12 @@ impl OptionBuilder {
         self
     }
     /// <p>The option settings for this option.</p>
-    pub fn set_option_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>,
-    ) -> Self {
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>) -> Self {
         self.option_settings = input;
         self
     }
     /// <p>The option settings for this option.</p>
-    pub fn get_option_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>> {
         &self.option_settings
     }
     /// Appends an item to `db_security_group_memberships`.
@@ -228,10 +201,7 @@ impl OptionBuilder {
     /// To override the contents of this collection use [`set_db_security_group_memberships`](Self::set_db_security_group_memberships).
     ///
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
-    pub fn db_security_group_memberships(
-        mut self,
-        input: crate::types::DbSecurityGroupMembership,
-    ) -> Self {
+    pub fn db_security_group_memberships(mut self, input: crate::types::DbSecurityGroupMembership) -> Self {
         let mut v = self.db_security_group_memberships.unwrap_or_default();
         v.push(input);
         self.db_security_group_memberships = ::std::option::Option::Some(v);
@@ -246,9 +216,7 @@ impl OptionBuilder {
         self
     }
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
-    pub fn get_db_security_group_memberships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>> {
+    pub fn get_db_security_group_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>> {
         &self.db_security_group_memberships
     }
     /// Appends an item to `vpc_security_group_memberships`.
@@ -256,10 +224,7 @@ impl OptionBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_memberships`](Self::set_vpc_security_group_memberships).
     ///
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
-    pub fn vpc_security_group_memberships(
-        mut self,
-        input: crate::types::VpcSecurityGroupMembership,
-    ) -> Self {
+    pub fn vpc_security_group_memberships(mut self, input: crate::types::VpcSecurityGroupMembership) -> Self {
         let mut v = self.vpc_security_group_memberships.unwrap_or_default();
         v.push(input);
         self.vpc_security_group_memberships = ::std::option::Option::Some(v);
@@ -274,9 +239,7 @@ impl OptionBuilder {
         self
     }
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
-    pub fn get_vpc_security_group_memberships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+    pub fn get_vpc_security_group_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
         &self.vpc_security_group_memberships
     }
     /// Consumes the builder and constructs a [`Option`](crate::types::Option).

@@ -38,10 +38,7 @@ impl CreateCapacityProviderFluentBuilder {
         }
     }
     /// Access the CreateCapacityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_capacity_provider::builders::CreateCapacityProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_capacity_provider::builders::CreateCapacityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateCapacityProviderFluentBuilder {
             crate::operation::create_capacity_provider::CreateCapacityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_capacity_provider::CreateCapacityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateCapacityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateCapacityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_capacity_provider::CreateCapacityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_capacity_provider::CreateCapacityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateCapacityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_capacity_provider::CreateCapacityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_capacity_provider::CreateCapacityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl CreateCapacityProviderFluentBuilder {
             crate::operation::create_capacity_provider::CreateCapacityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_capacity_provider::CreateCapacityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -139,25 +125,17 @@ impl CreateCapacityProviderFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
-    pub fn auto_scaling_group_provider(
-        mut self,
-        input: crate::types::AutoScalingGroupProvider,
-    ) -> Self {
+    pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProvider) -> Self {
         self.inner = self.inner.auto_scaling_group_provider(input);
         self
     }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
-    pub fn set_auto_scaling_group_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_provider(mut self, input: ::std::option::Option<crate::types::AutoScalingGroupProvider>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_provider(input);
         self
     }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
-    pub fn get_auto_scaling_group_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
+    pub fn get_auto_scaling_group_provider(&self) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
         self.inner.get_auto_scaling_group_provider()
     }
     /// Appends an item to `tags`.
@@ -190,10 +168,7 @@ impl CreateCapacityProviderFluentBuilder {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

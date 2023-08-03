@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAccountConfigurationOutput {
 }
 impl UpdateAccountConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountConfigurationOutput`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput).
-    pub fn builder() -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationOutputBuilder {
         crate::operation::update_account_configuration::builders::UpdateAccountConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountConfigurationOutput`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationOutputBuilder {
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateAccountConfigurationOutputBuilder {
         self
     }
     /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
@@ -63,9 +58,7 @@ impl UpdateAccountConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAccountConfigurationOutput`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_account_configuration::UpdateAccountConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_account_configuration::UpdateAccountConfigurationOutput {
         crate::operation::update_account_configuration::UpdateAccountConfigurationOutput {
             encryption_config: self.encryption_config,
             _request_id: self._request_id,

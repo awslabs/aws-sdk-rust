@@ -23,9 +23,7 @@ impl TelephonyConfig {
 
 /// A builder for [`TelephonyConfig`](crate::types::TelephonyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TelephonyConfigBuilder {
     pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
 }
@@ -42,17 +40,12 @@ impl TelephonyConfigBuilder {
         self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn set_distributions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    ) -> Self {
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
         self.distributions = input;
         self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn get_distributions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
         &self.distributions
     }
     /// Consumes the builder and constructs a [`TelephonyConfig`](crate::types::TelephonyConfig).

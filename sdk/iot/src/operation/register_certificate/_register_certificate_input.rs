@@ -41,17 +41,14 @@ impl RegisterCertificateInput {
 }
 impl RegisterCertificateInput {
     /// Creates a new builder-style object to manufacture [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::register_certificate::builders::RegisterCertificateInputBuilder {
+    pub fn builder() -> crate::operation::register_certificate::builders::RegisterCertificateInputBuilder {
         crate::operation::register_certificate::builders::RegisterCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterCertificateInputBuilder {
     pub(crate) certificate_pem: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificate_pem: ::std::option::Option<::std::string::String>,
@@ -60,18 +57,12 @@ pub struct RegisterCertificateInputBuilder {
 }
 impl RegisterCertificateInputBuilder {
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn set_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_pem = input;
         self
     }
@@ -80,18 +71,12 @@ impl RegisterCertificateInputBuilder {
         &self.certificate_pem
     }
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
-    pub fn ca_certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
-    pub fn set_ca_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_certificate_pem = input;
         self
     }
@@ -125,10 +110,7 @@ impl RegisterCertificateInputBuilder {
         self
     }
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -139,17 +121,13 @@ impl RegisterCertificateInputBuilder {
     /// Consumes the builder and constructs a [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_certificate::RegisterCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_certificate::RegisterCertificateInput {
-                certificate_pem: self.certificate_pem,
-                ca_certificate_pem: self.ca_certificate_pem,
-                set_as_active: self.set_as_active,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_certificate::RegisterCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_certificate::RegisterCertificateInput {
+            certificate_pem: self.certificate_pem,
+            ca_certificate_pem: self.ca_certificate_pem,
+            set_as_active: self.set_as_active,
+            status: self.status,
+        })
     }
 }

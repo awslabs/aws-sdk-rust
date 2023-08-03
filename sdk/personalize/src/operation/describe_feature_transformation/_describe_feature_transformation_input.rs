@@ -15,33 +15,25 @@ impl DescribeFeatureTransformationInput {
 }
 impl DescribeFeatureTransformationInput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureTransformationInput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput).
-    pub fn builder() -> crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder{
+    pub fn builder() -> crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder {
         crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFeatureTransformationInput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFeatureTransformationInputBuilder {
     pub(crate) feature_transformation_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureTransformationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
-    pub fn feature_transformation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_transformation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_transformation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
-    pub fn set_feature_transformation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_transformation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_transformation_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeFeatureTransformationInputBuilder {
         crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput {
-                feature_transformation_arn: self.feature_transformation_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput {
+            feature_transformation_arn: self.feature_transformation_arn,
+        })
     }
 }

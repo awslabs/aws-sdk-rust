@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::revoke_grant::builders::RevokeGrantFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::revoke_grant::builders::RevokeGrantFluentBuilder::set_dry_run): <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>  <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// - On success, responds with [`RevokeGrantOutput`](crate::operation::revoke_grant::RevokeGrantOutput)
     /// - On failure, responds with [`SdkError<RevokeGrantError>`](crate::operation::revoke_grant::RevokeGrantError)
-    pub fn revoke_grant(
-        &self,
-    ) -> crate::operation::revoke_grant::builders::RevokeGrantFluentBuilder {
+    pub fn revoke_grant(&self) -> crate::operation::revoke_grant::builders::RevokeGrantFluentBuilder {
         crate::operation::revoke_grant::builders::RevokeGrantFluentBuilder::new(self.handle.clone())
     }
 }

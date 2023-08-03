@@ -38,10 +38,7 @@ impl DeprecateFlowTemplateFluentBuilder {
         }
     }
     /// Access the DeprecateFlowTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeprecateFlowTemplateFluentBuilder {
             crate::operation::deprecate_flow_template::DeprecateFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_flow_template::DeprecateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_flow_template::DeprecateFlowTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeprecateFlowTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeprecateFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_flow_template::DeprecateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_flow_template::DeprecateFlowTemplateError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeprecateFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_flow_template::DeprecateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_flow_template::DeprecateFlowTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeprecateFlowTemplateFluentBuilder {
             crate::operation::deprecate_flow_template::DeprecateFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_flow_template::DeprecateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_flow_template::DeprecateFlowTemplateError>,
     > {
         self.customize_middleware().await
     }

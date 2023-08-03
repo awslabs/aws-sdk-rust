@@ -37,9 +37,7 @@ impl DeleteLaunchTemplateFluentBuilder {
         }
     }
     /// Access the DeleteLaunchTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_launch_template::builders::DeleteLaunchTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_launch_template::builders::DeleteLaunchTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteLaunchTemplateFluentBuilder {
             crate::operation::delete_launch_template::DeleteLaunchTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_template::DeleteLaunchTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_template::DeleteLaunchTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteLaunchTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteLaunchTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_launch_template::DeleteLaunchTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_template::DeleteLaunchTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_template::DeleteLaunchTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteLaunchTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_launch_template::DeleteLaunchTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_template::DeleteLaunchTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_template::DeleteLaunchTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteLaunchTemplateFluentBuilder {
             crate::operation::delete_launch_template::DeleteLaunchTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_template::DeleteLaunchTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_template::DeleteLaunchTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -138,19 +125,13 @@ impl DeleteLaunchTemplateFluentBuilder {
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_id(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_id(input);
         self
     }
@@ -161,19 +142,13 @@ impl DeleteLaunchTemplateFluentBuilder {
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_name(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_name(input);
         self
     }

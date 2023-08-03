@@ -10,10 +10,7 @@ impl SearchContactsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_contacts::SearchContactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_contacts::SearchContactsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_contacts::SearchContactsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_contacts();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SearchContactsFluentBuilder {
         }
     }
     /// Access the SearchContacts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_contacts::builders::SearchContactsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_contacts::builders::SearchContactsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl SearchContactsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl SearchContactsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_contacts::paginator::SearchContactsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_contacts::paginator::SearchContactsPaginator {
-        crate::operation::search_contacts::paginator::SearchContactsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_contacts::paginator::SearchContactsPaginator {
+        crate::operation::search_contacts::paginator::SearchContactsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -136,10 +123,7 @@ impl SearchContactsFluentBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -157,10 +141,7 @@ impl SearchContactsFluentBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }

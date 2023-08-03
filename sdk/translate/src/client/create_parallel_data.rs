@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_parallel_data::CreateParallelDataOutput::name): <p>The custom name that you assigned to the parallel data resource.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::operation::create_parallel_data::CreateParallelDataOutput::status): <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
     /// - On failure, responds with [`SdkError<CreateParallelDataError>`](crate::operation::create_parallel_data::CreateParallelDataError)
-    pub fn create_parallel_data(
-        &self,
-    ) -> crate::operation::create_parallel_data::builders::CreateParallelDataFluentBuilder {
-        crate::operation::create_parallel_data::builders::CreateParallelDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_parallel_data(&self) -> crate::operation::create_parallel_data::builders::CreateParallelDataFluentBuilder {
+        crate::operation::create_parallel_data::builders::CreateParallelDataFluentBuilder::new(self.handle.clone())
     }
 }

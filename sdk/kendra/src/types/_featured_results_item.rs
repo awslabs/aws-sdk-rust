@@ -12,8 +12,7 @@ pub struct FeaturedResultsItem {
     pub r#type: ::std::option::Option<crate::types::QueryResultType>,
     /// <p>One or more additional attributes associated with the featured result.</p>
     #[doc(hidden)]
-    pub additional_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
+    pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
     /// <p>The identifier of the featured document.</p>
     #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
@@ -28,8 +27,7 @@ pub struct FeaturedResultsItem {
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document attributes assigned to a featured document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     #[doc(hidden)]
-    pub document_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
     /// <p>A token that identifies a particular featured result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
     #[doc(hidden)]
     pub feedback_token: ::std::option::Option<::std::string::String>,
@@ -44,9 +42,7 @@ impl FeaturedResultsItem {
         self.r#type.as_ref()
     }
     /// <p>One or more additional attributes associated with the featured result.</p>
-    pub fn additional_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdditionalResultAttribute]> {
+    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::AdditionalResultAttribute]> {
         self.additional_attributes.as_deref()
     }
     /// <p>The identifier of the featured document.</p>
@@ -83,20 +79,16 @@ impl FeaturedResultsItem {
 
 /// A builder for [`FeaturedResultsItem`](crate::types::FeaturedResultsItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturedResultsItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::QueryResultType>,
-    pub(crate) additional_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
+    pub(crate) additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_title: ::std::option::Option<crate::types::TextWithHighlights>,
     pub(crate) document_excerpt: ::std::option::Option<crate::types::TextWithHighlights>,
     pub(crate) document_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) document_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub(crate) document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
     pub(crate) feedback_token: ::std::option::Option<::std::string::String>,
 }
 impl FeaturedResultsItemBuilder {
@@ -140,17 +132,12 @@ impl FeaturedResultsItemBuilder {
         self
     }
     /// <p>One or more additional attributes associated with the featured result.</p>
-    pub fn set_additional_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
-    ) -> Self {
+    pub fn set_additional_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>) -> Self {
         self.additional_attributes = input;
         self
     }
     /// <p>One or more additional attributes associated with the featured result.</p>
-    pub fn get_additional_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>> {
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>> {
         &self.additional_attributes
     }
     /// <p>The identifier of the featured document.</p>
@@ -173,10 +160,7 @@ impl FeaturedResultsItemBuilder {
         self
     }
     /// <p>Provides text and information about where to highlight the text.</p>
-    pub fn set_document_title(
-        mut self,
-        input: ::std::option::Option<crate::types::TextWithHighlights>,
-    ) -> Self {
+    pub fn set_document_title(mut self, input: ::std::option::Option<crate::types::TextWithHighlights>) -> Self {
         self.document_title = input;
         self
     }
@@ -190,10 +174,7 @@ impl FeaturedResultsItemBuilder {
         self
     }
     /// <p>Provides text and information about where to highlight the text.</p>
-    pub fn set_document_excerpt(
-        mut self,
-        input: ::std::option::Option<crate::types::TextWithHighlights>,
-    ) -> Self {
+    pub fn set_document_excerpt(mut self, input: ::std::option::Option<crate::types::TextWithHighlights>) -> Self {
         self.document_excerpt = input;
         self
     }
@@ -227,32 +208,21 @@ impl FeaturedResultsItemBuilder {
         self
     }
     /// <p>An array of document attributes assigned to a featured document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn set_document_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
-    ) -> Self {
+    pub fn set_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
         self.document_attributes = input;
         self
     }
     /// <p>An array of document attributes assigned to a featured document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn get_document_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+    pub fn get_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
         &self.document_attributes
     }
     /// <p>A token that identifies a particular featured result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
-    pub fn feedback_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feedback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feedback_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that identifies a particular featured result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
-    pub fn set_feedback_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feedback_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feedback_token = input;
         self
     }

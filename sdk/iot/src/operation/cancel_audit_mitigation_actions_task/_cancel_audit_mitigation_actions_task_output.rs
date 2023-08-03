@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelAuditMitigationActionsTaskOutpu
 }
 impl CancelAuditMitigationActionsTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelAuditMitigationActionsTaskOutput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput).
-    pub fn builder() -> crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskOutputBuilder {
         crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelAuditMitigationActionsTaskOutput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelAuditMitigationActionsTaskOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl CancelAuditMitigationActionsTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelAuditMitigationActionsTaskOutput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput).
-    pub fn build(self) -> crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput{
+    pub fn build(self) -> crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput {
         crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput {
             _request_id: self._request_id,
         }

@@ -9,7 +9,10 @@ pub fn ser_batch_get_asset_property_value_history_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_batch_get_asset_property_value_history_entry::ser_batch_get_asset_property_value_history_entry(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_batch_get_asset_property_value_history_entry::ser_batch_get_asset_property_value_history_entry(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }

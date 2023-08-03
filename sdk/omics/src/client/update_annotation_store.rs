@@ -16,12 +16,7 @@ impl super::Client {
     ///   - [`store_options(Option<StoreOptions>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::store_options): <p>Parsing options for the store.</p>
     ///   - [`store_format(Option<StoreFormat>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::store_format): <p>The annotation file format of the store.</p>
     /// - On failure, responds with [`SdkError<UpdateAnnotationStoreError>`](crate::operation::update_annotation_store::UpdateAnnotationStoreError)
-    pub fn update_annotation_store(
-        &self,
-    ) -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder
-    {
-        crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_annotation_store(&self) -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder {
+        crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::new(self.handle.clone())
     }
 }

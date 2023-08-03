@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`template(impl ::std::convert::Into<String>)`](crate::operation::delete_world_template::builders::DeleteWorldTemplateFluentBuilder::template) / [`set_template(Option<String>)`](crate::operation::delete_world_template::builders::DeleteWorldTemplateFluentBuilder::set_template): <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
     /// - On success, responds with [`DeleteWorldTemplateOutput`](crate::operation::delete_world_template::DeleteWorldTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteWorldTemplateError>`](crate::operation::delete_world_template::DeleteWorldTemplateError)
-    pub fn delete_world_template(
-        &self,
-    ) -> crate::operation::delete_world_template::builders::DeleteWorldTemplateFluentBuilder {
-        crate::operation::delete_world_template::builders::DeleteWorldTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_world_template(&self) -> crate::operation::delete_world_template::builders::DeleteWorldTemplateFluentBuilder {
+        crate::operation::delete_world_template::builders::DeleteWorldTemplateFluentBuilder::new(self.handle.clone())
     }
 }

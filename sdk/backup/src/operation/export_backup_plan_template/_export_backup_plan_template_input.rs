@@ -15,35 +15,25 @@ impl ExportBackupPlanTemplateInput {
 }
 impl ExportBackupPlanTemplateInput {
     /// Creates a new builder-style object to manufacture [`ExportBackupPlanTemplateInput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder {
         crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`ExportBackupPlanTemplateInput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportBackupPlanTemplateInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
 }
 impl ExportBackupPlanTemplateInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl ExportBackupPlanTemplateInputBuilder {
         crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput {
-                backup_plan_id: self.backup_plan_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput {
+            backup_plan_id: self.backup_plan_id,
+        })
     }
 }

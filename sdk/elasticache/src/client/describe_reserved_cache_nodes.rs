@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`reserved_cache_nodes(Option<Vec<ReservedCacheNode>>)`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput::reserved_cache_nodes): <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedCacheNodesError>`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError)
-    pub fn describe_reserved_cache_nodes(&self) -> crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesFluentBuilder{
+    pub fn describe_reserved_cache_nodes(
+        &self,
+    ) -> crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesFluentBuilder {
         crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesFluentBuilder::new(self.handle.clone())
     }
 }

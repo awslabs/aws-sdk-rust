@@ -26,13 +26,10 @@ pub struct Layer {
     /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_configuration:
-        ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
+    pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     #[doc(hidden)]
     pub custom_instance_profile_arn: ::std::option::Option<::std::string::String>,
@@ -50,8 +47,7 @@ pub struct Layer {
     pub packages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     #[doc(hidden)]
-    pub volume_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
+    pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     /// <p>Whether auto healing is disabled for the layer.</p>
     #[doc(hidden)]
     pub enable_auto_healing: ::std::option::Option<bool>,
@@ -81,8 +77,7 @@ pub struct Layer {
     pub use_ebs_optimized_instances: ::std::option::Option<bool>,
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     #[doc(hidden)]
-    pub lifecycle_event_configuration:
-        ::std::option::Option<crate::types::LifecycleEventConfiguration>,
+    pub lifecycle_event_configuration: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
 }
 impl Layer {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
@@ -112,17 +107,11 @@ impl Layer {
     /// <p>The layer attributes.</p>
     /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
-    pub fn cloud_watch_logs_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogsConfiguration> {
+    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -146,9 +135,7 @@ impl Layer {
         self.packages.as_deref()
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn volume_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VolumeConfiguration]> {
+    pub fn volume_configurations(&self) -> ::std::option::Option<&[crate::types::VolumeConfiguration]> {
         self.volume_configurations.as_deref()
     }
     /// <p>Whether auto healing is disabled for the layer.</p>
@@ -187,9 +174,7 @@ impl Layer {
         self.use_ebs_optimized_instances
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    pub fn lifecycle_event_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LifecycleEventConfiguration> {
+    pub fn lifecycle_event_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleEventConfiguration> {
         self.lifecycle_event_configuration.as_ref()
     }
 }
@@ -202,9 +187,7 @@ impl Layer {
 
 /// A builder for [`Layer`](crate::types::Layer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LayerBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
@@ -212,20 +195,14 @@ pub struct LayerBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::LayerType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) shortname: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    >,
-    pub(crate) cloud_watch_logs_configuration:
-        ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
+    pub(crate) cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     pub(crate) custom_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_json: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) default_security_group_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) default_security_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) packages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) volume_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
+    pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     pub(crate) enable_auto_healing: ::std::option::Option<bool>,
     pub(crate) auto_assign_elastic_ips: ::std::option::Option<bool>,
     pub(crate) auto_assign_public_ips: ::std::option::Option<bool>,
@@ -234,8 +211,7 @@ pub struct LayerBuilder {
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
     pub(crate) install_updates_on_boot: ::std::option::Option<bool>,
     pub(crate) use_ebs_optimized_instances: ::std::option::Option<bool>,
-    pub(crate) lifecycle_event_configuration:
-        ::std::option::Option<crate::types::LifecycleEventConfiguration>,
+    pub(crate) lifecycle_event_configuration: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
 }
 impl LayerBuilder {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
@@ -329,11 +305,7 @@ impl LayerBuilder {
     /// <p>The layer attributes.</p>
     /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::LayerAttributesKeys,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::LayerAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -344,9 +316,7 @@ impl LayerBuilder {
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
     ) -> Self {
         self.attributes = input;
         self
@@ -354,48 +324,30 @@ impl LayerBuilder {
     /// <p>The layer attributes.</p>
     /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
-    pub fn cloud_watch_logs_configuration(
-        mut self,
-        input: crate::types::CloudWatchLogsConfiguration,
-    ) -> Self {
+    pub fn cloud_watch_logs_configuration(mut self, input: crate::types::CloudWatchLogsConfiguration) -> Self {
         self.cloud_watch_logs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
-    pub fn set_cloud_watch_logs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>) -> Self {
         self.cloud_watch_logs_configuration = input;
         self
     }
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
-    pub fn get_cloud_watch_logs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
+    pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
         &self.cloud_watch_logs_configuration
     }
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn custom_instance_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_instance_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn set_custom_instance_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_instance_profile_arn = input;
         self
     }
@@ -422,27 +374,19 @@ impl LayerBuilder {
     /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
     ///
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn custom_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.custom_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn set_custom_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.custom_security_group_ids = input;
         self
     }
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn get_custom_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.custom_security_group_ids
     }
     /// Appends an item to `default_security_group_names`.
@@ -450,27 +394,19 @@ impl LayerBuilder {
     /// To override the contents of this collection use [`set_default_security_group_names`](Self::set_default_security_group_names).
     ///
     /// <p>An array containing the layer's security group names.</p>
-    pub fn default_security_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_security_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.default_security_group_names.unwrap_or_default();
         v.push(input.into());
         self.default_security_group_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing the layer's security group names.</p>
-    pub fn set_default_security_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_default_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.default_security_group_names = input;
         self
     }
     /// <p>An array containing the layer's security group names.</p>
-    pub fn get_default_security_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_default_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.default_security_group_names
     }
     /// Appends an item to `packages`.
@@ -485,10 +421,7 @@ impl LayerBuilder {
         self
     }
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    pub fn set_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.packages = input;
         self
     }
@@ -508,17 +441,12 @@ impl LayerBuilder {
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn set_volume_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
-    ) -> Self {
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>) -> Self {
         self.volume_configurations = input;
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn get_volume_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
         &self.volume_configurations
     }
     /// <p>Whether auto healing is disabled for the layer.</p>
@@ -571,10 +499,7 @@ impl LayerBuilder {
     }
     /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
-    pub fn set_default_recipes(
-        mut self,
-        input: ::std::option::Option<crate::types::Recipes>,
-    ) -> Self {
+    pub fn set_default_recipes(mut self, input: ::std::option::Option<crate::types::Recipes>) -> Self {
         self.default_recipes = input;
         self
     }
@@ -589,10 +514,7 @@ impl LayerBuilder {
         self
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-    pub fn set_custom_recipes(
-        mut self,
-        input: ::std::option::Option<crate::types::Recipes>,
-    ) -> Self {
+    pub fn set_custom_recipes(mut self, input: ::std::option::Option<crate::types::Recipes>) -> Self {
         self.custom_recipes = input;
         self
     }
@@ -649,25 +571,17 @@ impl LayerBuilder {
         &self.use_ebs_optimized_instances
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    pub fn lifecycle_event_configuration(
-        mut self,
-        input: crate::types::LifecycleEventConfiguration,
-    ) -> Self {
+    pub fn lifecycle_event_configuration(mut self, input: crate::types::LifecycleEventConfiguration) -> Self {
         self.lifecycle_event_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    pub fn set_lifecycle_event_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
-    ) -> Self {
+    pub fn set_lifecycle_event_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleEventConfiguration>) -> Self {
         self.lifecycle_event_configuration = input;
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    pub fn get_lifecycle_event_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecycleEventConfiguration> {
+    pub fn get_lifecycle_event_configuration(&self) -> &::std::option::Option<crate::types::LifecycleEventConfiguration> {
         &self.lifecycle_event_configuration
     }
     /// Consumes the builder and constructs a [`Layer`](crate::types::Layer).

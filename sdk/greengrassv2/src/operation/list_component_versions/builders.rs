@@ -37,10 +37,7 @@ impl ListComponentVersionsFluentBuilder {
         }
     }
     /// Access the ListComponentVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_component_versions::builders::ListComponentVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_component_versions::builders::ListComponentVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListComponentVersionsFluentBuilder {
             crate::operation::list_component_versions::ListComponentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_versions::ListComponentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_versions::ListComponentVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListComponentVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListComponentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_versions::ListComponentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_versions::ListComponentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_versions::ListComponentVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListComponentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_versions::ListComponentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_versions::ListComponentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_versions::ListComponentVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListComponentVersionsFluentBuilder {
             crate::operation::list_component_versions::ListComponentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_versions::ListComponentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_versions::ListComponentVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_component_versions::paginator::ListComponentVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_component_versions::paginator::ListComponentVersionsPaginator {
-        crate::operation::list_component_versions::paginator::ListComponentVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_component_versions::paginator::ListComponentVersionsPaginator {
+        crate::operation::list_component_versions::paginator::ListComponentVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

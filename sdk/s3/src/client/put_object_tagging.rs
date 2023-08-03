@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`PutObjectTaggingOutput`](crate::operation::put_object_tagging::PutObjectTaggingOutput) with field(s):
     ///   - [`version_id(Option<String>)`](crate::operation::put_object_tagging::PutObjectTaggingOutput::version_id): <p>The versionId of the object the tag-set was added to.</p>
     /// - On failure, responds with [`SdkError<PutObjectTaggingError>`](crate::operation::put_object_tagging::PutObjectTaggingError)
-    pub fn put_object_tagging(
-        &self,
-    ) -> crate::operation::put_object_tagging::builders::PutObjectTaggingFluentBuilder {
-        crate::operation::put_object_tagging::builders::PutObjectTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_object_tagging(&self) -> crate::operation::put_object_tagging::builders::PutObjectTaggingFluentBuilder {
+        crate::operation::put_object_tagging::builders::PutObjectTaggingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,9 +28,7 @@ impl DeleteServiceOutput {
 
 /// A builder for [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceOutputBuilder {
     pub(crate) service: ::std::option::Option<crate::types::Service>,
     _request_id: Option<String>,

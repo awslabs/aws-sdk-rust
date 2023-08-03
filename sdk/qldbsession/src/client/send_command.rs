@@ -20,9 +20,7 @@ impl super::Client {
     ///   - [`execute_statement(Option<ExecuteStatementResult>)`](crate::operation::send_command::SendCommandOutput::execute_statement): <p>Contains the details of the executed statement.</p>
     ///   - [`fetch_page(Option<FetchPageResult>)`](crate::operation::send_command::SendCommandOutput::fetch_page): <p>Contains the details of the fetched page.</p>
     /// - On failure, responds with [`SdkError<SendCommandError>`](crate::operation::send_command::SendCommandError)
-    pub fn send_command(
-        &self,
-    ) -> crate::operation::send_command::builders::SendCommandFluentBuilder {
+    pub fn send_command(&self) -> crate::operation::send_command::builders::SendCommandFluentBuilder {
         crate::operation::send_command::builders::SendCommandFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteFleetAdvisorDatabasesOutput {
 }
 impl DeleteFleetAdvisorDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput).
-    pub fn builder() -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesOutputBuilder{
+    pub fn builder() -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesOutputBuilder {
         crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetAdvisorDatabasesOutputBuilder {
     pub(crate) database_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl DeleteFleetAdvisorDatabasesOutputBuilder {
         self
     }
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub fn set_database_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_database_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.database_ids = input;
         self
     }
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub fn get_database_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_database_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.database_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl DeleteFleetAdvisorDatabasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput {
+    pub fn build(self) -> crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput {
         crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput {
             database_ids: self.database_ids,
             _request_id: self._request_id,

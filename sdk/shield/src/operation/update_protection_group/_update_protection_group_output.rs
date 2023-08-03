@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateProtectionGroupOutput {
 }
 impl UpdateProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProtectionGroupOutput`](crate::operation::update_protection_group::UpdateProtectionGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_protection_group::builders::UpdateProtectionGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_protection_group::builders::UpdateProtectionGroupOutputBuilder {
         crate::operation::update_protection_group::builders::UpdateProtectionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProtectionGroupOutput`](crate::operation::update_protection_group::UpdateProtectionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProtectionGroupOutputBuilder {
     _request_id: Option<String>,
 }

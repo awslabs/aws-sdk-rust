@@ -10,10 +10,7 @@ impl CreateSipRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_sip_rule::CreateSipRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_rule::CreateSipRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_rule::CreateSipRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_sip_rule();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateSipRuleFluentBuilder {
         }
     }
     /// Access the CreateSipRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_sip_rule::builders::CreateSipRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_sip_rule::builders::CreateSipRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl CreateSipRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,10 +130,7 @@ impl CreateSipRuleFluentBuilder {
         self
     }
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
-    pub fn set_trigger_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SipRuleTriggerType>,
-    ) -> Self {
+    pub fn set_trigger_type(mut self, input: ::std::option::Option<crate::types::SipRuleTriggerType>) -> Self {
         self.inner = self.inner.set_trigger_type(input);
         self
     }
@@ -150,18 +139,12 @@ impl CreateSipRuleFluentBuilder {
         self.inner.get_trigger_type()
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
-    pub fn trigger_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trigger_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trigger_value(input.into());
         self
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
-    pub fn set_trigger_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trigger_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trigger_value(input);
         self
     }
@@ -193,17 +176,12 @@ impl CreateSipRuleFluentBuilder {
         self
     }
     /// <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    pub fn set_target_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
-    ) -> Self {
+    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>) -> Self {
         self.inner = self.inner.set_target_applications(input);
         self
     }
     /// <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    pub fn get_target_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
         self.inner.get_target_applications()
     }
 }

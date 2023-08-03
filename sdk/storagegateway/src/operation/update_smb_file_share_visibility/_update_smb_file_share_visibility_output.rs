@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSmbFileShareVisibilityOutput {
 }
 impl UpdateSmbFileShareVisibilityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareVisibilityOutput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput).
-    pub fn builder() -> crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityOutputBuilder{
+    pub fn builder() -> crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityOutputBuilder {
         crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmbFileShareVisibilityOutput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmbFileShareVisibilityOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl UpdateSmbFileShareVisibilityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSmbFileShareVisibilityOutput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput
-    {
+    pub fn build(self) -> crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput {
         crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput {
             gateway_arn: self.gateway_arn,
             _request_id: self._request_id,

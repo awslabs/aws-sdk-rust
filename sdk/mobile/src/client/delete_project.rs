@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`deleted_resources(Option<Vec<Resource>>)`](crate::operation::delete_project::DeleteProjectOutput::deleted_resources): <p> Resources which were deleted. </p>
     ///   - [`orphaned_resources(Option<Vec<Resource>>)`](crate::operation::delete_project::DeleteProjectOutput::orphaned_resources): <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
-    pub fn delete_project(
-        &self,
-    ) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
-        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
+        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(self.handle.clone())
     }
 }

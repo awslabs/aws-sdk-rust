@@ -44,9 +44,7 @@ impl ProcessingInput {
 
 /// A builder for [`ProcessingInput`](crate::types::ProcessingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingInputBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) app_managed: ::std::option::Option<bool>,
@@ -88,10 +86,7 @@ impl ProcessingInputBuilder {
         self
     }
     /// <p>Configuration for downloading input data from Amazon S3 into the processing container.</p>
-    pub fn set_s3_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingS3Input>,
-    ) -> Self {
+    pub fn set_s3_input(mut self, input: ::std::option::Option<crate::types::ProcessingS3Input>) -> Self {
         self.s3_input = input;
         self
     }
@@ -105,17 +100,12 @@ impl ProcessingInputBuilder {
         self
     }
     /// <p>Configuration for a Dataset Definition input. </p>
-    pub fn set_dataset_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetDefinition>,
-    ) -> Self {
+    pub fn set_dataset_definition(mut self, input: ::std::option::Option<crate::types::DatasetDefinition>) -> Self {
         self.dataset_definition = input;
         self
     }
     /// <p>Configuration for a Dataset Definition input. </p>
-    pub fn get_dataset_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetDefinition> {
+    pub fn get_dataset_definition(&self) -> &::std::option::Option<crate::types::DatasetDefinition> {
         &self.dataset_definition
     }
     /// Consumes the builder and constructs a [`ProcessingInput`](crate::types::ProcessingInput).

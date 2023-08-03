@@ -10,9 +10,7 @@ pub struct DeleteBaiduChannelOutput {
 }
 impl DeleteBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn baidu_channel_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BaiduChannelResponse> {
+    pub fn baidu_channel_response(&self) -> ::std::option::Option<&crate::types::BaiduChannelResponse> {
         self.baidu_channel_response.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteBaiduChannelOutput {
 }
 impl DeleteBaiduChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBaiduChannelOutput`](crate::operation::delete_baidu_channel::DeleteBaiduChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelOutputBuilder {
+    pub fn builder() -> crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelOutputBuilder {
         crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBaiduChannelOutput`](crate::operation::delete_baidu_channel::DeleteBaiduChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBaiduChannelOutputBuilder {
     pub(crate) baidu_channel_response: ::std::option::Option<crate::types::BaiduChannelResponse>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl DeleteBaiduChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn set_baidu_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::BaiduChannelResponse>,
-    ) -> Self {
+    pub fn set_baidu_channel_response(mut self, input: ::std::option::Option<crate::types::BaiduChannelResponse>) -> Self {
         self.baidu_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn get_baidu_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::BaiduChannelResponse> {
+    pub fn get_baidu_channel_response(&self) -> &::std::option::Option<crate::types::BaiduChannelResponse> {
         &self.baidu_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -27,35 +27,27 @@ impl ::std::fmt::Display for RepositoryTriggerDestinationArnRequiredException {
     }
 }
 impl ::std::error::Error for RepositoryTriggerDestinationArnRequiredException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::RepositoryTriggerDestinationArnRequiredException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::RepositoryTriggerDestinationArnRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for RepositoryTriggerDestinationArnRequiredException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RepositoryTriggerDestinationArnRequiredException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl RepositoryTriggerDestinationArnRequiredException {
     /// Creates a new builder-style object to manufacture [`RepositoryTriggerDestinationArnRequiredException`](crate::types::error::RepositoryTriggerDestinationArnRequiredException).
-    pub fn builder(
-    ) -> crate::types::error::builders::RepositoryTriggerDestinationArnRequiredExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::RepositoryTriggerDestinationArnRequiredExceptionBuilder {
         crate::types::error::builders::RepositoryTriggerDestinationArnRequiredExceptionBuilder::default()
     }
 }
 
 /// A builder for [`RepositoryTriggerDestinationArnRequiredException`](crate::types::error::RepositoryTriggerDestinationArnRequiredException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryTriggerDestinationArnRequiredExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl RepositoryTriggerDestinationArnRequiredExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

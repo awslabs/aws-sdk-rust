@@ -5,16 +5,16 @@ pub use crate::operation::get_data_quality_ruleset_evaluation_run::_get_data_qua
 
 impl GetDataQualityRulesetEvaluationRunInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_data_quality_ruleset_evaluation_run();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetDataQualityRulesetEvaluationRunInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataQualityRulesetEvaluationRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder,
+    inner: crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder,
 }
 impl GetDataQualityRulesetEvaluationRunFluentBuilder {
     /// Creates a new `GetDataQualityRulesetEvaluationRun`.
@@ -37,15 +37,20 @@ impl GetDataQualityRulesetEvaluationRunFluentBuilder {
         }
     }
     /// Access the GetDataQualityRulesetEvaluationRun as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRun,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetDataQualityRulesetEvaluationRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl GetDataQualityRulesetEvaluationRunFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRun,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The unique run identifier associated with this run.</p>

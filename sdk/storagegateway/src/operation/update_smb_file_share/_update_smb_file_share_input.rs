@@ -182,17 +182,14 @@ impl UpdateSmbFileShareInput {
 }
 impl UpdateSmbFileShareInput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareInput`](crate::operation::update_smb_file_share::UpdateSmbFileShareInput).
-    pub fn builder(
-    ) -> crate::operation::update_smb_file_share::builders::UpdateSmbFileShareInputBuilder {
+    pub fn builder() -> crate::operation::update_smb_file_share::builders::UpdateSmbFileShareInputBuilder {
         crate::operation::update_smb_file_share::builders::UpdateSmbFileShareInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmbFileShareInput`](crate::operation::update_smb_file_share::UpdateSmbFileShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmbFileShareInputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_encrypted: ::std::option::Option<bool>,
@@ -216,18 +213,12 @@ pub struct UpdateSmbFileShareInputBuilder {
 }
 impl UpdateSmbFileShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_arn = input;
         self
     }
@@ -268,19 +259,13 @@ impl UpdateSmbFileShareInputBuilder {
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn default_storage_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_storage_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn set_default_storage_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_storage_class = input;
         self
     }
@@ -399,27 +384,19 @@ impl UpdateSmbFileShareInputBuilder {
     /// To override the contents of this collection use [`set_admin_user_list`](Self::set_admin_user_list).
     ///
     /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn admin_user_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_user_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.admin_user_list.unwrap_or_default();
         v.push(input.into());
         self.admin_user_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn set_admin_user_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_admin_user_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.admin_user_list = input;
         self
     }
     /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn get_admin_user_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_admin_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.admin_user_list
     }
     /// Appends an item to `valid_user_list`.
@@ -427,27 +404,19 @@ impl UpdateSmbFileShareInputBuilder {
     /// To override the contents of this collection use [`set_valid_user_list`](Self::set_valid_user_list).
     ///
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn valid_user_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn valid_user_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.valid_user_list.unwrap_or_default();
         v.push(input.into());
         self.valid_user_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn set_valid_user_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_valid_user_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.valid_user_list = input;
         self
     }
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn get_valid_user_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_valid_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.valid_user_list
     }
     /// Appends an item to `invalid_user_list`.
@@ -455,42 +424,28 @@ impl UpdateSmbFileShareInputBuilder {
     /// To override the contents of this collection use [`set_invalid_user_list`](Self::set_invalid_user_list).
     ///
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn invalid_user_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_user_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.invalid_user_list.unwrap_or_default();
         v.push(input.into());
         self.invalid_user_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn set_invalid_user_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_invalid_user_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.invalid_user_list = input;
         self
     }
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn get_invalid_user_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_invalid_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.invalid_user_list
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_destination_arn = input;
         self
     }
@@ -504,10 +459,7 @@ impl UpdateSmbFileShareInputBuilder {
         self
     }
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
-    pub fn set_case_sensitivity(
-        mut self,
-        input: ::std::option::Option<crate::types::CaseSensitivity>,
-    ) -> Self {
+    pub fn set_case_sensitivity(mut self, input: ::std::option::Option<crate::types::CaseSensitivity>) -> Self {
         self.case_sensitivity = input;
         self
     }
@@ -518,20 +470,14 @@ impl UpdateSmbFileShareInputBuilder {
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn file_share_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn set_file_share_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_name = input;
         self
     }
@@ -547,10 +493,7 @@ impl UpdateSmbFileShareInputBuilder {
         self
     }
     /// <p>Specifies refresh cache information for the file share.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.cache_attributes = input;
         self
     }
@@ -565,10 +508,7 @@ impl UpdateSmbFileShareInputBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn notification_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -579,10 +519,7 @@ impl UpdateSmbFileShareInputBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn set_notification_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_policy = input;
         self
     }
@@ -622,32 +559,28 @@ impl UpdateSmbFileShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSmbFileShareInput`](crate::operation::update_smb_file_share::UpdateSmbFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_smb_file_share::UpdateSmbFileShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_smb_file_share::UpdateSmbFileShareInput {
-                file_share_arn: self.file_share_arn,
-                kms_encrypted: self.kms_encrypted,
-                kms_key: self.kms_key,
-                default_storage_class: self.default_storage_class,
-                object_acl: self.object_acl,
-                read_only: self.read_only,
-                guess_mime_type_enabled: self.guess_mime_type_enabled,
-                requester_pays: self.requester_pays,
-                smbacl_enabled: self.smbacl_enabled,
-                access_based_enumeration: self.access_based_enumeration,
-                admin_user_list: self.admin_user_list,
-                valid_user_list: self.valid_user_list,
-                invalid_user_list: self.invalid_user_list,
-                audit_destination_arn: self.audit_destination_arn,
-                case_sensitivity: self.case_sensitivity,
-                file_share_name: self.file_share_name,
-                cache_attributes: self.cache_attributes,
-                notification_policy: self.notification_policy,
-                oplocks_enabled: self.oplocks_enabled,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_smb_file_share::UpdateSmbFileShareInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_smb_file_share::UpdateSmbFileShareInput {
+            file_share_arn: self.file_share_arn,
+            kms_encrypted: self.kms_encrypted,
+            kms_key: self.kms_key,
+            default_storage_class: self.default_storage_class,
+            object_acl: self.object_acl,
+            read_only: self.read_only,
+            guess_mime_type_enabled: self.guess_mime_type_enabled,
+            requester_pays: self.requester_pays,
+            smbacl_enabled: self.smbacl_enabled,
+            access_based_enumeration: self.access_based_enumeration,
+            admin_user_list: self.admin_user_list,
+            valid_user_list: self.valid_user_list,
+            invalid_user_list: self.invalid_user_list,
+            audit_destination_arn: self.audit_destination_arn,
+            case_sensitivity: self.case_sensitivity,
+            file_share_name: self.file_share_name,
+            cache_attributes: self.cache_attributes,
+            notification_policy: self.notification_policy,
+            oplocks_enabled: self.oplocks_enabled,
+        })
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateControlPanelOutput`](crate::operation::create_control_panel::CreateControlPanelOutput) with field(s):
     ///   - [`control_panel(Option<ControlPanel>)`](crate::operation::create_control_panel::CreateControlPanelOutput::control_panel): <p>Information about a control panel.</p>
     /// - On failure, responds with [`SdkError<CreateControlPanelError>`](crate::operation::create_control_panel::CreateControlPanelError)
-    pub fn create_control_panel(
-        &self,
-    ) -> crate::operation::create_control_panel::builders::CreateControlPanelFluentBuilder {
-        crate::operation::create_control_panel::builders::CreateControlPanelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_control_panel(&self) -> crate::operation::create_control_panel::builders::CreateControlPanelFluentBuilder {
+        crate::operation::create_control_panel::builders::CreateControlPanelFluentBuilder::new(self.handle.clone())
     }
 }

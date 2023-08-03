@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`connect_peers(Option<Vec<ConnectPeerSummary>>)`](crate::operation::list_connect_peers::ListConnectPeersOutput::connect_peers): <p>Describes the Connect peers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connect_peers::ListConnectPeersOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListConnectPeersError>`](crate::operation::list_connect_peers::ListConnectPeersError)
-    pub fn list_connect_peers(
-        &self,
-    ) -> crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder {
-        crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_connect_peers(&self) -> crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder {
+        crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::new(self.handle.clone())
     }
 }

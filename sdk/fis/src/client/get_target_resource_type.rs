@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetTargetResourceTypeOutput`](crate::operation::get_target_resource_type::GetTargetResourceTypeOutput) with field(s):
     ///   - [`target_resource_type(Option<TargetResourceType>)`](crate::operation::get_target_resource_type::GetTargetResourceTypeOutput::target_resource_type): <p>Information about the resource type.</p>
     /// - On failure, responds with [`SdkError<GetTargetResourceTypeError>`](crate::operation::get_target_resource_type::GetTargetResourceTypeError)
-    pub fn get_target_resource_type(
-        &self,
-    ) -> crate::operation::get_target_resource_type::builders::GetTargetResourceTypeFluentBuilder
-    {
+    pub fn get_target_resource_type(&self) -> crate::operation::get_target_resource_type::builders::GetTargetResourceTypeFluentBuilder {
         crate::operation::get_target_resource_type::builders::GetTargetResourceTypeFluentBuilder::new(self.handle.clone())
     }
 }

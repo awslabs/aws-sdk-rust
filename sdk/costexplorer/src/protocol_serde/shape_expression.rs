@@ -36,10 +36,7 @@ pub fn ser_expression(
     if let Some(var_11) = &input.dimensions {
         #[allow(unused_mut)]
         let mut object_12 = object.key("Dimensions").start_object();
-        crate::protocol_serde::shape_dimension_values::ser_dimension_values(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_dimension_values::ser_dimension_values(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.tags {
@@ -51,10 +48,7 @@ pub fn ser_expression(
     if let Some(var_15) = &input.cost_categories {
         #[allow(unused_mut)]
         let mut object_16 = object.key("CostCategories").start_object();
-        crate::protocol_serde::shape_cost_category_values::ser_cost_category_values(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_cost_category_values::ser_cost_category_values(&mut object_16, var_15)?;
         object_16.finish();
     }
     Ok(())
@@ -64,12 +58,7 @@ pub(crate) fn de_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Expression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -79,60 +68,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Or" => {
-                            builder = builder.set_or(
-                                crate::protocol_serde::shape_expressions::de_expressions(tokens)?,
-                            );
+                            builder = builder.set_or(crate::protocol_serde::shape_expressions::de_expressions(tokens)?);
                         }
                         "And" => {
-                            builder = builder.set_and(
-                                crate::protocol_serde::shape_expressions::de_expressions(tokens)?,
-                            );
+                            builder = builder.set_and(crate::protocol_serde::shape_expressions::de_expressions(tokens)?);
                         }
                         "Not" => {
-                            builder = builder.set_not(
-                                crate::protocol_serde::shape_expression::de_expression(tokens)?
-                                    .map(Box::new),
-                            );
+                            builder = builder.set_not(crate::protocol_serde::shape_expression::de_expression(tokens)?.map(Box::new));
                         }
                         "Dimensions" => {
-                            builder = builder.set_dimensions(
-                                crate::protocol_serde::shape_dimension_values::de_dimension_values(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimension_values::de_dimension_values(tokens)?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(
-                                crate::protocol_serde::shape_tag_values::de_tag_values(tokens)?,
-                            );
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_values::de_tag_values(tokens)?);
                         }
                         "CostCategories" => {
-                            builder = builder.set_cost_categories(
-                                    crate::protocol_serde::shape_cost_category_values::de_cost_category_values(tokens)?
-                                );
+                            builder =
+                                builder.set_cost_categories(crate::protocol_serde::shape_cost_category_values::de_cost_category_values(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

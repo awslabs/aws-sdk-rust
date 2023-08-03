@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<SourceServerActionDocument>>)`](crate::operation::list_source_server_actions::ListSourceServerActionsOutput::items): <p>List of source server post migration custom actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_source_server_actions::ListSourceServerActionsOutput::next_token): <p>Next token returned when listing source server post migration custom actions.</p>
     /// - On failure, responds with [`SdkError<ListSourceServerActionsError>`](crate::operation::list_source_server_actions::ListSourceServerActionsError)
-    pub fn list_source_server_actions(
-        &self,
-    ) -> crate::operation::list_source_server_actions::builders::ListSourceServerActionsFluentBuilder
-    {
+    pub fn list_source_server_actions(&self) -> crate::operation::list_source_server_actions::builders::ListSourceServerActionsFluentBuilder {
         crate::operation::list_source_server_actions::builders::ListSourceServerActionsFluentBuilder::new(self.handle.clone())
     }
 }

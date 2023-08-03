@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupMembershipError>`](crate::operation::describe_group_membership::DescribeGroupMembershipError)
-    pub fn describe_group_membership(
-        &self,
-    ) -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipFluentBuilder
-    {
+    pub fn describe_group_membership(&self) -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipFluentBuilder {
         crate::operation::describe_group_membership::builders::DescribeGroupMembershipFluentBuilder::new(self.handle.clone())
     }
 }

@@ -4,9 +4,7 @@ pub fn ser_dataset_changes(
     input: &crate::types::DatasetChanges,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ground_truth {
-        object
-            .key("GroundTruth")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("GroundTruth").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     Ok(())
 }

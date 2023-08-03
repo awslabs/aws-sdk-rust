@@ -57,16 +57,14 @@ impl StartSnomedctInferenceJobInput {
 }
 impl StartSnomedctInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobInput`](crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobInput).
-    pub fn builder() -> crate::operation::start_snomedct_inference_job::builders::StartSnomedctInferenceJobInputBuilder{
+    pub fn builder() -> crate::operation::start_snomedct_inference_job::builders::StartSnomedctInferenceJobInputBuilder {
         crate::operation::start_snomedct_inference_job::builders::StartSnomedctInferenceJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartSnomedctInferenceJobInput`](crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSnomedctInferenceJobInputBuilder {
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
@@ -83,10 +81,7 @@ impl StartSnomedctInferenceJobInputBuilder {
         self
     }
     /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -100,10 +95,7 @@ impl StartSnomedctInferenceJobInputBuilder {
         self
     }
     /// <p>The output properties for a detection job.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -112,18 +104,12 @@ impl StartSnomedctInferenceJobInputBuilder {
         &self.output_data_config
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -146,18 +132,12 @@ impl StartSnomedctInferenceJobInputBuilder {
         &self.job_name
     }
     /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -185,10 +165,7 @@ impl StartSnomedctInferenceJobInputBuilder {
         self
     }
     /// <p> The language of the input documents. All documents must be in the same language. </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -203,16 +180,14 @@ impl StartSnomedctInferenceJobInputBuilder {
         crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobInput {
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-                data_access_role_arn: self.data_access_role_arn,
-                job_name: self.job_name,
-                client_request_token: self.client_request_token,
-                kms_key: self.kms_key,
-                language_code: self.language_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobInput {
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+            data_access_role_arn: self.data_access_role_arn,
+            job_name: self.job_name,
+            client_request_token: self.client_request_token,
+            kms_key: self.kms_key,
+            language_code: self.language_code,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl UpdateMlModelOutput {
 
 /// A builder for [`UpdateMlModelOutput`](crate::operation::update_ml_model::UpdateMlModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMlModelOutputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

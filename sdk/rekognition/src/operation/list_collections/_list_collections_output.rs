@@ -42,9 +42,7 @@ impl ListCollectionsOutput {
 
 /// A builder for [`ListCollectionsOutput`](crate::operation::list_collections::ListCollectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollectionsOutputBuilder {
     pub(crate) collection_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,27 +55,19 @@ impl ListCollectionsOutputBuilder {
     /// To override the contents of this collection use [`set_collection_ids`](Self::set_collection_ids).
     ///
     /// <p>An array of collection IDs.</p>
-    pub fn collection_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.collection_ids.unwrap_or_default();
         v.push(input.into());
         self.collection_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of collection IDs.</p>
-    pub fn set_collection_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_collection_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.collection_ids = input;
         self
     }
     /// <p>An array of collection IDs.</p>
-    pub fn get_collection_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_collection_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.collection_ids
     }
     /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
@@ -99,27 +89,19 @@ impl ListCollectionsOutputBuilder {
     /// To override the contents of this collection use [`set_face_model_versions`](Self::set_face_model_versions).
     ///
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
-    pub fn face_model_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn face_model_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.face_model_versions.unwrap_or_default();
         v.push(input.into());
         self.face_model_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
-    pub fn set_face_model_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_face_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.face_model_versions = input;
         self
     }
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
-    pub fn get_face_model_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_face_model_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.face_model_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

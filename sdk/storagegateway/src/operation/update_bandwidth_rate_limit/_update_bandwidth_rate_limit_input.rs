@@ -34,18 +34,14 @@ impl UpdateBandwidthRateLimitInput {
 }
 impl UpdateBandwidthRateLimitInput {
     /// Creates a new builder-style object to manufacture [`UpdateBandwidthRateLimitInput`](crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitInput).
-    pub fn builder(
-    ) -> crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder {
         crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBandwidthRateLimitInput`](crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
@@ -72,10 +68,7 @@ impl UpdateBandwidthRateLimitInputBuilder {
         self
     }
     /// <p>The average upload bandwidth rate limit in bits per second.</p>
-    pub fn set_average_upload_rate_limit_in_bits_per_sec(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
@@ -89,10 +82,7 @@ impl UpdateBandwidthRateLimitInputBuilder {
         self
     }
     /// <p>The average download bandwidth rate limit in bits per second.</p>
-    pub fn set_average_download_rate_limit_in_bits_per_sec(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_average_download_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_download_rate_limit_in_bits_per_sec = input;
         self
     }
@@ -107,14 +97,10 @@ impl UpdateBandwidthRateLimitInputBuilder {
         crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitInput {
-                gateway_arn: self.gateway_arn,
-                average_upload_rate_limit_in_bits_per_sec: self
-                    .average_upload_rate_limit_in_bits_per_sec,
-                average_download_rate_limit_in_bits_per_sec: self
-                    .average_download_rate_limit_in_bits_per_sec,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitInput {
+            gateway_arn: self.gateway_arn,
+            average_upload_rate_limit_in_bits_per_sec: self.average_upload_rate_limit_in_bits_per_sec,
+            average_download_rate_limit_in_bits_per_sec: self.average_download_rate_limit_in_bits_per_sec,
+        })
     }
 }

@@ -41,9 +41,7 @@ impl DescribeFileSystemsFluentBuilder {
         }
     }
     /// Access the DescribeFileSystems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl DescribeFileSystemsFluentBuilder {
             crate::operation::describe_file_systems::DescribeFileSystems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_systems::DescribeFileSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_systems::DescribeFileSystemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl DescribeFileSystemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl DescribeFileSystemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_systems::DescribeFileSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_systems::DescribeFileSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_systems::DescribeFileSystemsError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl DescribeFileSystemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_systems::DescribeFileSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_systems::DescribeFileSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_systems::DescribeFileSystemsError>,
     > {
         self.send_middleware().await
     }
@@ -120,22 +109,15 @@ impl DescribeFileSystemsFluentBuilder {
             crate::operation::describe_file_systems::DescribeFileSystems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_systems::DescribeFileSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_systems::DescribeFileSystemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator {
-        crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator {
+        crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator::new(self.handle, self.inner)
     }
     /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -166,18 +148,12 @@ impl DescribeFileSystemsFluentBuilder {
         self.inner.get_marker()
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
-    pub fn creation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creation_token(input.into());
         self
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
-    pub fn set_creation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creation_token(input);
         self
     }
@@ -186,18 +162,12 @@ impl DescribeFileSystemsFluentBuilder {
         self.inner.get_creation_token()
     }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }

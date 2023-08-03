@@ -36,9 +36,7 @@ impl GetDeploymentsInput {
 
 /// A builder for [`GetDeploymentsInput`](crate::operation::get_deployments::GetDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentsInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl GetDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::operation::get_deployments::GetDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_deployments::GetDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_deployments::GetDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_deployments::GetDeploymentsInput {
             api_id: self.api_id,
             max_results: self.max_results,

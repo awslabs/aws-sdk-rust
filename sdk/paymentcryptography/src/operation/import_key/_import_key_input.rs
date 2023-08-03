@@ -30,9 +30,7 @@ impl ImportKeyInput {
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
+    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
         self.key_check_value_algorithm.as_ref()
     }
     /// <p>Specifies whether import key is enabled.</p>
@@ -59,13 +57,10 @@ impl ImportKeyInput {
 
 /// A builder for [`ImportKeyInput`](crate::operation::import_key::ImportKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportKeyInputBuilder {
     pub(crate) key_material: ::std::option::Option<crate::types::ImportKeyMaterial>,
-    pub(crate) key_check_value_algorithm:
-        ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
+    pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -76,10 +71,7 @@ impl ImportKeyInputBuilder {
         self
     }
     /// <p>The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.</p>
-    pub fn set_key_material(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportKeyMaterial>,
-    ) -> Self {
+    pub fn set_key_material(mut self, input: ::std::option::Option<crate::types::ImportKeyMaterial>) -> Self {
         self.key_material = input;
         self
     }
@@ -89,27 +81,19 @@ impl ImportKeyInputBuilder {
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(
-        mut self,
-        input: crate::types::KeyCheckValueAlgorithm,
-    ) -> Self {
+    pub fn key_check_value_algorithm(mut self, input: crate::types::KeyCheckValueAlgorithm) -> Self {
         self.key_check_value_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn set_key_check_value_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
-    ) -> Self {
+    pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
         self.key_check_value_algorithm = input;
         self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn get_key_check_value_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
+    pub fn get_key_check_value_algorithm(&self) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
         &self.key_check_value_algorithm
     }
     /// <p>Specifies whether import key is enabled.</p>
@@ -150,10 +134,7 @@ impl ImportKeyInputBuilder {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -168,12 +149,7 @@ impl ImportKeyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportKeyInput`](crate::operation::import_key::ImportKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_key::ImportKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_key::ImportKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_key::ImportKeyInput {
             key_material: self.key_material,
             key_check_value_algorithm: self.key_check_value_algorithm,

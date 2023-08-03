@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DownloadDefaultKeyPairOutput {
 }
 impl DownloadDefaultKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DownloadDefaultKeyPairOutput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput).
-    pub fn builder(
-    ) -> crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairOutputBuilder
-    {
+    pub fn builder() -> crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairOutputBuilder {
         crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairOutputBuilder::default()
     }
 }
 
 /// A builder for [`DownloadDefaultKeyPairOutput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DownloadDefaultKeyPairOutputBuilder {
     pub(crate) public_key_base64: ::std::option::Option<::std::string::String>,
     pub(crate) private_key_base64: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ pub struct DownloadDefaultKeyPairOutputBuilder {
 }
 impl DownloadDefaultKeyPairOutputBuilder {
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_key_base64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_base64 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn set_public_key_base64(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_key_base64(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key_base64 = input;
         self
     }
@@ -75,18 +65,12 @@ impl DownloadDefaultKeyPairOutputBuilder {
         &self.public_key_base64
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn private_key_base64(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_key_base64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key_base64 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn set_private_key_base64(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_key_base64(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key_base64 = input;
         self
     }
@@ -100,10 +84,7 @@ impl DownloadDefaultKeyPairOutputBuilder {
         self
     }
     /// <p>The timestamp when the default key pair was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -121,9 +102,7 @@ impl DownloadDefaultKeyPairOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DownloadDefaultKeyPairOutput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput {
+    pub fn build(self) -> crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput {
         crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput {
             public_key_base64: self.public_key_base64,
             private_key_base64: self.private_key_base64,

@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`stack_instances(Option<Vec<StackInstance>>)`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput::stack_instances): <p>List of stack instances.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListStackInstancesForProvisionedProductError>`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError)
-    pub fn list_stack_instances_for_provisioned_product(&self) -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductFluentBuilder{
-        crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductFluentBuilder::new(self.handle.clone())
+    pub fn list_stack_instances_for_provisioned_product(
+        &self,
+    ) -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductFluentBuilder {
+        crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -29,9 +29,7 @@ impl ListDetectorsInput {
 
 /// A builder for [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectorsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ListDetectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_detectors::ListDetectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_detectors::ListDetectorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_detectors::ListDetectorsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetImagePipelineOutput {
 }
 impl GetImagePipelineOutput {
     /// Creates a new builder-style object to manufacture [`GetImagePipelineOutput`](crate::operation::get_image_pipeline::GetImagePipelineOutput).
-    pub fn builder() -> crate::operation::get_image_pipeline::builders::GetImagePipelineOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_image_pipeline::builders::GetImagePipelineOutputBuilder {
         crate::operation::get_image_pipeline::builders::GetImagePipelineOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetImagePipelineOutput`](crate::operation::get_image_pipeline::GetImagePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImagePipelineOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_pipeline: ::std::option::Option<crate::types::ImagePipeline>,
@@ -65,10 +62,7 @@ impl GetImagePipelineOutputBuilder {
         self
     }
     /// <p>The image pipeline object.</p>
-    pub fn set_image_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::ImagePipeline>,
-    ) -> Self {
+    pub fn set_image_pipeline(mut self, input: ::std::option::Option<crate::types::ImagePipeline>) -> Self {
         self.image_pipeline = input;
         self
     }

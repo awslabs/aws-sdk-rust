@@ -10,10 +10,7 @@ impl BatchGetMetricDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_metric_data::BatchGetMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_metric_data::BatchGetMetricDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_metric_data::BatchGetMetricDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_metric_data();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl BatchGetMetricDataFluentBuilder {
         }
     }
     /// Access the BatchGetMetricData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_metric_data::builders::BatchGetMetricDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_metric_data::builders::BatchGetMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl BatchGetMetricDataFluentBuilder {
             crate::operation::batch_get_metric_data::BatchGetMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_metric_data::BatchGetMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_metric_data::BatchGetMetricDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl BatchGetMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl BatchGetMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_metric_data::BatchGetMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_metric_data::BatchGetMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_metric_data::BatchGetMetricDataError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl BatchGetMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_metric_data::BatchGetMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_metric_data::BatchGetMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_metric_data::BatchGetMetricDataError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl BatchGetMetricDataFluentBuilder {
             crate::operation::batch_get_metric_data::BatchGetMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_metric_data::BatchGetMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_metric_data::BatchGetMetricDataError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +117,12 @@ impl BatchGetMetricDataFluentBuilder {
         self
     }
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub fn set_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
-    ) -> Self {
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>) -> Self {
         self.inner = self.inner.set_queries(input);
         self
     }
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub fn get_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>> {
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>> {
         self.inner.get_queries()
     }
 }

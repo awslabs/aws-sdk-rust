@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteEndpointAccessOutput {
 }
 impl DeleteEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointAccessOutput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder {
+    pub fn builder() -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder {
         crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEndpointAccessOutput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEndpointAccessOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::EndpointAccess>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteEndpointAccessOutputBuilder {
         self
     }
     /// <p>The deleted VPC endpoint.</p>
-    pub fn set_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointAccess>,
-    ) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::EndpointAccess>) -> Self {
         self.endpoint = input;
         self
     }

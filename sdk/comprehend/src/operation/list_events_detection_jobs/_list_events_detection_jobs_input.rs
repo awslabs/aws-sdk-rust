@@ -29,18 +29,14 @@ impl ListEventsDetectionJobsInput {
 }
 impl ListEventsDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListEventsDetectionJobsInput`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsInputBuilder {
         crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventsDetectionJobsInput`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventsDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EventsDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl ListEventsDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EventsDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EventsDetectionJobFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -99,12 +92,10 @@ impl ListEventsDetectionJobsInputBuilder {
         crate::operation::list_events_detection_jobs::ListEventsDetectionJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_events_detection_jobs::ListEventsDetectionJobsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_events_detection_jobs::ListEventsDetectionJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`RevokeDbSecurityGroupIngressOutput`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput) with field(s):
     ///   - [`db_security_group(Option<DbSecurityGroup>)`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput::db_security_group): <p>Contains the details for an Amazon RDS DB security group.</p>  <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
     /// - On failure, responds with [`SdkError<RevokeDBSecurityGroupIngressError>`](crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError)
-    pub fn revoke_db_security_group_ingress(&self) -> crate::operation::revoke_db_security_group_ingress::builders::RevokeDBSecurityGroupIngressFluentBuilder{
+    pub fn revoke_db_security_group_ingress(
+        &self,
+    ) -> crate::operation::revoke_db_security_group_ingress::builders::RevokeDBSecurityGroupIngressFluentBuilder {
         crate::operation::revoke_db_security_group_ingress::builders::RevokeDBSecurityGroupIngressFluentBuilder::new(self.handle.clone())
     }
 }

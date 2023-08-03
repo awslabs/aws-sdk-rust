@@ -17,9 +17,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_listener::GetListenerOutput::created_at): <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_listener::GetListenerOutput::last_updated_at): <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetListenerError>`](crate::operation::get_listener::GetListenerError)
-    pub fn get_listener(
-        &self,
-    ) -> crate::operation::get_listener::builders::GetListenerFluentBuilder {
+    pub fn get_listener(&self) -> crate::operation::get_listener::builders::GetListenerFluentBuilder {
         crate::operation::get_listener::builders::GetListenerFluentBuilder::new(self.handle.clone())
     }
 }

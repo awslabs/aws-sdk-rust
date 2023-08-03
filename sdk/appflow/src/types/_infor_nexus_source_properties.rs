@@ -23,9 +23,7 @@ impl InforNexusSourceProperties {
 
 /// A builder for [`InforNexusSourceProperties`](crate::types::InforNexusSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InforNexusSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl InforNexusSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`InforNexusSourceProperties`](crate::types::InforNexusSourceProperties).
     pub fn build(self) -> crate::types::InforNexusSourceProperties {
-        crate::types::InforNexusSourceProperties {
-            object: self.object,
-        }
+        crate::types::InforNexusSourceProperties { object: self.object }
     }
 }

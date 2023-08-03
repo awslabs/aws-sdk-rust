@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`analysis(Option<Vec<FleetAdvisorLsaAnalysisResponse>>)`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput::analysis): <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// - On failure, responds with [`SdkError<DescribeFleetAdvisorLsaAnalysisError>`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisError)
-    pub fn describe_fleet_advisor_lsa_analysis(&self) -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisFluentBuilder{
+    pub fn describe_fleet_advisor_lsa_analysis(
+        &self,
+    ) -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisFluentBuilder {
         crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

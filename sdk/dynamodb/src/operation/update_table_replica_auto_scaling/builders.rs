@@ -28,7 +28,7 @@ impl UpdateTableReplicaAutoScalingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScalingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingInputBuilder,
+    inner: crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingInputBuilder,
 }
 impl UpdateTableReplicaAutoScalingFluentBuilder {
     /// Creates a new `UpdateTableReplicaAutoScaling`.
@@ -39,7 +39,7 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         }
     }
     /// Access the UpdateTableReplicaAutoScaling as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
             crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
             crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError>,
     > {
         self.customize_middleware().await
     }
@@ -127,28 +116,20 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
     /// To override the contents of this collection use [`set_global_secondary_index_updates`](Self::set_global_secondary_index_updates).
     ///
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
-    pub fn global_secondary_index_updates(
-        mut self,
-        input: crate::types::GlobalSecondaryIndexAutoScalingUpdate,
-    ) -> Self {
+    pub fn global_secondary_index_updates(mut self, input: crate::types::GlobalSecondaryIndexAutoScalingUpdate) -> Self {
         self.inner = self.inner.global_secondary_index_updates(input);
         self
     }
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
     pub fn set_global_secondary_index_updates(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>>,
     ) -> Self {
         self.inner = self.inner.set_global_secondary_index_updates(input);
         self
     }
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
-    pub fn get_global_secondary_index_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>>
-    {
+    pub fn get_global_secondary_index_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>> {
         self.inner.get_global_secondary_index_updates()
     }
     /// <p>The name of the global table to be updated.</p>
@@ -166,13 +147,8 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         self.inner.get_table_name()
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
-    pub fn provisioned_write_capacity_auto_scaling_update(
-        mut self,
-        input: crate::types::AutoScalingSettingsUpdate,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .provisioned_write_capacity_auto_scaling_update(input);
+    pub fn provisioned_write_capacity_auto_scaling_update(mut self, input: crate::types::AutoScalingSettingsUpdate) -> Self {
+        self.inner = self.inner.provisioned_write_capacity_auto_scaling_update(input);
         self
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
@@ -180,17 +156,12 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_provisioned_write_capacity_auto_scaling_update(input);
+        self.inner = self.inner.set_provisioned_write_capacity_auto_scaling_update(input);
         self
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
-    pub fn get_provisioned_write_capacity_auto_scaling_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
-        self.inner
-            .get_provisioned_write_capacity_auto_scaling_update()
+    pub fn get_provisioned_write_capacity_auto_scaling_update(&self) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
+        self.inner.get_provisioned_write_capacity_auto_scaling_update()
     }
     /// Appends an item to `ReplicaUpdates`.
     ///
@@ -202,17 +173,12 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         self
     }
     /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
-    pub fn set_replica_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>>,
-    ) -> Self {
+    pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>>) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
     }
     /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
-    pub fn get_replica_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>> {
+    pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>> {
         self.inner.get_replica_updates()
     }
 }

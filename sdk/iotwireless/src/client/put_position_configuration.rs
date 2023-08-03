@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PutPositionConfigurationOutput`](crate::operation::put_position_configuration::PutPositionConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutPositionConfigurationError>`](crate::operation::put_position_configuration::PutPositionConfigurationError)
     #[deprecated(note = "This operation is no longer supported.")]
-    pub fn put_position_configuration(
-        &self,
-    ) -> crate::operation::put_position_configuration::builders::PutPositionConfigurationFluentBuilder
-    {
+    pub fn put_position_configuration(&self) -> crate::operation::put_position_configuration::builders::PutPositionConfigurationFluentBuilder {
         crate::operation::put_position_configuration::builders::PutPositionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

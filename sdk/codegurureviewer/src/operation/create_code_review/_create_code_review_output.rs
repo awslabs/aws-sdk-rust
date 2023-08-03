@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateCodeReviewOutput {
 }
 impl CreateCodeReviewOutput {
     /// Creates a new builder-style object to manufacture [`CreateCodeReviewOutput`](crate::operation::create_code_review::CreateCodeReviewOutput).
-    pub fn builder() -> crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder {
         crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCodeReviewOutput`](crate::operation::create_code_review::CreateCodeReviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCodeReviewOutputBuilder {
     pub(crate) code_review: ::std::option::Option<crate::types::CodeReview>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateCodeReviewOutputBuilder {
         self
     }
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
-    pub fn set_code_review(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeReview>,
-    ) -> Self {
+    pub fn set_code_review(mut self, input: ::std::option::Option<crate::types::CodeReview>) -> Self {
         self.code_review = input;
         self
     }

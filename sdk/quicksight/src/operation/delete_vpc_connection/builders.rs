@@ -37,9 +37,7 @@ impl DeleteVPCConnectionFluentBuilder {
         }
     }
     /// Access the DeleteVPCConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteVPCConnectionFluentBuilder {
             crate::operation::delete_vpc_connection::DeleteVPCConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_connection::DeleteVPCConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_connection::DeleteVPCConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteVPCConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteVPCConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_connection::DeleteVPCConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_connection::DeleteVPCConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteVPCConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_connection::DeleteVPCConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_connection::DeleteVPCConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteVPCConnectionFluentBuilder {
             crate::operation::delete_vpc_connection::DeleteVPCConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_connection::DeleteVPCConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_connection::DeleteVPCConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID of the account where you want to delete a VPC connection.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account where you want to delete a VPC connection.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -143,18 +124,12 @@ impl DeleteVPCConnectionFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn vpc_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_connection_id(input.into());
         self
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn set_vpc_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_connection_id(input);
         self
     }

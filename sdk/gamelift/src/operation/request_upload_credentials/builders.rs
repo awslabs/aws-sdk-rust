@@ -30,7 +30,7 @@ impl RequestUploadCredentialsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestUploadCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder,
+    inner: crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder,
 }
 impl RequestUploadCredentialsFluentBuilder {
     /// Creates a new `RequestUploadCredentials`.
@@ -41,10 +41,7 @@ impl RequestUploadCredentialsFluentBuilder {
         }
     }
     /// Access the RequestUploadCredentials as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl RequestUploadCredentialsFluentBuilder {
             crate::operation::request_upload_credentials::RequestUploadCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_upload_credentials::RequestUploadCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_upload_credentials::RequestUploadCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl RequestUploadCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl RequestUploadCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_upload_credentials::RequestUploadCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_upload_credentials::RequestUploadCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_upload_credentials::RequestUploadCredentialsError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl RequestUploadCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_upload_credentials::RequestUploadCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_upload_credentials::RequestUploadCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_upload_credentials::RequestUploadCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl RequestUploadCredentialsFluentBuilder {
             crate::operation::request_upload_credentials::RequestUploadCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_upload_credentials::RequestUploadCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_upload_credentials::RequestUploadCredentialsError>,
     > {
         self.customize_middleware().await
     }

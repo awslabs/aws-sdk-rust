@@ -10,10 +10,7 @@ impl ListKeyGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_key_groups::ListKeyGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_groups::ListKeyGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_groups::ListKeyGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_key_groups();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListKeyGroupsFluentBuilder {
         }
     }
     /// Access the ListKeyGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_key_groups::builders::ListKeyGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_key_groups::builders::ListKeyGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListKeyGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

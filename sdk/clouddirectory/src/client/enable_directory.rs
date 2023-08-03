@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`EnableDirectoryOutput`](crate::operation::enable_directory::EnableDirectoryOutput) with field(s):
     ///   - [`directory_arn(Option<String>)`](crate::operation::enable_directory::EnableDirectoryOutput::directory_arn): <p>The ARN of the enabled directory.</p>
     /// - On failure, responds with [`SdkError<EnableDirectoryError>`](crate::operation::enable_directory::EnableDirectoryError)
-    pub fn enable_directory(
-        &self,
-    ) -> crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder {
-        crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_directory(&self) -> crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder {
+        crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

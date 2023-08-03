@@ -37,34 +37,27 @@ impl ::std::fmt::Display for ConfigurationSetSendingPausedException {
     }
 }
 impl ::std::error::Error for ConfigurationSetSendingPausedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ConfigurationSetSendingPausedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ConfigurationSetSendingPausedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ConfigurationSetSendingPausedException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConfigurationSetSendingPausedException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ConfigurationSetSendingPausedException {
     /// Creates a new builder-style object to manufacture [`ConfigurationSetSendingPausedException`](crate::types::error::ConfigurationSetSendingPausedException).
-    pub fn builder() -> crate::types::error::builders::ConfigurationSetSendingPausedExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::ConfigurationSetSendingPausedExceptionBuilder {
         crate::types::error::builders::ConfigurationSetSendingPausedExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ConfigurationSetSendingPausedException`](crate::types::error::ConfigurationSetSendingPausedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationSetSendingPausedExceptionBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -72,18 +65,12 @@ pub struct ConfigurationSetSendingPausedExceptionBuilder {
 }
 impl ConfigurationSetSendingPausedExceptionBuilder {
     /// <p>The name of the configuration set for which email sending is disabled.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set for which email sending is disabled.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -112,10 +99,7 @@ impl ConfigurationSetSendingPausedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

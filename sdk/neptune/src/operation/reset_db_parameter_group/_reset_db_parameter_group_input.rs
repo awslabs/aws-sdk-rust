@@ -41,18 +41,14 @@ impl ResetDbParameterGroupInput {
 }
 impl ResetDbParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupInput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput).
-    pub fn builder(
-    ) -> crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder {
         crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetDbParameterGroupInput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetDbParameterGroupInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) reset_all_parameters: ::std::option::Option<bool>,
@@ -64,10 +60,7 @@ impl ResetDbParameterGroupInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -76,10 +69,7 @@ impl ResetDbParameterGroupInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
         self
     }
@@ -122,33 +112,24 @@ impl ResetDbParameterGroupInputBuilder {
     }
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ResetDbParameterGroupInput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput {
-                db_parameter_group_name: self.db_parameter_group_name,
-                reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
-                parameters: self.parameters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput {
+            db_parameter_group_name: self.db_parameter_group_name,
+            reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
+            parameters: self.parameters,
+        })
     }
 }

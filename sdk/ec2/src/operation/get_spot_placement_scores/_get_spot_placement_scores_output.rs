@@ -9,8 +9,7 @@ pub struct GetSpotPlacementScoresOutput {
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     #[doc(hidden)]
-    pub spot_placement_scores:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>,
+    pub spot_placement_scores: ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,9 +21,7 @@ impl GetSpotPlacementScoresOutput {
     /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
-    pub fn spot_placement_scores(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SpotPlacementScore]> {
+    pub fn spot_placement_scores(&self) -> ::std::option::Option<&[crate::types::SpotPlacementScore]> {
         self.spot_placement_scores.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -39,21 +36,16 @@ impl ::aws_http::request_id::RequestId for GetSpotPlacementScoresOutput {
 }
 impl GetSpotPlacementScoresOutput {
     /// Creates a new builder-style object to manufacture [`GetSpotPlacementScoresOutput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput).
-    pub fn builder(
-    ) -> crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresOutputBuilder {
         crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSpotPlacementScoresOutput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSpotPlacementScoresOutputBuilder {
-    pub(crate) spot_placement_scores:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>,
+    pub(crate) spot_placement_scores: ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -78,10 +70,7 @@ impl GetSpotPlacementScoresOutputBuilder {
     /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
-    pub fn set_spot_placement_scores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>,
-    ) -> Self {
+    pub fn set_spot_placement_scores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>) -> Self {
         self.spot_placement_scores = input;
         self
     }
@@ -90,9 +79,7 @@ impl GetSpotPlacementScoresOutputBuilder {
     /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
-    pub fn get_spot_placement_scores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>> {
+    pub fn get_spot_placement_scores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>> {
         &self.spot_placement_scores
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -119,9 +106,7 @@ impl GetSpotPlacementScoresOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSpotPlacementScoresOutput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput {
+    pub fn build(self) -> crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput {
         crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput {
             spot_placement_scores: self.spot_placement_scores,
             next_token: self.next_token,

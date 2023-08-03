@@ -10,10 +10,7 @@ impl CreateNfsFileShareInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_nfs_file_share::CreateNfsFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_nfs_file_share::CreateNFSFileShareError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_nfs_file_share::CreateNFSFileShareError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_nfs_file_share();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateNFSFileShareFluentBuilder {
         }
     }
     /// Access the CreateNFSFileShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_nfs_file_share::builders::CreateNfsFileShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_nfs_file_share::builders::CreateNfsFileShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateNFSFileShareFluentBuilder {
             crate::operation::create_nfs_file_share::CreateNFSFileShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_nfs_file_share::CreateNFSFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_nfs_file_share::CreateNFSFileShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateNFSFileShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateNFSFileShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_nfs_file_share::CreateNfsFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_nfs_file_share::CreateNFSFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_nfs_file_share::CreateNFSFileShareError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateNFSFileShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_nfs_file_share::CreateNfsFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_nfs_file_share::CreateNFSFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_nfs_file_share::CreateNFSFileShareError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateNFSFileShareFluentBuilder {
             crate::operation::create_nfs_file_share::CreateNFSFileShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_nfs_file_share::CreateNFSFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_nfs_file_share::CreateNFSFileShareError>,
     > {
         self.customize_middleware().await
     }
@@ -145,17 +129,12 @@ impl CreateNFSFileShareFluentBuilder {
         self
     }
     /// <p>File share default values. Optional.</p>
-    pub fn set_nfs_file_share_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::NfsFileShareDefaults>,
-    ) -> Self {
+    pub fn set_nfs_file_share_defaults(mut self, input: ::std::option::Option<crate::types::NfsFileShareDefaults>) -> Self {
         self.inner = self.inner.set_nfs_file_share_defaults(input);
         self
     }
     /// <p>File share default values. Optional.</p>
-    pub fn get_nfs_file_share_defaults(
-        &self,
-    ) -> &::std::option::Option<crate::types::NfsFileShareDefaults> {
+    pub fn get_nfs_file_share_defaults(&self) -> &::std::option::Option<crate::types::NfsFileShareDefaults> {
         self.inner.get_nfs_file_share_defaults()
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.</p>
@@ -260,19 +239,13 @@ impl CreateNFSFileShareFluentBuilder {
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn default_storage_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_storage_class(input.into());
         self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn set_default_storage_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_storage_class(input);
         self
     }
@@ -305,17 +278,12 @@ impl CreateNFSFileShareFluentBuilder {
         self
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn set_client_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_client_list(input);
         self
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn get_client_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_client_list()
     }
     /// <p>A value that maps a user to anonymous user.</p>
@@ -421,10 +389,7 @@ impl CreateNFSFileShareFluentBuilder {
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -437,20 +402,14 @@ impl CreateNFSFileShareFluentBuilder {
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn file_share_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_share_name(input.into());
         self
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn set_file_share_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_share_name(input);
         self
     }
@@ -466,10 +425,7 @@ impl CreateNFSFileShareFluentBuilder {
         self
     }
     /// <p>Specifies refresh cache information for the file share.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
     }
@@ -484,10 +440,7 @@ impl CreateNFSFileShareFluentBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn notification_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_policy(input.into());
         self
     }
@@ -498,10 +451,7 @@ impl CreateNFSFileShareFluentBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn set_notification_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_policy(input);
         self
     }
@@ -518,20 +468,14 @@ impl CreateNFSFileShareFluentBuilder {
     /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn vpc_endpoint_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_dns_name(input.into());
         self
     }
     /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn set_vpc_endpoint_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_dns_name(input);
         self
     }
@@ -544,20 +488,14 @@ impl CreateNFSFileShareFluentBuilder {
     /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn bucket_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_region(input.into());
         self
     }
     /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn set_bucket_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_region(input);
         self
     }
@@ -568,18 +506,12 @@ impl CreateNFSFileShareFluentBuilder {
         self.inner.get_bucket_region()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.audit_destination_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
     }

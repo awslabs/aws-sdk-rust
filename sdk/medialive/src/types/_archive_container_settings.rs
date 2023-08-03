@@ -30,9 +30,7 @@ impl ArchiveContainerSettings {
 
 /// A builder for [`ArchiveContainerSettings`](crate::types::ArchiveContainerSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchiveContainerSettingsBuilder {
     pub(crate) m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
     pub(crate) raw_settings: ::std::option::Option<crate::types::RawSettings>,
@@ -44,10 +42,7 @@ impl ArchiveContainerSettingsBuilder {
         self
     }
     /// M2ts Settings
-    pub fn set_m2ts_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsSettings>,
-    ) -> Self {
+    pub fn set_m2ts_settings(mut self, input: ::std::option::Option<crate::types::M2tsSettings>) -> Self {
         self.m2ts_settings = input;
         self
     }
@@ -61,10 +56,7 @@ impl ArchiveContainerSettingsBuilder {
         self
     }
     /// Raw Settings
-    pub fn set_raw_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RawSettings>,
-    ) -> Self {
+    pub fn set_raw_settings(mut self, input: ::std::option::Option<crate::types::RawSettings>) -> Self {
         self.raw_settings = input;
         self
     }

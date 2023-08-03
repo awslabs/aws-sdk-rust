@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput::next_token): <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
     ///   - [`conformance_pack_compliance_scores(Option<Vec<ConformancePackComplianceScore>>)`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput::conformance_pack_compliance_scores): <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListConformancePackComplianceScoresError>`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError)
-    pub fn list_conformance_pack_compliance_scores(&self) -> crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresFluentBuilder{
-        crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresFluentBuilder::new(self.handle.clone())
+    pub fn list_conformance_pack_compliance_scores(
+        &self,
+    ) -> crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresFluentBuilder {
+        crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

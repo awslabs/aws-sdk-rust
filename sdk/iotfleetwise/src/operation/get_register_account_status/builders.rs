@@ -29,7 +29,7 @@ impl GetRegisterAccountStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRegisterAccountStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder,
+    inner: crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder,
 }
 impl GetRegisterAccountStatusFluentBuilder {
     /// Creates a new `GetRegisterAccountStatus`.
@@ -40,7 +40,7 @@ impl GetRegisterAccountStatusFluentBuilder {
         }
     }
     /// Access the GetRegisterAccountStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl GetRegisterAccountStatusFluentBuilder {
             crate::operation::get_register_account_status::GetRegisterAccountStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_register_account_status::GetRegisterAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_register_account_status::GetRegisterAccountStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl GetRegisterAccountStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl GetRegisterAccountStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_register_account_status::GetRegisterAccountStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_register_account_status::GetRegisterAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_register_account_status::GetRegisterAccountStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl GetRegisterAccountStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_register_account_status::GetRegisterAccountStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_register_account_status::GetRegisterAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_register_account_status::GetRegisterAccountStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl GetRegisterAccountStatusFluentBuilder {
             crate::operation::get_register_account_status::GetRegisterAccountStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_register_account_status::GetRegisterAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_register_account_status::GetRegisterAccountStatusError>,
     > {
         self.customize_middleware().await
     }

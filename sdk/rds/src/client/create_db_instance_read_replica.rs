@@ -48,7 +48,9 @@ impl super::Client {
     /// - On success, responds with [`CreateDbInstanceReadReplicaOutput`](crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateDBInstanceReadReplicaError>`](crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError)
-    pub fn create_db_instance_read_replica(&self) -> crate::operation::create_db_instance_read_replica::builders::CreateDBInstanceReadReplicaFluentBuilder{
+    pub fn create_db_instance_read_replica(
+        &self,
+    ) -> crate::operation::create_db_instance_read_replica::builders::CreateDBInstanceReadReplicaFluentBuilder {
         crate::operation::create_db_instance_read_replica::builders::CreateDBInstanceReadReplicaFluentBuilder::new(self.handle.clone())
     }
 }

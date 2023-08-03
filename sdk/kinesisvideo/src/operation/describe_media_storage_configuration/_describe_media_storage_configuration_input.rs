@@ -22,16 +22,14 @@ impl DescribeMediaStorageConfigurationInput {
 }
 impl DescribeMediaStorageConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeMediaStorageConfigurationInput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput).
-    pub fn builder() -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationInputBuilder {
         crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMediaStorageConfigurationInput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMediaStorageConfigurationInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DescribeMediaStorageConfigurationInputBuilder {
         &self.channel_arn
     }
     /// Consumes the builder and constructs a [`DescribeMediaStorageConfigurationInput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationInput {
-                channel_name: self.channel_name
-                ,
-                channel_arn: self.channel_arn
-                ,
-            }
+                channel_name: self.channel_name,
+                channel_arn: self.channel_arn,
+            },
         )
     }
 }

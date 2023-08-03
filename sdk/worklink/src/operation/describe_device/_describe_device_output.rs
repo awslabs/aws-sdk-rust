@@ -84,9 +84,7 @@ impl DescribeDeviceOutput {
 
 /// A builder for [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DeviceStatus>,
     pub(crate) model: ::std::option::Option<::std::string::String>,
@@ -143,18 +141,12 @@ impl DescribeDeviceOutputBuilder {
         &self.manufacturer
     }
     /// <p>The operating system of the device.</p>
-    pub fn operating_system(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_system(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operating_system = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system of the device.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operating_system = input;
         self
     }
@@ -163,18 +155,12 @@ impl DescribeDeviceOutputBuilder {
         &self.operating_system
     }
     /// <p>The operating system version of the device.</p>
-    pub fn operating_system_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_system_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operating_system_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system version of the device.</p>
-    pub fn set_operating_system_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operating_system_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operating_system_version = input;
         self
     }
@@ -202,10 +188,7 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>The date that the device first signed in to Amazon WorkLink.</p>
-    pub fn set_first_accessed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_accessed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_accessed_time = input;
         self
     }
@@ -219,10 +202,7 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>The date that the device last accessed Amazon WorkLink.</p>
-    pub fn set_last_accessed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_accessed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_accessed_time = input;
         self
     }

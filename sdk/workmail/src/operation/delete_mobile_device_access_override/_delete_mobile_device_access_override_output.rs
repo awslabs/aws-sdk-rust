@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMobileDeviceAccessOverrideOutpu
 }
 impl DeleteMobileDeviceAccessOverrideOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMobileDeviceAccessOverrideOutput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideOutput).
-    pub fn builder() -> crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideOutputBuilder{
+    pub fn builder() -> crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideOutputBuilder {
         crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMobileDeviceAccessOverrideOutput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessOverrideOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteMobileDeviceAccessOverrideOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessOverrideOutput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideOutput).
-    pub fn build(self) -> crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideOutput{
+    pub fn build(self) -> crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideOutput {
         crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideOutput {
             _request_id: self._request_id,
         }

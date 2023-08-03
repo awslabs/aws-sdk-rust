@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`identity_provider_summaries(Option<Vec<IdentityProviderSummary>>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::identity_provider_summaries): <p>Metadata that describes the list identity providers operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListIdentityProvidersError>`](crate::operation::list_identity_providers::ListIdentityProvidersError)
-    pub fn list_identity_providers(
-        &self,
-    ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder
-    {
-        crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_identity_providers(&self) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder {
+        crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::new(self.handle.clone())
     }
 }

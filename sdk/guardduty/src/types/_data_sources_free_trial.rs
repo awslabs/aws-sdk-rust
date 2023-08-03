@@ -21,8 +21,7 @@ pub struct DataSourcesFreeTrial {
     pub kubernetes: ::std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
     #[doc(hidden)]
-    pub malware_protection:
-        ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
+    pub malware_protection: ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
 }
 impl DataSourcesFreeTrial {
     /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
@@ -42,15 +41,11 @@ impl DataSourcesFreeTrial {
         self.s3_logs.as_ref()
     }
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
-    pub fn kubernetes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KubernetesDataSourceFreeTrial> {
+    pub fn kubernetes(&self) -> ::std::option::Option<&crate::types::KubernetesDataSourceFreeTrial> {
         self.kubernetes.as_ref()
     }
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
-    pub fn malware_protection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MalwareProtectionDataSourceFreeTrial> {
+    pub fn malware_protection(&self) -> ::std::option::Option<&crate::types::MalwareProtectionDataSourceFreeTrial> {
         self.malware_protection.as_ref()
     }
 }
@@ -63,17 +58,14 @@ impl DataSourcesFreeTrial {
 
 /// A builder for [`DataSourcesFreeTrial`](crate::types::DataSourcesFreeTrial).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourcesFreeTrialBuilder {
     pub(crate) cloud_trail: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     pub(crate) dns_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     pub(crate) flow_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     pub(crate) s3_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     pub(crate) kubernetes: ::std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
-    pub(crate) malware_protection:
-        ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
+    pub(crate) malware_protection: ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
 }
 impl DataSourcesFreeTrialBuilder {
     /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
@@ -82,10 +74,7 @@ impl DataSourcesFreeTrialBuilder {
         self
     }
     /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
-    pub fn set_cloud_trail(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
-    ) -> Self {
+    pub fn set_cloud_trail(mut self, input: ::std::option::Option<crate::types::DataSourceFreeTrial>) -> Self {
         self.cloud_trail = input;
         self
     }
@@ -99,10 +88,7 @@ impl DataSourcesFreeTrialBuilder {
         self
     }
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
-    pub fn set_dns_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
-    ) -> Self {
+    pub fn set_dns_logs(mut self, input: ::std::option::Option<crate::types::DataSourceFreeTrial>) -> Self {
         self.dns_logs = input;
         self
     }
@@ -116,10 +102,7 @@ impl DataSourcesFreeTrialBuilder {
         self
     }
     /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
-    pub fn set_flow_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
-    ) -> Self {
+    pub fn set_flow_logs(mut self, input: ::std::option::Option<crate::types::DataSourceFreeTrial>) -> Self {
         self.flow_logs = input;
         self
     }
@@ -133,10 +116,7 @@ impl DataSourcesFreeTrialBuilder {
         self
     }
     /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
-    pub fn set_s3_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
-    ) -> Self {
+    pub fn set_s3_logs(mut self, input: ::std::option::Option<crate::types::DataSourceFreeTrial>) -> Self {
         self.s3_logs = input;
         self
     }
@@ -150,39 +130,26 @@ impl DataSourcesFreeTrialBuilder {
         self
     }
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
-    pub fn set_kubernetes(
-        mut self,
-        input: ::std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
-    ) -> Self {
+    pub fn set_kubernetes(mut self, input: ::std::option::Option<crate::types::KubernetesDataSourceFreeTrial>) -> Self {
         self.kubernetes = input;
         self
     }
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
-    pub fn get_kubernetes(
-        &self,
-    ) -> &::std::option::Option<crate::types::KubernetesDataSourceFreeTrial> {
+    pub fn get_kubernetes(&self) -> &::std::option::Option<crate::types::KubernetesDataSourceFreeTrial> {
         &self.kubernetes
     }
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
-    pub fn malware_protection(
-        mut self,
-        input: crate::types::MalwareProtectionDataSourceFreeTrial,
-    ) -> Self {
+    pub fn malware_protection(mut self, input: crate::types::MalwareProtectionDataSourceFreeTrial) -> Self {
         self.malware_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
-    pub fn set_malware_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
-    ) -> Self {
+    pub fn set_malware_protection(mut self, input: ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>) -> Self {
         self.malware_protection = input;
         self
     }
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
-    pub fn get_malware_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial> {
+    pub fn get_malware_protection(&self) -> &::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial> {
         &self.malware_protection
     }
     /// Consumes the builder and constructs a [`DataSourcesFreeTrial`](crate::types::DataSourcesFreeTrial).

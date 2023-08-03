@@ -9,8 +9,7 @@ pub struct MagneticStoreWriteProperties {
     pub enable_magnetic_store_writes: ::std::option::Option<bool>,
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
     #[doc(hidden)]
-    pub magnetic_store_rejected_data_location:
-        ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,
+    pub magnetic_store_rejected_data_location: ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,
 }
 impl MagneticStoreWriteProperties {
     /// <p>A flag to enable magnetic store writes.</p>
@@ -18,9 +17,7 @@ impl MagneticStoreWriteProperties {
         self.enable_magnetic_store_writes
     }
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
-    pub fn magnetic_store_rejected_data_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MagneticStoreRejectedDataLocation> {
+    pub fn magnetic_store_rejected_data_location(&self) -> ::std::option::Option<&crate::types::MagneticStoreRejectedDataLocation> {
         self.magnetic_store_rejected_data_location.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl MagneticStoreWriteProperties {
 
 /// A builder for [`MagneticStoreWriteProperties`](crate::types::MagneticStoreWriteProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MagneticStoreWritePropertiesBuilder {
     pub(crate) enable_magnetic_store_writes: ::std::option::Option<bool>,
-    pub(crate) magnetic_store_rejected_data_location:
-        ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,
+    pub(crate) magnetic_store_rejected_data_location: ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,
 }
 impl MagneticStoreWritePropertiesBuilder {
     /// <p>A flag to enable magnetic store writes.</p>
@@ -57,10 +51,7 @@ impl MagneticStoreWritePropertiesBuilder {
         &self.enable_magnetic_store_writes
     }
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
-    pub fn magnetic_store_rejected_data_location(
-        mut self,
-        input: crate::types::MagneticStoreRejectedDataLocation,
-    ) -> Self {
+    pub fn magnetic_store_rejected_data_location(mut self, input: crate::types::MagneticStoreRejectedDataLocation) -> Self {
         self.magnetic_store_rejected_data_location = ::std::option::Option::Some(input);
         self
     }
@@ -73,9 +64,7 @@ impl MagneticStoreWritePropertiesBuilder {
         self
     }
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
-    pub fn get_magnetic_store_rejected_data_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::MagneticStoreRejectedDataLocation> {
+    pub fn get_magnetic_store_rejected_data_location(&self) -> &::std::option::Option<crate::types::MagneticStoreRejectedDataLocation> {
         &self.magnetic_store_rejected_data_location
     }
     /// Consumes the builder and constructs a [`MagneticStoreWriteProperties`](crate::types::MagneticStoreWriteProperties).

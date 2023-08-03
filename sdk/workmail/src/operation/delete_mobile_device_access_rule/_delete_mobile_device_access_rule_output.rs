@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMobileDeviceAccessRuleOutput {
 }
 impl DeleteMobileDeviceAccessRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMobileDeviceAccessRuleOutput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput).
-    pub fn builder() -> crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleOutputBuilder{
+    pub fn builder() -> crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleOutputBuilder {
         crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMobileDeviceAccessRuleOutput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessRuleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteMobileDeviceAccessRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessRuleOutput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput
-    {
+    pub fn build(self) -> crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput {
         crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput {
             _request_id: self._request_id,
         }

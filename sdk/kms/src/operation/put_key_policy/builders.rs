@@ -10,10 +10,7 @@ impl PutKeyPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_key_policy::PutKeyPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_key_policy::PutKeyPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_key_policy::PutKeyPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_key_policy();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl PutKeyPolicyFluentBuilder {
         }
     }
     /// Access the PutKeyPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_key_policy::builders::PutKeyPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_key_policy::builders::PutKeyPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl PutKeyPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -231,10 +223,7 @@ impl PutKeyPolicyFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
-    pub fn set_bypass_policy_lockout_safety_check(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_bypass_policy_lockout_safety_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bypass_policy_lockout_safety_check(input);
         self
     }

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`device_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder::device_definition_id) / [`set_device_definition_id(Option<String>)`](crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder::set_device_definition_id): The ID of the device definition.
     /// - On success, responds with [`DeleteDeviceDefinitionOutput`](crate::operation::delete_device_definition::DeleteDeviceDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceDefinitionError>`](crate::operation::delete_device_definition::DeleteDeviceDefinitionError)
-    pub fn delete_device_definition(
-        &self,
-    ) -> crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder
-    {
+    pub fn delete_device_definition(&self) -> crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder {
         crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

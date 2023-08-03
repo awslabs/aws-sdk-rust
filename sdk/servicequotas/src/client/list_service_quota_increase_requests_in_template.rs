@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`service_quota_increase_request_in_template_list(Option<Vec<ServiceQuotaIncreaseRequestInTemplate>>)`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput::service_quota_increase_request_in_template_list): <p>Information about the quota increase requests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListServiceQuotaIncreaseRequestsInTemplateError>`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError)
-    pub fn list_service_quota_increase_requests_in_template(&self) -> crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder{
-        crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder::new(self.handle.clone())
+    pub fn list_service_quota_increase_requests_in_template(
+        &self,
+    ) -> crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder {
+        crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

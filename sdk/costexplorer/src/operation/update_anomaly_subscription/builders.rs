@@ -28,7 +28,7 @@ impl UpdateAnomalySubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAnomalySubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder,
+    inner: crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder,
 }
 impl UpdateAnomalySubscriptionFluentBuilder {
     /// Creates a new `UpdateAnomalySubscription`.
@@ -39,7 +39,7 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         }
     }
     /// Access the UpdateAnomalySubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateAnomalySubscriptionFluentBuilder {
             crate::operation::update_anomaly_subscription::UpdateAnomalySubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateAnomalySubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl UpdateAnomalySubscriptionFluentBuilder {
             crate::operation::update_anomaly_subscription::UpdateAnomalySubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_arn(input.into());
         self
     }
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_arn(input);
         self
     }
@@ -174,17 +157,12 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         self
     }
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
-    pub fn set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalySubscriptionFrequency>,
-    ) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::AnomalySubscriptionFrequency>) -> Self {
         self.inner = self.inner.set_frequency(input);
         self
     }
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
-    pub fn get_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalySubscriptionFrequency> {
+    pub fn get_frequency(&self) -> &::std::option::Option<crate::types::AnomalySubscriptionFrequency> {
         self.inner.get_frequency()
     }
     /// Appends an item to `MonitorArnList`.
@@ -192,25 +170,17 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
     ///
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn monitor_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitor_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_arn_list(input.into());
         self
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn set_monitor_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_monitor_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_monitor_arn_list(input);
         self
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn get_monitor_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_monitor_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_monitor_arn_list()
     }
     /// Appends an item to `Subscribers`.
@@ -223,32 +193,21 @@ impl UpdateAnomalySubscriptionFluentBuilder {
         self
     }
     /// <p>The update to the subscriber list. </p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.inner = self.inner.set_subscribers(input);
         self
     }
     /// <p>The update to the subscriber list. </p>
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         self.inner.get_subscribers()
     }
     /// <p>The new name of the subscription. </p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_name(input.into());
         self
     }
     /// <p>The new name of the subscription. </p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
@@ -278,10 +237,7 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// </ul>
-    pub fn set_threshold_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::Expression>,
-    ) -> Self {
+    pub fn set_threshold_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_threshold_expression(input);
         self
     }

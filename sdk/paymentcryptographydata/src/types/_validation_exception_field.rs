@@ -30,9 +30,7 @@ impl ValidationExceptionField {
 
 /// A builder for [`ValidationExceptionField`](crate::types::ValidationExceptionField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationExceptionFieldBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

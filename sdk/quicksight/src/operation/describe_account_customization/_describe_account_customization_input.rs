@@ -29,16 +29,14 @@ impl DescribeAccountCustomizationInput {
 }
 impl DescribeAccountCustomizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountCustomizationInput`](crate::operation::describe_account_customization::DescribeAccountCustomizationInput).
-    pub fn builder() -> crate::operation::describe_account_customization::builders::DescribeAccountCustomizationInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_customization::builders::DescribeAccountCustomizationInputBuilder {
         crate::operation::describe_account_customization::builders::DescribeAccountCustomizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountCustomizationInput`](crate::operation::describe_account_customization::DescribeAccountCustomizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountCustomizationInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DescribeAccountCustomizationInputBuilder {
 }
 impl DescribeAccountCustomizationInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl DescribeAccountCustomizationInputBuilder {
         crate::operation::describe_account_customization::DescribeAccountCustomizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_customization::DescribeAccountCustomizationInput {
-                aws_account_id: self.aws_account_id,
-                namespace: self.namespace,
-                resolved: self.resolved,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_account_customization::DescribeAccountCustomizationInput {
+            aws_account_id: self.aws_account_id,
+            namespace: self.namespace,
+            resolved: self.resolved,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`ac_ls(Option<Vec<Acl>>)`](crate::operation::describe_ac_ls::DescribeAcLsOutput::ac_ls): <p>The list of ACLs</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ac_ls::DescribeAcLsOutput::next_token): <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// - On failure, responds with [`SdkError<DescribeACLsError>`](crate::operation::describe_ac_ls::DescribeACLsError)
-    pub fn describe_ac_ls(
-        &self,
-    ) -> crate::operation::describe_ac_ls::builders::DescribeACLsFluentBuilder {
-        crate::operation::describe_ac_ls::builders::DescribeACLsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ac_ls(&self) -> crate::operation::describe_ac_ls::builders::DescribeACLsFluentBuilder {
+        crate::operation::describe_ac_ls::builders::DescribeACLsFluentBuilder::new(self.handle.clone())
     }
 }

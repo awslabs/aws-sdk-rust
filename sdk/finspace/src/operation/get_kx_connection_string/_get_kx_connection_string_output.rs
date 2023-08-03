@@ -17,10 +17,7 @@ impl GetKxConnectionStringOutput {
 impl ::std::fmt::Debug for GetKxConnectionStringOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetKxConnectionStringOutput");
-        formatter.field(
-            "signed_connection_string",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("signed_connection_string", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -32,9 +29,7 @@ impl ::aws_http::request_id::RequestId for GetKxConnectionStringOutput {
 }
 impl GetKxConnectionStringOutput {
     /// Creates a new builder-style object to manufacture [`GetKxConnectionStringOutput`](crate::operation::get_kx_connection_string::GetKxConnectionStringOutput).
-    pub fn builder(
-    ) -> crate::operation::get_kx_connection_string::builders::GetKxConnectionStringOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_kx_connection_string::builders::GetKxConnectionStringOutputBuilder {
         crate::operation::get_kx_connection_string::builders::GetKxConnectionStringOutputBuilder::default()
     }
 }
@@ -48,18 +43,12 @@ pub struct GetKxConnectionStringOutputBuilder {
 }
 impl GetKxConnectionStringOutputBuilder {
     /// <p>The signed connection string that you can use to connect to clusters.</p>
-    pub fn signed_connection_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signed_connection_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signed_connection_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signed connection string that you can use to connect to clusters.</p>
-    pub fn set_signed_connection_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signed_connection_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signed_connection_string = input;
         self
     }
@@ -87,10 +76,7 @@ impl GetKxConnectionStringOutputBuilder {
 impl ::std::fmt::Debug for GetKxConnectionStringOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetKxConnectionStringOutputBuilder");
-        formatter.field(
-            "signed_connection_string",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("signed_connection_string", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

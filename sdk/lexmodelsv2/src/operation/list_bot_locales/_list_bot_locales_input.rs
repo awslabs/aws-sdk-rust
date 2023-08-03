@@ -57,9 +57,7 @@ impl ListBotLocalesInput {
 
 /// A builder for [`ListBotLocalesInput`](crate::operation::list_bot_locales::ListBotLocalesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotLocalesInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -103,10 +101,7 @@ impl ListBotLocalesInputBuilder {
         self
     }
     /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::BotLocaleSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::BotLocaleSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -126,17 +121,12 @@ impl ListBotLocalesInputBuilder {
         self
     }
     /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotLocaleFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotLocaleFilter>> {
         &self.filters
     }
     /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -170,10 +160,7 @@ impl ListBotLocalesInputBuilder {
     /// Consumes the builder and constructs a [`ListBotLocalesInput`](crate::operation::list_bot_locales::ListBotLocalesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bot_locales::ListBotLocalesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_bot_locales::ListBotLocalesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bot_locales::ListBotLocalesInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

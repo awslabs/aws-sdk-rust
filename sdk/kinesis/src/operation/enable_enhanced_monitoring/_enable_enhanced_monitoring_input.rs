@@ -54,22 +54,17 @@ impl EnableEnhancedMonitoringInput {
 }
 impl EnableEnhancedMonitoringInput {
     /// Creates a new builder-style object to manufacture [`EnableEnhancedMonitoringInput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput).
-    pub fn builder(
-    ) -> crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder {
         crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableEnhancedMonitoringInput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableEnhancedMonitoringInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) shard_level_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub(crate) shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl EnableEnhancedMonitoringInputBuilder {
@@ -123,10 +118,7 @@ impl EnableEnhancedMonitoringInputBuilder {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn set_shard_level_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
-    ) -> Self {
+    pub fn set_shard_level_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>) -> Self {
         self.shard_level_metrics = input;
         self
     }
@@ -143,9 +135,7 @@ impl EnableEnhancedMonitoringInputBuilder {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn get_shard_level_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+    pub fn get_shard_level_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
         &self.shard_level_metrics
     }
     /// <p>The ARN of the stream.</p>
@@ -169,12 +159,10 @@ impl EnableEnhancedMonitoringInputBuilder {
         crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput {
-                stream_name: self.stream_name,
-                shard_level_metrics: self.shard_level_metrics,
-                stream_arn: self.stream_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringInput {
+            stream_name: self.stream_name,
+            shard_level_metrics: self.shard_level_metrics,
+            stream_arn: self.stream_arn,
+        })
     }
 }

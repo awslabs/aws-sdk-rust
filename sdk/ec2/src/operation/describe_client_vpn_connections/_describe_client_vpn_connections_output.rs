@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeClientVpnConnectionsOutput {
 }
 impl DescribeClientVpnConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnConnectionsOutput`](crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput).
-    pub fn builder() -> crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsOutputBuilder {
         crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnConnectionsOutput`](crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnConnectionsOutputBuilder {
-    pub(crate) connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnConnection>>,
+    pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeClientVpnConnectionsOutputBuilder {
         self
     }
     /// <p>Information about the active and terminated client connections.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnConnection>>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnConnection>>) -> Self {
         self.connections = input;
         self
     }
     /// <p>Information about the active and terminated client connections.</p>
-    pub fn get_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientVpnConnection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientVpnConnection>> {
         &self.connections
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -94,9 +86,7 @@ impl DescribeClientVpnConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClientVpnConnectionsOutput`](crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput {
+    pub fn build(self) -> crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput {
         crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput {
             connections: self.connections,
             next_token: self.next_token,

@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEndpointGroupOutput`](crate::operation::update_endpoint_group::UpdateEndpointGroupOutput) with field(s):
     ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::operation::update_endpoint_group::UpdateEndpointGroupOutput::endpoint_group): <p>The information about the endpoint group that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointGroupError>`](crate::operation::update_endpoint_group::UpdateEndpointGroupError)
-    pub fn update_endpoint_group(
-        &self,
-    ) -> crate::operation::update_endpoint_group::builders::UpdateEndpointGroupFluentBuilder {
-        crate::operation::update_endpoint_group::builders::UpdateEndpointGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_endpoint_group(&self) -> crate::operation::update_endpoint_group::builders::UpdateEndpointGroupFluentBuilder {
+        crate::operation::update_endpoint_group::builders::UpdateEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

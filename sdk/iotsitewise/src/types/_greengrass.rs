@@ -23,9 +23,7 @@ impl Greengrass {
 
 /// A builder for [`Greengrass`](crate::types::Greengrass).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GreengrassBuilder {
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl GreengrassBuilder {
     }
     /// Consumes the builder and constructs a [`Greengrass`](crate::types::Greengrass).
     pub fn build(self) -> crate::types::Greengrass {
-        crate::types::Greengrass {
-            group_arn: self.group_arn,
-        }
+        crate::types::Greengrass { group_arn: self.group_arn }
     }
 }

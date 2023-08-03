@@ -42,9 +42,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::FeaturedResultsC
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FeaturedResultsConflictException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for FeaturedResultsConflictException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -58,13 +56,10 @@ impl FeaturedResultsConflictException {
 
 /// A builder for [`FeaturedResultsConflictException`](crate::types::error::FeaturedResultsConflictException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturedResultsConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) conflicting_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>>,
+    pub(crate) conflicting_items: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl FeaturedResultsConflictExceptionBuilder {
@@ -94,17 +89,12 @@ impl FeaturedResultsConflictExceptionBuilder {
         self
     }
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
-    pub fn set_conflicting_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>>,
-    ) -> Self {
+    pub fn set_conflicting_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>>) -> Self {
         self.conflicting_items = input;
         self
     }
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
-    pub fn get_conflicting_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>> {
+    pub fn get_conflicting_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>> {
         &self.conflicting_items
     }
     /// Sets error metadata
@@ -114,10 +104,7 @@ impl FeaturedResultsConflictExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

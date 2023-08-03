@@ -9,9 +9,7 @@ pub struct GetSampleDataInput {
 }
 impl GetSampleDataInput {
     /// <p>A datasource bucket in Amazon S3.</p>
-    pub fn s3_source_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SampleDataS3SourceConfig> {
+    pub fn s3_source_config(&self) -> ::std::option::Option<&crate::types::SampleDataS3SourceConfig> {
         self.s3_source_config.as_ref()
     }
 }
@@ -24,9 +22,7 @@ impl GetSampleDataInput {
 
 /// A builder for [`GetSampleDataInput`](crate::operation::get_sample_data::GetSampleDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSampleDataInputBuilder {
     pub(crate) s3_source_config: ::std::option::Option<crate::types::SampleDataS3SourceConfig>,
 }
@@ -37,26 +33,18 @@ impl GetSampleDataInputBuilder {
         self
     }
     /// <p>A datasource bucket in Amazon S3.</p>
-    pub fn set_s3_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SampleDataS3SourceConfig>,
-    ) -> Self {
+    pub fn set_s3_source_config(mut self, input: ::std::option::Option<crate::types::SampleDataS3SourceConfig>) -> Self {
         self.s3_source_config = input;
         self
     }
     /// <p>A datasource bucket in Amazon S3.</p>
-    pub fn get_s3_source_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::SampleDataS3SourceConfig> {
+    pub fn get_s3_source_config(&self) -> &::std::option::Option<crate::types::SampleDataS3SourceConfig> {
         &self.s3_source_config
     }
     /// Consumes the builder and constructs a [`GetSampleDataInput`](crate::operation::get_sample_data::GetSampleDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sample_data::GetSampleDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_sample_data::GetSampleDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sample_data::GetSampleDataInput {
             s3_source_config: self.s3_source_config,
         })

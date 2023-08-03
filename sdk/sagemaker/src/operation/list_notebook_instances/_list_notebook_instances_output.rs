@@ -8,8 +8,7 @@ pub struct ListNotebookInstancesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
     #[doc(hidden)]
-    pub notebook_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>>,
+    pub notebook_instances: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotebookInstancesOutput {
@@ -18,9 +17,7 @@ impl ListNotebookInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
-    pub fn notebook_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotebookInstanceSummary]> {
+    pub fn notebook_instances(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceSummary]> {
         self.notebook_instances.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListNotebookInstancesOutput {
 }
 impl ListNotebookInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListNotebookInstancesOutput`](crate::operation::list_notebook_instances::ListNotebookInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notebook_instances::builders::ListNotebookInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notebook_instances::builders::ListNotebookInstancesOutputBuilder {
         crate::operation::list_notebook_instances::builders::ListNotebookInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotebookInstancesOutput`](crate::operation::list_notebook_instances::ListNotebookInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotebookInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) notebook_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>>,
+    pub(crate) notebook_instances: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotebookInstancesOutputBuilder {
@@ -76,17 +68,12 @@ impl ListNotebookInstancesOutputBuilder {
         self
     }
     /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
-    pub fn set_notebook_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>>,
-    ) -> Self {
+    pub fn set_notebook_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>>) -> Self {
         self.notebook_instances = input;
         self
     }
     /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
-    pub fn get_notebook_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>> {
+    pub fn get_notebook_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>> {
         &self.notebook_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

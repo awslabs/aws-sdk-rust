@@ -29,17 +29,14 @@ impl DescribeDataSharesInput {
 }
 impl DescribeDataSharesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSharesInput`](crate::operation::describe_data_shares::DescribeDataSharesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_data_shares::builders::DescribeDataSharesInputBuilder {
+    pub fn builder() -> crate::operation::describe_data_shares::builders::DescribeDataSharesInputBuilder {
         crate::operation::describe_data_shares::builders::DescribeDataSharesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSharesInput`](crate::operation::describe_data_shares::DescribeDataSharesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSharesInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct DescribeDataSharesInputBuilder {
 }
 impl DescribeDataSharesInputBuilder {
     /// <p>The identifier of the datashare to describe details of.</p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the datashare to describe details of.</p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
@@ -97,16 +88,11 @@ impl DescribeDataSharesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDataSharesInput`](crate::operation::describe_data_shares::DescribeDataSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_data_shares::DescribeDataSharesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_data_shares::DescribeDataSharesInput {
-                data_share_arn: self.data_share_arn,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_data_shares::DescribeDataSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_data_shares::DescribeDataSharesInput {
+            data_share_arn: self.data_share_arn,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

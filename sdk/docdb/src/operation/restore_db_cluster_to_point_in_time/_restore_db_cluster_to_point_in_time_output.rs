@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for RestoreDbClusterToPointInTimeOutput {
 }
 impl RestoreDbClusterToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeOutput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput).
-    pub fn builder() -> crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeOutputBuilder{
+    pub fn builder() -> crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeOutputBuilder {
         crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDbClusterToPointInTimeOutput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDbClusterToPointInTimeOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl RestoreDbClusterToPointInTimeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeOutput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput
-    {
+    pub fn build(self) -> crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput {
         crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput {
             db_cluster: self.db_cluster,
             _request_id: self._request_id,

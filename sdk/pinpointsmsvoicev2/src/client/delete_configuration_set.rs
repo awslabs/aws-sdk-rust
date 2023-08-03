@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`default_sender_id(Option<String>)`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput::default_sender_id): <p>The default Sender ID of the configuration set that was deleted.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput::created_timestamp): <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetError>`](crate::operation::delete_configuration_set::DeleteConfigurationSetError)
-    pub fn delete_configuration_set(
-        &self,
-    ) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder
-    {
+    pub fn delete_configuration_set(&self) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder {
         crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

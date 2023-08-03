@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVoiceProfileDomainOutput {
 }
 impl UpdateVoiceProfileDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceProfileDomainOutput`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput).
-    pub fn builder() -> crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainOutputBuilder{
+    pub fn builder() -> crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainOutputBuilder {
         crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceProfileDomainOutput`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceProfileDomainOutputBuilder {
     pub(crate) voice_profile_domain: ::std::option::Option<crate::types::VoiceProfileDomain>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl UpdateVoiceProfileDomainOutputBuilder {
         self
     }
     /// <p>The updated details of the voice profile domain.</p>
-    pub fn set_voice_profile_domain(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceProfileDomain>,
-    ) -> Self {
+    pub fn set_voice_profile_domain(mut self, input: ::std::option::Option<crate::types::VoiceProfileDomain>) -> Self {
         self.voice_profile_domain = input;
         self
     }
     /// <p>The updated details of the voice profile domain.</p>
-    pub fn get_voice_profile_domain(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceProfileDomain> {
+    pub fn get_voice_profile_domain(&self) -> &::std::option::Option<crate::types::VoiceProfileDomain> {
         &self.voice_profile_domain
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl UpdateVoiceProfileDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateVoiceProfileDomainOutput`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput {
+    pub fn build(self) -> crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput {
         crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput {
             voice_profile_domain: self.voice_profile_domain,
             _request_id: self._request_id,

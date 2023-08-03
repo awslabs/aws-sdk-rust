@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelSchemaExtensionOutput {
 }
 impl CancelSchemaExtensionOutput {
     /// Creates a new builder-style object to manufacture [`CancelSchemaExtensionOutput`](crate::operation::cancel_schema_extension::CancelSchemaExtensionOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionOutputBuilder {
         crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSchemaExtensionOutput`](crate::operation::cancel_schema_extension::CancelSchemaExtensionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSchemaExtensionOutputBuilder {
     _request_id: Option<String>,
 }

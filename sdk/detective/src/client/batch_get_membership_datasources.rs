@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`membership_datasources(Option<Vec<MembershipDatasources>>)`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput::membership_datasources): <p>Details on the data source package history for an member of the behavior graph.</p>
     ///   - [`unprocessed_graphs(Option<Vec<UnprocessedGraph>>)`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput::unprocessed_graphs): <p>Graphs that data source package information could not be retrieved for.</p>
     /// - On failure, responds with [`SdkError<BatchGetMembershipDatasourcesError>`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError)
-    pub fn batch_get_membership_datasources(&self) -> crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesFluentBuilder{
+    pub fn batch_get_membership_datasources(
+        &self,
+    ) -> crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesFluentBuilder {
         crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DeleteCollectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_collection::DeleteCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_collection::DeleteCollectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_collection::DeleteCollectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_collection();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteCollectionFluentBuilder {
         }
     }
     /// Access the DeleteCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_collection::builders::DeleteCollectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_collection::builders::DeleteCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteCollectionFluentBuilder {
             crate::operation::delete_collection::DeleteCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_collection::DeleteCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_collection::DeleteCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_collection::DeleteCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_collection::DeleteCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_collection::DeleteCollectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_collection::DeleteCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_collection::DeleteCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_collection::DeleteCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteCollectionFluentBuilder {
             crate::operation::delete_collection::DeleteCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_collection::DeleteCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_collection::DeleteCollectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the collection to delete.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>ID of the collection to delete.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }

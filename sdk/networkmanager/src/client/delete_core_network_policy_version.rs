@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteCoreNetworkPolicyVersionOutput`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput) with field(s):
     ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput::core_network_policy): <p>Returns information about the deleted policy version. </p>
     /// - On failure, responds with [`SdkError<DeleteCoreNetworkPolicyVersionError>`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError)
-    pub fn delete_core_network_policy_version(&self) -> crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionFluentBuilder{
+    pub fn delete_core_network_policy_version(
+        &self,
+    ) -> crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionFluentBuilder {
         crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionFluentBuilder::new(self.handle.clone())
     }
 }

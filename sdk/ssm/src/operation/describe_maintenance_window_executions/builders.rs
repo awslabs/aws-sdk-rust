@@ -5,16 +5,16 @@ pub use crate::operation::describe_maintenance_window_executions::_describe_main
 
 impl DescribeMaintenanceWindowExecutionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_maintenance_window_executions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsInputBuilder,
+    inner: crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsInputBuilder,
 }
 impl DescribeMaintenanceWindowExecutionsFluentBuilder {
     /// Creates a new `DescribeMaintenanceWindowExecutions`.
@@ -37,15 +37,20 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
         }
     }
     /// Access the DescribeMaintenanceWindowExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +87,36 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_executions::paginator::DescribeMaintenanceWindowExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_executions::paginator::DescribeMaintenanceWindowExecutionsPaginator{
-        crate::operation::describe_maintenance_window_executions::paginator::DescribeMaintenanceWindowExecutionsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_executions::paginator::DescribeMaintenanceWindowExecutionsPaginator {
+        crate::operation::describe_maintenance_window_executions::paginator::DescribeMaintenanceWindowExecutionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,10 +150,7 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
     /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
     /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -144,9 +159,7 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
     /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
     /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

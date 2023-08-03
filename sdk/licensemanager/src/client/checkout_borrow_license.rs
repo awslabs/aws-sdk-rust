@@ -19,12 +19,7 @@ impl super::Client {
     ///   - [`expiration(Option<String>)`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput::expiration): <p>Date and time at which the license checkout expires.</p>
     ///   - [`checkout_metadata(Option<Vec<Metadata>>)`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput::checkout_metadata): <p>Information about constraints.</p>
     /// - On failure, responds with [`SdkError<CheckoutBorrowLicenseError>`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError)
-    pub fn checkout_borrow_license(
-        &self,
-    ) -> crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseFluentBuilder
-    {
-        crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn checkout_borrow_license(&self) -> crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseFluentBuilder {
+        crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseFluentBuilder::new(self.handle.clone())
     }
 }

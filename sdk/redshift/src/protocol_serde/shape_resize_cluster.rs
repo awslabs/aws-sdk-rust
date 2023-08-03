@@ -4,269 +4,265 @@ pub fn de_resize_cluster_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::resize_cluster::ResizeClusterOutput,
-    crate::operation::resize_cluster::ResizeClusterError,
-> {
+) -> std::result::Result<crate::operation::resize_cluster::ResizeClusterOutput, crate::operation::resize_cluster::ResizeClusterError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::resize_cluster::ResizeClusterError::unhandled(generic))
-        }
+        None => return Err(crate::operation::resize_cluster::ResizeClusterError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterNotFound" => crate::operation::resize_cluster::ResizeClusterError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DependentServiceUnavailableFault" => crate::operation::resize_cluster::ResizeClusterError::DependentServiceUnavailableFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DependentServiceUnavailableFaultBuilder::default();
-                    output = crate::protocol_serde::shape_dependent_service_unavailable_fault::de_dependent_service_unavailable_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DependentServiceUnavailableFaultBuilder::default();
+                output = crate::protocol_serde::shape_dependent_service_unavailable_fault::de_dependent_service_unavailable_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InsufficientClusterCapacity" => crate::operation::resize_cluster::ResizeClusterError::InsufficientClusterCapacityFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InsufficientClusterCapacityFaultBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_cluster_capacity_fault::de_insufficient_cluster_capacity_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InsufficientClusterCapacityFaultBuilder::default();
+                output = crate::protocol_serde::shape_insufficient_cluster_capacity_fault::de_insufficient_cluster_capacity_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidClusterState" => crate::operation::resize_cluster::ResizeClusterError::InvalidClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidReservedNodeState" => crate::operation::resize_cluster::ResizeClusterError::InvalidReservedNodeStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidReservedNodeStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_reserved_node_state_fault::de_invalid_reserved_node_state_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidReservedNodeStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_reserved_node_state_fault::de_invalid_reserved_node_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceededFault" => crate::operation::resize_cluster::ResizeClusterError::LimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NumberOfNodesPerClusterLimitExceeded" => crate::operation::resize_cluster::ResizeClusterError::NumberOfNodesPerClusterLimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NumberOfNodesPerClusterLimitExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_number_of_nodes_per_cluster_limit_exceeded_fault::de_number_of_nodes_per_cluster_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NumberOfNodesPerClusterLimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_number_of_nodes_per_cluster_limit_exceeded_fault::de_number_of_nodes_per_cluster_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NumberOfNodesQuotaExceeded" => crate::operation::resize_cluster::ResizeClusterError::NumberOfNodesQuotaExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NumberOfNodesQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_number_of_nodes_quota_exceeded_fault::de_number_of_nodes_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NumberOfNodesQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_number_of_nodes_quota_exceeded_fault::de_number_of_nodes_quota_exceeded_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ReservedNodeAlreadyExists" => crate::operation::resize_cluster::ResizeClusterError::ReservedNodeAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReservedNodeAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_reserved_node_already_exists_fault::de_reserved_node_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReservedNodeAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_reserved_node_already_exists_fault::de_reserved_node_already_exists_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ReservedNodeAlreadyMigrated" => crate::operation::resize_cluster::ResizeClusterError::ReservedNodeAlreadyMigratedFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReservedNodeAlreadyMigratedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_reserved_node_already_migrated_fault::de_reserved_node_already_migrated_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReservedNodeAlreadyMigratedFaultBuilder::default();
+                output = crate::protocol_serde::shape_reserved_node_already_migrated_fault::de_reserved_node_already_migrated_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ReservedNodeNotFound" => crate::operation::resize_cluster::ResizeClusterError::ReservedNodeNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReservedNodeNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_reserved_node_not_found_fault::de_reserved_node_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReservedNodeNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_reserved_node_not_found_fault::de_reserved_node_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ReservedNodeOfferingNotFound" => crate::operation::resize_cluster::ResizeClusterError::ReservedNodeOfferingNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReservedNodeOfferingNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_reserved_node_offering_not_found_fault::de_reserved_node_offering_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReservedNodeOfferingNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_reserved_node_offering_not_found_fault::de_reserved_node_offering_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedOperation" => crate::operation::resize_cluster::ResizeClusterError::UnauthorizedOperation({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnsupportedOperation" => crate::operation::resize_cluster::ResizeClusterError::UnsupportedOperationFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnsupportedOptionFault" => crate::operation::resize_cluster::ResizeClusterError::UnsupportedOptionFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnsupportedOptionFaultBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_option_fault::de_unsupported_option_fault_xml_err(_response_body, output).map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOptionFaultBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_option_fault::de_unsupported_option_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::resize_cluster::ResizeClusterError::generic(generic)
+        _ => crate::operation::resize_cluster::ResizeClusterError::generic(generic),
     })
 }
 
@@ -275,20 +271,13 @@ pub fn de_resize_cluster_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::resize_cluster::ResizeClusterOutput,
-    crate::operation::resize_cluster::ResizeClusterError,
-> {
+) -> std::result::Result<crate::operation::resize_cluster::ResizeClusterOutput, crate::operation::resize_cluster::ResizeClusterError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::resize_cluster::builders::ResizeClusterOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_resize_cluster::de_resize_cluster(_response_body, output)
-                .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::resize_cluster::builders::ResizeClusterOutputBuilder::default();
+        output = crate::protocol_serde::shape_resize_cluster::de_resize_cluster(_response_body, output)
+            .map_err(crate::operation::resize_cluster::ResizeClusterError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -297,10 +286,7 @@ pub fn de_resize_cluster_http_response_with_props(
 pub fn de_resize_cluster(
     inp: &[u8],
     mut builder: crate::operation::resize_cluster::builders::ResizeClusterOutputBuilder,
-) -> Result<
-    crate::operation::resize_cluster::builders::ResizeClusterOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::resize_cluster::builders::ResizeClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -337,9 +323,7 @@ pub fn de_resize_cluster(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected ResizeClusterResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ResizeClusterResult tag"));
     };
     Ok(builder)
 }

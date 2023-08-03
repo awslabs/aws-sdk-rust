@@ -23,9 +23,7 @@ impl UpdateAttributesRequest {
 
 /// A builder for [`UpdateAttributesRequest`](crate::types::UpdateAttributesRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAttributesRequestBuilder {
     pub(crate) blacklist: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl UpdateAttributesRequestBuilder {
         self
     }
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
-    pub fn set_blacklist(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_blacklist(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.blacklist = input;
         self
     }
@@ -55,8 +50,6 @@ impl UpdateAttributesRequestBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateAttributesRequest`](crate::types::UpdateAttributesRequest).
     pub fn build(self) -> crate::types::UpdateAttributesRequest {
-        crate::types::UpdateAttributesRequest {
-            blacklist: self.blacklist,
-        }
+        crate::types::UpdateAttributesRequest { blacklist: self.blacklist }
     }
 }

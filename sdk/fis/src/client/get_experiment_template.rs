@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetExperimentTemplateOutput`](crate::operation::get_experiment_template::GetExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::operation::get_experiment_template::GetExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
     /// - On failure, responds with [`SdkError<GetExperimentTemplateError>`](crate::operation::get_experiment_template::GetExperimentTemplateError)
-    pub fn get_experiment_template(
-        &self,
-    ) -> crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder
-    {
-        crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_experiment_template(&self) -> crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder {
+        crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder::new(self.handle.clone())
     }
 }

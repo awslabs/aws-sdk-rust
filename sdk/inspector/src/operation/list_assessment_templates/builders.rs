@@ -26,8 +26,7 @@ impl ListAssessmentTemplatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssessmentTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder,
+    inner: crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder,
 }
 impl ListAssessmentTemplatesFluentBuilder {
     /// Creates a new `ListAssessmentTemplates`.
@@ -38,10 +37,7 @@ impl ListAssessmentTemplatesFluentBuilder {
         }
     }
     /// Access the ListAssessmentTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListAssessmentTemplatesFluentBuilder {
             crate::operation::list_assessment_templates::ListAssessmentTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_templates::ListAssessmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_templates::ListAssessmentTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListAssessmentTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListAssessmentTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_templates::ListAssessmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_templates::ListAssessmentTemplatesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListAssessmentTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_templates::ListAssessmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_templates::ListAssessmentTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListAssessmentTemplatesFluentBuilder {
             crate::operation::list_assessment_templates::ListAssessmentTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_templates::ListAssessmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_templates::ListAssessmentTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator {
         crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `assessmentTargetArns`.
@@ -138,25 +120,17 @@ impl ListAssessmentTemplatesFluentBuilder {
     /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
     ///
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    pub fn assessment_target_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_arns(input.into());
         self
     }
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    pub fn set_assessment_target_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_assessment_target_arns(input);
         self
     }
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    pub fn get_assessment_target_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_assessment_target_arns()
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
@@ -167,10 +141,7 @@ impl ListAssessmentTemplatesFluentBuilder {
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentTemplateFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AssessmentTemplateFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

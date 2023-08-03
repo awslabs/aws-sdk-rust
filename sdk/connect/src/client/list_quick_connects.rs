@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`quick_connect_summary_list(Option<Vec<QuickConnectSummary>>)`](crate::operation::list_quick_connects::ListQuickConnectsOutput::quick_connect_summary_list): <p>Information about the quick connects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_quick_connects::ListQuickConnectsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListQuickConnectsError>`](crate::operation::list_quick_connects::ListQuickConnectsError)
-    pub fn list_quick_connects(
-        &self,
-    ) -> crate::operation::list_quick_connects::builders::ListQuickConnectsFluentBuilder {
-        crate::operation::list_quick_connects::builders::ListQuickConnectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_quick_connects(&self) -> crate::operation::list_quick_connects::builders::ListQuickConnectsFluentBuilder {
+        crate::operation::list_quick_connects::builders::ListQuickConnectsFluentBuilder::new(self.handle.clone())
     }
 }

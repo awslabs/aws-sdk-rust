@@ -37,10 +37,7 @@ impl CreateAssessmentTargetFluentBuilder {
         }
     }
     /// Access the CreateAssessmentTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_assessment_target::builders::CreateAssessmentTargetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_assessment_target::builders::CreateAssessmentTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateAssessmentTargetFluentBuilder {
             crate::operation::create_assessment_target::CreateAssessmentTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_target::CreateAssessmentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_target::CreateAssessmentTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateAssessmentTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateAssessmentTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment_target::CreateAssessmentTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_target::CreateAssessmentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_target::CreateAssessmentTargetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateAssessmentTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment_target::CreateAssessmentTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_target::CreateAssessmentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_target::CreateAssessmentTargetError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateAssessmentTargetFluentBuilder {
             crate::operation::create_assessment_target::CreateAssessmentTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_target::CreateAssessmentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_target::CreateAssessmentTargetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
-    pub fn assessment_target_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_name(input.into());
         self
     }
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
-    pub fn set_assessment_target_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_target_name(input);
         self
     }
@@ -144,18 +124,12 @@ impl CreateAssessmentTargetFluentBuilder {
         self.inner.get_assessment_target_name()
     }
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
-    pub fn resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
-    pub fn set_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_arn(input);
         self
     }

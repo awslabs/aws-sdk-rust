@@ -57,18 +57,14 @@ impl UpdateVpcConnectionInput {
 }
 impl UpdateVpcConnectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcConnectionInput`](crate::operation::update_vpc_connection::UpdateVpcConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::update_vpc_connection::builders::UpdateVpcConnectionInputBuilder {
-        crate::operation::update_vpc_connection::builders::UpdateVpcConnectionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_vpc_connection::builders::UpdateVpcConnectionInputBuilder {
+        crate::operation::update_vpc_connection::builders::UpdateVpcConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVpcConnectionInput`](crate::operation::update_vpc_connection::UpdateVpcConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpcConnectionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_connection_id: ::std::option::Option<::std::string::String>,
@@ -80,18 +76,12 @@ pub struct UpdateVpcConnectionInputBuilder {
 }
 impl UpdateVpcConnectionInputBuilder {
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connection that you want to update.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connection that you want to update.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -100,18 +90,12 @@ impl UpdateVpcConnectionInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn vpc_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn set_vpc_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connection_id = input;
         self
     }
@@ -145,10 +129,7 @@ impl UpdateVpcConnectionInputBuilder {
         self
     }
     /// <p>A list of subnet IDs for the VPC connection.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -161,27 +142,19 @@ impl UpdateVpcConnectionInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of security group IDs for the VPC connection.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of security group IDs for the VPC connection.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>A list of security group IDs for the VPC connection.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `dns_resolvers`.
@@ -189,27 +162,19 @@ impl UpdateVpcConnectionInputBuilder {
     /// To override the contents of this collection use [`set_dns_resolvers`](Self::set_dns_resolvers).
     ///
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn dns_resolvers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dns_resolvers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_resolvers.unwrap_or_default();
         v.push(input.into());
         self.dns_resolvers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn set_dns_resolvers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_resolvers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_resolvers = input;
         self
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn get_dns_resolvers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_resolvers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_resolvers
     }
     /// <p>An IAM role associated with the VPC connection.</p>
@@ -229,20 +194,16 @@ impl UpdateVpcConnectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcConnectionInput`](crate::operation::update_vpc_connection::UpdateVpcConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_vpc_connection::UpdateVpcConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_vpc_connection::UpdateVpcConnectionInput {
-                aws_account_id: self.aws_account_id,
-                vpc_connection_id: self.vpc_connection_id,
-                name: self.name,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                dns_resolvers: self.dns_resolvers,
-                role_arn: self.role_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_vpc_connection::UpdateVpcConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_vpc_connection::UpdateVpcConnectionInput {
+            aws_account_id: self.aws_account_id,
+            vpc_connection_id: self.vpc_connection_id,
+            name: self.name,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
+            dns_resolvers: self.dns_resolvers,
+            role_arn: self.role_arn,
+        })
     }
 }

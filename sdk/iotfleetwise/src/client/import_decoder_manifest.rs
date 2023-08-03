@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput::name): <p> The name of the imported decoder manifest. </p>
     ///   - [`arn(Option<String>)`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput::arn): <p> The Amazon Resource Name (ARN) of the decoder manifest that was imported. </p>
     /// - On failure, responds with [`SdkError<ImportDecoderManifestError>`](crate::operation::import_decoder_manifest::ImportDecoderManifestError)
-    pub fn import_decoder_manifest(
-        &self,
-    ) -> crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder
-    {
-        crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_decoder_manifest(&self) -> crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder {
+        crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::new(self.handle.clone())
     }
 }

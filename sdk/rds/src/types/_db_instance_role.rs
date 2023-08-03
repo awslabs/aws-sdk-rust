@@ -47,9 +47,7 @@ impl DbInstanceRole {
 
 /// A builder for [`DbInstanceRole`](crate::types::DbInstanceRole).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbInstanceRoleBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,

@@ -52,17 +52,14 @@ impl DescribeClustersInput {
 }
 impl DescribeClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
-    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
         crate::operation::describe_clusters::builders::DescribeClustersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClustersInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -73,19 +70,13 @@ pub struct DescribeClustersInputBuilder {
 impl DescribeClustersInputBuilder {
     /// <p>The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.</p>
     /// <p>The default is that all clusters defined for an account are returned.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.</p>
     /// <p>The default is that all clusters defined for an account are returned.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -143,10 +134,7 @@ impl DescribeClustersInputBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching clusters that are associated with the specified key or keys. For example, suppose that you have clusters that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -166,10 +154,7 @@ impl DescribeClustersInputBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching clusters that are associated with the specified tag value or values. For example, suppose that you have clusters that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -180,10 +165,7 @@ impl DescribeClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_clusters::DescribeClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_clusters::DescribeClustersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_clusters::DescribeClustersInput {
             cluster_identifier: self.cluster_identifier,
             max_records: self.max_records,

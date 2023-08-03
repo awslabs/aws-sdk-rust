@@ -37,9 +37,7 @@ impl SlackWorkspaceConfiguration {
 
 /// A builder for [`SlackWorkspaceConfiguration`](crate::types::SlackWorkspaceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlackWorkspaceConfigurationBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) team_name: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl SlackWorkspaceConfigurationBuilder {
         self
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
-    pub fn set_allow_organization_member_account(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allow_organization_member_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_organization_member_account = input;
         self
     }

@@ -35,9 +35,7 @@ impl DescribeJobOutput {
 
 /// A builder for [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobOutputBuilder {
     pub(crate) document_source: ::std::option::Option<::std::string::String>,
     pub(crate) job: ::std::option::Option<crate::types::Job>,
@@ -45,18 +43,12 @@ pub struct DescribeJobOutputBuilder {
 }
 impl DescribeJobOutputBuilder {
     /// <p>An S3 link to the job document.</p>
-    pub fn document_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An S3 link to the job document.</p>
-    pub fn set_document_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_source = input;
         self
     }

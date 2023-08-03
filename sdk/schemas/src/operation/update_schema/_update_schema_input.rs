@@ -57,9 +57,7 @@ impl UpdateSchemaInput {
 
 /// A builder for [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSchemaInputBuilder {
     pub(crate) client_token_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct UpdateSchemaInputBuilder {
 }
 impl UpdateSchemaInputBuilder {
     /// <p>The ID of the client token.</p>
-    pub fn client_token_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the client token.</p>
-    pub fn set_client_token_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token_id = input;
         self
     }
@@ -118,18 +110,12 @@ impl UpdateSchemaInputBuilder {
         &self.description
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -166,12 +152,7 @@ impl UpdateSchemaInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_schema::UpdateSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_schema::UpdateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_schema::UpdateSchemaInput {
             client_token_id: self.client_token_id,
             content: self.content,

@@ -4,9 +4,7 @@ pub fn ser_asset_bundle_import_source(
     input: &crate::types::AssetBundleImportSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.body {
-        object
-            .key("Body")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("Body").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.s3_uri {
         object.key("S3Uri").string(var_2.as_str());

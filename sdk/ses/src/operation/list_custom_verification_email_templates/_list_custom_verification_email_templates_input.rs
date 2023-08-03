@@ -24,16 +24,14 @@ impl ListCustomVerificationEmailTemplatesInput {
 }
 impl ListCustomVerificationEmailTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListCustomVerificationEmailTemplatesInput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput).
-    pub fn builder() -> crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesInputBuilder {
         crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomVerificationEmailTemplatesInput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomVerificationEmailTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -68,14 +66,17 @@ impl ListCustomVerificationEmailTemplatesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCustomVerificationEmailTemplatesInput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

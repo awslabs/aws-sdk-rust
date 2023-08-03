@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ResumeWorkflowRunOutput {
 }
 impl ResumeWorkflowRunOutput {
     /// Creates a new builder-style object to manufacture [`ResumeWorkflowRunOutput`](crate::operation::resume_workflow_run::ResumeWorkflowRunOutput).
-    pub fn builder(
-    ) -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunOutputBuilder {
+    pub fn builder() -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunOutputBuilder {
         crate::operation::resume_workflow_run::builders::ResumeWorkflowRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResumeWorkflowRunOutput`](crate::operation::resume_workflow_run::ResumeWorkflowRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeWorkflowRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +68,7 @@ impl ResumeWorkflowRunOutputBuilder {
         self
     }
     /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
-    pub fn set_node_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_node_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.node_ids = input;
         self
     }

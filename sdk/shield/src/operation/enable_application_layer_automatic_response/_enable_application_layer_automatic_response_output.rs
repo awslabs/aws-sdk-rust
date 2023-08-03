@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for EnableApplicationLayerAutomaticRespon
 }
 impl EnableApplicationLayerAutomaticResponseOutput {
     /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseOutput`](crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput).
-    pub fn builder() -> crate::operation::enable_application_layer_automatic_response::builders::EnableApplicationLayerAutomaticResponseOutputBuilder{
+    pub fn builder() -> crate::operation::enable_application_layer_automatic_response::builders::EnableApplicationLayerAutomaticResponseOutputBuilder
+    {
         crate::operation::enable_application_layer_automatic_response::builders::EnableApplicationLayerAutomaticResponseOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableApplicationLayerAutomaticResponseOutput`](crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableApplicationLayerAutomaticResponseOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl EnableApplicationLayerAutomaticResponseOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableApplicationLayerAutomaticResponseOutput`](crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput).
-    pub fn build(self) -> crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput{
+    pub fn build(self) -> crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput {
         crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput {
             _request_id: self._request_id,
         }

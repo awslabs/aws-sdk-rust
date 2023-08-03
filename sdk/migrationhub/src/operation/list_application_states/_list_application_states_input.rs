@@ -29,18 +29,14 @@ impl ListApplicationStatesInput {
 }
 impl ListApplicationStatesInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationStatesInput`](crate::operation::list_application_states::ListApplicationStatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder {
         crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationStatesInput`](crate::operation::list_application_states::ListApplicationStatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationStatesInputBuilder {
     pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,27 +48,19 @@ impl ListApplicationStatesInputBuilder {
     /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).
     ///
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub fn application_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_ids.unwrap_or_default();
         v.push(input.into());
         self.application_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub fn set_application_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_ids = input;
         self
     }
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub fn get_application_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_ids
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
@@ -106,16 +94,12 @@ impl ListApplicationStatesInputBuilder {
     /// Consumes the builder and constructs a [`ListApplicationStatesInput`](crate::operation::list_application_states::ListApplicationStatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_application_states::ListApplicationStatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_application_states::ListApplicationStatesInput {
-                application_ids: self.application_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_application_states::ListApplicationStatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_application_states::ListApplicationStatesInput {
+            application_ids: self.application_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

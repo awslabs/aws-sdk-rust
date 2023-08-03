@@ -10,10 +10,7 @@ impl DisassociateDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_domain::DisassociateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_domain::DisassociateDomainError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_domain::DisassociateDomainError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_domain();
         fluent_builder.inner = self;
@@ -23,9 +20,7 @@ impl DisassociateDomainInputBuilder {
 /// Fluent builder constructing a request to `DisassociateDomain`.
 ///
 /// <p>Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon WorkLink. </p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -40,9 +35,7 @@ impl DisassociateDomainFluentBuilder {
         }
     }
     /// Access the DisassociateDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_domain::builders::DisassociateDomainInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_domain::builders::DisassociateDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +47,7 @@ impl DisassociateDomainFluentBuilder {
             crate::operation::disassociate_domain::DisassociateDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_domain::DisassociateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_domain::DisassociateDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +57,7 @@ impl DisassociateDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +66,7 @@ impl DisassociateDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_domain::DisassociateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_domain::DisassociateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_domain::DisassociateDomainError>,
     > {
         let op = self
             .inner
@@ -103,9 +89,7 @@ impl DisassociateDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_domain::DisassociateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_domain::DisassociateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_domain::DisassociateDomainError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +103,7 @@ impl DisassociateDomainFluentBuilder {
             crate::operation::disassociate_domain::DisassociateDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_domain::DisassociateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_domain::DisassociateDomainError>,
     > {
         self.customize_middleware().await
     }

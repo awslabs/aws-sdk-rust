@@ -33,7 +33,7 @@ impl DescribeStateMachineAliasInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStateMachineAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasInputBuilder,
+    inner: crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasInputBuilder,
 }
 impl DescribeStateMachineAliasFluentBuilder {
     /// Creates a new `DescribeStateMachineAlias`.
@@ -44,7 +44,7 @@ impl DescribeStateMachineAliasFluentBuilder {
         }
     }
     /// Access the DescribeStateMachineAlias as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl DescribeStateMachineAliasFluentBuilder {
             crate::operation::describe_state_machine_alias::DescribeStateMachineAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl DescribeStateMachineAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl DescribeStateMachineAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl DescribeStateMachineAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +112,17 @@ impl DescribeStateMachineAliasFluentBuilder {
             crate::operation::describe_state_machine_alias::DescribeStateMachineAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-    pub fn state_machine_alias_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_alias_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-    pub fn set_state_machine_alias_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_alias_arn(input);
         self
     }

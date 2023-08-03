@@ -37,10 +37,7 @@ impl GetFunctionDefinitionFluentBuilder {
         }
     }
     /// Access the GetFunctionDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_function_definition::builders::GetFunctionDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_function_definition::builders::GetFunctionDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetFunctionDefinitionFluentBuilder {
             crate::operation::get_function_definition::GetFunctionDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_definition::GetFunctionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_definition::GetFunctionDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetFunctionDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetFunctionDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_definition::GetFunctionDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_definition::GetFunctionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_definition::GetFunctionDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetFunctionDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_definition::GetFunctionDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_definition::GetFunctionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_definition::GetFunctionDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetFunctionDefinitionFluentBuilder {
             crate::operation::get_function_definition::GetFunctionDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_definition::GetFunctionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_definition::GetFunctionDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_definition_id(input.into());
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_definition_id(input);
         self
     }

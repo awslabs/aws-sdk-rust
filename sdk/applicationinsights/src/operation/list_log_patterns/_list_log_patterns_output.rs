@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for ListLogPatternsOutput {
 }
 impl ListLogPatternsOutput {
     /// Creates a new builder-style object to manufacture [`ListLogPatternsOutput`](crate::operation::list_log_patterns::ListLogPatternsOutput).
-    pub fn builder() -> crate::operation::list_log_patterns::builders::ListLogPatternsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_log_patterns::builders::ListLogPatternsOutputBuilder {
         crate::operation::list_log_patterns::builders::ListLogPatternsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLogPatternsOutput`](crate::operation::list_log_patterns::ListLogPatternsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogPatternsOutputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_patterns: ::std::option::Option<::std::vec::Vec<crate::types::LogPattern>>,
@@ -54,18 +51,12 @@ pub struct ListLogPatternsOutputBuilder {
 }
 impl ListLogPatternsOutputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -85,17 +76,12 @@ impl ListLogPatternsOutputBuilder {
         self
     }
     /// <p>The list of log patterns.</p>
-    pub fn set_log_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogPattern>>,
-    ) -> Self {
+    pub fn set_log_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogPattern>>) -> Self {
         self.log_patterns = input;
         self
     }
     /// <p>The list of log patterns.</p>
-    pub fn get_log_patterns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogPattern>> {
+    pub fn get_log_patterns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogPattern>> {
         &self.log_patterns
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>

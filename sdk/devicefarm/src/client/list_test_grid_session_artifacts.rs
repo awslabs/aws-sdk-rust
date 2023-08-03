@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`artifacts(Option<Vec<TestGridSessionArtifact>>)`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput::artifacts): <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<ListTestGridSessionArtifactsError>`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError)
-    pub fn list_test_grid_session_artifacts(&self) -> crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsFluentBuilder{
+    pub fn list_test_grid_session_artifacts(
+        &self,
+    ) -> crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsFluentBuilder {
         crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsFluentBuilder::new(self.handle.clone())
     }
 }

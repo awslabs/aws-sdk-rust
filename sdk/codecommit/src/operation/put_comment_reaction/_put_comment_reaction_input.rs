@@ -22,17 +22,14 @@ impl PutCommentReactionInput {
 }
 impl PutCommentReactionInput {
     /// Creates a new builder-style object to manufacture [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
-    pub fn builder(
-    ) -> crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder {
+    pub fn builder() -> crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder {
         crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder::default()
     }
 }
 
 /// A builder for [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCommentReactionInputBuilder {
     pub(crate) comment_id: ::std::option::Option<::std::string::String>,
     pub(crate) reaction_value: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl PutCommentReactionInputBuilder {
         &self.comment_id
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
-    pub fn reaction_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reaction_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reaction_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
-    pub fn set_reaction_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reaction_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reaction_value = input;
         self
     }
@@ -75,15 +66,10 @@ impl PutCommentReactionInputBuilder {
     /// Consumes the builder and constructs a [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_comment_reaction::PutCommentReactionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_comment_reaction::PutCommentReactionInput {
-                comment_id: self.comment_id,
-                reaction_value: self.reaction_value,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_comment_reaction::PutCommentReactionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_comment_reaction::PutCommentReactionInput {
+            comment_id: self.comment_id,
+            reaction_value: self.reaction_value,
+        })
     }
 }

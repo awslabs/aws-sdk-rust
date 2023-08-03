@@ -15,16 +15,14 @@ impl DescribeUserHierarchyStructureInput {
 }
 impl DescribeUserHierarchyStructureInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserHierarchyStructureInput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput).
-    pub fn builder() -> crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureInputBuilder{
+    pub fn builder() -> crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureInputBuilder {
         crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserHierarchyStructureInput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserHierarchyStructureInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,8 @@ impl DescribeUserHierarchyStructureInputBuilder {
         crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput {
-                instance_id: self.instance_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput {
+            instance_id: self.instance_id,
+        })
     }
 }

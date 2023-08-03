@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetDistributionBundlesOutput`](crate::operation::get_distribution_bundles::GetDistributionBundlesOutput) with field(s):
     ///   - [`bundles(Option<Vec<DistributionBundle>>)`](crate::operation::get_distribution_bundles::GetDistributionBundlesOutput::bundles): <p>An object that describes a distribution bundle.</p>
     /// - On failure, responds with [`SdkError<GetDistributionBundlesError>`](crate::operation::get_distribution_bundles::GetDistributionBundlesError)
-    pub fn get_distribution_bundles(
-        &self,
-    ) -> crate::operation::get_distribution_bundles::builders::GetDistributionBundlesFluentBuilder
-    {
+    pub fn get_distribution_bundles(&self) -> crate::operation::get_distribution_bundles::builders::GetDistributionBundlesFluentBuilder {
         crate::operation::get_distribution_bundles::builders::GetDistributionBundlesFluentBuilder::new(self.handle.clone())
     }
 }

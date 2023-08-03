@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`update_time(Option<DateTime>)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::update_time): <p>When the reference was updated.</p>
     ///   - [`files(Option<ReferenceFiles>)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::files): <p>The reference's files.</p>
     /// - On failure, responds with [`SdkError<GetReferenceMetadataError>`](crate::operation::get_reference_metadata::GetReferenceMetadataError)
-    pub fn get_reference_metadata(
-        &self,
-    ) -> crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder {
-        crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_reference_metadata(&self) -> crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder {
+        crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,8 +8,7 @@ pub struct DescribeServiceUpdatesInput {
     pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update</p>
     #[doc(hidden)]
-    pub service_update_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
+    pub service_update_status: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
     /// <p>The maximum number of records to include in the response</p>
     #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
@@ -23,9 +22,7 @@ impl DescribeServiceUpdatesInput {
         self.service_update_name.as_deref()
     }
     /// <p>The status of the service update</p>
-    pub fn service_update_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceUpdateStatus]> {
+    pub fn service_update_status(&self) -> ::std::option::Option<&[crate::types::ServiceUpdateStatus]> {
         self.service_update_status.as_deref()
     }
     /// <p>The maximum number of records to include in the response</p>
@@ -39,39 +36,28 @@ impl DescribeServiceUpdatesInput {
 }
 impl DescribeServiceUpdatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder {
         crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceUpdatesInputBuilder {
     pub(crate) service_update_name: ::std::option::Option<::std::string::String>,
-    pub(crate) service_update_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
+    pub(crate) service_update_status: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeServiceUpdatesInputBuilder {
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_update_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_update_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_update_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_update_name = input;
         self
     }
@@ -91,17 +77,12 @@ impl DescribeServiceUpdatesInputBuilder {
         self
     }
     /// <p>The status of the service update</p>
-    pub fn set_service_update_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
-    ) -> Self {
+    pub fn set_service_update_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>) -> Self {
         self.service_update_status = input;
         self
     }
     /// <p>The status of the service update</p>
-    pub fn get_service_update_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
+    pub fn get_service_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
         &self.service_update_status
     }
     /// <p>The maximum number of records to include in the response</p>
@@ -135,17 +116,13 @@ impl DescribeServiceUpdatesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_service_updates::DescribeServiceUpdatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_service_updates::DescribeServiceUpdatesInput {
-                service_update_name: self.service_update_name,
-                service_update_status: self.service_update_status,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_service_updates::DescribeServiceUpdatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_service_updates::DescribeServiceUpdatesInput {
+            service_update_name: self.service_update_name,
+            service_update_status: self.service_update_status,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

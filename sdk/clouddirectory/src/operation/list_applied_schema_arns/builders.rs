@@ -37,10 +37,7 @@ impl ListAppliedSchemaArnsFluentBuilder {
         }
     }
     /// Access the ListAppliedSchemaArns as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListAppliedSchemaArnsFluentBuilder {
             crate::operation::list_applied_schema_arns::ListAppliedSchemaArns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListAppliedSchemaArnsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListAppliedSchemaArnsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListAppliedSchemaArnsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl ListAppliedSchemaArnsFluentBuilder {
             crate::operation::list_applied_schema_arns::ListAppliedSchemaArns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_applied_schema_arns::paginator::ListAppliedSchemaArnsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_applied_schema_arns::paginator::ListAppliedSchemaArnsPaginator {
-        crate::operation::list_applied_schema_arns::paginator::ListAppliedSchemaArnsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_applied_schema_arns::paginator::ListAppliedSchemaArnsPaginator {
+        crate::operation::list_applied_schema_arns::paginator::ListAppliedSchemaArnsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the directory you are listing.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory you are listing.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }

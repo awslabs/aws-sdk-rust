@@ -95,16 +95,14 @@ impl AuthorizeSecurityGroupIngressInput {
 }
 impl AuthorizeSecurityGroupIngressInput {
     /// Creates a new builder-style object to manufacture [`AuthorizeSecurityGroupIngressInput`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressInput).
-    pub fn builder() -> crate::operation::authorize_security_group_ingress::builders::AuthorizeSecurityGroupIngressInputBuilder{
+    pub fn builder() -> crate::operation::authorize_security_group_ingress::builders::AuthorizeSecurityGroupIngressInputBuilder {
         crate::operation::authorize_security_group_ingress::builders::AuthorizeSecurityGroupIngressInputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeSecurityGroupIngressInput`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupIngressInputBuilder {
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
     pub(crate) from_port: ::std::option::Option<i32>,
@@ -116,8 +114,7 @@ pub struct AuthorizeSecurityGroupIngressInputBuilder {
     pub(crate) source_security_group_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) to_port: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl AuthorizeSecurityGroupIngressInputBuilder {
     /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p>
@@ -194,17 +191,12 @@ impl AuthorizeSecurityGroupIngressInputBuilder {
         self
     }
     /// <p>The sets of IP permissions.</p>
-    pub fn set_ip_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.ip_permissions = input;
         self
     }
     /// <p>The sets of IP permissions.</p>
-    pub fn get_ip_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.ip_permissions
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
@@ -228,18 +220,12 @@ impl AuthorizeSecurityGroupIngressInputBuilder {
         &self.ip_protocol
     }
     /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead. The source security group must be in the same VPC.</p>
-    pub fn source_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead. The source security group must be in the same VPC.</p>
-    pub fn set_source_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_security_group_name = input;
         self
     }
@@ -248,25 +234,17 @@ impl AuthorizeSecurityGroupIngressInputBuilder {
         &self.source_security_group_name
     }
     /// <p>[Nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>
-    pub fn source_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>
-    pub fn set_source_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_security_group_owner_id = input;
         self
     }
     /// <p>[Nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>
-    pub fn get_source_security_group_owner_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_security_group_owner_id
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p>
@@ -312,17 +290,12 @@ impl AuthorizeSecurityGroupIngressInputBuilder {
         self
     }
     /// <p>[VPC Only] The tags applied to the security group rule.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>[VPC Only] The tags applied to the security group rule.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`AuthorizeSecurityGroupIngressInput`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressInput).
@@ -332,31 +305,18 @@ impl AuthorizeSecurityGroupIngressInputBuilder {
         crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressInput {
-                cidr_ip: self.cidr_ip
-                ,
-                from_port: self.from_port
-                ,
-                group_id: self.group_id
-                ,
-                group_name: self.group_name
-                ,
-                ip_permissions: self.ip_permissions
-                ,
-                ip_protocol: self.ip_protocol
-                ,
-                source_security_group_name: self.source_security_group_name
-                ,
-                source_security_group_owner_id: self.source_security_group_owner_id
-                ,
-                to_port: self.to_port
-                ,
-                dry_run: self.dry_run
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressInput {
+            cidr_ip: self.cidr_ip,
+            from_port: self.from_port,
+            group_id: self.group_id,
+            group_name: self.group_name,
+            ip_permissions: self.ip_permissions,
+            ip_protocol: self.ip_protocol,
+            source_security_group_name: self.source_security_group_name,
+            source_security_group_owner_id: self.source_security_group_owner_id,
+            to_port: self.to_port,
+            dry_run: self.dry_run,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }

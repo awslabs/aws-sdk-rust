@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeCommandsOutput {
 }
 impl DescribeCommandsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCommandsOutput`](crate::operation::describe_commands::DescribeCommandsOutput).
-    pub fn builder() -> crate::operation::describe_commands::builders::DescribeCommandsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_commands::builders::DescribeCommandsOutputBuilder {
         crate::operation::describe_commands::builders::DescribeCommandsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCommandsOutput`](crate::operation::describe_commands::DescribeCommandsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCommandsOutputBuilder {
     pub(crate) commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     _request_id: Option<String>,
@@ -50,10 +47,7 @@ impl DescribeCommandsOutputBuilder {
         self
     }
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    pub fn set_commands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
-    ) -> Self {
+    pub fn set_commands(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>) -> Self {
         self.commands = input;
         self
     }

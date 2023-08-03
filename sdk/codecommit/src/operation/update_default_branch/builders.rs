@@ -39,9 +39,7 @@ impl UpdateDefaultBranchFluentBuilder {
         }
     }
     /// Access the UpdateDefaultBranch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl UpdateDefaultBranchFluentBuilder {
             crate::operation::update_default_branch::UpdateDefaultBranch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_default_branch::UpdateDefaultBranchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_default_branch::UpdateDefaultBranchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl UpdateDefaultBranchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl UpdateDefaultBranchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_default_branch::UpdateDefaultBranchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_default_branch::UpdateDefaultBranchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_default_branch::UpdateDefaultBranchError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl UpdateDefaultBranchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_default_branch::UpdateDefaultBranchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_default_branch::UpdateDefaultBranchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_default_branch::UpdateDefaultBranchError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl UpdateDefaultBranchFluentBuilder {
             crate::operation::update_default_branch::UpdateDefaultBranch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_default_branch::UpdateDefaultBranchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_default_branch::UpdateDefaultBranchError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository to set or change the default branch for.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to set or change the default branch for.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -145,18 +126,12 @@ impl UpdateDefaultBranchFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The name of the branch to set as the default.</p>
-    pub fn default_branch_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_branch_name(input.into());
         self
     }
     /// <p>The name of the branch to set as the default.</p>
-    pub fn set_default_branch_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_branch_name(input);
         self
     }

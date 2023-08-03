@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReplacementTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ReplacementTypeEnum {
             "KEEP_DESTINATION" => ReplacementTypeEnum::KeepDestination,
             "KEEP_SOURCE" => ReplacementTypeEnum::KeepSource,
             "USE_NEW_CONTENT" => ReplacementTypeEnum::UseNewContent,
-            other => ReplacementTypeEnum::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReplacementTypeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ReplacementTypeEnum {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "KEEP_BASE",
-            "KEEP_DESTINATION",
-            "KEEP_SOURCE",
-            "USE_NEW_CONTENT",
-        ]
+        &["KEEP_BASE", "KEEP_DESTINATION", "KEEP_SOURCE", "USE_NEW_CONTENT"]
     }
 }
 impl ::std::convert::AsRef<str> for ReplacementTypeEnum {

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteNetworkInsightsAnalysisOutput`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput) with field(s):
     ///   - [`network_insights_analysis_id(Option<String>)`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput::network_insights_analysis_id): <p>The ID of the network insights analysis.</p>
     /// - On failure, responds with [`SdkError<DeleteNetworkInsightsAnalysisError>`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisError)
-    pub fn delete_network_insights_analysis(&self) -> crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisFluentBuilder{
+    pub fn delete_network_insights_analysis(
+        &self,
+    ) -> crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisFluentBuilder {
         crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

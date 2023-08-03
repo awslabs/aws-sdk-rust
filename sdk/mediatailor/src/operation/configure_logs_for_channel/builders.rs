@@ -26,8 +26,7 @@ impl ConfigureLogsForChannelInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfigureLogsForChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder,
+    inner: crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder,
 }
 impl ConfigureLogsForChannelFluentBuilder {
     /// Creates a new `ConfigureLogsForChannel`.
@@ -38,10 +37,7 @@ impl ConfigureLogsForChannelFluentBuilder {
         }
     }
     /// Access the ConfigureLogsForChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ConfigureLogsForChannelFluentBuilder {
             crate::operation::configure_logs_for_channel::ConfigureLogsForChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ConfigureLogsForChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ConfigureLogsForChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ConfigureLogsForChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ConfigureLogsForChannelFluentBuilder {
             crate::operation::configure_logs_for_channel::ConfigureLogsForChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -148,10 +133,7 @@ impl ConfigureLogsForChannelFluentBuilder {
         self
     }
     /// <p>The types of logs to collect.</p>
-    pub fn set_log_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
-    ) -> Self {
+    pub fn set_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>) -> Self {
         self.inner = self.inner.set_log_types(input);
         self
     }

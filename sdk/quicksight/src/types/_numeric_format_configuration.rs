@@ -7,34 +7,25 @@
 pub struct NumericFormatConfiguration {
     /// <p>The options that determine the number display format configuration.</p>
     #[doc(hidden)]
-    pub number_display_format_configuration:
-        ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
+    pub number_display_format_configuration: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
     /// <p>The options that determine the currency display format configuration.</p>
     #[doc(hidden)]
-    pub currency_display_format_configuration:
-        ::std::option::Option<crate::types::CurrencyDisplayFormatConfiguration>,
+    pub currency_display_format_configuration: ::std::option::Option<crate::types::CurrencyDisplayFormatConfiguration>,
     /// <p>The options that determine the percentage display format configuration.</p>
     #[doc(hidden)]
-    pub percentage_display_format_configuration:
-        ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
+    pub percentage_display_format_configuration: ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
 }
 impl NumericFormatConfiguration {
     /// <p>The options that determine the number display format configuration.</p>
-    pub fn number_display_format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumberDisplayFormatConfiguration> {
+    pub fn number_display_format_configuration(&self) -> ::std::option::Option<&crate::types::NumberDisplayFormatConfiguration> {
         self.number_display_format_configuration.as_ref()
     }
     /// <p>The options that determine the currency display format configuration.</p>
-    pub fn currency_display_format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CurrencyDisplayFormatConfiguration> {
+    pub fn currency_display_format_configuration(&self) -> ::std::option::Option<&crate::types::CurrencyDisplayFormatConfiguration> {
         self.currency_display_format_configuration.as_ref()
     }
     /// <p>The options that determine the percentage display format configuration.</p>
-    pub fn percentage_display_format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PercentageDisplayFormatConfiguration> {
+    pub fn percentage_display_format_configuration(&self) -> ::std::option::Option<&crate::types::PercentageDisplayFormatConfiguration> {
         self.percentage_display_format_configuration.as_ref()
     }
 }
@@ -47,45 +38,29 @@ impl NumericFormatConfiguration {
 
 /// A builder for [`NumericFormatConfiguration`](crate::types::NumericFormatConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumericFormatConfigurationBuilder {
-    pub(crate) number_display_format_configuration:
-        ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
-    pub(crate) currency_display_format_configuration:
-        ::std::option::Option<crate::types::CurrencyDisplayFormatConfiguration>,
-    pub(crate) percentage_display_format_configuration:
-        ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
+    pub(crate) number_display_format_configuration: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
+    pub(crate) currency_display_format_configuration: ::std::option::Option<crate::types::CurrencyDisplayFormatConfiguration>,
+    pub(crate) percentage_display_format_configuration: ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
 }
 impl NumericFormatConfigurationBuilder {
     /// <p>The options that determine the number display format configuration.</p>
-    pub fn number_display_format_configuration(
-        mut self,
-        input: crate::types::NumberDisplayFormatConfiguration,
-    ) -> Self {
+    pub fn number_display_format_configuration(mut self, input: crate::types::NumberDisplayFormatConfiguration) -> Self {
         self.number_display_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the number display format configuration.</p>
-    pub fn set_number_display_format_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
-    ) -> Self {
+    pub fn set_number_display_format_configuration(mut self, input: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>) -> Self {
         self.number_display_format_configuration = input;
         self
     }
     /// <p>The options that determine the number display format configuration.</p>
-    pub fn get_number_display_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumberDisplayFormatConfiguration> {
+    pub fn get_number_display_format_configuration(&self) -> &::std::option::Option<crate::types::NumberDisplayFormatConfiguration> {
         &self.number_display_format_configuration
     }
     /// <p>The options that determine the currency display format configuration.</p>
-    pub fn currency_display_format_configuration(
-        mut self,
-        input: crate::types::CurrencyDisplayFormatConfiguration,
-    ) -> Self {
+    pub fn currency_display_format_configuration(mut self, input: crate::types::CurrencyDisplayFormatConfiguration) -> Self {
         self.currency_display_format_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -98,16 +73,11 @@ impl NumericFormatConfigurationBuilder {
         self
     }
     /// <p>The options that determine the currency display format configuration.</p>
-    pub fn get_currency_display_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CurrencyDisplayFormatConfiguration> {
+    pub fn get_currency_display_format_configuration(&self) -> &::std::option::Option<crate::types::CurrencyDisplayFormatConfiguration> {
         &self.currency_display_format_configuration
     }
     /// <p>The options that determine the percentage display format configuration.</p>
-    pub fn percentage_display_format_configuration(
-        mut self,
-        input: crate::types::PercentageDisplayFormatConfiguration,
-    ) -> Self {
+    pub fn percentage_display_format_configuration(mut self, input: crate::types::PercentageDisplayFormatConfiguration) -> Self {
         self.percentage_display_format_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -120,9 +90,7 @@ impl NumericFormatConfigurationBuilder {
         self
     }
     /// <p>The options that determine the percentage display format configuration.</p>
-    pub fn get_percentage_display_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PercentageDisplayFormatConfiguration> {
+    pub fn get_percentage_display_format_configuration(&self) -> &::std::option::Option<crate::types::PercentageDisplayFormatConfiguration> {
         &self.percentage_display_format_configuration
     }
     /// Consumes the builder and constructs a [`NumericFormatConfiguration`](crate::types::NumericFormatConfiguration).

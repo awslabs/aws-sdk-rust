@@ -23,18 +23,14 @@ impl ListInputSecurityGroupsInput {
 }
 impl ListInputSecurityGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListInputSecurityGroupsInput`](crate::operation::list_input_security_groups::ListInputSecurityGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsInputBuilder {
         crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInputSecurityGroupsInput`](crate::operation::list_input_security_groups::ListInputSecurityGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputSecurityGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,11 +71,9 @@ impl ListInputSecurityGroupsInputBuilder {
         crate::operation::list_input_security_groups::ListInputSecurityGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_input_security_groups::ListInputSecurityGroupsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_input_security_groups::ListInputSecurityGroupsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

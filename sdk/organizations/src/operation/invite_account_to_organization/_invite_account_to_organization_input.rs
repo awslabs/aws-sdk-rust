@@ -56,7 +56,7 @@ impl ::std::fmt::Debug for InviteAccountToOrganizationInput {
 }
 impl InviteAccountToOrganizationInput {
     /// Creates a new builder-style object to manufacture [`InviteAccountToOrganizationInput`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput).
-    pub fn builder() -> crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder {
         crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder::default()
     }
 }
@@ -86,10 +86,7 @@ impl InviteAccountToOrganizationInputBuilder {
     /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
     /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::HandshakeParty>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::HandshakeParty>) -> Self {
         self.target = input;
         self
     }
@@ -136,10 +133,7 @@ impl InviteAccountToOrganizationInputBuilder {
     /// </important> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -158,13 +152,11 @@ impl InviteAccountToOrganizationInputBuilder {
         crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput {
-                target: self.target,
-                notes: self.notes,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput {
+            target: self.target,
+            notes: self.notes,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for InviteAccountToOrganizationInputBuilder {

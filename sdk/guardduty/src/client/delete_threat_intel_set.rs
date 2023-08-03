@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`threat_intel_set_id(impl ::std::convert::Into<String>)`](crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetFluentBuilder::threat_intel_set_id) / [`set_threat_intel_set_id(Option<String>)`](crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetFluentBuilder::set_threat_intel_set_id): <p>The unique ID of the threatIntelSet that you want to delete.</p>
     /// - On success, responds with [`DeleteThreatIntelSetOutput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput)
     /// - On failure, responds with [`SdkError<DeleteThreatIntelSetError>`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetError)
-    pub fn delete_threat_intel_set(
-        &self,
-    ) -> crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetFluentBuilder
-    {
-        crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_threat_intel_set(&self) -> crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetFluentBuilder {
+        crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetFluentBuilder::new(self.handle.clone())
     }
 }

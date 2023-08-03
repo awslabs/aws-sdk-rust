@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`backend_environments(Option<Vec<BackendEnvironment>>)`](crate::operation::list_backend_environments::ListBackendEnvironmentsOutput::backend_environments): <p> The list of backend environments for an Amplify app. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_backend_environments::ListBackendEnvironmentsOutput::next_token): <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     /// - On failure, responds with [`SdkError<ListBackendEnvironmentsError>`](crate::operation::list_backend_environments::ListBackendEnvironmentsError)
-    pub fn list_backend_environments(
-        &self,
-    ) -> crate::operation::list_backend_environments::builders::ListBackendEnvironmentsFluentBuilder
-    {
+    pub fn list_backend_environments(&self) -> crate::operation::list_backend_environments::builders::ListBackendEnvironmentsFluentBuilder {
         crate::operation::list_backend_environments::builders::ListBackendEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

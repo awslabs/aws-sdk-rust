@@ -38,11 +38,7 @@ impl super::Client {
     ///   - [`environment_arn(Option<String>)`](crate::operation::update_environment::UpdateEnvironmentOutput::environment_arn): <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
     ///   - [`operations_role(Option<String>)`](crate::operation::update_environment::UpdateEnvironmentOutput::operations_role): <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::operation::update_environment::UpdateEnvironmentError)
-    pub fn update_environment(
-        &self,
-    ) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
-        crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_environment(&self) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
+        crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

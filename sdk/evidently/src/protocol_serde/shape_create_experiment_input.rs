@@ -12,10 +12,7 @@ pub fn ser_create_experiment_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_metric_goal_config::ser_metric_goal_config(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_metric_goal_config::ser_metric_goal_config(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -58,10 +55,7 @@ pub fn ser_create_experiment_input(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_treatment_config::ser_treatment_config(
-                    &mut object_19,
-                    item_18,
-                )?;
+                crate::protocol_serde::shape_treatment_config::ser_treatment_config(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }

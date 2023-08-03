@@ -27,9 +27,7 @@ impl FastRestoreRule {
         self.interval
     }
     /// <p>The unit of time for enabling fast snapshot restore.</p>
-    pub fn interval_unit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(&self) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
@@ -46,9 +44,7 @@ impl FastRestoreRule {
 
 /// A builder for [`FastRestoreRule`](crate::types::FastRestoreRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FastRestoreRuleBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) interval: ::std::option::Option<i32>,
@@ -90,17 +86,12 @@ impl FastRestoreRuleBuilder {
         self
     }
     /// <p>The unit of time for enabling fast snapshot restore.</p>
-    pub fn set_interval_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
-    ) -> Self {
+    pub fn set_interval_unit(mut self, input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>) -> Self {
         self.interval_unit = input;
         self
     }
     /// <p>The unit of time for enabling fast snapshot restore.</p>
-    pub fn get_interval_unit(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+    pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
         &self.interval_unit
     }
     /// Appends an item to `availability_zones`.
@@ -108,27 +99,19 @@ impl FastRestoreRuleBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Consumes the builder and constructs a [`FastRestoreRule`](crate::types::FastRestoreRule).

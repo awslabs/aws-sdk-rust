@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteDocumentOutput`](crate::operation::batch_delete_document::BatchDeleteDocumentOutput) with field(s):
     ///   - [`failed_documents(Option<Vec<BatchDeleteDocumentResponseFailedDocument>>)`](crate::operation::batch_delete_document::BatchDeleteDocumentOutput::failed_documents): <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteDocumentError>`](crate::operation::batch_delete_document::BatchDeleteDocumentError)
-    pub fn batch_delete_document(
-        &self,
-    ) -> crate::operation::batch_delete_document::builders::BatchDeleteDocumentFluentBuilder {
-        crate::operation::batch_delete_document::builders::BatchDeleteDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_document(&self) -> crate::operation::batch_delete_document::builders::BatchDeleteDocumentFluentBuilder {
+        crate::operation::batch_delete_document::builders::BatchDeleteDocumentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl UpdateRdsDbInstanceInput {
 }
 impl UpdateRdsDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateRdsDbInstanceInput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder {
-        crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder {
+        crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRdsDbInstanceInput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRdsDbInstanceInputBuilder {
     pub(crate) rds_db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_user: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct UpdateRdsDbInstanceInputBuilder {
 }
 impl UpdateRdsDbInstanceInputBuilder {
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_db_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rds_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rds_db_instance_arn = input;
         self
     }
@@ -98,16 +88,12 @@ impl UpdateRdsDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRdsDbInstanceInput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput {
-                rds_db_instance_arn: self.rds_db_instance_arn,
-                db_user: self.db_user,
-                db_password: self.db_password,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput {
+            rds_db_instance_arn: self.rds_db_instance_arn,
+            db_user: self.db_user,
+            db_password: self.db_password,
+        })
     }
 }

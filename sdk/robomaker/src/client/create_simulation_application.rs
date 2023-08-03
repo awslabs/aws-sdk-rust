@@ -23,7 +23,9 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_simulation_application::CreateSimulationApplicationOutput::tags): <p>The list of all tags added to the simulation application.</p>
     ///   - [`environment(Option<Environment>)`](crate::operation::create_simulation_application::CreateSimulationApplicationOutput::environment): <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
     /// - On failure, responds with [`SdkError<CreateSimulationApplicationError>`](crate::operation::create_simulation_application::CreateSimulationApplicationError)
-    pub fn create_simulation_application(&self) -> crate::operation::create_simulation_application::builders::CreateSimulationApplicationFluentBuilder{
+    pub fn create_simulation_application(
+        &self,
+    ) -> crate::operation::create_simulation_application::builders::CreateSimulationApplicationFluentBuilder {
         crate::operation::create_simulation_application::builders::CreateSimulationApplicationFluentBuilder::new(self.handle.clone())
     }
 }

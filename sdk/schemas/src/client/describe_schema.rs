@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`r#type(Option<String>)`](crate::operation::describe_schema::DescribeSchemaOutput::type): <p>The type of the schema.</p>
     ///   - [`version_created_date(Option<DateTime>)`](crate::operation::describe_schema::DescribeSchemaOutput::version_created_date): <p>The date the schema version was created.</p>
     /// - On failure, responds with [`SdkError<DescribeSchemaError>`](crate::operation::describe_schema::DescribeSchemaError)
-    pub fn describe_schema(
-        &self,
-    ) -> crate::operation::describe_schema::builders::DescribeSchemaFluentBuilder {
-        crate::operation::describe_schema::builders::DescribeSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_schema(&self) -> crate::operation::describe_schema::builders::DescribeSchemaFluentBuilder {
+        crate::operation::describe_schema::builders::DescribeSchemaFluentBuilder::new(self.handle.clone())
     }
 }

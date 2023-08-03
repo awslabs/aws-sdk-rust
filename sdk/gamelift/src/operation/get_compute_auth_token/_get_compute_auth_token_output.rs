@@ -68,17 +68,14 @@ impl ::aws_http::request_id::RequestId for GetComputeAuthTokenOutput {
 }
 impl GetComputeAuthTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetComputeAuthTokenOutput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenOutputBuilder {
+    pub fn builder() -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenOutputBuilder {
         crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetComputeAuthTokenOutput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComputeAuthTokenOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -183,10 +180,7 @@ impl GetComputeAuthTokenOutputBuilder {
         self
     }
     /// <p>The amount of time until the authentication token is no longer valid. To continue using the compute resource for game server hosting, renew the authentication token by using this operation again.</p>
-    pub fn set_expiration_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_timestamp = input;
         self
     }

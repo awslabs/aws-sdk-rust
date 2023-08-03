@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`is_truncated(bool)`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsOutput::is_truncated): <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
     ///   - [`next_continuation_token(Option<String>)`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsOutput::next_continuation_token): <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     /// - On failure, responds with [`SdkError<ListBucketInventoryConfigurationsError>`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsError)
-    pub fn list_bucket_inventory_configurations(&self) -> crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsFluentBuilder{
+    pub fn list_bucket_inventory_configurations(
+        &self,
+    ) -> crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsFluentBuilder {
         crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

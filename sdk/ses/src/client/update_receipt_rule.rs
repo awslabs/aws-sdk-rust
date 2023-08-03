@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`rule(ReceiptRule)`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::rule) / [`set_rule(Option<ReceiptRule>)`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::set_rule): <p>A data structure that contains the updated receipt rule information.</p>
     /// - On success, responds with [`UpdateReceiptRuleOutput`](crate::operation::update_receipt_rule::UpdateReceiptRuleOutput)
     /// - On failure, responds with [`SdkError<UpdateReceiptRuleError>`](crate::operation::update_receipt_rule::UpdateReceiptRuleError)
-    pub fn update_receipt_rule(
-        &self,
-    ) -> crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder {
-        crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_receipt_rule(&self) -> crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder {
+        crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::new(self.handle.clone())
     }
 }

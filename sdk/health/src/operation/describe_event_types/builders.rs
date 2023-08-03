@@ -10,10 +10,7 @@ impl DescribeEventTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_event_types::DescribeEventTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_types::DescribeEventTypesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_types::DescribeEventTypesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_event_types();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeEventTypesFluentBuilder {
         }
     }
     /// Access the DescribeEventTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_event_types::builders::DescribeEventTypesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_event_types::builders::DescribeEventTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeEventTypesFluentBuilder {
             crate::operation::describe_event_types::DescribeEventTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_types::DescribeEventTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_types::DescribeEventTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeEventTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeEventTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_types::DescribeEventTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_types::DescribeEventTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_types::DescribeEventTypesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeEventTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_types::DescribeEventTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_types::DescribeEventTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_types::DescribeEventTypesError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +105,15 @@ impl DescribeEventTypesFluentBuilder {
             crate::operation::describe_event_types::DescribeEventTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_types::DescribeEventTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_types::DescribeEventTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator {
-        crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator {
+        crate::operation::describe_event_types::paginator::DescribeEventTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>Values to narrow the results returned.</p>
     pub fn filter(mut self, input: crate::types::EventTypeFilter) -> Self {
@@ -142,10 +121,7 @@ impl DescribeEventTypesFluentBuilder {
         self
     }
     /// <p>Values to narrow the results returned.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EventTypeFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EventTypeFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

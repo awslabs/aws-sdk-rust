@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`entity_summaries(Option<Vec<EntitySummary>>)`](crate::operation::list_entities::ListEntitiesOutput::entity_summaries): <p>A list of objects that contain information about the entities.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entities::ListEntitiesOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEntitiesError>`](crate::operation::list_entities::ListEntitiesError)
-    pub fn list_entities(
-        &self,
-    ) -> crate::operation::list_entities::builders::ListEntitiesFluentBuilder {
-        crate::operation::list_entities::builders::ListEntitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_entities(&self) -> crate::operation::list_entities::builders::ListEntitiesFluentBuilder {
+        crate::operation::list_entities::builders::ListEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

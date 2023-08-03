@@ -37,9 +37,7 @@ impl SigV4Authorization {
 
 /// A builder for [`SigV4Authorization`](crate::types::SigV4Authorization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigV4AuthorizationBuilder {
     pub(crate) signing_region: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SigV4AuthorizationBuilder {
 }
 impl SigV4AuthorizationBuilder {
     /// <p>The signing region.</p>
-    pub fn signing_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing region.</p>
-    pub fn set_signing_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_region = input;
         self
     }

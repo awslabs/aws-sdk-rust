@@ -36,21 +36,16 @@ impl ::aws_http::request_id::RequestId for SimulatePrincipalPolicyOutput {
 }
 impl SimulatePrincipalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SimulatePrincipalPolicyOutput`](crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder {
         crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`SimulatePrincipalPolicyOutput`](crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulatePrincipalPolicyOutputBuilder {
-    pub(crate) evaluation_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
+    pub(crate) evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -68,17 +63,12 @@ impl SimulatePrincipalPolicyOutputBuilder {
         self
     }
     /// <p>The results of the simulation.</p>
-    pub fn set_evaluation_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
-    ) -> Self {
+    pub fn set_evaluation_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>) -> Self {
         self.evaluation_results = input;
         self
     }
     /// <p>The results of the simulation.</p>
-    pub fn get_evaluation_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+    pub fn get_evaluation_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
         &self.evaluation_results
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -119,9 +109,7 @@ impl SimulatePrincipalPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SimulatePrincipalPolicyOutput`](crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput {
+    pub fn build(self) -> crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput {
         crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput {
             evaluation_results: self.evaluation_results,
             is_truncated: self.is_truncated.unwrap_or_default(),

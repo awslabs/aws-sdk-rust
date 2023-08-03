@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for UngroupResourcesOutput {
 }
 impl UngroupResourcesOutput {
     /// Creates a new builder-style object to manufacture [`UngroupResourcesOutput`](crate::operation::ungroup_resources::UngroupResourcesOutput).
-    pub fn builder() -> crate::operation::ungroup_resources::builders::UngroupResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::ungroup_resources::builders::UngroupResourcesOutputBuilder {
         crate::operation::ungroup_resources::builders::UngroupResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UngroupResourcesOutput`](crate::operation::ungroup_resources::UngroupResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UngroupResourcesOutputBuilder {
     pub(crate) succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,
@@ -65,10 +62,7 @@ impl UngroupResourcesOutputBuilder {
         self
     }
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
-    pub fn set_succeeded(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_succeeded(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.succeeded = input;
         self
     }
@@ -88,17 +82,12 @@ impl UngroupResourcesOutputBuilder {
         self
     }
     /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
-    pub fn set_failed(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,
-    ) -> Self {
+    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>) -> Self {
         self.failed = input;
         self
     }
     /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
-    pub fn get_failed(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedResource>> {
+    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedResource>> {
         &self.failed
     }
     /// Appends an item to `pending`.
@@ -113,17 +102,12 @@ impl UngroupResourcesOutputBuilder {
         self
     }
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
-    pub fn set_pending(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>,
-    ) -> Self {
+    pub fn set_pending(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>) -> Self {
         self.pending = input;
         self
     }
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
-    pub fn get_pending(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingResource>> {
+    pub fn get_pending(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingResource>> {
         &self.pending
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

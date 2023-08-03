@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`exclusions(Option<HashMap<String, Exclusion>>)`](crate::operation::describe_exclusions::DescribeExclusionsOutput::exclusions): <p>Information about the exclusions.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_exclusions::DescribeExclusionsOutput::failed_items): <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<DescribeExclusionsError>`](crate::operation::describe_exclusions::DescribeExclusionsError)
-    pub fn describe_exclusions(
-        &self,
-    ) -> crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder {
-        crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_exclusions(&self) -> crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder {
+        crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder::new(self.handle.clone())
     }
 }

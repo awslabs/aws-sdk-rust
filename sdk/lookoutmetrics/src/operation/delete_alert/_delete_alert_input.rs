@@ -22,9 +22,7 @@ impl DeleteAlertInput {
 
 /// A builder for [`DeleteAlertInput`](crate::operation::delete_alert::DeleteAlertInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlertInputBuilder {
     pub(crate) alert_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteAlertInputBuilder {
         &self.alert_arn
     }
     /// Consumes the builder and constructs a [`DeleteAlertInput`](crate::operation::delete_alert::DeleteAlertInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_alert::DeleteAlertInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_alert::DeleteAlertInput {
-            alert_arn: self.alert_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alert::DeleteAlertInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_alert::DeleteAlertInput { alert_arn: self.alert_arn })
     }
 }

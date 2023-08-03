@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelTaskExecutionOutput {
 }
 impl CancelTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`CancelTaskExecutionOutput`](crate::operation::cancel_task_execution::CancelTaskExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_task_execution::builders::CancelTaskExecutionOutputBuilder {
-        crate::operation::cancel_task_execution::builders::CancelTaskExecutionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::cancel_task_execution::builders::CancelTaskExecutionOutputBuilder {
+        crate::operation::cancel_task_execution::builders::CancelTaskExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelTaskExecutionOutput`](crate::operation::cancel_task_execution::CancelTaskExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelTaskExecutionOutputBuilder {
     _request_id: Option<String>,
 }

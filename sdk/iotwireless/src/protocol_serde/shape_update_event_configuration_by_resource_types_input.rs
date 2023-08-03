@@ -6,7 +6,10 @@ pub fn ser_update_event_configuration_by_resource_types_input(
     if let Some(var_1) = &input.connection_status {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConnectionStatus").start_object();
-        crate::protocol_serde::shape_connection_status_resource_type_event_configuration::ser_connection_status_resource_type_event_configuration(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_connection_status_resource_type_event_configuration::ser_connection_status_resource_type_event_configuration(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.device_registration_state {
@@ -30,7 +33,10 @@ pub fn ser_update_event_configuration_by_resource_types_input(
     if let Some(var_9) = &input.proximity {
         #[allow(unused_mut)]
         let mut object_10 = object.key("Proximity").start_object();
-        crate::protocol_serde::shape_proximity_resource_type_event_configuration::ser_proximity_resource_type_event_configuration(&mut object_10, var_9)?;
+        crate::protocol_serde::shape_proximity_resource_type_event_configuration::ser_proximity_resource_type_event_configuration(
+            &mut object_10,
+            var_9,
+        )?;
         object_10.finish();
     }
     Ok(())

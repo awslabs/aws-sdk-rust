@@ -22,17 +22,14 @@ impl UpdateVariantStoreInput {
 }
 impl UpdateVariantStoreInput {
     /// Creates a new builder-style object to manufacture [`UpdateVariantStoreInput`](crate::operation::update_variant_store::UpdateVariantStoreInput).
-    pub fn builder(
-    ) -> crate::operation::update_variant_store::builders::UpdateVariantStoreInputBuilder {
+    pub fn builder() -> crate::operation::update_variant_store::builders::UpdateVariantStoreInputBuilder {
         crate::operation::update_variant_store::builders::UpdateVariantStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVariantStoreInput`](crate::operation::update_variant_store::UpdateVariantStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVariantStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl UpdateVariantStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVariantStoreInput`](crate::operation::update_variant_store::UpdateVariantStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_variant_store::UpdateVariantStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_variant_store::UpdateVariantStoreInput {
-                name: self.name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_variant_store::UpdateVariantStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_variant_store::UpdateVariantStoreInput {
+            name: self.name,
+            description: self.description,
+        })
     }
 }

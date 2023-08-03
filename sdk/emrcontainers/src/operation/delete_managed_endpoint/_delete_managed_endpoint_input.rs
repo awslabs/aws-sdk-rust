@@ -22,18 +22,14 @@ impl DeleteManagedEndpointInput {
 }
 impl DeleteManagedEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteManagedEndpointInput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointInputBuilder {
         crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteManagedEndpointInput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteManagedEndpointInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteManagedEndpointInputBuilder {
         &self.id
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteManagedEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteManagedEndpointInput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput {
-                id: self.id,
-                virtual_cluster_id: self.virtual_cluster_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput {
+            id: self.id,
+            virtual_cluster_id: self.virtual_cluster_id,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl AddMaintenance {
 
 /// A builder for [`AddMaintenance`](crate::types::AddMaintenance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddMaintenanceBuilder {
     pub(crate) maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     pub(crate) maintenance_start_hour: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AddMaintenanceBuilder {
         self
     }
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn set_maintenance_day(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceDay>,
-    ) -> Self {
+    pub fn set_maintenance_day(mut self, input: ::std::option::Option<crate::types::MaintenanceDay>) -> Self {
         self.maintenance_day = input;
         self
     }
@@ -56,18 +51,12 @@ impl AddMaintenanceBuilder {
         &self.maintenance_day
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn maintenance_start_hour(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_start_hour(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_start_hour = ::std::option::Option::Some(input.into());
         self
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn set_maintenance_start_hour(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_start_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_start_hour = input;
         self
     }

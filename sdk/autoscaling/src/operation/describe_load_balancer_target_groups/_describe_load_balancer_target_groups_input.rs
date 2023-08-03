@@ -29,16 +29,14 @@ impl DescribeLoadBalancerTargetGroupsInput {
 }
 impl DescribeLoadBalancerTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerTargetGroupsInput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput).
-    pub fn builder() -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsInputBuilder {
         crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancerTargetGroupsInput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerTargetGroupsInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DescribeLoadBalancerTargetGroupsInputBuilder {
 }
 impl DescribeLoadBalancerTargetGroupsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -94,16 +86,18 @@ impl DescribeLoadBalancerTargetGroupsInputBuilder {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerTargetGroupsInput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                next_token: self.next_token
-                ,
-                max_records: self.max_records
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                next_token: self.next_token,
+                max_records: self.max_records,
+            },
         )
     }
 }

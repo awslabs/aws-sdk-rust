@@ -38,9 +38,7 @@ impl StopAppBlockBuilderFluentBuilder {
         }
     }
     /// Access the StopAppBlockBuilder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl StopAppBlockBuilderFluentBuilder {
             crate::operation::stop_app_block_builder::StopAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_app_block_builder::StopAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_app_block_builder::StopAppBlockBuilderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl StopAppBlockBuilderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl StopAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_app_block_builder::StopAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_app_block_builder::StopAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_app_block_builder::StopAppBlockBuilderError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl StopAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_app_block_builder::StopAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_app_block_builder::StopAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_app_block_builder::StopAppBlockBuilderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl StopAppBlockBuilderFluentBuilder {
             crate::operation::stop_app_block_builder::StopAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_app_block_builder::StopAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_app_block_builder::StopAppBlockBuilderError>,
     > {
         self.customize_middleware().await
     }

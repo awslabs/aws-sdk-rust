@@ -20,17 +20,14 @@ impl DeleteOptionGroupInput {
 }
 impl DeleteOptionGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder {
         crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOptionGroupInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -38,20 +35,14 @@ impl DeleteOptionGroupInputBuilder {
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -64,14 +55,9 @@ impl DeleteOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_option_group::DeleteOptionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_option_group::DeleteOptionGroupInput {
-                option_group_name: self.option_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_option_group::DeleteOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_option_group::DeleteOptionGroupInput {
+            option_group_name: self.option_group_name,
+        })
     }
 }

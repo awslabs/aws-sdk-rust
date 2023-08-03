@@ -37,9 +37,7 @@ impl DeviceEvent {
 
 /// A builder for [`DeviceEvent`](crate::types::DeviceEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceEventBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DeviceEventType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl DeviceEventBuilder {
         self
     }
     /// <p>The time (in epoch) when the event occurred. </p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

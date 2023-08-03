@@ -50,9 +50,7 @@ pub struct ImportImageTask {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
     #[doc(hidden)]
-    pub license_specifications: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>,
-    >,
+    pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>>,
     /// <p>The usage operation value.</p>
     #[doc(hidden)]
     pub usage_operation: ::std::option::Option<::std::string::String>,
@@ -120,9 +118,7 @@ impl ImportImageTask {
         self.tags.as_deref()
     }
     /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
-    pub fn license_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ImportImageLicenseConfigurationResponse]> {
+    pub fn license_specifications(&self) -> ::std::option::Option<&[crate::types::ImportImageLicenseConfigurationResponse]> {
         self.license_specifications.as_deref()
     }
     /// <p>The usage operation value.</p>
@@ -143,9 +139,7 @@ impl ImportImageTask {
 
 /// A builder for [`ImportImageTask`](crate::types::ImportImageTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportImageTaskBuilder {
     pub(crate) architecture: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -157,14 +151,11 @@ pub struct ImportImageTaskBuilder {
     pub(crate) license_type: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) progress: ::std::option::Option<::std::string::String>,
-    pub(crate) snapshot_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>>,
+    pub(crate) snapshot_details: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) license_specifications: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>,
-    >,
+    pub(crate) license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>>,
     pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
     pub(crate) boot_mode: ::std::option::Option<crate::types::BootModeValues>,
 }
@@ -246,18 +237,12 @@ impl ImportImageTaskBuilder {
         &self.image_id
     }
     /// <p>The ID of the import image task.</p>
-    pub fn import_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the import image task.</p>
-    pub fn set_import_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_task_id = input;
         self
     }
@@ -333,17 +318,12 @@ impl ImportImageTaskBuilder {
         self
     }
     /// <p>Information about the snapshots.</p>
-    pub fn set_snapshot_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>>,
-    ) -> Self {
+    pub fn set_snapshot_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>>) -> Self {
         self.snapshot_details = input;
         self
     }
     /// <p>Information about the snapshots.</p>
-    pub fn get_snapshot_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>> {
+    pub fn get_snapshot_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>> {
         &self.snapshot_details
     }
     /// <p>A brief status for the import image task.</p>
@@ -361,18 +341,12 @@ impl ImportImageTaskBuilder {
         &self.status
     }
     /// <p>A descriptive status message for the import image task.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A descriptive status message for the import image task.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -392,10 +366,7 @@ impl ImportImageTaskBuilder {
         self
     }
     /// <p>The tags for the import image task.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -408,10 +379,7 @@ impl ImportImageTaskBuilder {
     /// To override the contents of this collection use [`set_license_specifications`](Self::set_license_specifications).
     ///
     /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
-    pub fn license_specifications(
-        mut self,
-        input: crate::types::ImportImageLicenseConfigurationResponse,
-    ) -> Self {
+    pub fn license_specifications(mut self, input: crate::types::ImportImageLicenseConfigurationResponse) -> Self {
         let mut v = self.license_specifications.unwrap_or_default();
         v.push(input);
         self.license_specifications = ::std::option::Option::Some(v);
@@ -420,34 +388,22 @@ impl ImportImageTaskBuilder {
     /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
     pub fn set_license_specifications(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>>,
     ) -> Self {
         self.license_specifications = input;
         self
     }
     /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
-    pub fn get_license_specifications(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>,
-    > {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>> {
         &self.license_specifications
     }
     /// <p>The usage operation value.</p>
-    pub fn usage_operation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_operation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The usage operation value.</p>
-    pub fn set_usage_operation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_operation = input;
         self
     }
@@ -461,10 +417,7 @@ impl ImportImageTaskBuilder {
         self
     }
     /// <p>The boot mode of the virtual machine.</p>
-    pub fn set_boot_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::BootModeValues>,
-    ) -> Self {
+    pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
         self.boot_mode = input;
         self
     }

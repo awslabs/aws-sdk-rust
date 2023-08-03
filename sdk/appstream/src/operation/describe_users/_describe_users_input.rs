@@ -36,9 +36,7 @@ impl DescribeUsersInput {
 
 /// A builder for [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUsersInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -51,17 +49,12 @@ impl DescribeUsersInputBuilder {
         self
     }
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
     /// <p>The maximum size of each page of results.</p>
@@ -95,10 +88,7 @@ impl DescribeUsersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_users::DescribeUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_users::DescribeUsersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_users::DescribeUsersInput {
             authentication_type: self.authentication_type,
             max_results: self.max_results,

@@ -8,8 +8,7 @@ pub struct ImportDecoderManifestInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The file to load into an Amazon Web Services account. </p>
     #[doc(hidden)]
-    pub network_file_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
+    pub network_file_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
 }
 impl ImportDecoderManifestInput {
     /// <p> The name of the decoder manifest to import. </p>
@@ -17,30 +16,23 @@ impl ImportDecoderManifestInput {
         self.name.as_deref()
     }
     /// <p> The file to load into an Amazon Web Services account. </p>
-    pub fn network_file_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkFileDefinition]> {
+    pub fn network_file_definitions(&self) -> ::std::option::Option<&[crate::types::NetworkFileDefinition]> {
         self.network_file_definitions.as_deref()
     }
 }
 impl ImportDecoderManifestInput {
     /// Creates a new builder-style object to manufacture [`ImportDecoderManifestInput`](crate::operation::import_decoder_manifest::ImportDecoderManifestInput).
-    pub fn builder(
-    ) -> crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder {
         crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportDecoderManifestInput`](crate::operation::import_decoder_manifest::ImportDecoderManifestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportDecoderManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) network_file_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
+    pub(crate) network_file_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
 }
 impl ImportDecoderManifestInputBuilder {
     /// <p> The name of the decoder manifest to import. </p>
@@ -69,31 +61,22 @@ impl ImportDecoderManifestInputBuilder {
         self
     }
     /// <p> The file to load into an Amazon Web Services account. </p>
-    pub fn set_network_file_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
-    ) -> Self {
+    pub fn set_network_file_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>) -> Self {
         self.network_file_definitions = input;
         self
     }
     /// <p> The file to load into an Amazon Web Services account. </p>
-    pub fn get_network_file_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>> {
+    pub fn get_network_file_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>> {
         &self.network_file_definitions
     }
     /// Consumes the builder and constructs a [`ImportDecoderManifestInput`](crate::operation::import_decoder_manifest::ImportDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_decoder_manifest::ImportDecoderManifestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_decoder_manifest::ImportDecoderManifestInput {
-                name: self.name,
-                network_file_definitions: self.network_file_definitions,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_decoder_manifest::ImportDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::import_decoder_manifest::ImportDecoderManifestInput {
+            name: self.name,
+            network_file_definitions: self.network_file_definitions,
+        })
     }
 }

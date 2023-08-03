@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`group_id(Option<String>)`](crate::operation::create_group::CreateGroupOutput::group_id): <p>The identifier of the newly created group in the identity store.</p>
     ///   - [`identity_store_id(Option<String>)`](crate::operation::create_group::CreateGroupOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::operation::create_group::CreateGroupError)
-    pub fn create_group(
-        &self,
-    ) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
+    pub fn create_group(&self) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
         crate::operation::create_group::builders::CreateGroupFluentBuilder::new(self.handle.clone())
     }
 }

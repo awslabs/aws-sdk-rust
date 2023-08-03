@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`key_id(impl ::std::convert::Into<String>)`](crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyFluentBuilder::key_id) / [`set_key_id(Option<String>)`](crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyFluentBuilder::set_key_id): <p>The Id of the UsagePlanKey resource to be deleted.</p>
     /// - On success, responds with [`DeleteUsagePlanKeyOutput`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteUsagePlanKeyError>`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyError)
-    pub fn delete_usage_plan_key(
-        &self,
-    ) -> crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyFluentBuilder {
-        crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_usage_plan_key(&self) -> crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyFluentBuilder {
+        crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVocabularyOutput`](crate::operation::describe_vocabulary::DescribeVocabularyOutput) with field(s):
     ///   - [`vocabulary(Option<Vocabulary>)`](crate::operation::describe_vocabulary::DescribeVocabularyOutput::vocabulary): <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
     /// - On failure, responds with [`SdkError<DescribeVocabularyError>`](crate::operation::describe_vocabulary::DescribeVocabularyError)
-    pub fn describe_vocabulary(
-        &self,
-    ) -> crate::operation::describe_vocabulary::builders::DescribeVocabularyFluentBuilder {
-        crate::operation::describe_vocabulary::builders::DescribeVocabularyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vocabulary(&self) -> crate::operation::describe_vocabulary::builders::DescribeVocabularyFluentBuilder {
+        crate::operation::describe_vocabulary::builders::DescribeVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

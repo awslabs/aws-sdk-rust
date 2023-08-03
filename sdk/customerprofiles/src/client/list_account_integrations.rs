@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListIntegrationItem>>)`](crate::operation::list_account_integrations::ListAccountIntegrationsOutput::items): <p>The list of ListAccountIntegration instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_integrations::ListAccountIntegrationsOutput::next_token): <p>The pagination token from the previous ListAccountIntegrations API call.</p>
     /// - On failure, responds with [`SdkError<ListAccountIntegrationsError>`](crate::operation::list_account_integrations::ListAccountIntegrationsError)
-    pub fn list_account_integrations(
-        &self,
-    ) -> crate::operation::list_account_integrations::builders::ListAccountIntegrationsFluentBuilder
-    {
+    pub fn list_account_integrations(&self) -> crate::operation::list_account_integrations::builders::ListAccountIntegrationsFluentBuilder {
         crate::operation::list_account_integrations::builders::ListAccountIntegrationsFluentBuilder::new(self.handle.clone())
     }
 }

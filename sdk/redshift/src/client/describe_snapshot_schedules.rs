@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`snapshot_schedules(Option<Vec<SnapshotSchedule>>)`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput::snapshot_schedules): <p>A list of SnapshotSchedules.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
     /// - On failure, responds with [`SdkError<DescribeSnapshotSchedulesError>`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError)
-    pub fn describe_snapshot_schedules(&self) -> crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesFluentBuilder{
+    pub fn describe_snapshot_schedules(&self) -> crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesFluentBuilder {
         crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesFluentBuilder::new(self.handle.clone())
     }
 }

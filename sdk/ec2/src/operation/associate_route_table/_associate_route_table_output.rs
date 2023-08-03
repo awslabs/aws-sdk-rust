@@ -17,9 +17,7 @@ impl AssociateRouteTableOutput {
         self.association_id.as_deref()
     }
     /// <p>The state of the association.</p>
-    pub fn association_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RouteTableAssociationState> {
+    pub fn association_state(&self) -> ::std::option::Option<&crate::types::RouteTableAssociationState> {
         self.association_state.as_ref()
     }
 }
@@ -30,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateRouteTableOutput {
 }
 impl AssociateRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`AssociateRouteTableOutput`](crate::operation::associate_route_table::AssociateRouteTableOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_route_table::builders::AssociateRouteTableOutputBuilder {
-        crate::operation::associate_route_table::builders::AssociateRouteTableOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_route_table::builders::AssociateRouteTableOutputBuilder {
+        crate::operation::associate_route_table::builders::AssociateRouteTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateRouteTableOutput`](crate::operation::associate_route_table::AssociateRouteTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateRouteTableOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,
@@ -49,18 +43,12 @@ pub struct AssociateRouteTableOutputBuilder {
 }
 impl AssociateRouteTableOutputBuilder {
     /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -74,17 +62,12 @@ impl AssociateRouteTableOutputBuilder {
         self
     }
     /// <p>The state of the association.</p>
-    pub fn set_association_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteTableAssociationState>,
-    ) -> Self {
+    pub fn set_association_state(mut self, input: ::std::option::Option<crate::types::RouteTableAssociationState>) -> Self {
         self.association_state = input;
         self
     }
     /// <p>The state of the association.</p>
-    pub fn get_association_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteTableAssociationState> {
+    pub fn get_association_state(&self) -> &::std::option::Option<crate::types::RouteTableAssociationState> {
         &self.association_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`bots(Option<Vec<BotMetadata>>)`](crate::operation::get_bot_versions::GetBotVersionsOutput::bots): <p>An array of <code>BotMetadata</code> objects, one for each numbered version of the bot plus one for the <code>$LATEST</code> version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_bot_versions::GetBotVersionsOutput::next_token): <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     /// - On failure, responds with [`SdkError<GetBotVersionsError>`](crate::operation::get_bot_versions::GetBotVersionsError)
-    pub fn get_bot_versions(
-        &self,
-    ) -> crate::operation::get_bot_versions::builders::GetBotVersionsFluentBuilder {
-        crate::operation::get_bot_versions::builders::GetBotVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bot_versions(&self) -> crate::operation::get_bot_versions::builders::GetBotVersionsFluentBuilder {
+        crate::operation::get_bot_versions::builders::GetBotVersionsFluentBuilder::new(self.handle.clone())
     }
 }

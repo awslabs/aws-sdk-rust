@@ -30,9 +30,7 @@ impl PolicyDetails {
 
 /// A builder for [`PolicyDetails`](crate::types::PolicyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyDetailsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::FindingAction>,
     pub(crate) actor: ::std::option::Option<crate::types::FindingActor>,

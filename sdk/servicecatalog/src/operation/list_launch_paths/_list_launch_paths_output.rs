@@ -5,8 +5,7 @@
 pub struct ListLaunchPathsOutput {
     /// <p>Information about the launch path.</p>
     #[doc(hidden)]
-    pub launch_path_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchPathSummary>>,
+    pub launch_path_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPathSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListLaunchPathsOutput {
 }
 impl ListLaunchPathsOutput {
     /// <p>Information about the launch path.</p>
-    pub fn launch_path_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LaunchPathSummary]> {
+    pub fn launch_path_summaries(&self) -> ::std::option::Option<&[crate::types::LaunchPathSummary]> {
         self.launch_path_summaries.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLaunchPathsOutput {
 }
 impl ListLaunchPathsOutput {
     /// Creates a new builder-style object to manufacture [`ListLaunchPathsOutput`](crate::operation::list_launch_paths::ListLaunchPathsOutput).
-    pub fn builder() -> crate::operation::list_launch_paths::builders::ListLaunchPathsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_launch_paths::builders::ListLaunchPathsOutputBuilder {
         crate::operation::list_launch_paths::builders::ListLaunchPathsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLaunchPathsOutput`](crate::operation::list_launch_paths::ListLaunchPathsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLaunchPathsOutputBuilder {
-    pub(crate) launch_path_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchPathSummary>>,
+    pub(crate) launch_path_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPathSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,32 +54,21 @@ impl ListLaunchPathsOutputBuilder {
         self
     }
     /// <p>Information about the launch path.</p>
-    pub fn set_launch_path_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPathSummary>>,
-    ) -> Self {
+    pub fn set_launch_path_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPathSummary>>) -> Self {
         self.launch_path_summaries = input;
         self
     }
     /// <p>Information about the launch path.</p>
-    pub fn get_launch_path_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPathSummary>> {
+    pub fn get_launch_path_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPathSummary>> {
         &self.launch_path_summaries
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

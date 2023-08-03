@@ -10,10 +10,7 @@ impl CreateDevicePoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_device_pool::CreateDevicePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_pool::CreateDevicePoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_pool::CreateDevicePoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_device_pool();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDevicePoolFluentBuilder {
         }
     }
     /// Access the CreateDevicePool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_device_pool::builders::CreateDevicePoolInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_device_pool::builders::CreateDevicePoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDevicePoolFluentBuilder {
             crate::operation::create_device_pool::CreateDevicePool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_pool::CreateDevicePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_pool::CreateDevicePoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDevicePoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDevicePoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_device_pool::CreateDevicePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_pool::CreateDevicePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_pool::CreateDevicePoolError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDevicePoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_device_pool::CreateDevicePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_pool::CreateDevicePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_pool::CreateDevicePoolError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDevicePoolFluentBuilder {
             crate::operation::create_device_pool::CreateDevicePool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_pool::CreateDevicePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_pool::CreateDevicePoolError>,
     > {
         self.customize_middleware().await
     }
@@ -174,10 +158,7 @@ impl CreateDevicePoolFluentBuilder {
         self
     }
     /// <p>The device pool's rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }

@@ -28,9 +28,7 @@ impl StartLaunchOutput {
 
 /// A builder for [`StartLaunchOutput`](crate::operation::start_launch::StartLaunchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLaunchOutputBuilder {
     pub(crate) launch: ::std::option::Option<crate::types::Launch>,
     _request_id: Option<String>,

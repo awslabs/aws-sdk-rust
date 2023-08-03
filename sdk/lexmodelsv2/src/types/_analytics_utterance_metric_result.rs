@@ -59,9 +59,7 @@ impl AnalyticsUtteranceMetricResult {
 
 /// A builder for [`AnalyticsUtteranceMetricResult`](crate::types::AnalyticsUtteranceMetricResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceMetricResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
@@ -86,10 +84,7 @@ impl AnalyticsUtteranceMetricResultBuilder {
     /// <li> <p> <code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p> </li>
     /// <li> <p> <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsUtteranceMetricName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceMetricName>) -> Self {
         self.name = input;
         self
     }
@@ -119,10 +114,7 @@ impl AnalyticsUtteranceMetricResultBuilder {
     /// <li> <p> <code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
         self
     }

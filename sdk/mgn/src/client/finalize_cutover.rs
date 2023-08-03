@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`user_provided_id(Option<String>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<FinalizeCutoverError>`](crate::operation::finalize_cutover::FinalizeCutoverError)
-    pub fn finalize_cutover(
-        &self,
-    ) -> crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder {
-        crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn finalize_cutover(&self) -> crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder {
+        crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ impl DeleteFlywheelInput {
 
 /// A builder for [`DeleteFlywheelInput`](crate::operation::delete_flywheel::DeleteFlywheelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlywheelInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteFlywheelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFlywheelInput`](crate::operation::delete_flywheel::DeleteFlywheelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_flywheel::DeleteFlywheelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_flywheel::DeleteFlywheelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_flywheel::DeleteFlywheelInput {
             flywheel_arn: self.flywheel_arn,
         })

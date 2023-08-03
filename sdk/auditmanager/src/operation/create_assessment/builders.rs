@@ -10,10 +10,7 @@ impl CreateAssessmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_assessment::CreateAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment::CreateAssessmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment::CreateAssessmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_assessment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAssessmentFluentBuilder {
         }
     }
     /// Access the CreateAssessment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_assessment::builders::CreateAssessmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_assessment::builders::CreateAssessmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateAssessmentFluentBuilder {
             crate::operation::create_assessment::CreateAssessment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment::CreateAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment::CreateAssessmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateAssessmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment::CreateAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment::CreateAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment::CreateAssessmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment::CreateAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment::CreateAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment::CreateAssessmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateAssessmentFluentBuilder {
             crate::operation::create_assessment::CreateAssessment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment::CreateAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment::CreateAssessmentError>,
     > {
         self.customize_middleware().await
     }
@@ -151,25 +135,17 @@ impl CreateAssessmentFluentBuilder {
         self.inner.get_description()
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    pub fn assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.inner = self.inner.assessment_reports_destination(input);
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    pub fn set_assessment_reports_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
+    pub fn set_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.inner = self.inner.set_assessment_reports_destination(input);
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    pub fn get_assessment_reports_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+    pub fn get_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         self.inner.get_assessment_reports_destination()
     }
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
@@ -196,10 +172,7 @@ impl CreateAssessmentFluentBuilder {
         self
     }
     /// <p> The list of roles for the assessment. </p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.inner = self.inner.set_roles(input);
         self
     }
@@ -226,30 +199,17 @@ impl CreateAssessmentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

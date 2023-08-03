@@ -28,7 +28,7 @@ impl UpdateAppVersionAppComponentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAppVersionAppComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentInputBuilder,
+    inner: crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentInputBuilder,
 }
 impl UpdateAppVersionAppComponentFluentBuilder {
     /// Creates a new `UpdateAppVersionAppComponent`.
@@ -39,7 +39,7 @@ impl UpdateAppVersionAppComponentFluentBuilder {
         }
     }
     /// Access the UpdateAppVersionAppComponent as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateAppVersionAppComponentFluentBuilder {
             crate::operation::update_app_version_app_component::UpdateAppVersionAppComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateAppVersionAppComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateAppVersionAppComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateAppVersionAppComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl UpdateAppVersionAppComponentFluentBuilder {
             crate::operation::update_app_version_app_component::UpdateAppVersionAppComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError>,
     > {
         self.customize_middleware().await
     }
@@ -183,23 +172,14 @@ impl UpdateAppVersionAppComponentFluentBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>Currently, there is no supported additional information for Application Components.</p>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.additional_info(k.into(), v);
         self
     }
     /// <p>Currently, there is no supported additional information for Application Components.</p>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_additional_info(input);
         self
@@ -207,9 +187,7 @@ impl UpdateAppVersionAppComponentFluentBuilder {
     /// <p>Currently, there is no supported additional information for Application Components.</p>
     pub fn get_additional_info(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_additional_info()
     }
 }

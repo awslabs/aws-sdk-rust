@@ -39,9 +39,7 @@ impl ListAddonsOutput {
 
 /// A builder for [`ListAddonsOutput`](crate::operation::list_addons::ListAddonsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAddonsOutputBuilder {
     pub(crate) addons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl ListAddonsOutputBuilder {
         self
     }
     /// <p>A list of available add-ons.</p>
-    pub fn set_addons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_addons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.addons = input;
         self
     }

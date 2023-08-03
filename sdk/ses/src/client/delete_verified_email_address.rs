@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder::set_email_address): <p>An email address to be removed from the list of verified addresses.</p>
     /// - On success, responds with [`DeleteVerifiedEmailAddressOutput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput)
     /// - On failure, responds with [`SdkError<DeleteVerifiedEmailAddressError>`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError)
-    pub fn delete_verified_email_address(&self) -> crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder{
+    pub fn delete_verified_email_address(
+        &self,
+    ) -> crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder {
         crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder::new(self.handle.clone())
     }
 }

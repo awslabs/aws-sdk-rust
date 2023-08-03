@@ -19,10 +19,7 @@ pub fn ser_cache_behavior(
     }
     if let Some(var_4) = &input.trusted_key_groups {
         let inner_writer = scope.start_el("TrustedKeyGroups");
-        crate::protocol_serde::shape_trusted_key_groups::ser_trusted_key_groups(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_trusted_key_groups::ser_trusted_key_groups(var_4, inner_writer)?
     }
     if let Some(var_5) = &input.viewer_protocol_policy {
         let mut inner_writer = scope.start_el("ViewerProtocolPolicy").finish();
@@ -42,17 +39,11 @@ pub fn ser_cache_behavior(
     }
     if let Some(var_9) = &input.lambda_function_associations {
         let inner_writer = scope.start_el("LambdaFunctionAssociations");
-        crate::protocol_serde::shape_lambda_function_associations::ser_lambda_function_associations(
-            var_9,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_lambda_function_associations::ser_lambda_function_associations(var_9, inner_writer)?
     }
     if let Some(var_10) = &input.function_associations {
         let inner_writer = scope.start_el("FunctionAssociations");
-        crate::protocol_serde::shape_function_associations::ser_function_associations(
-            var_10,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_function_associations::ser_function_associations(var_10, inner_writer)?
     }
     if let Some(var_11) = &input.field_level_encryption_id {
         let mut inner_writer = scope.start_el("FieldLevelEncryptionId").finish();

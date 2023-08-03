@@ -4,95 +4,88 @@ pub fn de_initiate_vault_lock_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::initiate_vault_lock::InitiateVaultLockOutput,
-    crate::operation::initiate_vault_lock::InitiateVaultLockError,
-> {
+) -> std::result::Result<crate::operation::initiate_vault_lock::InitiateVaultLockOutput, crate::operation::initiate_vault_lock::InitiateVaultLockError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::operation::initiate_vault_lock::InitiateVaultLockError::InvalidParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "MissingParameterValueException" => crate::operation::initiate_vault_lock::InitiateVaultLockError::MissingParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::initiate_vault_lock::InitiateVaultLockError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::initiate_vault_lock::InitiateVaultLockError::ServiceUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::initiate_vault_lock::InitiateVaultLockError::generic(generic)
+        _ => crate::operation::initiate_vault_lock::InitiateVaultLockError::generic(generic),
     })
 }
 
@@ -101,26 +94,17 @@ pub fn de_initiate_vault_lock_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::initiate_vault_lock::InitiateVaultLockOutput,
-    crate::operation::initiate_vault_lock::InitiateVaultLockError,
-> {
+) -> std::result::Result<crate::operation::initiate_vault_lock::InitiateVaultLockOutput, crate::operation::initiate_vault_lock::InitiateVaultLockError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::initiate_vault_lock::builders::InitiateVaultLockOutputBuilder::default();
         output = output.set_lock_id(
-            crate::protocol_serde::shape_initiate_vault_lock_output::de_lock_id_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled(
-                    "Failed to parse lockId from header `x-amz-lock-id",
-                )
+            crate::protocol_serde::shape_initiate_vault_lock_output::de_lock_id_header(_response_headers).map_err(|_| {
+                crate::operation::initiate_vault_lock::InitiateVaultLockError::unhandled("Failed to parse lockId from header `x-amz-lock-id")
             })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

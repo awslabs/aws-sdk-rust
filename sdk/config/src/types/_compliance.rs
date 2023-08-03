@@ -13,8 +13,7 @@ pub struct Compliance {
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>The number of Amazon Web Services resources or Config rules that cause a result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
     #[doc(hidden)]
-    pub compliance_contributor_count:
-        ::std::option::Option<crate::types::ComplianceContributorCount>,
+    pub compliance_contributor_count: ::std::option::Option<crate::types::ComplianceContributorCount>,
 }
 impl Compliance {
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant.</p>
@@ -26,9 +25,7 @@ impl Compliance {
         self.compliance_type.as_ref()
     }
     /// <p>The number of Amazon Web Services resources or Config rules that cause a result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
-    pub fn compliance_contributor_count(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComplianceContributorCount> {
+    pub fn compliance_contributor_count(&self) -> ::std::option::Option<&crate::types::ComplianceContributorCount> {
         self.compliance_contributor_count.as_ref()
     }
 }
@@ -41,13 +38,10 @@ impl Compliance {
 
 /// A builder for [`Compliance`](crate::types::Compliance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComplianceBuilder {
     pub(crate) compliance_type: ::std::option::Option<crate::types::ComplianceType>,
-    pub(crate) compliance_contributor_count:
-        ::std::option::Option<crate::types::ComplianceContributorCount>,
+    pub(crate) compliance_contributor_count: ::std::option::Option<crate::types::ComplianceContributorCount>,
 }
 impl ComplianceBuilder {
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant.</p>
@@ -64,10 +58,7 @@ impl ComplianceBuilder {
     /// <p>A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any of these resources do not comply.</p>
     /// <p>Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the Amazon Web Services resource or Config rule.</p>
     /// <p>For the <code>Compliance</code> data type, Config supports only <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code> values. Config does not support the <code>NOT_APPLICABLE</code> value for the <code>Compliance</code> data type.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceType>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ComplianceType>) -> Self {
         self.compliance_type = input;
         self
     }
@@ -80,25 +71,17 @@ impl ComplianceBuilder {
         &self.compliance_type
     }
     /// <p>The number of Amazon Web Services resources or Config rules that cause a result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
-    pub fn compliance_contributor_count(
-        mut self,
-        input: crate::types::ComplianceContributorCount,
-    ) -> Self {
+    pub fn compliance_contributor_count(mut self, input: crate::types::ComplianceContributorCount) -> Self {
         self.compliance_contributor_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Amazon Web Services resources or Config rules that cause a result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
-    pub fn set_compliance_contributor_count(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceContributorCount>,
-    ) -> Self {
+    pub fn set_compliance_contributor_count(mut self, input: ::std::option::Option<crate::types::ComplianceContributorCount>) -> Self {
         self.compliance_contributor_count = input;
         self
     }
     /// <p>The number of Amazon Web Services resources or Config rules that cause a result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
-    pub fn get_compliance_contributor_count(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComplianceContributorCount> {
+    pub fn get_compliance_contributor_count(&self) -> &::std::option::Option<crate::types::ComplianceContributorCount> {
         &self.compliance_contributor_count
     }
     /// Consumes the builder and constructs a [`Compliance`](crate::types::Compliance).

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutNotificationSettingsOutput`](crate::operation::put_notification_settings::PutNotificationSettingsOutput) with field(s):
     ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::put_notification_settings::PutNotificationSettingsOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
     /// - On failure, responds with [`SdkError<PutNotificationSettingsError>`](crate::operation::put_notification_settings::PutNotificationSettingsError)
-    pub fn put_notification_settings(
-        &self,
-    ) -> crate::operation::put_notification_settings::builders::PutNotificationSettingsFluentBuilder
-    {
+    pub fn put_notification_settings(&self) -> crate::operation::put_notification_settings::builders::PutNotificationSettingsFluentBuilder {
         crate::operation::put_notification_settings::builders::PutNotificationSettingsFluentBuilder::new(self.handle.clone())
     }
 }

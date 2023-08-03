@@ -43,9 +43,7 @@ impl ListEventsInput {
 
 /// A builder for [`ListEventsInput`](crate::operation::list_events::ListEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListEventsFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -59,10 +57,7 @@ impl ListEventsInputBuilder {
         self
     }
     /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListEventsFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListEventsFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -113,12 +108,7 @@ impl ListEventsInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListEventsInput`](crate::operation::list_events::ListEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_events::ListEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_events::ListEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_events::ListEventsInput {
             filters: self.filters,
             max_results: self.max_results,

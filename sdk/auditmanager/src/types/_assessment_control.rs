@@ -79,9 +79,7 @@ impl AssessmentControl {
 
 /// A builder for [`AssessmentControl`](crate::types::AssessmentControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentControlBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -156,10 +154,7 @@ impl AssessmentControlBuilder {
         self
     }
     /// <p> The response of the control. </p>
-    pub fn set_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlResponse>,
-    ) -> Self {
+    pub fn set_response(mut self, input: ::std::option::Option<crate::types::ControlResponse>) -> Self {
         self.response = input;
         self
     }
@@ -179,17 +174,12 @@ impl AssessmentControlBuilder {
         self
     }
     /// <p> The list of comments that's attached to the control. </p>
-    pub fn set_comments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlComment>>,
-    ) -> Self {
+    pub fn set_comments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlComment>>) -> Self {
         self.comments = input;
         self
     }
     /// <p> The list of comments that's attached to the control. </p>
-    pub fn get_comments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlComment>> {
+    pub fn get_comments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlComment>> {
         &self.comments
     }
     /// Appends an item to `evidence_sources`.
@@ -197,27 +187,19 @@ impl AssessmentControlBuilder {
     /// To override the contents of this collection use [`set_evidence_sources`](Self::set_evidence_sources).
     ///
     /// <p> The list of data sources for the evidence. </p>
-    pub fn evidence_sources(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.evidence_sources.unwrap_or_default();
         v.push(input.into());
         self.evidence_sources = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of data sources for the evidence. </p>
-    pub fn set_evidence_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_evidence_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.evidence_sources = input;
         self
     }
     /// <p> The list of data sources for the evidence. </p>
-    pub fn get_evidence_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_evidence_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.evidence_sources
     }
     /// <p> The amount of evidence that's collected for the control. </p>
@@ -240,10 +222,7 @@ impl AssessmentControlBuilder {
         self
     }
     /// <p> The amount of evidence in the assessment report. </p>
-    pub fn set_assessment_report_evidence_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_assessment_report_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.assessment_report_evidence_count = input;
         self
     }
@@ -262,9 +241,7 @@ impl AssessmentControlBuilder {
             comments: self.comments,
             evidence_sources: self.evidence_sources,
             evidence_count: self.evidence_count.unwrap_or_default(),
-            assessment_report_evidence_count: self
-                .assessment_report_evidence_count
-                .unwrap_or_default(),
+            assessment_report_evidence_count: self.assessment_report_evidence_count.unwrap_or_default(),
         }
     }
 }

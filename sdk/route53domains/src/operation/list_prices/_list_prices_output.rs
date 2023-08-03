@@ -37,9 +37,7 @@ impl ListPricesOutput {
 
 /// A builder for [`ListPricesOutput`](crate::operation::list_prices::ListPricesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricesOutputBuilder {
     pub(crate) prices: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>,
     pub(crate) next_page_marker: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl ListPricesOutputBuilder {
         self
     }
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
-    pub fn set_prices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>,
-    ) -> Self {
+    pub fn set_prices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>) -> Self {
         self.prices = input;
         self
     }
@@ -71,19 +66,13 @@ impl ListPricesOutputBuilder {
     }
     /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
-    pub fn next_page_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
-    pub fn set_next_page_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_marker = input;
         self
     }

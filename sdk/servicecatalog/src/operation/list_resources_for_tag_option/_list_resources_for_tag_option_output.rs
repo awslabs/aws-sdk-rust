@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourcesForTagOptionOutput {
 }
 impl ListResourcesForTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForTagOptionOutput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput).
-    pub fn builder() -> crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionOutputBuilder{
+    pub fn builder() -> crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionOutputBuilder {
         crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesForTagOptionOutput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesForTagOptionOutputBuilder {
-    pub(crate) resource_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>>,
+    pub(crate) resource_details: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListResourcesForTagOptionOutputBuilder {
         self
     }
     /// <p>Information about the resources.</p>
-    pub fn set_resource_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>>,
-    ) -> Self {
+    pub fn set_resource_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>>) -> Self {
         self.resource_details = input;
         self
     }
     /// <p>Information about the resources.</p>
-    pub fn get_resource_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>> {
+    pub fn get_resource_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>> {
         &self.resource_details
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -94,9 +86,7 @@ impl ListResourcesForTagOptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourcesForTagOptionOutput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput {
+    pub fn build(self) -> crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput {
         crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput {
             resource_details: self.resource_details,
             page_token: self.page_token,

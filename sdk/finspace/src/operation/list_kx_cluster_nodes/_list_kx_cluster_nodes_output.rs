@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListKxClusterNodesOutput {
 }
 impl ListKxClusterNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListKxClusterNodesOutput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesOutputBuilder {
-        crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesOutputBuilder {
+        crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListKxClusterNodesOutput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxClusterNodesOutputBuilder {
     pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::KxNode>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListKxClusterNodesOutputBuilder {
         self
     }
     /// <p>A list of nodes associated with the cluster.</p>
-    pub fn set_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxNode>>,
-    ) -> Self {
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxNode>>) -> Self {
         self.nodes = input;
         self
     }

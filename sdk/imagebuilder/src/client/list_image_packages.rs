@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`image_package_list(Option<Vec<ImagePackage>>)`](crate::operation::list_image_packages::ListImagePackagesOutput::image_package_list): <p>The list of Image Packages returned in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_packages::ListImagePackagesOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImagePackagesError>`](crate::operation::list_image_packages::ListImagePackagesError)
-    pub fn list_image_packages(
-        &self,
-    ) -> crate::operation::list_image_packages::builders::ListImagePackagesFluentBuilder {
-        crate::operation::list_image_packages::builders::ListImagePackagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_image_packages(&self) -> crate::operation::list_image_packages::builders::ListImagePackagesFluentBuilder {
+        crate::operation::list_image_packages::builders::ListImagePackagesFluentBuilder::new(self.handle.clone())
     }
 }

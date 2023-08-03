@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDataSharesOutput {
 }
 impl DescribeDataSharesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSharesOutput`](crate::operation::describe_data_shares::DescribeDataSharesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_data_shares::builders::DescribeDataSharesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_data_shares::builders::DescribeDataSharesOutputBuilder {
         crate::operation::describe_data_shares::builders::DescribeDataSharesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSharesOutput`](crate::operation::describe_data_shares::DescribeDataSharesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSharesOutputBuilder {
     pub(crate) data_shares: ::std::option::Option<::std::vec::Vec<crate::types::DataShare>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeDataSharesOutputBuilder {
         self
     }
     /// <p>The results returned from describing datashares.</p>
-    pub fn set_data_shares(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataShare>>,
-    ) -> Self {
+    pub fn set_data_shares(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataShare>>) -> Self {
         self.data_shares = input;
         self
     }
     /// <p>The results returned from describing datashares.</p>
-    pub fn get_data_shares(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataShare>> {
+    pub fn get_data_shares(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataShare>> {
         &self.data_shares
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>

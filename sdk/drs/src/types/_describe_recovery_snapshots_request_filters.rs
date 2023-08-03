@@ -30,27 +30,19 @@ impl DescribeRecoverySnapshotsRequestFilters {
 
 /// A builder for [`DescribeRecoverySnapshotsRequestFilters`](crate::types::DescribeRecoverySnapshotsRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsRequestFiltersBuilder {
     pub(crate) from_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) to_date_time: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRecoverySnapshotsRequestFiltersBuilder {
     /// <p>The start date in a date range query.</p>
-    pub fn from_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start date in a date range query.</p>
-    pub fn set_from_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_date_time = input;
         self
     }

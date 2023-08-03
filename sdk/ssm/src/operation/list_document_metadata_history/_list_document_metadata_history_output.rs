@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for ListDocumentMetadataHistoryOutput {
 }
 impl ListDocumentMetadataHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentMetadataHistoryOutput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput).
-    pub fn builder() -> crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryOutputBuilder {
         crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDocumentMetadataHistoryOutput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentMetadataHistoryOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ impl ListDocumentMetadataHistoryOutputBuilder {
         &self.name
     }
     /// <p>The version of the change template.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the change template.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -122,17 +114,12 @@ impl ListDocumentMetadataHistoryOutputBuilder {
         self
     }
     /// <p>Information about the response to the change template approval request.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadataResponseInfo>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadataResponseInfo>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Information about the response to the change template approval request.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentMetadataResponseInfo> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadataResponseInfo> {
         &self.metadata
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -159,9 +146,7 @@ impl ListDocumentMetadataHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDocumentMetadataHistoryOutput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput {
+    pub fn build(self) -> crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput {
         crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput {
             name: self.name,
             document_version: self.document_version,

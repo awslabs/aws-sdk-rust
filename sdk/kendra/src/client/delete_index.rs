@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::set_id): <p>The identifier of the index you want to delete.</p>
     /// - On success, responds with [`DeleteIndexOutput`](crate::operation::delete_index::DeleteIndexOutput)
     /// - On failure, responds with [`SdkError<DeleteIndexError>`](crate::operation::delete_index::DeleteIndexError)
-    pub fn delete_index(
-        &self,
-    ) -> crate::operation::delete_index::builders::DeleteIndexFluentBuilder {
+    pub fn delete_index(&self) -> crate::operation::delete_index::builders::DeleteIndexFluentBuilder {
         crate::operation::delete_index::builders::DeleteIndexFluentBuilder::new(self.handle.clone())
     }
 }

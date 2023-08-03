@@ -29,12 +29,10 @@ pub struct GetBootstrapBrokersOutput {
     pub bootstrap_broker_string_vpc_connectivity_tls: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
     #[doc(hidden)]
-    pub bootstrap_broker_string_vpc_connectivity_sasl_scram:
-        ::std::option::Option<::std::string::String>,
+    pub bootstrap_broker_string_vpc_connectivity_sasl_scram: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
     #[doc(hidden)]
-    pub bootstrap_broker_string_vpc_connectivity_sasl_iam:
-        ::std::option::Option<::std::string::String>,
+    pub bootstrap_broker_string_vpc_connectivity_sasl_iam: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBootstrapBrokersOutput {
@@ -71,16 +69,12 @@ impl GetBootstrapBrokersOutput {
         self.bootstrap_broker_string_vpc_connectivity_tls.as_deref()
     }
     /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
-    pub fn bootstrap_broker_string_vpc_connectivity_sasl_scram(
-        &self,
-    ) -> ::std::option::Option<&str> {
-        self.bootstrap_broker_string_vpc_connectivity_sasl_scram
-            .as_deref()
+    pub fn bootstrap_broker_string_vpc_connectivity_sasl_scram(&self) -> ::std::option::Option<&str> {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_scram.as_deref()
     }
     /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
     pub fn bootstrap_broker_string_vpc_connectivity_sasl_iam(&self) -> ::std::option::Option<&str> {
-        self.bootstrap_broker_string_vpc_connectivity_sasl_iam
-            .as_deref()
+        self.bootstrap_broker_string_vpc_connectivity_sasl_iam.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBootstrapBrokersOutput {
@@ -90,50 +84,35 @@ impl ::aws_http::request_id::RequestId for GetBootstrapBrokersOutput {
 }
 impl GetBootstrapBrokersOutput {
     /// Creates a new builder-style object to manufacture [`GetBootstrapBrokersOutput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersOutputBuilder {
-        crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersOutputBuilder {
+        crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBootstrapBrokersOutput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBootstrapBrokersOutputBuilder {
     pub(crate) bootstrap_broker_string: ::std::option::Option<::std::string::String>,
     pub(crate) bootstrap_broker_string_tls: ::std::option::Option<::std::string::String>,
     pub(crate) bootstrap_broker_string_sasl_scram: ::std::option::Option<::std::string::String>,
     pub(crate) bootstrap_broker_string_sasl_iam: ::std::option::Option<::std::string::String>,
     pub(crate) bootstrap_broker_string_public_tls: ::std::option::Option<::std::string::String>,
-    pub(crate) bootstrap_broker_string_public_sasl_scram:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) bootstrap_broker_string_public_sasl_iam:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) bootstrap_broker_string_vpc_connectivity_tls:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) bootstrap_broker_string_vpc_connectivity_sasl_scram:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) bootstrap_broker_string_vpc_connectivity_sasl_iam:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_public_sasl_scram: ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_public_sasl_iam: ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_vpc_connectivity_tls: ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_vpc_connectivity_sasl_scram: ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_vpc_connectivity_sasl_iam: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBootstrapBrokersOutputBuilder {
     /// <p>A string containing one or more hostname:port pairs.</p>
-    pub fn bootstrap_broker_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bootstrap_broker_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bootstrap_broker_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing one or more hostname:port pairs.</p>
-    pub fn set_bootstrap_broker_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string = input;
         self
     }
@@ -142,18 +121,12 @@ impl GetBootstrapBrokersOutputBuilder {
         &self.bootstrap_broker_string
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    pub fn bootstrap_broker_string_tls(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bootstrap_broker_string_tls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bootstrap_broker_string_tls = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    pub fn set_bootstrap_broker_string_tls(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_tls(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_tls = input;
         self
     }
@@ -162,182 +135,115 @@ impl GetBootstrapBrokersOutputBuilder {
         &self.bootstrap_broker_string_tls
     }
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    pub fn bootstrap_broker_string_sasl_scram(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bootstrap_broker_string_sasl_scram(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bootstrap_broker_string_sasl_scram = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    pub fn set_bootstrap_broker_string_sasl_scram(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_sasl_scram(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_sasl_scram = input;
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    pub fn get_bootstrap_broker_string_sasl_scram(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_bootstrap_broker_string_sasl_scram(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_sasl_scram
     }
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    pub fn bootstrap_broker_string_sasl_iam(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bootstrap_broker_string_sasl_iam(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bootstrap_broker_string_sasl_iam = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    pub fn set_bootstrap_broker_string_sasl_iam(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_sasl_iam(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_sasl_iam = input;
         self
     }
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    pub fn get_bootstrap_broker_string_sasl_iam(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_bootstrap_broker_string_sasl_iam(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_sasl_iam
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    pub fn bootstrap_broker_string_public_tls(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bootstrap_broker_string_public_tls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bootstrap_broker_string_public_tls = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    pub fn set_bootstrap_broker_string_public_tls(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_public_tls(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_public_tls = input;
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    pub fn get_bootstrap_broker_string_public_tls(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_bootstrap_broker_string_public_tls(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_public_tls
     }
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    pub fn bootstrap_broker_string_public_sasl_scram(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bootstrap_broker_string_public_sasl_scram(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bootstrap_broker_string_public_sasl_scram = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    pub fn set_bootstrap_broker_string_public_sasl_scram(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_public_sasl_scram(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_public_sasl_scram = input;
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    pub fn get_bootstrap_broker_string_public_sasl_scram(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_bootstrap_broker_string_public_sasl_scram(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_public_sasl_scram
     }
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    pub fn bootstrap_broker_string_public_sasl_iam(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bootstrap_broker_string_public_sasl_iam(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bootstrap_broker_string_public_sasl_iam = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    pub fn set_bootstrap_broker_string_public_sasl_iam(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_public_sasl_iam(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_public_sasl_iam = input;
         self
     }
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    pub fn get_bootstrap_broker_string_public_sasl_iam(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_bootstrap_broker_string_public_sasl_iam(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_public_sasl_iam
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
-    pub fn bootstrap_broker_string_vpc_connectivity_tls(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.bootstrap_broker_string_vpc_connectivity_tls =
-            ::std::option::Option::Some(input.into());
+    pub fn bootstrap_broker_string_vpc_connectivity_tls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_tls = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
-    pub fn set_bootstrap_broker_string_vpc_connectivity_tls(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_vpc_connectivity_tls(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_vpc_connectivity_tls = input;
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
-    pub fn get_bootstrap_broker_string_vpc_connectivity_tls(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_bootstrap_broker_string_vpc_connectivity_tls(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_vpc_connectivity_tls
     }
     /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
-    pub fn bootstrap_broker_string_vpc_connectivity_sasl_scram(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.bootstrap_broker_string_vpc_connectivity_sasl_scram =
-            ::std::option::Option::Some(input.into());
+    pub fn bootstrap_broker_string_vpc_connectivity_sasl_scram(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_scram = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
-    pub fn set_bootstrap_broker_string_vpc_connectivity_sasl_scram(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_vpc_connectivity_sasl_scram(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_vpc_connectivity_sasl_scram = input;
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
-    pub fn get_bootstrap_broker_string_vpc_connectivity_sasl_scram(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_bootstrap_broker_string_vpc_connectivity_sasl_scram(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_vpc_connectivity_sasl_scram
     }
     /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
-    pub fn bootstrap_broker_string_vpc_connectivity_sasl_iam(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.bootstrap_broker_string_vpc_connectivity_sasl_iam =
-            ::std::option::Option::Some(input.into());
+    pub fn bootstrap_broker_string_vpc_connectivity_sasl_iam(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_iam = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
-    pub fn set_bootstrap_broker_string_vpc_connectivity_sasl_iam(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bootstrap_broker_string_vpc_connectivity_sasl_iam(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bootstrap_broker_string_vpc_connectivity_sasl_iam = input;
         self
     }
     /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
-    pub fn get_bootstrap_broker_string_vpc_connectivity_sasl_iam(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_bootstrap_broker_string_vpc_connectivity_sasl_iam(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_vpc_connectivity_sasl_iam
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -357,15 +263,11 @@ impl GetBootstrapBrokersOutputBuilder {
             bootstrap_broker_string_sasl_scram: self.bootstrap_broker_string_sasl_scram,
             bootstrap_broker_string_sasl_iam: self.bootstrap_broker_string_sasl_iam,
             bootstrap_broker_string_public_tls: self.bootstrap_broker_string_public_tls,
-            bootstrap_broker_string_public_sasl_scram: self
-                .bootstrap_broker_string_public_sasl_scram,
+            bootstrap_broker_string_public_sasl_scram: self.bootstrap_broker_string_public_sasl_scram,
             bootstrap_broker_string_public_sasl_iam: self.bootstrap_broker_string_public_sasl_iam,
-            bootstrap_broker_string_vpc_connectivity_tls: self
-                .bootstrap_broker_string_vpc_connectivity_tls,
-            bootstrap_broker_string_vpc_connectivity_sasl_scram: self
-                .bootstrap_broker_string_vpc_connectivity_sasl_scram,
-            bootstrap_broker_string_vpc_connectivity_sasl_iam: self
-                .bootstrap_broker_string_vpc_connectivity_sasl_iam,
+            bootstrap_broker_string_vpc_connectivity_tls: self.bootstrap_broker_string_vpc_connectivity_tls,
+            bootstrap_broker_string_vpc_connectivity_sasl_scram: self.bootstrap_broker_string_vpc_connectivity_sasl_scram,
+            bootstrap_broker_string_vpc_connectivity_sasl_iam: self.bootstrap_broker_string_vpc_connectivity_sasl_iam,
             _request_id: self._request_id,
         }
     }

@@ -56,9 +56,7 @@ impl QueryTableRowsInput {
 
 /// A builder for [`QueryTableRowsInput`](crate::operation::query_table_rows::QueryTableRowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryTableRowsInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
@@ -107,10 +105,7 @@ impl QueryTableRowsInputBuilder {
         self
     }
     /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
-    pub fn set_filter_formula(
-        mut self,
-        input: ::std::option::Option<crate::types::Filter>,
-    ) -> Self {
+    pub fn set_filter_formula(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.filter_formula = input;
         self
     }
@@ -152,10 +147,7 @@ impl QueryTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`QueryTableRowsInput`](crate::operation::query_table_rows::QueryTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::query_table_rows::QueryTableRowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::query_table_rows::QueryTableRowsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_table_rows::QueryTableRowsInput {
             workbook_id: self.workbook_id,
             table_id: self.table_id,

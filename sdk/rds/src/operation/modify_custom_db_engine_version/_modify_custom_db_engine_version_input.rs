@@ -66,16 +66,14 @@ impl ModifyCustomDbEngineVersionInput {
 }
 impl ModifyCustomDbEngineVersionInput {
     /// Creates a new builder-style object to manufacture [`ModifyCustomDbEngineVersionInput`](crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput).
-    pub fn builder() -> crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder{
+    pub fn builder() -> crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder {
         crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCustomDbEngineVersionInput`](crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCustomDbEngineVersionInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -98,18 +96,12 @@ impl ModifyCustomDbEngineVersionInputBuilder {
         &self.engine
     }
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -167,10 +159,7 @@ impl ModifyCustomDbEngineVersionInputBuilder {
     /// </dd>
     /// </dl>
     /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomEngineVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomEngineVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -200,13 +189,11 @@ impl ModifyCustomDbEngineVersionInputBuilder {
         crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                description: self.description,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput {
+            engine: self.engine,
+            engine_version: self.engine_version,
+            description: self.description,
+            status: self.status,
+        })
     }
 }

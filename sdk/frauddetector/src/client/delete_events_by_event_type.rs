@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`event_type_name(Option<String>)`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput::event_type_name): <p>Name of event type for which to delete the events.</p>
     ///   - [`events_deletion_status(Option<String>)`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput::events_deletion_status): <p>The status of the delete request.</p>
     /// - On failure, responds with [`SdkError<DeleteEventsByEventTypeError>`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError)
-    pub fn delete_events_by_event_type(
-        &self,
-    ) -> crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeFluentBuilder
-    {
+    pub fn delete_events_by_event_type(&self) -> crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeFluentBuilder {
         crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeFluentBuilder::new(self.handle.clone())
     }
 }

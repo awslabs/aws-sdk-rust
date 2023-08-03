@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput) with field(s):
     ///   - [`configuration(Option<RevealConfiguration>)`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput::configuration): <p>The new configuration settings and the status of the configuration for the account.</p>
     /// - On failure, responds with [`SdkError<UpdateRevealConfigurationError>`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationError)
-    pub fn update_reveal_configuration(&self) -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationFluentBuilder{
+    pub fn update_reveal_configuration(&self) -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationFluentBuilder {
         crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

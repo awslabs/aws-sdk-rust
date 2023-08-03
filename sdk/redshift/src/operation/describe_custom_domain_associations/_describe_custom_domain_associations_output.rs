@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeCustomDomainAssociationsOutpu
 }
 impl DescribeCustomDomainAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomDomainAssociationsOutput`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsOutputBuilder {
         crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomDomainAssociationsOutput`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomDomainAssociationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
@@ -70,17 +68,12 @@ impl DescribeCustomDomainAssociationsOutputBuilder {
         self
     }
     /// <p>The associations for the custom domain.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>) -> Self {
         self.associations = input;
         self
     }
     /// <p>The associations for the custom domain.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
         &self.associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,15 +86,10 @@ impl DescribeCustomDomainAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCustomDomainAssociationsOutput`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput {
         crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput {
-            marker: self.marker
-            ,
-            associations: self.associations
-            ,
+            marker: self.marker,
+            associations: self.associations,
             _request_id: self._request_id,
         }
     }

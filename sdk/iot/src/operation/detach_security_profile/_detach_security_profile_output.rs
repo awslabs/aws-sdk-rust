@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachSecurityProfileOutput {
 }
 impl DetachSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`DetachSecurityProfileOutput`](crate::operation::detach_security_profile::DetachSecurityProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_security_profile::builders::DetachSecurityProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_security_profile::builders::DetachSecurityProfileOutputBuilder {
         crate::operation::detach_security_profile::builders::DetachSecurityProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachSecurityProfileOutput`](crate::operation::detach_security_profile::DetachSecurityProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachSecurityProfileOutputBuilder {
     _request_id: Option<String>,
 }

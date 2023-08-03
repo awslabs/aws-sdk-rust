@@ -44,9 +44,7 @@ impl ScalingRule {
 
 /// A builder for [`ScalingRule`](crate::types::ScalingRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingRuleBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl ScalingRuleBuilder {
         self
     }
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
-    pub fn set_trigger(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingTrigger>,
-    ) -> Self {
+    pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::ScalingTrigger>) -> Self {
         self.trigger = input;
         self
     }

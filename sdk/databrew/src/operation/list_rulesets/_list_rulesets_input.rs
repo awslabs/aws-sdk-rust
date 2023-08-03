@@ -36,9 +36,7 @@ impl ListRulesetsInput {
 
 /// A builder for [`ListRulesetsInput`](crate::operation::list_rulesets::ListRulesetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRulesetsInputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,12 +86,7 @@ impl ListRulesetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRulesetsInput`](crate::operation::list_rulesets::ListRulesetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rulesets::ListRulesetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rulesets::ListRulesetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rulesets::ListRulesetsInput {
             target_arn: self.target_arn,
             max_results: self.max_results,

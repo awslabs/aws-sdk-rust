@@ -30,9 +30,7 @@ impl AutoTune {
 
 /// A builder for [`AutoTune`](crate::types::AutoTune).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoTuneBuilder {
     pub(crate) auto_tune_type: ::std::option::Option<crate::types::AutoTuneType>,
     pub(crate) auto_tune_details: ::std::option::Option<crate::types::AutoTuneDetails>,
@@ -44,10 +42,7 @@ impl AutoTuneBuilder {
         self
     }
     /// <p>The type of Auto-Tune action.</p>
-    pub fn set_auto_tune_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoTuneType>,
-    ) -> Self {
+    pub fn set_auto_tune_type(mut self, input: ::std::option::Option<crate::types::AutoTuneType>) -> Self {
         self.auto_tune_type = input;
         self
     }
@@ -61,10 +56,7 @@ impl AutoTuneBuilder {
         self
     }
     /// <p>Details about an Auto-Tune action.</p>
-    pub fn set_auto_tune_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoTuneDetails>,
-    ) -> Self {
+    pub fn set_auto_tune_details(mut self, input: ::std::option::Option<crate::types::AutoTuneDetails>) -> Self {
         self.auto_tune_details = input;
         self
     }

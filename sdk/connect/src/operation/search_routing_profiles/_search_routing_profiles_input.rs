@@ -35,34 +35,26 @@ impl SearchRoutingProfilesInput {
         self.max_results
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn search_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RoutingProfileSearchFilter> {
+    pub fn search_filter(&self) -> ::std::option::Option<&crate::types::RoutingProfileSearchFilter> {
         self.search_filter.as_ref()
     }
     /// <p>The search criteria to be used to return routing profiles.</p> <note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
-    pub fn search_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RoutingProfileSearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::RoutingProfileSearchCriteria> {
         self.search_criteria.as_ref()
     }
 }
 impl SearchRoutingProfilesInput {
     /// Creates a new builder-style object to manufacture [`SearchRoutingProfilesInput`](crate::operation::search_routing_profiles::SearchRoutingProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::search_routing_profiles::builders::SearchRoutingProfilesInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_routing_profiles::builders::SearchRoutingProfilesInputBuilder {
         crate::operation::search_routing_profiles::builders::SearchRoutingProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchRoutingProfilesInput`](crate::operation::search_routing_profiles::SearchRoutingProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchRoutingProfilesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -119,17 +111,12 @@ impl SearchRoutingProfilesInputBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingProfileSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::RoutingProfileSearchFilter>) -> Self {
         self.search_filter = input;
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn get_search_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingProfileSearchFilter> {
+    pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::RoutingProfileSearchFilter> {
         &self.search_filter
     }
     /// <p>The search criteria to be used to return routing profiles.</p> <note>
@@ -142,36 +129,27 @@ impl SearchRoutingProfilesInputBuilder {
     /// <p>The search criteria to be used to return routing profiles.</p> <note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingProfileSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::RoutingProfileSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
     /// <p>The search criteria to be used to return routing profiles.</p> <note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingProfileSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::RoutingProfileSearchCriteria> {
         &self.search_criteria
     }
     /// Consumes the builder and constructs a [`SearchRoutingProfilesInput`](crate::operation::search_routing_profiles::SearchRoutingProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_routing_profiles::SearchRoutingProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_routing_profiles::SearchRoutingProfilesInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                search_filter: self.search_filter,
-                search_criteria: self.search_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_routing_profiles::SearchRoutingProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_routing_profiles::SearchRoutingProfilesInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            search_filter: self.search_filter,
+            search_criteria: self.search_criteria,
+        })
     }
 }

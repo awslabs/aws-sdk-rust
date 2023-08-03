@@ -10,10 +10,7 @@ impl UpdateDimensionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_dimension::UpdateDimensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dimension::UpdateDimensionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dimension::UpdateDimensionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_dimension();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateDimensionFluentBuilder {
         }
     }
     /// Access the UpdateDimension as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_dimension::builders::UpdateDimensionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_dimension::builders::UpdateDimensionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateDimensionFluentBuilder {
             crate::operation::update_dimension::UpdateDimension,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dimension::UpdateDimensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dimension::UpdateDimensionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateDimensionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateDimensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dimension::UpdateDimensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dimension::UpdateDimensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dimension::UpdateDimensionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateDimensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dimension::UpdateDimensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dimension::UpdateDimensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dimension::UpdateDimensionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdateDimensionFluentBuilder {
             crate::operation::update_dimension::UpdateDimension,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dimension::UpdateDimensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dimension::UpdateDimensionError>,
     > {
         self.customize_middleware().await
     }
@@ -142,25 +126,17 @@ impl UpdateDimensionFluentBuilder {
     /// To override the contents of this collection use [`set_string_values`](Self::set_string_values).
     ///
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn string_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.string_values(input.into());
         self
     }
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn set_string_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_string_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_string_values(input);
         self
     }
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn get_string_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_string_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_string_values()
     }
 }

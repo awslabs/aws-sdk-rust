@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`parents(Option<Vec<Parent>>)`](crate::operation::list_parents::ListParentsOutput::parents): <p>A list of parents for the specified child account or OU.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_parents::ListParentsOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListParentsError>`](crate::operation::list_parents::ListParentsError)
-    pub fn list_parents(
-        &self,
-    ) -> crate::operation::list_parents::builders::ListParentsFluentBuilder {
+    pub fn list_parents(&self) -> crate::operation::list_parents::builders::ListParentsFluentBuilder {
         crate::operation::list_parents::builders::ListParentsFluentBuilder::new(self.handle.clone())
     }
 }

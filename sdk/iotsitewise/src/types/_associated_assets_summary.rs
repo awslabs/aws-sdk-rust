@@ -81,9 +81,7 @@ impl AssociatedAssetsSummary {
 
 /// A builder for [`AssociatedAssetsSummary`](crate::types::AssociatedAssetsSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatedAssetsSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -142,18 +140,12 @@ impl AssociatedAssetsSummaryBuilder {
         &self.name
     }
     /// <p>The ID of the asset model used to create the asset.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset model used to create the asset.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
@@ -167,10 +159,7 @@ impl AssociatedAssetsSummaryBuilder {
         self
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -184,10 +173,7 @@ impl AssociatedAssetsSummaryBuilder {
         self
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn set_last_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_date = input;
         self
     }
@@ -221,17 +207,12 @@ impl AssociatedAssetsSummaryBuilder {
         self
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn set_hierarchies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>,
-    ) -> Self {
+    pub fn set_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>) -> Self {
         self.hierarchies = input;
         self
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn get_hierarchies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>> {
+    pub fn get_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>> {
         &self.hierarchies
     }
     /// <p>A description for the asset.</p>

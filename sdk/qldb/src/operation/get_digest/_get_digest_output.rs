@@ -71,10 +71,7 @@ impl GetDigestOutputBuilder {
         self
     }
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-    pub fn set_digest_tip_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
+    pub fn set_digest_tip_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.digest_tip_address = input;
         self
     }

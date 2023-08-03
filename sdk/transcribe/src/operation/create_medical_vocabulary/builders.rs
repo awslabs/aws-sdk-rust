@@ -29,8 +29,7 @@ impl CreateMedicalVocabularyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMedicalVocabularyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_medical_vocabulary::builders::CreateMedicalVocabularyInputBuilder,
+    inner: crate::operation::create_medical_vocabulary::builders::CreateMedicalVocabularyInputBuilder,
 }
 impl CreateMedicalVocabularyFluentBuilder {
     /// Creates a new `CreateMedicalVocabulary`.
@@ -41,10 +40,7 @@ impl CreateMedicalVocabularyFluentBuilder {
         }
     }
     /// Access the CreateMedicalVocabulary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_medical_vocabulary::builders::CreateMedicalVocabularyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_medical_vocabulary::builders::CreateMedicalVocabularyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl CreateMedicalVocabularyFluentBuilder {
             crate::operation::create_medical_vocabulary::CreateMedicalVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl CreateMedicalVocabularyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl CreateMedicalVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_medical_vocabulary::CreateMedicalVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl CreateMedicalVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_medical_vocabulary::CreateMedicalVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError>,
     > {
         self.send_middleware().await
     }
@@ -121,27 +108,19 @@ impl CreateMedicalVocabularyFluentBuilder {
             crate::operation::create_medical_vocabulary::CreateMedicalVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_medical_vocabulary::CreateMedicalVocabularyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new custom medical vocabulary with the same name as an existing custom medical vocabulary, you get a <code>ConflictException</code> error.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_name(input.into());
         self
     }
     /// <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new custom medical vocabulary with the same name as an existing custom medical vocabulary, you get a <code>ConflictException</code> error.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }
@@ -156,10 +135,7 @@ impl CreateMedicalVocabularyFluentBuilder {
         self
     }
     /// <p>The language code that represents the language of the entries in your custom vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -169,19 +145,13 @@ impl CreateMedicalVocabularyFluentBuilder {
     }
     /// <p>The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
-    pub fn vocabulary_file_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_file_uri(input.into());
         self
     }
     /// <p>The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
-    pub fn set_vocabulary_file_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_file_uri(input);
         self
     }
@@ -202,10 +172,7 @@ impl CreateMedicalVocabularyFluentBuilder {
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom medical vocabulary at the time you create this new custom vocabulary.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -36,9 +36,7 @@ impl ListFaqsInput {
 
 /// A builder for [`ListFaqsInput`](crate::operation::list_faqs::ListFaqsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFaqsInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl ListFaqsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFaqsInput`](crate::operation::list_faqs::ListFaqsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_faqs::ListFaqsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_faqs::ListFaqsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_faqs::ListFaqsInput {
             index_id: self.index_id,
             next_token: self.next_token,

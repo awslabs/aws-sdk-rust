@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRuleNamesByTargetOutput {
 }
 impl ListRuleNamesByTargetOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleNamesByTargetOutput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetOutputBuilder {
         crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRuleNamesByTargetOutput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleNamesByTargetOutputBuilder {
     pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListRuleNamesByTargetOutputBuilder {
         self
     }
     /// <p>The names of the rules that can invoke the given target.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rule_names = input;
         self
     }

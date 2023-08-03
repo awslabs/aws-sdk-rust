@@ -30,9 +30,7 @@ impl HttpQueryParameter {
 
 /// A builder for [`HttpQueryParameter`](crate::types::HttpQueryParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpQueryParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#match: ::std::option::Option<crate::types::QueryParameterMatch>,
@@ -58,10 +56,7 @@ impl HttpQueryParameterBuilder {
         self
     }
     /// <p>The query parameter to match on.</p>
-    pub fn set_match(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryParameterMatch>,
-    ) -> Self {
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::QueryParameterMatch>) -> Self {
         self.r#match = input;
         self
     }

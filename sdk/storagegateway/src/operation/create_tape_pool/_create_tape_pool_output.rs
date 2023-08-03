@@ -28,9 +28,7 @@ impl CreateTapePoolOutput {
 
 /// A builder for [`CreateTapePoolOutput`](crate::operation::create_tape_pool::CreateTapePoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTapePoolOutputBuilder {
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

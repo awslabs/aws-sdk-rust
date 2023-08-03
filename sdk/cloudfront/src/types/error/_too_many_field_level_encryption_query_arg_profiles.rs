@@ -27,34 +27,27 @@ impl ::std::fmt::Display for TooManyFieldLevelEncryptionQueryArgProfiles {
     }
 }
 impl ::std::error::Error for TooManyFieldLevelEncryptionQueryArgProfiles {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyFieldLevelEncryptionQueryArgProfiles
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyFieldLevelEncryptionQueryArgProfiles {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyFieldLevelEncryptionQueryArgProfiles
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyFieldLevelEncryptionQueryArgProfiles {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyFieldLevelEncryptionQueryArgProfiles {
     /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::types::error::TooManyFieldLevelEncryptionQueryArgProfiles).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyFieldLevelEncryptionQueryArgProfilesBuilder {
+    pub fn builder() -> crate::types::error::builders::TooManyFieldLevelEncryptionQueryArgProfilesBuilder {
         crate::types::error::builders::TooManyFieldLevelEncryptionQueryArgProfilesBuilder::default()
     }
 }
 
 /// A builder for [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::types::error::TooManyFieldLevelEncryptionQueryArgProfiles).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyFieldLevelEncryptionQueryArgProfilesBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl TooManyFieldLevelEncryptionQueryArgProfilesBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

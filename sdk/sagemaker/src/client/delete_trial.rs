@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTrialOutput`](crate::operation::delete_trial::DeleteTrialOutput) with field(s):
     ///   - [`trial_arn(Option<String>)`](crate::operation::delete_trial::DeleteTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial that is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTrialError>`](crate::operation::delete_trial::DeleteTrialError)
-    pub fn delete_trial(
-        &self,
-    ) -> crate::operation::delete_trial::builders::DeleteTrialFluentBuilder {
+    pub fn delete_trial(&self) -> crate::operation::delete_trial::builders::DeleteTrialFluentBuilder {
         crate::operation::delete_trial::builders::DeleteTrialFluentBuilder::new(self.handle.clone())
     }
 }

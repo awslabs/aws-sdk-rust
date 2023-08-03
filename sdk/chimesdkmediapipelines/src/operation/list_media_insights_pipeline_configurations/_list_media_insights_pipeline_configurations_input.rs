@@ -22,16 +22,14 @@ impl ListMediaInsightsPipelineConfigurationsInput {
 }
 impl ListMediaInsightsPipelineConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListMediaInsightsPipelineConfigurationsInput`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsInput).
-    pub fn builder() -> crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsInputBuilder {
         crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMediaInsightsPipelineConfigurationsInput`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMediaInsightsPipelineConfigurationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -66,14 +64,17 @@ impl ListMediaInsightsPipelineConfigurationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMediaInsightsPipelineConfigurationsInput`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

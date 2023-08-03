@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveLfTagsFromResourceOutput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput) with field(s):
     ///   - [`failures(Option<Vec<LfTagError>>)`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput::failures): <p>A list of failures to untag a resource.</p>
     /// - On failure, responds with [`SdkError<RemoveLFTagsFromResourceError>`](crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError)
-    pub fn remove_lf_tags_from_resource(&self) -> crate::operation::remove_lf_tags_from_resource::builders::RemoveLFTagsFromResourceFluentBuilder{
+    pub fn remove_lf_tags_from_resource(&self) -> crate::operation::remove_lf_tags_from_resource::builders::RemoveLFTagsFromResourceFluentBuilder {
         crate::operation::remove_lf_tags_from_resource::builders::RemoveLFTagsFromResourceFluentBuilder::new(self.handle.clone())
     }
 }

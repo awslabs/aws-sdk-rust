@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTriggerOutput`](crate::operation::create_trigger::CreateTriggerOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_trigger::CreateTriggerOutput::name): <p>The name of the trigger.</p>
     /// - On failure, responds with [`SdkError<CreateTriggerError>`](crate::operation::create_trigger::CreateTriggerError)
-    pub fn create_trigger(
-        &self,
-    ) -> crate::operation::create_trigger::builders::CreateTriggerFluentBuilder {
-        crate::operation::create_trigger::builders::CreateTriggerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_trigger(&self) -> crate::operation::create_trigger::builders::CreateTriggerFluentBuilder {
+        crate::operation::create_trigger::builders::CreateTriggerFluentBuilder::new(self.handle.clone())
     }
 }

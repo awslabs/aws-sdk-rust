@@ -23,9 +23,7 @@ impl VerificationResponse {
 
 /// A builder for [`VerificationResponse`](crate::types::VerificationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerificationResponseBuilder {
     pub(crate) valid: ::std::option::Option<bool>,
 }

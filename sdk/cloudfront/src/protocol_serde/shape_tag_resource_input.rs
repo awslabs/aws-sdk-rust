@@ -11,15 +11,12 @@ pub fn ser_tags_http_payload(
 
 pub fn ser_tags_payload(
     input: &crate::types::Tags,
-) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
-        let mut root = writer
-            .start_el("Tags")
-            .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
+        let mut root = writer.start_el("Tags").write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::protocol_serde::shape_tags::ser_tags(input, root)?
     }
     Ok(out.into_bytes())

@@ -10,10 +10,7 @@ impl ListExtensionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_extensions::ListExtensionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_extensions::ListExtensionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_extensions::ListExtensionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_extensions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListExtensionsFluentBuilder {
         }
     }
     /// Access the ListExtensions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_extensions::builders::ListExtensionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_extensions::builders::ListExtensionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListExtensionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListExtensionsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_extensions::paginator::ListExtensionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_extensions::paginator::ListExtensionsPaginator {
-        crate::operation::list_extensions::paginator::ListExtensionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_extensions::paginator::ListExtensionsPaginator {
+        crate::operation::list_extensions::paginator::ListExtensionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {

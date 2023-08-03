@@ -30,9 +30,7 @@ impl CostAllocationTagStatusEntry {
 
 /// A builder for [`CostAllocationTagStatusEntry`](crate::types::CostAllocationTagStatusEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostAllocationTagStatusEntryBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
@@ -58,10 +56,7 @@ impl CostAllocationTagStatusEntryBuilder {
         self
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CostAllocationTagStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
         self.status = input;
         self
     }

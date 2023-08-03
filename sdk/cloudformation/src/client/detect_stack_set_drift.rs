@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DetectStackSetDriftOutput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput::operation_id): <p>The ID of the drift detection stack set operation.</p>  <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
     /// - On failure, responds with [`SdkError<DetectStackSetDriftError>`](crate::operation::detect_stack_set_drift::DetectStackSetDriftError)
-    pub fn detect_stack_set_drift(
-        &self,
-    ) -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftFluentBuilder {
-        crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_stack_set_drift(&self) -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftFluentBuilder {
+        crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftFluentBuilder::new(self.handle.clone())
     }
 }

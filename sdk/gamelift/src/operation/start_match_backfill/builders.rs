@@ -10,10 +10,7 @@ impl StartMatchBackfillInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_match_backfill::StartMatchBackfillOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_match_backfill::StartMatchBackfillError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_match_backfill::StartMatchBackfillError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_match_backfill();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl StartMatchBackfillFluentBuilder {
         }
     }
     /// Access the StartMatchBackfill as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_match_backfill::builders::StartMatchBackfillInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_match_backfill::builders::StartMatchBackfillInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl StartMatchBackfillFluentBuilder {
             crate::operation::start_match_backfill::StartMatchBackfill,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_match_backfill::StartMatchBackfillError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_match_backfill::StartMatchBackfillError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl StartMatchBackfillFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl StartMatchBackfillFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_match_backfill::StartMatchBackfillOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_match_backfill::StartMatchBackfillError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_match_backfill::StartMatchBackfillError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl StartMatchBackfillFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_match_backfill::StartMatchBackfillOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_match_backfill::StartMatchBackfillError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_match_backfill::StartMatchBackfillError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl StartMatchBackfillFluentBuilder {
             crate::operation::start_match_backfill::StartMatchBackfill,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_match_backfill::StartMatchBackfillError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_match_backfill::StartMatchBackfillError>,
     > {
         self.customize_middleware().await
     }
@@ -145,18 +129,12 @@ impl StartMatchBackfillFluentBuilder {
         self.inner.get_ticket_id()
     }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
-    pub fn configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_name(input.into());
         self
     }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_name(input);
         self
     }
@@ -165,18 +143,12 @@ impl StartMatchBackfillFluentBuilder {
         self.inner.get_configuration_name()
     }
     /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
-    pub fn game_session_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_arn(input.into());
         self
     }
     /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
-    pub fn set_game_session_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_arn(input);
         self
     }
@@ -204,10 +176,7 @@ impl StartMatchBackfillFluentBuilder {
     /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> <p>The backfill request must specify the team membership for every player. Do not specify team if you are not using backfill.</p> </li>
     /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
     /// </ul>
-    pub fn set_players(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
-    ) -> Self {
+    pub fn set_players(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>) -> Self {
         self.inner = self.inner.set_players(input);
         self
     }

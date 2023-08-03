@@ -53,9 +53,7 @@ impl DedicatedIp {
 
 /// A builder for [`DedicatedIp`](crate::types::DedicatedIp).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DedicatedIpBuilder {
     pub(crate) ip: ::std::option::Option<::std::string::String>,
     pub(crate) warmup_status: ::std::option::Option<crate::types::WarmupStatus>,
@@ -91,10 +89,7 @@ impl DedicatedIpBuilder {
     /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
     /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
-    pub fn set_warmup_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WarmupStatus>,
-    ) -> Self {
+    pub fn set_warmup_status(mut self, input: ::std::option::Option<crate::types::WarmupStatus>) -> Self {
         self.warmup_status = input;
         self
     }

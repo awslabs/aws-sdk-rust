@@ -30,9 +30,7 @@ impl ImportTaskSummaryApplications {
 
 /// A builder for [`ImportTaskSummaryApplications`](crate::types::ImportTaskSummaryApplications).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTaskSummaryApplicationsBuilder {
     pub(crate) created_count: ::std::option::Option<i64>,
     pub(crate) modified_count: ::std::option::Option<i64>,

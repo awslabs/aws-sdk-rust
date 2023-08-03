@@ -12,10 +12,7 @@ pub fn ser_put_repository_triggers_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_repository_trigger::ser_repository_trigger(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_repository_trigger::ser_repository_trigger(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

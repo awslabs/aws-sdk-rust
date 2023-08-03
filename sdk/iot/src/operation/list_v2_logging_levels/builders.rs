@@ -38,9 +38,7 @@ impl ListV2LoggingLevelsFluentBuilder {
         }
     }
     /// Access the ListV2LoggingLevels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListV2LoggingLevelsFluentBuilder {
             crate::operation::list_v2_logging_levels::ListV2LoggingLevels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListV2LoggingLevelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListV2LoggingLevelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListV2LoggingLevelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListV2LoggingLevelsFluentBuilder {
             crate::operation::list_v2_logging_levels::ListV2LoggingLevels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator {
-        crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator {
+        crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator::new(self.handle, self.inner)
     }
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub fn target_type(mut self, input: crate::types::LogTargetType) -> Self {
@@ -140,10 +122,7 @@ impl ListV2LoggingLevelsFluentBuilder {
         self
     }
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogTargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }

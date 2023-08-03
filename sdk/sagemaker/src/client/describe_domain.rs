@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`security_group_id_for_domain_boundary(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::security_group_id_for_domain_boundary): <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
     ///   - [`default_space_settings(Option<DefaultSpaceSettings>)`](crate::operation::describe_domain::DescribeDomainOutput::default_space_settings): <p>The default settings used to create a space.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::operation::describe_domain::DescribeDomainError)
-    pub fn describe_domain(
-        &self,
-    ) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
-        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_domain(&self) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
+        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(self.handle.clone())
     }
 }

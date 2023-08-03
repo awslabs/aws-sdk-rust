@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`budget_performance_history(Option<BudgetPerformanceHistory>)`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput::budget_performance_history): <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>  <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput::next_token): <p> A generic string.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetPerformanceHistoryError>`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError)
-    pub fn describe_budget_performance_history(&self) -> crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryFluentBuilder{
+    pub fn describe_budget_performance_history(
+        &self,
+    ) -> crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryFluentBuilder {
         crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryFluentBuilder::new(self.handle.clone())
     }
 }

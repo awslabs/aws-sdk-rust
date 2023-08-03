@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`ReplaceIamInstanceProfileAssociationOutput`](crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput) with field(s):
     ///   - [`iam_instance_profile_association(Option<IamInstanceProfileAssociation>)`](crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput::iam_instance_profile_association): <p>Information about the IAM instance profile association.</p>
     /// - On failure, responds with [`SdkError<ReplaceIamInstanceProfileAssociationError>`](crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError)
-    pub fn replace_iam_instance_profile_association(&self) -> crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationFluentBuilder{
-        crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationFluentBuilder::new(self.handle.clone())
+    pub fn replace_iam_instance_profile_association(
+        &self,
+    ) -> crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationFluentBuilder {
+        crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

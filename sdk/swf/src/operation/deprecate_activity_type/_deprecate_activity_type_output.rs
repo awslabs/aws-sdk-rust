@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeprecateActivityTypeOutput {
 }
 impl DeprecateActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeOutput`](crate::operation::deprecate_activity_type::DeprecateActivityTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeOutputBuilder {
         crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateActivityTypeOutput`](crate::operation::deprecate_activity_type::DeprecateActivityTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateActivityTypeOutputBuilder {
     _request_id: Option<String>,
 }

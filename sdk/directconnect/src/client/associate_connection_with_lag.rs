@@ -29,7 +29,9 @@ impl super::Client {
     ///   - [`encryption_mode(Option<String>)`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     /// - On failure, responds with [`SdkError<AssociateConnectionWithLagError>`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError)
-    pub fn associate_connection_with_lag(&self) -> crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagFluentBuilder{
+    pub fn associate_connection_with_lag(
+        &self,
+    ) -> crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagFluentBuilder {
         crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagFluentBuilder::new(self.handle.clone())
     }
 }

@@ -74,9 +74,7 @@ impl WorkspaceProperties {
 
 /// A builder for [`WorkspaceProperties`](crate::types::WorkspaceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspacePropertiesBuilder {
     pub(crate) running_mode: ::std::option::Option<crate::types::RunningMode>,
     pub(crate) running_mode_auto_stop_timeout_in_minutes: ::std::option::Option<i32>,
@@ -96,10 +94,7 @@ impl WorkspacePropertiesBuilder {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
     /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn set_running_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::RunningMode>,
-    ) -> Self {
+    pub fn set_running_mode(mut self, input: ::std::option::Option<crate::types::RunningMode>) -> Self {
         self.running_mode = input;
         self
     }
@@ -115,10 +110,7 @@ impl WorkspacePropertiesBuilder {
         self
     }
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
-    pub fn set_running_mode_auto_stop_timeout_in_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_running_mode_auto_stop_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_mode_auto_stop_timeout_in_minutes = input;
         self
     }
@@ -160,10 +152,7 @@ impl WorkspacePropertiesBuilder {
         self
     }
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
-    pub fn set_compute_type_name(
-        mut self,
-        input: ::std::option::Option<crate::types::Compute>,
-    ) -> Self {
+    pub fn set_compute_type_name(mut self, input: ::std::option::Option<crate::types::Compute>) -> Self {
         self.compute_type_name = input;
         self
     }
@@ -195,10 +184,7 @@ impl WorkspacePropertiesBuilder {
     /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
         self.protocols = input;
         self
     }
@@ -216,8 +202,7 @@ impl WorkspacePropertiesBuilder {
     pub fn build(self) -> crate::types::WorkspaceProperties {
         crate::types::WorkspaceProperties {
             running_mode: self.running_mode,
-            running_mode_auto_stop_timeout_in_minutes: self
-                .running_mode_auto_stop_timeout_in_minutes,
+            running_mode_auto_stop_timeout_in_minutes: self.running_mode_auto_stop_timeout_in_minutes,
             root_volume_size_gib: self.root_volume_size_gib,
             user_volume_size_gib: self.user_volume_size_gib,
             compute_type_name: self.compute_type_name,

@@ -15,17 +15,14 @@ impl GetSecurityConfigInput {
 }
 impl GetSecurityConfigInput {
     /// Creates a new builder-style object to manufacture [`GetSecurityConfigInput`](crate::operation::get_security_config::GetSecurityConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_security_config::builders::GetSecurityConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_security_config::builders::GetSecurityConfigInputBuilder {
         crate::operation::get_security_config::builders::GetSecurityConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSecurityConfigInput`](crate::operation::get_security_config::GetSecurityConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSecurityConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetSecurityConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetSecurityConfigInput`](crate::operation::get_security_config::GetSecurityConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_security_config::GetSecurityConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_security_config::GetSecurityConfigInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_security_config::GetSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_security_config::GetSecurityConfigInput { id: self.id })
     }
 }

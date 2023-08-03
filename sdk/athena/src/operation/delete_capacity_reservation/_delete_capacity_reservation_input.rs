@@ -15,16 +15,14 @@ impl DeleteCapacityReservationInput {
 }
 impl DeleteCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`DeleteCapacityReservationInput`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationInput).
-    pub fn builder() -> crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationInputBuilder {
         crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCapacityReservationInput`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCapacityReservationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeleteCapacityReservationInputBuilder {
         crate::operation::delete_capacity_reservation::DeleteCapacityReservationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_capacity_reservation::DeleteCapacityReservationInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_capacity_reservation::DeleteCapacityReservationInput { name: self.name })
     }
 }

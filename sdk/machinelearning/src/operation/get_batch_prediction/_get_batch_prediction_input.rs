@@ -15,34 +15,25 @@ impl GetBatchPredictionInput {
 }
 impl GetBatchPredictionInput {
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionInput`](crate::operation::get_batch_prediction::GetBatchPredictionInput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder {
+    pub fn builder() -> crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder {
         crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBatchPredictionInput`](crate::operation::get_batch_prediction::GetBatchPredictionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBatchPredictionInputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBatchPredictionInputBuilder {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`GetBatchPredictionInput`](crate::operation::get_batch_prediction::GetBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_batch_prediction::GetBatchPredictionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_batch_prediction::GetBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_batch_prediction::GetBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_batch_prediction::GetBatchPredictionInput {
+            batch_prediction_id: self.batch_prediction_id,
+        })
     }
 }

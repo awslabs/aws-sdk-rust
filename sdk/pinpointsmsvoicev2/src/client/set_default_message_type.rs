@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`configuration_set_name(Option<String>)`](crate::operation::set_default_message_type::SetDefaultMessageTypeOutput::configuration_set_name): <p>The name of the configuration set that was updated.</p>
     ///   - [`message_type(Option<MessageType>)`](crate::operation::set_default_message_type::SetDefaultMessageTypeOutput::message_type): <p>The new default message type of the configuration set.</p>
     /// - On failure, responds with [`SdkError<SetDefaultMessageTypeError>`](crate::operation::set_default_message_type::SetDefaultMessageTypeError)
-    pub fn set_default_message_type(
-        &self,
-    ) -> crate::operation::set_default_message_type::builders::SetDefaultMessageTypeFluentBuilder
-    {
+    pub fn set_default_message_type(&self) -> crate::operation::set_default_message_type::builders::SetDefaultMessageTypeFluentBuilder {
         crate::operation::set_default_message_type::builders::SetDefaultMessageTypeFluentBuilder::new(self.handle.clone())
     }
 }

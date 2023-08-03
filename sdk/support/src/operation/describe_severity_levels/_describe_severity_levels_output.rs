@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeSeverityLevelsOutput {
 }
 impl DescribeSeverityLevelsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSeverityLevelsOutput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsOutputBuilder {
         crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSeverityLevelsOutput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSeverityLevelsOutputBuilder {
     pub(crate) severity_levels: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeSeverityLevelsOutputBuilder {
         self
     }
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
-    pub fn set_severity_levels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,
-    ) -> Self {
+    pub fn set_severity_levels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>) -> Self {
         self.severity_levels = input;
         self
     }
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
-    pub fn get_severity_levels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>> {
+    pub fn get_severity_levels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>> {
         &self.severity_levels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

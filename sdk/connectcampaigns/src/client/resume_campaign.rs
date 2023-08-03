@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::resume_campaign::builders::ResumeCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::resume_campaign::builders::ResumeCampaignFluentBuilder::set_id): Identifier representing a Campaign
     /// - On success, responds with [`ResumeCampaignOutput`](crate::operation::resume_campaign::ResumeCampaignOutput)
     /// - On failure, responds with [`SdkError<ResumeCampaignError>`](crate::operation::resume_campaign::ResumeCampaignError)
-    pub fn resume_campaign(
-        &self,
-    ) -> crate::operation::resume_campaign::builders::ResumeCampaignFluentBuilder {
-        crate::operation::resume_campaign::builders::ResumeCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resume_campaign(&self) -> crate::operation::resume_campaign::builders::ResumeCampaignFluentBuilder {
+        crate::operation::resume_campaign::builders::ResumeCampaignFluentBuilder::new(self.handle.clone())
     }
 }

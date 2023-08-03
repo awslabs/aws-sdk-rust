@@ -24,9 +24,7 @@ impl DeleteRoleInput {
 
 /// A builder for [`DeleteRoleInput`](crate::operation::delete_role::DeleteRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoleInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +47,7 @@ impl DeleteRoleInputBuilder {
         &self.role_name
     }
     /// Consumes the builder and constructs a [`DeleteRoleInput`](crate::operation::delete_role::DeleteRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_role::DeleteRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_role::DeleteRoleInput {
-            role_name: self.role_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_role::DeleteRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_role::DeleteRoleInput { role_name: self.role_name })
     }
 }

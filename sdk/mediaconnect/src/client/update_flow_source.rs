@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`flow_arn(Option<String>)`](crate::operation::update_flow_source::UpdateFlowSourceOutput::flow_arn): The ARN of the flow that you want to update.
     ///   - [`source(Option<Source>)`](crate::operation::update_flow_source::UpdateFlowSourceOutput::source): The settings for the source of the flow.
     /// - On failure, responds with [`SdkError<UpdateFlowSourceError>`](crate::operation::update_flow_source::UpdateFlowSourceError)
-    pub fn update_flow_source(
-        &self,
-    ) -> crate::operation::update_flow_source::builders::UpdateFlowSourceFluentBuilder {
-        crate::operation::update_flow_source::builders::UpdateFlowSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_flow_source(&self) -> crate::operation::update_flow_source::builders::UpdateFlowSourceFluentBuilder {
+        crate::operation::update_flow_source::builders::UpdateFlowSourceFluentBuilder::new(self.handle.clone())
     }
 }

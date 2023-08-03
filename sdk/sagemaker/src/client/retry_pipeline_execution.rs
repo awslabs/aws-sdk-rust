@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RetryPipelineExecutionOutput`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<RetryPipelineExecutionError>`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionError)
-    pub fn retry_pipeline_execution(
-        &self,
-    ) -> crate::operation::retry_pipeline_execution::builders::RetryPipelineExecutionFluentBuilder
-    {
+    pub fn retry_pipeline_execution(&self) -> crate::operation::retry_pipeline_execution::builders::RetryPipelineExecutionFluentBuilder {
         crate::operation::retry_pipeline_execution::builders::RetryPipelineExecutionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,16 +16,14 @@ impl DescribeElasticsearchDomainsInput {
 }
 impl DescribeElasticsearchDomainsInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsInput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder{
+    pub fn builder() -> crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder {
         crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticsearchDomainsInput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsInputBuilder {
     pub(crate) domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl DescribeElasticsearchDomainsInputBuilder {
         self
     }
     /// <p>The Elasticsearch domains for which you want information.</p>
-    pub fn set_domain_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domain_names = input;
         self
     }
     /// <p>The Elasticsearch domains for which you want information.</p>
-    pub fn get_domain_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_names
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainsInput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput).
@@ -62,10 +55,8 @@ impl DescribeElasticsearchDomainsInputBuilder {
         crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput {
-                domain_names: self.domain_names,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsInput {
+            domain_names: self.domain_names,
+        })
     }
 }

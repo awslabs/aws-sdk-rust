@@ -15,35 +15,25 @@ impl DisassociateRepositoryInput {
 }
 impl DisassociateRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DisassociateRepositoryInput`](crate::operation::disassociate_repository::DisassociateRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_repository::builders::DisassociateRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_repository::builders::DisassociateRepositoryInputBuilder {
         crate::operation::disassociate_repository::builders::DisassociateRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateRepositoryInput`](crate::operation::disassociate_repository::DisassociateRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateRepositoryInputBuilder {
     pub(crate) association_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateRepositoryInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn set_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DisassociateRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateRepositoryInput`](crate::operation::disassociate_repository::DisassociateRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_repository::DisassociateRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_repository::DisassociateRepositoryInput {
-                association_arn: self.association_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_repository::DisassociateRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_repository::DisassociateRepositoryInput {
+            association_arn: self.association_arn,
+        })
     }
 }

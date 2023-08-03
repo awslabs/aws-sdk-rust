@@ -38,9 +38,7 @@ impl ::std::fmt::Debug for ListAppInstanceAdminsInput {
 }
 impl ListAppInstanceAdminsInput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsInput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput).
-    pub fn builder(
-    ) -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsInputBuilder {
         crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsInputBuilder::default()
     }
 }
@@ -55,18 +53,12 @@ pub struct ListAppInstanceAdminsInputBuilder {
 }
 impl ListAppInstanceAdminsInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -105,17 +97,13 @@ impl ListAppInstanceAdminsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppInstanceAdminsInput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput {
-                app_instance_arn: self.app_instance_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput {
+            app_instance_arn: self.app_instance_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
 impl ::std::fmt::Debug for ListAppInstanceAdminsInputBuilder {

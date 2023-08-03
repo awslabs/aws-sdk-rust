@@ -29,18 +29,14 @@ impl GetDownloadUrlForLayerInput {
 }
 impl GetDownloadUrlForLayerInput {
     /// Creates a new builder-style object to manufacture [`GetDownloadUrlForLayerInput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput).
-    pub fn builder(
-    ) -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder {
         crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDownloadUrlForLayerInput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDownloadUrlForLayerInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl GetDownloadUrlForLayerInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -102,12 +92,10 @@ impl GetDownloadUrlForLayerInputBuilder {
         crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                layer_digest: self.layer_digest,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            layer_digest: self.layer_digest,
+        })
     }
 }

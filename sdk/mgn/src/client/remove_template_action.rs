@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`action_id(impl ::std::convert::Into<String>)`](crate::operation::remove_template_action::builders::RemoveTemplateActionFluentBuilder::action_id) / [`set_action_id(Option<String>)`](crate::operation::remove_template_action::builders::RemoveTemplateActionFluentBuilder::set_action_id): <p>Template post migration custom action ID to remove.</p>
     /// - On success, responds with [`RemoveTemplateActionOutput`](crate::operation::remove_template_action::RemoveTemplateActionOutput)
     /// - On failure, responds with [`SdkError<RemoveTemplateActionError>`](crate::operation::remove_template_action::RemoveTemplateActionError)
-    pub fn remove_template_action(
-        &self,
-    ) -> crate::operation::remove_template_action::builders::RemoveTemplateActionFluentBuilder {
-        crate::operation::remove_template_action::builders::RemoveTemplateActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_template_action(&self) -> crate::operation::remove_template_action::builders::RemoveTemplateActionFluentBuilder {
+        crate::operation::remove_template_action::builders::RemoveTemplateActionFluentBuilder::new(self.handle.clone())
     }
 }

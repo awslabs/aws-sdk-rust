@@ -19,9 +19,7 @@ impl UnassignVolumeOutput {
 
 /// A builder for [`UnassignVolumeOutput`](crate::operation::unassign_volume::UnassignVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnassignVolumeOutputBuilder {
     _request_id: Option<String>,
 }

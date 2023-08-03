@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePermissionSetOutput {
 }
 impl DeletePermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionSetOutput`](crate::operation::delete_permission_set::DeletePermissionSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_permission_set::builders::DeletePermissionSetOutputBuilder {
-        crate::operation::delete_permission_set::builders::DeletePermissionSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_permission_set::builders::DeletePermissionSetOutputBuilder {
+        crate::operation::delete_permission_set::builders::DeletePermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePermissionSetOutput`](crate::operation::delete_permission_set::DeletePermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

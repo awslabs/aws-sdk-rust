@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssessmentControlSetStatusOutput`](crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusOutput) with field(s):
     ///   - [`control_set(Option<AssessmentControlSet>)`](crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusOutput::control_set): <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
     /// - On failure, responds with [`SdkError<UpdateAssessmentControlSetStatusError>`](crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError)
-    pub fn update_assessment_control_set_status(&self) -> crate::operation::update_assessment_control_set_status::builders::UpdateAssessmentControlSetStatusFluentBuilder{
+    pub fn update_assessment_control_set_status(
+        &self,
+    ) -> crate::operation::update_assessment_control_set_status::builders::UpdateAssessmentControlSetStatusFluentBuilder {
         crate::operation::update_assessment_control_set_status::builders::UpdateAssessmentControlSetStatusFluentBuilder::new(self.handle.clone())
     }
 }

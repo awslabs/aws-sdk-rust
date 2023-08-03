@@ -14,10 +14,7 @@ impl super::Client {
     /// - On success, responds with [`StartMailboxExportJobOutput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_mailbox_export_job::StartMailboxExportJobOutput::job_id): <p>The job ID.</p>
     /// - On failure, responds with [`SdkError<StartMailboxExportJobError>`](crate::operation::start_mailbox_export_job::StartMailboxExportJobError)
-    pub fn start_mailbox_export_job(
-        &self,
-    ) -> crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobFluentBuilder
-    {
+    pub fn start_mailbox_export_job(&self) -> crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobFluentBuilder {
         crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobFluentBuilder::new(self.handle.clone())
     }
 }

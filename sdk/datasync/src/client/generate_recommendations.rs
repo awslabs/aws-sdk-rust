@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`resource_type(DiscoveryResourceType)`](crate::operation::generate_recommendations::builders::GenerateRecommendationsFluentBuilder::resource_type) / [`set_resource_type(Option<DiscoveryResourceType>)`](crate::operation::generate_recommendations::builders::GenerateRecommendationsFluentBuilder::set_resource_type): <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
     /// - On success, responds with [`GenerateRecommendationsOutput`](crate::operation::generate_recommendations::GenerateRecommendationsOutput)
     /// - On failure, responds with [`SdkError<GenerateRecommendationsError>`](crate::operation::generate_recommendations::GenerateRecommendationsError)
-    pub fn generate_recommendations(
-        &self,
-    ) -> crate::operation::generate_recommendations::builders::GenerateRecommendationsFluentBuilder
-    {
+    pub fn generate_recommendations(&self) -> crate::operation::generate_recommendations::builders::GenerateRecommendationsFluentBuilder {
         crate::operation::generate_recommendations::builders::GenerateRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

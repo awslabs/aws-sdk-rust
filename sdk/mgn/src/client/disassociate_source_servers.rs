@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_source_servers::builders::DisassociateSourceServersFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::disassociate_source_servers::builders::DisassociateSourceServersFluentBuilder::set_account_id): <p>Account ID.</p>
     /// - On success, responds with [`DisassociateSourceServersOutput`](crate::operation::disassociate_source_servers::DisassociateSourceServersOutput)
     /// - On failure, responds with [`SdkError<DisassociateSourceServersError>`](crate::operation::disassociate_source_servers::DisassociateSourceServersError)
-    pub fn disassociate_source_servers(&self) -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersFluentBuilder{
+    pub fn disassociate_source_servers(&self) -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersFluentBuilder {
         crate::operation::disassociate_source_servers::builders::DisassociateSourceServersFluentBuilder::new(self.handle.clone())
     }
 }

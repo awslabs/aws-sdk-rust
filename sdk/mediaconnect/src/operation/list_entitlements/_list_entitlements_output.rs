@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEntitlementsOutput {
 }
 impl ListEntitlementsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitlementsOutput`](crate::operation::list_entitlements::ListEntitlementsOutput).
-    pub fn builder() -> crate::operation::list_entitlements::builders::ListEntitlementsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_entitlements::builders::ListEntitlementsOutputBuilder {
         crate::operation::list_entitlements::builders::ListEntitlementsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntitlementsOutput`](crate::operation::list_entitlements::ListEntitlementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitlementsOutputBuilder {
-    pub(crate) entitlements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListedEntitlement>>,
+    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::ListedEntitlement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListEntitlementsOutputBuilder {
         self
     }
     /// A list of entitlements that have been granted to you from other AWS accounts.
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedEntitlement>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedEntitlement>>) -> Self {
         self.entitlements = input;
         self
     }
     /// A list of entitlements that have been granted to you from other AWS accounts.
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedEntitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedEntitlement>> {
         &self.entitlements
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.

@@ -55,13 +55,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -110,18 +104,12 @@ impl ::std::convert::From<&str> for NodegroupIssueCode {
         match s {
             "AccessDenied" => NodegroupIssueCode::AccessDenied,
             "AsgInstanceLaunchFailures" => NodegroupIssueCode::AsgInstanceLaunchFailures,
-            "AutoScalingGroupInvalidConfiguration" => {
-                NodegroupIssueCode::AutoScalingGroupInvalidConfiguration
-            }
+            "AutoScalingGroupInvalidConfiguration" => NodegroupIssueCode::AutoScalingGroupInvalidConfiguration,
             "AutoScalingGroupNotFound" => NodegroupIssueCode::AutoScalingGroupNotFound,
             "ClusterUnreachable" => NodegroupIssueCode::ClusterUnreachable,
             "Ec2LaunchTemplateNotFound" => NodegroupIssueCode::Ec2LaunchTemplateNotFound,
-            "Ec2LaunchTemplateVersionMismatch" => {
-                NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch
-            }
-            "Ec2SecurityGroupDeletionFailure" => {
-                NodegroupIssueCode::Ec2SecurityGroupDeletionFailure
-            }
+            "Ec2LaunchTemplateVersionMismatch" => NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch,
+            "Ec2SecurityGroupDeletionFailure" => NodegroupIssueCode::Ec2SecurityGroupDeletionFailure,
             "Ec2SecurityGroupNotFound" => NodegroupIssueCode::Ec2SecurityGroupNotFound,
             "Ec2SubnetInvalidConfiguration" => NodegroupIssueCode::Ec2SubnetInvalidConfiguration,
             "Ec2SubnetMissingIpv6Assignment" => NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment,
@@ -133,9 +121,7 @@ impl ::std::convert::From<&str> for NodegroupIssueCode {
             "InsufficientFreeAddresses" => NodegroupIssueCode::InsufficientFreeAddresses,
             "InternalFailure" => NodegroupIssueCode::InternalFailure,
             "NodeCreationFailure" => NodegroupIssueCode::NodeCreationFailure,
-            other => NodegroupIssueCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NodegroupIssueCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -152,18 +138,12 @@ impl NodegroupIssueCode {
         match self {
             NodegroupIssueCode::AccessDenied => "AccessDenied",
             NodegroupIssueCode::AsgInstanceLaunchFailures => "AsgInstanceLaunchFailures",
-            NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => {
-                "AutoScalingGroupInvalidConfiguration"
-            }
+            NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => "AutoScalingGroupInvalidConfiguration",
             NodegroupIssueCode::AutoScalingGroupNotFound => "AutoScalingGroupNotFound",
             NodegroupIssueCode::ClusterUnreachable => "ClusterUnreachable",
             NodegroupIssueCode::Ec2LaunchTemplateNotFound => "Ec2LaunchTemplateNotFound",
-            NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => {
-                "Ec2LaunchTemplateVersionMismatch"
-            }
-            NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => {
-                "Ec2SecurityGroupDeletionFailure"
-            }
+            NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => "Ec2LaunchTemplateVersionMismatch",
+            NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => "Ec2SecurityGroupDeletionFailure",
             NodegroupIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
             NodegroupIssueCode::Ec2SubnetInvalidConfiguration => "Ec2SubnetInvalidConfiguration",
             NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => "Ec2SubnetMissingIpv6Assignment",

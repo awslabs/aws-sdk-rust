@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`monitor_name(impl ::std::convert::Into<String>)`](crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder::monitor_name) / [`set_monitor_name(Option<String>)`](crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder::set_monitor_name): <p>The name of the monitor to delete.</p>
     /// - On success, responds with [`DeleteMonitorOutput`](crate::operation::delete_monitor::DeleteMonitorOutput)
     /// - On failure, responds with [`SdkError<DeleteMonitorError>`](crate::operation::delete_monitor::DeleteMonitorError)
-    pub fn delete_monitor(
-        &self,
-    ) -> crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder {
-        crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_monitor(&self) -> crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder {
+        crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder::new(self.handle.clone())
     }
 }

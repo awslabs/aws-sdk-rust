@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateSecurityProfileOutput {
 }
 impl UpdateSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileOutput`](crate::operation::update_security_profile::UpdateSecurityProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::update_security_profile::builders::UpdateSecurityProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_security_profile::builders::UpdateSecurityProfileOutputBuilder {
         crate::operation::update_security_profile::builders::UpdateSecurityProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSecurityProfileOutput`](crate::operation::update_security_profile::UpdateSecurityProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityProfileOutputBuilder {
     _request_id: Option<String>,
 }

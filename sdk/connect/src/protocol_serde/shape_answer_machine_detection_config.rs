@@ -4,14 +4,10 @@ pub fn ser_answer_machine_detection_config(
     input: &crate::types::AnswerMachineDetectionConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.enable_answer_machine_detection {
-        object
-            .key("EnableAnswerMachineDetection")
-            .boolean(input.enable_answer_machine_detection);
+        object.key("EnableAnswerMachineDetection").boolean(input.enable_answer_machine_detection);
     }
     if input.await_answer_machine_prompt {
-        object
-            .key("AwaitAnswerMachinePrompt")
-            .boolean(input.await_answer_machine_prompt);
+        object.key("AwaitAnswerMachinePrompt").boolean(input.await_answer_machine_prompt);
     }
     Ok(())
 }

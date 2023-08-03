@@ -10,10 +10,7 @@ impl ListReleaseLabelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_release_labels::ListReleaseLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_release_labels::ListReleaseLabelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_release_labels::ListReleaseLabelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_release_labels();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListReleaseLabelsFluentBuilder {
         }
     }
     /// Access the ListReleaseLabels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_release_labels::builders::ListReleaseLabelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_release_labels::builders::ListReleaseLabelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListReleaseLabelsFluentBuilder {
             crate::operation::list_release_labels::ListReleaseLabels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_release_labels::ListReleaseLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_release_labels::ListReleaseLabelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListReleaseLabelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListReleaseLabelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_release_labels::ListReleaseLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_release_labels::ListReleaseLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_release_labels::ListReleaseLabelsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListReleaseLabelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_release_labels::ListReleaseLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_release_labels::ListReleaseLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_release_labels::ListReleaseLabelsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListReleaseLabelsFluentBuilder {
             crate::operation::list_release_labels::ListReleaseLabels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_release_labels::ListReleaseLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_release_labels::ListReleaseLabelsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator {
-        crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator {
+        crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
     pub fn filters(mut self, input: crate::types::ReleaseLabelFilter) -> Self {
@@ -139,10 +118,7 @@ impl ListReleaseLabelsFluentBuilder {
         self
     }
     /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ReleaseLabelFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ReleaseLabelFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

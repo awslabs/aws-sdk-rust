@@ -37,9 +37,7 @@ impl PivotTableSortBy {
 
 /// A builder for [`PivotTableSortBy`](crate::types::PivotTableSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableSortByBuilder {
     pub(crate) field: ::std::option::Option<crate::types::FieldSort>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnSort>,
@@ -80,10 +78,7 @@ impl PivotTableSortByBuilder {
         self
     }
     /// <p>The data path sort (data path value, direction) for the pivot table sort by options.</p>
-    pub fn set_data_path(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPathSort>,
-    ) -> Self {
+    pub fn set_data_path(mut self, input: ::std::option::Option<crate::types::DataPathSort>) -> Self {
         self.data_path = input;
         self
     }

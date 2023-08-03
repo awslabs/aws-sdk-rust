@@ -26,7 +26,7 @@ impl DescribeEdgeDeploymentPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEdgeDeploymentPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanInputBuilder,
+    inner: crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanInputBuilder,
 }
 impl DescribeEdgeDeploymentPlanFluentBuilder {
     /// Creates a new `DescribeEdgeDeploymentPlan`.
@@ -37,7 +37,7 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
         }
     }
     /// Access the DescribeEdgeDeploymentPlan as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
             crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
             crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the deployment plan to describe.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.edge_deployment_plan_name(input.into());
         self
     }
     /// <p>The name of the deployment plan to describe.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }

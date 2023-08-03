@@ -10,8 +10,7 @@ pub struct GetSolVnfInfo {
     pub vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
     /// <p>Compute info used by the network function instance.</p>
     #[doc(hidden)]
-    pub vnfc_resource_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,
+    pub vnfc_resource_info: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,
 }
 impl GetSolVnfInfo {
     /// <p>State of the network function instance.</p>
@@ -19,9 +18,7 @@ impl GetSolVnfInfo {
         self.vnf_state.as_ref()
     }
     /// <p>Compute info used by the network function instance.</p>
-    pub fn vnfc_resource_info(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GetSolVnfcResourceInfo]> {
+    pub fn vnfc_resource_info(&self) -> ::std::option::Option<&[crate::types::GetSolVnfcResourceInfo]> {
         self.vnfc_resource_info.as_deref()
     }
 }
@@ -34,13 +31,10 @@ impl GetSolVnfInfo {
 
 /// A builder for [`GetSolVnfInfo`](crate::types::GetSolVnfInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolVnfInfoBuilder {
     pub(crate) vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
-    pub(crate) vnfc_resource_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,
+    pub(crate) vnfc_resource_info: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,
 }
 impl GetSolVnfInfoBuilder {
     /// <p>State of the network function instance.</p>
@@ -49,10 +43,7 @@ impl GetSolVnfInfoBuilder {
         self
     }
     /// <p>State of the network function instance.</p>
-    pub fn set_vnf_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VnfOperationalState>,
-    ) -> Self {
+    pub fn set_vnf_state(mut self, input: ::std::option::Option<crate::types::VnfOperationalState>) -> Self {
         self.vnf_state = input;
         self
     }
@@ -72,17 +63,12 @@ impl GetSolVnfInfoBuilder {
         self
     }
     /// <p>Compute info used by the network function instance.</p>
-    pub fn set_vnfc_resource_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,
-    ) -> Self {
+    pub fn set_vnfc_resource_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>) -> Self {
         self.vnfc_resource_info = input;
         self
     }
     /// <p>Compute info used by the network function instance.</p>
-    pub fn get_vnfc_resource_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>> {
+    pub fn get_vnfc_resource_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>> {
         &self.vnfc_resource_info
     }
     /// Consumes the builder and constructs a [`GetSolVnfInfo`](crate::types::GetSolVnfInfo).

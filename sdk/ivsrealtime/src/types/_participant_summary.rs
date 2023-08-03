@@ -51,9 +51,7 @@ impl ParticipantSummary {
 
 /// A builder for [`ParticipantSummary`](crate::types::ParticipantSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParticipantSummaryBuilder {
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct ParticipantSummaryBuilder {
 }
 impl ParticipantSummaryBuilder {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
@@ -102,10 +94,7 @@ impl ParticipantSummaryBuilder {
         self
     }
     /// <p>Whether the participant is connected to or disconnected from the stage.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ParticipantState>) -> Self {
         self.state = input;
         self
     }
@@ -119,10 +108,7 @@ impl ParticipantSummaryBuilder {
         self
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
-    pub fn set_first_join_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_join_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_join_time = input;
         self
     }

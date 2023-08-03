@@ -70,9 +70,7 @@ impl CheckpointConfigurationDescription {
 
 /// A builder for [`CheckpointConfigurationDescription`](crate::types::CheckpointConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckpointConfigurationDescriptionBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) checkpointing_enabled: ::std::option::Option<bool>,
@@ -100,10 +98,7 @@ impl CheckpointConfigurationDescriptionBuilder {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_configuration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationType>,
-    ) -> Self {
+    pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
         self.configuration_type = input;
         self
     }
@@ -115,9 +110,7 @@ impl CheckpointConfigurationDescriptionBuilder {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_configuration_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+    pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
         &self.configuration_type
     }
     /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p> <note>

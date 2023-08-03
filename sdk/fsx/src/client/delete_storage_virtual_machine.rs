@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`storage_virtual_machine_id(Option<String>)`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineOutput::storage_virtual_machine_id): <p>The ID of the SVM Amazon FSx is deleting.</p>
     ///   - [`lifecycle(Option<StorageVirtualMachineLifecycle>)`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineOutput::lifecycle): <p>Describes the lifecycle state of the SVM being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteStorageVirtualMachineError>`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineError)
-    pub fn delete_storage_virtual_machine(&self) -> crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineFluentBuilder{
+    pub fn delete_storage_virtual_machine(
+        &self,
+    ) -> crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineFluentBuilder {
         crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineFluentBuilder::new(self.handle.clone())
     }
 }

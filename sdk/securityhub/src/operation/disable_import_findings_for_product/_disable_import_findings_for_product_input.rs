@@ -15,33 +15,25 @@ impl DisableImportFindingsForProductInput {
 }
 impl DisableImportFindingsForProductInput {
     /// Creates a new builder-style object to manufacture [`DisableImportFindingsForProductInput`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput).
-    pub fn builder() -> crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductInputBuilder{
+    pub fn builder() -> crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductInputBuilder {
         crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableImportFindingsForProductInput`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableImportFindingsForProductInputBuilder {
     pub(crate) product_subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisableImportFindingsForProductInputBuilder {
     /// <p>The ARN of the integrated product to disable the integration for.</p>
-    pub fn product_subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the integrated product to disable the integration for.</p>
-    pub fn set_product_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_subscription_arn = input;
         self
     }
@@ -58,9 +50,8 @@ impl DisableImportFindingsForProductInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput {
-                product_subscription_arn: self.product_subscription_arn
-                ,
-            }
+                product_subscription_arn: self.product_subscription_arn,
+            },
         )
     }
 }

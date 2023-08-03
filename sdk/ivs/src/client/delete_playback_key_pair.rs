@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder::set_arn): <p>ARN of the key pair to be deleted.</p>
     /// - On success, responds with [`DeletePlaybackKeyPairOutput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairOutput)
     /// - On failure, responds with [`SdkError<DeletePlaybackKeyPairError>`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairError)
-    pub fn delete_playback_key_pair(
-        &self,
-    ) -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder
-    {
+    pub fn delete_playback_key_pair(&self) -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder {
         crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

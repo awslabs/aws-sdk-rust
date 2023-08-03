@@ -58,12 +58,9 @@ impl LookupEventsInput {
 
 /// A builder for [`LookupEventsInput`](crate::operation::lookup_events::LookupEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookupEventsInputBuilder {
-    pub(crate) lookup_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>,
+    pub(crate) lookup_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_category: ::std::option::Option<crate::types::EventCategory>,
@@ -83,17 +80,12 @@ impl LookupEventsInputBuilder {
         self
     }
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub fn set_lookup_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>,
-    ) -> Self {
+    pub fn set_lookup_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>) -> Self {
         self.lookup_attributes = input;
         self
     }
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub fn get_lookup_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>> {
+    pub fn get_lookup_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>> {
         &self.lookup_attributes
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
@@ -102,10 +94,7 @@ impl LookupEventsInputBuilder {
         self
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -119,10 +108,7 @@ impl LookupEventsInputBuilder {
         self
     }
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -136,10 +122,7 @@ impl LookupEventsInputBuilder {
         self
     }
     /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
-    pub fn set_event_category(
-        mut self,
-        input: ::std::option::Option<crate::types::EventCategory>,
-    ) -> Self {
+    pub fn set_event_category(mut self, input: ::std::option::Option<crate::types::EventCategory>) -> Self {
         self.event_category = input;
         self
     }
@@ -176,12 +159,7 @@ impl LookupEventsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`LookupEventsInput`](crate::operation::lookup_events::LookupEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::lookup_events::LookupEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::lookup_events::LookupEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::lookup_events::LookupEventsInput {
             lookup_attributes: self.lookup_attributes,
             start_time: self.start_time,

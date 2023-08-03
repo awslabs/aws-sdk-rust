@@ -23,9 +23,7 @@ impl NodeToNodeEncryptionOptions {
 
 /// A builder for [`NodeToNodeEncryptionOptions`](crate::types::NodeToNodeEncryptionOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeToNodeEncryptionOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl NodeToNodeEncryptionOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`NodeToNodeEncryptionOptions`](crate::types::NodeToNodeEncryptionOptions).
     pub fn build(self) -> crate::types::NodeToNodeEncryptionOptions {
-        crate::types::NodeToNodeEncryptionOptions {
-            enabled: self.enabled,
-        }
+        crate::types::NodeToNodeEncryptionOptions { enabled: self.enabled }
     }
 }

@@ -50,9 +50,7 @@ impl GetGroupOutput {
 
 /// A builder for [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupOutputBuilder {
     pub(crate) group: ::std::option::Option<crate::types::Group>,
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
@@ -87,10 +85,7 @@ impl GetGroupOutputBuilder {
         self
     }
     /// <p>A list of users in the group.</p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::User>>) -> Self {
         self.users = input;
         self
     }

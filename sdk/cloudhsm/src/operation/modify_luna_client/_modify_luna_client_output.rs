@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyLunaClientOutput {
 }
 impl ModifyLunaClientOutput {
     /// Creates a new builder-style object to manufacture [`ModifyLunaClientOutput`](crate::operation::modify_luna_client::ModifyLunaClientOutput).
-    pub fn builder() -> crate::operation::modify_luna_client::builders::ModifyLunaClientOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_luna_client::builders::ModifyLunaClientOutputBuilder {
         crate::operation::modify_luna_client::builders::ModifyLunaClientOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyLunaClientOutput`](crate::operation::modify_luna_client::ModifyLunaClientOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLunaClientOutputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

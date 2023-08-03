@@ -22,35 +22,26 @@ impl DescribeDatastoreInput {
 }
 impl DescribeDatastoreInput {
     /// Creates a new builder-style object to manufacture [`DescribeDatastoreInput`](crate::operation::describe_datastore::DescribeDatastoreInput).
-    pub fn builder() -> crate::operation::describe_datastore::builders::DescribeDatastoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_datastore::builders::DescribeDatastoreInputBuilder {
         crate::operation::describe_datastore::builders::DescribeDatastoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatastoreInput`](crate::operation::describe_datastore::DescribeDatastoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatastoreInputBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) include_statistics: ::std::option::Option<bool>,
 }
 impl DescribeDatastoreInputBuilder {
     /// <p>The name of the data store</p>
-    pub fn datastore_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data store</p>
-    pub fn set_datastore_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl DescribeDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatastoreInput`](crate::operation::describe_datastore::DescribeDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_datastore::DescribeDatastoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_datastore::DescribeDatastoreInput {
-                datastore_name: self.datastore_name,
-                include_statistics: self.include_statistics.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_datastore::DescribeDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_datastore::DescribeDatastoreInput {
+            datastore_name: self.datastore_name,
+            include_statistics: self.include_statistics.unwrap_or_default(),
+        })
     }
 }

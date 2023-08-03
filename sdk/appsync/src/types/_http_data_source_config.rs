@@ -17,9 +17,7 @@ impl HttpDataSourceConfig {
         self.endpoint.as_deref()
     }
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
-    pub fn authorization_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthorizationConfig> {
+    pub fn authorization_config(&self) -> ::std::option::Option<&crate::types::AuthorizationConfig> {
         self.authorization_config.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl HttpDataSourceConfig {
 
 /// A builder for [`HttpDataSourceConfig`](crate::types::HttpDataSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpDataSourceConfigBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_config: ::std::option::Option<crate::types::AuthorizationConfig>,
@@ -60,17 +56,12 @@ impl HttpDataSourceConfigBuilder {
         self
     }
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
-    pub fn set_authorization_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizationConfig>,
-    ) -> Self {
+    pub fn set_authorization_config(mut self, input: ::std::option::Option<crate::types::AuthorizationConfig>) -> Self {
         self.authorization_config = input;
         self
     }
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
-    pub fn get_authorization_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthorizationConfig> {
+    pub fn get_authorization_config(&self) -> &::std::option::Option<crate::types::AuthorizationConfig> {
         &self.authorization_config
     }
     /// Consumes the builder and constructs a [`HttpDataSourceConfig`](crate::types::HttpDataSourceConfig).

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ResetDbParameterGroupOutput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput) with field(s):
     ///   - [`db_parameter_group_name(Option<String>)`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput::db_parameter_group_name): <p>Provides the name of the DB parameter group.</p>
     /// - On failure, responds with [`SdkError<ResetDBParameterGroupError>`](crate::operation::reset_db_parameter_group::ResetDBParameterGroupError)
-    pub fn reset_db_parameter_group(
-        &self,
-    ) -> crate::operation::reset_db_parameter_group::builders::ResetDBParameterGroupFluentBuilder
-    {
+    pub fn reset_db_parameter_group(&self) -> crate::operation::reset_db_parameter_group::builders::ResetDBParameterGroupFluentBuilder {
         crate::operation::reset_db_parameter_group::builders::ResetDBParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

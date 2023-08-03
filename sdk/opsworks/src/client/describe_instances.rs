@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput) with field(s):
     ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::describe_instances::DescribeInstancesOutput::instances): <p>An array of <code>Instance</code> objects that describe the instances.</p>
     /// - On failure, responds with [`SdkError<DescribeInstancesError>`](crate::operation::describe_instances::DescribeInstancesError)
-    pub fn describe_instances(
-        &self,
-    ) -> crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder {
-        crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_instances(&self) -> crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder {
+        crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder::new(self.handle.clone())
     }
 }

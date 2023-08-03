@@ -10,9 +10,7 @@ pub struct DeleteEnvironmentTemplateOutput {
 }
 impl DeleteEnvironmentTemplateOutput {
     /// <p>The detailed data of the environment template being deleted.</p>
-    pub fn environment_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnvironmentTemplate> {
+    pub fn environment_template(&self) -> ::std::option::Option<&crate::types::EnvironmentTemplate> {
         self.environment_template.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteEnvironmentTemplateOutput {
 }
 impl DeleteEnvironmentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentTemplateOutput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput).
-    pub fn builder() -> crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateOutputBuilder {
         crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentTemplateOutput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateOutputBuilder {
     pub(crate) environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DeleteEnvironmentTemplateOutputBuilder {
         self
     }
     /// <p>The detailed data of the environment template being deleted.</p>
-    pub fn set_environment_template(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentTemplate>,
-    ) -> Self {
+    pub fn set_environment_template(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplate>) -> Self {
         self.environment_template = input;
         self
     }
     /// <p>The detailed data of the environment template being deleted.</p>
-    pub fn get_environment_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
+    pub fn get_environment_template(&self) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
         &self.environment_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl DeleteEnvironmentTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentTemplateOutput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput {
+    pub fn build(self) -> crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput {
         crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput {
             environment_template: self.environment_template,
             _request_id: self._request_id,

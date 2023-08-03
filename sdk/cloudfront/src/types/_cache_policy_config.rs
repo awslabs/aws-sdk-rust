@@ -29,8 +29,7 @@ pub struct CachePolicyConfig {
     pub min_ttl: ::std::option::Option<i64>,
     /// <p>The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache key are also included in requests that CloudFront sends to the origin.</p>
     #[doc(hidden)]
-    pub parameters_in_cache_key_and_forwarded_to_origin:
-        ::std::option::Option<crate::types::ParametersInCacheKeyAndForwardedToOrigin>,
+    pub parameters_in_cache_key_and_forwarded_to_origin: ::std::option::Option<crate::types::ParametersInCacheKeyAndForwardedToOrigin>,
 }
 impl CachePolicyConfig {
     /// <p>A comment to describe the cache policy. The comment cannot be longer than 128 characters.</p>
@@ -56,11 +55,8 @@ impl CachePolicyConfig {
         self.min_ttl
     }
     /// <p>The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache key are also included in requests that CloudFront sends to the origin.</p>
-    pub fn parameters_in_cache_key_and_forwarded_to_origin(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParametersInCacheKeyAndForwardedToOrigin> {
-        self.parameters_in_cache_key_and_forwarded_to_origin
-            .as_ref()
+    pub fn parameters_in_cache_key_and_forwarded_to_origin(&self) -> ::std::option::Option<&crate::types::ParametersInCacheKeyAndForwardedToOrigin> {
+        self.parameters_in_cache_key_and_forwarded_to_origin.as_ref()
     }
 }
 impl CachePolicyConfig {
@@ -72,17 +68,14 @@ impl CachePolicyConfig {
 
 /// A builder for [`CachePolicyConfig`](crate::types::CachePolicyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CachePolicyConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_ttl: ::std::option::Option<i64>,
     pub(crate) max_ttl: ::std::option::Option<i64>,
     pub(crate) min_ttl: ::std::option::Option<i64>,
-    pub(crate) parameters_in_cache_key_and_forwarded_to_origin:
-        ::std::option::Option<crate::types::ParametersInCacheKeyAndForwardedToOrigin>,
+    pub(crate) parameters_in_cache_key_and_forwarded_to_origin: ::std::option::Option<crate::types::ParametersInCacheKeyAndForwardedToOrigin>,
 }
 impl CachePolicyConfigBuilder {
     /// <p>A comment to describe the cache policy. The comment cannot be longer than 128 characters.</p>
@@ -162,10 +155,7 @@ impl CachePolicyConfigBuilder {
         &self.min_ttl
     }
     /// <p>The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache key are also included in requests that CloudFront sends to the origin.</p>
-    pub fn parameters_in_cache_key_and_forwarded_to_origin(
-        mut self,
-        input: crate::types::ParametersInCacheKeyAndForwardedToOrigin,
-    ) -> Self {
+    pub fn parameters_in_cache_key_and_forwarded_to_origin(mut self, input: crate::types::ParametersInCacheKeyAndForwardedToOrigin) -> Self {
         self.parameters_in_cache_key_and_forwarded_to_origin = ::std::option::Option::Some(input);
         self
     }
@@ -191,8 +181,7 @@ impl CachePolicyConfigBuilder {
             default_ttl: self.default_ttl,
             max_ttl: self.max_ttl,
             min_ttl: self.min_ttl,
-            parameters_in_cache_key_and_forwarded_to_origin: self
-                .parameters_in_cache_key_and_forwarded_to_origin,
+            parameters_in_cache_key_and_forwarded_to_origin: self.parameters_in_cache_key_and_forwarded_to_origin,
         }
     }
 }

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`wireless_gateway_task_definition_id(Option<String>)`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput::wireless_gateway_task_definition_id): <p>The ID of the WirelessGatewayTaskDefinition.</p>
     ///   - [`status(Option<WirelessGatewayTaskStatus>)`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput::status): <p>The status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateWirelessGatewayTaskError>`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError)
-    pub fn create_wireless_gateway_task(&self) -> crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskFluentBuilder{
+    pub fn create_wireless_gateway_task(&self) -> crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskFluentBuilder {
         crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskFluentBuilder::new(self.handle.clone())
     }
 }

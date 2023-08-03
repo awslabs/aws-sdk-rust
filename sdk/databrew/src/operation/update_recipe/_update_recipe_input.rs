@@ -36,9 +36,7 @@ impl UpdateRecipeInput {
 
 /// A builder for [`UpdateRecipeInput`](crate::operation::update_recipe::UpdateRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRecipeInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl UpdateRecipeInputBuilder {
         self
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>) -> Self {
         self.steps = input;
         self
     }
@@ -97,12 +92,7 @@ impl UpdateRecipeInputBuilder {
         &self.steps
     }
     /// Consumes the builder and constructs a [`UpdateRecipeInput`](crate::operation::update_recipe::UpdateRecipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_recipe::UpdateRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_recipe::UpdateRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_recipe::UpdateRecipeInput {
             description: self.description,
             name: self.name,

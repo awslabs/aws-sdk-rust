@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartAnnotationImportJobOutput`](crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput::job_id): <p>The job's ID.</p>
     /// - On failure, responds with [`SdkError<StartAnnotationImportJobError>`](crate::operation::start_annotation_import_job::StartAnnotationImportJobError)
-    pub fn start_annotation_import_job(&self) -> crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobFluentBuilder{
+    pub fn start_annotation_import_job(&self) -> crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobFluentBuilder {
         crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobFluentBuilder::new(self.handle.clone())
     }
 }

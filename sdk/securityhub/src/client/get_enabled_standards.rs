@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`standards_subscriptions(Option<Vec<StandardsSubscription>>)`](crate::operation::get_enabled_standards::GetEnabledStandardsOutput::standards_subscriptions): <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_enabled_standards::GetEnabledStandardsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetEnabledStandardsError>`](crate::operation::get_enabled_standards::GetEnabledStandardsError)
-    pub fn get_enabled_standards(
-        &self,
-    ) -> crate::operation::get_enabled_standards::builders::GetEnabledStandardsFluentBuilder {
-        crate::operation::get_enabled_standards::builders::GetEnabledStandardsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_enabled_standards(&self) -> crate::operation::get_enabled_standards::builders::GetEnabledStandardsFluentBuilder {
+        crate::operation::get_enabled_standards::builders::GetEnabledStandardsFluentBuilder::new(self.handle.clone())
     }
 }

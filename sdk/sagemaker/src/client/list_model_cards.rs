@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`model_card_summaries(Option<Vec<ModelCardSummary>>)`](crate::operation::list_model_cards::ListModelCardsOutput::model_card_summaries): <p>The summaries of the listed model cards.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_cards::ListModelCardsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListModelCardsError>`](crate::operation::list_model_cards::ListModelCardsError)
-    pub fn list_model_cards(
-        &self,
-    ) -> crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder {
-        crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_model_cards(&self) -> crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder {
+        crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::new(self.handle.clone())
     }
 }

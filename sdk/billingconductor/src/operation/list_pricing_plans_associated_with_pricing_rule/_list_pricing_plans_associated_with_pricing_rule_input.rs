@@ -36,16 +36,15 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
 }
 impl ListPricingPlansAssociatedWithPricingRuleInput {
     /// Creates a new builder-style object to manufacture [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput).
-    pub fn builder() -> crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingPlansAssociatedWithPricingRuleInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_rule_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +53,12 @@ pub struct ListPricingPlansAssociatedWithPricingRuleInputBuilder {
 }
 impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
@@ -74,18 +67,12 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         &self.billing_period
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    pub fn pricing_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    pub fn set_pricing_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pricing_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_rule_arn = input;
         self
     }
@@ -122,18 +109,19 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput {
-                billing_period: self.billing_period
-                ,
-                pricing_rule_arn: self.pricing_rule_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                billing_period: self.billing_period,
+                pricing_rule_arn: self.pricing_rule_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

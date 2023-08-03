@@ -22,35 +22,26 @@ impl GetStreamingImageInput {
 }
 impl GetStreamingImageInput {
     /// Creates a new builder-style object to manufacture [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
-    pub fn builder(
-    ) -> crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder {
+    pub fn builder() -> crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder {
         crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamingImageInputBuilder {
     pub(crate) streaming_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStreamingImageInputBuilder {
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The streaming image ID.</p>
-    pub fn set_streaming_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_image_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetStreamingImageInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_streaming_image::GetStreamingImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_streaming_image::GetStreamingImageInput {
-                streaming_image_id: self.streaming_image_id,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_streaming_image::GetStreamingImageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_streaming_image::GetStreamingImageInput {
+            streaming_image_id: self.streaming_image_id,
+            studio_id: self.studio_id,
+        })
     }
 }

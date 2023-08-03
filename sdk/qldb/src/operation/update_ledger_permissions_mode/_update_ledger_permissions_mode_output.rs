@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for UpdateLedgerPermissionsModeOutput {
 }
 impl UpdateLedgerPermissionsModeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeOutput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput).
-    pub fn builder() -> crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeOutputBuilder{
+    pub fn builder() -> crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeOutputBuilder {
         crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLedgerPermissionsModeOutput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLedgerPermissionsModeOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl UpdateLedgerPermissionsModeOutputBuilder {
         self
     }
     /// <p>The current permissions mode of the ledger.</p>
-    pub fn set_permissions_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionsMode>,
-    ) -> Self {
+    pub fn set_permissions_mode(mut self, input: ::std::option::Option<crate::types::PermissionsMode>) -> Self {
         self.permissions_mode = input;
         self
     }
@@ -107,9 +102,7 @@ impl UpdateLedgerPermissionsModeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeOutput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput {
+    pub fn build(self) -> crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput {
         crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput {
             name: self.name,
             arn: self.arn,

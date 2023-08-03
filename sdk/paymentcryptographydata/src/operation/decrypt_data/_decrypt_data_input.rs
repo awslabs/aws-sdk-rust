@@ -23,9 +23,7 @@ impl DecryptDataInput {
         self.cipher_text.as_deref()
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
-    pub fn decryption_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionDecryptionAttributes> {
+    pub fn decryption_attributes(&self) -> ::std::option::Option<&crate::types::EncryptionDecryptionAttributes> {
         self.decryption_attributes.as_ref()
     }
 }
@@ -51,23 +49,16 @@ impl DecryptDataInput {
 pub struct DecryptDataInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cipher_text: ::std::option::Option<::std::string::String>,
-    pub(crate) decryption_attributes:
-        ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
+    pub(crate) decryption_attributes: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
 }
 impl DecryptDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
@@ -90,34 +81,21 @@ impl DecryptDataInputBuilder {
         &self.cipher_text
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
-    pub fn decryption_attributes(
-        mut self,
-        input: crate::types::EncryptionDecryptionAttributes,
-    ) -> Self {
+    pub fn decryption_attributes(mut self, input: crate::types::EncryptionDecryptionAttributes) -> Self {
         self.decryption_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
-    pub fn set_decryption_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
-    ) -> Self {
+    pub fn set_decryption_attributes(mut self, input: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>) -> Self {
         self.decryption_attributes = input;
         self
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
-    pub fn get_decryption_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
+    pub fn get_decryption_attributes(&self) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
         &self.decryption_attributes
     }
     /// Consumes the builder and constructs a [`DecryptDataInput`](crate::operation::decrypt_data::DecryptDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::decrypt_data::DecryptDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::decrypt_data::DecryptDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::decrypt_data::DecryptDataInput {
             key_identifier: self.key_identifier,
             cipher_text: self.cipher_text,

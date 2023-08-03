@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployment_instances::ListDeploymentInstancesOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentInstancesError>`](crate::operation::list_deployment_instances::ListDeploymentInstancesError)
     #[deprecated(note = "This operation is deprecated, use ListDeploymentTargets instead.")]
-    pub fn list_deployment_instances(
-        &self,
-    ) -> crate::operation::list_deployment_instances::builders::ListDeploymentInstancesFluentBuilder
-    {
+    pub fn list_deployment_instances(&self) -> crate::operation::list_deployment_instances::builders::ListDeploymentInstancesFluentBuilder {
         crate::operation::list_deployment_instances::builders::ListDeploymentInstancesFluentBuilder::new(self.handle.clone())
     }
 }

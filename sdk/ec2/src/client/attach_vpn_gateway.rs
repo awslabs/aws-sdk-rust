@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AttachVpnGatewayOutput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput) with field(s):
     ///   - [`vpc_attachment(Option<VpcAttachment>)`](crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput::vpc_attachment): <p>Information about the attachment.</p>
     /// - On failure, responds with [`SdkError<AttachVpnGatewayError>`](crate::operation::attach_vpn_gateway::AttachVpnGatewayError)
-    pub fn attach_vpn_gateway(
-        &self,
-    ) -> crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayFluentBuilder {
-        crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_vpn_gateway(&self) -> crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayFluentBuilder {
+        crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayFluentBuilder::new(self.handle.clone())
     }
 }

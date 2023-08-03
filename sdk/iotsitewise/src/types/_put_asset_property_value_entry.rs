@@ -51,16 +51,13 @@ impl PutAssetPropertyValueEntry {
 
 /// A builder for [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAssetPropertyValueEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_alias: ::std::option::Option<::std::string::String>,
-    pub(crate) property_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub(crate) property_values: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntryBuilder {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
@@ -106,18 +103,12 @@ impl PutAssetPropertyValueEntryBuilder {
         &self.property_id
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_alias = input;
         self
     }
@@ -137,17 +128,12 @@ impl PutAssetPropertyValueEntryBuilder {
         self
     }
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
-    pub fn set_property_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
-    ) -> Self {
+    pub fn set_property_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>) -> Self {
         self.property_values = input;
         self
     }
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
-    pub fn get_property_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+    pub fn get_property_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
         &self.property_values
     }
     /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).

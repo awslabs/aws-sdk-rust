@@ -8,8 +8,7 @@ pub struct ListTestRecommendationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The test recommendations for the Resilience Hub application.</p>
     #[doc(hidden)]
-    pub test_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
+    pub test_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
     _request_id: Option<String>,
 }
 impl ListTestRecommendationsOutput {
@@ -18,9 +17,7 @@ impl ListTestRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The test recommendations for the Resilience Hub application.</p>
-    pub fn test_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TestRecommendation]> {
+    pub fn test_recommendations(&self) -> ::std::option::Option<&[crate::types::TestRecommendation]> {
         self.test_recommendations.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListTestRecommendationsOutput {
 }
 impl ListTestRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestRecommendationsOutput`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_test_recommendations::builders::ListTestRecommendationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_test_recommendations::builders::ListTestRecommendationsOutputBuilder {
         crate::operation::list_test_recommendations::builders::ListTestRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestRecommendationsOutput`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) test_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
+    pub(crate) test_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
     _request_id: Option<String>,
 }
 impl ListTestRecommendationsOutputBuilder {
@@ -76,17 +68,12 @@ impl ListTestRecommendationsOutputBuilder {
         self
     }
     /// <p>The test recommendations for the Resilience Hub application.</p>
-    pub fn set_test_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
-    ) -> Self {
+    pub fn set_test_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>) -> Self {
         self.test_recommendations = input;
         self
     }
     /// <p>The test recommendations for the Resilience Hub application.</p>
-    pub fn get_test_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>> {
+    pub fn get_test_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>> {
         &self.test_recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListTestRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTestRecommendationsOutput`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
+    pub fn build(self) -> crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
         crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
             next_token: self.next_token,
             test_recommendations: self.test_recommendations,

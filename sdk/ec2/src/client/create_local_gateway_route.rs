@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocalGatewayRouteOutput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput) with field(s):
     ///   - [`route(Option<LocalGatewayRoute>)`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput::route): <p>Information about the route.</p>
     /// - On failure, responds with [`SdkError<CreateLocalGatewayRouteError>`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteError)
-    pub fn create_local_gateway_route(
-        &self,
-    ) -> crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteFluentBuilder
-    {
+    pub fn create_local_gateway_route(&self) -> crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteFluentBuilder {
         crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteFluentBuilder::new(self.handle.clone())
     }
 }

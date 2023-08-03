@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SubscribeToEventOutput {
 }
 impl SubscribeToEventOutput {
     /// Creates a new builder-style object to manufacture [`SubscribeToEventOutput`](crate::operation::subscribe_to_event::SubscribeToEventOutput).
-    pub fn builder() -> crate::operation::subscribe_to_event::builders::SubscribeToEventOutputBuilder
-    {
+    pub fn builder() -> crate::operation::subscribe_to_event::builders::SubscribeToEventOutputBuilder {
         crate::operation::subscribe_to_event::builders::SubscribeToEventOutputBuilder::default()
     }
 }
 
 /// A builder for [`SubscribeToEventOutput`](crate::operation::subscribe_to_event::SubscribeToEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscribeToEventOutputBuilder {
     _request_id: Option<String>,
 }

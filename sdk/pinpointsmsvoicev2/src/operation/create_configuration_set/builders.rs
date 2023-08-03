@@ -39,10 +39,7 @@ impl CreateConfigurationSetFluentBuilder {
         }
     }
     /// Access the CreateConfigurationSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateConfigurationSetFluentBuilder {
             crate::operation::create_configuration_set::CreateConfigurationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_set::CreateConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateConfigurationSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateConfigurationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configuration_set::CreateConfigurationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_set::CreateConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateConfigurationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configuration_set::CreateConfigurationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_set::CreateConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl CreateConfigurationSetFluentBuilder {
             crate::operation::create_configuration_set::CreateConfigurationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_set::CreateConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name to use for the new configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name to use for the new configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -155,10 +135,7 @@ impl CreateConfigurationSetFluentBuilder {
         self
     }
     /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

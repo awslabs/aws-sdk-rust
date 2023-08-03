@@ -22,17 +22,14 @@ impl UpdateCustomMetricInput {
 }
 impl UpdateCustomMetricInput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomMetricInput`](crate::operation::update_custom_metric::UpdateCustomMetricInput).
-    pub fn builder(
-    ) -> crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder {
+    pub fn builder() -> crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder {
         crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCustomMetricInput`](crate::operation::update_custom_metric::UpdateCustomMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCustomMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl UpdateCustomMetricInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCustomMetricInput`](crate::operation::update_custom_metric::UpdateCustomMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_custom_metric::UpdateCustomMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_custom_metric::UpdateCustomMetricInput {
-                metric_name: self.metric_name,
-                display_name: self.display_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_custom_metric::UpdateCustomMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_custom_metric::UpdateCustomMetricInput {
+            metric_name: self.metric_name,
+            display_name: self.display_name,
+        })
     }
 }

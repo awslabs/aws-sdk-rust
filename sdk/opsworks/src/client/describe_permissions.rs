@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePermissionsOutput`](crate::operation::describe_permissions::DescribePermissionsOutput) with field(s):
     ///   - [`permissions(Option<Vec<Permission>>)`](crate::operation::describe_permissions::DescribePermissionsOutput::permissions): <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>  <ul>   <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>   <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>   <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribePermissionsError>`](crate::operation::describe_permissions::DescribePermissionsError)
-    pub fn describe_permissions(
-        &self,
-    ) -> crate::operation::describe_permissions::builders::DescribePermissionsFluentBuilder {
-        crate::operation::describe_permissions::builders::DescribePermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_permissions(&self) -> crate::operation::describe_permissions::builders::DescribePermissionsFluentBuilder {
+        crate::operation::describe_permissions::builders::DescribePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`activity_type(Option<ActivityType>)`](crate::operation::poll_for_activity_task::PollForActivityTaskOutput::activity_type): <p>The type of this activity task.</p>
     ///   - [`input(Option<String>)`](crate::operation::poll_for_activity_task::PollForActivityTaskOutput::input): <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
     /// - On failure, responds with [`SdkError<PollForActivityTaskError>`](crate::operation::poll_for_activity_task::PollForActivityTaskError)
-    pub fn poll_for_activity_task(
-        &self,
-    ) -> crate::operation::poll_for_activity_task::builders::PollForActivityTaskFluentBuilder {
-        crate::operation::poll_for_activity_task::builders::PollForActivityTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn poll_for_activity_task(&self) -> crate::operation::poll_for_activity_task::builders::PollForActivityTaskFluentBuilder {
+        crate::operation::poll_for_activity_task::builders::PollForActivityTaskFluentBuilder::new(self.handle.clone())
     }
 }

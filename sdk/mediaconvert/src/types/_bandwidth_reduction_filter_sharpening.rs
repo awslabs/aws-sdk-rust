@@ -40,13 +40,7 @@
 /// Optionally specify the level of sharpening to apply when you use the Bandwidth reduction filter. Sharpening adds contrast to the edges of your video content and can reduce softness. Keep the default value Off to apply no sharpening. Set Sharpening strength to Low to apply a minimal amount of sharpening, or High to apply a maximum amount of sharpening.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BandwidthReductionFilterSharpening {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for BandwidthReductionFilterSharpening {
             "LOW" => BandwidthReductionFilterSharpening::Low,
             "MEDIUM" => BandwidthReductionFilterSharpening::Medium,
             "OFF" => BandwidthReductionFilterSharpening::Off,
-            other => BandwidthReductionFilterSharpening::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => BandwidthReductionFilterSharpening::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -10,10 +10,7 @@ impl UpdatePortfolioInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_portfolio::UpdatePortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_portfolio::UpdatePortfolioError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_portfolio::UpdatePortfolioError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_portfolio();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdatePortfolioFluentBuilder {
         }
     }
     /// Access the UpdatePortfolio as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_portfolio::builders::UpdatePortfolioInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_portfolio::builders::UpdatePortfolioInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdatePortfolioFluentBuilder {
             crate::operation::update_portfolio::UpdatePortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_portfolio::UpdatePortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_portfolio::UpdatePortfolioError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdatePortfolioFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdatePortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_portfolio::UpdatePortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_portfolio::UpdatePortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_portfolio::UpdatePortfolioError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdatePortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_portfolio::UpdatePortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_portfolio::UpdatePortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_portfolio::UpdatePortfolioError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdatePortfolioFluentBuilder {
             crate::operation::update_portfolio::UpdatePortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_portfolio::UpdatePortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_portfolio::UpdatePortfolioError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl UpdatePortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -140,10 +121,7 @@ impl UpdatePortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -198,18 +176,12 @@ impl UpdatePortfolioFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The updated name of the portfolio provider.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The updated name of the portfolio provider.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }
@@ -227,10 +199,7 @@ impl UpdatePortfolioFluentBuilder {
         self
     }
     /// <p>The tags to add.</p>
-    pub fn set_add_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_add_tags(input);
         self
     }
@@ -248,17 +217,12 @@ impl UpdatePortfolioFluentBuilder {
         self
     }
     /// <p>The tags to remove.</p>
-    pub fn set_remove_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_tags(input);
         self
     }
     /// <p>The tags to remove.</p>
-    pub fn get_remove_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_tags()
     }
 }

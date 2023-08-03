@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`application_fleet_associations(Option<Vec<ApplicationFleetAssociation>>)`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput::application_fleet_associations): <p>The application fleet associations in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationFleetAssociationsError>`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsError)
-    pub fn describe_application_fleet_associations(&self) -> crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsFluentBuilder{
-        crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_application_fleet_associations(
+        &self,
+    ) -> crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsFluentBuilder {
+        crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

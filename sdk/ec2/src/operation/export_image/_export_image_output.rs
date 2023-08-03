@@ -91,9 +91,7 @@ impl ExportImageOutput {
 
 /// A builder for [`ExportImageOutput`](crate::operation::export_image::ExportImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportImageOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,
@@ -128,10 +126,7 @@ impl ExportImageOutputBuilder {
         self
     }
     /// <p>The disk image format for the exported image.</p>
-    pub fn set_disk_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageFormat>,
-    ) -> Self {
+    pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
         self.disk_image_format = input;
         self
     }
@@ -140,18 +135,12 @@ impl ExportImageOutputBuilder {
         &self.disk_image_format
     }
     /// <p>The ID of the export image task.</p>
-    pub fn export_image_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_image_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_image_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the export image task.</p>
-    pub fn set_export_image_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_image_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_image_task_id = input;
         self
     }
@@ -207,17 +196,12 @@ impl ExportImageOutputBuilder {
         self
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
-    pub fn set_s3_export_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTaskS3Location>,
-    ) -> Self {
+    pub fn set_s3_export_location(mut self, input: ::std::option::Option<crate::types::ExportTaskS3Location>) -> Self {
         self.s3_export_location = input;
         self
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
-    pub fn get_s3_export_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportTaskS3Location> {
+    pub fn get_s3_export_location(&self) -> &::std::option::Option<crate::types::ExportTaskS3Location> {
         &self.s3_export_location
     }
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
@@ -235,18 +219,12 @@ impl ExportImageOutputBuilder {
         &self.status
     }
     /// <p>The status message for the export image task.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for the export image task.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -266,10 +244,7 @@ impl ExportImageOutputBuilder {
         self
     }
     /// <p>Any tags assigned to the export image task.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

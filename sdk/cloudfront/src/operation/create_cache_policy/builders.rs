@@ -10,10 +10,7 @@ impl CreateCachePolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_cache_policy::CreateCachePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_policy::CreateCachePolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_cache_policy();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateCachePolicyFluentBuilder {
         }
     }
     /// Access the CreateCachePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_cache_policy::builders::CreateCachePolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_cache_policy::builders::CreateCachePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl CreateCachePolicyFluentBuilder {
             crate::operation::create_cache_policy::CreateCachePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_policy::CreateCachePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl CreateCachePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl CreateCachePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_policy::CreateCachePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_policy::CreateCachePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl CreateCachePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_policy::CreateCachePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_policy::CreateCachePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl CreateCachePolicyFluentBuilder {
             crate::operation::create_cache_policy::CreateCachePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_policy::CreateCachePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -135,17 +119,12 @@ impl CreateCachePolicyFluentBuilder {
         self
     }
     /// <p>A cache policy configuration.</p>
-    pub fn set_cache_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyConfig>,
-    ) -> Self {
+    pub fn set_cache_policy_config(mut self, input: ::std::option::Option<crate::types::CachePolicyConfig>) -> Self {
         self.inner = self.inner.set_cache_policy_config(input);
         self
     }
     /// <p>A cache policy configuration.</p>
-    pub fn get_cache_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CachePolicyConfig> {
+    pub fn get_cache_policy_config(&self) -> &::std::option::Option<crate::types::CachePolicyConfig> {
         self.inner.get_cache_policy_config()
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopDataSourceSyncJobOutput {
 }
 impl StopDataSourceSyncJobOutput {
     /// Creates a new builder-style object to manufacture [`StopDataSourceSyncJobOutput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobOutputBuilder {
         crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopDataSourceSyncJobOutput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDataSourceSyncJobOutputBuilder {
     _request_id: Option<String>,
 }

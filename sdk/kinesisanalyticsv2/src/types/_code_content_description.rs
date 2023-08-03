@@ -15,8 +15,7 @@ pub struct CodeContentDescription {
     pub code_size: ::std::option::Option<i64>,
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_application_code_location_description:
-        ::std::option::Option<crate::types::S3ApplicationCodeLocationDescription>,
+    pub s3_application_code_location_description: ::std::option::Option<crate::types::S3ApplicationCodeLocationDescription>,
 }
 impl CodeContentDescription {
     /// <p>The text-format code</p>
@@ -32,9 +31,7 @@ impl CodeContentDescription {
         self.code_size
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
-    pub fn s3_application_code_location_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ApplicationCodeLocationDescription> {
+    pub fn s3_application_code_location_description(&self) -> ::std::option::Option<&crate::types::S3ApplicationCodeLocationDescription> {
         self.s3_application_code_location_description.as_ref()
     }
 }
@@ -47,15 +44,12 @@ impl CodeContentDescription {
 
 /// A builder for [`CodeContentDescription`](crate::types::CodeContentDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeContentDescriptionBuilder {
     pub(crate) text_content: ::std::option::Option<::std::string::String>,
     pub(crate) code_md5: ::std::option::Option<::std::string::String>,
     pub(crate) code_size: ::std::option::Option<i64>,
-    pub(crate) s3_application_code_location_description:
-        ::std::option::Option<crate::types::S3ApplicationCodeLocationDescription>,
+    pub(crate) s3_application_code_location_description: ::std::option::Option<crate::types::S3ApplicationCodeLocationDescription>,
 }
 impl CodeContentDescriptionBuilder {
     /// <p>The text-format code</p>
@@ -101,10 +95,7 @@ impl CodeContentDescriptionBuilder {
         &self.code_size
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
-    pub fn s3_application_code_location_description(
-        mut self,
-        input: crate::types::S3ApplicationCodeLocationDescription,
-    ) -> Self {
+    pub fn s3_application_code_location_description(mut self, input: crate::types::S3ApplicationCodeLocationDescription) -> Self {
         self.s3_application_code_location_description = ::std::option::Option::Some(input);
         self
     }
@@ -117,9 +108,7 @@ impl CodeContentDescriptionBuilder {
         self
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application code stored in Amazon S3.</p>
-    pub fn get_s3_application_code_location_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ApplicationCodeLocationDescription> {
+    pub fn get_s3_application_code_location_description(&self) -> &::std::option::Option<crate::types::S3ApplicationCodeLocationDescription> {
         &self.s3_application_code_location_description
     }
     /// Consumes the builder and constructs a [`CodeContentDescription`](crate::types::CodeContentDescription).

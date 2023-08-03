@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<PrincipalResourcePermissions>>)`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput::permissions): <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
     /// - On failure, responds with [`SdkError<GetEffectivePermissionsForPathError>`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError)
-    pub fn get_effective_permissions_for_path(&self) -> crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathFluentBuilder{
+    pub fn get_effective_permissions_for_path(
+        &self,
+    ) -> crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathFluentBuilder {
         crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathFluentBuilder::new(self.handle.clone())
     }
 }

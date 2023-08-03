@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSamplingRuleOutput`](crate::operation::create_sampling_rule::CreateSamplingRuleOutput) with field(s):
     ///   - [`sampling_rule_record(Option<SamplingRuleRecord>)`](crate::operation::create_sampling_rule::CreateSamplingRuleOutput::sampling_rule_record): <p>The saved rule definition and metadata.</p>
     /// - On failure, responds with [`SdkError<CreateSamplingRuleError>`](crate::operation::create_sampling_rule::CreateSamplingRuleError)
-    pub fn create_sampling_rule(
-        &self,
-    ) -> crate::operation::create_sampling_rule::builders::CreateSamplingRuleFluentBuilder {
-        crate::operation::create_sampling_rule::builders::CreateSamplingRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_sampling_rule(&self) -> crate::operation::create_sampling_rule::builders::CreateSamplingRuleFluentBuilder {
+        crate::operation::create_sampling_rule::builders::CreateSamplingRuleFluentBuilder::new(self.handle.clone())
     }
 }

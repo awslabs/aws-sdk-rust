@@ -22,18 +22,14 @@ impl CreateSlotTypeVersionInput {
 }
 impl CreateSlotTypeVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateSlotTypeVersionInput`](crate::operation::create_slot_type_version::CreateSlotTypeVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder {
         crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSlotTypeVersionInput`](crate::operation::create_slot_type_version::CreateSlotTypeVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSlotTypeVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl CreateSlotTypeVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSlotTypeVersionInput`](crate::operation::create_slot_type_version::CreateSlotTypeVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_slot_type_version::CreateSlotTypeVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_slot_type_version::CreateSlotTypeVersionInput {
-                name: self.name,
-                checksum: self.checksum,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_slot_type_version::CreateSlotTypeVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_slot_type_version::CreateSlotTypeVersionInput {
+            name: self.name,
+            checksum: self.checksum,
+        })
     }
 }

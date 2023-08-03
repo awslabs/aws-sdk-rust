@@ -51,9 +51,7 @@ impl LambdaFunctionInfo {
 
 /// A builder for [`LambdaFunctionInfo`](crate::types::LambdaFunctionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionInfoBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) function_alias: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct LambdaFunctionInfoBuilder {
 }
 impl LambdaFunctionInfoBuilder {
     /// <p> The name of a Lambda function. </p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of a Lambda function. </p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -83,18 +75,12 @@ impl LambdaFunctionInfoBuilder {
         &self.function_name
     }
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn function_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn set_function_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_alias = input;
         self
     }
@@ -103,18 +89,12 @@ impl LambdaFunctionInfoBuilder {
         &self.function_alias
     }
     /// <p> The version of a Lambda function that production traffic points to. </p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version of a Lambda function that production traffic points to. </p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -123,18 +103,12 @@ impl LambdaFunctionInfoBuilder {
         &self.current_version
     }
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
-    pub fn target_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
-    pub fn set_target_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_version = input;
         self
     }

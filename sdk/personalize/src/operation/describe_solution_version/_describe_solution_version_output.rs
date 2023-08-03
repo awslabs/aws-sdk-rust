@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeSolutionVersionOutput {
 }
 impl DescribeSolutionVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSolutionVersionOutput`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_solution_version::builders::DescribeSolutionVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_solution_version::builders::DescribeSolutionVersionOutputBuilder {
         crate::operation::describe_solution_version::builders::DescribeSolutionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSolutionVersionOutput`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSolutionVersionOutputBuilder {
     pub(crate) solution_version: ::std::option::Option<crate::types::SolutionVersion>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeSolutionVersionOutputBuilder {
         self
     }
     /// <p>The solution version.</p>
-    pub fn set_solution_version(
-        mut self,
-        input: ::std::option::Option<crate::types::SolutionVersion>,
-    ) -> Self {
+    pub fn set_solution_version(mut self, input: ::std::option::Option<crate::types::SolutionVersion>) -> Self {
         self.solution_version = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeSolutionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSolutionVersionOutput`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_solution_version::DescribeSolutionVersionOutput {
+    pub fn build(self) -> crate::operation::describe_solution_version::DescribeSolutionVersionOutput {
         crate::operation::describe_solution_version::DescribeSolutionVersionOutput {
             solution_version: self.solution_version,
             _request_id: self._request_id,

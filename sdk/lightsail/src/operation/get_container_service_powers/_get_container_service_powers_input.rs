@@ -5,16 +5,14 @@
 pub struct GetContainerServicePowersInput {}
 impl GetContainerServicePowersInput {
     /// Creates a new builder-style object to manufacture [`GetContainerServicePowersInput`](crate::operation::get_container_service_powers::GetContainerServicePowersInput).
-    pub fn builder() -> crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder{
+    pub fn builder() -> crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder {
         crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerServicePowersInput`](crate::operation::get_container_service_powers::GetContainerServicePowersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerServicePowersInputBuilder {}
 impl GetContainerServicePowersInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerServicePowersInput`](crate::operation::get_container_service_powers::GetContainerServicePowersInput).
@@ -24,8 +22,6 @@ impl GetContainerServicePowersInputBuilder {
         crate::operation::get_container_service_powers::GetContainerServicePowersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_container_service_powers::GetContainerServicePowersInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::get_container_service_powers::GetContainerServicePowersInput {})
     }
 }

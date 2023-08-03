@@ -79,9 +79,7 @@ impl PackageDetails {
 
 /// A builder for [`PackageDetails`](crate::types::PackageDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageDetailsBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
@@ -128,10 +126,7 @@ impl PackageDetailsBuilder {
         self
     }
     /// <p>The type of package.</p>
-    pub fn set_package_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageType>,
-    ) -> Self {
+    pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
         self.package_type = input;
         self
     }
@@ -140,18 +135,12 @@ impl PackageDetailsBuilder {
         &self.package_type
     }
     /// <p>User-specified description of the package.</p>
-    pub fn package_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User-specified description of the package.</p>
-    pub fn set_package_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_description = input;
         self
     }
@@ -165,10 +154,7 @@ impl PackageDetailsBuilder {
         self
     }
     /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
-    pub fn set_package_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageStatus>,
-    ) -> Self {
+    pub fn set_package_status(mut self, input: ::std::option::Option<crate::types::PackageStatus>) -> Self {
         self.package_status = input;
         self
     }
@@ -182,10 +168,7 @@ impl PackageDetailsBuilder {
         self
     }
     /// <p>The timestamp when the package was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -199,10 +182,7 @@ impl PackageDetailsBuilder {
         self
     }
     /// <p>Date and time when the package was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -211,18 +191,12 @@ impl PackageDetailsBuilder {
         &self.last_updated_at
     }
     /// <p>The package version.</p>
-    pub fn available_package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn available_package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.available_package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package version.</p>
-    pub fn set_available_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_available_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.available_package_version = input;
         self
     }
@@ -236,10 +210,7 @@ impl PackageDetailsBuilder {
         self
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetails>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error_details = input;
         self
     }

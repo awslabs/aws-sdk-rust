@@ -9,10 +9,7 @@ pub fn ser_sql_injection_match_set_update(
     if let Some(var_2) = &input.sql_injection_match_tuple {
         #[allow(unused_mut)]
         let mut object_3 = object.key("SqlInjectionMatchTuple").start_object();
-        crate::protocol_serde::shape_sql_injection_match_tuple::ser_sql_injection_match_tuple(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_sql_injection_match_tuple::ser_sql_injection_match_tuple(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -5,16 +5,16 @@ pub use crate::operation::describe_db_cluster_snapshot_attributes::_describe_db_
 
 impl DescribeDbClusterSnapshotAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_db_cluster_snapshot_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DescribeDbClusterSnapshotAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBClusterSnapshotAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder,
+    inner: crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder,
 }
 impl DescribeDBClusterSnapshotAttributesFluentBuilder {
     /// Creates a new `DescribeDBClusterSnapshotAttributes`.
@@ -38,15 +38,20 @@ impl DescribeDBClusterSnapshotAttributesFluentBuilder {
         }
     }
     /// Access the DescribeDBClusterSnapshotAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DescribeDBClusterSnapshotAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,39 +88,40 @@ impl DescribeDBClusterSnapshotAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the cluster snapshot to describe the attributes for.</p>
-    pub fn db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier for the cluster snapshot to describe the attributes for.</p>
-    pub fn set_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
         self
     }
     /// <p>The identifier for the cluster snapshot to describe the attributes for.</p>
-    pub fn get_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_snapshot_identifier()
     }
 }

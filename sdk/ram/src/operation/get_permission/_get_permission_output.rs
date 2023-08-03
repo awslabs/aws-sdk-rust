@@ -10,9 +10,7 @@ pub struct GetPermissionOutput {
 }
 impl GetPermissionOutput {
     /// <p>An object with details about the permission.</p>
-    pub fn permission(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceSharePermissionDetail> {
+    pub fn permission(&self) -> ::std::option::Option<&crate::types::ResourceSharePermissionDetail> {
         self.permission.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl GetPermissionOutput {
 
 /// A builder for [`GetPermissionOutput`](crate::operation::get_permission::GetPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPermissionOutputBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::ResourceSharePermissionDetail>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetPermissionOutputBuilder {
         self
     }
     /// <p>An object with details about the permission.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSharePermissionDetail>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::ResourceSharePermissionDetail>) -> Self {
         self.permission = input;
         self
     }
     /// <p>An object with details about the permission.</p>
-    pub fn get_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceSharePermissionDetail> {
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::ResourceSharePermissionDetail> {
         &self.permission
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

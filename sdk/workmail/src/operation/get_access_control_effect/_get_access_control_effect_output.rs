@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetAccessControlEffectOutput {
 }
 impl GetAccessControlEffectOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessControlEffectOutput`](crate::operation::get_access_control_effect::GetAccessControlEffectOutput).
-    pub fn builder(
-    ) -> crate::operation::get_access_control_effect::builders::GetAccessControlEffectOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_access_control_effect::builders::GetAccessControlEffectOutputBuilder {
         crate::operation::get_access_control_effect::builders::GetAccessControlEffectOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessControlEffectOutput`](crate::operation::get_access_control_effect::GetAccessControlEffectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessControlEffectOutputBuilder {
     pub(crate) effect: ::std::option::Option<crate::types::AccessControlRuleEffect>,
     pub(crate) matched_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +48,7 @@ impl GetAccessControlEffectOutputBuilder {
         self
     }
     /// <p>The rule effect.</p>
-    pub fn set_effect(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessControlRuleEffect>,
-    ) -> Self {
+    pub fn set_effect(mut self, input: ::std::option::Option<crate::types::AccessControlRuleEffect>) -> Self {
         self.effect = input;
         self
     }
@@ -68,27 +61,19 @@ impl GetAccessControlEffectOutputBuilder {
     /// To override the contents of this collection use [`set_matched_rules`](Self::set_matched_rules).
     ///
     /// <p>The rules that match the given parameters, resulting in an effect.</p>
-    pub fn matched_rules(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn matched_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.matched_rules.unwrap_or_default();
         v.push(input.into());
         self.matched_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rules that match the given parameters, resulting in an effect.</p>
-    pub fn set_matched_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_matched_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.matched_rules = input;
         self
     }
     /// <p>The rules that match the given parameters, resulting in an effect.</p>
-    pub fn get_matched_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_matched_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.matched_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,9 +86,7 @@ impl GetAccessControlEffectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAccessControlEffectOutput`](crate::operation::get_access_control_effect::GetAccessControlEffectOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_access_control_effect::GetAccessControlEffectOutput {
+    pub fn build(self) -> crate::operation::get_access_control_effect::GetAccessControlEffectOutput {
         crate::operation::get_access_control_effect::GetAccessControlEffectOutput {
             effect: self.effect,
             matched_rules: self.matched_rules,

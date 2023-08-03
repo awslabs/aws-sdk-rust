@@ -10,10 +10,7 @@ impl RestoreSecretInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_secret::RestoreSecretOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_secret::RestoreSecretError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_secret::RestoreSecretError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.restore_secret();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl RestoreSecretFluentBuilder {
         }
     }
     /// Access the RestoreSecret as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_secret::builders::RestoreSecretInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restore_secret::builders::RestoreSecretInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl RestoreSecretFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteDedicatedIpPoolOutput {
 }
 impl DeleteDedicatedIpPoolOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDedicatedIpPoolOutput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolOutputBuilder {
         crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDedicatedIpPoolOutput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDedicatedIpPoolOutputBuilder {
     _request_id: Option<String>,
 }

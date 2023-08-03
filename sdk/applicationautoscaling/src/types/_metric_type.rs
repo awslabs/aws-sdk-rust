@@ -59,13 +59,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
@@ -121,52 +115,28 @@ impl ::std::convert::From<&str> for MetricType {
     fn from(s: &str) -> Self {
         match s {
             "ALBRequestCountPerTarget" => MetricType::AlbRequestCountPerTarget,
-            "AppStreamAverageCapacityUtilization" => {
-                MetricType::AppStreamAverageCapacityUtilization
-            }
+            "AppStreamAverageCapacityUtilization" => MetricType::AppStreamAverageCapacityUtilization,
             "CassandraReadCapacityUtilization" => MetricType::CassandraReadCapacityUtilization,
             "CassandraWriteCapacityUtilization" => MetricType::CassandraWriteCapacityUtilization,
             "ComprehendInferenceUtilization" => MetricType::ComprehendInferenceUtilization,
             "DynamoDBReadCapacityUtilization" => MetricType::DynamoDbReadCapacityUtilization,
             "DynamoDBWriteCapacityUtilization" => MetricType::DynamoDbWriteCapacityUtilization,
-            "EC2SpotFleetRequestAverageCPUUtilization" => {
-                MetricType::Ec2SpotFleetRequestAverageCpuUtilization
-            }
-            "EC2SpotFleetRequestAverageNetworkIn" => {
-                MetricType::Ec2SpotFleetRequestAverageNetworkIn
-            }
-            "EC2SpotFleetRequestAverageNetworkOut" => {
-                MetricType::Ec2SpotFleetRequestAverageNetworkOut
-            }
+            "EC2SpotFleetRequestAverageCPUUtilization" => MetricType::Ec2SpotFleetRequestAverageCpuUtilization,
+            "EC2SpotFleetRequestAverageNetworkIn" => MetricType::Ec2SpotFleetRequestAverageNetworkIn,
+            "EC2SpotFleetRequestAverageNetworkOut" => MetricType::Ec2SpotFleetRequestAverageNetworkOut,
             "ECSServiceAverageCPUUtilization" => MetricType::EcsServiceAverageCpuUtilization,
             "ECSServiceAverageMemoryUtilization" => MetricType::EcsServiceAverageMemoryUtilization,
-            "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage" => {
-                MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage
-            }
-            "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" => {
-                MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage
-            }
-            "ElastiCachePrimaryEngineCPUUtilization" => {
-                MetricType::ElastiCachePrimaryEngineCpuUtilization
-            }
-            "ElastiCacheReplicaEngineCPUUtilization" => {
-                MetricType::ElastiCacheReplicaEngineCpuUtilization
-            }
+            "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage" => MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
+            "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" => MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+            "ElastiCachePrimaryEngineCPUUtilization" => MetricType::ElastiCachePrimaryEngineCpuUtilization,
+            "ElastiCacheReplicaEngineCPUUtilization" => MetricType::ElastiCacheReplicaEngineCpuUtilization,
             "KafkaBrokerStorageUtilization" => MetricType::KafkaBrokerStorageUtilization,
-            "LambdaProvisionedConcurrencyUtilization" => {
-                MetricType::LambdaProvisionedConcurrencyUtilization
-            }
+            "LambdaProvisionedConcurrencyUtilization" => MetricType::LambdaProvisionedConcurrencyUtilization,
             "NeptuneReaderAverageCPUUtilization" => MetricType::NeptuneReaderAverageCpuUtilization,
             "RDSReaderAverageCPUUtilization" => MetricType::RdsReaderAverageCpuUtilization,
-            "RDSReaderAverageDatabaseConnections" => {
-                MetricType::RdsReaderAverageDatabaseConnections
-            }
-            "SageMakerVariantInvocationsPerInstance" => {
-                MetricType::SageMakerVariantInvocationsPerInstance
-            }
-            "SageMakerVariantProvisionedConcurrencyUtilization" => {
-                MetricType::SageMakerVariantProvisionedConcurrencyUtilization
-            }
+            "RDSReaderAverageDatabaseConnections" => MetricType::RdsReaderAverageDatabaseConnections,
+            "SageMakerVariantInvocationsPerInstance" => MetricType::SageMakerVariantInvocationsPerInstance,
+            "SageMakerVariantProvisionedConcurrencyUtilization" => MetricType::SageMakerVariantProvisionedConcurrencyUtilization,
             other => MetricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -183,52 +153,28 @@ impl MetricType {
     pub fn as_str(&self) -> &str {
         match self {
             MetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
-            MetricType::AppStreamAverageCapacityUtilization => {
-                "AppStreamAverageCapacityUtilization"
-            }
+            MetricType::AppStreamAverageCapacityUtilization => "AppStreamAverageCapacityUtilization",
             MetricType::CassandraReadCapacityUtilization => "CassandraReadCapacityUtilization",
             MetricType::CassandraWriteCapacityUtilization => "CassandraWriteCapacityUtilization",
             MetricType::ComprehendInferenceUtilization => "ComprehendInferenceUtilization",
             MetricType::DynamoDbReadCapacityUtilization => "DynamoDBReadCapacityUtilization",
             MetricType::DynamoDbWriteCapacityUtilization => "DynamoDBWriteCapacityUtilization",
-            MetricType::Ec2SpotFleetRequestAverageCpuUtilization => {
-                "EC2SpotFleetRequestAverageCPUUtilization"
-            }
-            MetricType::Ec2SpotFleetRequestAverageNetworkIn => {
-                "EC2SpotFleetRequestAverageNetworkIn"
-            }
-            MetricType::Ec2SpotFleetRequestAverageNetworkOut => {
-                "EC2SpotFleetRequestAverageNetworkOut"
-            }
+            MetricType::Ec2SpotFleetRequestAverageCpuUtilization => "EC2SpotFleetRequestAverageCPUUtilization",
+            MetricType::Ec2SpotFleetRequestAverageNetworkIn => "EC2SpotFleetRequestAverageNetworkIn",
+            MetricType::Ec2SpotFleetRequestAverageNetworkOut => "EC2SpotFleetRequestAverageNetworkOut",
             MetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
             MetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
-            MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => {
-                "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage"
-            }
-            MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => {
-                "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage"
-            }
-            MetricType::ElastiCachePrimaryEngineCpuUtilization => {
-                "ElastiCachePrimaryEngineCPUUtilization"
-            }
-            MetricType::ElastiCacheReplicaEngineCpuUtilization => {
-                "ElastiCacheReplicaEngineCPUUtilization"
-            }
+            MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage",
+            MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
+            MetricType::ElastiCachePrimaryEngineCpuUtilization => "ElastiCachePrimaryEngineCPUUtilization",
+            MetricType::ElastiCacheReplicaEngineCpuUtilization => "ElastiCacheReplicaEngineCPUUtilization",
             MetricType::KafkaBrokerStorageUtilization => "KafkaBrokerStorageUtilization",
-            MetricType::LambdaProvisionedConcurrencyUtilization => {
-                "LambdaProvisionedConcurrencyUtilization"
-            }
+            MetricType::LambdaProvisionedConcurrencyUtilization => "LambdaProvisionedConcurrencyUtilization",
             MetricType::NeptuneReaderAverageCpuUtilization => "NeptuneReaderAverageCPUUtilization",
             MetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
-            MetricType::RdsReaderAverageDatabaseConnections => {
-                "RDSReaderAverageDatabaseConnections"
-            }
-            MetricType::SageMakerVariantInvocationsPerInstance => {
-                "SageMakerVariantInvocationsPerInstance"
-            }
-            MetricType::SageMakerVariantProvisionedConcurrencyUtilization => {
-                "SageMakerVariantProvisionedConcurrencyUtilization"
-            }
+            MetricType::RdsReaderAverageDatabaseConnections => "RDSReaderAverageDatabaseConnections",
+            MetricType::SageMakerVariantInvocationsPerInstance => "SageMakerVariantInvocationsPerInstance",
+            MetricType::SageMakerVariantProvisionedConcurrencyUtilization => "SageMakerVariantProvisionedConcurrencyUtilization",
             MetricType::Unknown(value) => value.as_str(),
         }
     }

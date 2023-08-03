@@ -22,9 +22,7 @@ impl UnclaimDeviceInput {
 
 /// A builder for [`UnclaimDeviceInput`](crate::operation::unclaim_device::UnclaimDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnclaimDeviceInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl UnclaimDeviceInputBuilder {
     /// Consumes the builder and constructs a [`UnclaimDeviceInput`](crate::operation::unclaim_device::UnclaimDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unclaim_device::UnclaimDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::unclaim_device::UnclaimDeviceInput {
-            device_id: self.device_id,
-        })
+    ) -> ::std::result::Result<crate::operation::unclaim_device::UnclaimDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::unclaim_device::UnclaimDeviceInput { device_id: self.device_id })
     }
 }

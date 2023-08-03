@@ -35,12 +35,9 @@ impl ListDashboardsOutput {
 
 /// A builder for [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDashboardsOutputBuilder {
-    pub(crate) dashboard_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
+    pub(crate) dashboard_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDashboardsOutputBuilder {
         self
     }
     /// <p>A list that summarizes each dashboard in the project.</p>
-    pub fn set_dashboard_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
-    ) -> Self {
+    pub fn set_dashboard_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>) -> Self {
         self.dashboard_summaries = input;
         self
     }
     /// <p>A list that summarizes each dashboard in the project.</p>
-    pub fn get_dashboard_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>> {
+    pub fn get_dashboard_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>> {
         &self.dashboard_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

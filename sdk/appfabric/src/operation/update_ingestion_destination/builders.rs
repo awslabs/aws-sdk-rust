@@ -26,7 +26,7 @@ impl UpdateIngestionDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIngestionDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationInputBuilder,
+    inner: crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationInputBuilder,
 }
 impl UpdateIngestionDestinationFluentBuilder {
     /// Creates a new `UpdateIngestionDestination`.
@@ -37,7 +37,7 @@ impl UpdateIngestionDestinationFluentBuilder {
         }
     }
     /// Access the UpdateIngestionDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateIngestionDestinationFluentBuilder {
             crate::operation::update_ingestion_destination::UpdateIngestionDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ingestion_destination::UpdateIngestionDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ingestion_destination::UpdateIngestionDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateIngestionDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateIngestionDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ingestion_destination::UpdateIngestionDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ingestion_destination::UpdateIngestionDestinationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateIngestionDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ingestion_destination::UpdateIngestionDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ingestion_destination::UpdateIngestionDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateIngestionDestinationFluentBuilder {
             crate::operation::update_ingestion_destination::UpdateIngestionDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ingestion_destination::UpdateIngestionDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ingestion_destination::UpdateIngestionDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
@@ -141,18 +124,12 @@ impl UpdateIngestionDestinationFluentBuilder {
         self.inner.get_app_bundle_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn ingestion_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ingestion_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn set_ingestion_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ingestion_identifier(input);
         self
     }
@@ -161,47 +138,31 @@ impl UpdateIngestionDestinationFluentBuilder {
         self.inner.get_ingestion_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
-    pub fn ingestion_destination_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_destination_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ingestion_destination_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
-    pub fn set_ingestion_destination_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_destination_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ingestion_destination_identifier(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
-    pub fn get_ingestion_destination_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ingestion_destination_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ingestion_destination_identifier()
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.inner = self.inner.destination_configuration(input);
         self
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         self.inner.get_destination_configuration()
     }
 }

@@ -22,15 +22,11 @@ pub struct RegisterAccountOutput {
 }
 impl RegisterAccountOutput {
     /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
-    pub fn register_account_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegistrationStatus> {
+    pub fn register_account_status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
         self.register_account_status.as_ref()
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
-    pub fn timestream_resources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimestreamResources> {
+    pub fn timestream_resources(&self) -> ::std::option::Option<&crate::types::TimestreamResources> {
         self.timestream_resources.as_ref()
     }
     /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
@@ -60,9 +56,7 @@ impl RegisterAccountOutput {
 
 /// A builder for [`RegisterAccountOutput`](crate::operation::register_account::RegisterAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterAccountOutputBuilder {
     pub(crate) register_account_status: ::std::option::Option<crate::types::RegistrationStatus>,
     pub(crate) timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,
@@ -78,17 +72,12 @@ impl RegisterAccountOutputBuilder {
         self
     }
     /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
-    pub fn set_register_account_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_register_account_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.register_account_status = input;
         self
     }
     /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
-    pub fn get_register_account_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_register_account_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.register_account_status
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
@@ -97,17 +86,12 @@ impl RegisterAccountOutputBuilder {
         self
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
-    pub fn set_timestream_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestreamResources>,
-    ) -> Self {
+    pub fn set_timestream_resources(mut self, input: ::std::option::Option<crate::types::TimestreamResources>) -> Self {
         self.timestream_resources = input;
         self
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
-    pub fn get_timestream_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimestreamResources> {
+    pub fn get_timestream_resources(&self) -> &::std::option::Option<crate::types::TimestreamResources> {
         &self.timestream_resources
     }
     /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
@@ -116,10 +100,7 @@ impl RegisterAccountOutputBuilder {
         self
     }
     /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
-    pub fn set_iam_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::IamResources>,
-    ) -> Self {
+    pub fn set_iam_resources(mut self, input: ::std::option::Option<crate::types::IamResources>) -> Self {
         self.iam_resources = input;
         self
     }
@@ -133,10 +114,7 @@ impl RegisterAccountOutputBuilder {
         self
     }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -150,17 +128,12 @@ impl RegisterAccountOutputBuilder {
         self
     }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

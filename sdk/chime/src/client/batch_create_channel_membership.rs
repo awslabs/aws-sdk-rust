@@ -11,10 +11,10 @@ impl super::Client {
     ///   - [`batch_channel_memberships(Option<BatchChannelMemberships>)`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput::batch_channel_memberships): <p>The list of channel memberships in the response.</p>
     ///   - [`errors(Option<Vec<BatchCreateChannelMembershipError>>)`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput::errors): <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<BatchCreateChannelMembershipError>`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError)
-    #[deprecated(
-        note = "Replaced by BatchCreateChannelMembership in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn batch_create_channel_membership(&self) -> crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipFluentBuilder{
+    #[deprecated(note = "Replaced by BatchCreateChannelMembership in the Amazon Chime SDK Messaging Namespace")]
+    pub fn batch_create_channel_membership(
+        &self,
+    ) -> crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipFluentBuilder {
         crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipFluentBuilder::new(self.handle.clone())
     }
 }

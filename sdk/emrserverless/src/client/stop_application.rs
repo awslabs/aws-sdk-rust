@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::set_application_id): <p>The ID of the application to stop.</p>
     /// - On success, responds with [`StopApplicationOutput`](crate::operation::stop_application::StopApplicationOutput)
     /// - On failure, responds with [`SdkError<StopApplicationError>`](crate::operation::stop_application::StopApplicationError)
-    pub fn stop_application(
-        &self,
-    ) -> crate::operation::stop_application::builders::StopApplicationFluentBuilder {
-        crate::operation::stop_application::builders::StopApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_application(&self) -> crate::operation::stop_application::builders::StopApplicationFluentBuilder {
+        crate::operation::stop_application::builders::StopApplicationFluentBuilder::new(self.handle.clone())
     }
 }

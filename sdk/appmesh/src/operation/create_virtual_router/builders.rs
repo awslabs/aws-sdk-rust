@@ -39,9 +39,7 @@ impl CreateVirtualRouterFluentBuilder {
         }
     }
     /// Access the CreateVirtualRouter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreateVirtualRouterFluentBuilder {
             crate::operation::create_virtual_router::CreateVirtualRouter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_virtual_router::CreateVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_virtual_router::CreateVirtualRouterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreateVirtualRouterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreateVirtualRouterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_virtual_router::CreateVirtualRouterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_virtual_router::CreateVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_virtual_router::CreateVirtualRouterError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreateVirtualRouterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_virtual_router::CreateVirtualRouterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_virtual_router::CreateVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_virtual_router::CreateVirtualRouterError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl CreateVirtualRouterFluentBuilder {
             crate::operation::create_virtual_router::CreateVirtualRouter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_virtual_router::CreateVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_virtual_router::CreateVirtualRouterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name to use for the virtual router.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_router_name(input.into());
         self
     }
     /// <p>The name to use for the virtual router.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_router_name(input);
         self
     }
@@ -164,10 +145,7 @@ impl CreateVirtualRouterFluentBuilder {
         self
     }
     /// <p>The virtual router specification to apply.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualRouterSpec>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
     }
@@ -185,10 +163,7 @@ impl CreateVirtualRouterFluentBuilder {
         self
     }
     /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

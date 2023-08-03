@@ -10,10 +10,7 @@ impl UpdateWorkflowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_workflow::UpdateWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workflow::UpdateWorkflowError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_workflow();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateWorkflowFluentBuilder {
         }
     }
     /// Access the UpdateWorkflow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_workflow::builders::UpdateWorkflowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_workflow::builders::UpdateWorkflowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateWorkflowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -161,30 +153,20 @@ impl UpdateWorkflowFluentBuilder {
     /// To override the contents of this collection use [`set_input_parameters`](Self::set_input_parameters).
     ///
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn input_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::StepInput,
-    ) -> Self {
+    pub fn input_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::StepInput) -> Self {
         self.inner = self.inner.input_parameters(k.into(), v);
         self
     }
     /// <p>The input parameters required to update a migration workflow.</p>
     pub fn set_input_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     ) -> Self {
         self.inner = self.inner.set_input_parameters(input);
         self
     }
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn get_input_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    > {
+    pub fn get_input_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
         self.inner.get_input_parameters()
     }
     /// Appends an item to `stepTargets`.
@@ -197,17 +179,12 @@ impl UpdateWorkflowFluentBuilder {
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_step_targets(input);
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_step_targets()
     }
 }

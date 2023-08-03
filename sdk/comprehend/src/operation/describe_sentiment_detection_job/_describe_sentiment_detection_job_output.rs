@@ -5,15 +5,12 @@
 pub struct DescribeSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
     #[doc(hidden)]
-    pub sentiment_detection_job_properties:
-        ::std::option::Option<crate::types::SentimentDetectionJobProperties>,
+    pub sentiment_detection_job_properties: ::std::option::Option<crate::types::SentimentDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
-    pub fn sentiment_detection_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SentimentDetectionJobProperties> {
+    pub fn sentiment_detection_job_properties(&self) -> ::std::option::Option<&crate::types::SentimentDetectionJobProperties> {
         self.sentiment_detection_job_properties.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeSentimentDetectionJobOutput {
 }
 impl DescribeSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobOutput`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput).
-    pub fn builder() -> crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobOutputBuilder {
         crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSentimentDetectionJobOutput`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSentimentDetectionJobOutputBuilder {
-    pub(crate) sentiment_detection_job_properties:
-        ::std::option::Option<crate::types::SentimentDetectionJobProperties>,
+    pub(crate) sentiment_detection_job_properties: ::std::option::Option<crate::types::SentimentDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeSentimentDetectionJobOutputBuilder {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
-    pub fn sentiment_detection_job_properties(
-        mut self,
-        input: crate::types::SentimentDetectionJobProperties,
-    ) -> Self {
+    pub fn sentiment_detection_job_properties(mut self, input: crate::types::SentimentDetectionJobProperties) -> Self {
         self.sentiment_detection_job_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
-    pub fn set_sentiment_detection_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentDetectionJobProperties>,
-    ) -> Self {
+    pub fn set_sentiment_detection_job_properties(mut self, input: ::std::option::Option<crate::types::SentimentDetectionJobProperties>) -> Self {
         self.sentiment_detection_job_properties = input;
         self
     }
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
-    pub fn get_sentiment_detection_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::SentimentDetectionJobProperties> {
+    pub fn get_sentiment_detection_job_properties(&self) -> &::std::option::Option<crate::types::SentimentDetectionJobProperties> {
         &self.sentiment_detection_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,7 @@ impl DescribeSentimentDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSentimentDetectionJobOutput`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput
-    {
+    pub fn build(self) -> crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput {
         crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput {
             sentiment_detection_job_properties: self.sentiment_detection_job_properties,
             _request_id: self._request_id,

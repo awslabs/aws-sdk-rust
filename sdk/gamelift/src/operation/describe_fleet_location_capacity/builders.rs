@@ -31,7 +31,7 @@ impl DescribeFleetLocationCapacityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationCapacityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder,
+    inner: crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder,
 }
 impl DescribeFleetLocationCapacityFluentBuilder {
     /// Creates a new `DescribeFleetLocationCapacity`.
@@ -42,7 +42,7 @@ impl DescribeFleetLocationCapacityFluentBuilder {
         }
     }
     /// Access the DescribeFleetLocationCapacity as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DescribeFleetLocationCapacityFluentBuilder {
             crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DescribeFleetLocationCapacityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DescribeFleetLocationCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DescribeFleetLocationCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl DescribeFleetLocationCapacityFluentBuilder {
             crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError>,
     > {
         self.customize_middleware().await
     }

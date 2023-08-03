@@ -15,34 +15,25 @@ impl GetMediaPipelineInput {
 }
 impl GetMediaPipelineInput {
     /// Creates a new builder-style object to manufacture [`GetMediaPipelineInput`](crate::operation::get_media_pipeline::GetMediaPipelineInput).
-    pub fn builder() -> crate::operation::get_media_pipeline::builders::GetMediaPipelineInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_media_pipeline::builders::GetMediaPipelineInputBuilder {
         crate::operation::get_media_pipeline::builders::GetMediaPipelineInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMediaPipelineInput`](crate::operation::get_media_pipeline::GetMediaPipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMediaPipelineInputBuilder {
     pub(crate) media_pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMediaPipelineInputBuilder {
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_pipeline_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetMediaPipelineInputBuilder {
     /// Consumes the builder and constructs a [`GetMediaPipelineInput`](crate::operation::get_media_pipeline::GetMediaPipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_media_pipeline::GetMediaPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_media_pipeline::GetMediaPipelineInput {
-                media_pipeline_id: self.media_pipeline_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_media_pipeline::GetMediaPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_media_pipeline::GetMediaPipelineInput {
+            media_pipeline_id: self.media_pipeline_id,
+        })
     }
 }

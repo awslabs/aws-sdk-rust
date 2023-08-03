@@ -22,22 +22,17 @@ impl BatchGrantPermissionsInput {
 }
 impl BatchGrantPermissionsInput {
     /// Creates a new builder-style object to manufacture [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder {
         crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGrantPermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
 }
 impl BatchGrantPermissionsInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -66,31 +61,22 @@ impl BatchGrantPermissionsInputBuilder {
         self
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_grant_permissions::BatchGrantPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_grant_permissions::BatchGrantPermissionsInput {
-                catalog_id: self.catalog_id,
-                entries: self.entries,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_grant_permissions::BatchGrantPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_grant_permissions::BatchGrantPermissionsInput {
+            catalog_id: self.catalog_id,
+            entries: self.entries,
+        })
     }
 }

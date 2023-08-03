@@ -30,13 +30,10 @@ impl PartialMatch {
 
 /// A builder for [`PartialMatch`](crate::types::PartialMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartialMatchBuilder {
     pub(crate) reference: ::std::option::Option<::std::string::String>,
-    pub(crate) target_violation_reasons:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_violation_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PartialMatchBuilder {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
@@ -58,27 +55,19 @@ impl PartialMatchBuilder {
     /// To override the contents of this collection use [`set_target_violation_reasons`](Self::set_target_violation_reasons).
     ///
     /// <p>The violation reason.</p>
-    pub fn target_violation_reasons(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_violation_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_violation_reasons.unwrap_or_default();
         v.push(input.into());
         self.target_violation_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>The violation reason.</p>
-    pub fn set_target_violation_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_violation_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_violation_reasons = input;
         self
     }
     /// <p>The violation reason.</p>
-    pub fn get_target_violation_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_violation_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_violation_reasons
     }
     /// Consumes the builder and constructs a [`PartialMatch`](crate::types::PartialMatch).

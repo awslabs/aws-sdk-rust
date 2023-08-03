@@ -36,9 +36,7 @@ impl CustomAction {
 
 /// A builder for [`CustomAction`](crate::types::CustomAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomActionBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_definition: ::std::option::Option<crate::types::ActionDefinition>,
@@ -64,10 +62,7 @@ impl CustomActionBuilder {
         self
     }
     /// <p>The custom action associated with the action name.</p>
-    pub fn set_action_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionDefinition>,
-    ) -> Self {
+    pub fn set_action_definition(mut self, input: ::std::option::Option<crate::types::ActionDefinition>) -> Self {
         self.action_definition = input;
         self
     }

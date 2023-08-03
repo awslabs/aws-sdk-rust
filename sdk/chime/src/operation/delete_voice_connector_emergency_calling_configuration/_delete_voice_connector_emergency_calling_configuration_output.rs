@@ -19,9 +19,7 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationOutput {
 
 /// A builder for [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,9 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationOutput {
         crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationOutput {
             _request_id: self._request_id,
         }

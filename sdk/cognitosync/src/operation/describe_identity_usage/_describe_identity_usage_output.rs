@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeIdentityUsageOutput {
 }
 impl DescribeIdentityUsageOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityUsageOutput`](crate::operation::describe_identity_usage::DescribeIdentityUsageOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_identity_usage::builders::DescribeIdentityUsageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_identity_usage::builders::DescribeIdentityUsageOutputBuilder {
         crate::operation::describe_identity_usage::builders::DescribeIdentityUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityUsageOutput`](crate::operation::describe_identity_usage::DescribeIdentityUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityUsageOutputBuilder {
     pub(crate) identity_usage: ::std::option::Option<crate::types::IdentityUsage>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl DescribeIdentityUsageOutputBuilder {
         self
     }
     /// Usage information for the identity.
-    pub fn set_identity_usage(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityUsage>,
-    ) -> Self {
+    pub fn set_identity_usage(mut self, input: ::std::option::Option<crate::types::IdentityUsage>) -> Self {
         self.identity_usage = input;
         self
     }

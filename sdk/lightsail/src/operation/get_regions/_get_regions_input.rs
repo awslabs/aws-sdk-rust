@@ -29,9 +29,7 @@ impl GetRegionsInput {
 
 /// A builder for [`GetRegionsInput`](crate::operation::get_regions::GetRegionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegionsInputBuilder {
     pub(crate) include_availability_zones: ::std::option::Option<bool>,
     pub(crate) include_relational_database_availability_zones: ::std::option::Option<bool>,
@@ -57,30 +55,19 @@ impl GetRegionsInputBuilder {
         self
     }
     /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
-    pub fn set_include_relational_database_availability_zones(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_relational_database_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_relational_database_availability_zones = input;
         self
     }
     /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
-    pub fn get_include_relational_database_availability_zones(
-        &self,
-    ) -> &::std::option::Option<bool> {
+    pub fn get_include_relational_database_availability_zones(&self) -> &::std::option::Option<bool> {
         &self.include_relational_database_availability_zones
     }
     /// Consumes the builder and constructs a [`GetRegionsInput`](crate::operation::get_regions::GetRegionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_regions::GetRegionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_regions::GetRegionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_regions::GetRegionsInput {
             include_availability_zones: self.include_availability_zones,
-            include_relational_database_availability_zones: self
-                .include_relational_database_availability_zones,
+            include_relational_database_availability_zones: self.include_relational_database_availability_zones,
         })
     }
 }

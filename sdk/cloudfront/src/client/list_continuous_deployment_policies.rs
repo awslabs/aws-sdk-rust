@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ListContinuousDeploymentPoliciesOutput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput) with field(s):
     ///   - [`continuous_deployment_policy_list(Option<ContinuousDeploymentPolicyList>)`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput::continuous_deployment_policy_list): <p>A list of continuous deployment policies.</p>
     /// - On failure, responds with [`SdkError<ListContinuousDeploymentPoliciesError>`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError)
-    pub fn list_continuous_deployment_policies(&self) -> crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesFluentBuilder{
+    pub fn list_continuous_deployment_policies(
+        &self,
+    ) -> crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesFluentBuilder {
         crate::operation::list_continuous_deployment_policies::builders::ListContinuousDeploymentPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

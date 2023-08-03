@@ -58,9 +58,7 @@ impl ChannelMembership {
 
 /// A builder for [`ChannelMembership`](crate::types::ChannelMembership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelMembershipBuilder {
     pub(crate) invited_by: ::std::option::Option<crate::types::Identity>,
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
@@ -90,10 +88,7 @@ impl ChannelMembershipBuilder {
         self
     }
     /// <p>The membership type set for the channel member.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -135,10 +130,7 @@ impl ChannelMembershipBuilder {
         self
     }
     /// <p>The time at which the channel membership was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -152,17 +144,12 @@ impl ChannelMembershipBuilder {
         self
     }
     /// <p>The time at which a channel membership was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The time at which a channel membership was last updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`ChannelMembership`](crate::types::ChannelMembership).

@@ -19,9 +19,7 @@ impl PutKeyPolicyOutput {
 
 /// A builder for [`PutKeyPolicyOutput`](crate::operation::put_key_policy::PutKeyPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutKeyPolicyOutputBuilder {
     _request_id: Option<String>,
 }

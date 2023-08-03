@@ -33,17 +33,14 @@ impl CancelUpdateStackInput {
 }
 impl CancelUpdateStackInput {
     /// Creates a new builder-style object to manufacture [`CancelUpdateStackInput`](crate::operation::cancel_update_stack::CancelUpdateStackInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder {
+    pub fn builder() -> crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder {
         crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelUpdateStackInput`](crate::operation::cancel_update_stack::CancelUpdateStackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelUpdateStackInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -79,18 +76,12 @@ impl CancelUpdateStackInputBuilder {
         &self.stack_name
     }
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -101,15 +92,10 @@ impl CancelUpdateStackInputBuilder {
     /// Consumes the builder and constructs a [`CancelUpdateStackInput`](crate::operation::cancel_update_stack::CancelUpdateStackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_update_stack::CancelUpdateStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_update_stack::CancelUpdateStackInput {
-                stack_name: self.stack_name,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_update_stack::CancelUpdateStackInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_update_stack::CancelUpdateStackInput {
+            stack_name: self.stack_name,
+            client_request_token: self.client_request_token,
+        })
     }
 }

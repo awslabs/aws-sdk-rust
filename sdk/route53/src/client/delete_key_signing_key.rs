@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteKeySigningKeyOutput`](crate::operation::delete_key_signing_key::DeleteKeySigningKeyOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::delete_key_signing_key::DeleteKeySigningKeyOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
     /// - On failure, responds with [`SdkError<DeleteKeySigningKeyError>`](crate::operation::delete_key_signing_key::DeleteKeySigningKeyError)
-    pub fn delete_key_signing_key(
-        &self,
-    ) -> crate::operation::delete_key_signing_key::builders::DeleteKeySigningKeyFluentBuilder {
-        crate::operation::delete_key_signing_key::builders::DeleteKeySigningKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_key_signing_key(&self) -> crate::operation::delete_key_signing_key::builders::DeleteKeySigningKeyFluentBuilder {
+        crate::operation::delete_key_signing_key::builders::DeleteKeySigningKeyFluentBuilder::new(self.handle.clone())
     }
 }

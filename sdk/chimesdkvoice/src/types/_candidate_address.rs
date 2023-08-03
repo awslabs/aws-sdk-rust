@@ -104,18 +104,12 @@ impl CandidateAddressBuilder {
         &self.street_info
     }
     /// <p>The numeric portion of the candidate address.</p>
-    pub fn street_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn street_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The numeric portion of the candidate address.</p>
-    pub fn set_street_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_street_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.street_number = input;
         self
     }
@@ -166,18 +160,12 @@ impl CandidateAddressBuilder {
         &self.postal_code
     }
     /// <p>The zip + 4 or postal code +4 of the candidate address.</p>
-    pub fn postal_code_plus4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn postal_code_plus4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code_plus4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The zip + 4 or postal code +4 of the candidate address.</p>
-    pub fn set_postal_code_plus4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_postal_code_plus4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code_plus4 = input;
         self
     }

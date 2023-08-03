@@ -64,13 +64,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OpsItemFilterKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -144,9 +138,7 @@ impl ::std::convert::From<&str> for OpsItemFilterKey {
             "ChangeRequestByApproverName" => OpsItemFilterKey::ChangeRequestApproverName,
             "ChangeRequestByRequesterArn" => OpsItemFilterKey::ChangeRequestRequesterArn,
             "ChangeRequestByRequesterName" => OpsItemFilterKey::ChangeRequestRequesterName,
-            "ChangeRequestByTargetsResourceGroup" => {
-                OpsItemFilterKey::ChangeRequestTargetsResourceGroup
-            }
+            "ChangeRequestByTargetsResourceGroup" => OpsItemFilterKey::ChangeRequestTargetsResourceGroup,
             "ChangeRequestByTemplate" => OpsItemFilterKey::ChangeRequestTemplate,
             "CreatedBy" => OpsItemFilterKey::CreatedBy,
             "CreatedTime" => OpsItemFilterKey::CreatedTime,
@@ -165,9 +157,7 @@ impl ::std::convert::From<&str> for OpsItemFilterKey {
             "Source" => OpsItemFilterKey::Source,
             "Status" => OpsItemFilterKey::Status,
             "Title" => OpsItemFilterKey::Title,
-            other => {
-                OpsItemFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OpsItemFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -191,9 +181,7 @@ impl OpsItemFilterKey {
             OpsItemFilterKey::ChangeRequestApproverName => "ChangeRequestByApproverName",
             OpsItemFilterKey::ChangeRequestRequesterArn => "ChangeRequestByRequesterArn",
             OpsItemFilterKey::ChangeRequestRequesterName => "ChangeRequestByRequesterName",
-            OpsItemFilterKey::ChangeRequestTargetsResourceGroup => {
-                "ChangeRequestByTargetsResourceGroup"
-            }
+            OpsItemFilterKey::ChangeRequestTargetsResourceGroup => "ChangeRequestByTargetsResourceGroup",
             OpsItemFilterKey::ChangeRequestTemplate => "ChangeRequestByTemplate",
             OpsItemFilterKey::CreatedBy => "CreatedBy",
             OpsItemFilterKey::CreatedTime => "CreatedTime",

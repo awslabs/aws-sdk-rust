@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetServiceTemplateOutput {
 }
 impl GetServiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceTemplateOutput`](crate::operation::get_service_template::GetServiceTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_template::builders::GetServiceTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::get_service_template::builders::GetServiceTemplateOutputBuilder {
         crate::operation::get_service_template::builders::GetServiceTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceTemplateOutput`](crate::operation::get_service_template::GetServiceTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceTemplateOutputBuilder {
     pub(crate) service_template: ::std::option::Option<crate::types::ServiceTemplate>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetServiceTemplateOutputBuilder {
         self
     }
     /// <p>The detailed data of the requested service template.</p>
-    pub fn set_service_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceTemplate>,
-    ) -> Self {
+    pub fn set_service_template(mut self, input: ::std::option::Option<crate::types::ServiceTemplate>) -> Self {
         self.service_template = input;
         self
     }

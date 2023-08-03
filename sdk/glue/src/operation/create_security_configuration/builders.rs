@@ -26,7 +26,7 @@ impl CreateSecurityConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder,
+    inner: crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder,
 }
 impl CreateSecurityConfigurationFluentBuilder {
     /// Creates a new `CreateSecurityConfiguration`.
@@ -37,7 +37,7 @@ impl CreateSecurityConfigurationFluentBuilder {
         }
     }
     /// Access the CreateSecurityConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateSecurityConfigurationFluentBuilder {
             crate::operation::create_security_configuration::CreateSecurityConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_configuration::CreateSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateSecurityConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateSecurityConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_configuration::CreateSecurityConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_configuration::CreateSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateSecurityConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_configuration::CreateSecurityConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_configuration::CreateSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateSecurityConfigurationFluentBuilder {
             crate::operation::create_security_configuration::CreateSecurityConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_configuration::CreateSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,25 +124,17 @@ impl CreateSecurityConfigurationFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The encryption configuration for the new security configuration.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
     /// <p>The encryption configuration for the new security configuration.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
     /// <p>The encryption configuration for the new security configuration.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
 }

@@ -26,7 +26,7 @@ impl AddTagsToOnPremisesInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddTagsToOnPremisesInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesInputBuilder,
+    inner: crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesInputBuilder,
 }
 impl AddTagsToOnPremisesInstancesFluentBuilder {
     /// Creates a new `AddTagsToOnPremisesInstances`.
@@ -37,7 +37,7 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
         }
     }
     /// Access the AddTagsToOnPremisesInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
             crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
             crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +121,7 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
     }
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
     /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -149,25 +135,17 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The names of the on-premises instances to which to add tags.</p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_names(input.into());
         self
     }
     /// <p>The names of the on-premises instances to which to add tags.</p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_names(input);
         self
     }
     /// <p>The names of the on-premises instances to which to add tags.</p>
-    pub fn get_instance_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_names()
     }
 }

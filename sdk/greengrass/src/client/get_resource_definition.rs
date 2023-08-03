@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::name): The name of the definition.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetResourceDefinitionError>`](crate::operation::get_resource_definition::GetResourceDefinitionError)
-    pub fn get_resource_definition(
-        &self,
-    ) -> crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder
-    {
-        crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_definition(&self) -> crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder {
+        crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

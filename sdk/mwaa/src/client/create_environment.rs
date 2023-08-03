@@ -28,11 +28,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::operation::create_environment::CreateEnvironmentError)
-    pub fn create_environment(
-        &self,
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
-        crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_environment(&self) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
+        crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

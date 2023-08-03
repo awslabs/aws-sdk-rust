@@ -30,9 +30,7 @@ impl TestExecutionSortBy {
 
 /// A builder for [`TestExecutionSortBy`](crate::types::TestExecutionSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestExecutionSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::TestExecutionSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,17 +42,12 @@ impl TestExecutionSortByBuilder {
         self
     }
     /// <p>Specifies whether to sort the test set executions by the date and time at which the test sets were created.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::TestExecutionSortAttribute>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>Specifies whether to sort the test set executions by the date and time at which the test sets were created.</p>
-    pub fn get_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestExecutionSortAttribute> {
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::TestExecutionSortAttribute> {
         &self.attribute
     }
     /// <p>Specifies whether to sort in ascending or descending order.</p>

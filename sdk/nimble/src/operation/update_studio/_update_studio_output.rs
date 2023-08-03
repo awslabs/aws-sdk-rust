@@ -28,9 +28,7 @@ impl UpdateStudioOutput {
 
 /// A builder for [`UpdateStudioOutput`](crate::operation::update_studio::UpdateStudioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStudioOutputBuilder {
     pub(crate) studio: ::std::option::Option<crate::types::Studio>,
     _request_id: Option<String>,

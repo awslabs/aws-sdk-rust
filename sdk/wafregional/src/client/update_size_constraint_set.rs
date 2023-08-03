@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSizeConstraintSetOutput`](crate::operation::update_size_constraint_set::UpdateSizeConstraintSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::update_size_constraint_set::UpdateSizeConstraintSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateSizeConstraintSetError>`](crate::operation::update_size_constraint_set::UpdateSizeConstraintSetError)
-    pub fn update_size_constraint_set(
-        &self,
-    ) -> crate::operation::update_size_constraint_set::builders::UpdateSizeConstraintSetFluentBuilder
-    {
+    pub fn update_size_constraint_set(&self) -> crate::operation::update_size_constraint_set::builders::UpdateSizeConstraintSetFluentBuilder {
         crate::operation::update_size_constraint_set::builders::UpdateSizeConstraintSetFluentBuilder::new(self.handle.clone())
     }
 }

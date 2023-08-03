@@ -15,34 +15,25 @@ impl DescribeTransformJobInput {
 }
 impl DescribeTransformJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeTransformJobInput`](crate::operation::describe_transform_job::DescribeTransformJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_transform_job::builders::DescribeTransformJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_transform_job::builders::DescribeTransformJobInputBuilder {
         crate::operation::describe_transform_job::builders::DescribeTransformJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransformJobInput`](crate::operation::describe_transform_job::DescribeTransformJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransformJobInputBuilder {
     pub(crate) transform_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTransformJobInputBuilder {
     /// <p>The name of the transform job that you want to view details of.</p>
-    pub fn transform_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transform job that you want to view details of.</p>
-    pub fn set_transform_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transform_job_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeTransformJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTransformJobInput`](crate::operation::describe_transform_job::DescribeTransformJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_transform_job::DescribeTransformJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_transform_job::DescribeTransformJobInput {
-                transform_job_name: self.transform_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_transform_job::DescribeTransformJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_transform_job::DescribeTransformJobInput {
+            transform_job_name: self.transform_job_name,
+        })
     }
 }

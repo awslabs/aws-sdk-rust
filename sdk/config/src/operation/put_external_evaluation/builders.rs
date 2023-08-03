@@ -37,10 +37,7 @@ impl PutExternalEvaluationFluentBuilder {
         }
     }
     /// Access the PutExternalEvaluation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_external_evaluation::builders::PutExternalEvaluationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_external_evaluation::builders::PutExternalEvaluationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutExternalEvaluationFluentBuilder {
             crate::operation::put_external_evaluation::PutExternalEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_external_evaluation::PutExternalEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_external_evaluation::PutExternalEvaluationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutExternalEvaluationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutExternalEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_external_evaluation::PutExternalEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_external_evaluation::PutExternalEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_external_evaluation::PutExternalEvaluationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutExternalEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_external_evaluation::PutExternalEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_external_evaluation::PutExternalEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_external_evaluation::PutExternalEvaluationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl PutExternalEvaluationFluentBuilder {
             crate::operation::put_external_evaluation::PutExternalEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_external_evaluation::PutExternalEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_external_evaluation::PutExternalEvaluationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
         self
     }
     /// <p>The name of the Config rule.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
@@ -149,17 +129,12 @@ impl PutExternalEvaluationFluentBuilder {
         self
     }
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
-    pub fn set_external_evaluation(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalEvaluation>,
-    ) -> Self {
+    pub fn set_external_evaluation(mut self, input: ::std::option::Option<crate::types::ExternalEvaluation>) -> Self {
         self.inner = self.inner.set_external_evaluation(input);
         self
     }
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
-    pub fn get_external_evaluation(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExternalEvaluation> {
+    pub fn get_external_evaluation(&self) -> &::std::option::Option<crate::types::ExternalEvaluation> {
         self.inner.get_external_evaluation()
     }
 }

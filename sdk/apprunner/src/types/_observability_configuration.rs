@@ -73,9 +73,7 @@ impl ObservabilityConfiguration {
 
 /// A builder for [`ObservabilityConfiguration`](crate::types::ObservabilityConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObservabilityConfigurationBuilder {
     pub(crate) observability_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) observability_configuration_name: ::std::option::Option<::std::string::String>,
@@ -88,47 +86,31 @@ pub struct ObservabilityConfigurationBuilder {
 }
 impl ObservabilityConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
-    pub fn observability_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn observability_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
-    pub fn set_observability_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_observability_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.observability_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
-    pub fn get_observability_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_observability_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.observability_configuration_arn
     }
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn observability_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn observability_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn set_observability_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_observability_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.observability_configuration_name = input;
         self
     }
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn get_observability_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_observability_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.observability_configuration_name
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
@@ -137,17 +119,12 @@ impl ObservabilityConfigurationBuilder {
         self
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
-    pub fn set_trace_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TraceConfiguration>,
-    ) -> Self {
+    pub fn set_trace_configuration(mut self, input: ::std::option::Option<crate::types::TraceConfiguration>) -> Self {
         self.trace_configuration = input;
         self
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
-    pub fn get_trace_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TraceConfiguration> {
+    pub fn get_trace_configuration(&self) -> &::std::option::Option<crate::types::TraceConfiguration> {
         &self.trace_configuration
     }
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
@@ -156,10 +133,7 @@ impl ObservabilityConfigurationBuilder {
         self
     }
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
-    pub fn set_observability_configuration_revision(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_observability_configuration_revision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.observability_configuration_revision = input;
         self
     }
@@ -187,17 +161,12 @@ impl ObservabilityConfigurationBuilder {
         self
     }
     /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ObservabilityConfigurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ObservabilityConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObservabilityConfigurationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ObservabilityConfigurationStatus> {
         &self.status
     }
     /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
@@ -206,10 +175,7 @@ impl ObservabilityConfigurationBuilder {
         self
     }
     /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -223,10 +189,7 @@ impl ObservabilityConfigurationBuilder {
         self
     }
     /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
-    pub fn set_deleted_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deleted_at = input;
         self
     }
@@ -240,9 +203,7 @@ impl ObservabilityConfigurationBuilder {
             observability_configuration_arn: self.observability_configuration_arn,
             observability_configuration_name: self.observability_configuration_name,
             trace_configuration: self.trace_configuration,
-            observability_configuration_revision: self
-                .observability_configuration_revision
-                .unwrap_or_default(),
+            observability_configuration_revision: self.observability_configuration_revision.unwrap_or_default(),
             latest: self.latest.unwrap_or_default(),
             status: self.status,
             created_at: self.created_at,

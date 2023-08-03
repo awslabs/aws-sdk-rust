@@ -37,10 +37,7 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
         }
     }
     /// Access the SwapEnvironmentCNAMEs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
             crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +105,19 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
             crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
-    pub fn source_environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_environment_id(input.into());
         self
     }
     /// <p>The ID of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
-    pub fn set_source_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_environment_id(input);
         self
     }
@@ -148,19 +128,13 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
     }
     /// <p>The name of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
-    pub fn source_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_environment_name(input.into());
         self
     }
     /// <p>The name of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
-    pub fn set_source_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_environment_name(input);
         self
     }
@@ -171,19 +145,13 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
     }
     /// <p>The ID of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
-    pub fn destination_environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_environment_id(input.into());
         self
     }
     /// <p>The ID of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
-    pub fn set_destination_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_environment_id(input);
         self
     }
@@ -194,27 +162,19 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
     }
     /// <p>The name of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
-    pub fn destination_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_environment_name(input.into());
         self
     }
     /// <p>The name of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
-    pub fn set_destination_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_environment_name(input);
         self
     }
     /// <p>The name of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
-    pub fn get_destination_environment_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_destination_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_environment_name()
     }
 }

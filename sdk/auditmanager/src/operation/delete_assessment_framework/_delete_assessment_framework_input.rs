@@ -15,16 +15,14 @@ impl DeleteAssessmentFrameworkInput {
 }
 impl DeleteAssessmentFrameworkInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkInput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput).
-    pub fn builder() -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder{
+    pub fn builder() -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder {
         crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssessmentFrameworkInput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkInputBuilder {
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DeleteAssessmentFrameworkInputBuilder {
         crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput {
-                framework_id: self.framework_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput {
+            framework_id: self.framework_id,
+        })
     }
 }

@@ -12,16 +12,13 @@ pub struct SetRiskConfigurationInput {
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The compromised credentials risk configuration.</p>
     #[doc(hidden)]
-    pub compromised_credentials_risk_configuration:
-        ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
+    pub compromised_credentials_risk_configuration: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
     /// <p>The account takeover risk configuration.</p>
     #[doc(hidden)]
-    pub account_takeover_risk_configuration:
-        ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
+    pub account_takeover_risk_configuration: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
     /// <p>The configuration to override the risk decision.</p>
     #[doc(hidden)]
-    pub risk_exception_configuration:
-        ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
+    pub risk_exception_configuration: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
 }
 impl SetRiskConfigurationInput {
     /// <p>The user pool ID. </p>
@@ -34,21 +31,15 @@ impl SetRiskConfigurationInput {
         self.client_id.as_deref()
     }
     /// <p>The compromised credentials risk configuration.</p>
-    pub fn compromised_credentials_risk_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CompromisedCredentialsRiskConfigurationType> {
+    pub fn compromised_credentials_risk_configuration(&self) -> ::std::option::Option<&crate::types::CompromisedCredentialsRiskConfigurationType> {
         self.compromised_credentials_risk_configuration.as_ref()
     }
     /// <p>The account takeover risk configuration.</p>
-    pub fn account_takeover_risk_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountTakeoverRiskConfigurationType> {
+    pub fn account_takeover_risk_configuration(&self) -> ::std::option::Option<&crate::types::AccountTakeoverRiskConfigurationType> {
         self.account_takeover_risk_configuration.as_ref()
     }
     /// <p>The configuration to override the risk decision.</p>
-    pub fn risk_exception_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RiskExceptionConfigurationType> {
+    pub fn risk_exception_configuration(&self) -> ::std::option::Option<&crate::types::RiskExceptionConfigurationType> {
         self.risk_exception_configuration.as_ref()
     }
 }
@@ -61,21 +52,14 @@ impl ::std::fmt::Debug for SetRiskConfigurationInput {
             "compromised_credentials_risk_configuration",
             &self.compromised_credentials_risk_configuration,
         );
-        formatter.field(
-            "account_takeover_risk_configuration",
-            &self.account_takeover_risk_configuration,
-        );
-        formatter.field(
-            "risk_exception_configuration",
-            &self.risk_exception_configuration,
-        );
+        formatter.field("account_takeover_risk_configuration", &self.account_takeover_risk_configuration);
+        formatter.field("risk_exception_configuration", &self.risk_exception_configuration);
         formatter.finish()
     }
 }
 impl SetRiskConfigurationInput {
     /// Creates a new builder-style object to manufacture [`SetRiskConfigurationInput`](crate::operation::set_risk_configuration::SetRiskConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder {
         crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder::default()
     }
 }
@@ -86,12 +70,9 @@ impl SetRiskConfigurationInput {
 pub struct SetRiskConfigurationInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
-    pub(crate) compromised_credentials_risk_configuration:
-        ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
-    pub(crate) account_takeover_risk_configuration:
-        ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
-    pub(crate) risk_exception_configuration:
-        ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
+    pub(crate) compromised_credentials_risk_configuration: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
+    pub(crate) account_takeover_risk_configuration: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
+    pub(crate) risk_exception_configuration: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
 }
 impl SetRiskConfigurationInputBuilder {
     /// <p>The user pool ID. </p>
@@ -126,10 +107,7 @@ impl SetRiskConfigurationInputBuilder {
         &self.client_id
     }
     /// <p>The compromised credentials risk configuration.</p>
-    pub fn compromised_credentials_risk_configuration(
-        mut self,
-        input: crate::types::CompromisedCredentialsRiskConfigurationType,
-    ) -> Self {
+    pub fn compromised_credentials_risk_configuration(mut self, input: crate::types::CompromisedCredentialsRiskConfigurationType) -> Self {
         self.compromised_credentials_risk_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -148,10 +126,7 @@ impl SetRiskConfigurationInputBuilder {
         &self.compromised_credentials_risk_configuration
     }
     /// <p>The account takeover risk configuration.</p>
-    pub fn account_takeover_risk_configuration(
-        mut self,
-        input: crate::types::AccountTakeoverRiskConfigurationType,
-    ) -> Self {
+    pub fn account_takeover_risk_configuration(mut self, input: crate::types::AccountTakeoverRiskConfigurationType) -> Self {
         self.account_takeover_risk_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -164,50 +139,35 @@ impl SetRiskConfigurationInputBuilder {
         self
     }
     /// <p>The account takeover risk configuration.</p>
-    pub fn get_account_takeover_risk_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType> {
+    pub fn get_account_takeover_risk_configuration(&self) -> &::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType> {
         &self.account_takeover_risk_configuration
     }
     /// <p>The configuration to override the risk decision.</p>
-    pub fn risk_exception_configuration(
-        mut self,
-        input: crate::types::RiskExceptionConfigurationType,
-    ) -> Self {
+    pub fn risk_exception_configuration(mut self, input: crate::types::RiskExceptionConfigurationType) -> Self {
         self.risk_exception_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration to override the risk decision.</p>
-    pub fn set_risk_exception_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
-    ) -> Self {
+    pub fn set_risk_exception_configuration(mut self, input: ::std::option::Option<crate::types::RiskExceptionConfigurationType>) -> Self {
         self.risk_exception_configuration = input;
         self
     }
     /// <p>The configuration to override the risk decision.</p>
-    pub fn get_risk_exception_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RiskExceptionConfigurationType> {
+    pub fn get_risk_exception_configuration(&self) -> &::std::option::Option<crate::types::RiskExceptionConfigurationType> {
         &self.risk_exception_configuration
     }
     /// Consumes the builder and constructs a [`SetRiskConfigurationInput`](crate::operation::set_risk_configuration::SetRiskConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_risk_configuration::SetRiskConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_risk_configuration::SetRiskConfigurationInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-                compromised_credentials_risk_configuration: self
-                    .compromised_credentials_risk_configuration,
-                account_takeover_risk_configuration: self.account_takeover_risk_configuration,
-                risk_exception_configuration: self.risk_exception_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_risk_configuration::SetRiskConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_risk_configuration::SetRiskConfigurationInput {
+            user_pool_id: self.user_pool_id,
+            client_id: self.client_id,
+            compromised_credentials_risk_configuration: self.compromised_credentials_risk_configuration,
+            account_takeover_risk_configuration: self.account_takeover_risk_configuration,
+            risk_exception_configuration: self.risk_exception_configuration,
+        })
     }
 }
 impl ::std::fmt::Debug for SetRiskConfigurationInputBuilder {
@@ -219,14 +179,8 @@ impl ::std::fmt::Debug for SetRiskConfigurationInputBuilder {
             "compromised_credentials_risk_configuration",
             &self.compromised_credentials_risk_configuration,
         );
-        formatter.field(
-            "account_takeover_risk_configuration",
-            &self.account_takeover_risk_configuration,
-        );
-        formatter.field(
-            "risk_exception_configuration",
-            &self.risk_exception_configuration,
-        );
+        formatter.field("account_takeover_risk_configuration", &self.account_takeover_risk_configuration);
+        formatter.field("risk_exception_configuration", &self.risk_exception_configuration);
         formatter.finish()
     }
 }

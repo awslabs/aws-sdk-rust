@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::update_secret::UpdateSecretOutput::name): <p>The name of the secret that was updated.</p>
     ///   - [`version_id(Option<String>)`](crate::operation::update_secret::UpdateSecretOutput::version_id): <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
     /// - On failure, responds with [`SdkError<UpdateSecretError>`](crate::operation::update_secret::UpdateSecretError)
-    pub fn update_secret(
-        &self,
-    ) -> crate::operation::update_secret::builders::UpdateSecretFluentBuilder {
-        crate::operation::update_secret::builders::UpdateSecretFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_secret(&self) -> crate::operation::update_secret::builders::UpdateSecretFluentBuilder {
+        crate::operation::update_secret::builders::UpdateSecretFluentBuilder::new(self.handle.clone())
     }
 }

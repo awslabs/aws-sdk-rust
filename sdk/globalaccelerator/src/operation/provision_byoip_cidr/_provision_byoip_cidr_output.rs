@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ProvisionByoipCidrOutput {
 }
 impl ProvisionByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrOutput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrOutputBuilder {
+    pub fn builder() -> crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrOutputBuilder {
         crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrOutputBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionByoipCidrOutput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionByoipCidrOutputBuilder {
     pub(crate) byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,

@@ -37,9 +37,7 @@ impl Service {
 
 /// A builder for [`Service`](crate::types::Service).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -86,17 +84,12 @@ impl ServiceBuilder {
         self
     }
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
-    pub fn set_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
-    ) -> Self {
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Category>>) -> Self {
         self.categories = input;
         self
     }
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
-    pub fn get_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
+    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
         &self.categories
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).

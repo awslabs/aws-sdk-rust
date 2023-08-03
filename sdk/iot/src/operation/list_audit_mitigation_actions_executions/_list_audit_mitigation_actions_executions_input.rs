@@ -25,9 +25,7 @@ impl ListAuditMitigationActionsExecutionsInput {
         self.task_id.as_deref()
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    pub fn action_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuditMitigationActionsExecutionStatus> {
+    pub fn action_status(&self) -> ::std::option::Option<&crate::types::AuditMitigationActionsExecutionStatus> {
         self.action_status.as_ref()
     }
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
@@ -45,20 +43,17 @@ impl ListAuditMitigationActionsExecutionsInput {
 }
 impl ListAuditMitigationActionsExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListAuditMitigationActionsExecutionsInput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput).
-    pub fn builder() -> crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsInputBuilder {
         crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAuditMitigationActionsExecutionsInput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditMitigationActionsExecutionsInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
-    pub(crate) action_status:
-        ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>,
+    pub(crate) action_status: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>,
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -79,25 +74,17 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
         &self.task_id
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    pub fn action_status(
-        mut self,
-        input: crate::types::AuditMitigationActionsExecutionStatus,
-    ) -> Self {
+    pub fn action_status(mut self, input: crate::types::AuditMitigationActionsExecutionStatus) -> Self {
         self.action_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    pub fn set_action_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>,
-    ) -> Self {
+    pub fn set_action_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>) -> Self {
         self.action_status = input;
         self
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    pub fn get_action_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
+    pub fn get_action_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
         &self.action_status
     }
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
@@ -143,20 +130,20 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAuditMitigationActionsExecutionsInput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput {
-                task_id: self.task_id
-                ,
-                action_status: self.action_status
-                ,
-                finding_id: self.finding_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                task_id: self.task_id,
+                action_status: self.action_status,
+                finding_id: self.finding_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

@@ -29,16 +29,14 @@ impl DescribeConnectClientAddInsInput {
 }
 impl DescribeConnectClientAddInsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectClientAddInsInput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput).
-    pub fn builder() -> crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder{
+    pub fn builder() -> crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder {
         crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectClientAddInsInput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectClientAddInsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl DescribeConnectClientAddInsInputBuilder {
         crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput {
-                resource_id: self.resource_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput {
+            resource_id: self.resource_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

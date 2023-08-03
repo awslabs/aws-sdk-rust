@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableMetricsCollectionOutput {
 }
 impl DisableMetricsCollectionOutput {
     /// Creates a new builder-style object to manufacture [`DisableMetricsCollectionOutput`](crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionOutputBuilder {
         crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableMetricsCollectionOutput`](crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableMetricsCollectionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisableMetricsCollectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableMetricsCollectionOutput`](crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput {
+    pub fn build(self) -> crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput {
         crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput {
             _request_id: self._request_id,
         }

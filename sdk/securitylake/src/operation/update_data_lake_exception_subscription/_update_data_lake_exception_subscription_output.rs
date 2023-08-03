@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDataLakeExceptionSubscriptionOu
 }
 impl UpdateDataLakeExceptionSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataLakeExceptionSubscriptionOutput`](crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionOutput).
-    pub fn builder() -> crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionOutputBuilder {
         crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataLakeExceptionSubscriptionOutput`](crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataLakeExceptionSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateDataLakeExceptionSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDataLakeExceptionSubscriptionOutput`](crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionOutput).
-    pub fn build(self) -> crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionOutput{
+    pub fn build(self) -> crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionOutput {
         crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionOutput {
             _request_id: self._request_id,
         }

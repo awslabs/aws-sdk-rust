@@ -15,10 +15,7 @@ pub fn ser_start_celebrity_recognition_input(
     if let Some(var_4) = &input.notification_channel {
         #[allow(unused_mut)]
         let mut object_5 = object.key("NotificationChannel").start_object();
-        crate::protocol_serde::shape_notification_channel::ser_notification_channel(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_notification_channel::ser_notification_channel(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.job_tag {

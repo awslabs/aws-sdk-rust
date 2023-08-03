@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`max_gpus(i32)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::max_gpus) / [`set_max_gpus(Option<i32>)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::set_max_gpus): <p> The maximum GPUs that can be used by a run group. </p>
     /// - On success, responds with [`UpdateRunGroupOutput`](crate::operation::update_run_group::UpdateRunGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateRunGroupError>`](crate::operation::update_run_group::UpdateRunGroupError)
-    pub fn update_run_group(
-        &self,
-    ) -> crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder {
-        crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_run_group(&self) -> crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder {
+        crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,16 +22,14 @@ impl PutFirewallRuleGroupPolicyInput {
 }
 impl PutFirewallRuleGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyInput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput).
-    pub fn builder() -> crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder{
+    pub fn builder() -> crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder {
         crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutFirewallRuleGroupPolicyInput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_rule_group_policy: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl PutFirewallRuleGroupPolicyInputBuilder {
         &self.arn
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
-    pub fn firewall_rule_group_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
-    pub fn set_firewall_rule_group_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_policy = input;
         self
     }
@@ -78,11 +70,9 @@ impl PutFirewallRuleGroupPolicyInputBuilder {
         crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput {
-                arn: self.arn,
-                firewall_rule_group_policy: self.firewall_rule_group_policy,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput {
+            arn: self.arn,
+            firewall_rule_group_policy: self.firewall_rule_group_policy,
+        })
     }
 }

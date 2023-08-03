@@ -57,16 +57,14 @@ impl CreateClusterParameterGroupInput {
 }
 impl CreateClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterParameterGroupInput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder {
         crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClusterParameterGroupInput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_family: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl CreateClusterParameterGroupInputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -101,10 +96,7 @@ impl CreateClusterParameterGroupInputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -123,19 +115,13 @@ impl CreateClusterParameterGroupInputBuilder {
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    pub fn parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    pub fn set_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_family = input;
         self
     }
@@ -170,10 +156,7 @@ impl CreateClusterParameterGroupInputBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -188,13 +171,11 @@ impl CreateClusterParameterGroupInputBuilder {
         crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput {
-                parameter_group_name: self.parameter_group_name,
-                parameter_group_family: self.parameter_group_family,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput {
+            parameter_group_name: self.parameter_group_name,
+            parameter_group_family: self.parameter_group_family,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

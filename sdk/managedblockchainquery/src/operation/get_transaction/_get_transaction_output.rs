@@ -28,9 +28,7 @@ impl GetTransactionOutput {
 
 /// A builder for [`GetTransactionOutput`](crate::operation::get_transaction::GetTransactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransactionOutputBuilder {
     pub(crate) transaction: ::std::option::Option<crate::types::Transaction>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetTransactionOutputBuilder {
         self
     }
     /// <p>Contains the details of the transaction.</p>
-    pub fn set_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::Transaction>,
-    ) -> Self {
+    pub fn set_transaction(mut self, input: ::std::option::Option<crate::types::Transaction>) -> Self {
         self.transaction = input;
         self
     }

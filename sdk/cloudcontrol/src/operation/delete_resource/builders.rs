@@ -10,10 +10,7 @@ impl DeleteResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_resource::DeleteResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource::DeleteResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource::DeleteResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_resource();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteResourceFluentBuilder {
         }
     }
     /// Access the DeleteResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resource::builders::DeleteResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_resource::builders::DeleteResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DeleteResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -130,18 +122,12 @@ impl DeleteResourceFluentBuilder {
         self.inner.get_type_name()
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn type_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_version_id(input.into());
         self
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn set_type_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_version_id(input);
         self
     }

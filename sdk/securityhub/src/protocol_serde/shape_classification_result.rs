@@ -13,17 +13,12 @@ pub fn ser_classification_result(
         );
     }
     if input.additional_occurrences {
-        object
-            .key("AdditionalOccurrences")
-            .boolean(input.additional_occurrences);
+        object.key("AdditionalOccurrences").boolean(input.additional_occurrences);
     }
     if let Some(var_2) = &input.status {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Status").start_object();
-        crate::protocol_serde::shape_classification_status::ser_classification_status(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_classification_status::ser_classification_status(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.sensitive_data {
@@ -32,10 +27,7 @@ pub fn ser_classification_result(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_sensitive_data_result::ser_sensitive_data_result(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_sensitive_data_result::ser_sensitive_data_result(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -52,17 +44,9 @@ pub fn ser_classification_result(
 
 pub(crate) fn de_classification_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ClassificationResult>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ClassificationResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -72,66 +56,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "MimeType" => {
-                                builder = builder.set_mime_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "MimeType" => {
+                            builder = builder.set_mime_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "SizeClassified" => {
-                                builder = builder.set_size_classified(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "SizeClassified" => {
+                            builder = builder.set_size_classified(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "AdditionalOccurrences" => {
-                                builder = builder.set_additional_occurrences(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "Status" => {
-                                builder = builder.set_status(
-                                    crate::protocol_serde::shape_classification_status::de_classification_status(tokens)?
-                                );
-                            }
-                            "SensitiveData" => {
-                                builder = builder.set_sensitive_data(
-                                    crate::protocol_serde::shape_sensitive_data_result_list::de_sensitive_data_result_list(tokens)?
-                                );
-                            }
-                            "CustomDataIdentifiers" => {
-                                builder = builder.set_custom_data_identifiers(
-                                    crate::protocol_serde::shape_custom_data_identifiers_result::de_custom_data_identifiers_result(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "AdditionalOccurrences" => {
+                            builder = builder.set_additional_occurrences(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Status" => {
+                            builder = builder.set_status(crate::protocol_serde::shape_classification_status::de_classification_status(tokens)?);
+                        }
+                        "SensitiveData" => {
+                            builder = builder.set_sensitive_data(
+                                crate::protocol_serde::shape_sensitive_data_result_list::de_sensitive_data_result_list(tokens)?,
+                            );
+                        }
+                        "CustomDataIdentifiers" => {
+                            builder = builder.set_custom_data_identifiers(
+                                crate::protocol_serde::shape_custom_data_identifiers_result::de_custom_data_identifiers_result(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

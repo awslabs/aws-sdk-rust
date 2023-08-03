@@ -30,9 +30,7 @@ impl FunnelChartAggregatedFieldWells {
 
 /// A builder for [`FunnelChartAggregatedFieldWells`](crate::types::FunnelChartAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunnelChartAggregatedFieldWellsBuilder {
     pub(crate) category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
@@ -50,17 +48,12 @@ impl FunnelChartAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The category field wells of a funnel chart. Values are grouped by category fields.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.category = input;
         self
     }
     /// <p>The category field wells of a funnel chart. Values are grouped by category fields.</p>
-    pub fn get_category(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_category(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.category
     }
     /// Appends an item to `values`.
@@ -75,17 +68,12 @@ impl FunnelChartAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The value field wells of a funnel chart. Values are aggregated based on categories.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The value field wells of a funnel chart. Values are aggregated based on categories.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`FunnelChartAggregatedFieldWells`](crate::types::FunnelChartAggregatedFieldWells).

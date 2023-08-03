@@ -35,9 +35,7 @@ impl DescribeAccessInput {
 
 /// A builder for [`DescribeAccessInput`](crate::operation::describe_access::DescribeAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccessInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
@@ -83,10 +81,7 @@ impl DescribeAccessInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccessInput`](crate::operation::describe_access::DescribeAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_access::DescribeAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_access::DescribeAccessInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_access::DescribeAccessInput {
             server_id: self.server_id,
             external_id: self.external_id,

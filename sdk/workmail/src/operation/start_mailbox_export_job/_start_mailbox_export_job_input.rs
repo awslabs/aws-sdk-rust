@@ -64,18 +64,14 @@ impl StartMailboxExportJobInput {
 }
 impl StartMailboxExportJobInput {
     /// Creates a new builder-style object to manufacture [`StartMailboxExportJobInput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder {
         crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMailboxExportJobInput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMailboxExportJobInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
@@ -102,18 +98,12 @@ impl StartMailboxExportJobInputBuilder {
         &self.client_token
     }
     /// <p>The identifier associated with the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier associated with the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -178,18 +168,12 @@ impl StartMailboxExportJobInputBuilder {
         &self.kms_key_arn
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -214,21 +198,17 @@ impl StartMailboxExportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartMailboxExportJobInput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_mailbox_export_job::StartMailboxExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobInput {
-                client_token: self.client_token,
-                organization_id: self.organization_id,
-                entity_id: self.entity_id,
-                description: self.description,
-                role_arn: self.role_arn,
-                kms_key_arn: self.kms_key_arn,
-                s3_bucket_name: self.s3_bucket_name,
-                s3_prefix: self.s3_prefix,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_mailbox_export_job::StartMailboxExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_mailbox_export_job::StartMailboxExportJobInput {
+            client_token: self.client_token,
+            organization_id: self.organization_id,
+            entity_id: self.entity_id,
+            description: self.description,
+            role_arn: self.role_arn,
+            kms_key_arn: self.kms_key_arn,
+            s3_bucket_name: self.s3_bucket_name,
+            s3_prefix: self.s3_prefix,
+        })
     }
 }

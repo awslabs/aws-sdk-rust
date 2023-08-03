@@ -51,16 +51,15 @@ impl ListServiceActionsForProvisioningArtifactInput {
 }
 impl ListServiceActionsForProvisioningArtifactInput {
     /// Creates a new builder-style object to manufacture [`ListServiceActionsForProvisioningArtifactInput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput).
-    pub fn builder() -> crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder {
         crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceActionsForProvisioningArtifactInput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceActionsForProvisioningArtifactInputBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +83,12 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -136,10 +129,7 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -148,10 +138,7 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -164,20 +151,20 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
         &self.accept_language
     }
     /// Consumes the builder and constructs a [`ListServiceActionsForProvisioningArtifactInput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput {
-                product_id: self.product_id
-                ,
-                provisioning_artifact_id: self.provisioning_artifact_id
-                ,
-                page_size: self.page_size
-                ,
-                page_token: self.page_token
-                ,
-                accept_language: self.accept_language
-                ,
-            }
+                product_id: self.product_id,
+                provisioning_artifact_id: self.provisioning_artifact_id,
+                page_size: self.page_size,
+                page_token: self.page_token,
+                accept_language: self.accept_language,
+            },
         )
     }
 }

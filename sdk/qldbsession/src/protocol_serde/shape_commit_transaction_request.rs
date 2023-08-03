@@ -7,9 +7,7 @@ pub fn ser_commit_transaction_request(
         object.key("TransactionId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.commit_digest {
-        object
-            .key("CommitDigest")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("CommitDigest").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     Ok(())
 }

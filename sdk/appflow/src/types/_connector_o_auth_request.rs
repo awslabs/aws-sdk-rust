@@ -30,9 +30,7 @@ impl ConnectorOAuthRequest {
 
 /// A builder for [`ConnectorOAuthRequest`](crate::types::ConnectorOAuthRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorOAuthRequestBuilder {
     pub(crate) auth_code: ::std::option::Option<::std::string::String>,
     pub(crate) redirect_uri: ::std::option::Option<::std::string::String>,

@@ -44,9 +44,7 @@ impl DownlinkQueueMessage {
 
 /// A builder for [`DownlinkQueueMessage`](crate::types::DownlinkQueueMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DownlinkQueueMessageBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) transmit_mode: ::std::option::Option<i32>,
@@ -102,10 +100,7 @@ impl DownlinkQueueMessageBuilder {
         self
     }
     /// <p>LoRaWAN router info.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>) -> Self {
         self.lo_ra_wan = input;
         self
     }

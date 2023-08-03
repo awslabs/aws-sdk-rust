@@ -26,7 +26,7 @@ impl DescribeStaleSecurityGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder,
+    inner: crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder,
 }
 impl DescribeStaleSecurityGroupsFluentBuilder {
     /// Creates a new `DescribeStaleSecurityGroups`.
@@ -37,7 +37,7 @@ impl DescribeStaleSecurityGroupsFluentBuilder {
         }
     }
     /// Access the DescribeStaleSecurityGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeStaleSecurityGroupsFluentBuilder {
             crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeStaleSecurityGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeStaleSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeStaleSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeStaleSecurityGroupsFluentBuilder {
             crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator {
         crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

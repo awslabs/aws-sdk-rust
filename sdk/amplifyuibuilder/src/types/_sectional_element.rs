@@ -58,9 +58,7 @@ impl SectionalElement {
 
 /// A builder for [`SectionalElement`](crate::types::SectionalElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SectionalElementBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<crate::types::FieldPosition>,
@@ -90,10 +88,7 @@ impl SectionalElementBuilder {
         self
     }
     /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::FieldPosition>) -> Self {
         self.position = input;
         self
     }

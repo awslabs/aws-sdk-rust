@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput::next_token): <p>The pagination token.</p>
     ///   - [`template_step_group_summary(Option<Vec<TemplateStepGroupSummary>>)`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput::template_step_group_summary): <p>The summary of the step group in the template.</p>
     /// - On failure, responds with [`SdkError<ListTemplateStepGroupsError>`](crate::operation::list_template_step_groups::ListTemplateStepGroupsError)
-    pub fn list_template_step_groups(
-        &self,
-    ) -> crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder
-    {
+    pub fn list_template_step_groups(&self) -> crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder {
         crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::new(self.handle.clone())
     }
 }

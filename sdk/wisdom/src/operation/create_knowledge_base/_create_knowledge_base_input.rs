@@ -20,16 +20,13 @@ pub struct CreateKnowledgeBaseInput {
     pub rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
     /// <p>The KMS key used for encryption.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The description.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKnowledgeBaseInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -45,21 +42,15 @@ impl CreateKnowledgeBaseInput {
         self.knowledge_base_type.as_ref()
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
-    pub fn source_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConfiguration> {
+    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>Information about how to render the content.</p>
-    pub fn rendering_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
+    pub fn rendering_configuration(&self) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The description.</p>
@@ -67,40 +58,29 @@ impl CreateKnowledgeBaseInput {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateKnowledgeBaseInput {
     /// Creates a new builder-style object to manufacture [`CreateKnowledgeBaseInput`](crate::operation::create_knowledge_base::CreateKnowledgeBaseInput).
-    pub fn builder(
-    ) -> crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder {
-        crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder {
+        crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateKnowledgeBaseInput`](crate::operation::create_knowledge_base::CreateKnowledgeBaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKnowledgeBaseInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_type: ::std::option::Option<crate::types::KnowledgeBaseType>,
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     pub(crate) rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
-    pub(crate) server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKnowledgeBaseInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -137,17 +117,12 @@ impl CreateKnowledgeBaseInputBuilder {
         self
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
-    pub fn set_knowledge_base_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KnowledgeBaseType>,
-    ) -> Self {
+    pub fn set_knowledge_base_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseType>) -> Self {
         self.knowledge_base_type = input;
         self
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
-    pub fn get_knowledge_base_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
+    pub fn get_knowledge_base_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
         &self.knowledge_base_type
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
@@ -156,17 +131,12 @@ impl CreateKnowledgeBaseInputBuilder {
         self
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
-    pub fn set_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConfiguration>,
-    ) -> Self {
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
         self.source_configuration = input;
         self
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
-    pub fn get_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
         &self.source_configuration
     }
     /// <p>Information about how to render the content.</p>
@@ -175,39 +145,26 @@ impl CreateKnowledgeBaseInputBuilder {
         self
     }
     /// <p>Information about how to render the content.</p>
-    pub fn set_rendering_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RenderingConfiguration>,
-    ) -> Self {
+    pub fn set_rendering_configuration(mut self, input: ::std::option::Option<crate::types::RenderingConfiguration>) -> Self {
         self.rendering_configuration = input;
         self
     }
     /// <p>Information about how to render the content.</p>
-    pub fn get_rendering_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RenderingConfiguration> {
+    pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
         &self.rendering_configuration
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn server_side_encryption_configuration(
-        mut self,
-        input: crate::types::ServerSideEncryptionConfiguration,
-    ) -> Self {
+    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.server_side_encryption_configuration = input;
         self
     }
     /// <p>The KMS key used for encryption.</p>
-    pub fn get_server_side_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+    pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
     }
     /// <p>The description.</p>
@@ -229,52 +186,35 @@ impl CreateKnowledgeBaseInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKnowledgeBaseInput`](crate::operation::create_knowledge_base::CreateKnowledgeBaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_knowledge_base::CreateKnowledgeBaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_knowledge_base::CreateKnowledgeBaseInput {
-                client_token: self.client_token,
-                name: self.name,
-                knowledge_base_type: self.knowledge_base_type,
-                source_configuration: self.source_configuration,
-                rendering_configuration: self.rendering_configuration,
-                server_side_encryption_configuration: self.server_side_encryption_configuration,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_knowledge_base::CreateKnowledgeBaseInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_knowledge_base::CreateKnowledgeBaseInput {
+            client_token: self.client_token,
+            name: self.name,
+            knowledge_base_type: self.knowledge_base_type,
+            source_configuration: self.source_configuration,
+            rendering_configuration: self.rendering_configuration,
+            server_side_encryption_configuration: self.server_side_encryption_configuration,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

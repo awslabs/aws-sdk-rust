@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetachVolumeOutput`](crate::operation::detach_volume::DetachVolumeOutput) with field(s):
     ///   - [`volume_arn(Option<String>)`](crate::operation::detach_volume::DetachVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
     /// - On failure, responds with [`SdkError<DetachVolumeError>`](crate::operation::detach_volume::DetachVolumeError)
-    pub fn detach_volume(
-        &self,
-    ) -> crate::operation::detach_volume::builders::DetachVolumeFluentBuilder {
-        crate::operation::detach_volume::builders::DetachVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_volume(&self) -> crate::operation::detach_volume::builders::DetachVolumeFluentBuilder {
+        crate::operation::detach_volume::builders::DetachVolumeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,18 +15,14 @@ impl PutManagedInsightRulesInput {
 }
 impl PutManagedInsightRulesInput {
     /// Creates a new builder-style object to manufacture [`PutManagedInsightRulesInput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput).
-    pub fn builder(
-    ) -> crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder {
         crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutManagedInsightRulesInput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutManagedInsightRulesInputBuilder {
     pub(crate) managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>,
 }
@@ -43,17 +39,12 @@ impl PutManagedInsightRulesInputBuilder {
         self
     }
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    pub fn set_managed_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>,
-    ) -> Self {
+    pub fn set_managed_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>) -> Self {
         self.managed_rules = input;
         self
     }
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    pub fn get_managed_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>> {
+    pub fn get_managed_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>> {
         &self.managed_rules
     }
     /// Consumes the builder and constructs a [`PutManagedInsightRulesInput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput).
@@ -63,10 +54,8 @@ impl PutManagedInsightRulesInputBuilder {
         crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput {
-                managed_rules: self.managed_rules,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput {
+            managed_rules: self.managed_rules,
+        })
     }
 }

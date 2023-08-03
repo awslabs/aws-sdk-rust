@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInputOutput`](crate::operation::create_input::CreateInputOutput) with field(s):
     ///   - [`input_configuration(Option<InputConfiguration>)`](crate::operation::create_input::CreateInputOutput::input_configuration): <p>Information about the configuration of the input.</p>
     /// - On failure, responds with [`SdkError<CreateInputError>`](crate::operation::create_input::CreateInputError)
-    pub fn create_input(
-        &self,
-    ) -> crate::operation::create_input::builders::CreateInputFluentBuilder {
+    pub fn create_input(&self) -> crate::operation::create_input::builders::CreateInputFluentBuilder {
         crate::operation::create_input::builders::CreateInputFluentBuilder::new(self.handle.clone())
     }
 }

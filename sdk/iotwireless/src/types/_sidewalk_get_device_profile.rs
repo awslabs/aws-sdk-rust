@@ -12,8 +12,7 @@ pub struct SidewalkGetDeviceProfile {
     pub qualification_status: ::std::option::Option<bool>,
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
     #[doc(hidden)]
-    pub dak_certificate_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
+    pub dak_certificate_metadata: ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
 }
 impl SidewalkGetDeviceProfile {
     /// <p>The Sidewalk application server public key.</p>
@@ -25,19 +24,14 @@ impl SidewalkGetDeviceProfile {
         self.qualification_status
     }
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
-    pub fn dak_certificate_metadata(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DakCertificateMetadata]> {
+    pub fn dak_certificate_metadata(&self) -> ::std::option::Option<&[crate::types::DakCertificateMetadata]> {
         self.dak_certificate_metadata.as_deref()
     }
 }
 impl ::std::fmt::Debug for SidewalkGetDeviceProfile {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkGetDeviceProfile");
-        formatter.field(
-            "application_server_public_key",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("application_server_public_key", &"*** Sensitive Data Redacted ***");
         formatter.field("qualification_status", &self.qualification_status);
         formatter.field("dak_certificate_metadata", &self.dak_certificate_metadata);
         formatter.finish()
@@ -56,30 +50,21 @@ impl SidewalkGetDeviceProfile {
 pub struct SidewalkGetDeviceProfileBuilder {
     pub(crate) application_server_public_key: ::std::option::Option<::std::string::String>,
     pub(crate) qualification_status: ::std::option::Option<bool>,
-    pub(crate) dak_certificate_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
+    pub(crate) dak_certificate_metadata: ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
 }
 impl SidewalkGetDeviceProfileBuilder {
     /// <p>The Sidewalk application server public key.</p>
-    pub fn application_server_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_server_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_server_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Sidewalk application server public key.</p>
-    pub fn set_application_server_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_server_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_server_public_key = input;
         self
     }
     /// <p>The Sidewalk application server public key.</p>
-    pub fn get_application_server_public_key(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_application_server_public_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_server_public_key
     }
     /// <p>Gets information about the certification status of a Sidewalk device profile.</p>
@@ -108,17 +93,12 @@ impl SidewalkGetDeviceProfileBuilder {
         self
     }
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
-    pub fn set_dak_certificate_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
-    ) -> Self {
+    pub fn set_dak_certificate_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>) -> Self {
         self.dak_certificate_metadata = input;
         self
     }
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
-    pub fn get_dak_certificate_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>> {
+    pub fn get_dak_certificate_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>> {
         &self.dak_certificate_metadata
     }
     /// Consumes the builder and constructs a [`SidewalkGetDeviceProfile`](crate::types::SidewalkGetDeviceProfile).
@@ -133,10 +113,7 @@ impl SidewalkGetDeviceProfileBuilder {
 impl ::std::fmt::Debug for SidewalkGetDeviceProfileBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkGetDeviceProfileBuilder");
-        formatter.field(
-            "application_server_public_key",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("application_server_public_key", &"*** Sensitive Data Redacted ***");
         formatter.field("qualification_status", &self.qualification_status);
         formatter.field("dak_certificate_metadata", &self.dak_certificate_metadata);
         formatter.finish()

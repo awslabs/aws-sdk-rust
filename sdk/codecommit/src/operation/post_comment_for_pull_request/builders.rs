@@ -26,7 +26,7 @@ impl PostCommentForPullRequestInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PostCommentForPullRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestInputBuilder,
+    inner: crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestInputBuilder,
 }
 impl PostCommentForPullRequestFluentBuilder {
     /// Creates a new `PostCommentForPullRequest`.
@@ -37,7 +37,7 @@ impl PostCommentForPullRequestFluentBuilder {
         }
     }
     /// Access the PostCommentForPullRequest as a reference.
-    pub fn as_input(&self) -> &crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PostCommentForPullRequestFluentBuilder {
             crate::operation::post_comment_for_pull_request::PostCommentForPullRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PostCommentForPullRequestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PostCommentForPullRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PostCommentForPullRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PostCommentForPullRequestFluentBuilder {
             crate::operation::post_comment_for_pull_request::PostCommentForPullRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl PostCommentForPullRequestFluentBuilder {
         self.inner.get_pull_request_id()
     }
     /// <p>The name of the repository where you want to post a comment on a pull request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you want to post a comment on a pull request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -161,18 +138,12 @@ impl PostCommentForPullRequestFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.before_commit_id(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_before_commit_id(input);
         self
     }
@@ -181,18 +152,12 @@ impl PostCommentForPullRequestFluentBuilder {
         self.inner.get_before_commit_id()
     }
     /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after_commit_id(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after_commit_id(input);
         self
     }
@@ -229,18 +194,12 @@ impl PostCommentForPullRequestFluentBuilder {
         self.inner.get_content()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

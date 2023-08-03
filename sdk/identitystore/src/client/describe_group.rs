@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::description): <p>A string containing a description of the group.</p>
     ///   - [`identity_store_id(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::operation::describe_group::DescribeGroupError)
-    pub fn describe_group(
-        &self,
-    ) -> crate::operation::describe_group::builders::DescribeGroupFluentBuilder {
-        crate::operation::describe_group::builders::DescribeGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_group(&self) -> crate::operation::describe_group::builders::DescribeGroupFluentBuilder {
+        crate::operation::describe_group::builders::DescribeGroupFluentBuilder::new(self.handle.clone())
     }
 }

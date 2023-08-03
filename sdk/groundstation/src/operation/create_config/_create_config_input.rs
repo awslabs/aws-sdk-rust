@@ -12,9 +12,7 @@ pub struct CreateConfigInput {
     pub config_data: ::std::option::Option<crate::types::ConfigTypeData>,
     /// <p>Tags assigned to a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfigInput {
     /// <p>Name of a <code>Config</code>.</p>
@@ -26,11 +24,7 @@ impl CreateConfigInput {
         self.config_data.as_ref()
     }
     /// <p>Tags assigned to a <code>Config</code>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl CreateConfigInput {
 
 /// A builder for [`CreateConfigInput`](crate::operation::create_config::CreateConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) config_data: ::std::option::Option<crate::types::ConfigTypeData>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfigInputBuilder {
     /// <p>Name of a <code>Config</code>.</p>
@@ -74,10 +64,7 @@ impl CreateConfigInputBuilder {
         self
     }
     /// <p>Parameters of a <code>Config</code>.</p>
-    pub fn set_config_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigTypeData>,
-    ) -> Self {
+    pub fn set_config_data(mut self, input: ::std::option::Option<crate::types::ConfigTypeData>) -> Self {
         self.config_data = input;
         self
     }
@@ -90,41 +77,23 @@ impl CreateConfigInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to a <code>Config</code>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags assigned to a <code>Config</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags assigned to a <code>Config</code>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConfigInput`](crate::operation::create_config::CreateConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_config::CreateConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_config::CreateConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_config::CreateConfigInput {
             name: self.name,
             config_data: self.config_data,

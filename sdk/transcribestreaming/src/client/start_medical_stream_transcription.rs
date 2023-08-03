@@ -30,7 +30,9 @@ impl super::Client {
     ///   - [`number_of_channels(Option<i32>)`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput::number_of_channels): <p>Provides the number of channels that you specified in your request.</p>
     ///   - [`content_identification_type(Option<MedicalContentIdentificationType>)`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput::content_identification_type): <p>Shows whether content identification was enabled for your transcription.</p>
     /// - On failure, responds with [`SdkError<StartMedicalStreamTranscriptionError>`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError)
-    pub fn start_medical_stream_transcription(&self) -> crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionFluentBuilder{
+    pub fn start_medical_stream_transcription(
+        &self,
+    ) -> crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionFluentBuilder {
         crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionFluentBuilder::new(self.handle.clone())
     }
 }

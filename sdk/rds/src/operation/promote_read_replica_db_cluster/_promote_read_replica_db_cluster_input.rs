@@ -26,16 +26,14 @@ impl PromoteReadReplicaDbClusterInput {
 }
 impl PromoteReadReplicaDbClusterInput {
     /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterInput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput).
-    pub fn builder() -> crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder{
+    pub fn builder() -> crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder {
         crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`PromoteReadReplicaDbClusterInput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromoteReadReplicaDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl PromoteReadReplicaDbClusterInputBuilder {
     /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-replica1</code> </p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -59,10 +54,7 @@ impl PromoteReadReplicaDbClusterInputBuilder {
     /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-replica1</code> </p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -82,10 +74,8 @@ impl PromoteReadReplicaDbClusterInputBuilder {
         crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+        })
     }
 }

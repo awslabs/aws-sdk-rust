@@ -10,10 +10,7 @@ impl GetBucketPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_policy::GetBucketPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_policy::GetBucketPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_policy::GetBucketPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_bucket_policy();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl GetBucketPolicyFluentBuilder {
         }
     }
     /// Access the GetBucketPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_bucket_policy::builders::GetBucketPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_bucket_policy::builders::GetBucketPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +61,7 @@ impl GetBucketPolicyFluentBuilder {
             crate::operation::get_bucket_policy::GetBucketPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_policy::GetBucketPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_policy::GetBucketPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +71,7 @@ impl GetBucketPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +80,7 @@ impl GetBucketPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_policy::GetBucketPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_policy::GetBucketPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_policy::GetBucketPolicyError>,
     > {
         let op = self
             .inner
@@ -115,9 +103,7 @@ impl GetBucketPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_policy::GetBucketPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_policy::GetBucketPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_policy::GetBucketPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -131,9 +117,7 @@ impl GetBucketPolicyFluentBuilder {
             crate::operation::get_bucket_policy::GetBucketPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_policy::GetBucketPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_policy::GetBucketPolicyError>,
     > {
         self.customize_middleware().await
     }

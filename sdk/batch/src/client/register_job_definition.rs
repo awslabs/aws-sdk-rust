@@ -20,12 +20,7 @@ impl super::Client {
     ///   - [`job_definition_arn(Option<String>)`](crate::operation::register_job_definition::RegisterJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the job definition.</p>
     ///   - [`revision(Option<i32>)`](crate::operation::register_job_definition::RegisterJobDefinitionOutput::revision): <p>The revision of the job definition.</p>
     /// - On failure, responds with [`SdkError<RegisterJobDefinitionError>`](crate::operation::register_job_definition::RegisterJobDefinitionError)
-    pub fn register_job_definition(
-        &self,
-    ) -> crate::operation::register_job_definition::builders::RegisterJobDefinitionFluentBuilder
-    {
-        crate::operation::register_job_definition::builders::RegisterJobDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_job_definition(&self) -> crate::operation::register_job_definition::builders::RegisterJobDefinitionFluentBuilder {
+        crate::operation::register_job_definition::builders::RegisterJobDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

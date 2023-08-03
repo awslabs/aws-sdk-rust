@@ -43,9 +43,7 @@ impl ListAuthorizersInput {
 
 /// A builder for [`ListAuthorizersInput`](crate::operation::list_authorizers::ListAuthorizersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuthorizersInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl ListAuthorizersInputBuilder {
         self
     }
     /// <p>The status of the list authorizers request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AuthorizerStatus>) -> Self {
         self.status = input;
         self
     }
@@ -115,10 +110,7 @@ impl ListAuthorizersInputBuilder {
     /// Consumes the builder and constructs a [`ListAuthorizersInput`](crate::operation::list_authorizers::ListAuthorizersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_authorizers::ListAuthorizersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_authorizers::ListAuthorizersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_authorizers::ListAuthorizersInput {
             page_size: self.page_size,
             marker: self.marker,

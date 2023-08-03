@@ -12,10 +12,7 @@ pub fn ser_register_ca_certificate_input(
     if let Some(var_3) = &input.registration_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("registrationConfig").start_object();
-        crate::protocol_serde::shape_registration_config::ser_registration_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_registration_config::ser_registration_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

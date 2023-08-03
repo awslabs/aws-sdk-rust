@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UploadSshPublicKeyOutput`](crate::operation::upload_ssh_public_key::UploadSshPublicKeyOutput) with field(s):
     ///   - [`ssh_public_key(Option<SshPublicKey>)`](crate::operation::upload_ssh_public_key::UploadSshPublicKeyOutput::ssh_public_key): <p>Contains information about the SSH public key.</p>
     /// - On failure, responds with [`SdkError<UploadSSHPublicKeyError>`](crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError)
-    pub fn upload_ssh_public_key(
-        &self,
-    ) -> crate::operation::upload_ssh_public_key::builders::UploadSSHPublicKeyFluentBuilder {
-        crate::operation::upload_ssh_public_key::builders::UploadSSHPublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upload_ssh_public_key(&self) -> crate::operation::upload_ssh_public_key::builders::UploadSSHPublicKeyFluentBuilder {
+        crate::operation::upload_ssh_public_key::builders::UploadSSHPublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

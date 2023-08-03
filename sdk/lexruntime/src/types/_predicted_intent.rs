@@ -12,9 +12,7 @@ pub struct PredictedIntent {
     pub nlu_intent_confidence: ::std::option::Option<crate::types::IntentConfidence>,
     /// <p>The slot and slot values associated with the predicted intent.</p>
     #[doc(hidden)]
-    pub slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PredictedIntent {
     /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
@@ -26,11 +24,7 @@ impl PredictedIntent {
         self.nlu_intent_confidence.as_ref()
     }
     /// <p>The slot and slot values associated with the predicted intent.</p>
-    pub fn slots(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.slots.as_ref()
     }
 }
@@ -56,9 +50,7 @@ impl PredictedIntent {
 pub struct PredictedIntentBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence: ::std::option::Option<crate::types::IntentConfidence>,
-    pub(crate) slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PredictedIntentBuilder {
     /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
@@ -81,17 +73,12 @@ impl PredictedIntentBuilder {
         self
     }
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
-    pub fn set_nlu_intent_confidence(
-        mut self,
-        input: ::std::option::Option<crate::types::IntentConfidence>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence(mut self, input: ::std::option::Option<crate::types::IntentConfidence>) -> Self {
         self.nlu_intent_confidence = input;
         self
     }
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
-    pub fn get_nlu_intent_confidence(
-        &self,
-    ) -> &::std::option::Option<crate::types::IntentConfidence> {
+    pub fn get_nlu_intent_confidence(&self) -> &::std::option::Option<crate::types::IntentConfidence> {
         &self.nlu_intent_confidence
     }
     /// Adds a key-value pair to `slots`.
@@ -99,32 +86,19 @@ impl PredictedIntentBuilder {
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
     /// <p>The slot and slot values associated with the predicted intent.</p>
-    pub fn slots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.slots = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The slot and slot values associated with the predicted intent.</p>
-    pub fn set_slots(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_slots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.slots = input;
         self
     }
     /// <p>The slot and slot values associated with the predicted intent.</p>
-    pub fn get_slots(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.slots
     }
     /// Consumes the builder and constructs a [`PredictedIntent`](crate::types::PredictedIntent).

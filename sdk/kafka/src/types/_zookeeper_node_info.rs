@@ -51,9 +51,7 @@ impl ZookeeperNodeInfo {
 
 /// A builder for [`ZookeeperNodeInfo`](crate::types::ZookeeperNodeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZookeeperNodeInfoBuilder {
     pub(crate) attached_eni_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_vpc_ip_address: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct ZookeeperNodeInfoBuilder {
 }
 impl ZookeeperNodeInfoBuilder {
     /// <p>The attached elastic network interface of the broker.</p>
-    pub fn attached_eni_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attached_eni_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attached_eni_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attached elastic network interface of the broker.</p>
-    pub fn set_attached_eni_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attached_eni_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attached_eni_id = input;
         self
     }
@@ -83,18 +75,12 @@ impl ZookeeperNodeInfoBuilder {
         &self.attached_eni_id
     }
     /// <p>The virtual private cloud (VPC) IP address of the client.</p>
-    pub fn client_vpc_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpc_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpc_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The virtual private cloud (VPC) IP address of the client.</p>
-    pub fn set_client_vpc_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpc_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpc_ip_address = input;
         self
     }
@@ -114,10 +100,7 @@ impl ZookeeperNodeInfoBuilder {
         self
     }
     /// <p>Endpoints for accessing the ZooKeeper.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.endpoints = input;
         self
     }
@@ -140,18 +123,12 @@ impl ZookeeperNodeInfoBuilder {
         &self.zookeeper_id
     }
     /// <p>The version of Zookeeper.</p>
-    pub fn zookeeper_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn zookeeper_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zookeeper_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of Zookeeper.</p>
-    pub fn set_zookeeper_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_zookeeper_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zookeeper_version = input;
         self
     }

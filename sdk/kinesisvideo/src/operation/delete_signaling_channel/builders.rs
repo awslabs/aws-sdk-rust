@@ -37,10 +37,7 @@ impl DeleteSignalingChannelFluentBuilder {
         }
     }
     /// Access the DeleteSignalingChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteSignalingChannelFluentBuilder {
             crate::operation::delete_signaling_channel::DeleteSignalingChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signaling_channel::DeleteSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signaling_channel::DeleteSignalingChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteSignalingChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteSignalingChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_signaling_channel::DeleteSignalingChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signaling_channel::DeleteSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signaling_channel::DeleteSignalingChannelError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteSignalingChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_signaling_channel::DeleteSignalingChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signaling_channel::DeleteSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signaling_channel::DeleteSignalingChannelError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteSignalingChannelFluentBuilder {
             crate::operation::delete_signaling_channel::DeleteSignalingChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signaling_channel::DeleteSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signaling_channel::DeleteSignalingChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteSignalingChannelFluentBuilder {
         self.inner.get_channel_arn()
     }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }

@@ -38,10 +38,7 @@ impl CreateSuiteDefinitionFluentBuilder {
         }
     }
     /// Access the CreateSuiteDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_suite_definition::builders::CreateSuiteDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_suite_definition::builders::CreateSuiteDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateSuiteDefinitionFluentBuilder {
             crate::operation::create_suite_definition::CreateSuiteDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_suite_definition::CreateSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_suite_definition::CreateSuiteDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateSuiteDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateSuiteDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_suite_definition::CreateSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_suite_definition::CreateSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_suite_definition::CreateSuiteDefinitionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateSuiteDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_suite_definition::CreateSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_suite_definition::CreateSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_suite_definition::CreateSuiteDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -118,32 +106,22 @@ impl CreateSuiteDefinitionFluentBuilder {
             crate::operation::create_suite_definition::CreateSuiteDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_suite_definition::CreateSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_suite_definition::CreateSuiteDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn suite_definition_configuration(
-        mut self,
-        input: crate::types::SuiteDefinitionConfiguration,
-    ) -> Self {
+    pub fn suite_definition_configuration(mut self, input: crate::types::SuiteDefinitionConfiguration) -> Self {
         self.inner = self.inner.suite_definition_configuration(input);
         self
     }
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn set_suite_definition_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
-    ) -> Self {
+    pub fn set_suite_definition_configuration(mut self, input: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>) -> Self {
         self.inner = self.inner.set_suite_definition_configuration(input);
         self
     }
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn get_suite_definition_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
+    pub fn get_suite_definition_configuration(&self) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
         self.inner.get_suite_definition_configuration()
     }
     /// Adds a key-value pair to `tags`.
@@ -151,30 +129,17 @@ impl CreateSuiteDefinitionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be attached to the suite definition.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be attached to the suite definition.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be attached to the suite definition.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

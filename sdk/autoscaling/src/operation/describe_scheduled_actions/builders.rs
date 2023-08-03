@@ -27,7 +27,7 @@ impl DescribeScheduledActionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder,
+    inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder,
 }
 impl DescribeScheduledActionsFluentBuilder {
     /// Creates a new `DescribeScheduledActions`.
@@ -38,10 +38,7 @@ impl DescribeScheduledActionsFluentBuilder {
         }
     }
     /// Access the DescribeScheduledActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeScheduledActionsFluentBuilder {
             crate::operation::describe_scheduled_actions::DescribeScheduledActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeScheduledActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +106,23 @@ impl DescribeScheduledActionsFluentBuilder {
             crate::operation::describe_scheduled_actions::DescribeScheduledActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator {
         crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -159,27 +136,19 @@ impl DescribeScheduledActionsFluentBuilder {
     ///
     /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
-    pub fn scheduled_action_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_names(input.into());
         self
     }
     /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
-    pub fn set_scheduled_action_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scheduled_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_scheduled_action_names(input);
         self
     }
     /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
-    pub fn get_scheduled_action_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scheduled_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scheduled_action_names()
     }
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
@@ -188,10 +157,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self
     }
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -205,10 +171,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self
     }
     /// <p>The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

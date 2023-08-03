@@ -15,18 +15,14 @@ impl DescribePlatformVersionInput {
 }
 impl DescribePlatformVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribePlatformVersionInput`](crate::operation::describe_platform_version::DescribePlatformVersionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_platform_version::builders::DescribePlatformVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_platform_version::builders::DescribePlatformVersionInputBuilder {
         crate::operation::describe_platform_version::builders::DescribePlatformVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePlatformVersionInput`](crate::operation::describe_platform_version::DescribePlatformVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlatformVersionInputBuilder {
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl DescribePlatformVersionInputBuilder {
         crate::operation::describe_platform_version::DescribePlatformVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_platform_version::DescribePlatformVersionInput {
-                platform_arn: self.platform_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_platform_version::DescribePlatformVersionInput {
+            platform_arn: self.platform_arn,
+        })
     }
 }

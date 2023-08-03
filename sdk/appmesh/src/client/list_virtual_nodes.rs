@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`virtual_nodes(Option<Vec<VirtualNodeRef>>)`](crate::operation::list_virtual_nodes::ListVirtualNodesOutput::virtual_nodes): <p>The list of existing virtual nodes for the specified service mesh.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_virtual_nodes::ListVirtualNodesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListVirtualNodesError>`](crate::operation::list_virtual_nodes::ListVirtualNodesError)
-    pub fn list_virtual_nodes(
-        &self,
-    ) -> crate::operation::list_virtual_nodes::builders::ListVirtualNodesFluentBuilder {
-        crate::operation::list_virtual_nodes::builders::ListVirtualNodesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_virtual_nodes(&self) -> crate::operation::list_virtual_nodes::builders::ListVirtualNodesFluentBuilder {
+        crate::operation::list_virtual_nodes::builders::ListVirtualNodesFluentBuilder::new(self.handle.clone())
     }
 }

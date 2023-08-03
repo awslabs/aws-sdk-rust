@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAssessmentReportOutput`](crate::operation::create_assessment_report::CreateAssessmentReportOutput) with field(s):
     ///   - [`assessment_report(Option<AssessmentReport>)`](crate::operation::create_assessment_report::CreateAssessmentReportOutput::assessment_report): <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
     /// - On failure, responds with [`SdkError<CreateAssessmentReportError>`](crate::operation::create_assessment_report::CreateAssessmentReportError)
-    pub fn create_assessment_report(
-        &self,
-    ) -> crate::operation::create_assessment_report::builders::CreateAssessmentReportFluentBuilder
-    {
+    pub fn create_assessment_report(&self) -> crate::operation::create_assessment_report::builders::CreateAssessmentReportFluentBuilder {
         crate::operation::create_assessment_report::builders::CreateAssessmentReportFluentBuilder::new(self.handle.clone())
     }
 }

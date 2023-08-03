@@ -99,8 +99,7 @@ impl ::aws_http::request_id::RequestId for RecognizeUtteranceOutput {
 }
 impl RecognizeUtteranceOutput {
     /// Creates a new builder-style object to manufacture [`RecognizeUtteranceOutput`](crate::operation::recognize_utterance::RecognizeUtteranceOutput).
-    pub fn builder(
-    ) -> crate::operation::recognize_utterance::builders::RecognizeUtteranceOutputBuilder {
+    pub fn builder() -> crate::operation::recognize_utterance::builders::RecognizeUtteranceOutputBuilder {
         crate::operation::recognize_utterance::builders::RecognizeUtteranceOutputBuilder::default()
     }
 }
@@ -170,20 +169,14 @@ impl RecognizeUtteranceOutputBuilder {
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     /// <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    pub fn interpretations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interpretations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interpretations = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     /// <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    pub fn set_interpretations(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interpretations(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interpretations = input;
         self
     }
@@ -196,20 +189,14 @@ impl RecognizeUtteranceOutputBuilder {
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action might be.</p>
     /// <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    pub fn session_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action might be.</p>
     /// <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_state = input;
         self
     }
@@ -221,19 +208,13 @@ impl RecognizeUtteranceOutputBuilder {
     }
     /// <p>The attributes sent in the request.</p>
     /// <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
-    pub fn request_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attributes sent in the request.</p>
     /// <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_attributes = input;
         self
     }
@@ -259,20 +240,14 @@ impl RecognizeUtteranceOutputBuilder {
     /// <p>The text used to process the request.</p>
     /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>
     /// <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    pub fn input_transcript(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_transcript(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_transcript = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text used to process the request.</p>
     /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>
     /// <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
-    pub fn set_input_transcript(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_transcript = input;
         self
     }
@@ -288,32 +263,21 @@ impl RecognizeUtteranceOutputBuilder {
         self
     }
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
-    pub fn set_audio_stream(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
-    pub fn get_audio_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.audio_stream
     }
     /// <p>The bot member that recognized the utterance.</p>
-    pub fn recognized_bot_member(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recognized_bot_member(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recognized_bot_member = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bot member that recognized the utterance.</p>
-    pub fn set_recognized_bot_member(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recognized_bot_member(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recognized_bot_member = input;
         self
     }

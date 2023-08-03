@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`InvokeScreenAutomationOutput`](crate::operation::invoke_screen_automation::InvokeScreenAutomationOutput) with field(s):
     ///   - [`workbook_cursor(i64)`](crate::operation::invoke_screen_automation::InvokeScreenAutomationOutput::workbook_cursor): <p>The updated workbook cursor after performing the automation action.</p>
     /// - On failure, responds with [`SdkError<InvokeScreenAutomationError>`](crate::operation::invoke_screen_automation::InvokeScreenAutomationError)
-    pub fn invoke_screen_automation(
-        &self,
-    ) -> crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationFluentBuilder
-    {
+    pub fn invoke_screen_automation(&self) -> crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationFluentBuilder {
         crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationFluentBuilder::new(self.handle.clone())
     }
 }

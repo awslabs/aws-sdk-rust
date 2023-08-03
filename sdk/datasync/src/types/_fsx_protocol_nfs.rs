@@ -23,9 +23,7 @@ impl FsxProtocolNfs {
 
 /// A builder for [`FsxProtocolNfs`](crate::types::FsxProtocolNfs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FsxProtocolNfsBuilder {
     pub(crate) mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
 }
@@ -36,10 +34,7 @@ impl FsxProtocolNfsBuilder {
         self
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NfsMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::NfsMountOptions>) -> Self {
         self.mount_options = input;
         self
     }

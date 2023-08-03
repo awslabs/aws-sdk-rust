@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PollForJobsOutput`](crate::operation::poll_for_jobs::PollForJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec<Job>>)`](crate::operation::poll_for_jobs::PollForJobsOutput::jobs): <p>Information about the jobs to take action on.</p>
     /// - On failure, responds with [`SdkError<PollForJobsError>`](crate::operation::poll_for_jobs::PollForJobsError)
-    pub fn poll_for_jobs(
-        &self,
-    ) -> crate::operation::poll_for_jobs::builders::PollForJobsFluentBuilder {
-        crate::operation::poll_for_jobs::builders::PollForJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn poll_for_jobs(&self) -> crate::operation::poll_for_jobs::builders::PollForJobsFluentBuilder {
+        crate::operation::poll_for_jobs::builders::PollForJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTriggerOutput`](crate::operation::update_trigger::UpdateTriggerOutput) with field(s):
     ///   - [`trigger(Option<Trigger>)`](crate::operation::update_trigger::UpdateTriggerOutput::trigger): <p>The resulting trigger definition.</p>
     /// - On failure, responds with [`SdkError<UpdateTriggerError>`](crate::operation::update_trigger::UpdateTriggerError)
-    pub fn update_trigger(
-        &self,
-    ) -> crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder {
-        crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_trigger(&self) -> crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder {
+        crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder::new(self.handle.clone())
     }
 }

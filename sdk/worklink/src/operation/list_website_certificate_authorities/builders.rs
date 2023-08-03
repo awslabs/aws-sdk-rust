@@ -5,16 +5,16 @@ pub use crate::operation::list_website_certificate_authorities::_list_website_ce
 
 impl ListWebsiteCertificateAuthoritiesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_website_certificate_authorities();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -23,13 +23,11 @@ impl ListWebsiteCertificateAuthoritiesInputBuilder {
 /// Fluent builder constructing a request to `ListWebsiteCertificateAuthorities`.
 ///
 /// <p>Retrieves a list of certificate authorities added for the current account and Region.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWebsiteCertificateAuthoritiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder,
+    inner: crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder,
 }
 impl ListWebsiteCertificateAuthoritiesFluentBuilder {
     /// Creates a new `ListWebsiteCertificateAuthorities`.
@@ -40,15 +38,20 @@ impl ListWebsiteCertificateAuthoritiesFluentBuilder {
         }
     }
     /// Access the ListWebsiteCertificateAuthorities as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_website_certificate_authorities::builders::ListWebsiteCertificateAuthoritiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthorities, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthorities,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +60,17 @@ impl ListWebsiteCertificateAuthoritiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,23 +88,32 @@ impl ListWebsiteCertificateAuthoritiesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthorities, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthorities,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_website_certificate_authorities::paginator::ListWebsiteCertificateAuthoritiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_website_certificate_authorities::paginator::ListWebsiteCertificateAuthoritiesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_website_certificate_authorities::paginator::ListWebsiteCertificateAuthoritiesPaginator {
         crate::operation::list_website_certificate_authorities::paginator::ListWebsiteCertificateAuthoritiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the fleet.</p>

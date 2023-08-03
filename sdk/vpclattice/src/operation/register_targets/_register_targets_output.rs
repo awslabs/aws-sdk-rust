@@ -35,9 +35,7 @@ impl RegisterTargetsOutput {
 
 /// A builder for [`RegisterTargetsOutput`](crate::operation::register_targets::RegisterTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterTargetsOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>,
@@ -56,10 +54,7 @@ impl RegisterTargetsOutputBuilder {
         self
     }
     /// <p>The targets that were successfully registered.</p>
-    pub fn set_successful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.successful = input;
         self
     }
@@ -79,17 +74,12 @@ impl RegisterTargetsOutputBuilder {
         self
     }
     /// <p>The targets that were not registered.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>,
-    ) -> Self {
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>) -> Self {
         self.unsuccessful = input;
         self
     }
     /// <p>The targets that were not registered.</p>
-    pub fn get_unsuccessful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>> {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

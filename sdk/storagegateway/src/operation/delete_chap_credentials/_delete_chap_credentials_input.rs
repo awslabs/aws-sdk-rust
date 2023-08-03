@@ -27,18 +27,14 @@ impl DeleteChapCredentialsInput {
 }
 impl DeleteChapCredentialsInput {
     /// Creates a new builder-style object to manufacture [`DeleteChapCredentialsInput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsInputBuilder {
         crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChapCredentialsInput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChapCredentialsInputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) initiator_name: ::std::option::Option<::std::string::String>,
@@ -59,18 +55,12 @@ impl DeleteChapCredentialsInputBuilder {
         &self.target_arn
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initiator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initiator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn set_initiator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initiator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initiator_name = input;
         self
     }
@@ -81,15 +71,11 @@ impl DeleteChapCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChapCredentialsInput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_chap_credentials::DeleteChapCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_chap_credentials::DeleteChapCredentialsInput {
-                target_arn: self.target_arn,
-                initiator_name: self.initiator_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_chap_credentials::DeleteChapCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_chap_credentials::DeleteChapCredentialsInput {
+            target_arn: self.target_arn,
+            initiator_name: self.initiator_name,
+        })
     }
 }

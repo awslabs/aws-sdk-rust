@@ -27,7 +27,7 @@ impl ListOriginAccessControlsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOriginAccessControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder,
+    inner: crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder,
 }
 impl ListOriginAccessControlsFluentBuilder {
     /// Creates a new `ListOriginAccessControls`.
@@ -38,7 +38,7 @@ impl ListOriginAccessControlsFluentBuilder {
         }
     }
     /// Access the ListOriginAccessControls as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListOriginAccessControlsFluentBuilder {
             crate::operation::list_origin_access_controls::ListOriginAccessControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_origin_access_controls::ListOriginAccessControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListOriginAccessControlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListOriginAccessControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_origin_access_controls::ListOriginAccessControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListOriginAccessControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_origin_access_controls::ListOriginAccessControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl ListOriginAccessControlsFluentBuilder {
             crate::operation::list_origin_access_controls::ListOriginAccessControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_origin_access_controls::ListOriginAccessControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError>,
     > {
         self.customize_middleware().await
     }

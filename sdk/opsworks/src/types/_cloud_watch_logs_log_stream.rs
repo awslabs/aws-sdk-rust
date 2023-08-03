@@ -68,9 +68,7 @@ impl CloudWatchLogsLogStream {
         self.multi_line_start_pattern.as_deref()
     }
     /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
-    pub fn initial_position(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogsInitialPosition> {
+    pub fn initial_position(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsInitialPosition> {
         self.initial_position.as_ref()
     }
     /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
@@ -99,9 +97,7 @@ impl CloudWatchLogsLogStream {
 
 /// A builder for [`CloudWatchLogsLogStream`](crate::types::CloudWatchLogsLogStream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogsLogStreamBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) datetime_format: ::std::option::Option<::std::string::String>,
@@ -117,18 +113,12 @@ pub struct CloudWatchLogsLogStreamBuilder {
 }
 impl CloudWatchLogsLogStreamBuilder {
     /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -137,18 +127,12 @@ impl CloudWatchLogsLogStreamBuilder {
         &self.log_group_name
     }
     /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
-    pub fn datetime_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datetime_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datetime_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
-    pub fn set_datetime_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datetime_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datetime_format = input;
         self
     }
@@ -162,10 +146,7 @@ impl CloudWatchLogsLogStreamBuilder {
         self
     }
     /// <p>Specifies the time zone of log event time stamps.</p>
-    pub fn set_time_zone(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsTimeZone>,
-    ) -> Self {
+    pub fn set_time_zone(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsTimeZone>) -> Self {
         self.time_zone = input;
         self
     }
@@ -194,18 +175,12 @@ impl CloudWatchLogsLogStreamBuilder {
         &self.file
     }
     /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
-    pub fn file_fingerprint_lines(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_fingerprint_lines(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_fingerprint_lines = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
-    pub fn set_file_fingerprint_lines(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_fingerprint_lines(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_fingerprint_lines = input;
         self
     }
@@ -214,18 +189,12 @@ impl CloudWatchLogsLogStreamBuilder {
         &self.file_fingerprint_lines
     }
     /// <p>Specifies the pattern for identifying the start of a log message.</p>
-    pub fn multi_line_start_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multi_line_start_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multi_line_start_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the pattern for identifying the start of a log message.</p>
-    pub fn set_multi_line_start_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_multi_line_start_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multi_line_start_pattern = input;
         self
     }
@@ -239,17 +208,12 @@ impl CloudWatchLogsLogStreamBuilder {
         self
     }
     /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
-    pub fn set_initial_position(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsInitialPosition>,
-    ) -> Self {
+    pub fn set_initial_position(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsInitialPosition>) -> Self {
         self.initial_position = input;
         self
     }
     /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
-    pub fn get_initial_position(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsInitialPosition> {
+    pub fn get_initial_position(&self) -> &::std::option::Option<crate::types::CloudWatchLogsInitialPosition> {
         &self.initial_position
     }
     /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
@@ -258,10 +222,7 @@ impl CloudWatchLogsLogStreamBuilder {
         self
     }
     /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
-    pub fn set_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsEncoding>,
-    ) -> Self {
+    pub fn set_encoding(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsEncoding>) -> Self {
         self.encoding = input;
         self
     }

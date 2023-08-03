@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`association_versions(Option<Vec<AssociationVersionInfo>>)`](crate::operation::list_association_versions::ListAssociationVersionsOutput::association_versions): <p>Information about all versions of the association for the specified association ID.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_association_versions::ListAssociationVersionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAssociationVersionsError>`](crate::operation::list_association_versions::ListAssociationVersionsError)
-    pub fn list_association_versions(
-        &self,
-    ) -> crate::operation::list_association_versions::builders::ListAssociationVersionsFluentBuilder
-    {
+    pub fn list_association_versions(&self) -> crate::operation::list_association_versions::builders::ListAssociationVersionsFluentBuilder {
         crate::operation::list_association_versions::builders::ListAssociationVersionsFluentBuilder::new(self.handle.clone())
     }
 }

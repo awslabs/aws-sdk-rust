@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`intents(Option<Vec<BuiltinIntentMetadata>>)`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput::intents): <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput::next_token): <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
     /// - On failure, responds with [`SdkError<GetBuiltinIntentsError>`](crate::operation::get_builtin_intents::GetBuiltinIntentsError)
-    pub fn get_builtin_intents(
-        &self,
-    ) -> crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder {
-        crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_builtin_intents(&self) -> crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder {
+        crate::operation::get_builtin_intents::builders::GetBuiltinIntentsFluentBuilder::new(self.handle.clone())
     }
 }

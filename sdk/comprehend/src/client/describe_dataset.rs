@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput) with field(s):
     ///   - [`dataset_properties(Option<DatasetProperties>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_properties): <p>The dataset properties.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
-    pub fn describe_dataset(
-        &self,
-    ) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
-        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
+        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(self.handle.clone())
     }
 }

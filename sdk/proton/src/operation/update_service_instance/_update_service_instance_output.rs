@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateServiceInstanceOutput {
 }
 impl UpdateServiceInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceInstanceOutput`](crate::operation::update_service_instance::UpdateServiceInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_service_instance::builders::UpdateServiceInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_instance::builders::UpdateServiceInstanceOutputBuilder {
         crate::operation::update_service_instance::builders::UpdateServiceInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceInstanceOutput`](crate::operation::update_service_instance::UpdateServiceInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceInstanceOutputBuilder {
     pub(crate) service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateServiceInstanceOutputBuilder {
         self
     }
     /// <p>The service instance summary data that's returned by Proton.</p>
-    pub fn set_service_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceInstance>,
-    ) -> Self {
+    pub fn set_service_instance(mut self, input: ::std::option::Option<crate::types::ServiceInstance>) -> Self {
         self.service_instance = input;
         self
     }

@@ -23,16 +23,14 @@ impl ::aws_http::request_id::RequestId for CreateCertificateAuthorityOutput {
 }
 impl CreateCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityOutput`](crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityOutputBuilder {
         crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCertificateAuthorityOutput`](crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCertificateAuthorityOutputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -40,19 +38,13 @@ pub struct CreateCertificateAuthorityOutputBuilder {
 impl CreateCertificateAuthorityOutputBuilder {
     /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -71,9 +63,7 @@ impl CreateCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCertificateAuthorityOutput`](crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput {
         crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput {
             certificate_authority_arn: self.certificate_authority_arn,
             _request_id: self._request_id,

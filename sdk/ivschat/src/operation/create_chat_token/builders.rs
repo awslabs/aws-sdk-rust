@@ -10,10 +10,7 @@ impl CreateChatTokenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_chat_token::CreateChatTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_chat_token::CreateChatTokenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_chat_token::CreateChatTokenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_chat_token();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateChatTokenFluentBuilder {
         }
     }
     /// Access the CreateChatToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_chat_token::builders::CreateChatTokenInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_chat_token::builders::CreateChatTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateChatTokenFluentBuilder {
             crate::operation::create_chat_token::CreateChatToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_chat_token::CreateChatTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_chat_token::CreateChatTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateChatTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateChatTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_chat_token::CreateChatTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_chat_token::CreateChatTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_chat_token::CreateChatTokenError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateChatTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_chat_token::CreateChatTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_chat_token::CreateChatTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_chat_token::CreateChatTokenError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl CreateChatTokenFluentBuilder {
             crate::operation::create_chat_token::CreateChatToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_chat_token::CreateChatTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_chat_token::CreateChatTokenError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
-    pub fn room_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_identifier(input.into());
         self
     }
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
-    pub fn set_room_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_identifier(input);
         self
     }
@@ -169,17 +147,12 @@ impl CreateChatTokenFluentBuilder {
         self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>> {
         self.inner.get_capabilities()
     }
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
@@ -201,30 +174,17 @@ impl CreateChatTokenFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

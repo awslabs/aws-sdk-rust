@@ -30,9 +30,7 @@ impl SyncResourceStatus {
 
 /// A builder for [`SyncResourceStatus`](crate::types::SyncResourceStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SyncResourceStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SyncResourceState>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,
@@ -44,10 +42,7 @@ impl SyncResourceStatusBuilder {
         self
     }
     /// <p>The sync resource status state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncResourceState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::SyncResourceState>) -> Self {
         self.state = input;
         self
     }

@@ -23,9 +23,7 @@ impl IntegerDatasetParameterDefaultValues {
 
 /// A builder for [`IntegerDatasetParameterDefaultValues`](crate::types::IntegerDatasetParameterDefaultValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegerDatasetParameterDefaultValuesBuilder {
     pub(crate) static_values: ::std::option::Option<::std::vec::Vec<i64>>,
 }

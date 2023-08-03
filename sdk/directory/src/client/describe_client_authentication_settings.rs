@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`client_authentication_settings_info(Option<Vec<ClientAuthenticationSettingInfo>>)`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput::client_authentication_settings_info): <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput::next_token): <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
     /// - On failure, responds with [`SdkError<DescribeClientAuthenticationSettingsError>`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsError)
-    pub fn describe_client_authentication_settings(&self) -> crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsFluentBuilder{
-        crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsFluentBuilder::new(self.handle.clone())
+    pub fn describe_client_authentication_settings(
+        &self,
+    ) -> crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsFluentBuilder {
+        crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -5,8 +5,7 @@
 pub struct SearchTransitGatewayMulticastGroupsOutput {
     /// <p>Information about the transit gateway multicast group.</p>
     #[doc(hidden)]
-    pub multicast_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>>,
+    pub multicast_groups: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct SearchTransitGatewayMulticastGroupsOutput {
 }
 impl SearchTransitGatewayMulticastGroupsOutput {
     /// <p>Information about the transit gateway multicast group.</p>
-    pub fn multicast_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayMulticastGroup]> {
+    pub fn multicast_groups(&self) -> ::std::option::Option<&[crate::types::TransitGatewayMulticastGroup]> {
         self.multicast_groups.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for SearchTransitGatewayMulticastGroupsOu
 }
 impl SearchTransitGatewayMulticastGroupsOutput {
     /// Creates a new builder-style object to manufacture [`SearchTransitGatewayMulticastGroupsOutput`](crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput).
-    pub fn builder() -> crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsOutputBuilder {
         crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchTransitGatewayMulticastGroupsOutput`](crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTransitGatewayMulticastGroupsOutputBuilder {
-    pub(crate) multicast_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>>,
+    pub(crate) multicast_groups: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl SearchTransitGatewayMulticastGroupsOutputBuilder {
         self
     }
     /// <p>Information about the transit gateway multicast group.</p>
-    pub fn set_multicast_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>>,
-    ) -> Self {
+    pub fn set_multicast_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>>) -> Self {
         self.multicast_groups = input;
         self
     }
     /// <p>Information about the transit gateway multicast group.</p>
-    pub fn get_multicast_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>> {
+    pub fn get_multicast_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>> {
         &self.multicast_groups
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,12 +86,10 @@ impl SearchTransitGatewayMulticastGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchTransitGatewayMulticastGroupsOutput`](crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput).
-    pub fn build(self) -> crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput{
+    pub fn build(self) -> crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput {
         crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput {
-            multicast_groups: self.multicast_groups
-            ,
-            next_token: self.next_token
-            ,
+            multicast_groups: self.multicast_groups,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

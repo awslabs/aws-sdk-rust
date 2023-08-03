@@ -36,18 +36,14 @@ impl StartProductSubscriptionInput {
 }
 impl StartProductSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`StartProductSubscriptionInput`](crate::operation::start_product_subscription::StartProductSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder {
         crate::operation::start_product_subscription::builders::StartProductSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartProductSubscriptionInput`](crate::operation::start_product_subscription::StartProductSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartProductSubscriptionInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
@@ -75,10 +71,7 @@ impl StartProductSubscriptionInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -121,13 +114,11 @@ impl StartProductSubscriptionInputBuilder {
         crate::operation::start_product_subscription::StartProductSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_product_subscription::StartProductSubscriptionInput {
-                username: self.username,
-                identity_provider: self.identity_provider,
-                product: self.product,
-                domain: self.domain,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_product_subscription::StartProductSubscriptionInput {
+            username: self.username,
+            identity_provider: self.identity_provider,
+            product: self.product,
+            domain: self.domain,
+        })
     }
 }

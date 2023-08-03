@@ -26,7 +26,7 @@ impl ResetAllResourceLogLevelsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetAllResourceLogLevelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsInputBuilder,
+    inner: crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsInputBuilder,
 }
 impl ResetAllResourceLogLevelsFluentBuilder {
     /// Creates a new `ResetAllResourceLogLevels`.
@@ -37,7 +37,7 @@ impl ResetAllResourceLogLevelsFluentBuilder {
         }
     }
     /// Access the ResetAllResourceLogLevels as a reference.
-    pub fn as_input(&self) -> &crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ResetAllResourceLogLevelsFluentBuilder {
             crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ResetAllResourceLogLevelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ResetAllResourceLogLevelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ResetAllResourceLogLevelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ResetAllResourceLogLevelsFluentBuilder {
             crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError>,
     > {
         self.customize_middleware().await
     }

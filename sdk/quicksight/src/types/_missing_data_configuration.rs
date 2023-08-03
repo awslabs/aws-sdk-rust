@@ -20,9 +20,7 @@ impl MissingDataConfiguration {
     /// <li> <p> <code>SHOW_AS_ZERO</code>: Show missing values as the value <code>0</code>.</p> </li>
     /// <li> <p> <code>SHOW_AS_BLANK</code>: Display a blank space when rendering missing data.</p> </li>
     /// </ul>
-    pub fn treatment_option(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MissingDataTreatmentOption> {
+    pub fn treatment_option(&self) -> ::std::option::Option<&crate::types::MissingDataTreatmentOption> {
         self.treatment_option.as_ref()
     }
 }
@@ -35,9 +33,7 @@ impl MissingDataConfiguration {
 
 /// A builder for [`MissingDataConfiguration`](crate::types::MissingDataConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MissingDataConfigurationBuilder {
     pub(crate) treatment_option: ::std::option::Option<crate::types::MissingDataTreatmentOption>,
 }
@@ -58,10 +54,7 @@ impl MissingDataConfigurationBuilder {
     /// <li> <p> <code>SHOW_AS_ZERO</code>: Show missing values as the value <code>0</code>.</p> </li>
     /// <li> <p> <code>SHOW_AS_BLANK</code>: Display a blank space when rendering missing data.</p> </li>
     /// </ul>
-    pub fn set_treatment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::MissingDataTreatmentOption>,
-    ) -> Self {
+    pub fn set_treatment_option(mut self, input: ::std::option::Option<crate::types::MissingDataTreatmentOption>) -> Self {
         self.treatment_option = input;
         self
     }
@@ -71,9 +64,7 @@ impl MissingDataConfigurationBuilder {
     /// <li> <p> <code>SHOW_AS_ZERO</code>: Show missing values as the value <code>0</code>.</p> </li>
     /// <li> <p> <code>SHOW_AS_BLANK</code>: Display a blank space when rendering missing data.</p> </li>
     /// </ul>
-    pub fn get_treatment_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::MissingDataTreatmentOption> {
+    pub fn get_treatment_option(&self) -> &::std::option::Option<crate::types::MissingDataTreatmentOption> {
         &self.treatment_option
     }
     /// Consumes the builder and constructs a [`MissingDataConfiguration`](crate::types::MissingDataConfiguration).

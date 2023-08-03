@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteChannelPolicyOutput {
 }
 impl DeleteChannelPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelPolicyOutput`](crate::operation::delete_channel_policy::DeleteChannelPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_channel_policy::builders::DeleteChannelPolicyOutputBuilder {
-        crate::operation::delete_channel_policy::builders::DeleteChannelPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_channel_policy::builders::DeleteChannelPolicyOutputBuilder {
+        crate::operation::delete_channel_policy::builders::DeleteChannelPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChannelPolicyOutput`](crate::operation::delete_channel_policy::DeleteChannelPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelPolicyOutputBuilder {
     _request_id: Option<String>,
 }

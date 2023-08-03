@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`instances(Option<Vec<InstanceSummary>>)`](crate::operation::list_instances::ListInstancesOutput::instances): <p>Summary information about the instances that are associated with the specified service.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instances::ListInstancesOutput::next_token): <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::operation::list_instances::ListInstancesError)
-    pub fn list_instances(
-        &self,
-    ) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
-        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_instances(&self) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
+        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(self.handle.clone())
     }
 }

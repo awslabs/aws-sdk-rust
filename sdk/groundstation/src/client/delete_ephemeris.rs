@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEphemerisOutput`](crate::operation::delete_ephemeris::DeleteEphemerisOutput) with field(s):
     ///   - [`ephemeris_id(Option<String>)`](crate::operation::delete_ephemeris::DeleteEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
     /// - On failure, responds with [`SdkError<DeleteEphemerisError>`](crate::operation::delete_ephemeris::DeleteEphemerisError)
-    pub fn delete_ephemeris(
-        &self,
-    ) -> crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder {
-        crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ephemeris(&self) -> crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder {
+        crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,18 +35,14 @@ impl UpdateTagsForResourceInput {
 }
 impl UpdateTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateTagsForResourceInput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceInput).
-    pub fn builder(
-    ) -> crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder {
         crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTagsForResourceInput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTagsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags_to_add: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -84,10 +80,7 @@ impl UpdateTagsForResourceInputBuilder {
     }
     /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn set_tags_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags_to_add = input;
         self
     }
@@ -102,10 +95,7 @@ impl UpdateTagsForResourceInputBuilder {
     ///
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn tags_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tags_to_remove.unwrap_or_default();
         v.push(input.into());
         self.tags_to_remove = ::std::option::Option::Some(v);
@@ -113,33 +103,24 @@ impl UpdateTagsForResourceInputBuilder {
     }
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn set_tags_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tags_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tags_to_remove = input;
         self
     }
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn get_tags_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tags_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateTagsForResourceInput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_tags_for_resource::UpdateTagsForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceInput {
-                resource_arn: self.resource_arn,
-                tags_to_add: self.tags_to_add,
-                tags_to_remove: self.tags_to_remove,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_tags_for_resource::UpdateTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_tags_for_resource::UpdateTagsForResourceInput {
+            resource_arn: self.resource_arn,
+            tags_to_add: self.tags_to_add,
+            tags_to_remove: self.tags_to_remove,
+        })
     }
 }

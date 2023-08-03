@@ -15,35 +15,25 @@ impl ConfirmCustomerAgreementInput {
 }
 impl ConfirmCustomerAgreementInput {
     /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementInput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput).
-    pub fn builder(
-    ) -> crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder
-    {
+    pub fn builder() -> crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder {
         crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmCustomerAgreementInput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementInputBuilder {
     pub(crate) agreement_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmCustomerAgreementInputBuilder {
     /// <p> The name of the customer agreement. </p>
-    pub fn agreement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agreement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agreement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the customer agreement. </p>
-    pub fn set_agreement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agreement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agreement_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl ConfirmCustomerAgreementInputBuilder {
         crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput {
-                agreement_name: self.agreement_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput {
+            agreement_name: self.agreement_name,
+        })
     }
 }

@@ -29,17 +29,14 @@ impl GetGroupMembershipIdInput {
 }
 impl GetGroupMembershipIdInput {
     /// Creates a new builder-style object to manufacture [`GetGroupMembershipIdInput`](crate::operation::get_group_membership_id::GetGroupMembershipIdInput).
-    pub fn builder(
-    ) -> crate::operation::get_group_membership_id::builders::GetGroupMembershipIdInputBuilder {
+    pub fn builder() -> crate::operation::get_group_membership_id::builders::GetGroupMembershipIdInputBuilder {
         crate::operation::get_group_membership_id::builders::GetGroupMembershipIdInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupMembershipIdInput`](crate::operation::get_group_membership_id::GetGroupMembershipIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupMembershipIdInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct GetGroupMembershipIdInputBuilder {
 }
 impl GetGroupMembershipIdInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -97,16 +88,12 @@ impl GetGroupMembershipIdInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupMembershipIdInput`](crate::operation::get_group_membership_id::GetGroupMembershipIdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_group_membership_id::GetGroupMembershipIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_group_membership_id::GetGroupMembershipIdInput {
-                identity_store_id: self.identity_store_id,
-                group_id: self.group_id,
-                member_id: self.member_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_group_membership_id::GetGroupMembershipIdInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_group_membership_id::GetGroupMembershipIdInput {
+            identity_store_id: self.identity_store_id,
+            group_id: self.group_id,
+            member_id: self.member_id,
+        })
     }
 }

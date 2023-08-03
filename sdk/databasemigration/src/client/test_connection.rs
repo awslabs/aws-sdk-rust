@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput) with field(s):
     ///   - [`connection(Option<Connection>)`](crate::operation::test_connection::TestConnectionOutput::connection): <p>The connection tested.</p>
     /// - On failure, responds with [`SdkError<TestConnectionError>`](crate::operation::test_connection::TestConnectionError)
-    pub fn test_connection(
-        &self,
-    ) -> crate::operation::test_connection::builders::TestConnectionFluentBuilder {
-        crate::operation::test_connection::builders::TestConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_connection(&self) -> crate::operation::test_connection::builders::TestConnectionFluentBuilder {
+        crate::operation::test_connection::builders::TestConnectionFluentBuilder::new(self.handle.clone())
     }
 }

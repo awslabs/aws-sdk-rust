@@ -26,7 +26,7 @@ impl ListMediaCapturePipelinesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMediaCapturePipelinesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder,
+    inner: crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder,
 }
 impl ListMediaCapturePipelinesFluentBuilder {
     /// Creates a new `ListMediaCapturePipelines`.
@@ -37,7 +37,7 @@ impl ListMediaCapturePipelinesFluentBuilder {
         }
     }
     /// Access the ListMediaCapturePipelines as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListMediaCapturePipelinesFluentBuilder {
             crate::operation::list_media_capture_pipelines::ListMediaCapturePipelines,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListMediaCapturePipelinesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListMediaCapturePipelinesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListMediaCapturePipelinesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListMediaCapturePipelinesFluentBuilder {
             crate::operation::list_media_capture_pipelines::ListMediaCapturePipelines,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator {
         crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator::new(self.handle, self.inner)
     }
     /// <p>The token used to retrieve the next page of results.</p>

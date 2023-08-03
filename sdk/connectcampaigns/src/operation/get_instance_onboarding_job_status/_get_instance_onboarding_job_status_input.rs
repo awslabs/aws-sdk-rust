@@ -16,33 +16,25 @@ impl GetInstanceOnboardingJobStatusInput {
 }
 impl GetInstanceOnboardingJobStatusInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceOnboardingJobStatusInput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput).
-    pub fn builder() -> crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusInputBuilder {
         crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceOnboardingJobStatusInput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceOnboardingJobStatusInputBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceOnboardingJobStatusInputBuilder {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_instance_id = input;
         self
     }
@@ -59,9 +51,8 @@ impl GetInstanceOnboardingJobStatusInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput {
-                connect_instance_id: self.connect_instance_id
-                ,
-            }
+                connect_instance_id: self.connect_instance_id,
+            },
         )
     }
 }

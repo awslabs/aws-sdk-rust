@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`generated_code_jobs(Option<Vec<GeneratedCodeJobDetails>>)`](crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsOutput::generated_code_jobs): <p>The list of generated code jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     /// - On failure, responds with [`SdkError<ListGeneratedCodeJobsError>`](crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError)
-    pub fn list_generated_code_jobs(
-        &self,
-    ) -> crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsFluentBuilder
-    {
+    pub fn list_generated_code_jobs(&self) -> crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsFluentBuilder {
         crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsFluentBuilder::new(self.handle.clone())
     }
 }

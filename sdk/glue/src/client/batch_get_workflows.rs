@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`workflows(Option<Vec<Workflow>>)`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput::workflows): <p>A list of workflow resource metadata.</p>
     ///   - [`missing_workflows(Option<Vec<String>>)`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput::missing_workflows): <p>A list of names of workflows not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetWorkflowsError>`](crate::operation::batch_get_workflows::BatchGetWorkflowsError)
-    pub fn batch_get_workflows(
-        &self,
-    ) -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder {
-        crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_workflows(&self) -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder {
+        crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder::new(self.handle.clone())
     }
 }

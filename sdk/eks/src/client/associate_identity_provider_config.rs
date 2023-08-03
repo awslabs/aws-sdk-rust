@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`update(Option<Update>)`](crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigOutput::update): <p>An object representing an asynchronous update.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigOutput::tags): <p>The tags for the resource.</p>
     /// - On failure, responds with [`SdkError<AssociateIdentityProviderConfigError>`](crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigError)
-    pub fn associate_identity_provider_config(&self) -> crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigFluentBuilder{
+    pub fn associate_identity_provider_config(
+        &self,
+    ) -> crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigFluentBuilder {
         crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigFluentBuilder::new(self.handle.clone())
     }
 }

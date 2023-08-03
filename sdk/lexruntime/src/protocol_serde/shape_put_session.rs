@@ -2,8 +2,7 @@
 pub fn ser_put_session_headers(
     input: &crate::operation::put_session::PutSessionInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.accept {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_put_session_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "accept",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Accept", header_value);
@@ -25,8 +21,7 @@ pub fn ser_put_session_headers(
 
 pub fn ser_put_session_input(
     input: &crate::operation::put_session::PutSessionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_session_input::ser_put_session_input(&mut object, input)?;
@@ -37,16 +32,10 @@ pub fn ser_put_session_input(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_session_op_response(
     op_response: &mut ::aws_smithy_http::operation::Response,
-) -> ::std::result::Result<
-    crate::operation::put_session::PutSessionOutput,
-    crate::operation::put_session::PutSessionError,
-> {
+) -> ::std::result::Result<crate::operation::put_session::PutSessionOutput, crate::operation::put_session::PutSessionError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    crate::protocol_serde::shape_put_session::de_put_session_http_response_with_props(
-        response,
-        &properties,
-    )
+    crate::protocol_serde::shape_put_session::de_put_session_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -54,70 +43,26 @@ pub fn de_put_session_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::put_session::PutSessionOutput,
-    crate::operation::put_session::PutSessionError,
-> {
+) -> std::result::Result<crate::operation::put_session::PutSessionOutput, crate::operation::put_session::PutSessionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::put_session::PutSessionError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::put_session::PutSessionError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadGatewayException" => {
-            crate::operation::put_session::PutSessionError::BadGatewayException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output).map_err(crate::operation::put_session::PutSessionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "BadRequestException" => {
-            crate::operation::put_session::PutSessionError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::put_session::PutSessionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ConflictException" => crate::operation::put_session::PutSessionError::ConflictException({
+        "BadGatewayException" => crate::operation::put_session::PutSessionError::BadGatewayException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -126,84 +71,108 @@ pub fn de_put_session_http_error(
             }
             tmp
         }),
-        "DependencyFailedException" => {
-            crate::operation::put_session::PutSessionError::DependencyFailedException({
+        "BadRequestException" => crate::operation::put_session::PutSessionError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::DependencyFailedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output).map_err(crate::operation::put_session::PutSessionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::operation::put_session::PutSessionError::InternalFailureException({
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ConflictException" => crate::operation::put_session::PutSessionError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::put_session::PutSessionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::operation::put_session::PutSessionError::LimitExceededException({
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DependencyFailedException" => crate::operation::put_session::PutSessionError::DependencyFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_session::PutSessionError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotAcceptableException" => {
-            crate::operation::put_session::PutSessionError::NotAcceptableException({
+                let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::put_session::PutSessionError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NotAcceptableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_acceptable_exception::de_not_acceptable_exception_json_err(_response_body, output).map_err(crate::operation::put_session::PutSessionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::put_session::PutSessionError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::put_session::PutSessionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotAcceptableException" => crate::operation::put_session::PutSessionError::NotAcceptableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotAcceptableExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_acceptable_exception::de_not_acceptable_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NotFoundException" => crate::operation::put_session::PutSessionError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -221,10 +190,7 @@ pub fn de_put_session_http_error(
 pub fn de_put_session_http_response_with_props(
     response: &mut ::http::Response<::aws_smithy_http::body::SdkBody>,
     properties: &::aws_smithy_http::property_bag::PropertyBag,
-) -> std::result::Result<
-    crate::operation::put_session::PutSessionOutput,
-    crate::operation::put_session::PutSessionError,
-> {
+) -> std::result::Result<crate::operation::put_session::PutSessionOutput, crate::operation::put_session::PutSessionError> {
     let mut _response_body = ::aws_smithy_http::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
     let _response_body = &mut _response_body;
@@ -233,122 +199,65 @@ pub fn de_put_session_http_response_with_props(
     let _response_headers = response.headers();
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::put_session::builders::PutSessionOutputBuilder::default();
+        let mut output = crate::operation::put_session::builders::PutSessionOutputBuilder::default();
         output = output.set_active_contexts(
-            crate::protocol_serde::shape_put_session_output::de_active_contexts_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse activeContexts from header `x-amz-lex-active-contexts",
-                )
+            crate::protocol_serde::shape_put_session_output::de_active_contexts_header(_response_headers).map_err(|_| {
+                crate::operation::put_session::PutSessionError::unhandled("Failed to parse activeContexts from header `x-amz-lex-active-contexts")
             })?,
         );
-        output = output.set_audio_stream(Some(
-            crate::protocol_serde::shape_put_session_output::de_audio_stream_payload(
-                _response_body,
-            )?,
-        ));
+        output = output.set_audio_stream(Some(crate::protocol_serde::shape_put_session_output::de_audio_stream_payload(
+            _response_body,
+        )?));
         output = output.set_content_type(
-            crate::protocol_serde::shape_put_session_output::de_content_type_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse contentType from header `Content-Type",
-                )
-            })?,
+            crate::protocol_serde::shape_put_session_output::de_content_type_header(_response_headers)
+                .map_err(|_| crate::operation::put_session::PutSessionError::unhandled("Failed to parse contentType from header `Content-Type"))?,
         );
         output = output.set_dialog_state(
-            crate::protocol_serde::shape_put_session_output::de_dialog_state_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse dialogState from header `x-amz-lex-dialog-state",
-                )
+            crate::protocol_serde::shape_put_session_output::de_dialog_state_header(_response_headers).map_err(|_| {
+                crate::operation::put_session::PutSessionError::unhandled("Failed to parse dialogState from header `x-amz-lex-dialog-state")
             })?,
         );
         output = output.set_encoded_message(
-            crate::protocol_serde::shape_put_session_output::de_encoded_message_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse encodedMessage from header `x-amz-lex-encoded-message",
-                )
+            crate::protocol_serde::shape_put_session_output::de_encoded_message_header(_response_headers).map_err(|_| {
+                crate::operation::put_session::PutSessionError::unhandled("Failed to parse encodedMessage from header `x-amz-lex-encoded-message")
             })?,
         );
         output = output.set_intent_name(
-            crate::protocol_serde::shape_put_session_output::de_intent_name_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse intentName from header `x-amz-lex-intent-name",
-                )
+            crate::protocol_serde::shape_put_session_output::de_intent_name_header(_response_headers).map_err(|_| {
+                crate::operation::put_session::PutSessionError::unhandled("Failed to parse intentName from header `x-amz-lex-intent-name")
             })?,
         );
         output = output.set_message(
             crate::protocol_serde::shape_put_session_output::de_message_header(_response_headers)
-                .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse message from header `x-amz-lex-message",
-                )
-            })?,
+                .map_err(|_| crate::operation::put_session::PutSessionError::unhandled("Failed to parse message from header `x-amz-lex-message"))?,
         );
         output = output.set_message_format(
-            crate::protocol_serde::shape_put_session_output::de_message_format_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse messageFormat from header `x-amz-lex-message-format",
-                )
+            crate::protocol_serde::shape_put_session_output::de_message_format_header(_response_headers).map_err(|_| {
+                crate::operation::put_session::PutSessionError::unhandled("Failed to parse messageFormat from header `x-amz-lex-message-format")
             })?,
         );
         output = output.set_session_attributes(
-            crate::protocol_serde::shape_put_session_output::de_session_attributes_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_put_session_output::de_session_attributes_header(_response_headers).map_err(|_| {
                 crate::operation::put_session::PutSessionError::unhandled(
                     "Failed to parse sessionAttributes from header `x-amz-lex-session-attributes",
                 )
             })?,
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_put_session_output::de_session_id_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse sessionId from header `x-amz-lex-session-id",
-                )
+            crate::protocol_serde::shape_put_session_output::de_session_id_header(_response_headers).map_err(|_| {
+                crate::operation::put_session::PutSessionError::unhandled("Failed to parse sessionId from header `x-amz-lex-session-id")
             })?,
         );
         output = output.set_slot_to_elicit(
-            crate::protocol_serde::shape_put_session_output::de_slot_to_elicit_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_session::PutSessionError::unhandled(
-                    "Failed to parse slotToElicit from header `x-amz-lex-slot-to-elicit",
-                )
+            crate::protocol_serde::shape_put_session_output::de_slot_to_elicit_header(_response_headers).map_err(|_| {
+                crate::operation::put_session::PutSessionError::unhandled("Failed to parse slotToElicit from header `x-amz-lex-slot-to-elicit")
             })?,
         );
         output = output.set_slots(
             crate::protocol_serde::shape_put_session_output::de_slots_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::put_session::PutSessionError::unhandled(
-                        "Failed to parse slots from header `x-amz-lex-slots",
-                    )
-                })?,
+                .map_err(|_| crate::operation::put_session::PutSessionError::unhandled("Failed to parse slots from header `x-amz-lex-slots"))?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

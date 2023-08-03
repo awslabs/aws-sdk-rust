@@ -6,7 +6,10 @@ pub fn ser_update_connection_o_auth_request_parameters(
     if let Some(var_1) = &input.client_parameters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ClientParameters").start_object();
-        crate::protocol_serde::shape_update_connection_o_auth_client_request_parameters::ser_update_connection_o_auth_client_request_parameters(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_update_connection_o_auth_client_request_parameters::ser_update_connection_o_auth_client_request_parameters(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.authorization_endpoint {
@@ -18,10 +21,7 @@ pub fn ser_update_connection_o_auth_request_parameters(
     if let Some(var_5) = &input.o_auth_http_parameters {
         #[allow(unused_mut)]
         let mut object_6 = object.key("OAuthHttpParameters").start_object();
-        crate::protocol_serde::shape_connection_http_parameters::ser_connection_http_parameters(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_connection_http_parameters::ser_connection_http_parameters(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

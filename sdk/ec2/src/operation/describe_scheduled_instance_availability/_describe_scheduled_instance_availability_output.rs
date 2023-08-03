@@ -9,8 +9,7 @@ pub struct DescribeScheduledInstanceAvailabilityOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the available Scheduled Instances.</p>
     #[doc(hidden)]
-    pub scheduled_instance_availability_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,
+    pub scheduled_instance_availability_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduledInstanceAvailabilityOutput {
@@ -19,9 +18,7 @@ impl DescribeScheduledInstanceAvailabilityOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the available Scheduled Instances.</p>
-    pub fn scheduled_instance_availability_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledInstanceAvailability]> {
+    pub fn scheduled_instance_availability_set(&self) -> ::std::option::Option<&[crate::types::ScheduledInstanceAvailability]> {
         self.scheduled_instance_availability_set.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeScheduledInstanceAvailability
 }
 impl DescribeScheduledInstanceAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledInstanceAvailabilityOutput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput).
-    pub fn builder() -> crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityOutputBuilder{
+    pub fn builder() -> crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityOutputBuilder {
         crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledInstanceAvailabilityOutput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstanceAvailabilityOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) scheduled_instance_availability_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,
+    pub(crate) scheduled_instance_availability_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduledInstanceAvailabilityOutputBuilder {
@@ -68,10 +62,7 @@ impl DescribeScheduledInstanceAvailabilityOutputBuilder {
     /// To override the contents of this collection use [`set_scheduled_instance_availability_set`](Self::set_scheduled_instance_availability_set).
     ///
     /// <p>Information about the available Scheduled Instances.</p>
-    pub fn scheduled_instance_availability_set(
-        mut self,
-        input: crate::types::ScheduledInstanceAvailability,
-    ) -> Self {
+    pub fn scheduled_instance_availability_set(mut self, input: crate::types::ScheduledInstanceAvailability) -> Self {
         let mut v = self.scheduled_instance_availability_set.unwrap_or_default();
         v.push(input);
         self.scheduled_instance_availability_set = ::std::option::Option::Some(v);
@@ -86,9 +77,7 @@ impl DescribeScheduledInstanceAvailabilityOutputBuilder {
         self
     }
     /// <p>Information about the available Scheduled Instances.</p>
-    pub fn get_scheduled_instance_availability_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>> {
+    pub fn get_scheduled_instance_availability_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>> {
         &self.scheduled_instance_availability_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +90,10 @@ impl DescribeScheduledInstanceAvailabilityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScheduledInstanceAvailabilityOutput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput).
-    pub fn build(self) -> crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput{
+    pub fn build(self) -> crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput {
         crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput {
-            next_token: self.next_token
-            ,
-            scheduled_instance_availability_set: self.scheduled_instance_availability_set
-            ,
+            next_token: self.next_token,
+            scheduled_instance_availability_set: self.scheduled_instance_availability_set,
             _request_id: self._request_id,
         }
     }

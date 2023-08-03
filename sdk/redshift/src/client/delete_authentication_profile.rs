@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteAuthenticationProfileOutput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput) with field(s):
     ///   - [`authentication_profile_name(Option<String>)`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput::authentication_profile_name): <p>The name of the authentication profile that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteAuthenticationProfileError>`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError)
-    pub fn delete_authentication_profile(&self) -> crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileFluentBuilder{
+    pub fn delete_authentication_profile(
+        &self,
+    ) -> crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileFluentBuilder {
         crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileFluentBuilder::new(self.handle.clone())
     }
 }

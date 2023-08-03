@@ -43,9 +43,7 @@ impl StopLaunchInput {
 
 /// A builder for [`StopLaunchInput`](crate::operation::stop_launch::StopLaunchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopLaunchInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) launch: ::std::option::Option<::std::string::String>,
@@ -87,17 +85,12 @@ impl StopLaunchInputBuilder {
         self
     }
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchStopDesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::LaunchStopDesiredState>) -> Self {
         self.desired_state = input;
         self
     }
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn get_desired_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchStopDesiredState> {
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::LaunchStopDesiredState> {
         &self.desired_state
     }
     /// <p>A string that describes why you are stopping the launch.</p>
@@ -115,12 +108,7 @@ impl StopLaunchInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`StopLaunchInput`](crate::operation::stop_launch::StopLaunchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_launch::StopLaunchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_launch::StopLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_launch::StopLaunchInput {
             project: self.project,
             launch: self.launch,

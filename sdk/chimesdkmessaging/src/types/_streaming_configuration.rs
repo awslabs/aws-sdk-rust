@@ -30,9 +30,7 @@ impl StreamingConfiguration {
 
 /// A builder for [`StreamingConfiguration`](crate::types::StreamingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingConfigurationBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::MessagingDataType>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl StreamingConfigurationBuilder {
         self
     }
     /// <p>The data type of the configuration.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessagingDataType>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::MessagingDataType>) -> Self {
         self.data_type = input;
         self
     }

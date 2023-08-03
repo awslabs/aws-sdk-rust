@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`secret_list(Option<Vec<SecretListEntry>>)`](crate::operation::list_secrets::ListSecretsOutput::secret_list): <p>A list of the secrets in the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_secrets::ListSecretsOutput::next_token): <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecrets</code> again with this value.</p>
     /// - On failure, responds with [`SdkError<ListSecretsError>`](crate::operation::list_secrets::ListSecretsError)
-    pub fn list_secrets(
-        &self,
-    ) -> crate::operation::list_secrets::builders::ListSecretsFluentBuilder {
+    pub fn list_secrets(&self) -> crate::operation::list_secrets::builders::ListSecretsFluentBuilder {
         crate::operation::list_secrets::builders::ListSecretsFluentBuilder::new(self.handle.clone())
     }
 }

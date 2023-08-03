@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchRevokePermissionsOutput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsOutput) with field(s):
     ///   - [`failures(Option<Vec<BatchPermissionsFailureEntry>>)`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsOutput::failures): <p>A list of failures to revoke permissions to the resources.</p>
     /// - On failure, responds with [`SdkError<BatchRevokePermissionsError>`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsError)
-    pub fn batch_revoke_permissions(
-        &self,
-    ) -> crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsFluentBuilder
-    {
+    pub fn batch_revoke_permissions(&self) -> crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsFluentBuilder {
         crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

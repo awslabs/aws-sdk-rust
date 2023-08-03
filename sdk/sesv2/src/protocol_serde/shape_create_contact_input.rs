@@ -15,10 +15,7 @@ pub fn ser_create_contact_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_topic_preference::ser_topic_preference(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_topic_preference::ser_topic_preference(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

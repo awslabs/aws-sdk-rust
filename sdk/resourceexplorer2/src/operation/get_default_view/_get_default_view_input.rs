@@ -12,18 +12,13 @@ impl GetDefaultViewInput {
 
 /// A builder for [`GetDefaultViewInput`](crate::operation::get_default_view::GetDefaultViewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDefaultViewInputBuilder {}
 impl GetDefaultViewInputBuilder {
     /// Consumes the builder and constructs a [`GetDefaultViewInput`](crate::operation::get_default_view::GetDefaultViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_default_view::GetDefaultViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_default_view::GetDefaultViewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_default_view::GetDefaultViewInput {})
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::list_vpc_association_authorizations::_list_vpc_associa
 
 impl ListVpcAssociationAuthorizationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_vpc_association_authorizations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListVpcAssociationAuthorizationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVPCAssociationAuthorizationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder,
+    inner: crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder,
 }
 impl ListVPCAssociationAuthorizationsFluentBuilder {
     /// Creates a new `ListVPCAssociationAuthorizations`.
@@ -38,15 +38,20 @@ impl ListVPCAssociationAuthorizationsFluentBuilder {
         }
     }
     /// Access the ListVPCAssociationAuthorizations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListVPCAssociationAuthorizationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl ListVPCAssociationAuthorizationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

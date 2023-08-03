@@ -25,9 +25,7 @@ impl AccessControlTranslation {
 
 /// A builder for [`AccessControlTranslation`](crate::types::AccessControlTranslation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessControlTranslationBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::OwnerOverride>,
 }

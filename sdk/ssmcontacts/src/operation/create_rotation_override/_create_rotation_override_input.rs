@@ -45,18 +45,14 @@ impl CreateRotationOverrideInput {
 }
 impl CreateRotationOverrideInput {
     /// Creates a new builder-style object to manufacture [`CreateRotationOverrideInput`](crate::operation::create_rotation_override::CreateRotationOverrideInput).
-    pub fn builder(
-    ) -> crate::operation::create_rotation_override::builders::CreateRotationOverrideInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_rotation_override::builders::CreateRotationOverrideInputBuilder {
         crate::operation::create_rotation_override::builders::CreateRotationOverrideInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRotationOverrideInput`](crate::operation::create_rotation_override::CreateRotationOverrideInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRotationOverrideInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -85,10 +81,7 @@ impl CreateRotationOverrideInputBuilder {
     ///
     /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
     /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
-    pub fn new_contact_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.new_contact_ids.unwrap_or_default();
         v.push(input.into());
         self.new_contact_ids = ::std::option::Option::Some(v);
@@ -96,18 +89,13 @@ impl CreateRotationOverrideInputBuilder {
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
     /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
-    pub fn set_new_contact_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_new_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.new_contact_ids = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
     /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
-    pub fn get_new_contact_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_new_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.new_contact_ids
     }
     /// <p>The date and time when the override goes into effect.</p>
@@ -116,10 +104,7 @@ impl CreateRotationOverrideInputBuilder {
         self
     }
     /// <p>The date and time when the override goes into effect.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -133,10 +118,7 @@ impl CreateRotationOverrideInputBuilder {
         self
     }
     /// <p>The date and time when the override ends.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -145,18 +127,12 @@ impl CreateRotationOverrideInputBuilder {
         &self.end_time
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -167,18 +143,14 @@ impl CreateRotationOverrideInputBuilder {
     /// Consumes the builder and constructs a [`CreateRotationOverrideInput`](crate::operation::create_rotation_override::CreateRotationOverrideInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_rotation_override::CreateRotationOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_rotation_override::CreateRotationOverrideInput {
-                rotation_id: self.rotation_id,
-                new_contact_ids: self.new_contact_ids,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                idempotency_token: self.idempotency_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_rotation_override::CreateRotationOverrideInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_rotation_override::CreateRotationOverrideInput {
+            rotation_id: self.rotation_id,
+            new_contact_ids: self.new_contact_ids,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            idempotency_token: self.idempotency_token,
+        })
     }
 }

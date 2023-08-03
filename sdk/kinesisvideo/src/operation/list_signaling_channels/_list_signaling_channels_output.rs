@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSignalingChannelsOutput {
 }
 impl ListSignalingChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListSignalingChannelsOutput`](crate::operation::list_signaling_channels::ListSignalingChannelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_signaling_channels::builders::ListSignalingChannelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_signaling_channels::builders::ListSignalingChannelsOutputBuilder {
         crate::operation::list_signaling_channels::builders::ListSignalingChannelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSignalingChannelsOutput`](crate::operation::list_signaling_channels::ListSignalingChannelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSignalingChannelsOutputBuilder {
     pub(crate) channel_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ChannelInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListSignalingChannelsOutputBuilder {
         self
     }
     /// <p>An array of <code>ChannelInfo</code> objects.</p>
-    pub fn set_channel_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelInfo>>,
-    ) -> Self {
+    pub fn set_channel_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelInfo>>) -> Self {
         self.channel_info_list = input;
         self
     }
     /// <p>An array of <code>ChannelInfo</code> objects.</p>
-    pub fn get_channel_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelInfo>> {
+    pub fn get_channel_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelInfo>> {
         &self.channel_info_list
     }
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>

@@ -22,16 +22,14 @@ impl RemoveListenerCertificatesInput {
 }
 impl RemoveListenerCertificatesInput {
     /// Creates a new builder-style object to manufacture [`RemoveListenerCertificatesInput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput).
-    pub fn builder() -> crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder{
+    pub fn builder() -> crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder {
         crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveListenerCertificatesInput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveListenerCertificatesInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
@@ -63,17 +61,12 @@ impl RemoveListenerCertificatesInputBuilder {
         self
     }
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     /// Consumes the builder and constructs a [`RemoveListenerCertificatesInput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput).
@@ -83,11 +76,9 @@ impl RemoveListenerCertificatesInputBuilder {
         crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput {
-                listener_arn: self.listener_arn,
-                certificates: self.certificates,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput {
+            listener_arn: self.listener_arn,
+            certificates: self.certificates,
+        })
     }
 }

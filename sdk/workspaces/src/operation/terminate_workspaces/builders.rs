@@ -10,10 +10,7 @@ impl TerminateWorkspacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workspaces::TerminateWorkspacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workspaces::TerminateWorkspacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.terminate_workspaces();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl TerminateWorkspacesFluentBuilder {
         }
     }
     /// Access the TerminateWorkspaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl TerminateWorkspacesFluentBuilder {
             crate::operation::terminate_workspaces::TerminateWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workspaces::TerminateWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workspaces::TerminateWorkspacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl TerminateWorkspacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl TerminateWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workspaces::TerminateWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workspaces::TerminateWorkspacesError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl TerminateWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workspaces::TerminateWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workspaces::TerminateWorkspacesError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl TerminateWorkspacesFluentBuilder {
             crate::operation::terminate_workspaces::TerminateWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workspaces::TerminateWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workspaces::TerminateWorkspacesError>,
     > {
         self.customize_middleware().await
     }
@@ -139,17 +123,12 @@ impl TerminateWorkspacesFluentBuilder {
         self
     }
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_terminate_workspace_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
-    ) -> Self {
+    pub fn set_terminate_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>) -> Self {
         self.inner = self.inner.set_terminate_workspace_requests(input);
         self
     }
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_terminate_workspace_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>> {
+    pub fn get_terminate_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>> {
         self.inner.get_terminate_workspace_requests()
     }
 }

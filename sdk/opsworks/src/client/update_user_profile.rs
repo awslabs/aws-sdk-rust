@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`allow_self_management(bool)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::allow_self_management) / [`set_allow_self_management(Option<bool>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::set_allow_self_management): <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     /// - On success, responds with [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateUserProfileError>`](crate::operation::update_user_profile::UpdateUserProfileError)
-    pub fn update_user_profile(
-        &self,
-    ) -> crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder {
-        crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_user_profile(&self) -> crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder {
+        crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

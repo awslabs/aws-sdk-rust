@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BatchStatementErrorCodeEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -88,20 +82,14 @@ impl ::std::convert::From<&str> for BatchStatementErrorCodeEnum {
             "ConditionalCheckFailed" => BatchStatementErrorCodeEnum::ConditionalCheckFailed,
             "DuplicateItem" => BatchStatementErrorCodeEnum::DuplicateItem,
             "InternalServerError" => BatchStatementErrorCodeEnum::InternalServerError,
-            "ItemCollectionSizeLimitExceeded" => {
-                BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded
-            }
-            "ProvisionedThroughputExceeded" => {
-                BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded
-            }
+            "ItemCollectionSizeLimitExceeded" => BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded,
+            "ProvisionedThroughputExceeded" => BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded,
             "RequestLimitExceeded" => BatchStatementErrorCodeEnum::RequestLimitExceeded,
             "ResourceNotFound" => BatchStatementErrorCodeEnum::ResourceNotFound,
             "ThrottlingError" => BatchStatementErrorCodeEnum::ThrottlingError,
             "TransactionConflict" => BatchStatementErrorCodeEnum::TransactionConflict,
             "ValidationError" => BatchStatementErrorCodeEnum::ValidationError,
-            other => BatchStatementErrorCodeEnum::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BatchStatementErrorCodeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -120,12 +108,8 @@ impl BatchStatementErrorCodeEnum {
             BatchStatementErrorCodeEnum::ConditionalCheckFailed => "ConditionalCheckFailed",
             BatchStatementErrorCodeEnum::DuplicateItem => "DuplicateItem",
             BatchStatementErrorCodeEnum::InternalServerError => "InternalServerError",
-            BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded => {
-                "ItemCollectionSizeLimitExceeded"
-            }
-            BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded => {
-                "ProvisionedThroughputExceeded"
-            }
+            BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded => "ItemCollectionSizeLimitExceeded",
+            BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded => "ProvisionedThroughputExceeded",
             BatchStatementErrorCodeEnum::RequestLimitExceeded => "RequestLimitExceeded",
             BatchStatementErrorCodeEnum::ResourceNotFound => "ResourceNotFound",
             BatchStatementErrorCodeEnum::ThrottlingError => "ThrottlingError",

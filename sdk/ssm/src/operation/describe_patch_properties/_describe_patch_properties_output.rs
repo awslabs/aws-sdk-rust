@@ -5,9 +5,7 @@
 pub struct DescribePatchPropertiesOutput {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub properties: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,11 +13,7 @@ pub struct DescribePatchPropertiesOutput {
 }
 impl DescribePatchPropertiesOutput {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<::std::string::String, ::std::string::String>],
-    > {
+    pub fn properties(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
         self.properties.as_deref()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
@@ -34,22 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribePatchPropertiesOutput {
 }
 impl DescribePatchPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchPropertiesOutput`](crate::operation::describe_patch_properties::DescribePatchPropertiesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_properties::builders::DescribePatchPropertiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_patch_properties::builders::DescribePatchPropertiesOutputBuilder {
         crate::operation::describe_patch_properties::builders::DescribePatchPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePatchPropertiesOutput`](crate::operation::describe_patch_properties::DescribePatchPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePatchPropertiesOutputBuilder {
-    pub(crate) properties: ::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,10 +47,7 @@ impl DescribePatchPropertiesOutputBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
-    pub fn properties(
-        mut self,
-        input: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.properties.unwrap_or_default();
         v.push(input);
         self.properties = ::std::option::Option::Some(v);
@@ -71,11 +56,7 @@ impl DescribePatchPropertiesOutputBuilder {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
     pub fn set_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     ) -> Self {
         self.properties = input;
         self
@@ -83,9 +64,7 @@ impl DescribePatchPropertiesOutputBuilder {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
     pub fn get_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
         &self.properties
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
@@ -112,9 +91,7 @@ impl DescribePatchPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePatchPropertiesOutput`](crate::operation::describe_patch_properties::DescribePatchPropertiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_patch_properties::DescribePatchPropertiesOutput {
+    pub fn build(self) -> crate::operation::describe_patch_properties::DescribePatchPropertiesOutput {
         crate::operation::describe_patch_properties::DescribePatchPropertiesOutput {
             properties: self.properties,
             next_token: self.next_token,

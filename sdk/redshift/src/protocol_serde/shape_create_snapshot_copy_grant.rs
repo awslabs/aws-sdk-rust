@@ -9,124 +9,125 @@ pub fn de_create_snapshot_copy_grant_http_error(
     crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled(
+        None => {
+            return Err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependentServiceRequestThrottlingFault" => crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::DependentServiceRequestThrottlingFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DependentServiceRequestThrottlingFault" => {
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::DependentServiceRequestThrottlingFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DependentServiceRequestThrottlingFaultBuilder::default();
                     output = crate::protocol_serde::shape_dependent_service_request_throttling_fault::de_dependent_service_request_throttling_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidTagFault" => crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::InvalidTagFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceededFault" => crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::LimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "SnapshotCopyGrantAlreadyExistsFault" => crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::SnapshotCopyGrantAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "SnapshotCopyGrantAlreadyExistsFault" => {
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::SnapshotCopyGrantAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SnapshotCopyGrantAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_copy_grant_already_exists_fault::de_snapshot_copy_grant_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_snapshot_copy_grant_already_exists_fault::de_snapshot_copy_grant_already_exists_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "SnapshotCopyGrantQuotaExceededFault" => crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::SnapshotCopyGrantQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "SnapshotCopyGrantQuotaExceededFault" => {
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::SnapshotCopyGrantQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SnapshotCopyGrantQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_copy_grant_quota_exceeded_fault::de_snapshot_copy_grant_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_snapshot_copy_grant_quota_exceeded_fault::de_snapshot_copy_grant_quota_exceeded_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "TagLimitExceededFault" => crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::TagLimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::generic(generic)
+        _ => crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::generic(generic),
     })
 }
 
@@ -142,10 +143,9 @@ pub fn de_create_snapshot_copy_grant_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_snapshot_copy_grant::de_create_snapshot_copy_grant(_response_body, output).map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_snapshot_copy_grant::de_create_snapshot_copy_grant(_response_body, output)
+            .map_err(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -154,10 +154,7 @@ pub fn de_create_snapshot_copy_grant_http_response_with_props(
 pub fn de_create_snapshot_copy_grant(
     inp: &[u8],
     mut builder: crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantOutputBuilder,
-) -> Result<
-    crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

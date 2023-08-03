@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`version_id(impl ::std::convert::Into<String>)`](crate::operation::delete_policy_version::builders::DeletePolicyVersionFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::delete_policy_version::builders::DeletePolicyVersionFluentBuilder::set_version_id): <p>The policy version to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a period '.' and a string of letters and digits.</p>  <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
     /// - On success, responds with [`DeletePolicyVersionOutput`](crate::operation::delete_policy_version::DeletePolicyVersionOutput)
     /// - On failure, responds with [`SdkError<DeletePolicyVersionError>`](crate::operation::delete_policy_version::DeletePolicyVersionError)
-    pub fn delete_policy_version(
-        &self,
-    ) -> crate::operation::delete_policy_version::builders::DeletePolicyVersionFluentBuilder {
-        crate::operation::delete_policy_version::builders::DeletePolicyVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_policy_version(&self) -> crate::operation::delete_policy_version::builders::DeletePolicyVersionFluentBuilder {
+        crate::operation::delete_policy_version::builders::DeletePolicyVersionFluentBuilder::new(self.handle.clone())
     }
 }

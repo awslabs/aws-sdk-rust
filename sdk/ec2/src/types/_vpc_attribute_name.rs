@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VpcAttributeName {
     #[allow(missing_docs)] // documentation missing in model
@@ -62,12 +56,8 @@ impl ::std::convert::From<&str> for VpcAttributeName {
         match s {
             "enableDnsHostnames" => VpcAttributeName::EnableDnsHostnames,
             "enableDnsSupport" => VpcAttributeName::EnableDnsSupport,
-            "enableNetworkAddressUsageMetrics" => {
-                VpcAttributeName::EnableNetworkAddressUsageMetrics
-            }
-            other => {
-                VpcAttributeName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "enableNetworkAddressUsageMetrics" => VpcAttributeName::EnableNetworkAddressUsageMetrics,
+            other => VpcAttributeName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -84,19 +74,13 @@ impl VpcAttributeName {
         match self {
             VpcAttributeName::EnableDnsHostnames => "enableDnsHostnames",
             VpcAttributeName::EnableDnsSupport => "enableDnsSupport",
-            VpcAttributeName::EnableNetworkAddressUsageMetrics => {
-                "enableNetworkAddressUsageMetrics"
-            }
+            VpcAttributeName::EnableNetworkAddressUsageMetrics => "enableNetworkAddressUsageMetrics",
             VpcAttributeName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "enableDnsHostnames",
-            "enableDnsSupport",
-            "enableNetworkAddressUsageMetrics",
-        ]
+        &["enableDnsHostnames", "enableDnsSupport", "enableNetworkAddressUsageMetrics"]
     }
 }
 impl ::std::convert::AsRef<str> for VpcAttributeName {

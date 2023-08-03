@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`global_table_name(Option<String>)`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsOutput::global_table_name): <p>The name of the global table.</p>
     ///   - [`replica_settings(Option<Vec<ReplicaSettingsDescription>>)`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsOutput::replica_settings): <p>The Region-specific settings for the global table.</p>
     /// - On failure, responds with [`SdkError<DescribeGlobalTableSettingsError>`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError)
-    pub fn describe_global_table_settings(&self) -> crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsFluentBuilder{
+    pub fn describe_global_table_settings(
+        &self,
+    ) -> crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsFluentBuilder {
         crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsFluentBuilder::new(self.handle.clone())
     }
 }

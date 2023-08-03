@@ -5,8 +5,7 @@
 pub struct ListResourceRequestsOutput {
     /// <p>The requests that match the specified filter criteria.</p>
     #[doc(hidden)]
-    pub resource_request_status_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>,
+    pub resource_request_status_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListResourceRequestsOutput {
 }
 impl ListResourceRequestsOutput {
     /// <p>The requests that match the specified filter criteria.</p>
-    pub fn resource_request_status_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProgressEvent]> {
+    pub fn resource_request_status_summaries(&self) -> ::std::option::Option<&[crate::types::ProgressEvent]> {
         self.resource_request_status_summaries.as_deref()
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourceRequestsOutput {
 }
 impl ListResourceRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceRequestsOutput`](crate::operation::list_resource_requests::ListResourceRequestsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_requests::builders::ListResourceRequestsOutputBuilder {
+    pub fn builder() -> crate::operation::list_resource_requests::builders::ListResourceRequestsOutputBuilder {
         crate::operation::list_resource_requests::builders::ListResourceRequestsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceRequestsOutput`](crate::operation::list_resource_requests::ListResourceRequestsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceRequestsOutputBuilder {
-    pub(crate) resource_request_status_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>,
+    pub(crate) resource_request_status_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListResourceRequestsOutputBuilder {
         self
     }
     /// <p>The requests that match the specified filter criteria.</p>
-    pub fn set_resource_request_status_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>,
-    ) -> Self {
+    pub fn set_resource_request_status_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>) -> Self {
         self.resource_request_status_summaries = input;
         self
     }
     /// <p>The requests that match the specified filter criteria.</p>
-    pub fn get_resource_request_status_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>> {
+    pub fn get_resource_request_status_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>> {
         &self.resource_request_status_summaries
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>

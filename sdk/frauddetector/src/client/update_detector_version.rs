@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`rule_execution_mode(RuleExecutionMode)`](crate::operation::update_detector_version::builders::UpdateDetectorVersionFluentBuilder::rule_execution_mode) / [`set_rule_execution_mode(Option<RuleExecutionMode>)`](crate::operation::update_detector_version::builders::UpdateDetectorVersionFluentBuilder::set_rule_execution_mode): <p>The rule execution mode to add to the detector.</p>  <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>  <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>  <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
     /// - On success, responds with [`UpdateDetectorVersionOutput`](crate::operation::update_detector_version::UpdateDetectorVersionOutput)
     /// - On failure, responds with [`SdkError<UpdateDetectorVersionError>`](crate::operation::update_detector_version::UpdateDetectorVersionError)
-    pub fn update_detector_version(
-        &self,
-    ) -> crate::operation::update_detector_version::builders::UpdateDetectorVersionFluentBuilder
-    {
-        crate::operation::update_detector_version::builders::UpdateDetectorVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_detector_version(&self) -> crate::operation::update_detector_version::builders::UpdateDetectorVersionFluentBuilder {
+        crate::operation::update_detector_version::builders::UpdateDetectorVersionFluentBuilder::new(self.handle.clone())
     }
 }

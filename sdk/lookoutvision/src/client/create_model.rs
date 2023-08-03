@@ -12,9 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateModelOutput`](crate::operation::create_model::CreateModelOutput) with field(s):
     ///   - [`model_metadata(Option<ModelMetadata>)`](crate::operation::create_model::CreateModelOutput::model_metadata): <p>The response from a call to <code>CreateModel</code>.</p>
     /// - On failure, responds with [`SdkError<CreateModelError>`](crate::operation::create_model::CreateModelError)
-    pub fn create_model(
-        &self,
-    ) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
+    pub fn create_model(&self) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
         crate::operation::create_model::builders::CreateModelFluentBuilder::new(self.handle.clone())
     }
 }

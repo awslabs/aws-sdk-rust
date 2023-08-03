@@ -75,13 +75,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -207,9 +201,7 @@ impl ::std::convert::From<&str> for InstanceType {
             "ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
             "ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
             "ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
-            other => {
-                InstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

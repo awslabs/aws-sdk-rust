@@ -39,13 +39,7 @@
 /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265QualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for H265QualityTuningLevel {
             "MULTI_PASS_HQ" => H265QualityTuningLevel::MultiPassHq,
             "SINGLE_PASS" => H265QualityTuningLevel::SinglePass,
             "SINGLE_PASS_HQ" => H265QualityTuningLevel::SinglePassHq,
-            other => H265QualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H265QualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

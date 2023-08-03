@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteUsageLimitOutput {
 }
 impl DeleteUsageLimitOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUsageLimitOutput`](crate::operation::delete_usage_limit::DeleteUsageLimitOutput).
-    pub fn builder() -> crate::operation::delete_usage_limit::builders::DeleteUsageLimitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_usage_limit::builders::DeleteUsageLimitOutputBuilder {
         crate::operation::delete_usage_limit::builders::DeleteUsageLimitOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUsageLimitOutput`](crate::operation::delete_usage_limit::DeleteUsageLimitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUsageLimitOutputBuilder {
     _request_id: Option<String>,
 }

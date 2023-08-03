@@ -37,9 +37,7 @@ impl TotalImpactFilter {
 
 /// A builder for [`TotalImpactFilter`](crate::types::TotalImpactFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TotalImpactFilterBuilder {
     pub(crate) numeric_operator: ::std::option::Option<crate::types::NumericOperator>,
     pub(crate) start_value: ::std::option::Option<f64>,
@@ -52,10 +50,7 @@ impl TotalImpactFilterBuilder {
         self
     }
     /// <p>The comparing value that's used in the filter. </p>
-    pub fn set_numeric_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericOperator>,
-    ) -> Self {
+    pub fn set_numeric_operator(mut self, input: ::std::option::Option<crate::types::NumericOperator>) -> Self {
         self.numeric_operator = input;
         self
     }

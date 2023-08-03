@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LaunchProfileStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,31 +93,19 @@ impl ::std::convert::From<&str> for LaunchProfileStatusCode {
             "ENCRYPTION_KEY_ACCESS_DENIED" => LaunchProfileStatusCode::EncryptionKeyAccessDenied,
             "ENCRYPTION_KEY_NOT_FOUND" => LaunchProfileStatusCode::EncryptionKeyNotFound,
             "INTERNAL_ERROR" => LaunchProfileStatusCode::InternalError,
-            "INVALID_INSTANCE_TYPES_PROVIDED" => {
-                LaunchProfileStatusCode::InvalidInstanceTypesProvided
-            }
+            "INVALID_INSTANCE_TYPES_PROVIDED" => LaunchProfileStatusCode::InvalidInstanceTypesProvided,
             "INVALID_SUBNETS_COMBINATION" => LaunchProfileStatusCode::InvalidSubnetsCombination,
             "INVALID_SUBNETS_PROVIDED" => LaunchProfileStatusCode::InvalidSubnetsProvided,
             "LAUNCH_PROFILE_CREATED" => LaunchProfileStatusCode::LaunchProfileCreated,
-            "LAUNCH_PROFILE_CREATE_IN_PROGRESS" => {
-                LaunchProfileStatusCode::LaunchProfileCreateInProgress
-            }
+            "LAUNCH_PROFILE_CREATE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileCreateInProgress,
             "LAUNCH_PROFILE_DELETED" => LaunchProfileStatusCode::LaunchProfileDeleted,
-            "LAUNCH_PROFILE_DELETE_IN_PROGRESS" => {
-                LaunchProfileStatusCode::LaunchProfileDeleteInProgress
-            }
+            "LAUNCH_PROFILE_DELETE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileDeleteInProgress,
             "LAUNCH_PROFILE_UPDATED" => LaunchProfileStatusCode::LaunchProfileUpdated,
-            "LAUNCH_PROFILE_UPDATE_IN_PROGRESS" => {
-                LaunchProfileStatusCode::LaunchProfileUpdateInProgress
-            }
-            "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED" => {
-                LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted
-            }
+            "LAUNCH_PROFILE_UPDATE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileUpdateInProgress,
+            "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED" => LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted,
             "STREAMING_IMAGE_NOT_FOUND" => LaunchProfileStatusCode::StreamingImageNotFound,
             "STREAMING_IMAGE_NOT_READY" => LaunchProfileStatusCode::StreamingImageNotReady,
-            other => LaunchProfileStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LaunchProfileStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -141,26 +123,16 @@ impl LaunchProfileStatusCode {
             LaunchProfileStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
             LaunchProfileStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
             LaunchProfileStatusCode::InternalError => "INTERNAL_ERROR",
-            LaunchProfileStatusCode::InvalidInstanceTypesProvided => {
-                "INVALID_INSTANCE_TYPES_PROVIDED"
-            }
+            LaunchProfileStatusCode::InvalidInstanceTypesProvided => "INVALID_INSTANCE_TYPES_PROVIDED",
             LaunchProfileStatusCode::InvalidSubnetsCombination => "INVALID_SUBNETS_COMBINATION",
             LaunchProfileStatusCode::InvalidSubnetsProvided => "INVALID_SUBNETS_PROVIDED",
             LaunchProfileStatusCode::LaunchProfileCreated => "LAUNCH_PROFILE_CREATED",
-            LaunchProfileStatusCode::LaunchProfileCreateInProgress => {
-                "LAUNCH_PROFILE_CREATE_IN_PROGRESS"
-            }
+            LaunchProfileStatusCode::LaunchProfileCreateInProgress => "LAUNCH_PROFILE_CREATE_IN_PROGRESS",
             LaunchProfileStatusCode::LaunchProfileDeleted => "LAUNCH_PROFILE_DELETED",
-            LaunchProfileStatusCode::LaunchProfileDeleteInProgress => {
-                "LAUNCH_PROFILE_DELETE_IN_PROGRESS"
-            }
+            LaunchProfileStatusCode::LaunchProfileDeleteInProgress => "LAUNCH_PROFILE_DELETE_IN_PROGRESS",
             LaunchProfileStatusCode::LaunchProfileUpdated => "LAUNCH_PROFILE_UPDATED",
-            LaunchProfileStatusCode::LaunchProfileUpdateInProgress => {
-                "LAUNCH_PROFILE_UPDATE_IN_PROGRESS"
-            }
-            LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted => {
-                "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED"
-            }
+            LaunchProfileStatusCode::LaunchProfileUpdateInProgress => "LAUNCH_PROFILE_UPDATE_IN_PROGRESS",
+            LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted => "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED",
             LaunchProfileStatusCode::StreamingImageNotFound => "STREAMING_IMAGE_NOT_FOUND",
             LaunchProfileStatusCode::StreamingImageNotReady => "STREAMING_IMAGE_NOT_READY",
             LaunchProfileStatusCode::Unknown(value) => value.as_str(),

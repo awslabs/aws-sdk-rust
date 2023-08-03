@@ -51,9 +51,7 @@ impl StepSummary {
 
 /// A builder for [`StepSummary`](crate::types::StepSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl StepSummaryBuilder {
         self
     }
     /// <p>The Hadoop job configuration of the cluster step.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HadoopStepConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::HadoopStepConfig>) -> Self {
         self.config = input;
         self
     }
@@ -113,10 +108,7 @@ impl StepSummaryBuilder {
         self
     }
     /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
-    pub fn set_action_on_failure(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionOnFailure>,
-    ) -> Self {
+    pub fn set_action_on_failure(mut self, input: ::std::option::Option<crate::types::ActionOnFailure>) -> Self {
         self.action_on_failure = input;
         self
     }

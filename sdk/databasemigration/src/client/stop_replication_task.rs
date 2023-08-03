@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopReplicationTaskOutput`](crate::operation::stop_replication_task::StopReplicationTaskOutput) with field(s):
     ///   - [`replication_task(Option<ReplicationTask>)`](crate::operation::stop_replication_task::StopReplicationTaskOutput::replication_task): <p>The replication task stopped.</p>
     /// - On failure, responds with [`SdkError<StopReplicationTaskError>`](crate::operation::stop_replication_task::StopReplicationTaskError)
-    pub fn stop_replication_task(
-        &self,
-    ) -> crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder {
-        crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_replication_task(&self) -> crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder {
+        crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder::new(self.handle.clone())
     }
 }

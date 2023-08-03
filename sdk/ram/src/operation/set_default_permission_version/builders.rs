@@ -26,7 +26,7 @@ impl SetDefaultPermissionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetDefaultPermissionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder,
+    inner: crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder,
 }
 impl SetDefaultPermissionVersionFluentBuilder {
     /// Creates a new `SetDefaultPermissionVersion`.
@@ -37,7 +37,7 @@ impl SetDefaultPermissionVersionFluentBuilder {
         }
     }
     /// Access the SetDefaultPermissionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SetDefaultPermissionVersionFluentBuilder {
             crate::operation::set_default_permission_version::SetDefaultPermissionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_permission_version::SetDefaultPermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_permission_version::SetDefaultPermissionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SetDefaultPermissionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SetDefaultPermissionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_permission_version::SetDefaultPermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_permission_version::SetDefaultPermissionVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SetDefaultPermissionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_permission_version::SetDefaultPermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_permission_version::SetDefaultPermissionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl SetDefaultPermissionVersionFluentBuilder {
             crate::operation::set_default_permission_version::SetDefaultPermissionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_permission_version::SetDefaultPermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_permission_version::SetDefaultPermissionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_arn(input);
         self
     }

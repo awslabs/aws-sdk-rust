@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_partner_accounts::ListPartnerAccountsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`sidewalk(Option<Vec<SidewalkAccountInfoWithFingerprint>>)`](crate::operation::list_partner_accounts::ListPartnerAccountsOutput::sidewalk): <p>The Sidewalk account credentials.</p>
     /// - On failure, responds with [`SdkError<ListPartnerAccountsError>`](crate::operation::list_partner_accounts::ListPartnerAccountsError)
-    pub fn list_partner_accounts(
-        &self,
-    ) -> crate::operation::list_partner_accounts::builders::ListPartnerAccountsFluentBuilder {
-        crate::operation::list_partner_accounts::builders::ListPartnerAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_partner_accounts(&self) -> crate::operation::list_partner_accounts::builders::ListPartnerAccountsFluentBuilder {
+        crate::operation::list_partner_accounts::builders::ListPartnerAccountsFluentBuilder::new(self.handle.clone())
     }
 }

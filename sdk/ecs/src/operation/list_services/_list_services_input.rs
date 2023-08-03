@@ -54,9 +54,7 @@ impl ListServicesInput {
 
 /// A builder for [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -119,10 +117,7 @@ impl ListServicesInputBuilder {
         self
     }
     /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
-    pub fn set_launch_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchType>,
-    ) -> Self {
+    pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.launch_type = input;
         self
     }
@@ -136,26 +131,16 @@ impl ListServicesInputBuilder {
         self
     }
     /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
-    pub fn set_scheduling_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SchedulingStrategy>,
-    ) -> Self {
+    pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<crate::types::SchedulingStrategy>) -> Self {
         self.scheduling_strategy = input;
         self
     }
     /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
-    pub fn get_scheduling_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchedulingStrategy> {
+    pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::SchedulingStrategy> {
         &self.scheduling_strategy
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_services::ListServicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_services::ListServicesInput {
             cluster: self.cluster,
             next_token: self.next_token,

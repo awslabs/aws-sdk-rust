@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`on_start(Vec<NotebookInstanceLifecycleHook>)`](crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigFluentBuilder::on_start) / [`set_on_start(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigFluentBuilder::set_on_start): <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
     /// - On success, responds with [`UpdateNotebookInstanceLifecycleConfigOutput`](crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateNotebookInstanceLifecycleConfigError>`](crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigError)
-    pub fn update_notebook_instance_lifecycle_config(&self) -> crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigFluentBuilder{
-        crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigFluentBuilder::new(self.handle.clone())
+    pub fn update_notebook_instance_lifecycle_config(
+        &self,
+    ) -> crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigFluentBuilder {
+        crate::operation::update_notebook_instance_lifecycle_config::builders::UpdateNotebookInstanceLifecycleConfigFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

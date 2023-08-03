@@ -32,9 +32,7 @@ impl FilterRule {
 
 /// A builder for [`FilterRule`](crate::types::FilterRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterRuleBuilder {
     pub(crate) filter_type: ::std::option::Option<crate::types::FilterType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -46,10 +44,7 @@ impl FilterRuleBuilder {
         self
     }
     /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
-    pub fn set_filter_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterType>,
-    ) -> Self {
+    pub fn set_filter_type(mut self, input: ::std::option::Option<crate::types::FilterType>) -> Self {
         self.filter_type = input;
         self
     }

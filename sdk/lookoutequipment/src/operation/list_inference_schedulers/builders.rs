@@ -26,8 +26,7 @@ impl ListInferenceSchedulersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder,
+    inner: crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder,
 }
 impl ListInferenceSchedulersFluentBuilder {
     /// Creates a new `ListInferenceSchedulers`.
@@ -38,10 +37,7 @@ impl ListInferenceSchedulersFluentBuilder {
         }
     }
     /// Access the ListInferenceSchedulers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListInferenceSchedulersFluentBuilder {
             crate::operation::list_inference_schedulers::ListInferenceSchedulers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inference_schedulers::ListInferenceSchedulersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_schedulers::ListInferenceSchedulersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListInferenceSchedulersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListInferenceSchedulersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inference_schedulers::ListInferenceSchedulersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_schedulers::ListInferenceSchedulersError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListInferenceSchedulersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inference_schedulers::ListInferenceSchedulersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_schedulers::ListInferenceSchedulersError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListInferenceSchedulersFluentBuilder {
             crate::operation::list_inference_schedulers::ListInferenceSchedulers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_inference_schedulers::ListInferenceSchedulersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_schedulers::ListInferenceSchedulersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator {
         crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator::new(self.handle, self.inner)
     }
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
@@ -162,27 +144,17 @@ impl ListInferenceSchedulersFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn inference_scheduler_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .inference_scheduler_name_begins_with(input.into());
+    pub fn inference_scheduler_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.inference_scheduler_name_begins_with(input.into());
         self
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn set_inference_scheduler_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name_begins_with(input);
         self
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn get_inference_scheduler_name_begins_with(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_inference_scheduler_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_scheduler_name_begins_with()
     }
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
@@ -205,10 +177,7 @@ impl ListInferenceSchedulersFluentBuilder {
         self
     }
     /// <p>Specifies the current status of the inference schedulers to list.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

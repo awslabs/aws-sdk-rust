@@ -44,9 +44,7 @@ pub struct UpdateOriginEndpointOutput {
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     #[doc(hidden)]
     pub time_delay_seconds: ::std::option::Option<i32>,
@@ -112,11 +110,7 @@ impl UpdateOriginEndpointOutput {
         self.startover_window_seconds
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
@@ -139,17 +133,14 @@ impl ::aws_http::request_id::RequestId for UpdateOriginEndpointOutput {
 }
 impl UpdateOriginEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOriginEndpointOutput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointOutputBuilder {
         crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOriginEndpointOutput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOriginEndpointOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,
@@ -164,9 +155,7 @@ pub struct UpdateOriginEndpointOutputBuilder {
     pub(crate) mss_package: ::std::option::Option<crate::types::MssPackage>,
     pub(crate) origination: ::std::option::Option<crate::types::Origination>,
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) time_delay_seconds: ::std::option::Option<i32>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) whitelist: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -193,10 +182,7 @@ impl UpdateOriginEndpointOutputBuilder {
         self
     }
     /// CDN Authorization credentials
-    pub fn set_authorization(
-        mut self,
-        input: ::std::option::Option<crate::types::Authorization>,
-    ) -> Self {
+    pub fn set_authorization(mut self, input: ::std::option::Option<crate::types::Authorization>) -> Self {
         self.authorization = input;
         self
     }
@@ -224,10 +210,7 @@ impl UpdateOriginEndpointOutputBuilder {
         self
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn set_cmaf_package(
-        mut self,
-        input: ::std::option::Option<crate::types::CmafPackage>,
-    ) -> Self {
+    pub fn set_cmaf_package(mut self, input: ::std::option::Option<crate::types::CmafPackage>) -> Self {
         self.cmaf_package = input;
         self
     }
@@ -255,10 +238,7 @@ impl UpdateOriginEndpointOutputBuilder {
         self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn set_dash_package(
-        mut self,
-        input: ::std::option::Option<crate::types::DashPackage>,
-    ) -> Self {
+    pub fn set_dash_package(mut self, input: ::std::option::Option<crate::types::DashPackage>) -> Self {
         self.dash_package = input;
         self
     }
@@ -286,10 +266,7 @@ impl UpdateOriginEndpointOutputBuilder {
         self
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn set_hls_package(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsPackage>,
-    ) -> Self {
+    pub fn set_hls_package(mut self, input: ::std::option::Option<crate::types::HlsPackage>) -> Self {
         self.hls_package = input;
         self
     }
@@ -312,18 +289,12 @@ impl UpdateOriginEndpointOutputBuilder {
         &self.id
     }
     /// A short string appended to the end of the OriginEndpoint URL.
-    pub fn manifest_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
     }
     /// A short string appended to the end of the OriginEndpoint URL.
-    pub fn set_manifest_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_name = input;
         self
     }
@@ -337,10 +308,7 @@ impl UpdateOriginEndpointOutputBuilder {
         self
     }
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-    pub fn set_mss_package(
-        mut self,
-        input: ::std::option::Option<crate::types::MssPackage>,
-    ) -> Self {
+    pub fn set_mss_package(mut self, input: ::std::option::Option<crate::types::MssPackage>) -> Self {
         self.mss_package = input;
         self
     }
@@ -354,10 +322,7 @@ impl UpdateOriginEndpointOutputBuilder {
         self
     }
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    pub fn set_origination(
-        mut self,
-        input: ::std::option::Option<crate::types::Origination>,
-    ) -> Self {
+    pub fn set_origination(mut self, input: ::std::option::Option<crate::types::Origination>) -> Self {
         self.origination = input;
         self
     }
@@ -384,32 +349,19 @@ impl UpdateOriginEndpointOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of tags associated with a resource
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of tags associated with a resource
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
@@ -452,10 +404,7 @@ impl UpdateOriginEndpointOutputBuilder {
         self
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    pub fn set_whitelist(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_whitelist(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.whitelist = input;
         self
     }

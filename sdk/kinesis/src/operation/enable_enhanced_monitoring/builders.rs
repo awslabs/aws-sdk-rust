@@ -28,7 +28,7 @@ impl EnableEnhancedMonitoringInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableEnhancedMonitoringFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder,
+    inner: crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder,
 }
 impl EnableEnhancedMonitoringFluentBuilder {
     /// Creates a new `EnableEnhancedMonitoring`.
@@ -39,10 +39,7 @@ impl EnableEnhancedMonitoringFluentBuilder {
         }
     }
     /// Access the EnableEnhancedMonitoring as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl EnableEnhancedMonitoringFluentBuilder {
             crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoring,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl EnableEnhancedMonitoringFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl EnableEnhancedMonitoringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl EnableEnhancedMonitoringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl EnableEnhancedMonitoringFluentBuilder {
             crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoring,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError>,
     > {
         self.customize_middleware().await
     }
@@ -173,10 +159,7 @@ impl EnableEnhancedMonitoringFluentBuilder {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn set_shard_level_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
-    ) -> Self {
+    pub fn set_shard_level_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>) -> Self {
         self.inner = self.inner.set_shard_level_metrics(input);
         self
     }
@@ -193,9 +176,7 @@ impl EnableEnhancedMonitoringFluentBuilder {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn get_shard_level_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+    pub fn get_shard_level_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
         self.inner.get_shard_level_metrics()
     }
     /// <p>The ARN of the stream.</p>

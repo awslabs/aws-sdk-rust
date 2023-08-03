@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`server_infos(Option<Vec<ServerDetail>>)`](crate::operation::list_servers::ListServersOutput::server_infos): <p> The list of servers with detailed information about each server. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_servers::ListServersOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListServersError>`](crate::operation::list_servers::ListServersError)
-    pub fn list_servers(
-        &self,
-    ) -> crate::operation::list_servers::builders::ListServersFluentBuilder {
+    pub fn list_servers(&self) -> crate::operation::list_servers::builders::ListServersFluentBuilder {
         crate::operation::list_servers::builders::ListServersFluentBuilder::new(self.handle.clone())
     }
 }

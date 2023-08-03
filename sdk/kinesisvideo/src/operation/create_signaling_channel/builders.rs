@@ -38,10 +38,7 @@ impl CreateSignalingChannelFluentBuilder {
         }
     }
     /// Access the CreateSignalingChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_signaling_channel::builders::CreateSignalingChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_signaling_channel::builders::CreateSignalingChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateSignalingChannelFluentBuilder {
             crate::operation::create_signaling_channel::CreateSignalingChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_signaling_channel::CreateSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_signaling_channel::CreateSignalingChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateSignalingChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateSignalingChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_signaling_channel::CreateSignalingChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_signaling_channel::CreateSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_signaling_channel::CreateSignalingChannelError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateSignalingChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_signaling_channel::CreateSignalingChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_signaling_channel::CreateSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_signaling_channel::CreateSignalingChannelError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl CreateSignalingChannelFluentBuilder {
             crate::operation::create_signaling_channel::CreateSignalingChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_signaling_channel::CreateSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_signaling_channel::CreateSignalingChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +130,7 @@ impl CreateSignalingChannelFluentBuilder {
         self
     }
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
-    pub fn set_channel_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelType>,
-    ) -> Self {
+    pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
         self.inner = self.inner.set_channel_type(input);
         self
     }
@@ -156,25 +139,17 @@ impl CreateSignalingChannelFluentBuilder {
         self.inner.get_channel_type()
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    pub fn single_master_configuration(
-        mut self,
-        input: crate::types::SingleMasterConfiguration,
-    ) -> Self {
+    pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.inner = self.inner.single_master_configuration(input);
         self
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    pub fn set_single_master_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMasterConfiguration>,
-    ) -> Self {
+    pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.inner = self.inner.set_single_master_configuration(input);
         self
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    pub fn get_single_master_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
+    pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         self.inner.get_single_master_configuration()
     }
     /// Appends an item to `Tags`.
@@ -187,10 +162,7 @@ impl CreateSignalingChannelFluentBuilder {
         self
     }
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -12,9 +12,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub cpu: i32,
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
     #[doc(hidden)]
-    pub depends_on: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>,
-    >,
+    pub depends_on: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>>,
     /// <p>Whether to disable networking within the container.</p>
     #[doc(hidden)]
     pub disable_networking: bool,
@@ -26,9 +24,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A key-value map of labels to add to the container.</p>
     #[doc(hidden)]
-    pub docker_labels: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub docker_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems.</p>
     #[doc(hidden)]
     pub docker_security_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -37,34 +33,22 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment variables to pass to a container.</p>
     #[doc(hidden)]
-    pub environment: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>,
-    >,
+    pub environment: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>>,
     /// <p>A list of files containing the environment variables to pass to a container.</p>
     #[doc(hidden)]
-    pub environment_files: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails,
-        >,
-    >,
+    pub environment_files: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails>>,
     /// <p>Whether the container is essential. All tasks must have at least one essential container.</p>
     #[doc(hidden)]
     pub essential: bool,
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
     #[doc(hidden)]
-    pub extra_hosts: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>,
-    >,
+    pub extra_hosts: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>>,
     /// <p>The FireLens configuration for the container. Specifies and configures a log router for container logs.</p>
     #[doc(hidden)]
-    pub firelens_configuration: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails,
-    >,
+    pub firelens_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails>,
     /// <p>The container health check command and associated configuration parameters for the container.</p>
     #[doc(hidden)]
-    pub health_check: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails,
-    >,
+    pub health_check: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails>,
     /// <p>The hostname to use for the container.</p>
     #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
@@ -79,14 +63,10 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
     #[doc(hidden)]
-    pub linux_parameters: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails,
-    >,
+    pub linux_parameters: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails>,
     /// <p>The log configuration specification for the container.</p>
     #[doc(hidden)]
-    pub log_configuration: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails,
-    >,
+    pub log_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails>,
     /// <p>The amount (in MiB) of memory to present to the container. If the container attempts to exceed the memory specified here, the container is shut down. The total amount of memory reserved for all containers within a task must be lower than the task memory value, if one is specified.</p>
     #[doc(hidden)]
     pub memory: i32,
@@ -95,17 +75,13 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub memory_reservation: i32,
     /// <p>The mount points for the data volumes in the container.</p>
     #[doc(hidden)]
-    pub mount_points: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>,
-    >,
+    pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>>,
     /// <p>The name of the container.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of port mappings for the container.</p>
     #[doc(hidden)]
-    pub port_mappings: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>,
-    >,
+    pub port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>>,
     /// <p>Whether the container is given elevated privileges on the host container instance. The elevated privileges are similar to the root user.</p>
     #[doc(hidden)]
     pub privileged: bool,
@@ -117,21 +93,14 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub readonly_root_filesystem: bool,
     /// <p>The private repository authentication credentials to use.</p>
     #[doc(hidden)]
-    pub repository_credentials: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails,
-    >,
+    pub repository_credentials: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails>,
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
     #[doc(hidden)]
-    pub resource_requirements: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails,
-        >,
-    >,
+    pub resource_requirements:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails>>,
     /// <p>The secrets to pass to the container.</p>
     #[doc(hidden)]
-    pub secrets: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>,
-    >,
+    pub secrets: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>>,
     /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
     #[doc(hidden)]
     pub start_timeout: i32,
@@ -140,16 +109,10 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub stop_timeout: i32,
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
     #[doc(hidden)]
-    pub system_controls: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails,
-        >,
-    >,
+    pub system_controls: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>>,
     /// <p>A list of ulimits to set in the container. </p>
     #[doc(hidden)]
-    pub ulimits: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>,
-    >,
+    pub ulimits: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>>,
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
@@ -164,9 +127,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>Data volumes to mount from another container.</p>
     #[doc(hidden)]
-    pub volumes_from: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>,
-    >,
+    pub volumes_from: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>>,
     /// <p>The working directory in which to run commands inside the container.</p>
     #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
@@ -181,11 +142,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.cpu
     }
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
-    pub fn depends_on(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails],
-    > {
+    pub fn depends_on(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails]> {
         self.depends_on.as_deref()
     }
     /// <p>Whether to disable networking within the container.</p>
@@ -201,11 +158,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.dns_servers.as_deref()
     }
     /// <p>A key-value map of labels to add to the container.</p>
-    pub fn docker_labels(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn docker_labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.docker_labels.as_ref()
     }
     /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems.</p>
@@ -217,19 +170,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.entry_point.as_deref()
     }
     /// <p>The environment variables to pass to a container.</p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails],
-    > {
+    pub fn environment(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails]> {
         self.environment.as_deref()
     }
     /// <p>A list of files containing the environment variables to pass to a container.</p>
-    pub fn environment_files(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails],
-    > {
+    pub fn environment_files(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails]> {
         self.environment_files.as_deref()
     }
     /// <p>Whether the container is essential. All tasks must have at least one essential container.</p>
@@ -237,27 +182,17 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.essential
     }
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
-    pub fn extra_hosts(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails],
-    > {
+    pub fn extra_hosts(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails]> {
         self.extra_hosts.as_deref()
     }
     /// <p>The FireLens configuration for the container. Specifies and configures a log router for container logs.</p>
     pub fn firelens_configuration(
         &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails,
-    > {
+    ) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails> {
         self.firelens_configuration.as_ref()
     }
     /// <p>The container health check command and associated configuration parameters for the container.</p>
-    pub fn health_check(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails,
-    > {
+    pub fn health_check(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails> {
         self.health_check.as_ref()
     }
     /// <p>The hostname to use for the container.</p>
@@ -277,19 +212,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.links.as_deref()
     }
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
-    pub fn linux_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails,
-    > {
+    pub fn linux_parameters(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails> {
         self.linux_parameters.as_ref()
     }
     /// <p>The log configuration specification for the container.</p>
-    pub fn log_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails,
-    > {
+    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails> {
         self.log_configuration.as_ref()
     }
     /// <p>The amount (in MiB) of memory to present to the container. If the container attempts to exceed the memory specified here, the container is shut down. The total amount of memory reserved for all containers within a task must be lower than the task memory value, if one is specified.</p>
@@ -301,11 +228,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.memory_reservation
     }
     /// <p>The mount points for the data volumes in the container.</p>
-    pub fn mount_points(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails],
-    > {
+    pub fn mount_points(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails]> {
         self.mount_points.as_deref()
     }
     /// <p>The name of the container.</p>
@@ -313,11 +236,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.name.as_deref()
     }
     /// <p>The list of port mappings for the container.</p>
-    pub fn port_mappings(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails],
-    > {
+    pub fn port_mappings(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails]> {
         self.port_mappings.as_deref()
     }
     /// <p>Whether the container is given elevated privileges on the host container instance. The elevated privileges are similar to the root user.</p>
@@ -335,25 +254,17 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The private repository authentication credentials to use.</p>
     pub fn repository_credentials(
         &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails,
-    > {
+    ) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails> {
         self.repository_credentials.as_ref()
     }
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
     pub fn resource_requirements(
         &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails],
-    > {
+    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails]> {
         self.resource_requirements.as_deref()
     }
     /// <p>The secrets to pass to the container.</p>
-    pub fn secrets(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails],
-    > {
+    pub fn secrets(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails]> {
         self.secrets.as_deref()
     }
     /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
@@ -365,19 +276,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.stop_timeout
     }
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
-    pub fn system_controls(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails],
-    > {
+    pub fn system_controls(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails]> {
         self.system_controls.as_deref()
     }
     /// <p>A list of ulimits to set in the container. </p>
-    pub fn ulimits(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails],
-    > {
+    pub fn ulimits(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails]> {
         self.ulimits.as_deref()
     }
     /// <p>The user to use inside the container.</p>
@@ -394,11 +297,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.user.as_deref()
     }
     /// <p>Data volumes to mount from another container.</p>
-    pub fn volumes_from(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails],
-    > {
+    pub fn volumes_from(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails]> {
         self.volumes_from.as_deref()
     }
     /// <p>The working directory in which to run commands inside the container.</p>
@@ -408,97 +307,55 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cpu: ::std::option::Option<i32>,
-    pub(crate) depends_on: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>,
-    >,
+    pub(crate) depends_on: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>>,
     pub(crate) disable_networking: ::std::option::Option<bool>,
     pub(crate) dns_search_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) docker_labels: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) docker_security_options:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) docker_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) docker_security_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) environment: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>,
-    >,
-    pub(crate) environment_files: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails,
-        >,
-    >,
+    pub(crate) environment: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>>,
+    pub(crate) environment_files:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails>>,
     pub(crate) essential: ::std::option::Option<bool>,
-    pub(crate) extra_hosts: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>,
-    >,
-    pub(crate) firelens_configuration: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails,
-    >,
-    pub(crate) health_check: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails,
-    >,
+    pub(crate) extra_hosts: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>>,
+    pub(crate) firelens_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails>,
+    pub(crate) health_check: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) interactive: ::std::option::Option<bool>,
     pub(crate) links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) linux_parameters: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails,
-    >,
-    pub(crate) log_configuration: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails,
-    >,
+    pub(crate) linux_parameters: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails>,
+    pub(crate) log_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails>,
     pub(crate) memory: ::std::option::Option<i32>,
     pub(crate) memory_reservation: ::std::option::Option<i32>,
-    pub(crate) mount_points: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>,
-    >,
+    pub(crate) mount_points: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) port_mappings: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>,
-    >,
+    pub(crate) port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>>,
     pub(crate) privileged: ::std::option::Option<bool>,
     pub(crate) pseudo_terminal: ::std::option::Option<bool>,
     pub(crate) readonly_root_filesystem: ::std::option::Option<bool>,
-    pub(crate) repository_credentials: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails,
-    >,
-    pub(crate) resource_requirements: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails,
-        >,
-    >,
-    pub(crate) secrets: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>,
-    >,
+    pub(crate) repository_credentials: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails>,
+    pub(crate) resource_requirements:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails>>,
+    pub(crate) secrets: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>>,
     pub(crate) start_timeout: ::std::option::Option<i32>,
     pub(crate) stop_timeout: ::std::option::Option<i32>,
-    pub(crate) system_controls: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails,
-        >,
-    >,
-    pub(crate) ulimits: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>,
-    >,
+    pub(crate) system_controls: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>>,
+    pub(crate) ulimits: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>>,
     pub(crate) user: ::std::option::Option<::std::string::String>,
-    pub(crate) volumes_from: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>,
-    >,
+    pub(crate) volumes_from: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
@@ -514,10 +371,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
         self
     }
     /// <p>The command that is passed to the container.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
@@ -544,10 +398,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
     ///
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
-    pub fn depends_on(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails,
-    ) -> Self {
+    pub fn depends_on(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails) -> Self {
         let mut v = self.depends_on.unwrap_or_default();
         v.push(input);
         self.depends_on = ::std::option::Option::Some(v);
@@ -556,19 +407,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
     pub fn set_depends_on(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>>,
     ) -> Self {
         self.depends_on = input;
         self
     }
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
-    pub fn get_depends_on(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>,
-    > {
+    pub fn get_depends_on(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>> {
         &self.depends_on
     }
     /// <p>Whether to disable networking within the container.</p>
@@ -590,27 +435,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_dns_search_domains`](Self::set_dns_search_domains).
     ///
     /// <p>A list of DNS search domains that are presented to the container.</p>
-    pub fn dns_search_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dns_search_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_search_domains.unwrap_or_default();
         v.push(input.into());
         self.dns_search_domains = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of DNS search domains that are presented to the container.</p>
-    pub fn set_dns_search_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_search_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_search_domains = input;
         self
     }
     /// <p>A list of DNS search domains that are presented to the container.</p>
-    pub fn get_dns_search_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_search_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_search_domains
     }
     /// Appends an item to `dns_servers`.
@@ -625,17 +462,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
         self
     }
     /// <p>A list of DNS servers that are presented to the container.</p>
-    pub fn set_dns_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_servers = input;
         self
     }
     /// <p>A list of DNS servers that are presented to the container.</p>
-    pub fn get_dns_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_servers
     }
     /// Adds a key-value pair to `docker_labels`.
@@ -643,11 +475,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_docker_labels`](Self::set_docker_labels).
     ///
     /// <p>A key-value map of labels to add to the container.</p>
-    pub fn docker_labels(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn docker_labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.docker_labels.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.docker_labels = ::std::option::Option::Some(hash_map);
@@ -656,19 +484,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>A key-value map of labels to add to the container.</p>
     pub fn set_docker_labels(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.docker_labels = input;
         self
     }
     /// <p>A key-value map of labels to add to the container.</p>
-    pub fn get_docker_labels(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_docker_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.docker_labels
     }
     /// Appends an item to `docker_security_options`.
@@ -676,27 +498,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_docker_security_options`](Self::set_docker_security_options).
     ///
     /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems.</p>
-    pub fn docker_security_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn docker_security_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.docker_security_options.unwrap_or_default();
         v.push(input.into());
         self.docker_security_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems.</p>
-    pub fn set_docker_security_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_docker_security_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.docker_security_options = input;
         self
     }
     /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems.</p>
-    pub fn get_docker_security_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_docker_security_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.docker_security_options
     }
     /// Appends an item to `entry_point`.
@@ -711,17 +525,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
         self
     }
     /// <p>The entry point that is passed to the container.</p>
-    pub fn set_entry_point(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entry_point(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entry_point = input;
         self
     }
     /// <p>The entry point that is passed to the container.</p>
-    pub fn get_entry_point(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entry_point(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entry_point
     }
     /// Appends an item to `environment`.
@@ -729,10 +538,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables to pass to a container.</p>
-    pub fn environment(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails,
-    ) -> Self {
+    pub fn environment(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails) -> Self {
         let mut v = self.environment.unwrap_or_default();
         v.push(input);
         self.environment = ::std::option::Option::Some(v);
@@ -741,11 +547,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The environment variables to pass to a container.</p>
     pub fn set_environment(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>>,
     ) -> Self {
         self.environment = input;
         self
@@ -753,9 +555,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The environment variables to pass to a container.</p>
     pub fn get_environment(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>> {
         &self.environment
     }
     /// Appends an item to `environment_files`.
@@ -763,10 +563,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_environment_files`](Self::set_environment_files).
     ///
     /// <p>A list of files containing the environment variables to pass to a container.</p>
-    pub fn environment_files(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails,
-    ) -> Self {
+    pub fn environment_files(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails) -> Self {
         let mut v = self.environment_files.unwrap_or_default();
         v.push(input);
         self.environment_files = ::std::option::Option::Some(v);
@@ -775,11 +572,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>A list of files containing the environment variables to pass to a container.</p>
     pub fn set_environment_files(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails>>,
     ) -> Self {
         self.environment_files = input;
         self
@@ -787,11 +580,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>A list of files containing the environment variables to pass to a container.</p>
     pub fn get_environment_files(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails>> {
         &self.environment_files
     }
     /// <p>Whether the container is essential. All tasks must have at least one essential container.</p>
@@ -813,10 +602,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_extra_hosts`](Self::set_extra_hosts).
     ///
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
-    pub fn extra_hosts(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails,
-    ) -> Self {
+    pub fn extra_hosts(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails) -> Self {
         let mut v = self.extra_hosts.unwrap_or_default();
         v.push(input);
         self.extra_hosts = ::std::option::Option::Some(v);
@@ -825,11 +611,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
     pub fn set_extra_hosts(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>>,
     ) -> Self {
         self.extra_hosts = input;
         self
@@ -837,25 +619,18 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
     pub fn get_extra_hosts(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>> {
         &self.extra_hosts
     }
     /// <p>The FireLens configuration for the container. Specifies and configures a log router for container logs.</p>
-    pub fn firelens_configuration(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails,
-    ) -> Self {
+    pub fn firelens_configuration(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails) -> Self {
         self.firelens_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The FireLens configuration for the container. Specifies and configures a log router for container logs.</p>
     pub fn set_firelens_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails>,
     ) -> Self {
         self.firelens_configuration = input;
         self
@@ -863,35 +638,24 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The FireLens configuration for the container. Specifies and configures a log router for container logs.</p>
     pub fn get_firelens_configuration(
         &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails,
-    > {
+    ) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails> {
         &self.firelens_configuration
     }
     /// <p>The container health check command and associated configuration parameters for the container.</p>
-    pub fn health_check(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails,
-    ) -> Self {
+    pub fn health_check(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails) -> Self {
         self.health_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>The container health check command and associated configuration parameters for the container.</p>
     pub fn set_health_check(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails>,
     ) -> Self {
         self.health_check = input;
         self
     }
     /// <p>The container health check command and associated configuration parameters for the container.</p>
-    pub fn get_health_check(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails,
-    > {
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails> {
         &self.health_check
     }
     /// <p>The hostname to use for the container.</p>
@@ -948,10 +712,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
         self
     }
     /// <p>A list of links for the container in the form <code> <i>container_name</i>:<i>alias</i> </code>. Allows containers to communicate with each other without the need for port mappings.</p>
-    pub fn set_links(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_links(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.links = input;
         self
     }
@@ -960,55 +721,37 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
         &self.links
     }
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
-    pub fn linux_parameters(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails,
-    ) -> Self {
+    pub fn linux_parameters(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails) -> Self {
         self.linux_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
     pub fn set_linux_parameters(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails>,
     ) -> Self {
         self.linux_parameters = input;
         self
     }
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
-    pub fn get_linux_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails,
-    > {
+    pub fn get_linux_parameters(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails> {
         &self.linux_parameters
     }
     /// <p>The log configuration specification for the container.</p>
-    pub fn log_configuration(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails,
-    ) -> Self {
+    pub fn log_configuration(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails) -> Self {
         self.log_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The log configuration specification for the container.</p>
     pub fn set_log_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails>,
     ) -> Self {
         self.log_configuration = input;
         self
     }
     /// <p>The log configuration specification for the container.</p>
-    pub fn get_log_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails,
-    > {
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails> {
         &self.log_configuration
     }
     /// <p>The amount (in MiB) of memory to present to the container. If the container attempts to exceed the memory specified here, the container is shut down. The total amount of memory reserved for all containers within a task must be lower than the task memory value, if one is specified.</p>
@@ -1044,10 +787,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_mount_points`](Self::set_mount_points).
     ///
     /// <p>The mount points for the data volumes in the container.</p>
-    pub fn mount_points(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails,
-    ) -> Self {
+    pub fn mount_points(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails) -> Self {
         let mut v = self.mount_points.unwrap_or_default();
         v.push(input);
         self.mount_points = ::std::option::Option::Some(v);
@@ -1056,11 +796,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The mount points for the data volumes in the container.</p>
     pub fn set_mount_points(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>>,
     ) -> Self {
         self.mount_points = input;
         self
@@ -1068,9 +804,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The mount points for the data volumes in the container.</p>
     pub fn get_mount_points(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>> {
         &self.mount_points
     }
     /// <p>The name of the container.</p>
@@ -1092,10 +826,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_port_mappings`](Self::set_port_mappings).
     ///
     /// <p>The list of port mappings for the container.</p>
-    pub fn port_mappings(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails,
-    ) -> Self {
+    pub fn port_mappings(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails) -> Self {
         let mut v = self.port_mappings.unwrap_or_default();
         v.push(input);
         self.port_mappings = ::std::option::Option::Some(v);
@@ -1104,11 +835,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The list of port mappings for the container.</p>
     pub fn set_port_mappings(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>>,
     ) -> Self {
         self.port_mappings = input;
         self
@@ -1116,9 +843,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The list of port mappings for the container.</p>
     pub fn get_port_mappings(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>> {
         &self.port_mappings
     }
     /// <p>Whether the container is given elevated privileges on the host container instance. The elevated privileges are similar to the root user.</p>
@@ -1164,19 +889,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
         &self.readonly_root_filesystem
     }
     /// <p>The private repository authentication credentials to use.</p>
-    pub fn repository_credentials(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails,
-    ) -> Self {
+    pub fn repository_credentials(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails) -> Self {
         self.repository_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>The private repository authentication credentials to use.</p>
     pub fn set_repository_credentials(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails>,
     ) -> Self {
         self.repository_credentials = input;
         self
@@ -1184,9 +904,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The private repository authentication credentials to use.</p>
     pub fn get_repository_credentials(
         &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails,
-    > {
+    ) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails> {
         &self.repository_credentials
     }
     /// Appends an item to `resource_requirements`.
@@ -1194,10 +912,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
     ///
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
-    pub fn resource_requirements(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails,
-    ) -> Self {
+    pub fn resource_requirements(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails) -> Self {
         let mut v = self.resource_requirements.unwrap_or_default();
         v.push(input);
         self.resource_requirements = ::std::option::Option::Some(v);
@@ -1206,11 +921,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
     pub fn set_resource_requirements(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails>>,
     ) -> Self {
         self.resource_requirements = input;
         self
@@ -1218,11 +929,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
     pub fn get_resource_requirements(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails>> {
         &self.resource_requirements
     }
     /// Appends an item to `secrets`.
@@ -1230,10 +937,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_secrets`](Self::set_secrets).
     ///
     /// <p>The secrets to pass to the container.</p>
-    pub fn secrets(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails,
-    ) -> Self {
+    pub fn secrets(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails) -> Self {
         let mut v = self.secrets.unwrap_or_default();
         v.push(input);
         self.secrets = ::std::option::Option::Some(v);
@@ -1242,19 +946,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The secrets to pass to the container.</p>
     pub fn set_secrets(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>>,
     ) -> Self {
         self.secrets = input;
         self
     }
     /// <p>The secrets to pass to the container.</p>
-    pub fn get_secrets(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>,
-    > {
+    pub fn get_secrets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>> {
         &self.secrets
     }
     /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
@@ -1290,10 +988,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_system_controls`](Self::set_system_controls).
     ///
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
-    pub fn system_controls(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails,
-    ) -> Self {
+    pub fn system_controls(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails) -> Self {
         let mut v = self.system_controls.unwrap_or_default();
         v.push(input);
         self.system_controls = ::std::option::Option::Some(v);
@@ -1302,11 +997,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
     pub fn set_system_controls(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>>,
     ) -> Self {
         self.system_controls = input;
         self
@@ -1314,11 +1005,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
     pub fn get_system_controls(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>> {
         &self.system_controls
     }
     /// Appends an item to `ulimits`.
@@ -1326,10 +1013,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_ulimits`](Self::set_ulimits).
     ///
     /// <p>A list of ulimits to set in the container. </p>
-    pub fn ulimits(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails,
-    ) -> Self {
+    pub fn ulimits(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails) -> Self {
         let mut v = self.ulimits.unwrap_or_default();
         v.push(input);
         self.ulimits = ::std::option::Option::Some(v);
@@ -1338,19 +1022,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>A list of ulimits to set in the container. </p>
     pub fn set_ulimits(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>>,
     ) -> Self {
         self.ulimits = input;
         self
     }
     /// <p>A list of ulimits to set in the container. </p>
-    pub fn get_ulimits(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>,
-    > {
+    pub fn get_ulimits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>> {
         &self.ulimits
     }
     /// <p>The user to use inside the container.</p>
@@ -1399,10 +1077,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// To override the contents of this collection use [`set_volumes_from`](Self::set_volumes_from).
     ///
     /// <p>Data volumes to mount from another container.</p>
-    pub fn volumes_from(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails,
-    ) -> Self {
+    pub fn volumes_from(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails) -> Self {
         let mut v = self.volumes_from.unwrap_or_default();
         v.push(input);
         self.volumes_from = ::std::option::Option::Some(v);
@@ -1411,11 +1086,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>Data volumes to mount from another container.</p>
     pub fn set_volumes_from(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>>,
     ) -> Self {
         self.volumes_from = input;
         self
@@ -1423,24 +1094,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>Data volumes to mount from another container.</p>
     pub fn get_volumes_from(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>> {
         &self.volumes_from
     }
     /// <p>The working directory in which to run commands inside the container.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory in which to run commands inside the container.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }

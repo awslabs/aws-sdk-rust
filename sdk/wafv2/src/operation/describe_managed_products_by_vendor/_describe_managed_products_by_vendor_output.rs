@@ -5,15 +5,12 @@
 pub struct DescribeManagedProductsByVendorOutput {
     /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
     #[doc(hidden)]
-    pub managed_products:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
+    pub managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }
 impl DescribeManagedProductsByVendorOutput {
     /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
-    pub fn managed_products(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ManagedProductDescriptor]> {
+    pub fn managed_products(&self) -> ::std::option::Option<&[crate::types::ManagedProductDescriptor]> {
         self.managed_products.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeManagedProductsByVendorOutput
 }
 impl DescribeManagedProductsByVendorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedProductsByVendorOutput`](crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput).
-    pub fn builder() -> crate::operation::describe_managed_products_by_vendor::builders::DescribeManagedProductsByVendorOutputBuilder{
+    pub fn builder() -> crate::operation::describe_managed_products_by_vendor::builders::DescribeManagedProductsByVendorOutputBuilder {
         crate::operation::describe_managed_products_by_vendor::builders::DescribeManagedProductsByVendorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeManagedProductsByVendorOutput`](crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedProductsByVendorOutputBuilder {
-    pub(crate) managed_products:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
+    pub(crate) managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }
 impl DescribeManagedProductsByVendorOutputBuilder {
@@ -52,17 +46,12 @@ impl DescribeManagedProductsByVendorOutputBuilder {
         self
     }
     /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
-    pub fn set_managed_products(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
-    ) -> Self {
+    pub fn set_managed_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>) -> Self {
         self.managed_products = input;
         self
     }
     /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
-    pub fn get_managed_products(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>> {
+    pub fn get_managed_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>> {
         &self.managed_products
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,13 +64,9 @@ impl DescribeManagedProductsByVendorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeManagedProductsByVendorOutput`](crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput
-    {
+    pub fn build(self) -> crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput {
         crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput {
-            managed_products: self.managed_products
-            ,
+            managed_products: self.managed_products,
             _request_id: self._request_id,
         }
     }

@@ -105,19 +105,13 @@ impl PutSessionOutputBuilder {
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
-    pub fn session_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_state = input;
         self
     }
@@ -127,18 +121,12 @@ impl PutSessionOutputBuilder {
         &self.session_state
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
-    pub fn request_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_attributes = input;
         self
     }
@@ -166,17 +154,12 @@ impl PutSessionOutputBuilder {
         self
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub fn set_audio_stream(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub fn get_audio_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.audio_stream
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

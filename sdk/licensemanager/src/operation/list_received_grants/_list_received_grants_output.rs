@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReceivedGrantsOutput {
 }
 impl ListReceivedGrantsOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedGrantsOutput`](crate::operation::list_received_grants::ListReceivedGrantsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_received_grants::builders::ListReceivedGrantsOutputBuilder {
+    pub fn builder() -> crate::operation::list_received_grants::builders::ListReceivedGrantsOutputBuilder {
         crate::operation::list_received_grants::builders::ListReceivedGrantsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceivedGrantsOutput`](crate::operation::list_received_grants::ListReceivedGrantsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceivedGrantsOutputBuilder {
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListReceivedGrantsOutputBuilder {
         self
     }
     /// <p>Received grant details.</p>
-    pub fn set_grants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
-    ) -> Self {
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>) -> Self {
         self.grants = input;
         self
     }

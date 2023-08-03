@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCallAnalyticsJobOutput {
 }
 impl DeleteCallAnalyticsJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsJobOutput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobOutputBuilder {
         crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCallAnalyticsJobOutput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCallAnalyticsJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteCallAnalyticsJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCallAnalyticsJobOutput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput {
+    pub fn build(self) -> crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput {
         crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput {
             _request_id: self._request_id,
         }

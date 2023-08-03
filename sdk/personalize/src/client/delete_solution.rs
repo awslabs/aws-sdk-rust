@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`solution_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder::solution_arn) / [`set_solution_arn(Option<String>)`](crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder::set_solution_arn): <p>The ARN of the solution to delete.</p>
     /// - On success, responds with [`DeleteSolutionOutput`](crate::operation::delete_solution::DeleteSolutionOutput)
     /// - On failure, responds with [`SdkError<DeleteSolutionError>`](crate::operation::delete_solution::DeleteSolutionError)
-    pub fn delete_solution(
-        &self,
-    ) -> crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder {
-        crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_solution(&self) -> crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder {
+        crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::id): The ID of the PackagingGroup.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<UpdatePackagingGroupError>`](crate::operation::update_packaging_group::UpdatePackagingGroupError)
-    pub fn update_packaging_group(
-        &self,
-    ) -> crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder {
-        crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_packaging_group(&self) -> crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder {
+        crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::new(self.handle.clone())
     }
 }

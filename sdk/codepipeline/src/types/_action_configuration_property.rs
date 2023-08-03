@@ -69,9 +69,7 @@ impl ActionConfigurationProperty {
 
 /// A builder for [`ActionConfigurationProperty`](crate::types::ActionConfigurationProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionConfigurationPropertyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,
@@ -178,17 +176,12 @@ impl ActionConfigurationPropertyBuilder {
         self
     }
     /// <p>The type of the configuration property.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionConfigurationPropertyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ActionConfigurationPropertyType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of the configuration property.</p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActionConfigurationPropertyType> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ActionConfigurationPropertyType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ActionConfigurationProperty`](crate::types::ActionConfigurationProperty).

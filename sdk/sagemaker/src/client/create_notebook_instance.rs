@@ -22,10 +22,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNotebookInstanceOutput`](crate::operation::create_notebook_instance::CreateNotebookInstanceOutput) with field(s):
     ///   - [`notebook_instance_arn(Option<String>)`](crate::operation::create_notebook_instance::CreateNotebookInstanceOutput::notebook_instance_arn): <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     /// - On failure, responds with [`SdkError<CreateNotebookInstanceError>`](crate::operation::create_notebook_instance::CreateNotebookInstanceError)
-    pub fn create_notebook_instance(
-        &self,
-    ) -> crate::operation::create_notebook_instance::builders::CreateNotebookInstanceFluentBuilder
-    {
+    pub fn create_notebook_instance(&self) -> crate::operation::create_notebook_instance::builders::CreateNotebookInstanceFluentBuilder {
         crate::operation::create_notebook_instance::builders::CreateNotebookInstanceFluentBuilder::new(self.handle.clone())
     }
 }

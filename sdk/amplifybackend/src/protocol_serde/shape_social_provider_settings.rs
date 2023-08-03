@@ -32,17 +32,9 @@ pub fn ser_social_provider_settings(
 
 pub(crate) fn de_social_provider_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SocialProviderSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SocialProviderSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,46 +44,41 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Facebook" => {
-                                builder = builder.set_facebook(
-                                    crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?
-                                );
-                            }
-                            "Google" => {
-                                builder = builder.set_google(
-                                    crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?
-                                );
-                            }
-                            "LoginWithAmazon" => {
-                                builder = builder.set_login_with_amazon(
-                                    crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?
-                                );
-                            }
-                            "SignInWithApple" => {
-                                builder = builder.set_sign_in_with_apple(
-                                    crate::protocol_serde::shape_backend_auth_apple_provider_config::de_backend_auth_apple_provider_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Facebook" => {
+                            builder = builder.set_facebook(
+                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?,
+                            );
                         }
-                    }
+                        "Google" => {
+                            builder = builder.set_google(
+                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?,
+                            );
+                        }
+                        "LoginWithAmazon" => {
+                            builder = builder.set_login_with_amazon(
+                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?,
+                            );
+                        }
+                        "SignInWithApple" => {
+                            builder = builder.set_sign_in_with_apple(
+                                crate::protocol_serde::shape_backend_auth_apple_provider_config::de_backend_auth_apple_provider_config(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -37,10 +37,7 @@ impl AddResourcePermissionsFluentBuilder {
         }
     }
     /// Access the AddResourcePermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AddResourcePermissionsFluentBuilder {
             crate::operation::add_resource_permissions::AddResourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_resource_permissions::AddResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_resource_permissions::AddResourcePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AddResourcePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AddResourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_resource_permissions::AddResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_resource_permissions::AddResourcePermissionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AddResourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_resource_permissions::AddResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_resource_permissions::AddResourcePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl AddResourcePermissionsFluentBuilder {
             crate::operation::add_resource_permissions::AddResourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_resource_permissions::AddResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_resource_permissions::AddResourcePermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -167,17 +147,12 @@ impl AddResourcePermissionsFluentBuilder {
         self
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn get_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>> {
         self.inner.get_principals()
     }
     /// <p>The notification options.</p>
@@ -186,17 +161,12 @@ impl AddResourcePermissionsFluentBuilder {
         self
     }
     /// <p>The notification options.</p>
-    pub fn set_notification_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationOptions>,
-    ) -> Self {
+    pub fn set_notification_options(mut self, input: ::std::option::Option<crate::types::NotificationOptions>) -> Self {
         self.inner = self.inner.set_notification_options(input);
         self
     }
     /// <p>The notification options.</p>
-    pub fn get_notification_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationOptions> {
+    pub fn get_notification_options(&self) -> &::std::option::Option<crate::types::NotificationOptions> {
         self.inner.get_notification_options()
     }
 }

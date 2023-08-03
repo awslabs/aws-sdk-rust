@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`recovery_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupFluentBuilder::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupFluentBuilder::set_recovery_group_name): <p>The name of a recovery group.</p>
     /// - On success, responds with [`DeleteRecoveryGroupOutput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteRecoveryGroupError>`](crate::operation::delete_recovery_group::DeleteRecoveryGroupError)
-    pub fn delete_recovery_group(
-        &self,
-    ) -> crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupFluentBuilder {
-        crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_recovery_group(&self) -> crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupFluentBuilder {
+        crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupFluentBuilder::new(self.handle.clone())
     }
 }

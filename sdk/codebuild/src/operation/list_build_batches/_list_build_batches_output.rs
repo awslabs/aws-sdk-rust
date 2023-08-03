@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListBuildBatchesOutput {
 }
 impl ListBuildBatchesOutput {
     /// Creates a new builder-style object to manufacture [`ListBuildBatchesOutput`](crate::operation::list_build_batches::ListBuildBatchesOutput).
-    pub fn builder() -> crate::operation::list_build_batches::builders::ListBuildBatchesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_build_batches::builders::ListBuildBatchesOutputBuilder {
         crate::operation::list_build_batches::builders::ListBuildBatchesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuildBatchesOutput`](crate::operation::list_build_batches::ListBuildBatchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildBatchesOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListBuildBatchesOutputBuilder {
         self
     }
     /// <p>An array of strings that contains the batch build identifiers.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }

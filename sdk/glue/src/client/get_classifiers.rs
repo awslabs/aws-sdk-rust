@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`classifiers(Option<Vec<Classifier>>)`](crate::operation::get_classifiers::GetClassifiersOutput::classifiers): <p>The requested list of classifier objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_classifiers::GetClassifiersOutput::next_token): <p>A continuation token.</p>
     /// - On failure, responds with [`SdkError<GetClassifiersError>`](crate::operation::get_classifiers::GetClassifiersError)
-    pub fn get_classifiers(
-        &self,
-    ) -> crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder {
-        crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_classifiers(&self) -> crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder {
+        crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::new(self.handle.clone())
     }
 }

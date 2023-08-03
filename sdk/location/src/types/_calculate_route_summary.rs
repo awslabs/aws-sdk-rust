@@ -229,10 +229,7 @@ impl CalculateRouteSummaryBuilder {
         self
     }
     /// <p>The unit of measurement for route distances.</p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.distance_unit = input;
         self
     }

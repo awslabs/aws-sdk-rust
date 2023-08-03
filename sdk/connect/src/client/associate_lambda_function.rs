@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`function_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionFluentBuilder::function_arn) / [`set_function_arn(Option<String>)`](crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionFluentBuilder::set_function_arn): <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
     /// - On success, responds with [`AssociateLambdaFunctionOutput`](crate::operation::associate_lambda_function::AssociateLambdaFunctionOutput)
     /// - On failure, responds with [`SdkError<AssociateLambdaFunctionError>`](crate::operation::associate_lambda_function::AssociateLambdaFunctionError)
-    pub fn associate_lambda_function(
-        &self,
-    ) -> crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionFluentBuilder
-    {
+    pub fn associate_lambda_function(&self) -> crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionFluentBuilder {
         crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionFluentBuilder::new(self.handle.clone())
     }
 }

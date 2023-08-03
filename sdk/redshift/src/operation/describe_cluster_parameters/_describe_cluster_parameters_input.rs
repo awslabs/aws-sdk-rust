@@ -45,16 +45,14 @@ impl DescribeClusterParametersInput {
 }
 impl DescribeClusterParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterParametersInput`](crate::operation::describe_cluster_parameters::DescribeClusterParametersInput).
-    pub fn builder() -> crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersInputBuilder {
         crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterParametersInput`](crate::operation::describe_cluster_parameters::DescribeClusterParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterParametersInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct DescribeClusterParametersInputBuilder {
 }
 impl DescribeClusterParametersInputBuilder {
     /// <p>The name of a cluster parameter group for which to return details.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a cluster parameter group for which to return details.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -143,13 +135,11 @@ impl DescribeClusterParametersInputBuilder {
         crate::operation::describe_cluster_parameters::DescribeClusterParametersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_parameters::DescribeClusterParametersInput {
-                parameter_group_name: self.parameter_group_name,
-                source: self.source,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cluster_parameters::DescribeClusterParametersInput {
+            parameter_group_name: self.parameter_group_name,
+            source: self.source,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

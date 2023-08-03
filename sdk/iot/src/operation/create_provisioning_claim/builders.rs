@@ -27,8 +27,7 @@ impl CreateProvisioningClaimInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProvisioningClaimFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimInputBuilder,
+    inner: crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimInputBuilder,
 }
 impl CreateProvisioningClaimFluentBuilder {
     /// Creates a new `CreateProvisioningClaim`.
@@ -39,10 +38,7 @@ impl CreateProvisioningClaimFluentBuilder {
         }
     }
     /// Access the CreateProvisioningClaim as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl CreateProvisioningClaimFluentBuilder {
             crate::operation::create_provisioning_claim::CreateProvisioningClaim,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_provisioning_claim::CreateProvisioningClaimError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_claim::CreateProvisioningClaimError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl CreateProvisioningClaimFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl CreateProvisioningClaimFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_provisioning_claim::CreateProvisioningClaimError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_claim::CreateProvisioningClaimError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl CreateProvisioningClaimFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_provisioning_claim::CreateProvisioningClaimError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_claim::CreateProvisioningClaimError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl CreateProvisioningClaimFluentBuilder {
             crate::operation::create_provisioning_claim::CreateProvisioningClaim,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_provisioning_claim::CreateProvisioningClaimError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_claim::CreateProvisioningClaimError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the provisioning template to use.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the provisioning template to use.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

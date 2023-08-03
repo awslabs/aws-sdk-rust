@@ -12,9 +12,7 @@ pub fn ser_load_balancers_config(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("TargetGroupsConfig");
     if let Some(var_4) = &input.target_groups_config {
-        crate::protocol_serde::shape_target_groups_config::ser_target_groups_config(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_target_groups_config::ser_target_groups_config(scope_3, var_4)?;
     }
     Ok(())
 }

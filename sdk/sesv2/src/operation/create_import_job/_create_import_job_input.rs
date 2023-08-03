@@ -30,9 +30,7 @@ impl CreateImportJobInput {
 
 /// A builder for [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImportJobInputBuilder {
     pub(crate) import_destination: ::std::option::Option<crate::types::ImportDestination>,
     pub(crate) import_data_source: ::std::option::Option<crate::types::ImportDataSource>,
@@ -44,17 +42,12 @@ impl CreateImportJobInputBuilder {
         self
     }
     /// <p>The destination for the import job.</p>
-    pub fn set_import_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDestination>,
-    ) -> Self {
+    pub fn set_import_destination(mut self, input: ::std::option::Option<crate::types::ImportDestination>) -> Self {
         self.import_destination = input;
         self
     }
     /// <p>The destination for the import job.</p>
-    pub fn get_import_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportDestination> {
+    pub fn get_import_destination(&self) -> &::std::option::Option<crate::types::ImportDestination> {
         &self.import_destination
     }
     /// <p>The data source for the import job.</p>
@@ -63,10 +56,7 @@ impl CreateImportJobInputBuilder {
         self
     }
     /// <p>The data source for the import job.</p>
-    pub fn set_import_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDataSource>,
-    ) -> Self {
+    pub fn set_import_data_source(mut self, input: ::std::option::Option<crate::types::ImportDataSource>) -> Self {
         self.import_data_source = input;
         self
     }
@@ -77,10 +67,7 @@ impl CreateImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_import_job::CreateImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_import_job::CreateImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_import_job::CreateImportJobInput {
             import_destination: self.import_destination,
             import_data_source: self.import_data_source,

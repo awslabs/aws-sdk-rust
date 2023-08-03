@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ValidatePipelineOutput {
 }
 impl ValidatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`ValidatePipelineOutput`](crate::operation::validate_pipeline::ValidatePipelineOutput).
-    pub fn builder() -> crate::operation::validate_pipeline::builders::ValidatePipelineOutputBuilder
-    {
+    pub fn builder() -> crate::operation::validate_pipeline::builders::ValidatePipelineOutputBuilder {
         crate::operation::validate_pipeline::builders::ValidatePipelineOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidatePipelineOutput`](crate::operation::validate_pipeline::ValidatePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidatePipelineOutputBuilder {
     pub(crate) is_valid: ::std::option::Option<bool>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
@@ -71,17 +68,12 @@ impl ValidatePipelineOutputBuilder {
         self
     }
     /// <p>A list of errors if the configuration is invalid.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of errors if the configuration is invalid.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

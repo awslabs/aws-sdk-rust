@@ -38,9 +38,7 @@ impl ListDomainsOutput {
 
 /// A builder for [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsOutputBuilder {
     pub(crate) domain_infos: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -59,34 +57,23 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// <p>A list of DomainInfo structures.</p>
-    pub fn set_domain_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
-    ) -> Self {
+    pub fn set_domain_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>) -> Self {
         self.domain_infos = input;
         self
     }
     /// <p>A list of DomainInfo structures.</p>
-    pub fn get_domain_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>> {
+    pub fn get_domain_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>> {
         &self.domain_infos
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

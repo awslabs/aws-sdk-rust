@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`job_arn(Option<String>)`](crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :targeted-sentiment-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput::job_status): <p>The status of the job. </p>  <ul>   <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code> operation.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<StartTargetedSentimentDetectionJobError>`](crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobError)
-    pub fn start_targeted_sentiment_detection_job(&self) -> crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobFluentBuilder{
+    pub fn start_targeted_sentiment_detection_job(
+        &self,
+    ) -> crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobFluentBuilder {
         crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

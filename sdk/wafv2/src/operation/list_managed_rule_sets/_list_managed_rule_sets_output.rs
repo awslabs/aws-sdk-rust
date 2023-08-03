@@ -8,8 +8,7 @@ pub struct ListManagedRuleSetsOutput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     #[doc(hidden)]
-    pub managed_rule_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
+    pub managed_rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListManagedRuleSetsOutput {
@@ -18,9 +17,7 @@ impl ListManagedRuleSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn managed_rule_sets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ManagedRuleSetSummary]> {
+    pub fn managed_rule_sets(&self) -> ::std::option::Option<&[crate::types::ManagedRuleSetSummary]> {
         self.managed_rule_sets.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListManagedRuleSetsOutput {
 }
 impl ListManagedRuleSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedRuleSetsOutput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsOutputBuilder {
         crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedRuleSetsOutput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedRuleSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) managed_rule_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
+    pub(crate) managed_rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListManagedRuleSetsOutputBuilder {
@@ -75,17 +68,12 @@ impl ListManagedRuleSetsOutputBuilder {
         self
     }
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn set_managed_rule_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
-    ) -> Self {
+    pub fn set_managed_rule_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>) -> Self {
         self.managed_rule_sets = input;
         self
     }
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn get_managed_rule_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>> {
+    pub fn get_managed_rule_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>> {
         &self.managed_rule_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

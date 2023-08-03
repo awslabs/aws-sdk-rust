@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDetectorVersionStatusOutput {
 }
 impl UpdateDetectorVersionStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionStatusOutput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput).
-    pub fn builder() -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusOutputBuilder {
         crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDetectorVersionStatusOutput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionStatusOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateDetectorVersionStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDetectorVersionStatusOutput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput {
+    pub fn build(self) -> crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput {
         crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput {
             _request_id: self._request_id,
         }

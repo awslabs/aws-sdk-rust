@@ -30,9 +30,7 @@ impl ResourceIdPreference {
 
 /// A builder for [`ResourceIdPreference`](crate::types::ResourceIdPreference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceIdPreferenceBuilder {
     pub(crate) resource_id_type: ::std::option::Option<crate::types::ResourceIdType>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
@@ -44,10 +42,7 @@ impl ResourceIdPreferenceBuilder {
         self
     }
     /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
-    pub fn set_resource_id_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdType>,
-    ) -> Self {
+    pub fn set_resource_id_type(mut self, input: ::std::option::Option<crate::types::ResourceIdType>) -> Self {
         self.resource_id_type = input;
         self
     }
@@ -67,10 +62,7 @@ impl ResourceIdPreferenceBuilder {
         self
     }
     /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }

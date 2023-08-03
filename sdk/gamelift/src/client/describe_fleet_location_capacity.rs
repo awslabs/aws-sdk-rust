@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeFleetLocationCapacityOutput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput) with field(s):
     ///   - [`fleet_capacity(Option<FleetCapacity>)`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput::fleet_capacity): <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetLocationCapacityError>`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError)
-    pub fn describe_fleet_location_capacity(&self) -> crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityFluentBuilder{
+    pub fn describe_fleet_location_capacity(
+        &self,
+    ) -> crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityFluentBuilder {
         crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityFluentBuilder::new(self.handle.clone())
     }
 }

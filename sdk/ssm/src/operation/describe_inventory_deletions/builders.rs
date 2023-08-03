@@ -26,7 +26,7 @@ impl DescribeInventoryDeletionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInventoryDeletionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder,
+    inner: crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder,
 }
 impl DescribeInventoryDeletionsFluentBuilder {
     /// Creates a new `DescribeInventoryDeletions`.
@@ -37,7 +37,7 @@ impl DescribeInventoryDeletionsFluentBuilder {
         }
     }
     /// Access the DescribeInventoryDeletions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInventoryDeletionsFluentBuilder {
             crate::operation::describe_inventory_deletions::DescribeInventoryDeletions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInventoryDeletionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInventoryDeletionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInventoryDeletionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeInventoryDeletionsFluentBuilder {
             crate::operation::describe_inventory_deletions::DescribeInventoryDeletions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator {
         crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>

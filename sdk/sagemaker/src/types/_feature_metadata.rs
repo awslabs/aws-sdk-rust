@@ -72,9 +72,7 @@ impl FeatureMetadata {
 
 /// A builder for [`FeatureMetadata`](crate::types::FeatureMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeatureMetadataBuilder {
     pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct FeatureMetadataBuilder {
 }
 impl FeatureMetadataBuilder {
     /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
-    pub fn feature_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
-    pub fn set_feature_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_arn = input;
         self
     }
@@ -107,18 +99,12 @@ impl FeatureMetadataBuilder {
         &self.feature_group_arn
     }
     /// <p>The name of the feature group containing the feature.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature group containing the feature.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -146,10 +132,7 @@ impl FeatureMetadataBuilder {
         self
     }
     /// <p>The data type of the feature.</p>
-    pub fn set_feature_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureType>,
-    ) -> Self {
+    pub fn set_feature_type(mut self, input: ::std::option::Option<crate::types::FeatureType>) -> Self {
         self.feature_type = input;
         self
     }
@@ -163,10 +146,7 @@ impl FeatureMetadataBuilder {
         self
     }
     /// <p>A timestamp indicating when the feature was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -180,10 +160,7 @@ impl FeatureMetadataBuilder {
         self
     }
     /// <p>A timestamp indicating when the feature was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -217,17 +194,12 @@ impl FeatureMetadataBuilder {
         self
     }
     /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`FeatureMetadata`](crate::types::FeatureMetadata).

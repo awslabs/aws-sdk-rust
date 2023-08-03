@@ -15,46 +15,35 @@ impl DescribeAssessmentTemplatesInput {
 }
 impl DescribeAssessmentTemplatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssessmentTemplatesInput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput).
-    pub fn builder() -> crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder {
         crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssessmentTemplatesInput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTemplatesInputBuilder {
-    pub(crate) assessment_template_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAssessmentTemplatesInputBuilder {
     /// Appends an item to `assessment_template_arns`.
     ///
     /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).
     ///
-    pub fn assessment_template_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_template_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_template_arns = ::std::option::Option::Some(v);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_assessment_template_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_template_arns = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_assessment_template_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_template_arns
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentTemplatesInput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput).
@@ -64,10 +53,8 @@ impl DescribeAssessmentTemplatesInputBuilder {
         crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput {
-                assessment_template_arns: self.assessment_template_arns,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput {
+            assessment_template_arns: self.assessment_template_arns,
+        })
     }
 }

@@ -16,16 +16,14 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails 
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
     /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
-    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder {
         crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder {
     pub(crate) availability_zone_count: ::std::option::Option<i32>,
 }
@@ -45,10 +43,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsB
         &self.availability_zone_count
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails
-    {
+    pub fn build(self) -> crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
         crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
             availability_zone_count: self.availability_zone_count.unwrap_or_default(),
         }

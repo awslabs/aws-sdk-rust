@@ -19,9 +19,7 @@ impl TagRoleOutput {
 
 /// A builder for [`TagRoleOutput`](crate::operation::tag_role::TagRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagRoleOutputBuilder {
     _request_id: Option<String>,
 }

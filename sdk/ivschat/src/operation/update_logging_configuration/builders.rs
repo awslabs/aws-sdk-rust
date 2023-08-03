@@ -26,7 +26,7 @@ impl UpdateLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder,
+    inner: crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder,
 }
 impl UpdateLoggingConfigurationFluentBuilder {
     /// Creates a new `UpdateLoggingConfiguration`.
@@ -37,7 +37,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateLoggingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
             crate::operation::update_logging_configuration::UpdateLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logging_configuration::UpdateLoggingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logging_configuration::UpdateLoggingConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logging_configuration::UpdateLoggingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
             crate::operation::update_logging_configuration::UpdateLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logging_configuration::UpdateLoggingConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -149,25 +138,17 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self.inner.get_name()
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.inner = self.inner.destination_configuration(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         self.inner.get_destination_configuration()
     }
 }

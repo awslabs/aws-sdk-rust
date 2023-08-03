@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_accounts::ListAccountsOutput::next_token): <p>The page token client that is used to retrieve the list of accounts.</p>
     ///   - [`account_list(Option<Vec<AccountInfo>>)`](crate::operation::list_accounts::ListAccountsOutput::account_list): <p>A paginated response with the list of account information and the next token if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListAccountsError>`](crate::operation::list_accounts::ListAccountsError)
-    pub fn list_accounts(
-        &self,
-    ) -> crate::operation::list_accounts::builders::ListAccountsFluentBuilder {
-        crate::operation::list_accounts::builders::ListAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_accounts(&self) -> crate::operation::list_accounts::builders::ListAccountsFluentBuilder {
+        crate::operation::list_accounts::builders::ListAccountsFluentBuilder::new(self.handle.clone())
     }
 }

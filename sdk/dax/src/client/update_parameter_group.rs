@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateParameterGroupOutput`](crate::operation::update_parameter_group::UpdateParameterGroupOutput) with field(s):
     ///   - [`parameter_group(Option<ParameterGroup>)`](crate::operation::update_parameter_group::UpdateParameterGroupOutput::parameter_group): <p>The parameter group that has been modified.</p>
     /// - On failure, responds with [`SdkError<UpdateParameterGroupError>`](crate::operation::update_parameter_group::UpdateParameterGroupError)
-    pub fn update_parameter_group(
-        &self,
-    ) -> crate::operation::update_parameter_group::builders::UpdateParameterGroupFluentBuilder {
-        crate::operation::update_parameter_group::builders::UpdateParameterGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_parameter_group(&self) -> crate::operation::update_parameter_group::builders::UpdateParameterGroupFluentBuilder {
+        crate::operation::update_parameter_group::builders::UpdateParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

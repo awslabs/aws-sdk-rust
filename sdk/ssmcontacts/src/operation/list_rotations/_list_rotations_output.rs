@@ -35,9 +35,7 @@ impl ListRotationsOutput {
 
 /// A builder for [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRotationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) rotations: ::std::option::Option<::std::vec::Vec<crate::types::Rotation>>,
@@ -70,10 +68,7 @@ impl ListRotationsOutputBuilder {
         self
     }
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub fn set_rotations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rotation>>,
-    ) -> Self {
+    pub fn set_rotations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rotation>>) -> Self {
         self.rotations = input;
         self
     }

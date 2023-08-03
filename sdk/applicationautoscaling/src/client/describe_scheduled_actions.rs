@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`scheduled_actions(Option<Vec<ScheduledAction>>)`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput::scheduled_actions): <p>Information about the scheduled actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeScheduledActionsError>`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsError)
-    pub fn describe_scheduled_actions(
-        &self,
-    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder
-    {
+    pub fn describe_scheduled_actions(&self) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder::new(self.handle.clone())
     }
 }

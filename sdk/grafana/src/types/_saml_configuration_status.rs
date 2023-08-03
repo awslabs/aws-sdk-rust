@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SamlConfigurationStatus {
     /// Indicates that SAML on an AMG workspace is enabled and has been configured.
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SamlConfigurationStatus {
         match s {
             "CONFIGURED" => SamlConfigurationStatus::Configured,
             "NOT_CONFIGURED" => SamlConfigurationStatus::NotConfigured,
-            other => SamlConfigurationStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SamlConfigurationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

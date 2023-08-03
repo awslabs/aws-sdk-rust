@@ -6,26 +6,18 @@
 pub struct AwsS3BucketWebsiteConfigurationRoutingRule {
     /// <p>Provides the condition that must be met in order to apply the routing rule.</p>
     #[doc(hidden)]
-    pub condition:
-        ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
+    pub condition: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
     /// <p>Provides the rules to redirect the request if the condition in <code>Condition</code> is met.</p>
     #[doc(hidden)]
-    pub redirect:
-        ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,
+    pub redirect: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRule {
     /// <p>Provides the condition that must be met in order to apply the routing rule.</p>
-    pub fn condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>
-    {
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition> {
         self.condition.as_ref()
     }
     /// <p>Provides the rules to redirect the request if the condition in <code>Condition</code> is met.</p>
-    pub fn redirect(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>
-    {
+    pub fn redirect(&self) -> ::std::option::Option<&crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect> {
         self.redirect.as_ref()
     }
 }
@@ -38,64 +30,38 @@ impl AwsS3BucketWebsiteConfigurationRoutingRule {
 
 /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRoutingRuleBuilder {
-    pub(crate) condition:
-        ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
-    pub(crate) redirect:
-        ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,
+    pub(crate) condition: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
+    pub(crate) redirect: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleBuilder {
     /// <p>Provides the condition that must be met in order to apply the routing rule.</p>
-    pub fn condition(
-        mut self,
-        input: crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition,
-    ) -> Self {
+    pub fn condition(mut self, input: crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the condition that must be met in order to apply the routing rule.</p>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition,
-        >,
-    ) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>) -> Self {
         self.condition = input;
         self
     }
     /// <p>Provides the condition that must be met in order to apply the routing rule.</p>
-    pub fn get_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>
-    {
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition> {
         &self.condition
     }
     /// <p>Provides the rules to redirect the request if the condition in <code>Condition</code> is met.</p>
-    pub fn redirect(
-        mut self,
-        input: crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect,
-    ) -> Self {
+    pub fn redirect(mut self, input: crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect) -> Self {
         self.redirect = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the rules to redirect the request if the condition in <code>Condition</code> is met.</p>
-    pub fn set_redirect(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect,
-        >,
-    ) -> Self {
+    pub fn set_redirect(mut self, input: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>) -> Self {
         self.redirect = input;
         self
     }
     /// <p>Provides the rules to redirect the request if the condition in <code>Condition</code> is met.</p>
-    pub fn get_redirect(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>
-    {
+    pub fn get_redirect(&self) -> &::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect> {
         &self.redirect
     }
     /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRule).

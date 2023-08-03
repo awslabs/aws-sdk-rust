@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_events::ListInferenceEventsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
     ///   - [`inference_event_summaries(Option<Vec<InferenceEventSummary>>)`](crate::operation::list_inference_events::ListInferenceEventsOutput::inference_event_summaries): <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     /// - On failure, responds with [`SdkError<ListInferenceEventsError>`](crate::operation::list_inference_events::ListInferenceEventsError)
-    pub fn list_inference_events(
-        &self,
-    ) -> crate::operation::list_inference_events::builders::ListInferenceEventsFluentBuilder {
-        crate::operation::list_inference_events::builders::ListInferenceEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_inference_events(&self) -> crate::operation::list_inference_events::builders::ListInferenceEventsFluentBuilder {
+        crate::operation::list_inference_events::builders::ListInferenceEventsFluentBuilder::new(self.handle.clone())
     }
 }

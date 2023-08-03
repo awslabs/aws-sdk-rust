@@ -10,10 +10,7 @@ impl AddBridgeSourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_bridge_sources::AddBridgeSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_sources::AddBridgeSourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_sources::AddBridgeSourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_bridge_sources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddBridgeSourcesFluentBuilder {
         }
     }
     /// Access the AddBridgeSources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_bridge_sources::builders::AddBridgeSourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_bridge_sources::builders::AddBridgeSourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddBridgeSourcesFluentBuilder {
             crate::operation::add_bridge_sources::AddBridgeSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_sources::AddBridgeSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_sources::AddBridgeSourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddBridgeSourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddBridgeSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_bridge_sources::AddBridgeSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_sources::AddBridgeSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_sources::AddBridgeSourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddBridgeSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_bridge_sources::AddBridgeSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_sources::AddBridgeSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_sources::AddBridgeSourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AddBridgeSourcesFluentBuilder {
             crate::operation::add_bridge_sources::AddBridgeSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_sources::AddBridgeSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_sources::AddBridgeSourcesError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl AddBridgeSourcesFluentBuilder {
         self
     }
     /// The sources that you want to add to this bridge.
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// The sources that you want to add to this bridge.
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>> {
         self.inner.get_sources()
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteScheduledActionOutput`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput) with field(s):
     ///   - [`failed_scheduled_actions(Option<Vec<FailedScheduledUpdateGroupActionRequest>>)`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput::failed_scheduled_actions): <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteScheduledActionError>`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError)
-    pub fn batch_delete_scheduled_action(&self) -> crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionFluentBuilder{
+    pub fn batch_delete_scheduled_action(
+        &self,
+    ) -> crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionFluentBuilder {
         crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionFluentBuilder::new(self.handle.clone())
     }
 }

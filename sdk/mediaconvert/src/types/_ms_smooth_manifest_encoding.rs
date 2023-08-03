@@ -38,13 +38,7 @@
 /// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MsSmoothManifestEncoding {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for MsSmoothManifestEncoding {
         match s {
             "UTF16" => MsSmoothManifestEncoding::Utf16,
             "UTF8" => MsSmoothManifestEncoding::Utf8,
-            other => MsSmoothManifestEncoding::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MsSmoothManifestEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

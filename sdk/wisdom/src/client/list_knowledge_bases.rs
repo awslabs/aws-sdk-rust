@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`knowledge_base_summaries(Option<Vec<KnowledgeBaseSummary>>)`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput::knowledge_base_summaries): <p>Information about the knowledge bases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListKnowledgeBasesError>`](crate::operation::list_knowledge_bases::ListKnowledgeBasesError)
-    pub fn list_knowledge_bases(
-        &self,
-    ) -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder {
-        crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_knowledge_bases(&self) -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder {
+        crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::new(self.handle.clone())
     }
 }

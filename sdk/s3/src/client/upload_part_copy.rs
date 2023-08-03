@@ -32,11 +32,7 @@ impl super::Client {
     ///   - [`bucket_key_enabled(bool)`](crate::operation::upload_part_copy::UploadPartCopyOutput::bucket_key_enabled): <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::upload_part_copy::UploadPartCopyOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<UploadPartCopyError>`](crate::operation::upload_part_copy::UploadPartCopyError)
-    pub fn upload_part_copy(
-        &self,
-    ) -> crate::operation::upload_part_copy::builders::UploadPartCopyFluentBuilder {
-        crate::operation::upload_part_copy::builders::UploadPartCopyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upload_part_copy(&self) -> crate::operation::upload_part_copy::builders::UploadPartCopyFluentBuilder {
+        crate::operation::upload_part_copy::builders::UploadPartCopyFluentBuilder::new(self.handle.clone())
     }
 }

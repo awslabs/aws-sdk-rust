@@ -37,9 +37,7 @@ impl EgressEndpoint {
 
 /// A builder for [`EgressEndpoint`](crate::types::EgressEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EgressEndpointBuilder {
     pub(crate) packaging_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct EgressEndpointBuilder {
 }
 impl EgressEndpointBuilder {
     /// The ID of the PackagingConfiguration being applied to the Asset.
-    pub fn packaging_configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn packaging_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.packaging_configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the PackagingConfiguration being applied to the Asset.
-    pub fn set_packaging_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_packaging_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.packaging_configuration_id = input;
         self
     }

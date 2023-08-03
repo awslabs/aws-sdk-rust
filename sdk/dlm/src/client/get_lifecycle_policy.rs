@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetLifecyclePolicyOutput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput) with field(s):
     ///   - [`policy(Option<LifecyclePolicy>)`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput::policy): <p>Detailed information about the lifecycle policy.</p>
     /// - On failure, responds with [`SdkError<GetLifecyclePolicyError>`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyError)
-    pub fn get_lifecycle_policy(
-        &self,
-    ) -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder {
-        crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_lifecycle_policy(&self) -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder {
+        crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder::new(self.handle.clone())
     }
 }

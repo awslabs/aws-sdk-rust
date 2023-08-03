@@ -10,10 +10,7 @@ impl ListDataSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_data_sets::ListDataSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_sets::ListDataSetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_sets::ListDataSetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_data_sets();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListDataSetsFluentBuilder {
         }
     }
     /// Access the ListDataSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_data_sets::builders::ListDataSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_data_sets::builders::ListDataSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListDataSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,27 +110,16 @@ impl ListDataSetsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_data_sets::paginator::ListDataSetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_data_sets::paginator::ListDataSetsPaginator {
-        crate::operation::list_data_sets::paginator::ListDataSetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_data_sets::paginator::ListDataSetsPaginator {
+        crate::operation::list_data_sets::paginator::ListDataSetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

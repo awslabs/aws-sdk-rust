@@ -27,7 +27,7 @@ impl UpdatePackageConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePackageConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_package_configuration::builders::UpdatePackageConfigurationInputBuilder,
+    inner: crate::operation::update_package_configuration::builders::UpdatePackageConfigurationInputBuilder,
 }
 impl UpdatePackageConfigurationFluentBuilder {
     /// Creates a new `UpdatePackageConfiguration`.
@@ -38,7 +38,7 @@ impl UpdatePackageConfigurationFluentBuilder {
         }
     }
     /// Access the UpdatePackageConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_package_configuration::builders::UpdatePackageConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_package_configuration::builders::UpdatePackageConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdatePackageConfigurationFluentBuilder {
             crate::operation::update_package_configuration::UpdatePackageConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_configuration::UpdatePackageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_configuration::UpdatePackageConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdatePackageConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdatePackageConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_package_configuration::UpdatePackageConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_configuration::UpdatePackageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_configuration::UpdatePackageConfigurationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdatePackageConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_package_configuration::UpdatePackageConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_configuration::UpdatePackageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_configuration::UpdatePackageConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -115,32 +106,22 @@ impl UpdatePackageConfigurationFluentBuilder {
             crate::operation::update_package_configuration::UpdatePackageConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_configuration::UpdatePackageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_configuration::UpdatePackageConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
-    pub fn version_update_by_jobs_config(
-        mut self,
-        input: crate::types::VersionUpdateByJobsConfig,
-    ) -> Self {
+    pub fn version_update_by_jobs_config(mut self, input: crate::types::VersionUpdateByJobsConfig) -> Self {
         self.inner = self.inner.version_update_by_jobs_config(input);
         self
     }
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
-    pub fn set_version_update_by_jobs_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
-    ) -> Self {
+    pub fn set_version_update_by_jobs_config(mut self, input: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>) -> Self {
         self.inner = self.inner.set_version_update_by_jobs_config(input);
         self
     }
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
-    pub fn get_version_update_by_jobs_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
+    pub fn get_version_update_by_jobs_config(&self) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
         self.inner.get_version_update_by_jobs_config()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>

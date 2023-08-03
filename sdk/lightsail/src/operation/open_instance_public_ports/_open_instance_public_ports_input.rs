@@ -22,18 +22,14 @@ impl OpenInstancePublicPortsInput {
 }
 impl OpenInstancePublicPortsInput {
     /// Creates a new builder-style object to manufacture [`OpenInstancePublicPortsInput`](crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput).
-    pub fn builder(
-    ) -> crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder
-    {
+    pub fn builder() -> crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder {
         crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder::default()
     }
 }
 
 /// A builder for [`OpenInstancePublicPortsInput`](crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenInstancePublicPortsInputBuilder {
     pub(crate) port_info: ::std::option::Option<crate::types::PortInfo>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl OpenInstancePublicPortsInputBuilder {
         &self.port_info
     }
     /// <p>The name of the instance for which to open ports.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance for which to open ports.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -80,11 +70,9 @@ impl OpenInstancePublicPortsInputBuilder {
         crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput {
-                port_info: self.port_info,
-                instance_name: self.instance_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput {
+            port_info: self.port_info,
+            instance_name: self.instance_name,
+        })
     }
 }

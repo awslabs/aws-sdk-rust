@@ -32,9 +32,7 @@ impl AggregateOperation {
 
 /// A builder for [`AggregateOperation`](crate::types::AggregateOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateOperationBuilder {
     pub(crate) column: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) agg_func: ::std::option::Option<crate::types::AggFunction>,
@@ -52,10 +50,7 @@ impl AggregateOperationBuilder {
         self
     }
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.column = input;
         self
     }

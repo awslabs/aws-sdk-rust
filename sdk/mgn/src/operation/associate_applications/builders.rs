@@ -37,10 +37,7 @@ impl AssociateApplicationsFluentBuilder {
         }
     }
     /// Access the AssociateApplications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_applications::builders::AssociateApplicationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_applications::builders::AssociateApplicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateApplicationsFluentBuilder {
             crate::operation::associate_applications::AssociateApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_applications::AssociateApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_applications::AssociateApplicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateApplicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_applications::AssociateApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_applications::AssociateApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_applications::AssociateApplicationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_applications::AssociateApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_applications::AssociateApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_applications::AssociateApplicationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AssociateApplicationsFluentBuilder {
             crate::operation::associate_applications::AssociateApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_applications::AssociateApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_applications::AssociateApplicationsError>,
     > {
         self.customize_middleware().await
     }
@@ -142,25 +128,17 @@ impl AssociateApplicationsFluentBuilder {
     /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
     ///
     /// <p>Application IDs list.</p>
-    pub fn application_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_i_ds(input.into());
         self
     }
     /// <p>Application IDs list.</p>
-    pub fn set_application_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_application_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_application_i_ds(input);
         self
     }
     /// <p>Application IDs list.</p>
-    pub fn get_application_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_application_i_ds()
     }
     /// <p>Account ID.</p>

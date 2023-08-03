@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`relational_database_events(Option<Vec<RelationalDatabaseEvent>>)`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsOutput::relational_database_events): <p>An object describing the result of your get relational database events request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseEventsError>`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError)
-    pub fn get_relational_database_events(&self) -> crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsFluentBuilder{
+    pub fn get_relational_database_events(
+        &self,
+    ) -> crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsFluentBuilder {
         crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsFluentBuilder::new(self.handle.clone())
     }
 }

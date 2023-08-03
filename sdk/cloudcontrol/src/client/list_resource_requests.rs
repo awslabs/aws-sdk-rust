@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resource_request_status_summaries(Option<Vec<ProgressEvent>>)`](crate::operation::list_resource_requests::ListResourceRequestsOutput::resource_request_status_summaries): <p>The requests that match the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_requests::ListResourceRequestsOutput::next_token): <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     /// - On failure, responds with [`SdkError<ListResourceRequestsError>`](crate::operation::list_resource_requests::ListResourceRequestsError)
-    pub fn list_resource_requests(
-        &self,
-    ) -> crate::operation::list_resource_requests::builders::ListResourceRequestsFluentBuilder {
-        crate::operation::list_resource_requests::builders::ListResourceRequestsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_requests(&self) -> crate::operation::list_resource_requests::builders::ListResourceRequestsFluentBuilder {
+        crate::operation::list_resource_requests::builders::ListResourceRequestsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateExperimentOutput`](crate::operation::create_experiment::CreateExperimentOutput) with field(s):
     ///   - [`experiment_arn(Option<String>)`](crate::operation::create_experiment::CreateExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment.</p>
     /// - On failure, responds with [`SdkError<CreateExperimentError>`](crate::operation::create_experiment::CreateExperimentError)
-    pub fn create_experiment(
-        &self,
-    ) -> crate::operation::create_experiment::builders::CreateExperimentFluentBuilder {
-        crate::operation::create_experiment::builders::CreateExperimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_experiment(&self) -> crate::operation::create_experiment::builders::CreateExperimentFluentBuilder {
+        crate::operation::create_experiment::builders::CreateExperimentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,8 +8,7 @@ pub struct AdminSetUserMfaPreferenceInput {
     pub sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
     /// <p>The time-based one-time password software token MFA settings.</p>
     #[doc(hidden)]
-    pub software_token_mfa_settings:
-        ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
+    pub software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
     /// <p>The user pool username or alias.</p>
     #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
@@ -23,9 +22,7 @@ impl AdminSetUserMfaPreferenceInput {
         self.sms_mfa_settings.as_ref()
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
-    pub fn software_token_mfa_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SoftwareTokenMfaSettingsType> {
+    pub fn software_token_mfa_settings(&self) -> ::std::option::Option<&crate::types::SoftwareTokenMfaSettingsType> {
         self.software_token_mfa_settings.as_ref()
     }
     /// <p>The user pool username or alias.</p>
@@ -41,10 +38,7 @@ impl ::std::fmt::Debug for AdminSetUserMfaPreferenceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserMfaPreferenceInput");
         formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
-        formatter.field(
-            "software_token_mfa_settings",
-            &self.software_token_mfa_settings,
-        );
+        formatter.field("software_token_mfa_settings", &self.software_token_mfa_settings);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.finish()
@@ -52,7 +46,7 @@ impl ::std::fmt::Debug for AdminSetUserMfaPreferenceInput {
 }
 impl AdminSetUserMfaPreferenceInput {
     /// Creates a new builder-style object to manufacture [`AdminSetUserMfaPreferenceInput`](crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput).
-    pub fn builder() -> crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder{
+    pub fn builder() -> crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder {
         crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder::default()
     }
 }
@@ -62,8 +56,7 @@ impl AdminSetUserMfaPreferenceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AdminSetUserMfaPreferenceInputBuilder {
     pub(crate) sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
-    pub(crate) software_token_mfa_settings:
-        ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
+    pub(crate) software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
 }
@@ -74,10 +67,7 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         self
     }
     /// <p>The SMS text message MFA settings.</p>
-    pub fn set_sms_mfa_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsMfaSettingsType>,
-    ) -> Self {
+    pub fn set_sms_mfa_settings(mut self, input: ::std::option::Option<crate::types::SmsMfaSettingsType>) -> Self {
         self.sms_mfa_settings = input;
         self
     }
@@ -86,25 +76,17 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         &self.sms_mfa_settings
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
-    pub fn software_token_mfa_settings(
-        mut self,
-        input: crate::types::SoftwareTokenMfaSettingsType,
-    ) -> Self {
+    pub fn software_token_mfa_settings(mut self, input: crate::types::SoftwareTokenMfaSettingsType) -> Self {
         self.software_token_mfa_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
-    pub fn set_software_token_mfa_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
-    ) -> Self {
+    pub fn set_software_token_mfa_settings(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>) -> Self {
         self.software_token_mfa_settings = input;
         self
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
-    pub fn get_software_token_mfa_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
+    pub fn get_software_token_mfa_settings(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
         &self.software_token_mfa_settings
     }
     /// <p>The user pool username or alias.</p>
@@ -142,24 +124,19 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput {
-                sms_mfa_settings: self.sms_mfa_settings,
-                software_token_mfa_settings: self.software_token_mfa_settings,
-                username: self.username,
-                user_pool_id: self.user_pool_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput {
+            sms_mfa_settings: self.sms_mfa_settings,
+            software_token_mfa_settings: self.software_token_mfa_settings,
+            username: self.username,
+            user_pool_id: self.user_pool_id,
+        })
     }
 }
 impl ::std::fmt::Debug for AdminSetUserMfaPreferenceInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserMfaPreferenceInputBuilder");
         formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
-        formatter.field(
-            "software_token_mfa_settings",
-            &self.software_token_mfa_settings,
-        );
+        formatter.field("software_token_mfa_settings", &self.software_token_mfa_settings);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.finish()

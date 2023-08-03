@@ -5,15 +5,12 @@
 pub struct GetRecommenderConfigurationsOutput {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
-    pub list_recommender_configurations_response:
-        ::std::option::Option<crate::types::ListRecommenderConfigurationsResponse>,
+    pub list_recommender_configurations_response: ::std::option::Option<crate::types::ListRecommenderConfigurationsResponse>,
     _request_id: Option<String>,
 }
 impl GetRecommenderConfigurationsOutput {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
-    pub fn list_recommender_configurations_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListRecommenderConfigurationsResponse> {
+    pub fn list_recommender_configurations_response(&self) -> ::std::option::Option<&crate::types::ListRecommenderConfigurationsResponse> {
         self.list_recommender_configurations_response.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for GetRecommenderConfigurationsOutput {
 }
 impl GetRecommenderConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommenderConfigurationsOutput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput).
-    pub fn builder() -> crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsOutputBuilder {
         crate::operation::get_recommender_configurations::builders::GetRecommenderConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommenderConfigurationsOutput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommenderConfigurationsOutputBuilder {
-    pub(crate) list_recommender_configurations_response:
-        ::std::option::Option<crate::types::ListRecommenderConfigurationsResponse>,
+    pub(crate) list_recommender_configurations_response: ::std::option::Option<crate::types::ListRecommenderConfigurationsResponse>,
     _request_id: Option<String>,
 }
 impl GetRecommenderConfigurationsOutputBuilder {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
-    pub fn list_recommender_configurations_response(
-        mut self,
-        input: crate::types::ListRecommenderConfigurationsResponse,
-    ) -> Self {
+    pub fn list_recommender_configurations_response(mut self, input: crate::types::ListRecommenderConfigurationsResponse) -> Self {
         self.list_recommender_configurations_response = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl GetRecommenderConfigurationsOutputBuilder {
         self
     }
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
-    pub fn get_list_recommender_configurations_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListRecommenderConfigurationsResponse> {
+    pub fn get_list_recommender_configurations_response(&self) -> &::std::option::Option<crate::types::ListRecommenderConfigurationsResponse> {
         &self.list_recommender_configurations_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +61,7 @@ impl GetRecommenderConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecommenderConfigurationsOutput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput {
+    pub fn build(self) -> crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput {
         crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput {
             list_recommender_configurations_response: self.list_recommender_configurations_response,
             _request_id: self._request_id,

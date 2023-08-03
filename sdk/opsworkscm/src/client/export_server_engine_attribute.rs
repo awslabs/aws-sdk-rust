@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`engine_attribute(Option<EngineAttribute>)`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput::engine_attribute): <p>The requested engine attribute pair with attribute name and value.</p>
     ///   - [`server_name(Option<String>)`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput::server_name): <p>The server name used in the request.</p>
     /// - On failure, responds with [`SdkError<ExportServerEngineAttributeError>`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError)
-    pub fn export_server_engine_attribute(&self) -> crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeFluentBuilder{
+    pub fn export_server_engine_attribute(
+        &self,
+    ) -> crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeFluentBuilder {
         crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeFluentBuilder::new(self.handle.clone())
     }
 }

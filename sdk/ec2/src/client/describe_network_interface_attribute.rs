@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`network_interface_id(Option<String>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::network_interface_id): <p>The ID of the network interface.</p>
     ///   - [`source_dest_check(Option<AttributeBooleanValue>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::source_dest_check): <p>Indicates whether source/destination checking is enabled.</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkInterfaceAttributeError>`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError)
-    pub fn describe_network_interface_attribute(&self) -> crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeFluentBuilder{
+    pub fn describe_network_interface_attribute(
+        &self,
+    ) -> crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeFluentBuilder {
         crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeFluentBuilder::new(self.handle.clone())
     }
 }

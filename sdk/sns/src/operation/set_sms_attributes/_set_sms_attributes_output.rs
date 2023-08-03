@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for SetSmsAttributesOutput {
 }
 impl SetSmsAttributesOutput {
     /// Creates a new builder-style object to manufacture [`SetSmsAttributesOutput`](crate::operation::set_sms_attributes::SetSmsAttributesOutput).
-    pub fn builder() -> crate::operation::set_sms_attributes::builders::SetSmsAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_sms_attributes::builders::SetSmsAttributesOutputBuilder {
         crate::operation::set_sms_attributes::builders::SetSmsAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetSmsAttributesOutput`](crate::operation::set_sms_attributes::SetSmsAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetSmsAttributesOutputBuilder {
     _request_id: Option<String>,
 }

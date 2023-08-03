@@ -22,9 +22,7 @@ impl StopMatchmakingInput {
 
 /// A builder for [`StopMatchmakingInput`](crate::operation::stop_matchmaking::StopMatchmakingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopMatchmakingInputBuilder {
     pub(crate) ticket_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl StopMatchmakingInputBuilder {
     /// Consumes the builder and constructs a [`StopMatchmakingInput`](crate::operation::stop_matchmaking::StopMatchmakingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_matchmaking::StopMatchmakingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_matchmaking::StopMatchmakingInput {
-            ticket_id: self.ticket_id,
-        })
+    ) -> ::std::result::Result<crate::operation::stop_matchmaking::StopMatchmakingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_matchmaking::StopMatchmakingInput { ticket_id: self.ticket_id })
     }
 }

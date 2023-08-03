@@ -18,10 +18,7 @@ pub fn ser_put_job_success_result_input(
     if let Some(var_5) = &input.execution_details {
         #[allow(unused_mut)]
         let mut object_6 = object.key("executionDetails").start_object();
-        crate::protocol_serde::shape_execution_details::ser_execution_details(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_execution_details::ser_execution_details(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.output_variables {

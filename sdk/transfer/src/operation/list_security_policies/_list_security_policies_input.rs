@@ -22,17 +22,14 @@ impl ListSecurityPoliciesInput {
 }
 impl ListSecurityPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder {
         crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityPoliciesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl ListSecurityPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_security_policies::ListSecurityPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_security_policies::ListSecurityPoliciesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_security_policies::ListSecurityPoliciesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

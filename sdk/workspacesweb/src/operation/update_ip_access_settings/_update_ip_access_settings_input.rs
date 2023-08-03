@@ -56,9 +56,7 @@ impl ::std::fmt::Debug for UpdateIpAccessSettingsInput {
 }
 impl UpdateIpAccessSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateIpAccessSettingsInput`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder {
         crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder::default()
     }
 }
@@ -75,18 +73,12 @@ pub struct UpdateIpAccessSettingsInputBuilder {
 }
 impl UpdateIpAccessSettingsInputBuilder {
     /// <p>The ARN of the IP access settings.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_access_settings_arn = input;
         self
     }
@@ -134,10 +126,7 @@ impl UpdateIpAccessSettingsInputBuilder {
         self
     }
     /// <p>The updated IP rules of the IP access settings.</p>
-    pub fn set_ip_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
-    ) -> Self {
+    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>) -> Self {
         self.ip_rules = input;
         self
     }
@@ -169,15 +158,13 @@ impl UpdateIpAccessSettingsInputBuilder {
         crate::operation::update_ip_access_settings::UpdateIpAccessSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsInput {
-                ip_access_settings_arn: self.ip_access_settings_arn,
-                display_name: self.display_name,
-                description: self.description,
-                ip_rules: self.ip_rules,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_ip_access_settings::UpdateIpAccessSettingsInput {
+            ip_access_settings_arn: self.ip_access_settings_arn,
+            display_name: self.display_name,
+            description: self.description,
+            ip_rules: self.ip_rules,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateIpAccessSettingsInputBuilder {

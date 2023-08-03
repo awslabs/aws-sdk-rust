@@ -12,10 +12,7 @@ pub fn ser_get_deployable_patch_snapshot_for_instance_input(
     if let Some(var_3) = &input.baseline_override {
         #[allow(unused_mut)]
         let mut object_4 = object.key("BaselineOverride").start_object();
-        crate::protocol_serde::shape_baseline_override::ser_baseline_override(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_baseline_override::ser_baseline_override(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

@@ -10,10 +10,7 @@ impl CreateJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_job::CreateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job::CreateJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_job();
         fluent_builder.inner = self;
@@ -55,10 +52,7 @@ impl CreateJobFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_job::CreateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_job::CreateJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
     > {
         let handle = self.handle.clone();
@@ -69,10 +63,7 @@ impl CreateJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -114,10 +105,7 @@ impl CreateJobFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_job::CreateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_job::CreateJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
     > {
         self.customize_middleware().await
@@ -156,10 +144,7 @@ impl CreateJobFluentBuilder {
         self
     }
     /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::JobOperation>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::JobOperation>) -> Self {
         self.inner = self.inner.set_operation(input);
         self
     }
@@ -182,18 +167,12 @@ impl CreateJobFluentBuilder {
         self.inner.get_report()
     }
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -267,10 +246,7 @@ impl CreateJobFluentBuilder {
         self
     }
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -284,17 +260,12 @@ impl CreateJobFluentBuilder {
         self
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
-    pub fn set_manifest_generator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobManifestGenerator>,
-    ) -> Self {
+    pub fn set_manifest_generator(mut self, input: ::std::option::Option<crate::types::JobManifestGenerator>) -> Self {
         self.inner = self.inner.set_manifest_generator(input);
         self
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
-    pub fn get_manifest_generator(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobManifestGenerator> {
+    pub fn get_manifest_generator(&self) -> &::std::option::Option<crate::types::JobManifestGenerator> {
         self.inner.get_manifest_generator()
     }
 }

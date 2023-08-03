@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for UpdateUserPoolDomainOutput {
 }
 impl UpdateUserPoolDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolDomainOutput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainOutputBuilder {
         crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserPoolDomainOutput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserPoolDomainOutputBuilder {
     pub(crate) cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateUserPoolDomainOutputBuilder {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
-    pub fn cloud_front_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_front_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_front_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
-    pub fn set_cloud_front_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_front_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_front_domain = input;
         self
     }

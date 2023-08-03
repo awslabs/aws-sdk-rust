@@ -27,16 +27,14 @@ impl DeleteDbClusterParameterGroupInput {
 }
 impl DeleteDbClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupInput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder {
         crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbClusterParameterGroupInput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbClusterParameterGroupInputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,10 +46,7 @@ impl DeleteDbClusterParameterGroupInputBuilder {
     /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
     /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -62,10 +57,7 @@ impl DeleteDbClusterParameterGroupInputBuilder {
     /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
     /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
     }
@@ -76,9 +68,7 @@ impl DeleteDbClusterParameterGroupInputBuilder {
     /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
     /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupInput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput).
@@ -88,11 +78,8 @@ impl DeleteDbClusterParameterGroupInputBuilder {
         crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput {
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput {
+            db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+        })
     }
 }

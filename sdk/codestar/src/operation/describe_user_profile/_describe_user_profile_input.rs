@@ -15,18 +15,14 @@ impl DescribeUserProfileInput {
 }
 impl DescribeUserProfileInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
-        crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
+        crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserProfileInputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DescribeUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_user_profile::DescribeUserProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_user_profile::DescribeUserProfileInput {
-                user_arn: self.user_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_user_profile::DescribeUserProfileInput { user_arn: self.user_arn })
     }
 }

@@ -10,10 +10,7 @@ impl DetectTextInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_text::DetectTextOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_text::DetectTextError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_text::DetectTextError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detect_text();
         fluent_builder.inner = self;
@@ -52,10 +49,7 @@ impl DetectTextFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::detect_text::DetectText,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::detect_text::DetectText, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::detect_text::DetectTextError>,
     > {
         let handle = self.handle.clone();
@@ -66,10 +60,7 @@ impl DetectTextFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -111,10 +102,7 @@ impl DetectTextFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::detect_text::DetectText,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::detect_text::DetectText, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::detect_text::DetectTextError>,
     > {
         self.customize_middleware().await
@@ -142,10 +130,7 @@ impl DetectTextFluentBuilder {
         self
     }
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectTextFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DetectTextFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

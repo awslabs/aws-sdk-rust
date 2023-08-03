@@ -30,9 +30,7 @@ impl TgwOnDeviceServiceConfiguration {
 
 /// A builder for [`TgwOnDeviceServiceConfiguration`](crate::types::TgwOnDeviceServiceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TgwOnDeviceServiceConfigurationBuilder {
     pub(crate) storage_limit: ::std::option::Option<i32>,
     pub(crate) storage_unit: ::std::option::Option<crate::types::StorageUnit>,
@@ -58,10 +56,7 @@ impl TgwOnDeviceServiceConfigurationBuilder {
         self
     }
     /// <p>The scale unit of the virtual tapes on the device.</p>
-    pub fn set_storage_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageUnit>,
-    ) -> Self {
+    pub fn set_storage_unit(mut self, input: ::std::option::Option<crate::types::StorageUnit>) -> Self {
         self.storage_unit = input;
         self
     }

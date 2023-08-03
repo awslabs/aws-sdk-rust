@@ -56,9 +56,7 @@ impl InvalidRequestException {
 
 /// A builder for [`InvalidRequestException`](crate::types::error::InvalidRequestException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidRequestExceptionBuilder {
     pub(crate) athena_error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -66,18 +64,12 @@ pub struct InvalidRequestExceptionBuilder {
 }
 impl InvalidRequestExceptionBuilder {
     /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
-    pub fn athena_error_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn athena_error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.athena_error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
-    pub fn set_athena_error_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_athena_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.athena_error_code = input;
         self
     }
@@ -106,10 +98,7 @@ impl InvalidRequestExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

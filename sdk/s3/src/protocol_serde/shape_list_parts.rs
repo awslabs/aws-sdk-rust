@@ -2,8 +2,7 @@
 pub fn ser_list_parts_headers(
     input: &crate::operation::list_parts::ListPartsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.request_payer {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_list_parts_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -27,10 +23,7 @@ pub fn ser_list_parts_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -43,16 +36,10 @@ pub fn ser_list_parts_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_algorithm",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-server-side-encryption-customer-algorithm",
-                header_value,
-            );
+            builder = builder.header("x-amz-server-side-encryption-customer-algorithm", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_7) = &input.sse_customer_key {
@@ -62,10 +49,7 @@ pub fn ser_list_parts_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
@@ -78,16 +62,10 @@ pub fn ser_list_parts_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key_md5",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-server-side-encryption-customer-key-MD5",
-                header_value,
-            );
+            builder = builder.header("x-amz-server-side-encryption-customer-key-MD5", header_value);
         }
     }
     Ok(builder)
@@ -98,24 +76,14 @@ pub fn de_list_parts_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_parts::ListPartsOutput,
-    crate::operation::list_parts::ListPartsError,
-> {
+) -> std::result::Result<crate::operation::list_parts::ListPartsOutput, crate::operation::list_parts::ListPartsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_parts::ListPartsError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_parts::ListPartsError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::list_parts::ListPartsError::generic(
-        generic,
-    ))
+    Err(crate::operation::list_parts::ListPartsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -123,10 +91,7 @@ pub fn de_list_parts_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_parts::ListPartsOutput,
-    crate::operation::list_parts::ListPartsError,
-> {
+) -> std::result::Result<crate::operation::list_parts::ListPartsOutput, crate::operation::list_parts::ListPartsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_parts::builders::ListPartsOutputBuilder::default();
@@ -134,39 +99,20 @@ pub fn de_list_parts_http_response_with_props(
             .map_err(crate::operation::list_parts::ListPartsError::unhandled)?;
         output = output.set_abort_date(
             crate::protocol_serde::shape_list_parts_output::de_abort_date_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::list_parts::ListPartsError::unhandled(
-                        "Failed to parse AbortDate from header `x-amz-abort-date",
-                    )
-                })?,
+                .map_err(|_| crate::operation::list_parts::ListPartsError::unhandled("Failed to parse AbortDate from header `x-amz-abort-date"))?,
         );
         output = output.set_abort_rule_id(
-            crate::protocol_serde::shape_list_parts_output::de_abort_rule_id_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::list_parts::ListPartsError::unhandled(
-                    "Failed to parse AbortRuleId from header `x-amz-abort-rule-id",
-                )
+            crate::protocol_serde::shape_list_parts_output::de_abort_rule_id_header(_response_headers).map_err(|_| {
+                crate::operation::list_parts::ListPartsError::unhandled("Failed to parse AbortRuleId from header `x-amz-abort-rule-id")
             })?,
         );
         output = output.set_request_charged(
-            crate::protocol_serde::shape_list_parts_output::de_request_charged_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::list_parts::ListPartsError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
+            crate::protocol_serde::shape_list_parts_output::de_request_charged_header(_response_headers).map_err(|_| {
+                crate::operation::list_parts::ListPartsError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged")
             })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -175,10 +121,7 @@ pub fn de_list_parts_http_response_with_props(
 pub fn de_list_parts(
     inp: &[u8],
     mut builder: crate::operation::list_parts::builders::ListPartsOutputBuilder,
-) -> Result<
-    crate::operation::list_parts::builders::ListPartsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_parts::builders::ListPartsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -186,11 +129,10 @@ pub fn de_list_parts(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("ListPartsResult") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected ListPartsResult but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected ListPartsResult but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

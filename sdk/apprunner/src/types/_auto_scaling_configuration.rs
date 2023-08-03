@@ -91,9 +91,7 @@ impl AutoScalingConfiguration {
 
 /// A builder for [`AutoScalingConfiguration`](crate::types::AutoScalingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingConfigurationBuilder {
     pub(crate) auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
@@ -108,47 +106,31 @@ pub struct AutoScalingConfigurationBuilder {
 }
 impl AutoScalingConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
-    pub fn auto_scaling_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
-    pub fn set_auto_scaling_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
-    pub fn get_auto_scaling_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_auto_scaling_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_configuration_arn
     }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn auto_scaling_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn set_auto_scaling_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_configuration_name = input;
         self
     }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn get_auto_scaling_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_auto_scaling_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_configuration_name
     }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>AutoScalingConfigurationName</code>.</p>
@@ -157,10 +139,7 @@ impl AutoScalingConfigurationBuilder {
         self
     }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>AutoScalingConfigurationName</code>.</p>
-    pub fn set_auto_scaling_configuration_revision(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration_revision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.auto_scaling_configuration_revision = input;
         self
     }
@@ -188,17 +167,12 @@ impl AutoScalingConfigurationBuilder {
         self
     }
     /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingConfigurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoScalingConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingConfigurationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoScalingConfigurationStatus> {
         &self.status
     }
     /// <p>The maximum number of concurrent requests that an instance processes. If the number of concurrent requests exceeds this limit, App Runner scales the service up.</p>
@@ -252,10 +226,7 @@ impl AutoScalingConfigurationBuilder {
         self
     }
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -269,10 +240,7 @@ impl AutoScalingConfigurationBuilder {
         self
     }
     /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
-    pub fn set_deleted_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deleted_at = input;
         self
     }
@@ -285,9 +253,7 @@ impl AutoScalingConfigurationBuilder {
         crate::types::AutoScalingConfiguration {
             auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
             auto_scaling_configuration_name: self.auto_scaling_configuration_name,
-            auto_scaling_configuration_revision: self
-                .auto_scaling_configuration_revision
-                .unwrap_or_default(),
+            auto_scaling_configuration_revision: self.auto_scaling_configuration_revision.unwrap_or_default(),
             latest: self.latest.unwrap_or_default(),
             status: self.status,
             max_concurrency: self.max_concurrency.unwrap_or_default(),

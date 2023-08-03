@@ -5,8 +5,7 @@
 pub struct DescribeMaintenanceWindowsOutput {
     /// <p>Information about the maintenance windows.</p>
     #[doc(hidden)]
-    pub window_identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentity>>,
+    pub window_identities: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeMaintenanceWindowsOutput {
 }
 impl DescribeMaintenanceWindowsOutput {
     /// <p>Information about the maintenance windows.</p>
-    pub fn window_identities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MaintenanceWindowIdentity]> {
+    pub fn window_identities(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowIdentity]> {
         self.window_identities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeMaintenanceWindowsOutput {
 }
 impl DescribeMaintenanceWindowsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowsOutput`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput).
-    pub fn builder() -> crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsOutputBuilder {
         crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowsOutput`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsOutputBuilder {
-    pub(crate) window_identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentity>>,
+    pub(crate) window_identities: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeMaintenanceWindowsOutputBuilder {
         self
     }
     /// <p>Information about the maintenance windows.</p>
-    pub fn set_window_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentity>>,
-    ) -> Self {
+    pub fn set_window_identities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentity>>) -> Self {
         self.window_identities = input;
         self
     }
     /// <p>Information about the maintenance windows.</p>
-    pub fn get_window_identities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentity>> {
+    pub fn get_window_identities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentity>> {
         &self.window_identities
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -97,9 +86,7 @@ impl DescribeMaintenanceWindowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowsOutput`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput {
+    pub fn build(self) -> crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput {
         crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput {
             window_identities: self.window_identities,
             next_token: self.next_token,

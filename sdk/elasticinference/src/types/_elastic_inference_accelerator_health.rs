@@ -23,9 +23,7 @@ impl ElasticInferenceAcceleratorHealth {
 
 /// A builder for [`ElasticInferenceAcceleratorHealth`](crate::types::ElasticInferenceAcceleratorHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticInferenceAcceleratorHealthBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ElasticInferenceAcceleratorHealthBuilder {
     }
     /// Consumes the builder and constructs a [`ElasticInferenceAcceleratorHealth`](crate::types::ElasticInferenceAcceleratorHealth).
     pub fn build(self) -> crate::types::ElasticInferenceAcceleratorHealth {
-        crate::types::ElasticInferenceAcceleratorHealth {
-            status: self.status,
-        }
+        crate::types::ElasticInferenceAcceleratorHealth { status: self.status }
     }
 }

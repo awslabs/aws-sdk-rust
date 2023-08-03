@@ -29,17 +29,14 @@ impl UpdateCollectionInput {
 }
 impl UpdateCollectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateCollectionInput`](crate::operation::update_collection::UpdateCollectionInput).
-    pub fn builder() -> crate::operation::update_collection::builders::UpdateCollectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_collection::builders::UpdateCollectionInputBuilder {
         crate::operation::update_collection::builders::UpdateCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCollectionInput`](crate::operation::update_collection::UpdateCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCollectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -91,10 +88,7 @@ impl UpdateCollectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCollectionInput`](crate::operation::update_collection::UpdateCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_collection::UpdateCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_collection::UpdateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_collection::UpdateCollectionInput {
             id: self.id,
             description: self.description,

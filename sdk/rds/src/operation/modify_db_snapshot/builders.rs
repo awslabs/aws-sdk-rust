@@ -10,10 +10,7 @@ impl ModifyDbSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_snapshot::ModifyDBSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_snapshot::ModifyDBSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_db_snapshot();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ModifyDBSnapshotFluentBuilder {
         }
     }
     /// Access the ModifyDBSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ModifyDBSnapshotFluentBuilder {
             crate::operation::modify_db_snapshot::ModifyDBSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_snapshot::ModifyDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_snapshot::ModifyDBSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ModifyDBSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ModifyDBSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_snapshot::ModifyDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_snapshot::ModifyDBSnapshotError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ModifyDBSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_snapshot::ModifyDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_snapshot::ModifyDBSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl ModifyDBSnapshotFluentBuilder {
             crate::operation::modify_db_snapshot::ModifyDBSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_snapshot::ModifyDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_snapshot::ModifyDBSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the DB snapshot to modify.</p>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier of the DB snapshot to modify.</p>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
     }
@@ -159,10 +137,7 @@ impl ModifyDBSnapshotFluentBuilder {
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
@@ -182,10 +157,7 @@ impl ModifyDBSnapshotFluentBuilder {
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -210,19 +182,13 @@ impl ModifyDBSnapshotFluentBuilder {
     }
     /// <p>The option group to identify with the upgraded DB snapshot.</p>
     /// <p>You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
     /// <p>The option group to identify with the upgraded DB snapshot.</p>
     /// <p>You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }

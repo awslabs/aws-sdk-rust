@@ -36,9 +36,7 @@ impl ListTasksOutput {
 
 /// A builder for [`ListTasksOutput`](crate::operation::list_tasks::ListTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTasksOutputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListTasksOutputBuilder {
         self
     }
     /// <p>A list of all the tasks that are returned.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>>) -> Self {
         self.tasks = input;
         self
     }
     /// <p>A list of all the tasks that are returned.</p>
-    pub fn get_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>> {
         &self.tasks
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>

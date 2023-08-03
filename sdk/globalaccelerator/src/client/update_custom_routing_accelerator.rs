@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateCustomRoutingAcceleratorOutput`](crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorOutput::accelerator): <p>Information about the updated custom routing accelerator.</p>
     /// - On failure, responds with [`SdkError<UpdateCustomRoutingAcceleratorError>`](crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorError)
-    pub fn update_custom_routing_accelerator(&self) -> crate::operation::update_custom_routing_accelerator::builders::UpdateCustomRoutingAcceleratorFluentBuilder{
+    pub fn update_custom_routing_accelerator(
+        &self,
+    ) -> crate::operation::update_custom_routing_accelerator::builders::UpdateCustomRoutingAcceleratorFluentBuilder {
         crate::operation::update_custom_routing_accelerator::builders::UpdateCustomRoutingAcceleratorFluentBuilder::new(self.handle.clone())
     }
 }

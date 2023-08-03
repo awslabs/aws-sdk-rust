@@ -29,16 +29,14 @@ impl UpdateNotificationSettingsInput {
 }
 impl UpdateNotificationSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationSettingsInput`](crate::operation::update_notification_settings::UpdateNotificationSettingsInput).
-    pub fn builder() -> crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder{
+    pub fn builder() -> crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder {
         crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNotificationSettingsInput`](crate::operation::update_notification_settings::UpdateNotificationSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNotificationSettingsInputBuilder {
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) notification: ::std::option::Option<crate::types::NotificationSpecification>,
@@ -65,17 +63,12 @@ impl UpdateNotificationSettingsInputBuilder {
         self
     }
     /// <p> The notification specification for the HIT type. </p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationSpecification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::NotificationSpecification>) -> Self {
         self.notification = input;
         self
     }
     /// <p> The notification specification for the HIT type. </p>
-    pub fn get_notification(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationSpecification> {
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::NotificationSpecification> {
         &self.notification
     }
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
@@ -99,12 +92,10 @@ impl UpdateNotificationSettingsInputBuilder {
         crate::operation::update_notification_settings::UpdateNotificationSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_notification_settings::UpdateNotificationSettingsInput {
-                hit_type_id: self.hit_type_id,
-                notification: self.notification,
-                active: self.active,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_notification_settings::UpdateNotificationSettingsInput {
+            hit_type_id: self.hit_type_id,
+            notification: self.notification,
+            active: self.active,
+        })
     }
 }

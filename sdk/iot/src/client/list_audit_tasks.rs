@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`tasks(Option<Vec<AuditTaskMetadata>>)`](crate::operation::list_audit_tasks::ListAuditTasksOutput::tasks): <p>The audits that were performed during the specified time period.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_audit_tasks::ListAuditTasksOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListAuditTasksError>`](crate::operation::list_audit_tasks::ListAuditTasksError)
-    pub fn list_audit_tasks(
-        &self,
-    ) -> crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder {
-        crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_audit_tasks(&self) -> crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder {
+        crate::operation::list_audit_tasks::builders::ListAuditTasksFluentBuilder::new(self.handle.clone())
     }
 }

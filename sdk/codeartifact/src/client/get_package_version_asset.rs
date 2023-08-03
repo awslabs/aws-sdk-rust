@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`package_version(Option<String>)`](crate::operation::get_package_version_asset::GetPackageVersionAssetOutput::package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     ///   - [`package_version_revision(Option<String>)`](crate::operation::get_package_version_asset::GetPackageVersionAssetOutput::package_version_revision): <p> The name of the package version revision that contains the downloaded asset. </p>
     /// - On failure, responds with [`SdkError<GetPackageVersionAssetError>`](crate::operation::get_package_version_asset::GetPackageVersionAssetError)
-    pub fn get_package_version_asset(
-        &self,
-    ) -> crate::operation::get_package_version_asset::builders::GetPackageVersionAssetFluentBuilder
-    {
+    pub fn get_package_version_asset(&self) -> crate::operation::get_package_version_asset::builders::GetPackageVersionAssetFluentBuilder {
         crate::operation::get_package_version_asset::builders::GetPackageVersionAssetFluentBuilder::new(self.handle.clone())
     }
 }

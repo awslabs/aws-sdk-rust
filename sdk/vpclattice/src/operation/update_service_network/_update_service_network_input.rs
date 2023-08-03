@@ -30,35 +30,26 @@ impl UpdateServiceNetworkInput {
 }
 impl UpdateServiceNetworkInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceNetworkInput`](crate::operation::update_service_network::UpdateServiceNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::update_service_network::builders::UpdateServiceNetworkInputBuilder {
+    pub fn builder() -> crate::operation::update_service_network::builders::UpdateServiceNetworkInputBuilder {
         crate::operation::update_service_network::builders::UpdateServiceNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceNetworkInput`](crate::operation::update_service_network::UpdateServiceNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkInputBuilder {
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
 }
 impl UpdateServiceNetworkInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_identifier = input;
         self
     }
@@ -95,15 +86,11 @@ impl UpdateServiceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceNetworkInput`](crate::operation::update_service_network::UpdateServiceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_network::UpdateServiceNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_service_network::UpdateServiceNetworkInput {
-                service_network_identifier: self.service_network_identifier,
-                auth_type: self.auth_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_service_network::UpdateServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_service_network::UpdateServiceNetworkInput {
+            service_network_identifier: self.service_network_identifier,
+            auth_type: self.auth_type,
+        })
     }
 }

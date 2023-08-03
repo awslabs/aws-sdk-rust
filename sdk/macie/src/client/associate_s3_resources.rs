@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateS3ResourcesOutput`](crate::operation::associate_s3_resources::AssociateS3ResourcesOutput) with field(s):
     ///   - [`failed_s3_resources(Option<Vec<FailedS3Resource>>)`](crate::operation::associate_s3_resources::AssociateS3ResourcesOutput::failed_s3_resources): <p>(Discontinued) S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<AssociateS3ResourcesError>`](crate::operation::associate_s3_resources::AssociateS3ResourcesError)
-    pub fn associate_s3_resources(
-        &self,
-    ) -> crate::operation::associate_s3_resources::builders::AssociateS3ResourcesFluentBuilder {
-        crate::operation::associate_s3_resources::builders::AssociateS3ResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_s3_resources(&self) -> crate::operation::associate_s3_resources::builders::AssociateS3ResourcesFluentBuilder {
+        crate::operation::associate_s3_resources::builders::AssociateS3ResourcesFluentBuilder::new(self.handle.clone())
     }
 }

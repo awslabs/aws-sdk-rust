@@ -56,8 +56,7 @@ pub struct DescribeDomainHealthOutput {
     pub total_un_assigned_shards: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
     #[doc(hidden)]
-    pub environment_information:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>,
+    pub environment_information: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeDomainHealthOutput {
@@ -124,9 +123,7 @@ impl DescribeDomainHealthOutput {
         self.total_un_assigned_shards.as_deref()
     }
     /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
-    pub fn environment_information(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnvironmentInfo]> {
+    pub fn environment_information(&self) -> ::std::option::Option<&[crate::types::EnvironmentInfo]> {
         self.environment_information.as_deref()
     }
 }
@@ -137,17 +134,14 @@ impl ::aws_http::request_id::RequestId for DescribeDomainHealthOutput {
 }
 impl DescribeDomainHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainHealthOutput`](crate::operation::describe_domain_health::DescribeDomainHealthOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_domain_health::builders::DescribeDomainHealthOutputBuilder {
+    pub fn builder() -> crate::operation::describe_domain_health::builders::DescribeDomainHealthOutputBuilder {
         crate::operation::describe_domain_health::builders::DescribeDomainHealthOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainHealthOutput`](crate::operation::describe_domain_health::DescribeDomainHealthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainHealthOutputBuilder {
     pub(crate) domain_state: ::std::option::Option<crate::types::DomainState>,
     pub(crate) availability_zone_count: ::std::option::Option<::std::string::String>,
@@ -161,8 +155,7 @@ pub struct DescribeDomainHealthOutputBuilder {
     pub(crate) cluster_health: ::std::option::Option<crate::types::DomainHealth>,
     pub(crate) total_shards: ::std::option::Option<::std::string::String>,
     pub(crate) total_un_assigned_shards: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_information:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>,
+    pub(crate) environment_information: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeDomainHealthOutputBuilder {
@@ -180,10 +173,7 @@ impl DescribeDomainHealthOutputBuilder {
     /// <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li>
     /// <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li>
     /// </ul>
-    pub fn set_domain_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainState>,
-    ) -> Self {
+    pub fn set_domain_state(mut self, input: ::std::option::Option<crate::types::DomainState>) -> Self {
         self.domain_state = input;
         self
     }
@@ -196,18 +186,12 @@ impl DescribeDomainHealthOutputBuilder {
         &self.domain_state
     }
     /// <p>The number of Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn availability_zone_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn set_availability_zone_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_count = input;
         self
     }
@@ -216,62 +200,40 @@ impl DescribeDomainHealthOutputBuilder {
         &self.availability_zone_count
     }
     /// <p>The number of active Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn active_availability_zone_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_availability_zone_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_availability_zone_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of active Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn set_active_availability_zone_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_availability_zone_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_availability_zone_count = input;
         self
     }
     /// <p>The number of active Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn get_active_availability_zone_count(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_active_availability_zone_count(&self) -> &::std::option::Option<::std::string::String> {
         &self.active_availability_zone_count
     }
     /// <p>The number of standby Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn stand_by_availability_zone_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stand_by_availability_zone_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stand_by_availability_zone_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of standby Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn set_stand_by_availability_zone_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stand_by_availability_zone_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stand_by_availability_zone_count = input;
         self
     }
     /// <p>The number of standby Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn get_stand_by_availability_zone_count(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_stand_by_availability_zone_count(&self) -> &::std::option::Option<::std::string::String> {
         &self.stand_by_availability_zone_count
     }
     /// <p>The number of data nodes configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn data_node_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_node_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_node_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of data nodes configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn set_data_node_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_node_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_node_count = input;
         self
     }
@@ -294,18 +256,12 @@ impl DescribeDomainHealthOutputBuilder {
         &self.dedicated_master
     }
     /// <p>The number of nodes that can be elected as a master node. If dedicated master nodes is turned on, this value is the number of dedicated master nodes configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn master_eligible_node_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_eligible_node_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_eligible_node_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of nodes that can be elected as a master node. If dedicated master nodes is turned on, this value is the number of dedicated master nodes configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
-    pub fn set_master_eligible_node_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_eligible_node_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_eligible_node_count = input;
         self
     }
@@ -314,18 +270,12 @@ impl DescribeDomainHealthOutputBuilder {
         &self.master_eligible_node_count
     }
     /// <p>The number of warm nodes configured for the domain.</p>
-    pub fn warm_node_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn warm_node_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warm_node_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of warm nodes configured for the domain.</p>
-    pub fn set_warm_node_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_warm_node_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warm_node_count = input;
         self
     }
@@ -347,10 +297,7 @@ impl DescribeDomainHealthOutputBuilder {
     /// <li> <p> <b>Available</b> - The domain has an elected master node.</p> </li>
     /// <li> <p> <b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p> </li>
     /// </ul>
-    pub fn set_master_node(
-        mut self,
-        input: ::std::option::Option<crate::types::MasterNodeStatus>,
-    ) -> Self {
+    pub fn set_master_node(mut self, input: ::std::option::Option<crate::types::MasterNodeStatus>) -> Self {
         self.master_node = input;
         self
     }
@@ -380,10 +327,7 @@ impl DescribeDomainHealthOutputBuilder {
     /// <li> <p> <code>Green</code> - All primary shards and their replicas are allocated to nodes.</p> </li>
     /// <li> <p> <code>NotAvailable</code> - Unable to retrieve cluster health.</p> </li>
     /// </ul>
-    pub fn set_cluster_health(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainHealth>,
-    ) -> Self {
+    pub fn set_cluster_health(mut self, input: ::std::option::Option<crate::types::DomainHealth>) -> Self {
         self.cluster_health = input;
         self
     }
@@ -412,18 +356,12 @@ impl DescribeDomainHealthOutputBuilder {
         &self.total_shards
     }
     /// <p>The total number of primary and replica shards not allocated to any of the nodes for the cluster.</p>
-    pub fn total_un_assigned_shards(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn total_un_assigned_shards(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_un_assigned_shards = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The total number of primary and replica shards not allocated to any of the nodes for the cluster.</p>
-    pub fn set_total_un_assigned_shards(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_total_un_assigned_shards(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.total_un_assigned_shards = input;
         self
     }
@@ -443,17 +381,12 @@ impl DescribeDomainHealthOutputBuilder {
         self
     }
     /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
-    pub fn set_environment_information(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>,
-    ) -> Self {
+    pub fn set_environment_information(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>) -> Self {
         self.environment_information = input;
         self
     }
     /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
-    pub fn get_environment_information(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>> {
+    pub fn get_environment_information(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>> {
         &self.environment_information
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

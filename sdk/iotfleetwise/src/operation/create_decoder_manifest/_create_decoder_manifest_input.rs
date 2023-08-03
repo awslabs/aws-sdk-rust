@@ -50,25 +50,20 @@ impl CreateDecoderManifestInput {
 }
 impl CreateDecoderManifestInput {
     /// Creates a new builder-style object to manufacture [`CreateDecoderManifestInput`](crate::operation::create_decoder_manifest::CreateDecoderManifestInput).
-    pub fn builder(
-    ) -> crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder {
         crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDecoderManifestInput`](crate::operation::create_decoder_manifest::CreateDecoderManifestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDecoderManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDecoderManifestInputBuilder {
@@ -101,18 +96,12 @@ impl CreateDecoderManifestInputBuilder {
         &self.description
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
-    pub fn model_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
-    pub fn set_model_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_manifest_arn = input;
         self
     }
@@ -132,17 +121,12 @@ impl CreateDecoderManifestInputBuilder {
         self
     }
     /// <p> A list of information about signal decoders. </p>
-    pub fn set_signal_decoders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
-    ) -> Self {
+    pub fn set_signal_decoders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>) -> Self {
         self.signal_decoders = input;
         self
     }
     /// <p> A list of information about signal decoders. </p>
-    pub fn get_signal_decoders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
+    pub fn get_signal_decoders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
         &self.signal_decoders
     }
     /// Appends an item to `network_interfaces`.
@@ -157,17 +141,12 @@ impl CreateDecoderManifestInputBuilder {
         self
     }
     /// <p> A list of information about available network interfaces. </p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p> A list of information about available network interfaces. </p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// Appends an item to `tags`.
@@ -182,10 +161,7 @@ impl CreateDecoderManifestInputBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -196,19 +172,15 @@ impl CreateDecoderManifestInputBuilder {
     /// Consumes the builder and constructs a [`CreateDecoderManifestInput`](crate::operation::create_decoder_manifest::CreateDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_decoder_manifest::CreateDecoderManifestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_decoder_manifest::CreateDecoderManifestInput {
-                name: self.name,
-                description: self.description,
-                model_manifest_arn: self.model_manifest_arn,
-                signal_decoders: self.signal_decoders,
-                network_interfaces: self.network_interfaces,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_decoder_manifest::CreateDecoderManifestInput {
+            name: self.name,
+            description: self.description,
+            model_manifest_arn: self.model_manifest_arn,
+            signal_decoders: self.signal_decoders,
+            network_interfaces: self.network_interfaces,
+            tags: self.tags,
+        })
     }
 }

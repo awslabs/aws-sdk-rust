@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDeviceDefinitionsOutput {
 }
 impl ListDeviceDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceDefinitionsOutput`](crate::operation::list_device_definitions::ListDeviceDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_device_definitions::builders::ListDeviceDefinitionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_definitions::builders::ListDeviceDefinitionsOutputBuilder {
         crate::operation::list_device_definitions::builders::ListDeviceDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceDefinitionsOutput`](crate::operation::list_device_definitions::ListDeviceDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceDefinitionsOutputBuilder {
-    pub(crate) definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
+    pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListDeviceDefinitionsOutputBuilder {
         self
     }
     /// Information about a definition.
-    pub fn set_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
-    ) -> Self {
+    pub fn set_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>) -> Self {
         self.definitions = input;
         self
     }
     /// Information about a definition.
-    pub fn get_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>> {
+    pub fn get_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>> {
         &self.definitions
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.

@@ -29,7 +29,7 @@ impl RemoveRoleFromInstanceProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveRoleFromInstanceProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder,
+    inner: crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder,
 }
 impl RemoveRoleFromInstanceProfileFluentBuilder {
     /// Creates a new `RemoveRoleFromInstanceProfile`.
@@ -40,7 +40,7 @@ impl RemoveRoleFromInstanceProfileFluentBuilder {
         }
     }
     /// Access the RemoveRoleFromInstanceProfile as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl RemoveRoleFromInstanceProfileFluentBuilder {
             crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl RemoveRoleFromInstanceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl RemoveRoleFromInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl RemoveRoleFromInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +108,19 @@ impl RemoveRoleFromInstanceProfileFluentBuilder {
             crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the instance profile to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_name(input.into());
         self
     }
     /// <p>The name of the instance profile to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_name(input);
         self
     }

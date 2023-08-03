@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for SetTextMessageSpendLimitOverrideOutpu
 }
 impl SetTextMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`SetTextMessageSpendLimitOverrideOutput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput).
-    pub fn builder() -> crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideOutputBuilder{
+    pub fn builder() -> crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideOutputBuilder {
         crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetTextMessageSpendLimitOverrideOutput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTextMessageSpendLimitOverrideOutputBuilder {
     pub(crate) monthly_limit: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl SetTextMessageSpendLimitOverrideOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetTextMessageSpendLimitOverrideOutput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput).
-    pub fn build(self) -> crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput{
+    pub fn build(self) -> crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput {
         crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput {
-            monthly_limit: self.monthly_limit
-            ,
+            monthly_limit: self.monthly_limit,
             _request_id: self._request_id,
         }
     }

@@ -39,10 +39,7 @@ pub fn ser_create_location_azure_blob_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }

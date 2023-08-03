@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder::set_arn): <p>ARN of the stream key to be deleted.</p>
     /// - On success, responds with [`DeleteStreamKeyOutput`](crate::operation::delete_stream_key::DeleteStreamKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamKeyError>`](crate::operation::delete_stream_key::DeleteStreamKeyError)
-    pub fn delete_stream_key(
-        &self,
-    ) -> crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder {
-        crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_stream_key(&self) -> crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder {
+        crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder::new(self.handle.clone())
     }
 }

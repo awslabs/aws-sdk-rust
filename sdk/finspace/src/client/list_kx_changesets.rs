@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`kx_changesets(Option<Vec<KxChangesetListEntry>>)`](crate::operation::list_kx_changesets::ListKxChangesetsOutput::kx_changesets): <p>A list of changesets for a database.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_changesets::ListKxChangesetsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListKxChangesetsError>`](crate::operation::list_kx_changesets::ListKxChangesetsError)
-    pub fn list_kx_changesets(
-        &self,
-    ) -> crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder {
-        crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_kx_changesets(&self) -> crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder {
+        crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::new(self.handle.clone())
     }
 }

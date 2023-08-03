@@ -58,9 +58,7 @@ impl ImportAssetFromSignedUrlResponseDetails {
 
 /// A builder for [`ImportAssetFromSignedUrlResponseDetails`](crate::types::ImportAssetFromSignedUrlResponseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlResponseDetailsBuilder {
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -146,17 +144,12 @@ impl ImportAssetFromSignedUrlResponseDetailsBuilder {
         self
     }
     /// <p>The time and date at which the signed URL expires, in ISO 8601 format.</p>
-    pub fn set_signed_url_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_signed_url_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.signed_url_expires_at = input;
         self
     }
     /// <p>The time and date at which the signed URL expires, in ISO 8601 format.</p>
-    pub fn get_signed_url_expires_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_signed_url_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.signed_url_expires_at
     }
     /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlResponseDetails`](crate::types::ImportAssetFromSignedUrlResponseDetails).

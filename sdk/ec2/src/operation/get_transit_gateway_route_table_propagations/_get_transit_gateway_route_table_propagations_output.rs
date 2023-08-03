@@ -5,8 +5,7 @@
 pub struct GetTransitGatewayRouteTablePropagationsOutput {
     /// <p>Information about the route table propagations.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_table_propagations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>>,
+    pub transit_gateway_route_table_propagations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetTransitGatewayRouteTablePropagationsOutput {
 }
 impl GetTransitGatewayRouteTablePropagationsOutput {
     /// <p>Information about the route table propagations.</p>
-    pub fn transit_gateway_route_table_propagations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayRouteTablePropagation]> {
+    pub fn transit_gateway_route_table_propagations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRouteTablePropagation]> {
         self.transit_gateway_route_table_propagations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for GetTransitGatewayRouteTablePropagatio
 }
 impl GetTransitGatewayRouteTablePropagationsOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRouteTablePropagationsOutput`](crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput).
-    pub fn builder() -> crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsOutputBuilder
+    {
         crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayRouteTablePropagationsOutput`](crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayRouteTablePropagationsOutputBuilder {
-    pub(crate) transit_gateway_route_table_propagations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>>,
+    pub(crate) transit_gateway_route_table_propagations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +48,8 @@ impl GetTransitGatewayRouteTablePropagationsOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_route_table_propagations`](Self::set_transit_gateway_route_table_propagations).
     ///
     /// <p>Information about the route table propagations.</p>
-    pub fn transit_gateway_route_table_propagations(
-        mut self,
-        input: crate::types::TransitGatewayRouteTablePropagation,
-    ) -> Self {
-        let mut v = self
-            .transit_gateway_route_table_propagations
-            .unwrap_or_default();
+    pub fn transit_gateway_route_table_propagations(mut self, input: crate::types::TransitGatewayRouteTablePropagation) -> Self {
+        let mut v = self.transit_gateway_route_table_propagations.unwrap_or_default();
         v.push(input);
         self.transit_gateway_route_table_propagations = ::std::option::Option::Some(v);
         self
@@ -67,9 +57,7 @@ impl GetTransitGatewayRouteTablePropagationsOutputBuilder {
     /// <p>Information about the route table propagations.</p>
     pub fn set_transit_gateway_route_table_propagations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>>,
     ) -> Self {
         self.transit_gateway_route_table_propagations = input;
         self
@@ -77,8 +65,7 @@ impl GetTransitGatewayRouteTablePropagationsOutputBuilder {
     /// <p>Information about the route table propagations.</p>
     pub fn get_transit_gateway_route_table_propagations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>> {
         &self.transit_gateway_route_table_propagations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -105,12 +92,10 @@ impl GetTransitGatewayRouteTablePropagationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayRouteTablePropagationsOutput`](crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput).
-    pub fn build(self) -> crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput{
+    pub fn build(self) -> crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput {
         crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput {
-            transit_gateway_route_table_propagations: self.transit_gateway_route_table_propagations
-            ,
-            next_token: self.next_token
-            ,
+            transit_gateway_route_table_propagations: self.transit_gateway_route_table_propagations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

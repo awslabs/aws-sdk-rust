@@ -10,10 +10,7 @@ impl ListAnalyzersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_analyzers::ListAnalyzersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_analyzers::ListAnalyzersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_analyzers::ListAnalyzersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_analyzers();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAnalyzersFluentBuilder {
         }
     }
     /// Access the ListAnalyzers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_analyzers::builders::ListAnalyzersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_analyzers::builders::ListAnalyzersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListAnalyzersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListAnalyzersFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_analyzers::paginator::ListAnalyzersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_analyzers::paginator::ListAnalyzersPaginator {
-        crate::operation::list_analyzers::paginator::ListAnalyzersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_analyzers::paginator::ListAnalyzersPaginator {
+        crate::operation::list_analyzers::paginator::ListAnalyzersPaginator::new(self.handle, self.inner)
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

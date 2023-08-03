@@ -35,12 +35,9 @@ impl ListDetectorsOutput {
 
 /// A builder for [`ListDetectorsOutput`](crate::operation::list_detectors::ListDetectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectorsOutputBuilder {
-    pub(crate) detector_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorSummary>>,
+    pub(crate) detector_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DetectorSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDetectorsOutputBuilder {
         self
     }
     /// <p>A list of summary information about the detectors (instances).</p>
-    pub fn set_detector_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorSummary>>,
-    ) -> Self {
+    pub fn set_detector_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorSummary>>) -> Self {
         self.detector_summaries = input;
         self
     }
     /// <p>A list of summary information about the detectors (instances).</p>
-    pub fn get_detector_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorSummary>> {
+    pub fn get_detector_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorSummary>> {
         &self.detector_summaries
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>

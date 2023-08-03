@@ -37,10 +37,7 @@ impl DeleteManagedEndpointFluentBuilder {
         }
     }
     /// Access the DeleteManagedEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteManagedEndpointFluentBuilder {
             crate::operation::delete_managed_endpoint::DeleteManagedEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_managed_endpoint::DeleteManagedEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_managed_endpoint::DeleteManagedEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteManagedEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteManagedEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_managed_endpoint::DeleteManagedEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_managed_endpoint::DeleteManagedEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteManagedEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_managed_endpoint::DeleteManagedEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_managed_endpoint::DeleteManagedEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteManagedEndpointFluentBuilder {
             crate::operation::delete_managed_endpoint::DeleteManagedEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_managed_endpoint::DeleteManagedEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_managed_endpoint::DeleteManagedEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteManagedEndpointFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());
         self
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }

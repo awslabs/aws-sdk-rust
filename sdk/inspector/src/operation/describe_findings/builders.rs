@@ -10,10 +10,7 @@ impl DescribeFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_findings::DescribeFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_findings::DescribeFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_findings::DescribeFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_findings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeFindingsFluentBuilder {
         }
     }
     /// Access the DescribeFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_findings::builders::DescribeFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_findings::builders::DescribeFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeFindingsFluentBuilder {
             crate::operation::describe_findings::DescribeFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_findings::DescribeFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_findings::DescribeFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_findings::DescribeFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_findings::DescribeFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_findings::DescribeFindingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_findings::DescribeFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_findings::DescribeFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_findings::DescribeFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeFindingsFluentBuilder {
             crate::operation::describe_findings::DescribeFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_findings::DescribeFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_findings::DescribeFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl DescribeFindingsFluentBuilder {
         self
     }
     /// <p>The ARN that specifies the finding that you want to describe.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
     /// <p>The ARN that specifies the finding that you want to describe.</p>
-    pub fn get_finding_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_arns()
     }
     /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>

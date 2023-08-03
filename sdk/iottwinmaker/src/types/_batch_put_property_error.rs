@@ -37,9 +37,7 @@ impl BatchPutPropertyError {
 
 /// A builder for [`BatchPutPropertyError`](crate::types::BatchPutPropertyError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutPropertyErrorBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl BatchPutPropertyErrorBuilder {
         &self.error_code
     }
     /// <p>The error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -86,10 +78,7 @@ impl BatchPutPropertyErrorBuilder {
         self
     }
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn set_entry(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyValueEntry>,
-    ) -> Self {
+    pub fn set_entry(mut self, input: ::std::option::Option<crate::types::PropertyValueEntry>) -> Self {
         self.entry = input;
         self
     }

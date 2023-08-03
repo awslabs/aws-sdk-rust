@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteClientVpnEndpointOutput`](crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointOutput) with field(s):
     ///   - [`status(Option<ClientVpnEndpointStatus>)`](crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointOutput::status): <p>The current state of the Client VPN endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteClientVpnEndpointError>`](crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointError)
-    pub fn delete_client_vpn_endpoint(
-        &self,
-    ) -> crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointFluentBuilder
-    {
+    pub fn delete_client_vpn_endpoint(&self) -> crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointFluentBuilder {
         crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,9 +19,7 @@ pub struct UpdateInputDeviceInput {
 }
 impl UpdateInputDeviceInput {
     /// The settings that you want to apply to the HD input device.
-    pub fn hd_device_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceConfigurableSettings> {
+    pub fn hd_device_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceConfigurableSettings> {
         self.hd_device_settings.as_ref()
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
@@ -33,69 +31,48 @@ impl UpdateInputDeviceInput {
         self.name.as_deref()
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn uhd_device_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceConfigurableSettings> {
+    pub fn uhd_device_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceConfigurableSettings> {
         self.uhd_device_settings.as_ref()
     }
 }
 impl UpdateInputDeviceInput {
     /// Creates a new builder-style object to manufacture [`UpdateInputDeviceInput`](crate::operation::update_input_device::UpdateInputDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::update_input_device::builders::UpdateInputDeviceInputBuilder {
+    pub fn builder() -> crate::operation::update_input_device::builders::UpdateInputDeviceInputBuilder {
         crate::operation::update_input_device::builders::UpdateInputDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInputDeviceInput`](crate::operation::update_input_device::UpdateInputDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInputDeviceInputBuilder {
-    pub(crate) hd_device_settings:
-        ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
+    pub(crate) hd_device_settings: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) uhd_device_settings:
-        ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
+    pub(crate) uhd_device_settings: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
 }
 impl UpdateInputDeviceInputBuilder {
     /// The settings that you want to apply to the HD input device.
-    pub fn hd_device_settings(
-        mut self,
-        input: crate::types::InputDeviceConfigurableSettings,
-    ) -> Self {
+    pub fn hd_device_settings(mut self, input: crate::types::InputDeviceConfigurableSettings) -> Self {
         self.hd_device_settings = ::std::option::Option::Some(input);
         self
     }
     /// The settings that you want to apply to the HD input device.
-    pub fn set_hd_device_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
-    ) -> Self {
+    pub fn set_hd_device_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>) -> Self {
         self.hd_device_settings = input;
         self
     }
     /// The settings that you want to apply to the HD input device.
-    pub fn get_hd_device_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
+    pub fn get_hd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
         &self.hd_device_settings
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_device_id = input;
         self
     }
@@ -118,41 +95,28 @@ impl UpdateInputDeviceInputBuilder {
         &self.name
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn uhd_device_settings(
-        mut self,
-        input: crate::types::InputDeviceConfigurableSettings,
-    ) -> Self {
+    pub fn uhd_device_settings(mut self, input: crate::types::InputDeviceConfigurableSettings) -> Self {
         self.uhd_device_settings = ::std::option::Option::Some(input);
         self
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn set_uhd_device_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
-    ) -> Self {
+    pub fn set_uhd_device_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>) -> Self {
         self.uhd_device_settings = input;
         self
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn get_uhd_device_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
+    pub fn get_uhd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
         &self.uhd_device_settings
     }
     /// Consumes the builder and constructs a [`UpdateInputDeviceInput`](crate::operation::update_input_device::UpdateInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_input_device::UpdateInputDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_input_device::UpdateInputDeviceInput {
-                hd_device_settings: self.hd_device_settings,
-                input_device_id: self.input_device_id,
-                name: self.name,
-                uhd_device_settings: self.uhd_device_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_input_device::UpdateInputDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_input_device::UpdateInputDeviceInput {
+            hd_device_settings: self.hd_device_settings,
+            input_device_id: self.input_device_id,
+            name: self.name,
+            uhd_device_settings: self.uhd_device_settings,
+        })
     }
 }

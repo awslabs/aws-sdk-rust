@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`key_name(Option<String>)`](crate::operation::add_profile_key::AddProfileKeyOutput::key_name): <p>A searchable identifier of a customer profile.</p>
     ///   - [`values(Option<Vec<String>>)`](crate::operation::add_profile_key::AddProfileKeyOutput::values): <p>A list of key values.</p>
     /// - On failure, responds with [`SdkError<AddProfileKeyError>`](crate::operation::add_profile_key::AddProfileKeyError)
-    pub fn add_profile_key(
-        &self,
-    ) -> crate::operation::add_profile_key::builders::AddProfileKeyFluentBuilder {
-        crate::operation::add_profile_key::builders::AddProfileKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_profile_key(&self) -> crate::operation::add_profile_key::builders::AddProfileKeyFluentBuilder {
+        crate::operation::add_profile_key::builders::AddProfileKeyFluentBuilder::new(self.handle.clone())
     }
 }

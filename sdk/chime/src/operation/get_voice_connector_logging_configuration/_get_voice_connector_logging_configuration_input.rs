@@ -15,33 +15,25 @@ impl GetVoiceConnectorLoggingConfigurationInput {
 }
 impl GetVoiceConnectorLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorLoggingConfigurationInput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationInputBuilder {
         crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorLoggingConfigurationInput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorLoggingConfigurationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVoiceConnectorLoggingConfigurationInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl GetVoiceConnectorLoggingConfigurationInputBuilder {
         &self.voice_connector_id
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorLoggingConfigurationInput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+            },
         )
     }
 }

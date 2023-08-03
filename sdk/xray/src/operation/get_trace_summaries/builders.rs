@@ -10,10 +10,7 @@ impl GetTraceSummariesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_trace_summaries::GetTraceSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trace_summaries::GetTraceSummariesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trace_summaries::GetTraceSummariesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_trace_summaries();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl GetTraceSummariesFluentBuilder {
         }
     }
     /// Access the GetTraceSummaries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl GetTraceSummariesFluentBuilder {
             crate::operation::get_trace_summaries::GetTraceSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trace_summaries::GetTraceSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trace_summaries::GetTraceSummariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl GetTraceSummariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl GetTraceSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_trace_summaries::GetTraceSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trace_summaries::GetTraceSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trace_summaries::GetTraceSummariesError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl GetTraceSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_trace_summaries::GetTraceSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trace_summaries::GetTraceSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trace_summaries::GetTraceSummariesError>,
     > {
         self.send_middleware().await
     }
@@ -121,22 +107,15 @@ impl GetTraceSummariesFluentBuilder {
             crate::operation::get_trace_summaries::GetTraceSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trace_summaries::GetTraceSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trace_summaries::GetTraceSummariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator {
-        crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator {
+        crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator::new(self.handle, self.inner)
     }
     /// <p>The start of the time frame for which to retrieve traces.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -144,10 +123,7 @@ impl GetTraceSummariesFluentBuilder {
         self
     }
     /// <p>The start of the time frame for which to retrieve traces.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -161,10 +137,7 @@ impl GetTraceSummariesFluentBuilder {
         self
     }
     /// <p>The end of the time frame for which to retrieve traces.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -178,10 +151,7 @@ impl GetTraceSummariesFluentBuilder {
         self
     }
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-    pub fn set_time_range_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRangeType>,
-    ) -> Self {
+    pub fn set_time_range_type(mut self, input: ::std::option::Option<crate::types::TimeRangeType>) -> Self {
         self.inner = self.inner.set_time_range_type(input);
         self
     }
@@ -209,10 +179,7 @@ impl GetTraceSummariesFluentBuilder {
         self
     }
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
-    pub fn set_sampling_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SamplingStrategy>,
-    ) -> Self {
+    pub fn set_sampling_strategy(mut self, input: ::std::option::Option<crate::types::SamplingStrategy>) -> Self {
         self.inner = self.inner.set_sampling_strategy(input);
         self
     }
@@ -221,18 +188,12 @@ impl GetTraceSummariesFluentBuilder {
         self.inner.get_sampling_strategy()
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    pub fn filter_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_expression(input.into());
         self
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    pub fn set_filter_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_expression(input);
         self
     }

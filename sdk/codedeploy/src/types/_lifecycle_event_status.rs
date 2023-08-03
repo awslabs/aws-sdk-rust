@@ -42,13 +42,7 @@
 /// _Note: `LifecycleEventStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LifecycleEventStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for LifecycleEventStatus {
             "Skipped" => LifecycleEventStatus::Skipped,
             "Succeeded" => LifecycleEventStatus::Succeeded,
             "Unknown" => LifecycleEventStatus::UnknownValue,
-            other => LifecycleEventStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LifecycleEventStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl LifecycleEventStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failed",
-            "InProgress",
-            "Pending",
-            "Skipped",
-            "Succeeded",
-            "Unknown",
-        ]
+        &["Failed", "InProgress", "Pending", "Skipped", "Succeeded", "Unknown"]
     }
 }
 impl ::std::convert::AsRef<str> for LifecycleEventStatus {

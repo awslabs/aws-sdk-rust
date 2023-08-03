@@ -18,9 +18,7 @@ pub struct RecordingConfiguration {
     pub state: ::std::option::Option<crate::types::RecordingConfigurationState>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
     #[doc(hidden)]
     pub thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
@@ -41,9 +39,7 @@ impl RecordingConfiguration {
         self.name.as_deref()
     }
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
@@ -51,17 +47,11 @@ impl RecordingConfiguration {
         self.state.as_ref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-    pub fn thumbnail_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ThumbnailConfiguration> {
+    pub fn thumbnail_configuration(&self) -> ::std::option::Option<&crate::types::ThumbnailConfiguration> {
         self.thumbnail_configuration.as_ref()
     }
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
@@ -69,9 +59,7 @@ impl RecordingConfiguration {
         self.recording_reconnect_window_seconds
     }
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
-    pub fn rendition_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RenditionConfiguration> {
+    pub fn rendition_configuration(&self) -> ::std::option::Option<&crate::types::RenditionConfiguration> {
         self.rendition_configuration.as_ref()
     }
 }
@@ -84,18 +72,13 @@ impl RecordingConfiguration {
 
 /// A builder for [`RecordingConfiguration`](crate::types::RecordingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordingConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_configuration:
-        ::std::option::Option<crate::types::DestinationConfiguration>,
+    pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) state: ::std::option::Option<crate::types::RecordingConfigurationState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
     pub(crate) recording_reconnect_window_seconds: ::std::option::Option<i32>,
     pub(crate) rendition_configuration: ::std::option::Option<crate::types::RenditionConfiguration>,
@@ -130,25 +113,17 @@ impl RecordingConfigurationBuilder {
         &self.name
     }
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
@@ -157,10 +132,7 @@ impl RecordingConfigurationBuilder {
         self
     }
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordingConfigurationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::RecordingConfigurationState>) -> Self {
         self.state = input;
         self
     }
@@ -173,32 +145,19 @@ impl RecordingConfigurationBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
@@ -207,17 +166,12 @@ impl RecordingConfigurationBuilder {
         self
     }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-    pub fn set_thumbnail_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ThumbnailConfiguration>,
-    ) -> Self {
+    pub fn set_thumbnail_configuration(mut self, input: ::std::option::Option<crate::types::ThumbnailConfiguration>) -> Self {
         self.thumbnail_configuration = input;
         self
     }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-    pub fn get_thumbnail_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThumbnailConfiguration> {
+    pub fn get_thumbnail_configuration(&self) -> &::std::option::Option<crate::types::ThumbnailConfiguration> {
         &self.thumbnail_configuration
     }
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
@@ -226,10 +180,7 @@ impl RecordingConfigurationBuilder {
         self
     }
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
-    pub fn set_recording_reconnect_window_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_recording_reconnect_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.recording_reconnect_window_seconds = input;
         self
     }
@@ -243,17 +194,12 @@ impl RecordingConfigurationBuilder {
         self
     }
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
-    pub fn set_rendition_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RenditionConfiguration>,
-    ) -> Self {
+    pub fn set_rendition_configuration(mut self, input: ::std::option::Option<crate::types::RenditionConfiguration>) -> Self {
         self.rendition_configuration = input;
         self
     }
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
-    pub fn get_rendition_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RenditionConfiguration> {
+    pub fn get_rendition_configuration(&self) -> &::std::option::Option<crate::types::RenditionConfiguration> {
         &self.rendition_configuration
     }
     /// Consumes the builder and constructs a [`RecordingConfiguration`](crate::types::RecordingConfiguration).
@@ -265,9 +211,7 @@ impl RecordingConfigurationBuilder {
             state: self.state,
             tags: self.tags,
             thumbnail_configuration: self.thumbnail_configuration,
-            recording_reconnect_window_seconds: self
-                .recording_reconnect_window_seconds
-                .unwrap_or_default(),
+            recording_reconnect_window_seconds: self.recording_reconnect_window_seconds.unwrap_or_default(),
             rendition_configuration: self.rendition_configuration,
         }
     }

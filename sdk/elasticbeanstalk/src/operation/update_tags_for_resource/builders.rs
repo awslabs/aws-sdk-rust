@@ -54,10 +54,7 @@ impl UpdateTagsForResourceFluentBuilder {
         }
     }
     /// Access the UpdateTagsForResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,9 +66,7 @@ impl UpdateTagsForResourceFluentBuilder {
             crate::operation::update_tags_for_resource::UpdateTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_tags_for_resource::UpdateTagsForResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -81,10 +76,7 @@ impl UpdateTagsForResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -93,9 +85,7 @@ impl UpdateTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_tags_for_resource::UpdateTagsForResourceError>,
     > {
         let op = self
             .inner
@@ -118,9 +108,7 @@ impl UpdateTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_tags_for_resource::UpdateTagsForResourceError>,
     > {
         self.send_middleware().await
     }
@@ -134,9 +122,7 @@ impl UpdateTagsForResourceFluentBuilder {
             crate::operation::update_tags_for_resource::UpdateTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_tags_for_resource::UpdateTagsForResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -169,10 +155,7 @@ impl UpdateTagsForResourceFluentBuilder {
     }
     /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn set_tags_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags_to_add(input);
         self
     }
@@ -187,27 +170,19 @@ impl UpdateTagsForResourceFluentBuilder {
     ///
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn tags_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags_to_remove(input.into());
         self
     }
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn set_tags_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tags_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags_to_remove(input);
         self
     }
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn get_tags_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tags_to_remove()
     }
 }

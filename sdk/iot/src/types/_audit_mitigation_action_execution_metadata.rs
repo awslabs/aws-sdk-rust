@@ -50,9 +50,7 @@ impl AuditMitigationActionExecutionMetadata {
         self.action_id.as_deref()
     }
     /// <p>The current status of the task being executed.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuditMitigationActionsExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AuditMitigationActionsExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time when the task was started.</p>
@@ -81,9 +79,7 @@ impl AuditMitigationActionExecutionMetadata {
 
 /// A builder for [`AuditMitigationActionExecutionMetadata`](crate::types::AuditMitigationActionExecutionMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditMitigationActionExecutionMetadataBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
@@ -158,17 +154,12 @@ impl AuditMitigationActionExecutionMetadataBuilder {
         self
     }
     /// <p>The current status of the task being executed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current status of the task being executed.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
         &self.status
     }
     /// <p>The date and time when the task was started.</p>
@@ -177,10 +168,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
         self
     }
     /// <p>The date and time when the task was started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -194,10 +182,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
         self
     }
     /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

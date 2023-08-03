@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateSkillGroupFromRoomOutput 
 }
 impl DisassociateSkillGroupFromRoomOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSkillGroupFromRoomOutput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput).
-    pub fn builder() -> crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomOutputBuilder {
         crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSkillGroupFromRoomOutput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSkillGroupFromRoomOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociateSkillGroupFromRoomOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateSkillGroupFromRoomOutput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput {
         crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput {
             _request_id: self._request_id,
         }

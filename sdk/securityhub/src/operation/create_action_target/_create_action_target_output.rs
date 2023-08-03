@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateActionTargetOutput {
 }
 impl CreateActionTargetOutput {
     /// Creates a new builder-style object to manufacture [`CreateActionTargetOutput`](crate::operation::create_action_target::CreateActionTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_action_target::builders::CreateActionTargetOutputBuilder {
+    pub fn builder() -> crate::operation::create_action_target::builders::CreateActionTargetOutputBuilder {
         crate::operation::create_action_target::builders::CreateActionTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateActionTargetOutput`](crate::operation::create_action_target::CreateActionTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateActionTargetOutputBuilder {
     pub(crate) action_target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateActionTargetOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the custom action target.</p>
-    pub fn action_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the custom action target.</p>
-    pub fn set_action_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_target_arn = input;
         self
     }

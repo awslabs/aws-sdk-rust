@@ -5,8 +5,7 @@
 pub struct ListMatchingWorkflowsOutput {
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
     #[doc(hidden)]
-    pub workflow_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
+    pub workflow_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMatchingWorkflowsOutput {
 }
 impl ListMatchingWorkflowsOutput {
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    pub fn workflow_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MatchingWorkflowSummary]> {
+    pub fn workflow_summaries(&self) -> ::std::option::Option<&[crate::types::MatchingWorkflowSummary]> {
         self.workflow_summaries.as_deref()
     }
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMatchingWorkflowsOutput {
 }
 impl ListMatchingWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`ListMatchingWorkflowsOutput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsOutputBuilder {
         crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMatchingWorkflowsOutput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMatchingWorkflowsOutputBuilder {
-    pub(crate) workflow_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
+    pub(crate) workflow_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListMatchingWorkflowsOutputBuilder {
         self
     }
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    pub fn set_workflow_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
-    ) -> Self {
+    pub fn set_workflow_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>) -> Self {
         self.workflow_summaries = input;
         self
     }
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    pub fn get_workflow_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>> {
+    pub fn get_workflow_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>> {
         &self.workflow_summaries
     }
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>

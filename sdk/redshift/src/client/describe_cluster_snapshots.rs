@@ -21,10 +21,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput::snapshots): <p>A list of <code>Snapshot</code> instances. </p>
     /// - On failure, responds with [`SdkError<DescribeClusterSnapshotsError>`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError)
-    pub fn describe_cluster_snapshots(
-        &self,
-    ) -> crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsFluentBuilder
-    {
+    pub fn describe_cluster_snapshots(&self) -> crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsFluentBuilder {
         crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

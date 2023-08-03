@@ -9,10 +9,7 @@ pub fn ser_get_feedback_input(
     if let Some(var_2) = &input.anomaly_group_time_series_feedback {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AnomalyGroupTimeSeriesFeedback").start_object();
-        crate::protocol_serde::shape_anomaly_group_time_series::ser_anomaly_group_time_series(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_anomaly_group_time_series::ser_anomaly_group_time_series(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.max_results {

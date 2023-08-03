@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeServiceErrorsOutput {
 }
 impl DescribeServiceErrorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsOutputBuilder {
         crate::operation::describe_service_errors::builders::DescribeServiceErrorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceErrorsOutputBuilder {
     pub(crate) service_errors: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeServiceErrorsOutputBuilder {
         self
     }
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    pub fn set_service_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
-    ) -> Self {
+    pub fn set_service_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>) -> Self {
         self.service_errors = input;
         self
     }
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    pub fn get_service_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceError>> {
+    pub fn get_service_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceError>> {
         &self.service_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_metric_data::GetMetricDataOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>  <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     ///   - [`metric_results(Option<Vec<HistoricalMetricResult>>)`](crate::operation::get_metric_data::GetMetricDataOutput::metric_results): <p>Information about the historical metrics.</p>  <p>If no grouping is specified, a summary of metric data is returned.</p>
     /// - On failure, responds with [`SdkError<GetMetricDataError>`](crate::operation::get_metric_data::GetMetricDataError)
-    pub fn get_metric_data(
-        &self,
-    ) -> crate::operation::get_metric_data::builders::GetMetricDataFluentBuilder {
-        crate::operation::get_metric_data::builders::GetMetricDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_metric_data(&self) -> crate::operation::get_metric_data::builders::GetMetricDataFluentBuilder {
+        crate::operation::get_metric_data::builders::GetMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

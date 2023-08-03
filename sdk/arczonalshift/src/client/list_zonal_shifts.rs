@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ZonalShiftSummary>>)`](crate::operation::list_zonal_shifts::ListZonalShiftsOutput::items): <p>The items in the response list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_zonal_shifts::ListZonalShiftsOutput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListZonalShiftsError>`](crate::operation::list_zonal_shifts::ListZonalShiftsError)
-    pub fn list_zonal_shifts(
-        &self,
-    ) -> crate::operation::list_zonal_shifts::builders::ListZonalShiftsFluentBuilder {
-        crate::operation::list_zonal_shifts::builders::ListZonalShiftsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_zonal_shifts(&self) -> crate::operation::list_zonal_shifts::builders::ListZonalShiftsFluentBuilder {
+        crate::operation::list_zonal_shifts::builders::ListZonalShiftsFluentBuilder::new(self.handle.clone())
     }
 }

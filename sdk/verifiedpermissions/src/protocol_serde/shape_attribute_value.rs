@@ -10,10 +10,7 @@ pub fn ser_attribute_value(
         crate::types::AttributeValue::EntityIdentifier(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_4.key("entityIdentifier").start_object();
-            crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::AttributeValue::Long(inner) => {
@@ -31,10 +28,7 @@ pub fn ser_attribute_value(
                 {
                     #[allow(unused_mut)]
                     let mut object_4 = array_2.value().start_object();
-                    crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                        &mut object_4,
-                        item_3,
-                    )?;
+                    crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_4, item_3)?;
                     object_4.finish();
                 }
             }
@@ -47,21 +41,14 @@ pub fn ser_attribute_value(
                 {
                     #[allow(unused_mut)]
                     let mut object_8 = object_5.key(key_6.as_str()).start_object();
-                    crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                        &mut object_8,
-                        value_7,
-                    )?;
+                    crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_8, value_7)?;
                     object_8.finish();
                 }
             }
             object_5.finish();
         }
         crate::types::AttributeValue::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "AttributeValue",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("AttributeValue"))
         }
     }
     Ok(())

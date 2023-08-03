@@ -8,8 +8,7 @@ pub struct UpdateApplicationMaintenanceConfigurationOutput {
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The application maintenance configuration description after the update.</p>
     #[doc(hidden)]
-    pub application_maintenance_configuration_description:
-        ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
+    pub application_maintenance_configuration_description: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationMaintenanceConfigurationOutput {
@@ -21,8 +20,7 @@ impl UpdateApplicationMaintenanceConfigurationOutput {
     pub fn application_maintenance_configuration_description(
         &self,
     ) -> ::std::option::Option<&crate::types::ApplicationMaintenanceConfigurationDescription> {
-        self.application_maintenance_configuration_description
-            .as_ref()
+        self.application_maintenance_configuration_description.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateApplicationMaintenanceConfigurationOutput {
@@ -32,36 +30,28 @@ impl ::aws_http::request_id::RequestId for UpdateApplicationMaintenanceConfigura
 }
 impl UpdateApplicationMaintenanceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationOutput`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput).
-    pub fn builder() -> crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationOutputBuilder {
         crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationMaintenanceConfigurationOutput`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationMaintenanceConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) application_maintenance_configuration_description:
-        ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
+    pub(crate) application_maintenance_configuration_description: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationMaintenanceConfigurationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -70,10 +60,7 @@ impl UpdateApplicationMaintenanceConfigurationOutputBuilder {
         &self.application_arn
     }
     /// <p>The application maintenance configuration description after the update.</p>
-    pub fn application_maintenance_configuration_description(
-        mut self,
-        input: crate::types::ApplicationMaintenanceConfigurationDescription,
-    ) -> Self {
+    pub fn application_maintenance_configuration_description(mut self, input: crate::types::ApplicationMaintenanceConfigurationDescription) -> Self {
         self.application_maintenance_configuration_description = ::std::option::Option::Some(input);
         self
     }
@@ -101,12 +88,10 @@ impl UpdateApplicationMaintenanceConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationMaintenanceConfigurationOutput`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput {
         crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput {
-            application_arn: self.application_arn
-            ,
-            application_maintenance_configuration_description: self.application_maintenance_configuration_description
-            ,
+            application_arn: self.application_arn,
+            application_maintenance_configuration_description: self.application_maintenance_configuration_description,
             _request_id: self._request_id,
         }
     }

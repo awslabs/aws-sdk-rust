@@ -22,34 +22,27 @@ impl GetAssociatedEnclaveCertificateIamRolesInput {
 }
 impl GetAssociatedEnclaveCertificateIamRolesInput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedEnclaveCertificateIamRolesInput`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesInput).
-    pub fn builder() -> crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesInputBuilder{
+    pub fn builder() -> crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesInputBuilder
+    {
         crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssociatedEnclaveCertificateIamRolesInput`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssociatedEnclaveCertificateIamRolesInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl GetAssociatedEnclaveCertificateIamRolesInputBuilder {
     /// <p>The ARN of the ACM certificate for which to view the associated IAM roles, encryption keys, and Amazon S3 object information.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the ACM certificate for which to view the associated IAM roles, encryption keys, and Amazon S3 object information.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -72,14 +65,17 @@ impl GetAssociatedEnclaveCertificateIamRolesInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetAssociatedEnclaveCertificateIamRolesInput`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesInput {
-                certificate_arn: self.certificate_arn
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                certificate_arn: self.certificate_arn,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

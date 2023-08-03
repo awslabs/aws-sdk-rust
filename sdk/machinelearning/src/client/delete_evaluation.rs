@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEvaluationOutput`](crate::operation::delete_evaluation::DeleteEvaluationOutput) with field(s):
     ///   - [`evaluation_id(Option<String>)`](crate::operation::delete_evaluation::DeleteEvaluationOutput::evaluation_id): <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
     /// - On failure, responds with [`SdkError<DeleteEvaluationError>`](crate::operation::delete_evaluation::DeleteEvaluationError)
-    pub fn delete_evaluation(
-        &self,
-    ) -> crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder {
-        crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_evaluation(&self) -> crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder {
+        crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

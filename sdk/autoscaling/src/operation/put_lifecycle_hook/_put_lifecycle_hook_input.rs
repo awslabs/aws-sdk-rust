@@ -84,17 +84,14 @@ impl PutLifecycleHookInput {
 }
 impl PutLifecycleHookInput {
     /// Creates a new builder-style object to manufacture [`PutLifecycleHookInput`](crate::operation::put_lifecycle_hook::PutLifecycleHookInput).
-    pub fn builder() -> crate::operation::put_lifecycle_hook::builders::PutLifecycleHookInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_lifecycle_hook::builders::PutLifecycleHookInputBuilder {
         crate::operation::put_lifecycle_hook::builders::PutLifecycleHookInputBuilder::default()
     }
 }
 
 /// A builder for [`PutLifecycleHookInput`](crate::operation::put_lifecycle_hook::PutLifecycleHookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLifecycleHookInputBuilder {
     pub(crate) lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -107,18 +104,12 @@ pub struct PutLifecycleHookInputBuilder {
 }
 impl PutLifecycleHookInputBuilder {
     /// <p>The name of the lifecycle hook.</p>
-    pub fn lifecycle_hook_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn set_lifecycle_hook_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_hook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_hook_name = input;
         self
     }
@@ -127,18 +118,12 @@ impl PutLifecycleHookInputBuilder {
         &self.lifecycle_hook_name
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -152,10 +137,7 @@ impl PutLifecycleHookInputBuilder {
     /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
-    pub fn lifecycle_transition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_transition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_transition = ::std::option::Option::Some(input.into());
         self
     }
@@ -165,10 +147,7 @@ impl PutLifecycleHookInputBuilder {
     /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
-    pub fn set_lifecycle_transition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_transition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_transition = input;
         self
     }
@@ -202,10 +181,7 @@ impl PutLifecycleHookInputBuilder {
     /// <p>If you specify an empty string, this overrides the current ARN.</p>
     /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
     /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
-    pub fn notification_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_target_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -213,10 +189,7 @@ impl PutLifecycleHookInputBuilder {
     /// <p>If you specify an empty string, this overrides the current ARN.</p>
     /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
     /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
-    pub fn set_notification_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_target_arn = input;
         self
     }
@@ -228,18 +201,12 @@ impl PutLifecycleHookInputBuilder {
         &self.notification_target_arn
     }
     /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
-    pub fn notification_metadata(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
-    pub fn set_notification_metadata(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_metadata = input;
         self
     }
@@ -263,19 +230,13 @@ impl PutLifecycleHookInputBuilder {
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
     /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
-    pub fn default_result(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_result = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
     /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
-    pub fn set_default_result(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_result = input;
         self
     }
@@ -287,21 +248,16 @@ impl PutLifecycleHookInputBuilder {
     /// Consumes the builder and constructs a [`PutLifecycleHookInput`](crate::operation::put_lifecycle_hook::PutLifecycleHookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_lifecycle_hook::PutLifecycleHookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_lifecycle_hook::PutLifecycleHookInput {
-                lifecycle_hook_name: self.lifecycle_hook_name,
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                lifecycle_transition: self.lifecycle_transition,
-                role_arn: self.role_arn,
-                notification_target_arn: self.notification_target_arn,
-                notification_metadata: self.notification_metadata,
-                heartbeat_timeout: self.heartbeat_timeout,
-                default_result: self.default_result,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_lifecycle_hook::PutLifecycleHookInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_lifecycle_hook::PutLifecycleHookInput {
+            lifecycle_hook_name: self.lifecycle_hook_name,
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            lifecycle_transition: self.lifecycle_transition,
+            role_arn: self.role_arn,
+            notification_target_arn: self.notification_target_arn,
+            notification_metadata: self.notification_metadata,
+            heartbeat_timeout: self.heartbeat_timeout,
+            default_result: self.default_result,
+        })
     }
 }

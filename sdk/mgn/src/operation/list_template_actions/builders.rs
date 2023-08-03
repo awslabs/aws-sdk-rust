@@ -37,9 +37,7 @@ impl ListTemplateActionsFluentBuilder {
         }
     }
     /// Access the ListTemplateActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListTemplateActionsFluentBuilder {
             crate::operation::list_template_actions::ListTemplateActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_actions::ListTemplateActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_actions::ListTemplateActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListTemplateActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListTemplateActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_actions::ListTemplateActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_actions::ListTemplateActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_actions::ListTemplateActionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListTemplateActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_actions::ListTemplateActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_actions::ListTemplateActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_actions::ListTemplateActionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,43 +105,28 @@ impl ListTemplateActionsFluentBuilder {
             crate::operation::list_template_actions::ListTemplateActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_actions::ListTemplateActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_actions::ListTemplateActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator {
-        crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator {
+        crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_configuration_template_id(input.into());
         self
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn set_launch_configuration_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
     /// <p>Launch configuration template ID.</p>
-    pub fn get_launch_configuration_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_configuration_template_id()
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
@@ -161,17 +135,12 @@ impl ListTemplateActionsFluentBuilder {
         self
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateActionsRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::TemplateActionsRequestFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateActionsRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::TemplateActionsRequestFilters> {
         self.inner.get_filters()
     }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>

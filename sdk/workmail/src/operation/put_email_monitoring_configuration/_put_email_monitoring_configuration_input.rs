@@ -29,16 +29,14 @@ impl PutEmailMonitoringConfigurationInput {
 }
 impl PutEmailMonitoringConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutEmailMonitoringConfigurationInput`](crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationInput).
-    pub fn builder() -> crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationInputBuilder {
         crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutEmailMonitoringConfigurationInput`](crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEmailMonitoringConfigurationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct PutEmailMonitoringConfigurationInputBuilder {
 }
 impl PutEmailMonitoringConfigurationInputBuilder {
     /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -80,18 +72,12 @@ impl PutEmailMonitoringConfigurationInputBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
-    pub fn log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
-    pub fn set_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_arn = input;
         self
     }
@@ -108,13 +94,10 @@ impl PutEmailMonitoringConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationInput {
-                organization_id: self.organization_id
-                ,
-                role_arn: self.role_arn
-                ,
-                log_group_arn: self.log_group_arn
-                ,
-            }
+                organization_id: self.organization_id,
+                role_arn: self.role_arn,
+                log_group_arn: self.log_group_arn,
+            },
         )
     }
 }

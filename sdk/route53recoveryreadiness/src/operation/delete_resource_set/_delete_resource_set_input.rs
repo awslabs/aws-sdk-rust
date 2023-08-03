@@ -15,34 +15,25 @@ impl DeleteResourceSetInput {
 }
 impl DeleteResourceSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder {
         crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceSetInputBuilder {
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourceSetInputBuilder {
     /// <p>Name of a resource set.</p>
-    pub fn resource_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a resource set.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_set_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resource_set::DeleteResourceSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_resource_set::DeleteResourceSetInput {
-                resource_set_name: self.resource_set_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_resource_set::DeleteResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_resource_set::DeleteResourceSetInput {
+            resource_set_name: self.resource_set_name,
+        })
     }
 }

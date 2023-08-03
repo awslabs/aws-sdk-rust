@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`SendAnnouncementOutput`](crate::operation::send_announcement::SendAnnouncementOutput) with field(s):
     ///   - [`announcement_arn(Option<String>)`](crate::operation::send_announcement::SendAnnouncementOutput::announcement_arn): <p>The identifier of the announcement.</p>
     /// - On failure, responds with [`SdkError<SendAnnouncementError>`](crate::operation::send_announcement::SendAnnouncementError)
-    pub fn send_announcement(
-        &self,
-    ) -> crate::operation::send_announcement::builders::SendAnnouncementFluentBuilder {
-        crate::operation::send_announcement::builders::SendAnnouncementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_announcement(&self) -> crate::operation::send_announcement::builders::SendAnnouncementFluentBuilder {
+        crate::operation::send_announcement::builders::SendAnnouncementFluentBuilder::new(self.handle.clone())
     }
 }

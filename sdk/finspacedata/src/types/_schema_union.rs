@@ -23,9 +23,7 @@ impl SchemaUnion {
 
 /// A builder for [`SchemaUnion`](crate::types::SchemaUnion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaUnionBuilder {
     pub(crate) tabular_schema_config: ::std::option::Option<crate::types::SchemaDefinition>,
 }
@@ -36,17 +34,12 @@ impl SchemaUnionBuilder {
         self
     }
     /// <p>The configuration for a schema on a tabular Dataset.</p>
-    pub fn set_tabular_schema_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaDefinition>,
-    ) -> Self {
+    pub fn set_tabular_schema_config(mut self, input: ::std::option::Option<crate::types::SchemaDefinition>) -> Self {
         self.tabular_schema_config = input;
         self
     }
     /// <p>The configuration for a schema on a tabular Dataset.</p>
-    pub fn get_tabular_schema_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaDefinition> {
+    pub fn get_tabular_schema_config(&self) -> &::std::option::Option<crate::types::SchemaDefinition> {
         &self.tabular_schema_config
     }
     /// Consumes the builder and constructs a [`SchemaUnion`](crate::types::SchemaUnion).

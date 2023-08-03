@@ -50,9 +50,7 @@ impl DescribeIpamsInput {
 
 /// A builder for [`DescribeIpamsInput`](crate::operation::describe_ipams::DescribeIpamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -87,10 +85,7 @@ impl DescribeIpamsInputBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -138,10 +133,7 @@ impl DescribeIpamsInputBuilder {
         self
     }
     /// <p>The IDs of the IPAMs you want information on.</p>
-    pub fn set_ipam_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipam_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipam_ids = input;
         self
     }
@@ -152,10 +144,7 @@ impl DescribeIpamsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIpamsInput`](crate::operation::describe_ipams::DescribeIpamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ipams::DescribeIpamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_ipams::DescribeIpamsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ipams::DescribeIpamsInput {
             dry_run: self.dry_run,
             filters: self.filters,

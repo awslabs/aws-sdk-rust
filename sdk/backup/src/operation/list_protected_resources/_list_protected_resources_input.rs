@@ -22,18 +22,14 @@ impl ListProtectedResourcesInput {
 }
 impl ListProtectedResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListProtectedResourcesInput`](crate::operation::list_protected_resources::ListProtectedResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_protected_resources::builders::ListProtectedResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_protected_resources::builders::ListProtectedResourcesInputBuilder {
         crate::operation::list_protected_resources::builders::ListProtectedResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProtectedResourcesInput`](crate::operation::list_protected_resources::ListProtectedResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectedResourcesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListProtectedResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListProtectedResourcesInput`](crate::operation::list_protected_resources::ListProtectedResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_protected_resources::ListProtectedResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_protected_resources::ListProtectedResourcesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_protected_resources::ListProtectedResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_protected_resources::ListProtectedResourcesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

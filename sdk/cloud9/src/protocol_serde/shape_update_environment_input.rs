@@ -13,9 +13,7 @@ pub fn ser_update_environment_input(
         object.key("description").string(var_3.as_str());
     }
     if let Some(var_4) = &input.managed_credentials_action {
-        object
-            .key("managedCredentialsAction")
-            .string(var_4.as_str());
+        object.key("managedCredentialsAction").string(var_4.as_str());
     }
     Ok(())
 }

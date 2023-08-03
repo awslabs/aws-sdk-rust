@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccessorOutput`](crate::operation::get_accessor::GetAccessorOutput) with field(s):
     ///   - [`accessor(Option<Accessor>)`](crate::operation::get_accessor::GetAccessorOutput::accessor): <p>The properties of the accessor.</p>
     /// - On failure, responds with [`SdkError<GetAccessorError>`](crate::operation::get_accessor::GetAccessorError)
-    pub fn get_accessor(
-        &self,
-    ) -> crate::operation::get_accessor::builders::GetAccessorFluentBuilder {
+    pub fn get_accessor(&self) -> crate::operation::get_accessor::builders::GetAccessorFluentBuilder {
         crate::operation::get_accessor::builders::GetAccessorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`repository_name(Option<String>)`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput::repository_name): <p>The repository name associated with the request.</p>
     ///   - [`lifecycle_policy_text(Option<String>)`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput::lifecycle_policy_text): <p>The JSON repository policy text.</p>
     /// - On failure, responds with [`SdkError<PutLifecyclePolicyError>`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyError)
-    pub fn put_lifecycle_policy(
-        &self,
-    ) -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder {
-        crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_lifecycle_policy(&self) -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder {
+        crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl SvmEndpoint {
 
 /// A builder for [`SvmEndpoint`](crate::types::SvmEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SvmEndpointBuilder {
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,17 +62,12 @@ impl SvmEndpointBuilder {
         self
     }
     /// <p>The SVM endpoint's IP addresses.</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_addresses = input;
         self
     }
     /// <p>The SVM endpoint's IP addresses.</p>
-    pub fn get_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_addresses
     }
     /// Consumes the builder and constructs a [`SvmEndpoint`](crate::types::SvmEndpoint).

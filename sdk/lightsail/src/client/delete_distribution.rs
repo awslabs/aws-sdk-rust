@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDistributionOutput`](crate::operation::delete_distribution::DeleteDistributionOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::delete_distribution::DeleteDistributionOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDistributionError>`](crate::operation::delete_distribution::DeleteDistributionError)
-    pub fn delete_distribution(
-        &self,
-    ) -> crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder {
-        crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_distribution(&self) -> crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder {
+        crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::new(self.handle.clone())
     }
 }

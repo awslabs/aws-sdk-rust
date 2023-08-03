@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`firewall_policy_response(Option<FirewallPolicyResponse>)`](crate::operation::describe_firewall_policy::DescribeFirewallPolicyOutput::firewall_policy_response): <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     ///   - [`firewall_policy(Option<FirewallPolicy>)`](crate::operation::describe_firewall_policy::DescribeFirewallPolicyOutput::firewall_policy): <p>The policy for the specified firewall policy. </p>
     /// - On failure, responds with [`SdkError<DescribeFirewallPolicyError>`](crate::operation::describe_firewall_policy::DescribeFirewallPolicyError)
-    pub fn describe_firewall_policy(
-        &self,
-    ) -> crate::operation::describe_firewall_policy::builders::DescribeFirewallPolicyFluentBuilder
-    {
+    pub fn describe_firewall_policy(&self) -> crate::operation::describe_firewall_policy::builders::DescribeFirewallPolicyFluentBuilder {
         crate::operation::describe_firewall_policy::builders::DescribeFirewallPolicyFluentBuilder::new(self.handle.clone())
     }
 }

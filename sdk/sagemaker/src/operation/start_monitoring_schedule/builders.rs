@@ -28,8 +28,7 @@ impl StartMonitoringScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMonitoringScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder,
+    inner: crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder,
 }
 impl StartMonitoringScheduleFluentBuilder {
     /// Creates a new `StartMonitoringSchedule`.
@@ -40,10 +39,7 @@ impl StartMonitoringScheduleFluentBuilder {
         }
     }
     /// Access the StartMonitoringSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl StartMonitoringScheduleFluentBuilder {
             crate::operation::start_monitoring_schedule::StartMonitoringSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_schedule::StartMonitoringScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_schedule::StartMonitoringScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl StartMonitoringScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl StartMonitoringScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_schedule::StartMonitoringScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_schedule::StartMonitoringScheduleError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl StartMonitoringScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_schedule::StartMonitoringScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_schedule::StartMonitoringScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +107,17 @@ impl StartMonitoringScheduleFluentBuilder {
             crate::operation::start_monitoring_schedule::StartMonitoringSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_schedule::StartMonitoringScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_schedule::StartMonitoringScheduleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the schedule to start.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitoring_schedule_name(input.into());
         self
     }
     /// <p>The name of the schedule to start.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
     }

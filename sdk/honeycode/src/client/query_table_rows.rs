@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::query_table_rows::QueryTableRowsOutput::next_token): <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     ///   - [`workbook_cursor(i64)`](crate::operation::query_table_rows::QueryTableRowsOutput::workbook_cursor): <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     /// - On failure, responds with [`SdkError<QueryTableRowsError>`](crate::operation::query_table_rows::QueryTableRowsError)
-    pub fn query_table_rows(
-        &self,
-    ) -> crate::operation::query_table_rows::builders::QueryTableRowsFluentBuilder {
-        crate::operation::query_table_rows::builders::QueryTableRowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn query_table_rows(&self) -> crate::operation::query_table_rows::builders::QueryTableRowsFluentBuilder {
+        crate::operation::query_table_rows::builders::QueryTableRowsFluentBuilder::new(self.handle.clone())
     }
 }

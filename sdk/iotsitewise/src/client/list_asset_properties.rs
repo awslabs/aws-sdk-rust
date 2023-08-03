@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`asset_property_summaries(Option<Vec<AssetPropertySummary>>)`](crate::operation::list_asset_properties::ListAssetPropertiesOutput::asset_property_summaries): <p>A list that summarizes the properties associated with the specified asset.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_asset_properties::ListAssetPropertiesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListAssetPropertiesError>`](crate::operation::list_asset_properties::ListAssetPropertiesError)
-    pub fn list_asset_properties(
-        &self,
-    ) -> crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder {
-        crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_asset_properties(&self) -> crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder {
+        crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

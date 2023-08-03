@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DisassociateTransitGatewayConnectPeerOutput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput) with field(s):
     ///   - [`transit_gateway_connect_peer_association(Option<TransitGatewayConnectPeerAssociation>)`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput::transit_gateway_connect_peer_association): <p>The transit gateway Connect peer association.</p>
     /// - On failure, responds with [`SdkError<DisassociateTransitGatewayConnectPeerError>`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError)
-    pub fn disassociate_transit_gateway_connect_peer(&self) -> crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerFluentBuilder{
-        crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_transit_gateway_connect_peer(
+        &self,
+    ) -> crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerFluentBuilder {
+        crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

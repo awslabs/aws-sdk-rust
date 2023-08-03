@@ -50,19 +50,16 @@ impl DescribeVerifiedAccessGroupsInput {
 }
 impl DescribeVerifiedAccessGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessGroupsInput`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsInput).
-    pub fn builder() -> crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsInputBuilder {
         crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVerifiedAccessGroupsInput`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessGroupsInputBuilder {
-    pub(crate) verified_access_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) verified_access_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,42 +72,28 @@ impl DescribeVerifiedAccessGroupsInputBuilder {
     /// To override the contents of this collection use [`set_verified_access_group_ids`](Self::set_verified_access_group_ids).
     ///
     /// <p>The ID of the Verified Access groups.</p>
-    pub fn verified_access_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.verified_access_group_ids.unwrap_or_default();
         v.push(input.into());
         self.verified_access_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the Verified Access groups.</p>
-    pub fn set_verified_access_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_verified_access_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.verified_access_group_ids = input;
         self
     }
     /// <p>The ID of the Verified Access groups.</p>
-    pub fn get_verified_access_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_verified_access_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.verified_access_group_ids
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_instance_id = input;
         self
     }
@@ -158,10 +141,7 @@ impl DescribeVerifiedAccessGroupsInputBuilder {
         self
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -190,15 +170,13 @@ impl DescribeVerifiedAccessGroupsInputBuilder {
         crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsInput {
-                verified_access_group_ids: self.verified_access_group_ids,
-                verified_access_instance_id: self.verified_access_instance_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsInput {
+            verified_access_group_ids: self.verified_access_group_ids,
+            verified_access_instance_id: self.verified_access_instance_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+            dry_run: self.dry_run,
+        })
     }
 }

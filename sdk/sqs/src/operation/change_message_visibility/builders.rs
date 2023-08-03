@@ -40,8 +40,7 @@ impl ChangeMessageVisibilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder,
+    inner: crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder,
 }
 impl ChangeMessageVisibilityFluentBuilder {
     /// Creates a new `ChangeMessageVisibility`.
@@ -52,10 +51,7 @@ impl ChangeMessageVisibilityFluentBuilder {
         }
     }
     /// Access the ChangeMessageVisibility as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,9 +63,7 @@ impl ChangeMessageVisibilityFluentBuilder {
             crate::operation::change_message_visibility::ChangeMessageVisibility,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_message_visibility::ChangeMessageVisibilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -79,10 +73,7 @@ impl ChangeMessageVisibilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -91,9 +82,7 @@ impl ChangeMessageVisibilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_message_visibility::ChangeMessageVisibilityError>,
     > {
         let op = self
             .inner
@@ -116,9 +105,7 @@ impl ChangeMessageVisibilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_message_visibility::ChangeMessageVisibilityError>,
     > {
         self.send_middleware().await
     }
@@ -132,9 +119,7 @@ impl ChangeMessageVisibilityFluentBuilder {
             crate::operation::change_message_visibility::ChangeMessageVisibility,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_message_visibility::ChangeMessageVisibilityError>,
     > {
         self.customize_middleware().await
     }
@@ -156,18 +141,12 @@ impl ChangeMessageVisibilityFluentBuilder {
         self.inner.get_queue_url()
     }
     /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
-    pub fn receipt_handle(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn receipt_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.receipt_handle(input.into());
         self
     }
     /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
-    pub fn set_receipt_handle(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_receipt_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_receipt_handle(input);
         self
     }

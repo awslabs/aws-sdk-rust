@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`status(Option<ReferenceImportJobStatus>)`](crate::operation::start_reference_import_job::StartReferenceImportJobOutput::status): <p>The job's status.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::start_reference_import_job::StartReferenceImportJobOutput::creation_time): <p>When the job was created.</p>
     /// - On failure, responds with [`SdkError<StartReferenceImportJobError>`](crate::operation::start_reference_import_job::StartReferenceImportJobError)
-    pub fn start_reference_import_job(
-        &self,
-    ) -> crate::operation::start_reference_import_job::builders::StartReferenceImportJobFluentBuilder
-    {
+    pub fn start_reference_import_job(&self) -> crate::operation::start_reference_import_job::builders::StartReferenceImportJobFluentBuilder {
         crate::operation::start_reference_import_job::builders::StartReferenceImportJobFluentBuilder::new(self.handle.clone())
     }
 }

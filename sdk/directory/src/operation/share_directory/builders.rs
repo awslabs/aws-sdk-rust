@@ -10,10 +10,7 @@ impl ShareDirectoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::share_directory::ShareDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::share_directory::ShareDirectoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::share_directory::ShareDirectoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.share_directory();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ShareDirectoryFluentBuilder {
         }
     }
     /// Access the ShareDirectory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::share_directory::builders::ShareDirectoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::share_directory::builders::ShareDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl ShareDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -151,10 +143,7 @@ impl ShareDirectoryFluentBuilder {
         self
     }
     /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
-    pub fn set_share_target(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareTarget>,
-    ) -> Self {
+    pub fn set_share_target(mut self, input: ::std::option::Option<crate::types::ShareTarget>) -> Self {
         self.inner = self.inner.set_share_target(input);
         self
     }
@@ -168,10 +157,7 @@ impl ShareDirectoryFluentBuilder {
         self
     }
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
-    pub fn set_share_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareMethod>,
-    ) -> Self {
+    pub fn set_share_method(mut self, input: ::std::option::Option<crate::types::ShareMethod>) -> Self {
         self.inner = self.inner.set_share_method(input);
         self
     }

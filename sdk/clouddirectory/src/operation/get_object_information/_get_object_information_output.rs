@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetObjectInformationOutput {
 }
 impl GetObjectInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectInformationOutput`](crate::operation::get_object_information::GetObjectInformationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_object_information::builders::GetObjectInformationOutputBuilder {
+    pub fn builder() -> crate::operation::get_object_information::builders::GetObjectInformationOutputBuilder {
         crate::operation::get_object_information::builders::GetObjectInformationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetObjectInformationOutput`](crate::operation::get_object_information::GetObjectInformationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectInformationOutputBuilder {
     pub(crate) schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
@@ -57,32 +54,21 @@ impl GetObjectInformationOutputBuilder {
         self
     }
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
-    pub fn set_schema_facets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
-    ) -> Self {
+    pub fn set_schema_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>) -> Self {
         self.schema_facets = input;
         self
     }
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
-    pub fn get_schema_facets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+    pub fn get_schema_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
         &self.schema_facets
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_identifier = input;
         self
     }

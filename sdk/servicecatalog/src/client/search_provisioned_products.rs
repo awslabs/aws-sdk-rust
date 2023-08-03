@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`total_results_count(i32)`](crate::operation::search_provisioned_products::SearchProvisionedProductsOutput::total_results_count): <p>The number of provisioned products found.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::search_provisioned_products::SearchProvisionedProductsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<SearchProvisionedProductsError>`](crate::operation::search_provisioned_products::SearchProvisionedProductsError)
-    pub fn search_provisioned_products(&self) -> crate::operation::search_provisioned_products::builders::SearchProvisionedProductsFluentBuilder{
+    pub fn search_provisioned_products(&self) -> crate::operation::search_provisioned_products::builders::SearchProvisionedProductsFluentBuilder {
         crate::operation::search_provisioned_products::builders::SearchProvisionedProductsFluentBuilder::new(self.handle.clone())
     }
 }

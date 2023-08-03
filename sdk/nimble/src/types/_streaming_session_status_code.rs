@@ -52,13 +52,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StreamingSessionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,37 +93,23 @@ pub enum StreamingSessionStatusCode {
 impl ::std::convert::From<&str> for StreamingSessionStatusCode {
     fn from(s: &str) -> Self {
         match s {
-            "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR" => {
-                StreamingSessionStatusCode::ActiveDirectoryDomainJoinError
-            }
+            "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR" => StreamingSessionStatusCode::ActiveDirectoryDomainJoinError,
             "AMI_VALIDATION_ERROR" => StreamingSessionStatusCode::AmiValidationError,
-            "DECRYPT_STREAMING_IMAGE_ERROR" => {
-                StreamingSessionStatusCode::DecryptStreamingImageError
-            }
+            "DECRYPT_STREAMING_IMAGE_ERROR" => StreamingSessionStatusCode::DecryptStreamingImageError,
             "INITIALIZATION_SCRIPT_ERROR" => StreamingSessionStatusCode::InitializationScriptError,
             "INSUFFICIENT_CAPACITY" => StreamingSessionStatusCode::InsufficientCapacity,
             "INTERNAL_ERROR" => StreamingSessionStatusCode::InternalError,
             "NETWORK_CONNECTION_ERROR" => StreamingSessionStatusCode::NetworkConnectionError,
             "NETWORK_INTERFACE_ERROR" => StreamingSessionStatusCode::NetworkInterfaceError,
-            "STREAMING_SESSION_CREATE_IN_PROGRESS" => {
-                StreamingSessionStatusCode::StreamingSessionCreateInProgress
-            }
+            "STREAMING_SESSION_CREATE_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionCreateInProgress,
             "STREAMING_SESSION_DELETED" => StreamingSessionStatusCode::StreamingSessionDeleted,
-            "STREAMING_SESSION_DELETE_IN_PROGRESS" => {
-                StreamingSessionStatusCode::StreamingSessionDeleteInProgress
-            }
+            "STREAMING_SESSION_DELETE_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionDeleteInProgress,
             "STREAMING_SESSION_READY" => StreamingSessionStatusCode::StreamingSessionReady,
             "STREAMING_SESSION_STARTED" => StreamingSessionStatusCode::StreamingSessionStarted,
-            "STREAMING_SESSION_START_IN_PROGRESS" => {
-                StreamingSessionStatusCode::StreamingSessionStartInProgress
-            }
+            "STREAMING_SESSION_START_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionStartInProgress,
             "STREAMING_SESSION_STOPPED" => StreamingSessionStatusCode::StreamingSessionStopped,
-            "STREAMING_SESSION_STOP_IN_PROGRESS" => {
-                StreamingSessionStatusCode::StreamingSessionStopInProgress
-            }
-            other => StreamingSessionStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "STREAMING_SESSION_STOP_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionStopInProgress,
+            other => StreamingSessionStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -144,34 +124,22 @@ impl StreamingSessionStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => {
-                "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR"
-            }
+            StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
             StreamingSessionStatusCode::AmiValidationError => "AMI_VALIDATION_ERROR",
-            StreamingSessionStatusCode::DecryptStreamingImageError => {
-                "DECRYPT_STREAMING_IMAGE_ERROR"
-            }
+            StreamingSessionStatusCode::DecryptStreamingImageError => "DECRYPT_STREAMING_IMAGE_ERROR",
             StreamingSessionStatusCode::InitializationScriptError => "INITIALIZATION_SCRIPT_ERROR",
             StreamingSessionStatusCode::InsufficientCapacity => "INSUFFICIENT_CAPACITY",
             StreamingSessionStatusCode::InternalError => "INTERNAL_ERROR",
             StreamingSessionStatusCode::NetworkConnectionError => "NETWORK_CONNECTION_ERROR",
             StreamingSessionStatusCode::NetworkInterfaceError => "NETWORK_INTERFACE_ERROR",
-            StreamingSessionStatusCode::StreamingSessionCreateInProgress => {
-                "STREAMING_SESSION_CREATE_IN_PROGRESS"
-            }
+            StreamingSessionStatusCode::StreamingSessionCreateInProgress => "STREAMING_SESSION_CREATE_IN_PROGRESS",
             StreamingSessionStatusCode::StreamingSessionDeleted => "STREAMING_SESSION_DELETED",
-            StreamingSessionStatusCode::StreamingSessionDeleteInProgress => {
-                "STREAMING_SESSION_DELETE_IN_PROGRESS"
-            }
+            StreamingSessionStatusCode::StreamingSessionDeleteInProgress => "STREAMING_SESSION_DELETE_IN_PROGRESS",
             StreamingSessionStatusCode::StreamingSessionReady => "STREAMING_SESSION_READY",
             StreamingSessionStatusCode::StreamingSessionStarted => "STREAMING_SESSION_STARTED",
-            StreamingSessionStatusCode::StreamingSessionStartInProgress => {
-                "STREAMING_SESSION_START_IN_PROGRESS"
-            }
+            StreamingSessionStatusCode::StreamingSessionStartInProgress => "STREAMING_SESSION_START_IN_PROGRESS",
             StreamingSessionStatusCode::StreamingSessionStopped => "STREAMING_SESSION_STOPPED",
-            StreamingSessionStatusCode::StreamingSessionStopInProgress => {
-                "STREAMING_SESSION_STOP_IN_PROGRESS"
-            }
+            StreamingSessionStatusCode::StreamingSessionStopInProgress => "STREAMING_SESSION_STOP_IN_PROGRESS",
             StreamingSessionStatusCode::Unknown(value) => value.as_str(),
         }
     }

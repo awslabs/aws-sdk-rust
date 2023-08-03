@@ -26,7 +26,7 @@ impl DeactivateEvaluationFormInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeactivateEvaluationFormFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder,
+    inner: crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder,
 }
 impl DeactivateEvaluationFormFluentBuilder {
     /// Creates a new `DeactivateEvaluationForm`.
@@ -37,10 +37,7 @@ impl DeactivateEvaluationFormFluentBuilder {
         }
     }
     /// Access the DeactivateEvaluationForm as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeactivateEvaluationFormFluentBuilder {
             crate::operation::deactivate_evaluation_form::DeactivateEvaluationForm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeactivateEvaluationFormFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeactivateEvaluationFormFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeactivateEvaluationFormFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeactivateEvaluationFormFluentBuilder {
             crate::operation::deactivate_evaluation_form::DeactivateEvaluationForm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeactivateEvaluationFormFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_form_id(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_form_id(input);
         self
     }

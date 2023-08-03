@@ -26,7 +26,7 @@ impl ListLicenseConversionTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLicenseConversionTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder,
+    inner: crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder,
 }
 impl ListLicenseConversionTasksFluentBuilder {
     /// Creates a new `ListLicenseConversionTasks`.
@@ -37,7 +37,7 @@ impl ListLicenseConversionTasksFluentBuilder {
         }
     }
     /// Access the ListLicenseConversionTasks as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListLicenseConversionTasksFluentBuilder {
             crate::operation::list_license_conversion_tasks::ListLicenseConversionTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListLicenseConversionTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListLicenseConversionTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListLicenseConversionTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListLicenseConversionTasksFluentBuilder {
             crate::operation::list_license_conversion_tasks::ListLicenseConversionTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +147,7 @@ impl ListLicenseConversionTasksFluentBuilder {
         self
     }
     /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

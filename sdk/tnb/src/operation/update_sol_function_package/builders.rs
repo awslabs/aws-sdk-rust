@@ -27,7 +27,7 @@ impl UpdateSolFunctionPackageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSolFunctionPackageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageInputBuilder,
+    inner: crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageInputBuilder,
 }
 impl UpdateSolFunctionPackageFluentBuilder {
     /// Creates a new `UpdateSolFunctionPackage`.
@@ -38,7 +38,7 @@ impl UpdateSolFunctionPackageFluentBuilder {
         }
     }
     /// Access the UpdateSolFunctionPackage as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateSolFunctionPackageFluentBuilder {
             crate::operation::update_sol_function_package::UpdateSolFunctionPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateSolFunctionPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateSolFunctionPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateSolFunctionPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateSolFunctionPackageFluentBuilder {
             crate::operation::update_sol_function_package::UpdateSolFunctionPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError>,
     > {
         self.customize_middleware().await
     }
@@ -141,10 +130,7 @@ impl UpdateSolFunctionPackageFluentBuilder {
         self
     }
     /// <p>Operational state of the function package.</p>
-    pub fn set_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationalState>,
-    ) -> Self {
+    pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
         self.inner = self.inner.set_operational_state(input);
         self
     }

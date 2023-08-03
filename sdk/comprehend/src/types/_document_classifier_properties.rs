@@ -106,15 +106,11 @@ impl DocumentClassifierProperties {
         self.training_end_time.as_ref()
     }
     /// <p>The input data configuration that you supplied when you created the document classifier for training.</p>
-    pub fn input_data_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentClassifierInputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::DocumentClassifierInputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p> Provides output results configuration parameters for custom classifier jobs.</p>
-    pub fn output_data_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentClassifierOutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::DocumentClassifierOutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>Information about the document classifier, including the number of documents used for training the classifier, the number of documents used for test the classifier, and an accuracy rating.</p>
@@ -206,10 +202,8 @@ pub struct DocumentClassifierPropertiesBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) input_data_config:
-        ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
-    pub(crate) output_data_config:
-        ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
+    pub(crate) input_data_config: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
+    pub(crate) output_data_config: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
     pub(crate) classifier_metadata: ::std::option::Option<crate::types::ClassifierMetadata>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -222,18 +216,12 @@ pub struct DocumentClassifierPropertiesBuilder {
 }
 impl DocumentClassifierPropertiesBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-    pub fn document_classifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_classifier_arn = input;
         self
     }
@@ -247,10 +235,7 @@ impl DocumentClassifierPropertiesBuilder {
         self
     }
     /// <p>The language code for the language of the documents that the classifier was trained on.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -295,10 +280,7 @@ impl DocumentClassifierPropertiesBuilder {
         self
     }
     /// <p>The time that the document classifier was submitted for training.</p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submit_time = input;
         self
     }
@@ -312,10 +294,7 @@ impl DocumentClassifierPropertiesBuilder {
         self
     }
     /// <p>The time that training the document classifier completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -329,10 +308,7 @@ impl DocumentClassifierPropertiesBuilder {
         self
     }
     /// <p>Indicates the time when the training starts on documentation classifiers. You are billed for the time interval between this time and the value of TrainingEndTime. </p>
-    pub fn set_training_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.training_start_time = input;
         self
     }
@@ -346,10 +322,7 @@ impl DocumentClassifierPropertiesBuilder {
         self
     }
     /// <p>The time that training of the document classifier was completed. Indicates the time when the training completes on documentation classifiers. You are billed for the time interval between this time and the value of TrainingStartTime.</p>
-    pub fn set_training_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.training_end_time = input;
         self
     }
@@ -358,47 +331,31 @@ impl DocumentClassifierPropertiesBuilder {
         &self.training_end_time
     }
     /// <p>The input data configuration that you supplied when you created the document classifier for training.</p>
-    pub fn input_data_config(
-        mut self,
-        input: crate::types::DocumentClassifierInputDataConfig,
-    ) -> Self {
+    pub fn input_data_config(mut self, input: crate::types::DocumentClassifierInputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The input data configuration that you supplied when you created the document classifier for training.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
     /// <p>The input data configuration that you supplied when you created the document classifier for training.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
         &self.input_data_config
     }
     /// <p> Provides output results configuration parameters for custom classifier jobs.</p>
-    pub fn output_data_config(
-        mut self,
-        input: crate::types::DocumentClassifierOutputDataConfig,
-    ) -> Self {
+    pub fn output_data_config(mut self, input: crate::types::DocumentClassifierOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Provides output results configuration parameters for custom classifier jobs.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
     /// <p> Provides output results configuration parameters for custom classifier jobs.</p>
-    pub fn get_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
         &self.output_data_config
     }
     /// <p>Information about the document classifier, including the number of documents used for training the classifier, the number of documents used for test the classifier, and an accuracy rating.</p>
@@ -407,32 +364,21 @@ impl DocumentClassifierPropertiesBuilder {
         self
     }
     /// <p>Information about the document classifier, including the number of documents used for training the classifier, the number of documents used for test the classifier, and an accuracy rating.</p>
-    pub fn set_classifier_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassifierMetadata>,
-    ) -> Self {
+    pub fn set_classifier_metadata(mut self, input: ::std::option::Option<crate::types::ClassifierMetadata>) -> Self {
         self.classifier_metadata = input;
         self
     }
     /// <p>Information about the document classifier, including the number of documents used for training the classifier, the number of documents used for test the classifier, and an accuracy rating.</p>
-    pub fn get_classifier_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClassifierMetadata> {
+    pub fn get_classifier_metadata(&self) -> &::std::option::Option<crate::types::ClassifierMetadata> {
         &self.classifier_metadata
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -445,10 +391,7 @@ impl DocumentClassifierPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -457,10 +400,7 @@ impl DocumentClassifierPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }
@@ -492,10 +432,7 @@ impl DocumentClassifierPropertiesBuilder {
         self
     }
     /// <p>Indicates the mode in which the specific classifier was trained. This also indicates the format of input documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot be changed once the classifier is trained.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DocumentClassifierMode>) -> Self {
         self.mode = input;
         self
     }
@@ -508,10 +445,7 @@ impl DocumentClassifierPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn model_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -520,10 +454,7 @@ impl DocumentClassifierPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_model_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_kms_key_id = input;
         self
     }
@@ -550,18 +481,12 @@ impl DocumentClassifierPropertiesBuilder {
         &self.version_name
     }
     /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the document classifier model in your Amazon Web Services account.</p>
-    pub fn source_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the document classifier model in your Amazon Web Services account.</p>
-    pub fn set_source_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_model_arn = input;
         self
     }

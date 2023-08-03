@@ -33,12 +33,10 @@ pub struct Instance {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any block device mapping entries for the instance.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The security groups for the instance.</p>
     #[doc(hidden)]
-    pub security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     /// <p>The CPU options for the instance.</p>
     #[doc(hidden)]
     pub cpu_options: ::std::option::Option<crate::types::CpuOptions>,
@@ -84,15 +82,11 @@ impl Instance {
         self.updated_at.as_ref()
     }
     /// <p>Any block device mapping entries for the instance.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>The security groups for the instance.</p>
-    pub fn security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityGroupIdentifier]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroupIdentifier]> {
         self.security_groups.as_deref()
     }
     /// <p>The CPU options for the instance.</p>
@@ -113,9 +107,7 @@ impl Instance {
 
 /// A builder for [`Instance`](crate::types::Instance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) ami_launch_index: ::std::option::Option<i32>,
@@ -126,10 +118,8 @@ pub struct InstanceBuilder {
     pub(crate) public_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
-    pub(crate) security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     pub(crate) cpu_options: ::std::option::Option<crate::types::CpuOptions>,
     pub(crate) root_device_name: ::std::option::Option<::std::string::String>,
 }
@@ -191,18 +181,12 @@ impl InstanceBuilder {
         &self.state
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -211,18 +195,12 @@ impl InstanceBuilder {
         &self.instance_type
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -231,18 +209,12 @@ impl InstanceBuilder {
         &self.private_ip_address
     }
     /// <p>The public IPv4 address assigned to the instance.</p>
-    pub fn public_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IPv4 address assigned to the instance.</p>
-    pub fn set_public_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip_address = input;
         self
     }
@@ -256,10 +228,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>When the instance was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -273,10 +242,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>When the instance was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -289,27 +255,19 @@ impl InstanceBuilder {
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
     /// <p>Any block device mapping entries for the instance.</p>
-    pub fn block_device_mappings(
-        mut self,
-        input: crate::types::InstanceBlockDeviceMapping,
-    ) -> Self {
+    pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any block device mapping entries for the instance.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>Any block device mapping entries for the instance.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// Appends an item to `security_groups`.
@@ -324,17 +282,12 @@ impl InstanceBuilder {
         self
     }
     /// <p>The security groups for the instance.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The security groups for the instance.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>> {
         &self.security_groups
     }
     /// <p>The CPU options for the instance.</p>
@@ -343,10 +296,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The CPU options for the instance.</p>
-    pub fn set_cpu_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CpuOptions>,
-    ) -> Self {
+    pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::CpuOptions>) -> Self {
         self.cpu_options = input;
         self
     }
@@ -355,18 +305,12 @@ impl InstanceBuilder {
         &self.cpu_options
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
-    pub fn root_device_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn root_device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
-    pub fn set_root_device_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_root_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_device_name = input;
         self
     }

@@ -10,10 +10,7 @@ impl CreateScalingPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_scaling_plan::CreateScalingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scaling_plan::CreateScalingPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scaling_plan::CreateScalingPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_scaling_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateScalingPlanFluentBuilder {
         }
     }
     /// Access the CreateScalingPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_scaling_plan::builders::CreateScalingPlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_scaling_plan::builders::CreateScalingPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateScalingPlanFluentBuilder {
             crate::operation::create_scaling_plan::CreateScalingPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scaling_plan::CreateScalingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scaling_plan::CreateScalingPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateScalingPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateScalingPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_scaling_plan::CreateScalingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scaling_plan::CreateScalingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scaling_plan::CreateScalingPlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateScalingPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_scaling_plan::CreateScalingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scaling_plan::CreateScalingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scaling_plan::CreateScalingPlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateScalingPlanFluentBuilder {
             crate::operation::create_scaling_plan::CreateScalingPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scaling_plan::CreateScalingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scaling_plan::CreateScalingPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
-    pub fn scaling_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scaling_plan_name(input.into());
         self
     }
     /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
-    pub fn set_scaling_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scaling_plan_name(input);
         self
     }
@@ -150,18 +128,13 @@ impl CreateScalingPlanFluentBuilder {
     }
     /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn set_application_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationSource>,
-    ) -> Self {
+    pub fn set_application_source(mut self, input: ::std::option::Option<crate::types::ApplicationSource>) -> Self {
         self.inner = self.inner.set_application_source(input);
         self
     }
     /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn get_application_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationSource> {
+    pub fn get_application_source(&self) -> &::std::option::Option<crate::types::ApplicationSource> {
         self.inner.get_application_source()
     }
     /// Appends an item to `ScalingInstructions`.
@@ -176,18 +149,13 @@ impl CreateScalingPlanFluentBuilder {
     }
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn set_scaling_instructions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
-    ) -> Self {
+    pub fn set_scaling_instructions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>) -> Self {
         self.inner = self.inner.set_scaling_instructions(input);
         self
     }
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn get_scaling_instructions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+    pub fn get_scaling_instructions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
         self.inner.get_scaling_instructions()
     }
 }

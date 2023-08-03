@@ -37,10 +37,7 @@ impl UpdateDirectoryConfigFluentBuilder {
         }
     }
     /// Access the UpdateDirectoryConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_directory_config::builders::UpdateDirectoryConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_directory_config::builders::UpdateDirectoryConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateDirectoryConfigFluentBuilder {
             crate::operation::update_directory_config::UpdateDirectoryConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_directory_config::UpdateDirectoryConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_directory_config::UpdateDirectoryConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateDirectoryConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateDirectoryConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_directory_config::UpdateDirectoryConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_directory_config::UpdateDirectoryConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_directory_config::UpdateDirectoryConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateDirectoryConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_directory_config::UpdateDirectoryConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_directory_config::UpdateDirectoryConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_directory_config::UpdateDirectoryConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateDirectoryConfigFluentBuilder {
             crate::operation::update_directory_config::UpdateDirectoryConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_directory_config::UpdateDirectoryConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_directory_config::UpdateDirectoryConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Directory Config object.</p>
-    pub fn directory_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_name(input.into());
         self
     }
     /// <p>The name of the Directory Config object.</p>
-    pub fn set_directory_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_name(input);
         self
     }
@@ -148,73 +128,45 @@ impl UpdateDirectoryConfigFluentBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_distinguished_names`](Self::set_organizational_unit_distinguished_names).
     ///
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn organizational_unit_distinguished_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .organizational_unit_distinguished_names(input.into());
+    pub fn organizational_unit_distinguished_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.organizational_unit_distinguished_names(input.into());
         self
     }
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn set_organizational_unit_distinguished_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_organizational_unit_distinguished_names(input);
+    pub fn set_organizational_unit_distinguished_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_organizational_unit_distinguished_names(input);
         self
     }
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn get_organizational_unit_distinguished_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_distinguished_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_organizational_unit_distinguished_names()
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-    pub fn service_account_credentials(
-        mut self,
-        input: crate::types::ServiceAccountCredentials,
-    ) -> Self {
+    pub fn service_account_credentials(mut self, input: crate::types::ServiceAccountCredentials) -> Self {
         self.inner = self.inner.service_account_credentials(input);
         self
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-    pub fn set_service_account_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceAccountCredentials>,
-    ) -> Self {
+    pub fn set_service_account_credentials(mut self, input: ::std::option::Option<crate::types::ServiceAccountCredentials>) -> Self {
         self.inner = self.inner.set_service_account_credentials(input);
         self
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-    pub fn get_service_account_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceAccountCredentials> {
+    pub fn get_service_account_credentials(&self) -> &::std::option::Option<crate::types::ServiceAccountCredentials> {
         self.inner.get_service_account_credentials()
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-    pub fn certificate_based_auth_properties(
-        mut self,
-        input: crate::types::CertificateBasedAuthProperties,
-    ) -> Self {
+    pub fn certificate_based_auth_properties(mut self, input: crate::types::CertificateBasedAuthProperties) -> Self {
         self.inner = self.inner.certificate_based_auth_properties(input);
         self
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-    pub fn set_certificate_based_auth_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
-    ) -> Self {
+    pub fn set_certificate_based_auth_properties(mut self, input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>) -> Self {
         self.inner = self.inner.set_certificate_based_auth_properties(input);
         self
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-    pub fn get_certificate_based_auth_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
+    pub fn get_certificate_based_auth_properties(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
         self.inner.get_certificate_based_auth_properties()
     }
 }

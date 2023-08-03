@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationEfsOutput`](crate::operation::create_location_efs::CreateLocationEfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_efs::CreateLocationEfsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
     /// - On failure, responds with [`SdkError<CreateLocationEfsError>`](crate::operation::create_location_efs::CreateLocationEfsError)
-    pub fn create_location_efs(
-        &self,
-    ) -> crate::operation::create_location_efs::builders::CreateLocationEfsFluentBuilder {
-        crate::operation::create_location_efs::builders::CreateLocationEfsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_location_efs(&self) -> crate::operation::create_location_efs::builders::CreateLocationEfsFluentBuilder {
+        crate::operation::create_location_efs::builders::CreateLocationEfsFluentBuilder::new(self.handle.clone())
     }
 }

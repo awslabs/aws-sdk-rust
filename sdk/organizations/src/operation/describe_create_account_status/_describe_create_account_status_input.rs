@@ -17,35 +17,27 @@ impl DescribeCreateAccountStatusInput {
 }
 impl DescribeCreateAccountStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeCreateAccountStatusInput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput).
-    pub fn builder() -> crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusInputBuilder {
         crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCreateAccountStatusInput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCreateAccountStatusInputBuilder {
     pub(crate) create_account_request_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCreateAccountStatusInputBuilder {
     /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn create_account_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn create_account_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_account_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn set_create_account_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_create_account_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_account_request_id = input;
         self
     }
@@ -61,10 +53,8 @@ impl DescribeCreateAccountStatusInputBuilder {
         crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput {
-                create_account_request_id: self.create_account_request_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput {
+            create_account_request_id: self.create_account_request_id,
+        })
     }
 }

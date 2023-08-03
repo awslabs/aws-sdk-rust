@@ -41,13 +41,7 @@
 /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum XavcProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -96,13 +90,7 @@ impl XavcProfile {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "XAVC_4K",
-            "XAVC_4K_INTRA_CBG",
-            "XAVC_4K_INTRA_VBR",
-            "XAVC_HD",
-            "XAVC_HD_INTRA_CBG",
-        ]
+        &["XAVC_4K", "XAVC_4K_INTRA_CBG", "XAVC_4K_INTRA_VBR", "XAVC_HD", "XAVC_HD_INTRA_CBG"]
     }
 }
 impl ::std::convert::AsRef<str> for XavcProfile {

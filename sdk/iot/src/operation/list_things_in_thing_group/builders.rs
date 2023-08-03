@@ -27,8 +27,7 @@ impl ListThingsInThingGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListThingsInThingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder,
+    inner: crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder,
 }
 impl ListThingsInThingGroupFluentBuilder {
     /// Creates a new `ListThingsInThingGroup`.
@@ -39,10 +38,7 @@ impl ListThingsInThingGroupFluentBuilder {
         }
     }
     /// Access the ListThingsInThingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListThingsInThingGroupFluentBuilder {
             crate::operation::list_things_in_thing_group::ListThingsInThingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_things_in_thing_group::ListThingsInThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_things_in_thing_group::ListThingsInThingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListThingsInThingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListThingsInThingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_things_in_thing_group::ListThingsInThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_things_in_thing_group::ListThingsInThingGroupError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListThingsInThingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_things_in_thing_group::ListThingsInThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_things_in_thing_group::ListThingsInThingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -119,34 +106,23 @@ impl ListThingsInThingGroupFluentBuilder {
             crate::operation::list_things_in_thing_group::ListThingsInThingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_things_in_thing_group::ListThingsInThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_things_in_thing_group::ListThingsInThingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator {
         crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator::new(self.handle, self.inner)
     }
     /// <p>The thing group name.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_group_name(input.into());
         self
     }
     /// <p>The thing group name.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }

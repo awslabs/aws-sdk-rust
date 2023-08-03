@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSmsSandboxAccountStatusOutput {
 }
 impl GetSmsSandboxAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetSmsSandboxAccountStatusOutput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput).
-    pub fn builder() -> crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusOutputBuilder {
         crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSmsSandboxAccountStatusOutput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSmsSandboxAccountStatusOutputBuilder {
     pub(crate) is_in_sandbox: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl GetSmsSandboxAccountStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSmsSandboxAccountStatusOutput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput {
+    pub fn build(self) -> crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput {
         crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput {
             is_in_sandbox: self.is_in_sandbox.unwrap_or_default(),
             _request_id: self._request_id,

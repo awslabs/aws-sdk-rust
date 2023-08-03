@@ -10,10 +10,7 @@ impl GetUtterancesViewInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_utterances_view::GetUtterancesViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_utterances_view::GetUtterancesViewError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_utterances_view::GetUtterancesViewError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_utterances_view();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl GetUtterancesViewFluentBuilder {
         }
     }
     /// Access the GetUtterancesView as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_utterances_view::builders::GetUtterancesViewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_utterances_view::builders::GetUtterancesViewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl GetUtterancesViewFluentBuilder {
             crate::operation::get_utterances_view::GetUtterancesView,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_utterances_view::GetUtterancesViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_utterances_view::GetUtterancesViewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl GetUtterancesViewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl GetUtterancesViewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_utterances_view::GetUtterancesViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_utterances_view::GetUtterancesViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_utterances_view::GetUtterancesViewError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl GetUtterancesViewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_utterances_view::GetUtterancesViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_utterances_view::GetUtterancesViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_utterances_view::GetUtterancesViewError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl GetUtterancesViewFluentBuilder {
             crate::operation::get_utterances_view::GetUtterancesView,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_utterances_view::GetUtterancesViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_utterances_view::GetUtterancesViewError>,
     > {
         self.customize_middleware().await
     }
@@ -151,17 +135,12 @@ impl GetUtterancesViewFluentBuilder {
         self
     }
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
-    pub fn set_bot_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bot_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_bot_versions(input);
         self
     }
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
-    pub fn get_bot_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bot_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_bot_versions()
     }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
@@ -170,10 +149,7 @@ impl GetUtterancesViewFluentBuilder {
         self
     }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
-    pub fn set_status_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusType>,
-    ) -> Self {
+    pub fn set_status_type(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.inner = self.inner.set_status_type(input);
         self
     }

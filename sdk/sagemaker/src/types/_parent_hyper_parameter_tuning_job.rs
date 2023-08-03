@@ -23,33 +23,23 @@ impl ParentHyperParameterTuningJob {
 
 /// A builder for [`ParentHyperParameterTuningJob`](crate::types::ParentHyperParameterTuningJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParentHyperParameterTuningJobBuilder {
     pub(crate) hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
 impl ParentHyperParameterTuningJobBuilder {
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-    pub fn set_hyper_parameter_tuning_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-    pub fn get_hyper_parameter_tuning_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hyper_parameter_tuning_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.hyper_parameter_tuning_job_name
     }
     /// Consumes the builder and constructs a [`ParentHyperParameterTuningJob`](crate::types::ParentHyperParameterTuningJob).

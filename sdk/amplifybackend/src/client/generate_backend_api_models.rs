@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`operation(Option<String>)`](crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<GenerateBackendAPIModelsError>`](crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError)
-    pub fn generate_backend_api_models(&self) -> crate::operation::generate_backend_api_models::builders::GenerateBackendAPIModelsFluentBuilder{
+    pub fn generate_backend_api_models(&self) -> crate::operation::generate_backend_api_models::builders::GenerateBackendAPIModelsFluentBuilder {
         crate::operation::generate_backend_api_models::builders::GenerateBackendAPIModelsFluentBuilder::new(self.handle.clone())
     }
 }

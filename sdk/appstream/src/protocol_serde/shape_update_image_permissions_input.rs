@@ -12,10 +12,7 @@ pub fn ser_update_image_permissions_input(
     if let Some(var_3) = &input.image_permissions {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ImagePermissions").start_object();
-        crate::protocol_serde::shape_image_permissions::ser_image_permissions(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_image_permissions::ser_image_permissions(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

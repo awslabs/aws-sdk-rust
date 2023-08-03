@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCatalogImportStatusOutput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput) with field(s):
     ///   - [`import_status(Option<CatalogImportStatus>)`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput::import_status): <p>The status of the specified catalog migration.</p>
     /// - On failure, responds with [`SdkError<GetCatalogImportStatusError>`](crate::operation::get_catalog_import_status::GetCatalogImportStatusError)
-    pub fn get_catalog_import_status(
-        &self,
-    ) -> crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusFluentBuilder
-    {
+    pub fn get_catalog_import_status(&self) -> crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusFluentBuilder {
         crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusFluentBuilder::new(self.handle.clone())
     }
 }

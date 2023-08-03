@@ -17,9 +17,7 @@ impl ConversationLevelResultDetail {
         self.end_to_end_result.as_ref()
     }
     /// <p>The speech transcription success or failure details of the conversation.</p>
-    pub fn speech_transcription_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
+    pub fn speech_transcription_result(&self) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
         self.speech_transcription_result.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl ConversationLevelResultDetail {
 
 /// A builder for [`ConversationLevelResultDetail`](crate::types::ConversationLevelResultDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLevelResultDetailBuilder {
     pub(crate) end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
-    pub(crate) speech_transcription_result:
-        ::std::option::Option<crate::types::TestResultMatchStatus>,
+    pub(crate) speech_transcription_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
 }
 impl ConversationLevelResultDetailBuilder {
     /// <p>The success or failure of the streaming of the conversation.</p>
@@ -47,39 +42,26 @@ impl ConversationLevelResultDetailBuilder {
         self
     }
     /// <p>The success or failure of the streaming of the conversation.</p>
-    pub fn set_end_to_end_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TestResultMatchStatus>,
-    ) -> Self {
+    pub fn set_end_to_end_result(mut self, input: ::std::option::Option<crate::types::TestResultMatchStatus>) -> Self {
         self.end_to_end_result = input;
         self
     }
     /// <p>The success or failure of the streaming of the conversation.</p>
-    pub fn get_end_to_end_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+    pub fn get_end_to_end_result(&self) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
         &self.end_to_end_result
     }
     /// <p>The speech transcription success or failure details of the conversation.</p>
-    pub fn speech_transcription_result(
-        mut self,
-        input: crate::types::TestResultMatchStatus,
-    ) -> Self {
+    pub fn speech_transcription_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.speech_transcription_result = ::std::option::Option::Some(input);
         self
     }
     /// <p>The speech transcription success or failure details of the conversation.</p>
-    pub fn set_speech_transcription_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TestResultMatchStatus>,
-    ) -> Self {
+    pub fn set_speech_transcription_result(mut self, input: ::std::option::Option<crate::types::TestResultMatchStatus>) -> Self {
         self.speech_transcription_result = input;
         self
     }
     /// <p>The speech transcription success or failure details of the conversation.</p>
-    pub fn get_speech_transcription_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+    pub fn get_speech_transcription_result(&self) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
         &self.speech_transcription_result
     }
     /// Consumes the builder and constructs a [`ConversationLevelResultDetail`](crate::types::ConversationLevelResultDetail).

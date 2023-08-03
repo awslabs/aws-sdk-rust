@@ -37,14 +37,11 @@ impl WirelessDeviceLogOption {
 
 /// A builder for [`WirelessDeviceLogOption`](crate::types::WirelessDeviceLogOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WirelessDeviceLogOptionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
-    pub(crate) events:
-        ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>,
 }
 impl WirelessDeviceLogOptionBuilder {
     /// <p>The wireless device type.</p>
@@ -53,10 +50,7 @@ impl WirelessDeviceLogOptionBuilder {
         self
     }
     /// <p>The wireless device type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.r#type = input;
         self
     }
@@ -90,17 +84,12 @@ impl WirelessDeviceLogOptionBuilder {
         self
     }
     /// <p>The list of wireless device event log options.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>) -> Self {
         self.events = input;
         self
     }
     /// <p>The list of wireless device event log options.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceEventLogOption>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceEventLogOption>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`WirelessDeviceLogOption`](crate::types::WirelessDeviceLogOption).

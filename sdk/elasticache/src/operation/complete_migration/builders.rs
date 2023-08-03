@@ -10,10 +10,7 @@ impl CompleteMigrationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::complete_migration::CompleteMigrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_migration::CompleteMigrationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_migration::CompleteMigrationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.complete_migration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CompleteMigrationFluentBuilder {
         }
     }
     /// Access the CompleteMigration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::complete_migration::builders::CompleteMigrationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::complete_migration::builders::CompleteMigrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CompleteMigrationFluentBuilder {
             crate::operation::complete_migration::CompleteMigration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_migration::CompleteMigrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_migration::CompleteMigrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CompleteMigrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CompleteMigrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_migration::CompleteMigrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_migration::CompleteMigrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_migration::CompleteMigrationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CompleteMigrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_migration::CompleteMigrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_migration::CompleteMigrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_migration::CompleteMigrationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CompleteMigrationFluentBuilder {
             crate::operation::complete_migration::CompleteMigration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_migration::CompleteMigrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_migration::CompleteMigrationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the replication group to which data is being migrated.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
     /// <p>The ID of the replication group to which data is being migrated.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }

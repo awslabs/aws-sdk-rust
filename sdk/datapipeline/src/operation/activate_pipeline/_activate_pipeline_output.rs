@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for ActivatePipelineOutput {
 }
 impl ActivatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`ActivatePipelineOutput`](crate::operation::activate_pipeline::ActivatePipelineOutput).
-    pub fn builder() -> crate::operation::activate_pipeline::builders::ActivatePipelineOutputBuilder
-    {
+    pub fn builder() -> crate::operation::activate_pipeline::builders::ActivatePipelineOutputBuilder {
         crate::operation::activate_pipeline::builders::ActivatePipelineOutputBuilder::default()
     }
 }
 
 /// A builder for [`ActivatePipelineOutput`](crate::operation::activate_pipeline::ActivatePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivatePipelineOutputBuilder {
     _request_id: Option<String>,
 }

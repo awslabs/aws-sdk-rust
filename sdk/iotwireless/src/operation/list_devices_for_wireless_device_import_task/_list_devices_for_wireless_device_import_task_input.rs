@@ -36,16 +36,14 @@ impl ListDevicesForWirelessDeviceImportTaskInput {
 }
 impl ListDevicesForWirelessDeviceImportTaskInput {
     /// Creates a new builder-style object to manufacture [`ListDevicesForWirelessDeviceImportTaskInput`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput).
-    pub fn builder() -> crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskInputBuilder{
+    pub fn builder() -> crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskInputBuilder {
         crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevicesForWirelessDeviceImportTaskInput`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicesForWirelessDeviceImportTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -110,18 +108,19 @@ impl ListDevicesForWirelessDeviceImportTaskInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListDevicesForWirelessDeviceImportTaskInput`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput {
-                id: self.id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                status: self.status
-                ,
-            }
+                id: self.id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                status: self.status,
+            },
         )
     }
 }

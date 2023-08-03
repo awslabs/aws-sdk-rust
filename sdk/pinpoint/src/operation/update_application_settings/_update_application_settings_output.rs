@@ -5,15 +5,12 @@
 pub struct UpdateApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
     #[doc(hidden)]
-    pub application_settings_resource:
-        ::std::option::Option<crate::types::ApplicationSettingsResource>,
+    pub application_settings_resource: ::std::option::Option<crate::types::ApplicationSettingsResource>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn application_settings_resource(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationSettingsResource> {
+    pub fn application_settings_resource(&self) -> ::std::option::Option<&crate::types::ApplicationSettingsResource> {
         self.application_settings_resource.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for UpdateApplicationSettingsOutput {
 }
 impl UpdateApplicationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationSettingsOutput`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput).
-    pub fn builder() -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsOutputBuilder {
         crate::operation::update_application_settings::builders::UpdateApplicationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationSettingsOutput`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsOutputBuilder {
-    pub(crate) application_settings_resource:
-        ::std::option::Option<crate::types::ApplicationSettingsResource>,
+    pub(crate) application_settings_resource: ::std::option::Option<crate::types::ApplicationSettingsResource>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationSettingsOutputBuilder {
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn application_settings_resource(
-        mut self,
-        input: crate::types::ApplicationSettingsResource,
-    ) -> Self {
+    pub fn application_settings_resource(mut self, input: crate::types::ApplicationSettingsResource) -> Self {
         self.application_settings_resource = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn set_application_settings_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationSettingsResource>,
-    ) -> Self {
+    pub fn set_application_settings_resource(mut self, input: ::std::option::Option<crate::types::ApplicationSettingsResource>) -> Self {
         self.application_settings_resource = input;
         self
     }
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn get_application_settings_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationSettingsResource> {
+    pub fn get_application_settings_resource(&self) -> &::std::option::Option<crate::types::ApplicationSettingsResource> {
         &self.application_settings_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl UpdateApplicationSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsOutput`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_application_settings::UpdateApplicationSettingsOutput {
+    pub fn build(self) -> crate::operation::update_application_settings::UpdateApplicationSettingsOutput {
         crate::operation::update_application_settings::UpdateApplicationSettingsOutput {
             application_settings_resource: self.application_settings_resource,
             _request_id: self._request_id,

@@ -36,9 +36,7 @@ impl GetDistributionOutput {
 
 /// A builder for [`GetDistributionOutput`](crate::operation::get_distribution::GetDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl GetDistributionOutputBuilder {
         self
     }
     /// <p>The distribution's information.</p>
-    pub fn set_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::Distribution>,
-    ) -> Self {
+    pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::Distribution>) -> Self {
         self.distribution = input;
         self
     }

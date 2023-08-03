@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::update_replication_set::builders::UpdateReplicationSetFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_replication_set::builders::UpdateReplicationSetFluentBuilder::set_client_token): <p>A token that ensures that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`UpdateReplicationSetOutput`](crate::operation::update_replication_set::UpdateReplicationSetOutput)
     /// - On failure, responds with [`SdkError<UpdateReplicationSetError>`](crate::operation::update_replication_set::UpdateReplicationSetError)
-    pub fn update_replication_set(
-        &self,
-    ) -> crate::operation::update_replication_set::builders::UpdateReplicationSetFluentBuilder {
-        crate::operation::update_replication_set::builders::UpdateReplicationSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_replication_set(&self) -> crate::operation::update_replication_set::builders::UpdateReplicationSetFluentBuilder {
+        crate::operation::update_replication_set::builders::UpdateReplicationSetFluentBuilder::new(self.handle.clone())
     }
 }

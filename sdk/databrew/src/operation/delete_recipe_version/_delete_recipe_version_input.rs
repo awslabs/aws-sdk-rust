@@ -22,18 +22,14 @@ impl DeleteRecipeVersionInput {
 }
 impl DeleteRecipeVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecipeVersionInput`](crate::operation::delete_recipe_version::DeleteRecipeVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_recipe_version::builders::DeleteRecipeVersionInputBuilder {
-        crate::operation::delete_recipe_version::builders::DeleteRecipeVersionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_recipe_version::builders::DeleteRecipeVersionInputBuilder {
+        crate::operation::delete_recipe_version::builders::DeleteRecipeVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecipeVersionInput`](crate::operation::delete_recipe_version::DeleteRecipeVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecipeVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_version: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteRecipeVersionInputBuilder {
         &self.name
     }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn recipe_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn set_recipe_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_version = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteRecipeVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRecipeVersionInput`](crate::operation::delete_recipe_version::DeleteRecipeVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_recipe_version::DeleteRecipeVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_recipe_version::DeleteRecipeVersionInput {
-                name: self.name,
-                recipe_version: self.recipe_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_recipe_version::DeleteRecipeVersionInput {
+            name: self.name,
+            recipe_version: self.recipe_version,
+        })
     }
 }

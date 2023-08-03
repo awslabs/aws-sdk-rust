@@ -66,9 +66,7 @@ impl ListPermissionsInput {
 
 /// A builder for [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
@@ -99,10 +97,7 @@ impl ListPermissionsInputBuilder {
         self
     }
     /// <p>Specifies a principal to filter the permissions returned.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
         self.principal = input;
         self
     }
@@ -116,10 +111,7 @@ impl ListPermissionsInputBuilder {
         self
     }
     /// <p>Specifies a resource type to filter the permissions returned.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DataLakeResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -173,18 +165,12 @@ impl ListPermissionsInputBuilder {
         &self.max_results
     }
     /// <p>Indicates that related permissions should be included in the results.</p>
-    pub fn include_related(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn include_related(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.include_related = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that related permissions should be included in the results.</p>
-    pub fn set_include_related(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_include_related(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.include_related = input;
         self
     }
@@ -195,10 +181,7 @@ impl ListPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_permissions::ListPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsInput {
             catalog_id: self.catalog_id,
             principal: self.principal,

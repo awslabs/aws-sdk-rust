@@ -26,7 +26,7 @@ impl PutRepositoryCatalogDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRepositoryCatalogDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder,
+    inner: crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder,
 }
 impl PutRepositoryCatalogDataFluentBuilder {
     /// Creates a new `PutRepositoryCatalogData`.
@@ -37,7 +37,7 @@ impl PutRepositoryCatalogDataFluentBuilder {
         }
     }
     /// Access the PutRepositoryCatalogData as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutRepositoryCatalogDataFluentBuilder {
             crate::operation::put_repository_catalog_data::PutRepositoryCatalogData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutRepositoryCatalogDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutRepositoryCatalogDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutRepositoryCatalogDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PutRepositoryCatalogDataFluentBuilder {
             crate::operation::put_repository_catalog_data::PutRepositoryCatalogData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl PutRepositoryCatalogDataFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository to create or update the catalog data for.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to create or update the catalog data for.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -160,17 +143,12 @@ impl PutRepositoryCatalogDataFluentBuilder {
         self
     }
     /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn set_catalog_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryCatalogDataInput>,
-    ) -> Self {
+    pub fn set_catalog_data(mut self, input: ::std::option::Option<crate::types::RepositoryCatalogDataInput>) -> Self {
         self.inner = self.inner.set_catalog_data(input);
         self
     }
     /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn get_catalog_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryCatalogDataInput> {
+    pub fn get_catalog_data(&self) -> &::std::option::Option<crate::types::RepositoryCatalogDataInput> {
         self.inner.get_catalog_data()
     }
 }

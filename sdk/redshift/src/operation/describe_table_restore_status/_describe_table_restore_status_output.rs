@@ -6,8 +6,7 @@
 pub struct DescribeTableRestoreStatusOutput {
     /// <p>A list of status details for one or more table restore requests.</p>
     #[doc(hidden)]
-    pub table_restore_status_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub table_restore_status_details: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribeTableRestoreStatusOutput {
 }
 impl DescribeTableRestoreStatusOutput {
     /// <p>A list of status details for one or more table restore requests.</p>
-    pub fn table_restore_status_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TableRestoreStatus]> {
+    pub fn table_restore_status_details(&self) -> ::std::option::Option<&[crate::types::TableRestoreStatus]> {
         self.table_restore_status_details.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeTableRestoreStatusOutput {
 }
 impl DescribeTableRestoreStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableRestoreStatusOutput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput).
-    pub fn builder() -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusOutputBuilder {
         crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTableRestoreStatusOutput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableRestoreStatusOutputBuilder {
-    pub(crate) table_restore_status_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub(crate) table_restore_status_details: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +55,12 @@ impl DescribeTableRestoreStatusOutputBuilder {
         self
     }
     /// <p>A list of status details for one or more table restore requests.</p>
-    pub fn set_table_restore_status_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
-    ) -> Self {
+    pub fn set_table_restore_status_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>) -> Self {
         self.table_restore_status_details = input;
         self
     }
     /// <p>A list of status details for one or more table restore requests.</p>
-    pub fn get_table_restore_status_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
+    pub fn get_table_restore_status_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
         &self.table_restore_status_details
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
@@ -98,9 +87,7 @@ impl DescribeTableRestoreStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTableRestoreStatusOutput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput {
+    pub fn build(self) -> crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput {
         crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput {
             table_restore_status_details: self.table_restore_status_details,
             marker: self.marker,

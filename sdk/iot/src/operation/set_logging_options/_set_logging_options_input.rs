@@ -10,25 +10,20 @@ pub struct SetLoggingOptionsInput {
 }
 impl SetLoggingOptionsInput {
     /// <p>The logging options payload.</p>
-    pub fn logging_options_payload(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingOptionsPayload> {
+    pub fn logging_options_payload(&self) -> ::std::option::Option<&crate::types::LoggingOptionsPayload> {
         self.logging_options_payload.as_ref()
     }
 }
 impl SetLoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`SetLoggingOptionsInput`](crate::operation::set_logging_options::SetLoggingOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::set_logging_options::builders::SetLoggingOptionsInputBuilder {
+    pub fn builder() -> crate::operation::set_logging_options::builders::SetLoggingOptionsInputBuilder {
         crate::operation::set_logging_options::builders::SetLoggingOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`SetLoggingOptionsInput`](crate::operation::set_logging_options::SetLoggingOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetLoggingOptionsInputBuilder {
     pub(crate) logging_options_payload: ::std::option::Option<crate::types::LoggingOptionsPayload>,
 }
@@ -39,30 +34,20 @@ impl SetLoggingOptionsInputBuilder {
         self
     }
     /// <p>The logging options payload.</p>
-    pub fn set_logging_options_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingOptionsPayload>,
-    ) -> Self {
+    pub fn set_logging_options_payload(mut self, input: ::std::option::Option<crate::types::LoggingOptionsPayload>) -> Self {
         self.logging_options_payload = input;
         self
     }
     /// <p>The logging options payload.</p>
-    pub fn get_logging_options_payload(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingOptionsPayload> {
+    pub fn get_logging_options_payload(&self) -> &::std::option::Option<crate::types::LoggingOptionsPayload> {
         &self.logging_options_payload
     }
     /// Consumes the builder and constructs a [`SetLoggingOptionsInput`](crate::operation::set_logging_options::SetLoggingOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_logging_options::SetLoggingOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_logging_options::SetLoggingOptionsInput {
-                logging_options_payload: self.logging_options_payload,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_logging_options::SetLoggingOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_logging_options::SetLoggingOptionsInput {
+            logging_options_payload: self.logging_options_payload,
+        })
     }
 }

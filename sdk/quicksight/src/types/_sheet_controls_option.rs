@@ -23,9 +23,7 @@ impl SheetControlsOption {
 
 /// A builder for [`SheetControlsOption`](crate::types::SheetControlsOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SheetControlsOptionBuilder {
     pub(crate) visibility_state: ::std::option::Option<crate::types::DashboardUiState>,
 }
@@ -36,10 +34,7 @@ impl SheetControlsOptionBuilder {
         self
     }
     /// <p>Visibility state.</p>
-    pub fn set_visibility_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardUiState>,
-    ) -> Self {
+    pub fn set_visibility_state(mut self, input: ::std::option::Option<crate::types::DashboardUiState>) -> Self {
         self.visibility_state = input;
         self
     }

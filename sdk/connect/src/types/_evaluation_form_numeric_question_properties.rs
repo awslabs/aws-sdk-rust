@@ -12,8 +12,7 @@ pub struct EvaluationFormNumericQuestionProperties {
     pub max_value: i32,
     /// <p>The scoring options of the numeric question.</p>
     #[doc(hidden)]
-    pub options:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
+    pub options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
     /// <p>The automation properties of the numeric question.</p>
     #[doc(hidden)]
     pub automation: ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
@@ -28,15 +27,11 @@ impl EvaluationFormNumericQuestionProperties {
         self.max_value
     }
     /// <p>The scoring options of the numeric question.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EvaluationFormNumericQuestionOption]> {
+    pub fn options(&self) -> ::std::option::Option<&[crate::types::EvaluationFormNumericQuestionOption]> {
         self.options.as_deref()
     }
     /// <p>The automation properties of the numeric question.</p>
-    pub fn automation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvaluationFormNumericQuestionAutomation> {
+    pub fn automation(&self) -> ::std::option::Option<&crate::types::EvaluationFormNumericQuestionAutomation> {
         self.automation.as_ref()
     }
 }
@@ -49,16 +44,12 @@ impl EvaluationFormNumericQuestionProperties {
 
 /// A builder for [`EvaluationFormNumericQuestionProperties`](crate::types::EvaluationFormNumericQuestionProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormNumericQuestionPropertiesBuilder {
     pub(crate) min_value: ::std::option::Option<i32>,
     pub(crate) max_value: ::std::option::Option<i32>,
-    pub(crate) options:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
-    pub(crate) automation:
-        ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
+    pub(crate) automation: ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
 }
 impl EvaluationFormNumericQuestionPropertiesBuilder {
     /// <p>The minimum answer value.</p>
@@ -101,42 +92,26 @@ impl EvaluationFormNumericQuestionPropertiesBuilder {
         self
     }
     /// <p>The scoring options of the numeric question.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>,
-        >,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>) -> Self {
         self.options = input;
         self
     }
     /// <p>The scoring options of the numeric question.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>
-    {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>> {
         &self.options
     }
     /// <p>The automation properties of the numeric question.</p>
-    pub fn automation(
-        mut self,
-        input: crate::types::EvaluationFormNumericQuestionAutomation,
-    ) -> Self {
+    pub fn automation(mut self, input: crate::types::EvaluationFormNumericQuestionAutomation) -> Self {
         self.automation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The automation properties of the numeric question.</p>
-    pub fn set_automation(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
-    ) -> Self {
+    pub fn set_automation(mut self, input: ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>) -> Self {
         self.automation = input;
         self
     }
     /// <p>The automation properties of the numeric question.</p>
-    pub fn get_automation(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation> {
+    pub fn get_automation(&self) -> &::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation> {
         &self.automation
     }
     /// Consumes the builder and constructs a [`EvaluationFormNumericQuestionProperties`](crate::types::EvaluationFormNumericQuestionProperties).

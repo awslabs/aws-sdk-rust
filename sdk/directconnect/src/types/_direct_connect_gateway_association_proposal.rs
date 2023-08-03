@@ -20,19 +20,16 @@ pub struct DirectConnectGatewayAssociationProposal {
     /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub proposal_state:
-        ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>,
+    pub proposal_state: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>,
     /// <p>Information about the associated gateway.</p>
     #[doc(hidden)]
     pub associated_gateway: ::std::option::Option<crate::types::AssociatedGateway>,
     /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
     #[doc(hidden)]
-    pub existing_allowed_prefixes_to_direct_connect_gateway:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub existing_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
     #[doc(hidden)]
-    pub requested_allowed_prefixes_to_direct_connect_gateway:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub requested_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
 }
 impl DirectConnectGatewayAssociationProposal {
     /// <p>The ID of the association proposal.</p>
@@ -53,9 +50,7 @@ impl DirectConnectGatewayAssociationProposal {
     /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
-    pub fn proposal_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociationProposalState> {
+    pub fn proposal_state(&self) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociationProposalState> {
         self.proposal_state.as_ref()
     }
     /// <p>Information about the associated gateway.</p>
@@ -63,18 +58,12 @@ impl DirectConnectGatewayAssociationProposal {
         self.associated_gateway.as_ref()
     }
     /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
-    pub fn existing_allowed_prefixes_to_direct_connect_gateway(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.existing_allowed_prefixes_to_direct_connect_gateway
-            .as_deref()
+    pub fn existing_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
+        self.existing_allowed_prefixes_to_direct_connect_gateway.as_deref()
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn requested_allowed_prefixes_to_direct_connect_gateway(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.requested_allowed_prefixes_to_direct_connect_gateway
-            .as_deref()
+    pub fn requested_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
+        self.requested_allowed_prefixes_to_direct_connect_gateway.as_deref()
     }
 }
 impl DirectConnectGatewayAssociationProposal {
@@ -86,20 +75,15 @@ impl DirectConnectGatewayAssociationProposal {
 
 /// A builder for [`DirectConnectGatewayAssociationProposal`](crate::types::DirectConnectGatewayAssociationProposal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectConnectGatewayAssociationProposalBuilder {
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_owner_account: ::std::option::Option<::std::string::String>,
-    pub(crate) proposal_state:
-        ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>,
+    pub(crate) proposal_state: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>,
     pub(crate) associated_gateway: ::std::option::Option<crate::types::AssociatedGateway>,
-    pub(crate) existing_allowed_prefixes_to_direct_connect_gateway:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    pub(crate) requested_allowed_prefixes_to_direct_connect_gateway:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub(crate) existing_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub(crate) requested_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
 }
 impl DirectConnectGatewayAssociationProposalBuilder {
     /// <p>The ID of the association proposal.</p>
@@ -117,18 +101,12 @@ impl DirectConnectGatewayAssociationProposalBuilder {
         &self.proposal_id
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = input;
         self
     }
@@ -137,25 +115,17 @@ impl DirectConnectGatewayAssociationProposalBuilder {
         &self.direct_connect_gateway_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_owner_account = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    pub fn get_direct_connect_gateway_owner_account(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_direct_connect_gateway_owner_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.direct_connect_gateway_owner_account
     }
     /// <p>The state of the proposal. The following are possible values:</p>
@@ -164,10 +134,7 @@ impl DirectConnectGatewayAssociationProposalBuilder {
     /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
-    pub fn proposal_state(
-        mut self,
-        input: crate::types::DirectConnectGatewayAssociationProposalState,
-    ) -> Self {
+    pub fn proposal_state(mut self, input: crate::types::DirectConnectGatewayAssociationProposalState) -> Self {
         self.proposal_state = ::std::option::Option::Some(input);
         self
     }
@@ -177,10 +144,7 @@ impl DirectConnectGatewayAssociationProposalBuilder {
     /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
-    pub fn set_proposal_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>,
-    ) -> Self {
+    pub fn set_proposal_state(mut self, input: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>) -> Self {
         self.proposal_state = input;
         self
     }
@@ -190,9 +154,7 @@ impl DirectConnectGatewayAssociationProposalBuilder {
     /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
-    pub fn get_proposal_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState> {
+    pub fn get_proposal_state(&self) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState> {
         &self.proposal_state
     }
     /// <p>Information about the associated gateway.</p>
@@ -201,17 +163,12 @@ impl DirectConnectGatewayAssociationProposalBuilder {
         self
     }
     /// <p>Information about the associated gateway.</p>
-    pub fn set_associated_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociatedGateway>,
-    ) -> Self {
+    pub fn set_associated_gateway(mut self, input: ::std::option::Option<crate::types::AssociatedGateway>) -> Self {
         self.associated_gateway = input;
         self
     }
     /// <p>Information about the associated gateway.</p>
-    pub fn get_associated_gateway(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociatedGateway> {
+    pub fn get_associated_gateway(&self) -> &::std::option::Option<crate::types::AssociatedGateway> {
         &self.associated_gateway
     }
     /// Appends an item to `existing_allowed_prefixes_to_direct_connect_gateway`.
@@ -219,13 +176,8 @@ impl DirectConnectGatewayAssociationProposalBuilder {
     /// To override the contents of this collection use [`set_existing_allowed_prefixes_to_direct_connect_gateway`](Self::set_existing_allowed_prefixes_to_direct_connect_gateway).
     ///
     /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
-    pub fn existing_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: crate::types::RouteFilterPrefix,
-    ) -> Self {
-        let mut v = self
-            .existing_allowed_prefixes_to_direct_connect_gateway
-            .unwrap_or_default();
+    pub fn existing_allowed_prefixes_to_direct_connect_gateway(mut self, input: crate::types::RouteFilterPrefix) -> Self {
+        let mut v = self.existing_allowed_prefixes_to_direct_connect_gateway.unwrap_or_default();
         v.push(input);
         self.existing_allowed_prefixes_to_direct_connect_gateway = ::std::option::Option::Some(v);
         self
@@ -249,13 +201,8 @@ impl DirectConnectGatewayAssociationProposalBuilder {
     /// To override the contents of this collection use [`set_requested_allowed_prefixes_to_direct_connect_gateway`](Self::set_requested_allowed_prefixes_to_direct_connect_gateway).
     ///
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn requested_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: crate::types::RouteFilterPrefix,
-    ) -> Self {
-        let mut v = self
-            .requested_allowed_prefixes_to_direct_connect_gateway
-            .unwrap_or_default();
+    pub fn requested_allowed_prefixes_to_direct_connect_gateway(mut self, input: crate::types::RouteFilterPrefix) -> Self {
+        let mut v = self.requested_allowed_prefixes_to_direct_connect_gateway.unwrap_or_default();
         v.push(input);
         self.requested_allowed_prefixes_to_direct_connect_gateway = ::std::option::Option::Some(v);
         self
@@ -282,10 +229,8 @@ impl DirectConnectGatewayAssociationProposalBuilder {
             direct_connect_gateway_owner_account: self.direct_connect_gateway_owner_account,
             proposal_state: self.proposal_state,
             associated_gateway: self.associated_gateway,
-            existing_allowed_prefixes_to_direct_connect_gateway: self
-                .existing_allowed_prefixes_to_direct_connect_gateway,
-            requested_allowed_prefixes_to_direct_connect_gateway: self
-                .requested_allowed_prefixes_to_direct_connect_gateway,
+            existing_allowed_prefixes_to_direct_connect_gateway: self.existing_allowed_prefixes_to_direct_connect_gateway,
+            requested_allowed_prefixes_to_direct_connect_gateway: self.requested_allowed_prefixes_to_direct_connect_gateway,
         }
     }
 }

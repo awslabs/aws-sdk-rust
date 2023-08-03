@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<Integration>>)`](crate::operation::get_integrations::GetIntegrationsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_integrations::GetIntegrationsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationsError>`](crate::operation::get_integrations::GetIntegrationsError)
-    pub fn get_integrations(
-        &self,
-    ) -> crate::operation::get_integrations::builders::GetIntegrationsFluentBuilder {
-        crate::operation::get_integrations::builders::GetIntegrationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_integrations(&self) -> crate::operation::get_integrations::builders::GetIntegrationsFluentBuilder {
+        crate::operation::get_integrations::builders::GetIntegrationsFluentBuilder::new(self.handle.clone())
     }
 }

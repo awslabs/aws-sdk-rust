@@ -36,16 +36,14 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
 }
 impl ListRequestedServiceQuotaChangeHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryInput`](crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput).
-    pub fn builder() -> crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder{
+    pub fn builder() -> crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder {
         crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRequestedServiceQuotaChangeHistoryInput`](crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RequestStatus>,
@@ -110,18 +108,19 @@ impl ListRequestedServiceQuotaChangeHistoryInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryInput`](crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistoryInput {
-                service_code: self.service_code
-                ,
-                status: self.status
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                service_code: self.service_code,
+                status: self.status,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

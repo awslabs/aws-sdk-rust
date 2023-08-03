@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeliverConfigSnapshotOutput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput) with field(s):
     ///   - [`config_snapshot_id(Option<String>)`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput::config_snapshot_id): <p>The ID of the snapshot that is being created.</p>
     /// - On failure, responds with [`SdkError<DeliverConfigSnapshotError>`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError)
-    pub fn deliver_config_snapshot(
-        &self,
-    ) -> crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotFluentBuilder
-    {
-        crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deliver_config_snapshot(&self) -> crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotFluentBuilder {
+        crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

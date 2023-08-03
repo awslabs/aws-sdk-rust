@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for GetHostReservationPurchasePreviewOutp
 }
 impl GetHostReservationPurchasePreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetHostReservationPurchasePreviewOutput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput).
-    pub fn builder() -> crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewOutputBuilder{
+    pub fn builder() -> crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewOutputBuilder {
         crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetHostReservationPurchasePreviewOutput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostReservationPurchasePreviewOutputBuilder {
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     pub(crate) purchase: ::std::option::Option<::std::vec::Vec<crate::types::Purchase>>,
@@ -66,10 +64,7 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
         self
     }
     /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
         self.currency_code = input;
         self
     }
@@ -89,10 +84,7 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
         self
     }
     /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
-    pub fn set_purchase(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Purchase>>,
-    ) -> Self {
+    pub fn set_purchase(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Purchase>>) -> Self {
         self.purchase = input;
         self
     }
@@ -101,18 +93,12 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
         &self.purchase
     }
     /// <p>The potential total hourly price of the reservation per hour.</p>
-    pub fn total_hourly_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn total_hourly_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_hourly_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The potential total hourly price of the reservation per hour.</p>
-    pub fn set_total_hourly_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_total_hourly_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.total_hourly_price = input;
         self
     }
@@ -121,18 +107,12 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
         &self.total_hourly_price
     }
     /// <p>The potential total upfront price. This is billed immediately.</p>
-    pub fn total_upfront_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn total_upfront_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_upfront_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The potential total upfront price. This is billed immediately.</p>
-    pub fn set_total_upfront_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_total_upfront_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.total_upfront_price = input;
         self
     }
@@ -150,16 +130,12 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetHostReservationPurchasePreviewOutput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput).
-    pub fn build(self) -> crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput{
+    pub fn build(self) -> crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput {
         crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput {
-            currency_code: self.currency_code
-            ,
-            purchase: self.purchase
-            ,
-            total_hourly_price: self.total_hourly_price
-            ,
-            total_upfront_price: self.total_upfront_price
-            ,
+            currency_code: self.currency_code,
+            purchase: self.purchase,
+            total_hourly_price: self.total_hourly_price,
+            total_upfront_price: self.total_upfront_price,
             _request_id: self._request_id,
         }
     }

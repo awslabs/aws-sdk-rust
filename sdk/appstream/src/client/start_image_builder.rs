@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartImageBuilderOutput`](crate::operation::start_image_builder::StartImageBuilderOutput) with field(s):
     ///   - [`image_builder(Option<ImageBuilder>)`](crate::operation::start_image_builder::StartImageBuilderOutput::image_builder): <p>Information about the image builder.</p>
     /// - On failure, responds with [`SdkError<StartImageBuilderError>`](crate::operation::start_image_builder::StartImageBuilderError)
-    pub fn start_image_builder(
-        &self,
-    ) -> crate::operation::start_image_builder::builders::StartImageBuilderFluentBuilder {
-        crate::operation::start_image_builder::builders::StartImageBuilderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_image_builder(&self) -> crate::operation::start_image_builder::builders::StartImageBuilderFluentBuilder {
+        crate::operation::start_image_builder::builders::StartImageBuilderFluentBuilder::new(self.handle.clone())
     }
 }

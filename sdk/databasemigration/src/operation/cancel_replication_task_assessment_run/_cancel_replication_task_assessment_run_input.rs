@@ -16,49 +16,43 @@ impl CancelReplicationTaskAssessmentRunInput {
 }
 impl CancelReplicationTaskAssessmentRunInput {
     /// Creates a new builder-style object to manufacture [`CancelReplicationTaskAssessmentRunInput`](crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput).
-    pub fn builder() -> crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunInputBuilder{
+    pub fn builder() -> crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunInputBuilder {
         crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelReplicationTaskAssessmentRunInput`](crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelReplicationTaskAssessmentRunInputBuilder {
     pub(crate) replication_task_assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl CancelReplicationTaskAssessmentRunInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
-    pub fn replication_task_assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_assessment_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
-    pub fn set_replication_task_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_assessment_run_arn = input;
         self
     }
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
-    pub fn get_replication_task_assessment_run_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_task_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_task_assessment_run_arn
     }
     /// Consumes the builder and constructs a [`CancelReplicationTaskAssessmentRunInput`](crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput {
-                replication_task_assessment_run_arn: self.replication_task_assessment_run_arn
-                ,
-            }
+                replication_task_assessment_run_arn: self.replication_task_assessment_run_arn,
+            },
         )
     }
 }

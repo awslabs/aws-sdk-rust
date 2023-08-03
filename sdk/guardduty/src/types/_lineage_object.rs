@@ -79,9 +79,7 @@ impl LineageObject {
 
 /// A builder for [`LineageObject`](crate::types::LineageObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineageObjectBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) namespace_pid: ::std::option::Option<i32>,
@@ -100,10 +98,7 @@ impl LineageObjectBuilder {
         self
     }
     /// <p>The time when the process started. This is in UTC format.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -182,18 +177,12 @@ impl LineageObjectBuilder {
         &self.uuid
     }
     /// <p>The absolute path of the process executable file.</p>
-    pub fn executable_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn executable_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executable_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute path of the process executable file.</p>
-    pub fn set_executable_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_executable_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.executable_path = input;
         self
     }

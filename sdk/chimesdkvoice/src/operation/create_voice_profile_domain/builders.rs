@@ -29,7 +29,7 @@ impl CreateVoiceProfileDomainInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVoiceProfileDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainInputBuilder,
+    inner: crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainInputBuilder,
 }
 impl CreateVoiceProfileDomainFluentBuilder {
     /// Creates a new `CreateVoiceProfileDomain`.
@@ -40,7 +40,7 @@ impl CreateVoiceProfileDomainFluentBuilder {
         }
     }
     /// Access the CreateVoiceProfileDomain as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl CreateVoiceProfileDomainFluentBuilder {
             crate::operation::create_voice_profile_domain::CreateVoiceProfileDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl CreateVoiceProfileDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl CreateVoiceProfileDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl CreateVoiceProfileDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl CreateVoiceProfileDomainFluentBuilder {
             crate::operation::create_voice_profile_domain::CreateVoiceProfileDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError>,
     > {
         self.customize_middleware().await
     }
@@ -152,40 +141,26 @@ impl CreateVoiceProfileDomainFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The server-side encryption configuration for the request.</p>
-    pub fn server_side_encryption_configuration(
-        mut self,
-        input: crate::types::ServerSideEncryptionConfiguration,
-    ) -> Self {
+    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.inner = self.inner.server_side_encryption_configuration(input);
         self
     }
     /// <p>The server-side encryption configuration for the request.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
     /// <p>The server-side encryption configuration for the request.</p>
-    pub fn get_server_side_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+    pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         self.inner.get_server_side_encryption_configuration()
     }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -203,10 +178,7 @@ impl CreateVoiceProfileDomainFluentBuilder {
         self
     }
     /// <p>The tags assigned to the domain.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

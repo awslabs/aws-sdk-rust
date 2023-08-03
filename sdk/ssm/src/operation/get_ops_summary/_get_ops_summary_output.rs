@@ -35,9 +35,7 @@ impl GetOpsSummaryOutput {
 
 /// A builder for [`GetOpsSummaryOutput`](crate::operation::get_ops_summary::GetOpsSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpsSummaryOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::OpsEntity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetOpsSummaryOutputBuilder {
         self
     }
     /// <p>The list of aggregated details and filtered OpsData.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsEntity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsEntity>>) -> Self {
         self.entities = input;
         self
     }

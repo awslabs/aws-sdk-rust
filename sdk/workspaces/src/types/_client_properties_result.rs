@@ -30,9 +30,7 @@ impl ClientPropertiesResult {
 
 /// A builder for [`ClientPropertiesResult`](crate::types::ClientPropertiesResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientPropertiesResultBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_properties: ::std::option::Option<crate::types::ClientProperties>,
@@ -58,10 +56,7 @@ impl ClientPropertiesResultBuilder {
         self
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
-    pub fn set_client_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientProperties>,
-    ) -> Self {
+    pub fn set_client_properties(mut self, input: ::std::option::Option<crate::types::ClientProperties>) -> Self {
         self.client_properties = input;
         self
     }

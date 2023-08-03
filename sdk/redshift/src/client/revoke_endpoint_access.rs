@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`allowed_vp_cs(Option<Vec<String>>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::allowed_vp_cs): <p>The VPCs allowed access to the cluster.</p>
     ///   - [`endpoint_count(i32)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::endpoint_count): <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     /// - On failure, responds with [`SdkError<RevokeEndpointAccessError>`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessError)
-    pub fn revoke_endpoint_access(
-        &self,
-    ) -> crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessFluentBuilder {
-        crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn revoke_endpoint_access(&self) -> crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessFluentBuilder {
+        crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

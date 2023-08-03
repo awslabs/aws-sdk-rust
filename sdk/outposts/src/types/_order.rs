@@ -97,9 +97,7 @@ impl Order {
 
 /// A builder for [`Order`](crate::types::Order).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrderBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
@@ -193,17 +191,12 @@ impl OrderBuilder {
         self
     }
     /// <p>The line items for the order</p>
-    pub fn set_line_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LineItem>>,
-    ) -> Self {
+    pub fn set_line_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineItem>>) -> Self {
         self.line_items = input;
         self
     }
     /// <p>The line items for the order</p>
-    pub fn get_line_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItem>> {
+    pub fn get_line_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItem>> {
         &self.line_items
     }
     /// <p>The payment option for the order.</p>
@@ -212,10 +205,7 @@ impl OrderBuilder {
         self
     }
     /// <p>The payment option for the order.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
         self.payment_option = input;
         self
     }
@@ -229,17 +219,12 @@ impl OrderBuilder {
         self
     }
     /// <p>The submission date for the order.</p>
-    pub fn set_order_submission_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_order_submission_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.order_submission_date = input;
         self
     }
     /// <p>The submission date for the order.</p>
-    pub fn get_order_submission_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_order_submission_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.order_submission_date
     }
     /// <p>The fulfillment date of the order.</p>
@@ -248,10 +233,7 @@ impl OrderBuilder {
         self
     }
     /// <p>The fulfillment date of the order.</p>
-    pub fn set_order_fulfilled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_order_fulfilled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.order_fulfilled_date = input;
         self
     }
@@ -265,10 +247,7 @@ impl OrderBuilder {
         self
     }
     /// <p>The payment term.</p>
-    pub fn set_payment_term(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentTerm>,
-    ) -> Self {
+    pub fn set_payment_term(mut self, input: ::std::option::Option<crate::types::PaymentTerm>) -> Self {
         self.payment_term = input;
         self
     }

@@ -5,32 +5,26 @@
 pub struct BatchDeleteClusterSnapshotsInput {
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
     #[doc(hidden)]
-    pub identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
+    pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
 }
 impl BatchDeleteClusterSnapshotsInput {
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    pub fn identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeleteClusterSnapshotMessage]> {
+    pub fn identifiers(&self) -> ::std::option::Option<&[crate::types::DeleteClusterSnapshotMessage]> {
         self.identifiers.as_deref()
     }
 }
 impl BatchDeleteClusterSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteClusterSnapshotsInput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput).
-    pub fn builder() -> crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsInputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsInputBuilder {
         crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteClusterSnapshotsInput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteClusterSnapshotsInputBuilder {
-    pub(crate) identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
+    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
 }
 impl BatchDeleteClusterSnapshotsInputBuilder {
     /// Appends an item to `identifiers`.
@@ -45,17 +39,12 @@ impl BatchDeleteClusterSnapshotsInputBuilder {
         self
     }
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    pub fn set_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
-    ) -> Self {
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>) -> Self {
         self.identifiers = input;
         self
     }
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    pub fn get_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>> {
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>> {
         &self.identifiers
     }
     /// Consumes the builder and constructs a [`BatchDeleteClusterSnapshotsInput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput).
@@ -65,10 +54,8 @@ impl BatchDeleteClusterSnapshotsInputBuilder {
         crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput {
-                identifiers: self.identifiers,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput {
+            identifiers: self.identifiers,
+        })
     }
 }

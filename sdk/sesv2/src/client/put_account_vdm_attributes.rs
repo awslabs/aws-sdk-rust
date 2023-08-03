@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`vdm_attributes(VdmAttributes)`](crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesFluentBuilder::vdm_attributes) / [`set_vdm_attributes(Option<VdmAttributes>)`](crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesFluentBuilder::set_vdm_attributes): <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
     /// - On success, responds with [`PutAccountVdmAttributesOutput`](crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesOutput)
     /// - On failure, responds with [`SdkError<PutAccountVdmAttributesError>`](crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError)
-    pub fn put_account_vdm_attributes(
-        &self,
-    ) -> crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesFluentBuilder
-    {
+    pub fn put_account_vdm_attributes(&self) -> crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesFluentBuilder {
         crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesFluentBuilder::new(self.handle.clone())
     }
 }

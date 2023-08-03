@@ -24,9 +24,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLayerOutput`](crate::operation::create_layer::CreateLayerOutput) with field(s):
     ///   - [`layer_id(Option<String>)`](crate::operation::create_layer::CreateLayerOutput::layer_id): <p>The layer ID.</p>
     /// - On failure, responds with [`SdkError<CreateLayerError>`](crate::operation::create_layer::CreateLayerError)
-    pub fn create_layer(
-        &self,
-    ) -> crate::operation::create_layer::builders::CreateLayerFluentBuilder {
+    pub fn create_layer(&self) -> crate::operation::create_layer::builders::CreateLayerFluentBuilder {
         crate::operation::create_layer::builders::CreateLayerFluentBuilder::new(self.handle.clone())
     }
 }

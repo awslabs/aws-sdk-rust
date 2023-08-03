@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`GetResolverQueryLogConfigAssociationOutput`](crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationOutput) with field(s):
     ///   - [`resolver_query_log_config_association(Option<ResolverQueryLogConfigAssociation>)`](crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationOutput::resolver_query_log_config_association): <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverQueryLogConfigAssociationError>`](crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError)
-    pub fn get_resolver_query_log_config_association(&self) -> crate::operation::get_resolver_query_log_config_association::builders::GetResolverQueryLogConfigAssociationFluentBuilder{
-        crate::operation::get_resolver_query_log_config_association::builders::GetResolverQueryLogConfigAssociationFluentBuilder::new(self.handle.clone())
+    pub fn get_resolver_query_log_config_association(
+        &self,
+    ) -> crate::operation::get_resolver_query_log_config_association::builders::GetResolverQueryLogConfigAssociationFluentBuilder {
+        crate::operation::get_resolver_query_log_config_association::builders::GetResolverQueryLogConfigAssociationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

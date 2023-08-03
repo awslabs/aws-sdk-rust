@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateConnectionOutput {
 }
 impl UpdateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionOutput`](crate::operation::update_connection::UpdateConnectionOutput).
-    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionOutputBuilder {
         crate::operation::update_connection::builders::UpdateConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectionOutput`](crate::operation::update_connection::UpdateConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateConnectionOutputBuilder {
         self
     }
     /// <p>Information about the connection.</p>
-    pub fn set_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::Connection>,
-    ) -> Self {
+    pub fn set_connection(mut self, input: ::std::option::Option<crate::types::Connection>) -> Self {
         self.connection = input;
         self
     }

@@ -28,9 +28,7 @@ impl StopReplicationOutput {
 
 /// A builder for [`StopReplicationOutput`](crate::operation::stop_replication::StopReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopReplicationOutputBuilder {
     pub(crate) replication: ::std::option::Option<crate::types::Replication>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StopReplicationOutputBuilder {
         self
     }
     /// <p>The replication that DMS stopped.</p>
-    pub fn set_replication(
-        mut self,
-        input: ::std::option::Option<crate::types::Replication>,
-    ) -> Self {
+    pub fn set_replication(mut self, input: ::std::option::Option<crate::types::Replication>) -> Self {
         self.replication = input;
         self
     }

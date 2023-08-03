@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`expected_version(i64)`](crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupFluentBuilder::set_expected_version): <p>The expected version of the dynamic thing group to delete.</p>
     /// - On success, responds with [`DeleteDynamicThingGroupOutput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteDynamicThingGroupError>`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupError)
-    pub fn delete_dynamic_thing_group(
-        &self,
-    ) -> crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupFluentBuilder
-    {
+    pub fn delete_dynamic_thing_group(&self) -> crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupFluentBuilder {
         crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -100,9 +100,7 @@ impl DeviceSelectionConfiguration {
 
 /// A builder for [`DeviceSelectionConfiguration`](crate::types::DeviceSelectionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceSelectionConfigurationBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     pub(crate) max_devices: ::std::option::Option<i32>,
@@ -190,10 +188,7 @@ impl DeviceSelectionConfigurationBuilder {
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -233,9 +228,7 @@ impl DeviceSelectionConfigurationBuilder {
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
         &self.filters
     }
     /// <p>The maximum number of devices to be included in a test run.</p>

@@ -23,9 +23,7 @@ impl ScanResultDetails {
 
 /// A builder for [`ScanResultDetails`](crate::types::ScanResultDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanResultDetailsBuilder {
     pub(crate) scan_result: ::std::option::Option<crate::types::ScanResult>,
 }
@@ -36,10 +34,7 @@ impl ScanResultDetailsBuilder {
         self
     }
     /// <p>An enum value representing possible scan results.</p>
-    pub fn set_scan_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanResult>,
-    ) -> Self {
+    pub fn set_scan_result(mut self, input: ::std::option::Option<crate::types::ScanResult>) -> Self {
         self.scan_result = input;
         self
     }

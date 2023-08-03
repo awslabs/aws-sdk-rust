@@ -26,7 +26,7 @@ impl ListSupportedInstanceTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSupportedInstanceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesInputBuilder,
+    inner: crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesInputBuilder,
 }
 impl ListSupportedInstanceTypesFluentBuilder {
     /// Creates a new `ListSupportedInstanceTypes`.
@@ -37,7 +37,7 @@ impl ListSupportedInstanceTypesFluentBuilder {
         }
     }
     /// Access the ListSupportedInstanceTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSupportedInstanceTypesFluentBuilder {
             crate::operation::list_supported_instance_types::ListSupportedInstanceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSupportedInstanceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSupportedInstanceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSupportedInstanceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListSupportedInstanceTypesFluentBuilder {
             crate::operation::list_supported_instance_types::ListSupportedInstanceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_supported_instance_types::paginator::ListSupportedInstanceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_supported_instance_types::paginator::ListSupportedInstanceTypesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_supported_instance_types::paginator::ListSupportedInstanceTypesPaginator {
         crate::operation::list_supported_instance_types::paginator::ListSupportedInstanceTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_label(input.into());
         self
     }
     /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_release_label(input);
         self
     }

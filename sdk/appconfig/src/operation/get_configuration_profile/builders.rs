@@ -26,8 +26,7 @@ impl GetConfigurationProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfigurationProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_configuration_profile::builders::GetConfigurationProfileInputBuilder,
+    inner: crate::operation::get_configuration_profile::builders::GetConfigurationProfileInputBuilder,
 }
 impl GetConfigurationProfileFluentBuilder {
     /// Creates a new `GetConfigurationProfile`.
@@ -38,10 +37,7 @@ impl GetConfigurationProfileFluentBuilder {
         }
     }
     /// Access the GetConfigurationProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_configuration_profile::builders::GetConfigurationProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_configuration_profile::builders::GetConfigurationProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetConfigurationProfileFluentBuilder {
             crate::operation::get_configuration_profile::GetConfigurationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration_profile::GetConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration_profile::GetConfigurationProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetConfigurationProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetConfigurationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configuration_profile::GetConfigurationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration_profile::GetConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration_profile::GetConfigurationProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetConfigurationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configuration_profile::GetConfigurationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration_profile::GetConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration_profile::GetConfigurationProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetConfigurationProfileFluentBuilder {
             crate::operation::get_configuration_profile::GetConfigurationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration_profile::GetConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration_profile::GetConfigurationProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -145,18 +124,12 @@ impl GetConfigurationProfileFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The ID of the configuration profile that you want to get.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_profile_id(input.into());
         self
     }
     /// <p>The ID of the configuration profile that you want to get.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }

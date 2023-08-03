@@ -10,10 +10,7 @@ impl ListDetectorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_detectors::ListDetectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detectors::ListDetectorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detectors::ListDetectorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_detectors();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDetectorsFluentBuilder {
         }
     }
     /// Access the ListDetectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_detectors::builders::ListDetectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_detectors::builders::ListDetectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListDetectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl ListDetectorsFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_model_name(input.into());
         self
     }
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }

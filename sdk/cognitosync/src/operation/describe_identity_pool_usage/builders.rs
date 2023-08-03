@@ -48,7 +48,7 @@ impl DescribeIdentityPoolUsageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIdentityPoolUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageInputBuilder,
+    inner: crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageInputBuilder,
 }
 impl DescribeIdentityPoolUsageFluentBuilder {
     /// Creates a new `DescribeIdentityPoolUsage`.
@@ -59,7 +59,7 @@ impl DescribeIdentityPoolUsageFluentBuilder {
         }
     }
     /// Access the DescribeIdentityPoolUsage as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,9 +71,7 @@ impl DescribeIdentityPoolUsageFluentBuilder {
             crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -83,10 +81,7 @@ impl DescribeIdentityPoolUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -95,9 +90,7 @@ impl DescribeIdentityPoolUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError>,
     > {
         let op = self
             .inner
@@ -120,9 +113,7 @@ impl DescribeIdentityPoolUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError>,
     > {
         self.send_middleware().await
     }
@@ -136,25 +127,17 @@ impl DescribeIdentityPoolUsageFluentBuilder {
             crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError>,
     > {
         self.customize_middleware().await
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

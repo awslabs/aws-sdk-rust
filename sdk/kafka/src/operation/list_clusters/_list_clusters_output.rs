@@ -35,9 +35,7 @@ impl ListClustersOutput {
 
 /// A builder for [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersOutputBuilder {
     pub(crate) cluster_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListClustersOutputBuilder {
         self
     }
     /// <p>Information on each of the MSK clusters in the response.</p>
-    pub fn set_cluster_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInfo>>,
-    ) -> Self {
+    pub fn set_cluster_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInfo>>) -> Self {
         self.cluster_info_list = input;
         self
     }
     /// <p>Information on each of the MSK clusters in the response.</p>
-    pub fn get_cluster_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInfo>> {
+    pub fn get_cluster_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInfo>> {
         &self.cluster_info_list
     }
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GenerateServiceLastAccessedDetailsOutput`](crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput::job_id): <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
     /// - On failure, responds with [`SdkError<GenerateServiceLastAccessedDetailsError>`](crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError)
-    pub fn generate_service_last_accessed_details(&self) -> crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsFluentBuilder{
+    pub fn generate_service_last_accessed_details(
+        &self,
+    ) -> crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsFluentBuilder {
         crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsFluentBuilder::new(self.handle.clone())
     }
 }

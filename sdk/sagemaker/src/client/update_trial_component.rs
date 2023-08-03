@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTrialComponentOutput`](crate::operation::update_trial_component::UpdateTrialComponentOutput) with field(s):
     ///   - [`trial_component_arn(Option<String>)`](crate::operation::update_trial_component::UpdateTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>
     /// - On failure, responds with [`SdkError<UpdateTrialComponentError>`](crate::operation::update_trial_component::UpdateTrialComponentError)
-    pub fn update_trial_component(
-        &self,
-    ) -> crate::operation::update_trial_component::builders::UpdateTrialComponentFluentBuilder {
-        crate::operation::update_trial_component::builders::UpdateTrialComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_trial_component(&self) -> crate::operation::update_trial_component::builders::UpdateTrialComponentFluentBuilder {
+        crate::operation::update_trial_component::builders::UpdateTrialComponentFluentBuilder::new(self.handle.clone())
     }
 }

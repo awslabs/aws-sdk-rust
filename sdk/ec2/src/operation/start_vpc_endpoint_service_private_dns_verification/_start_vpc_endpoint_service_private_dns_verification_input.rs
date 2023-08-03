@@ -22,16 +22,16 @@ impl StartVpcEndpointServicePrivateDnsVerificationInput {
 }
 impl StartVpcEndpointServicePrivateDnsVerificationInput {
     /// Creates a new builder-style object to manufacture [`StartVpcEndpointServicePrivateDnsVerificationInput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput).
-    pub fn builder() -> crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationInputBuilder
+    {
         crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartVpcEndpointServicePrivateDnsVerificationInput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartVpcEndpointServicePrivateDnsVerificationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
@@ -66,14 +66,17 @@ impl StartVpcEndpointServicePrivateDnsVerificationInputBuilder {
         &self.service_id
     }
     /// Consumes the builder and constructs a [`StartVpcEndpointServicePrivateDnsVerificationInput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput {
-                dry_run: self.dry_run
-                ,
-                service_id: self.service_id
-                ,
-            }
+                dry_run: self.dry_run,
+                service_id: self.service_id,
+            },
         )
     }
 }

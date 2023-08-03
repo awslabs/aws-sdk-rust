@@ -66,16 +66,14 @@ impl TerminateWorkflowExecutionInput {
 }
 impl TerminateWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionInput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput).
-    pub fn builder() -> crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionInputBuilder{
+    pub fn builder() -> crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionInputBuilder {
         crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateWorkflowExecutionInput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateWorkflowExecutionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -177,10 +175,7 @@ impl TerminateWorkflowExecutionInputBuilder {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn set_child_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChildPolicy>,
-    ) -> Self {
+    pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.child_policy = input;
         self
     }
@@ -203,15 +198,13 @@ impl TerminateWorkflowExecutionInputBuilder {
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput {
-                domain: self.domain,
-                workflow_id: self.workflow_id,
-                run_id: self.run_id,
-                reason: self.reason,
-                details: self.details,
-                child_policy: self.child_policy,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput {
+            domain: self.domain,
+            workflow_id: self.workflow_id,
+            run_id: self.run_id,
+            reason: self.reason,
+            details: self.details,
+            child_policy: self.child_policy,
+        })
     }
 }

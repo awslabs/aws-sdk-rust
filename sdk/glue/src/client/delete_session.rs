@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSessionOutput`](crate::operation::delete_session::DeleteSessionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_session::DeleteSessionOutput::id): <p>Returns the ID of the deleted session.</p>
     /// - On failure, responds with [`SdkError<DeleteSessionError>`](crate::operation::delete_session::DeleteSessionError)
-    pub fn delete_session(
-        &self,
-    ) -> crate::operation::delete_session::builders::DeleteSessionFluentBuilder {
-        crate::operation::delete_session::builders::DeleteSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_session(&self) -> crate::operation::delete_session::builders::DeleteSessionFluentBuilder {
+        crate::operation::delete_session::builders::DeleteSessionFluentBuilder::new(self.handle.clone())
     }
 }

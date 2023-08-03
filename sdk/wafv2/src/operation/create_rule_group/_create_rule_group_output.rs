@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateRuleGroupOutput {
 }
 impl CreateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
-    pub fn builder() -> crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder {
         crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleGroupOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::RuleGroupSummary>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateRuleGroupOutputBuilder {
         self
     }
     /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::RuleGroupSummary>) -> Self {
         self.summary = input;
         self
     }

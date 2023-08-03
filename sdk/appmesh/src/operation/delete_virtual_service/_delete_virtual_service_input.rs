@@ -29,17 +29,14 @@ impl DeleteVirtualServiceInput {
 }
 impl DeleteVirtualServiceInput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceInput`](crate::operation::delete_virtual_service::DeleteVirtualServiceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_service::builders::DeleteVirtualServiceInputBuilder {
+    pub fn builder() -> crate::operation::delete_virtual_service::builders::DeleteVirtualServiceInputBuilder {
         crate::operation::delete_virtual_service::builders::DeleteVirtualServiceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualServiceInput`](crate::operation::delete_virtual_service::DeleteVirtualServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualServiceInputBuilder {
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct DeleteVirtualServiceInputBuilder {
 }
 impl DeleteVirtualServiceInputBuilder {
     /// <p>The name of the virtual service to delete.</p>
-    pub fn virtual_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual service to delete.</p>
-    pub fn set_virtual_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_service_name = input;
         self
     }
@@ -97,16 +88,12 @@ impl DeleteVirtualServiceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualServiceInput`](crate::operation::delete_virtual_service::DeleteVirtualServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_virtual_service::DeleteVirtualServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_virtual_service::DeleteVirtualServiceInput {
-                virtual_service_name: self.virtual_service_name,
-                mesh_name: self.mesh_name,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_virtual_service::DeleteVirtualServiceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_virtual_service::DeleteVirtualServiceInput {
+            virtual_service_name: self.virtual_service_name,
+            mesh_name: self.mesh_name,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

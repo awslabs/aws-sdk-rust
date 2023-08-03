@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`output(Output)`](crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder::output) / [`set_output(Option<Output>)`](crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder::set_output): <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
     /// - On success, responds with [`AddApplicationOutputOutput`](crate::operation::add_application_output::AddApplicationOutputOutput)
     /// - On failure, responds with [`SdkError<AddApplicationOutputError>`](crate::operation::add_application_output::AddApplicationOutputError)
-    pub fn add_application_output(
-        &self,
-    ) -> crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder {
-        crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_application_output(&self) -> crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder {
+        crate::operation::add_application_output::builders::AddApplicationOutputFluentBuilder::new(self.handle.clone())
     }
 }

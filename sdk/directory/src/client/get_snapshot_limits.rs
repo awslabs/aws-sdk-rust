@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSnapshotLimitsOutput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput) with field(s):
     ///   - [`snapshot_limits(Option<SnapshotLimits>)`](crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput::snapshot_limits): <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     /// - On failure, responds with [`SdkError<GetSnapshotLimitsError>`](crate::operation::get_snapshot_limits::GetSnapshotLimitsError)
-    pub fn get_snapshot_limits(
-        &self,
-    ) -> crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder {
-        crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_snapshot_limits(&self) -> crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder {
+        crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder::new(self.handle.clone())
     }
 }

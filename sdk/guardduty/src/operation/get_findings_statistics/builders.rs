@@ -37,10 +37,7 @@ impl GetFindingsStatisticsFluentBuilder {
         }
     }
     /// Access the GetFindingsStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_findings_statistics::builders::GetFindingsStatisticsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_findings_statistics::builders::GetFindingsStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetFindingsStatisticsFluentBuilder {
             crate::operation::get_findings_statistics::GetFindingsStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings_statistics::GetFindingsStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings_statistics::GetFindingsStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetFindingsStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetFindingsStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_findings_statistics::GetFindingsStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings_statistics::GetFindingsStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings_statistics::GetFindingsStatisticsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetFindingsStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_findings_statistics::GetFindingsStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings_statistics::GetFindingsStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings_statistics::GetFindingsStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetFindingsStatisticsFluentBuilder {
             crate::operation::get_findings_statistics::GetFindingsStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings_statistics::GetFindingsStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings_statistics::GetFindingsStatisticsError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl GetFindingsStatisticsFluentBuilder {
         self
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    pub fn set_finding_statistic_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
-    ) -> Self {
+    pub fn set_finding_statistic_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>) -> Self {
         self.inner = self.inner.set_finding_statistic_types(input);
         self
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    pub fn get_finding_statistic_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>> {
+    pub fn get_finding_statistic_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>> {
         self.inner.get_finding_statistic_types()
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
@@ -166,10 +147,7 @@ impl GetFindingsStatisticsFluentBuilder {
         self
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self
     }

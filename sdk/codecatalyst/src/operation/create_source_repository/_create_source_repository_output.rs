@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateSourceRepositoryOutput {
 }
 impl CreateSourceRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`CreateSourceRepositoryOutput`](crate::operation::create_source_repository::CreateSourceRepositoryOutput).
-    pub fn builder(
-    ) -> crate::operation::create_source_repository::builders::CreateSourceRepositoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_source_repository::builders::CreateSourceRepositoryOutputBuilder {
         crate::operation::create_source_repository::builders::CreateSourceRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSourceRepositoryOutput`](crate::operation::create_source_repository::CreateSourceRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSourceRepositoryOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

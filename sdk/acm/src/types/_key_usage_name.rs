@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum KeyUsageName {
     #[allow(missing_docs)] // documentation missing in model
@@ -95,9 +89,7 @@ impl ::std::convert::From<&str> for KeyUsageName {
             "KEY_AGREEMENT" => KeyUsageName::KeyAgreement,
             "KEY_ENCIPHERMENT" => KeyUsageName::KeyEncipherment,
             "NON_REPUDIATION" => KeyUsageName::NonRepudation,
-            other => {
-                KeyUsageName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => KeyUsageName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

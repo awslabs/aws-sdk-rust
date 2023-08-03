@@ -26,7 +26,7 @@ impl BatchGetAssetPropertyValueInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueInputBuilder,
+    inner: crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueInputBuilder,
 }
 impl BatchGetAssetPropertyValueFluentBuilder {
     /// Creates a new `BatchGetAssetPropertyValue`.
@@ -37,7 +37,7 @@ impl BatchGetAssetPropertyValueFluentBuilder {
         }
     }
     /// Access the BatchGetAssetPropertyValue as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetAssetPropertyValueFluentBuilder {
             crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetAssetPropertyValueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetAssetPropertyValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetAssetPropertyValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl BatchGetAssetPropertyValueFluentBuilder {
             crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator{
+    pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator {
         crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `entries`.
@@ -136,20 +125,12 @@ impl BatchGetAssetPropertyValueFluentBuilder {
         self
     }
     /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>> {
         self.inner.get_entries()
     }
     /// <p>The token to be used for the next set of paginated results.</p>

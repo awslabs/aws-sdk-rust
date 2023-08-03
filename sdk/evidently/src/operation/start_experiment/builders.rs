@@ -10,10 +10,7 @@ impl StartExperimentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_experiment::StartExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_experiment::StartExperimentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_experiment::StartExperimentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_experiment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartExperimentFluentBuilder {
         }
     }
     /// Access the StartExperiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_experiment::builders::StartExperimentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_experiment::builders::StartExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartExperimentFluentBuilder {
             crate::operation::start_experiment::StartExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_experiment::StartExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_experiment::StartExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_experiment::StartExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_experiment::StartExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_experiment::StartExperimentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_experiment::StartExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_experiment::StartExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_experiment::StartExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartExperimentFluentBuilder {
             crate::operation::start_experiment::StartExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_experiment::StartExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_experiment::StartExperimentError>,
     > {
         self.customize_middleware().await
     }
@@ -156,17 +140,12 @@ impl StartExperimentFluentBuilder {
         self
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
-    pub fn set_analysis_complete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_analysis_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_analysis_complete_time(input);
         self
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
-    pub fn get_analysis_complete_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_analysis_complete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_analysis_complete_time()
     }
 }

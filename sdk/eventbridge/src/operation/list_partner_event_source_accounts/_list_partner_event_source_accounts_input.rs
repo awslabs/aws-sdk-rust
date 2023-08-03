@@ -29,16 +29,14 @@ impl ListPartnerEventSourceAccountsInput {
 }
 impl ListPartnerEventSourceAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListPartnerEventSourceAccountsInput`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsInput).
-    pub fn builder() -> crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsInputBuilder{
+    pub fn builder() -> crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsInputBuilder {
         crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPartnerEventSourceAccountsInput`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPartnerEventSourceAccountsInputBuilder {
     pub(crate) event_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListPartnerEventSourceAccountsInputBuilder {
 }
 impl ListPartnerEventSourceAccountsInputBuilder {
     /// <p>The name of the partner event source to display account information about.</p>
-    pub fn event_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the partner event source to display account information about.</p>
-    pub fn set_event_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_name = input;
         self
     }
@@ -102,13 +94,10 @@ impl ListPartnerEventSourceAccountsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsInput {
-                event_source_name: self.event_source_name
-                ,
-                next_token: self.next_token
-                ,
-                limit: self.limit
-                ,
-            }
+                event_source_name: self.event_source_name,
+                next_token: self.next_token,
+                limit: self.limit,
+            },
         )
     }
 }

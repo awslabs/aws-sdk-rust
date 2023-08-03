@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeGroupMembershipOutput {
 }
 impl DescribeGroupMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupMembershipOutput`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipOutputBuilder {
         crate::operation::describe_group_membership::builders::DescribeGroupMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGroupMembershipOutput`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGroupMembershipOutputBuilder {
     pub(crate) group_member: ::std::option::Option<crate::types::GroupMember>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -60,10 +56,7 @@ impl DescribeGroupMembershipOutputBuilder {
         self
     }
     /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
-    pub fn set_group_member(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupMember>,
-    ) -> Self {
+    pub fn set_group_member(mut self, input: ::std::option::Option<crate::types::GroupMember>) -> Self {
         self.group_member = input;
         self
     }
@@ -109,9 +102,7 @@ impl DescribeGroupMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGroupMembershipOutput`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_group_membership::DescribeGroupMembershipOutput {
+    pub fn build(self) -> crate::operation::describe_group_membership::DescribeGroupMembershipOutput {
         crate::operation::describe_group_membership::DescribeGroupMembershipOutput {
             group_member: self.group_member,
             request_id: self.request_id,

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`sync_resources(Option<Vec<SyncResourceSummary>>)`](crate::operation::list_sync_resources::ListSyncResourcesOutput::sync_resources): <p>The sync resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sync_resources::ListSyncResourcesOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSyncResourcesError>`](crate::operation::list_sync_resources::ListSyncResourcesError)
-    pub fn list_sync_resources(
-        &self,
-    ) -> crate::operation::list_sync_resources::builders::ListSyncResourcesFluentBuilder {
-        crate::operation::list_sync_resources::builders::ListSyncResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_sync_resources(&self) -> crate::operation::list_sync_resources::builders::ListSyncResourcesFluentBuilder {
+        crate::operation::list_sync_resources::builders::ListSyncResourcesFluentBuilder::new(self.handle.clone())
     }
 }

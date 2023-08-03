@@ -79,9 +79,7 @@ impl Entity {
 
 /// A builder for [`Entity`](crate::types::Entity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) begin_offset: ::std::option::Option<i32>,
@@ -204,10 +202,7 @@ impl EntityBuilder {
         self
     }
     /// <p>Contextual information for the entity.</p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
-    ) -> Self {
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>) -> Self {
         self.traits = input;
         self
     }
@@ -227,17 +222,12 @@ impl EntityBuilder {
         self
     }
     /// <p> The extracted attributes that relate to this entity.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p> The extracted attributes that relate to this entity.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).

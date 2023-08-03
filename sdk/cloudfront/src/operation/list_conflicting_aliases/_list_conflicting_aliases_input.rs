@@ -36,18 +36,14 @@ impl ListConflictingAliasesInput {
 }
 impl ListConflictingAliasesInput {
     /// Creates a new builder-style object to manufacture [`ListConflictingAliasesInput`](crate::operation::list_conflicting_aliases::ListConflictingAliasesInput).
-    pub fn builder(
-    ) -> crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesInputBuilder {
         crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConflictingAliasesInput`](crate::operation::list_conflicting_aliases::ListConflictingAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConflictingAliasesInputBuilder {
     pub(crate) distribution_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct ListConflictingAliasesInputBuilder {
 }
 impl ListConflictingAliasesInputBuilder {
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
-    pub fn distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
-    pub fn set_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl ListConflictingAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListConflictingAliasesInput`](crate::operation::list_conflicting_aliases::ListConflictingAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_conflicting_aliases::ListConflictingAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_conflicting_aliases::ListConflictingAliasesInput {
-                distribution_id: self.distribution_id,
-                alias: self.alias,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_conflicting_aliases::ListConflictingAliasesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_conflicting_aliases::ListConflictingAliasesInput {
+            distribution_id: self.distribution_id,
+            alias: self.alias,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

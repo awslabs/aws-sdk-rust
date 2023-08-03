@@ -37,9 +37,7 @@ impl NodeConfigurationOptionsFilter {
 
 /// A builder for [`NodeConfigurationOptionsFilter`](crate::types::NodeConfigurationOptionsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeConfigurationOptionsFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::NodeConfigurationOptionsFilterName>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorType>,
@@ -52,17 +50,12 @@ impl NodeConfigurationOptionsFilterBuilder {
         self
     }
     /// <p>The name of the element to filter.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeConfigurationOptionsFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::NodeConfigurationOptionsFilterName>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the element to filter.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::NodeConfigurationOptionsFilterName> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::NodeConfigurationOptionsFilterName> {
         &self.name
     }
     /// <p>The filter operator. If filter Name is NodeType only the 'in' operator is supported. Provide one value to evaluate for 'eq', 'lt', 'le', 'gt', and 'ge'. Provide two values to evaluate for 'between'. Provide a list of values for 'in'.</p>
@@ -71,10 +64,7 @@ impl NodeConfigurationOptionsFilterBuilder {
         self
     }
     /// <p>The filter operator. If filter Name is NodeType only the 'in' operator is supported. Provide one value to evaluate for 'eq', 'lt', 'le', 'gt', and 'ge'. Provide two values to evaluate for 'between'. Provide a list of values for 'in'.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatorType>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorType>) -> Self {
         self.operator = input;
         self
     }
@@ -94,10 +84,7 @@ impl NodeConfigurationOptionsFilterBuilder {
         self
     }
     /// <p>List of values. Compare Name using Operator to Values. If filter Name is NumberOfNodes, then values can range from 0 to 200. If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100. For example, filter NumberOfNodes (name) GT (operator) 3 (values).</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

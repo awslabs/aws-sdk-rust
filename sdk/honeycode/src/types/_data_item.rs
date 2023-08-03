@@ -59,10 +59,7 @@ impl DataItemBuilder {
         self
     }
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
-    pub fn set_override_format(
-        mut self,
-        input: ::std::option::Option<crate::types::Format>,
-    ) -> Self {
+    pub fn set_override_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.override_format = input;
         self
     }
@@ -85,18 +82,12 @@ impl DataItemBuilder {
         &self.raw_value
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
-    pub fn formatted_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn formatted_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.formatted_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
-    pub fn set_formatted_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_formatted_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.formatted_value = input;
         self
     }

@@ -42,13 +42,7 @@
 /// Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsSegmentationMarkers {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for M2tsSegmentationMarkers {
             "PSI_SEGSTART" => M2tsSegmentationMarkers::PsiSegstart,
             "RAI_ADAPT" => M2tsSegmentationMarkers::RaiAdapt,
             "RAI_SEGSTART" => M2tsSegmentationMarkers::RaiSegstart,
-            other => M2tsSegmentationMarkers::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => M2tsSegmentationMarkers::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl M2tsSegmentationMarkers {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "EBP",
-            "EBP_LEGACY",
-            "NONE",
-            "PSI_SEGSTART",
-            "RAI_ADAPT",
-            "RAI_SEGSTART",
-        ]
+        &["EBP", "EBP_LEGACY", "NONE", "PSI_SEGSTART", "RAI_ADAPT", "RAI_SEGSTART"]
     }
 }
 impl ::std::convert::AsRef<str> for M2tsSegmentationMarkers {

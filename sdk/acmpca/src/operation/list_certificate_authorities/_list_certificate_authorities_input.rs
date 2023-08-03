@@ -29,16 +29,14 @@ impl ListCertificateAuthoritiesInput {
 }
 impl ListCertificateAuthoritiesInput {
     /// Creates a new builder-style object to manufacture [`ListCertificateAuthoritiesInput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput).
-    pub fn builder() -> crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder{
+    pub fn builder() -> crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder {
         crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificateAuthoritiesInput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificateAuthoritiesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -79,10 +77,7 @@ impl ListCertificateAuthoritiesInputBuilder {
         self
     }
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceOwner>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.resource_owner = input;
         self
     }
@@ -97,12 +92,10 @@ impl ListCertificateAuthoritiesInputBuilder {
         crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                resource_owner: self.resource_owner,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            resource_owner: self.resource_owner,
+        })
     }
 }

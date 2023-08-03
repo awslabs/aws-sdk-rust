@@ -77,17 +77,14 @@ impl ::aws_http::request_id::RequestId for DescribeHarvestJobOutput {
 }
 impl DescribeHarvestJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHarvestJobOutput`](crate::operation::describe_harvest_job::DescribeHarvestJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_harvest_job::builders::DescribeHarvestJobOutputBuilder {
+    pub fn builder() -> crate::operation::describe_harvest_job::builders::DescribeHarvestJobOutputBuilder {
         crate::operation::describe_harvest_job::builders::DescribeHarvestJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHarvestJobOutput`](crate::operation::describe_harvest_job::DescribeHarvestJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHarvestJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
@@ -172,18 +169,12 @@ impl DescribeHarvestJobOutputBuilder {
         &self.id
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn origin_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn set_origin_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_id = input;
         self
     }
@@ -197,10 +188,7 @@ impl DescribeHarvestJobOutputBuilder {
         self
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }

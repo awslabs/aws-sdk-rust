@@ -46,19 +46,16 @@ impl ListLicenseConfigurationsInput {
 }
 impl ListLicenseConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsInput`](crate::operation::list_license_configurations::ListLicenseConfigurationsInput).
-    pub fn builder() -> crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder {
         crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseConfigurationsInput`](crate::operation::list_license_configurations::ListLicenseConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseConfigurationsInputBuilder {
-    pub(crate) license_configuration_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -69,27 +66,19 @@ impl ListLicenseConfigurationsInputBuilder {
     /// To override the contents of this collection use [`set_license_configuration_arns`](Self::set_license_configuration_arns).
     ///
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    pub fn license_configuration_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.license_configuration_arns.unwrap_or_default();
         v.push(input.into());
         self.license_configuration_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    pub fn set_license_configuration_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_license_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.license_configuration_arns = input;
         self
     }
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    pub fn get_license_configuration_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.license_configuration_arns
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -142,10 +131,7 @@ impl ListLicenseConfigurationsInputBuilder {
     /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -165,13 +151,11 @@ impl ListLicenseConfigurationsInputBuilder {
         crate::operation::list_license_configurations::ListLicenseConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_license_configurations::ListLicenseConfigurationsInput {
-                license_configuration_arns: self.license_configuration_arns,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_license_configurations::ListLicenseConfigurationsInput {
+            license_configuration_arns: self.license_configuration_arns,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

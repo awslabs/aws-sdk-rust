@@ -27,7 +27,7 @@ impl DescribeDocumentVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDocumentVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder,
+    inner: crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder,
 }
 impl DescribeDocumentVersionsFluentBuilder {
     /// Creates a new `DescribeDocumentVersions`.
@@ -38,10 +38,7 @@ impl DescribeDocumentVersionsFluentBuilder {
         }
     }
     /// Access the DescribeDocumentVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeDocumentVersionsFluentBuilder {
             crate::operation::describe_document_versions::DescribeDocumentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_versions::DescribeDocumentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_versions::DescribeDocumentVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeDocumentVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeDocumentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_versions::DescribeDocumentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_versions::DescribeDocumentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_versions::DescribeDocumentVersionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeDocumentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_versions::DescribeDocumentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_versions::DescribeDocumentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_versions::DescribeDocumentVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +106,23 @@ impl DescribeDocumentVersionsFluentBuilder {
             crate::operation::describe_document_versions::DescribeDocumentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_versions::DescribeDocumentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_versions::DescribeDocumentVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator {
         crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }

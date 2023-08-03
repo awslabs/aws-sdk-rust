@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for SuspendGameServerGroupOutput {
 }
 impl SuspendGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`SuspendGameServerGroupOutput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupOutputBuilder {
         crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`SuspendGameServerGroupOutput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuspendGameServerGroupOutputBuilder {
     pub(crate) game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl SuspendGameServerGroupOutputBuilder {
         self
     }
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the suspended activity.</p>
-    pub fn set_game_server_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroup>,
-    ) -> Self {
+    pub fn set_game_server_group(mut self, input: ::std::option::Option<crate::types::GameServerGroup>) -> Self {
         self.game_server_group = input;
         self
     }
@@ -65,9 +58,7 @@ impl SuspendGameServerGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SuspendGameServerGroupOutput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput {
+    pub fn build(self) -> crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput {
         crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput {
             game_server_group: self.game_server_group,
             _request_id: self._request_id,

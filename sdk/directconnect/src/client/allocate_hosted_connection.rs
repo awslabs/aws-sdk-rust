@@ -33,10 +33,7 @@ impl super::Client {
     ///   - [`encryption_mode(Option<String>)`](crate::operation::allocate_hosted_connection::AllocateHostedConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::allocate_hosted_connection::AllocateHostedConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     /// - On failure, responds with [`SdkError<AllocateHostedConnectionError>`](crate::operation::allocate_hosted_connection::AllocateHostedConnectionError)
-    pub fn allocate_hosted_connection(
-        &self,
-    ) -> crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionFluentBuilder
-    {
+    pub fn allocate_hosted_connection(&self) -> crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionFluentBuilder {
         crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionFluentBuilder::new(self.handle.clone())
     }
 }

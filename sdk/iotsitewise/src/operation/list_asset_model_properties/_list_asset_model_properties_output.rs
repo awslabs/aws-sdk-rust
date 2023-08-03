@@ -5,8 +5,7 @@
 pub struct ListAssetModelPropertiesOutput {
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
     #[doc(hidden)]
-    pub asset_model_property_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertySummary>>,
+    pub asset_model_property_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertySummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssetModelPropertiesOutput {
 }
 impl ListAssetModelPropertiesOutput {
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-    pub fn asset_model_property_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetModelPropertySummary]> {
+    pub fn asset_model_property_summaries(&self) -> ::std::option::Option<&[crate::types::AssetModelPropertySummary]> {
         self.asset_model_property_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssetModelPropertiesOutput {
 }
 impl ListAssetModelPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesOutput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput).
-    pub fn builder() -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesOutputBuilder {
         crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssetModelPropertiesOutput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetModelPropertiesOutputBuilder {
-    pub(crate) asset_model_property_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertySummary>>,
+    pub(crate) asset_model_property_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListAssetModelPropertiesOutputBuilder {
     /// To override the contents of this collection use [`set_asset_model_property_summaries`](Self::set_asset_model_property_summaries).
     ///
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-    pub fn asset_model_property_summaries(
-        mut self,
-        input: crate::types::AssetModelPropertySummary,
-    ) -> Self {
+    pub fn asset_model_property_summaries(mut self, input: crate::types::AssetModelPropertySummary) -> Self {
         let mut v = self.asset_model_property_summaries.unwrap_or_default();
         v.push(input);
         self.asset_model_property_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListAssetModelPropertiesOutputBuilder {
         self
     }
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-    pub fn get_asset_model_property_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertySummary>> {
+    pub fn get_asset_model_property_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertySummary>> {
         &self.asset_model_property_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -100,9 +89,7 @@ impl ListAssetModelPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssetModelPropertiesOutput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput {
+    pub fn build(self) -> crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput {
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput {
             asset_model_property_summaries: self.asset_model_property_summaries,
             next_token: self.next_token,

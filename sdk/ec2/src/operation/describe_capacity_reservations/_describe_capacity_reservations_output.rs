@@ -8,8 +8,7 @@ pub struct DescribeCapacityReservationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Capacity Reservations.</p>
     #[doc(hidden)]
-    pub capacity_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
+    pub capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }
 impl DescribeCapacityReservationsOutput {
@@ -18,9 +17,7 @@ impl DescribeCapacityReservationsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the Capacity Reservations.</p>
-    pub fn capacity_reservations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CapacityReservation]> {
+    pub fn capacity_reservations(&self) -> ::std::option::Option<&[crate::types::CapacityReservation]> {
         self.capacity_reservations.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeCapacityReservationsOutput {
 }
 impl DescribeCapacityReservationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityReservationsOutput`](crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput).
-    pub fn builder() -> crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsOutputBuilder {
         crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCapacityReservationsOutput`](crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCapacityReservationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
+    pub(crate) capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }
 impl DescribeCapacityReservationsOutputBuilder {
@@ -74,17 +68,12 @@ impl DescribeCapacityReservationsOutputBuilder {
         self
     }
     /// <p>Information about the Capacity Reservations.</p>
-    pub fn set_capacity_reservations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
-    ) -> Self {
+    pub fn set_capacity_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>) -> Self {
         self.capacity_reservations = input;
         self
     }
     /// <p>Information about the Capacity Reservations.</p>
-    pub fn get_capacity_reservations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>> {
+    pub fn get_capacity_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>> {
         &self.capacity_reservations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl DescribeCapacityReservationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCapacityReservationsOutput`](crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput {
+    pub fn build(self) -> crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput {
         crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput {
             next_token: self.next_token,
             capacity_reservations: self.capacity_reservations,

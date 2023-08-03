@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`collection_arn(Option<String>)`](crate::operation::create_collection::CreateCollectionOutput::collection_arn): <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
     ///   - [`face_model_version(Option<String>)`](crate::operation::create_collection::CreateCollectionOutput::face_model_version): <p>Version number of the face detection model associated with the collection you are creating.</p>
     /// - On failure, responds with [`SdkError<CreateCollectionError>`](crate::operation::create_collection::CreateCollectionError)
-    pub fn create_collection(
-        &self,
-    ) -> crate::operation::create_collection::builders::CreateCollectionFluentBuilder {
-        crate::operation::create_collection::builders::CreateCollectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_collection(&self) -> crate::operation::create_collection::builders::CreateCollectionFluentBuilder {
+        crate::operation::create_collection::builders::CreateCollectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`user_arn(Option<String>)`](crate::operation::get_federation_token::GetFederationTokenOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user.</p>
     ///   - [`user_id(Option<String>)`](crate::operation::get_federation_token::GetFederationTokenOutput::user_id): <p>The identifier for the user.</p>
     /// - On failure, responds with [`SdkError<GetFederationTokenError>`](crate::operation::get_federation_token::GetFederationTokenError)
-    pub fn get_federation_token(
-        &self,
-    ) -> crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder {
-        crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_federation_token(&self) -> crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder {
+        crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::new(self.handle.clone())
     }
 }

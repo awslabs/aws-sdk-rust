@@ -25,18 +25,14 @@ impl DetachPrincipalPolicyInput {
 }
 impl DetachPrincipalPolicyInput {
     /// Creates a new builder-style object to manufacture [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder {
         crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachPrincipalPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -76,15 +72,11 @@ impl DetachPrincipalPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_principal_policy::DetachPrincipalPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detach_principal_policy::DetachPrincipalPolicyInput {
-                policy_name: self.policy_name,
-                principal: self.principal,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detach_principal_policy::DetachPrincipalPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::detach_principal_policy::DetachPrincipalPolicyInput {
+            policy_name: self.policy_name,
+            principal: self.principal,
+        })
     }
 }

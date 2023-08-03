@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`delivery_channel(DeliveryChannel)`](crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder::delivery_channel) / [`set_delivery_channel(Option<DeliveryChannel>)`](crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder::set_delivery_channel): <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     /// - On success, responds with [`PutDeliveryChannelOutput`](crate::operation::put_delivery_channel::PutDeliveryChannelOutput)
     /// - On failure, responds with [`SdkError<PutDeliveryChannelError>`](crate::operation::put_delivery_channel::PutDeliveryChannelError)
-    pub fn put_delivery_channel(
-        &self,
-    ) -> crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder {
-        crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_delivery_channel(&self) -> crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder {
+        crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder::new(self.handle.clone())
     }
 }

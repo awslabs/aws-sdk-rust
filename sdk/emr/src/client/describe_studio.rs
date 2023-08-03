@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStudioOutput`](crate::operation::describe_studio::DescribeStudioOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::operation::describe_studio::DescribeStudioOutput::studio): <p>The Amazon EMR Studio details.</p>
     /// - On failure, responds with [`SdkError<DescribeStudioError>`](crate::operation::describe_studio::DescribeStudioError)
-    pub fn describe_studio(
-        &self,
-    ) -> crate::operation::describe_studio::builders::DescribeStudioFluentBuilder {
-        crate::operation::describe_studio::builders::DescribeStudioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_studio(&self) -> crate::operation::describe_studio::builders::DescribeStudioFluentBuilder {
+        crate::operation::describe_studio::builders::DescribeStudioFluentBuilder::new(self.handle.clone())
     }
 }

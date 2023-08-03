@@ -5,8 +5,7 @@
 pub struct ListRecordingConfigurationsOutput {
     /// <p>List of the matching recording configurations.</p>
     #[doc(hidden)]
-    pub recording_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>>,
+    pub recording_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>>,
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListRecordingConfigurationsOutput {
 }
 impl ListRecordingConfigurationsOutput {
     /// <p>List of the matching recording configurations.</p>
-    pub fn recording_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecordingConfigurationSummary]> {
+    pub fn recording_configurations(&self) -> ::std::option::Option<&[crate::types::RecordingConfigurationSummary]> {
         self.recording_configurations.as_deref()
     }
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRecordingConfigurationsOutput {
 }
 impl ListRecordingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecordingConfigurationsOutput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsOutputBuilder {
         crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecordingConfigurationsOutput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecordingConfigurationsOutputBuilder {
-    pub(crate) recording_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>>,
+    pub(crate) recording_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListRecordingConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_recording_configurations`](Self::set_recording_configurations).
     ///
     /// <p>List of the matching recording configurations.</p>
-    pub fn recording_configurations(
-        mut self,
-        input: crate::types::RecordingConfigurationSummary,
-    ) -> Self {
+    pub fn recording_configurations(mut self, input: crate::types::RecordingConfigurationSummary) -> Self {
         let mut v = self.recording_configurations.unwrap_or_default();
         v.push(input);
         self.recording_configurations = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListRecordingConfigurationsOutputBuilder {
         self
     }
     /// <p>List of the matching recording configurations.</p>
-    pub fn get_recording_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>> {
+    pub fn get_recording_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>> {
         &self.recording_configurations
     }
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -100,9 +89,7 @@ impl ListRecordingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRecordingConfigurationsOutput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
         crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
             recording_configurations: self.recording_configurations,
             next_token: self.next_token,

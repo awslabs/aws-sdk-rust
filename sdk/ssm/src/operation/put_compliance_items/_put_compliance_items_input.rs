@@ -42,9 +42,7 @@ impl PutComplianceItemsInput {
         self.compliance_type.as_deref()
     }
     /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn execution_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComplianceExecutionSummary> {
+    pub fn execution_summary(&self) -> ::std::option::Option<&crate::types::ComplianceExecutionSummary> {
         self.execution_summary.as_ref()
     }
     /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
@@ -65,17 +63,14 @@ impl PutComplianceItemsInput {
 }
 impl PutComplianceItemsInput {
     /// Creates a new builder-style object to manufacture [`PutComplianceItemsInput`](crate::operation::put_compliance_items::PutComplianceItemsInput).
-    pub fn builder(
-    ) -> crate::operation::put_compliance_items::builders::PutComplianceItemsInputBuilder {
+    pub fn builder() -> crate::operation::put_compliance_items::builders::PutComplianceItemsInputBuilder {
         crate::operation::put_compliance_items::builders::PutComplianceItemsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutComplianceItemsInput`](crate::operation::put_compliance_items::PutComplianceItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutComplianceItemsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -101,18 +96,12 @@ impl PutComplianceItemsInputBuilder {
         &self.resource_id
     }
     /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -121,18 +110,12 @@ impl PutComplianceItemsInputBuilder {
         &self.resource_type
     }
     /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_type = input;
         self
     }
@@ -146,17 +129,12 @@ impl PutComplianceItemsInputBuilder {
         self
     }
     /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn set_execution_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
-    ) -> Self {
+    pub fn set_execution_summary(mut self, input: ::std::option::Option<crate::types::ComplianceExecutionSummary>) -> Self {
         self.execution_summary = input;
         self
     }
     /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn get_execution_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
+    pub fn get_execution_summary(&self) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
         &self.execution_summary
     }
     /// Appends an item to `items`.
@@ -171,32 +149,21 @@ impl PutComplianceItemsInputBuilder {
         self
     }
     /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItemEntry>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItemEntry>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceItemEntry>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceItemEntry>> {
         &self.items
     }
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
-    pub fn item_content_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn item_content_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.item_content_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
-    pub fn set_item_content_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_item_content_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.item_content_hash = input;
         self
     }
@@ -216,10 +183,7 @@ impl PutComplianceItemsInputBuilder {
     /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
-    pub fn set_upload_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceUploadType>,
-    ) -> Self {
+    pub fn set_upload_type(mut self, input: ::std::option::Option<crate::types::ComplianceUploadType>) -> Self {
         self.upload_type = input;
         self
     }
@@ -233,20 +197,15 @@ impl PutComplianceItemsInputBuilder {
     /// Consumes the builder and constructs a [`PutComplianceItemsInput`](crate::operation::put_compliance_items::PutComplianceItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_compliance_items::PutComplianceItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_compliance_items::PutComplianceItemsInput {
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-                compliance_type: self.compliance_type,
-                execution_summary: self.execution_summary,
-                items: self.items,
-                item_content_hash: self.item_content_hash,
-                upload_type: self.upload_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_compliance_items::PutComplianceItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_compliance_items::PutComplianceItemsInput {
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
+            compliance_type: self.compliance_type,
+            execution_summary: self.execution_summary,
+            items: self.items,
+            item_content_hash: self.item_content_hash,
+            upload_type: self.upload_type,
+        })
     }
 }

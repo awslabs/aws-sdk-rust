@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`query_version(Option<String>)`](crate::operation::describe_thing_group::DescribeThingGroupOutput::query_version): <p>The dynamic thing group query version.</p>
     ///   - [`status(Option<DynamicGroupStatus>)`](crate::operation::describe_thing_group::DescribeThingGroupOutput::status): <p>The dynamic thing group status.</p>
     /// - On failure, responds with [`SdkError<DescribeThingGroupError>`](crate::operation::describe_thing_group::DescribeThingGroupError)
-    pub fn describe_thing_group(
-        &self,
-    ) -> crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder {
-        crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_thing_group(&self) -> crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder {
+        crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

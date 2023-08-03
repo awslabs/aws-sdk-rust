@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteDomainEntryOutput {
 }
 impl DeleteDomainEntryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainEntryOutput`](crate::operation::delete_domain_entry::DeleteDomainEntryOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryOutputBuilder {
+    pub fn builder() -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryOutputBuilder {
         crate::operation::delete_domain_entry::builders::DeleteDomainEntryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDomainEntryOutput`](crate::operation::delete_domain_entry::DeleteDomainEntryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDomainEntryOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

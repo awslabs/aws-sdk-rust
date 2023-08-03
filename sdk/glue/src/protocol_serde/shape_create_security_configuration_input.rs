@@ -9,10 +9,7 @@ pub fn ser_create_security_configuration_input(
     if let Some(var_2) = &input.encryption_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

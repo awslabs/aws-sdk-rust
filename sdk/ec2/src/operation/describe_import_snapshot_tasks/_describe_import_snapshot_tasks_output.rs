@@ -5,8 +5,7 @@
 pub struct DescribeImportSnapshotTasksOutput {
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     #[doc(hidden)]
-    pub import_snapshot_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>>,
+    pub import_snapshot_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>>,
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeImportSnapshotTasksOutput {
 }
 impl DescribeImportSnapshotTasksOutput {
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn import_snapshot_tasks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ImportSnapshotTask]> {
+    pub fn import_snapshot_tasks(&self) -> ::std::option::Option<&[crate::types::ImportSnapshotTask]> {
         self.import_snapshot_tasks.as_deref()
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeImportSnapshotTasksOutput {
 }
 impl DescribeImportSnapshotTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImportSnapshotTasksOutput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput).
-    pub fn builder() -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksOutputBuilder {
         crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImportSnapshotTasksOutput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImportSnapshotTasksOutputBuilder {
-    pub(crate) import_snapshot_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>>,
+    pub(crate) import_snapshot_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeImportSnapshotTasksOutputBuilder {
         self
     }
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn set_import_snapshot_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>>,
-    ) -> Self {
+    pub fn set_import_snapshot_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>>) -> Self {
         self.import_snapshot_tasks = input;
         self
     }
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn get_import_snapshot_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>> {
+    pub fn get_import_snapshot_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>> {
         &self.import_snapshot_tasks
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,9 +86,7 @@ impl DescribeImportSnapshotTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeImportSnapshotTasksOutput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput {
+    pub fn build(self) -> crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput {
         crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput {
             import_snapshot_tasks: self.import_snapshot_tasks,
             next_token: self.next_token,

@@ -23,9 +23,7 @@ impl DeleteIdentityInput {
 
 /// A builder for [`DeleteIdentityInput`](crate::operation::delete_identity::DeleteIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIdentityInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl DeleteIdentityInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityInput`](crate::operation::delete_identity::DeleteIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_identity::DeleteIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_identity::DeleteIdentityInput {
-            identity: self.identity,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_identity::DeleteIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_identity::DeleteIdentityInput { identity: self.identity })
     }
 }

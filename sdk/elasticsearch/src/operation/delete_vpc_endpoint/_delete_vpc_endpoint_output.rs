@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteVpcEndpointOutput {
 }
 impl DeleteVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder {
         crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointOutputBuilder {
     pub(crate) vpc_endpoint_summary: ::std::option::Option<crate::types::VpcEndpointSummary>,
     _request_id: Option<String>,
@@ -44,17 +41,12 @@ impl DeleteVpcEndpointOutputBuilder {
         self
     }
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-    pub fn set_vpc_endpoint_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpointSummary>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_summary(mut self, input: ::std::option::Option<crate::types::VpcEndpointSummary>) -> Self {
         self.vpc_endpoint_summary = input;
         self
     }
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-    pub fn get_vpc_endpoint_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcEndpointSummary> {
+    pub fn get_vpc_endpoint_summary(&self) -> &::std::option::Option<crate::types::VpcEndpointSummary> {
         &self.vpc_endpoint_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

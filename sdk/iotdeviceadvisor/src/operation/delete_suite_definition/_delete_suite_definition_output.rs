@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSuiteDefinitionOutput {
 }
 impl DeleteSuiteDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSuiteDefinitionOutput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionOutputBuilder {
         crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSuiteDefinitionOutput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSuiteDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PollForTaskOutput`](crate::operation::poll_for_task::PollForTaskOutput) with field(s):
     ///   - [`task_object(Option<TaskObject>)`](crate::operation::poll_for_task::PollForTaskOutput::task_object): <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     /// - On failure, responds with [`SdkError<PollForTaskError>`](crate::operation::poll_for_task::PollForTaskError)
-    pub fn poll_for_task(
-        &self,
-    ) -> crate::operation::poll_for_task::builders::PollForTaskFluentBuilder {
-        crate::operation::poll_for_task::builders::PollForTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn poll_for_task(&self) -> crate::operation::poll_for_task::builders::PollForTaskFluentBuilder {
+        crate::operation::poll_for_task::builders::PollForTaskFluentBuilder::new(self.handle.clone())
     }
 }

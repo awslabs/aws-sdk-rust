@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListHarvestJobsOutput {
 }
 impl ListHarvestJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListHarvestJobsOutput`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput).
-    pub fn builder() -> crate::operation::list_harvest_jobs::builders::ListHarvestJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_harvest_jobs::builders::ListHarvestJobsOutputBuilder {
         crate::operation::list_harvest_jobs::builders::ListHarvestJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHarvestJobsOutput`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHarvestJobsOutputBuilder {
     pub(crate) harvest_jobs: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListHarvestJobsOutputBuilder {
         self
     }
     /// A list of HarvestJob records.
-    pub fn set_harvest_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>,
-    ) -> Self {
+    pub fn set_harvest_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>) -> Self {
         self.harvest_jobs = input;
         self
     }
     /// A list of HarvestJob records.
-    pub fn get_harvest_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>> {
+    pub fn get_harvest_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>> {
         &self.harvest_jobs
     }
     /// A token that can be used to resume pagination from the end of the collection.

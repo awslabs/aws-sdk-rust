@@ -23,9 +23,7 @@ impl ListVariantStoresFilter {
 
 /// A builder for [`ListVariantStoresFilter`](crate::types::ListVariantStoresFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVariantStoresFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StoreStatus>,
 }
@@ -46,8 +44,6 @@ impl ListVariantStoresFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ListVariantStoresFilter`](crate::types::ListVariantStoresFilter).
     pub fn build(self) -> crate::types::ListVariantStoresFilter {
-        crate::types::ListVariantStoresFilter {
-            status: self.status,
-        }
+        crate::types::ListVariantStoresFilter { status: self.status }
     }
 }

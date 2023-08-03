@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`license_manager_report_generator_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorFluentBuilder::license_manager_report_generator_arn) / [`set_license_manager_report_generator_arn(Option<String>)`](crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorFluentBuilder::set_license_manager_report_generator_arn): <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
     /// - On success, responds with [`DeleteLicenseManagerReportGeneratorOutput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput)
     /// - On failure, responds with [`SdkError<DeleteLicenseManagerReportGeneratorError>`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError)
-    pub fn delete_license_manager_report_generator(&self) -> crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorFluentBuilder{
-        crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorFluentBuilder::new(self.handle.clone())
+    pub fn delete_license_manager_report_generator(
+        &self,
+    ) -> crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorFluentBuilder {
+        crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

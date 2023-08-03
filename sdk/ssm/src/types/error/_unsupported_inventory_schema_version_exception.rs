@@ -27,34 +27,27 @@ impl ::std::fmt::Display for UnsupportedInventorySchemaVersionException {
     }
 }
 impl ::std::error::Error for UnsupportedInventorySchemaVersionException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::UnsupportedInventorySchemaVersionException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedInventorySchemaVersionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for UnsupportedInventorySchemaVersionException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedInventorySchemaVersionException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl UnsupportedInventorySchemaVersionException {
     /// Creates a new builder-style object to manufacture [`UnsupportedInventorySchemaVersionException`](crate::types::error::UnsupportedInventorySchemaVersionException).
-    pub fn builder(
-    ) -> crate::types::error::builders::UnsupportedInventorySchemaVersionExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::UnsupportedInventorySchemaVersionExceptionBuilder {
         crate::types::error::builders::UnsupportedInventorySchemaVersionExceptionBuilder::default()
     }
 }
 
 /// A builder for [`UnsupportedInventorySchemaVersionException`](crate::types::error::UnsupportedInventorySchemaVersionException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsupportedInventorySchemaVersionExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl UnsupportedInventorySchemaVersionExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

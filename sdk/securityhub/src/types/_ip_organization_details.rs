@@ -44,9 +44,7 @@ impl IpOrganizationDetails {
 
 /// A builder for [`IpOrganizationDetails`](crate::types::IpOrganizationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpOrganizationDetailsBuilder {
     pub(crate) asn: ::std::option::Option<i32>,
     pub(crate) asn_org: ::std::option::Option<::std::string::String>,

@@ -25,16 +25,14 @@ impl DescribeAllManagedProductsInput {
 }
 impl DescribeAllManagedProductsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAllManagedProductsInput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput).
-    pub fn builder() -> crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsInputBuilder{
+    pub fn builder() -> crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsInputBuilder {
         crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAllManagedProductsInput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAllManagedProductsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
 }
@@ -75,10 +73,6 @@ impl DescribeAllManagedProductsInputBuilder {
         crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput {
-                scope: self.scope,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput { scope: self.scope })
     }
 }

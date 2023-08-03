@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateTrainingJobOutput {
 }
 impl UpdateTrainingJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrainingJobOutput`](crate::operation::update_training_job::UpdateTrainingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::update_training_job::builders::UpdateTrainingJobOutputBuilder {
+    pub fn builder() -> crate::operation::update_training_job::builders::UpdateTrainingJobOutputBuilder {
         crate::operation::update_training_job::builders::UpdateTrainingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrainingJobOutput`](crate::operation::update_training_job::UpdateTrainingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrainingJobOutputBuilder {
     pub(crate) training_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateTrainingJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn training_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn set_training_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_job_arn = input;
         self
     }

@@ -51,9 +51,7 @@ impl CreateBackendInput {
 
 /// A builder for [`CreateBackendInput`](crate::operation::create_backend::CreateBackendInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_name: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl CreateBackendInputBuilder {
         &self.app_name
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -116,10 +108,7 @@ impl CreateBackendInputBuilder {
         self
     }
     /// <p>The resource configuration for creating a backend.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceConfig>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::ResourceConfig>) -> Self {
         self.resource_config = input;
         self
     }
@@ -128,18 +117,12 @@ impl CreateBackendInputBuilder {
         &self.resource_config
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -150,10 +133,7 @@ impl CreateBackendInputBuilder {
     /// Consumes the builder and constructs a [`CreateBackendInput`](crate::operation::create_backend::CreateBackendInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_backend::CreateBackendInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_backend::CreateBackendInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_backend::CreateBackendInput {
             app_id: self.app_id,
             app_name: self.app_name,

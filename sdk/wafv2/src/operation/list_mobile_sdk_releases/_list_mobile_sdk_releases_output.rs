@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMobileSdkReleasesOutput {
 }
 impl ListMobileSdkReleasesOutput {
     /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesOutput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesOutputBuilder {
         crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMobileSdkReleasesOutput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMobileSdkReleasesOutputBuilder {
-    pub(crate) release_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>>,
+    pub(crate) release_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListMobileSdkReleasesOutputBuilder {
         self
     }
     /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn set_release_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>>,
-    ) -> Self {
+    pub fn set_release_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>>) -> Self {
         self.release_summaries = input;
         self
     }
     /// <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn get_release_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>> {
+    pub fn get_release_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReleaseSummary>> {
         &self.release_summaries
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>

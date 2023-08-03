@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ClmLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for ClmLanguageCode {
             "es-US" => ClmLanguageCode::EsUs,
             "hi-IN" => ClmLanguageCode::HiIn,
             "ja-JP" => ClmLanguageCode::JaJp,
-            other => {
-                ClmLanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ClmLanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,9 +100,7 @@ impl ClmLanguageCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "hi-IN", "ja-JP",
-        ]
+        &["de-DE", "en-AU", "en-GB", "en-US", "es-US", "hi-IN", "ja-JP"]
     }
 }
 impl ::std::convert::AsRef<str> for ClmLanguageCode {

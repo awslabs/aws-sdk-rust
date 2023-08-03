@@ -44,17 +44,14 @@ impl BatchDeleteTableRowsInput {
 }
 impl BatchDeleteTableRowsInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteTableRowsInput`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsInputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsInputBuilder {
         crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteTableRowsInput`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteTableRowsInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
@@ -110,10 +107,7 @@ impl BatchDeleteTableRowsInputBuilder {
     }
     /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
     /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
-    pub fn set_row_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_row_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.row_ids = input;
         self
     }
@@ -124,19 +118,13 @@ impl BatchDeleteTableRowsInputBuilder {
     }
     /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -148,17 +136,13 @@ impl BatchDeleteTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteTableRowsInput`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput {
-                workbook_id: self.workbook_id,
-                table_id: self.table_id,
-                row_ids: self.row_ids,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput {
+            workbook_id: self.workbook_id,
+            table_id: self.table_id,
+            row_ids: self.row_ids,
+            client_request_token: self.client_request_token,
+        })
     }
 }

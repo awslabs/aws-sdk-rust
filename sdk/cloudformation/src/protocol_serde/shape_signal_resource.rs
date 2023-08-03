@@ -4,17 +4,10 @@ pub fn de_signal_resource_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::signal_resource::SignalResourceOutput,
-    crate::operation::signal_resource::SignalResourceError,
-> {
+) -> std::result::Result<crate::operation::signal_resource::SignalResourceOutput, crate::operation::signal_resource::SignalResourceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::signal_resource::SignalResourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::signal_resource::SignalResourceError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::signal_resource::SignalResourceError::generic(generic))
@@ -25,17 +18,11 @@ pub fn de_signal_resource_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::signal_resource::SignalResourceOutput,
-    crate::operation::signal_resource::SignalResourceError,
-> {
+) -> std::result::Result<crate::operation::signal_resource::SignalResourceOutput, crate::operation::signal_resource::SignalResourceError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::signal_resource::builders::SignalResourceOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::signal_resource::builders::SignalResourceOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

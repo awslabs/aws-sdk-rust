@@ -22,17 +22,14 @@ impl SetV2LoggingLevelInput {
 }
 impl SetV2LoggingLevelInput {
     /// Creates a new builder-style object to manufacture [`SetV2LoggingLevelInput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelInput).
-    pub fn builder(
-    ) -> crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelInputBuilder {
+    pub fn builder() -> crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelInputBuilder {
         crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelInputBuilder::default()
     }
 }
 
 /// A builder for [`SetV2LoggingLevelInput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetV2LoggingLevelInputBuilder {
     pub(crate) log_target: ::std::option::Option<crate::types::LogTarget>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
@@ -69,15 +66,10 @@ impl SetV2LoggingLevelInputBuilder {
     /// Consumes the builder and constructs a [`SetV2LoggingLevelInput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_v2_logging_level::SetV2LoggingLevelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_v2_logging_level::SetV2LoggingLevelInput {
-                log_target: self.log_target,
-                log_level: self.log_level,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_v2_logging_level::SetV2LoggingLevelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_v2_logging_level::SetV2LoggingLevelInput {
+            log_target: self.log_target,
+            log_level: self.log_level,
+        })
     }
 }

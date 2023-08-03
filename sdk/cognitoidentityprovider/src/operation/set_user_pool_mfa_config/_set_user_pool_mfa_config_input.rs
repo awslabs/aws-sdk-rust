@@ -11,8 +11,7 @@ pub struct SetUserPoolMfaConfigInput {
     pub sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
     /// <p>The software token MFA configuration.</p>
     #[doc(hidden)]
-    pub software_token_mfa_configuration:
-        ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    pub software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
@@ -32,9 +31,7 @@ impl SetUserPoolMfaConfigInput {
         self.sms_mfa_configuration.as_ref()
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn software_token_mfa_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SoftwareTokenMfaConfigType> {
+    pub fn software_token_mfa_configuration(&self) -> ::std::option::Option<&crate::types::SoftwareTokenMfaConfigType> {
         self.software_token_mfa_configuration.as_ref()
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
@@ -49,23 +46,18 @@ impl SetUserPoolMfaConfigInput {
 }
 impl SetUserPoolMfaConfigInput {
     /// Creates a new builder-style object to manufacture [`SetUserPoolMfaConfigInput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput).
-    pub fn builder(
-    ) -> crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigInputBuilder {
         crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`SetUserPoolMfaConfigInput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetUserPoolMfaConfigInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
-    pub(crate) software_token_mfa_configuration:
-        ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    pub(crate) software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     pub(crate) mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
 }
 impl SetUserPoolMfaConfigInputBuilder {
@@ -89,39 +81,26 @@ impl SetUserPoolMfaConfigInputBuilder {
         self
     }
     /// <p>The SMS text message MFA configuration.</p>
-    pub fn set_sms_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsMfaConfigType>,
-    ) -> Self {
+    pub fn set_sms_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SmsMfaConfigType>) -> Self {
         self.sms_mfa_configuration = input;
         self
     }
     /// <p>The SMS text message MFA configuration.</p>
-    pub fn get_sms_mfa_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
+    pub fn get_sms_mfa_configuration(&self) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
         &self.sms_mfa_configuration
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn software_token_mfa_configuration(
-        mut self,
-        input: crate::types::SoftwareTokenMfaConfigType,
-    ) -> Self {
+    pub fn software_token_mfa_configuration(mut self, input: crate::types::SoftwareTokenMfaConfigType) -> Self {
         self.software_token_mfa_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn set_software_token_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
-    ) -> Self {
+    pub fn set_software_token_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>) -> Self {
         self.software_token_mfa_configuration = input;
         self
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn get_software_token_mfa_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
+    pub fn get_software_token_mfa_configuration(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
         &self.software_token_mfa_configuration
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
@@ -140,10 +119,7 @@ impl SetUserPoolMfaConfigInputBuilder {
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
-    pub fn set_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPoolMfaType>,
-    ) -> Self {
+    pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
         self.mfa_configuration = input;
         self
     }
@@ -159,17 +135,13 @@ impl SetUserPoolMfaConfigInputBuilder {
     /// Consumes the builder and constructs a [`SetUserPoolMfaConfigInput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput {
-                user_pool_id: self.user_pool_id,
-                sms_mfa_configuration: self.sms_mfa_configuration,
-                software_token_mfa_configuration: self.software_token_mfa_configuration,
-                mfa_configuration: self.mfa_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput {
+            user_pool_id: self.user_pool_id,
+            sms_mfa_configuration: self.sms_mfa_configuration,
+            software_token_mfa_configuration: self.software_token_mfa_configuration,
+            mfa_configuration: self.mfa_configuration,
+        })
     }
 }

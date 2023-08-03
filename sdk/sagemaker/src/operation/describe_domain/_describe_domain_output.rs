@@ -17,8 +17,7 @@ pub struct DescribeDomainOutput {
     pub home_efs_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center managed application instance ID.</p>
     #[doc(hidden)]
-    pub single_sign_on_managed_application_instance_id:
-        ::std::option::Option<::std::string::String>,
+    pub single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DomainStatus>,
@@ -65,8 +64,7 @@ pub struct DescribeDomainOutput {
     pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     #[doc(hidden)]
-    pub app_security_group_management:
-        ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
     #[doc(hidden)]
     pub security_group_id_for_domain_boundary: ::std::option::Option<::std::string::String>,
@@ -94,8 +92,7 @@ impl DescribeDomainOutput {
     }
     /// <p>The IAM Identity Center managed application instance ID.</p>
     pub fn single_sign_on_managed_application_instance_id(&self) -> ::std::option::Option<&str> {
-        self.single_sign_on_managed_application_instance_id
-            .as_deref()
+        self.single_sign_on_managed_application_instance_id.as_deref()
     }
     /// <p>The status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
@@ -126,9 +123,7 @@ impl DescribeDomainOutput {
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
-    pub fn app_network_access_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
+    pub fn app_network_access_type(&self) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
         self.app_network_access_type.as_ref()
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
@@ -157,9 +152,7 @@ impl DescribeDomainOutput {
         self.domain_settings.as_ref()
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn app_security_group_management(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
+    pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
@@ -167,9 +160,7 @@ impl DescribeDomainOutput {
         self.security_group_id_for_domain_boundary.as_deref()
     }
     /// <p>The default settings used to create a space.</p>
-    pub fn default_space_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
+    pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
     }
 }
@@ -187,16 +178,13 @@ impl DescribeDomainOutput {
 
 /// A builder for [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainOutputBuilder {
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) home_efs_file_system_id: ::std::option::Option<::std::string::String>,
-    pub(crate) single_sign_on_managed_application_instance_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DomainStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -210,8 +198,7 @@ pub struct DescribeDomainOutputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_settings: ::std::option::Option<crate::types::DomainSettings>,
-    pub(crate) app_security_group_management:
-        ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     pub(crate) security_group_id_for_domain_boundary: ::std::option::Option<::std::string::String>,
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     _request_id: Option<String>,
@@ -260,18 +247,12 @@ impl DescribeDomainOutputBuilder {
         &self.domain_name
     }
     /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
-    pub fn home_efs_file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_efs_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_efs_file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
-    pub fn set_home_efs_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_efs_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_efs_file_system_id = input;
         self
     }
@@ -280,26 +261,17 @@ impl DescribeDomainOutputBuilder {
         &self.home_efs_file_system_id
     }
     /// <p>The IAM Identity Center managed application instance ID.</p>
-    pub fn single_sign_on_managed_application_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.single_sign_on_managed_application_instance_id =
-            ::std::option::Option::Some(input.into());
+    pub fn single_sign_on_managed_application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.single_sign_on_managed_application_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM Identity Center managed application instance ID.</p>
-    pub fn set_single_sign_on_managed_application_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_single_sign_on_managed_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_managed_application_instance_id = input;
         self
     }
     /// <p>The IAM Identity Center managed application instance ID.</p>
-    pub fn get_single_sign_on_managed_application_instance_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_single_sign_on_managed_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_managed_application_instance_id
     }
     /// <p>The status.</p>
@@ -322,10 +294,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -339,10 +308,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The last modified time.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -351,18 +317,12 @@ impl DescribeDomainOutputBuilder {
         &self.last_modified_time
     }
     /// <p>The failure reason.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -390,10 +350,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile. </p>
-    pub fn set_default_user_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
+    pub fn set_default_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
         self.default_user_settings = input;
         self
     }
@@ -415,10 +372,7 @@ impl DescribeDomainOutputBuilder {
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
-    pub fn set_app_network_access_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AppNetworkAccessType>,
-    ) -> Self {
+    pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
         self.app_network_access_type = input;
         self
     }
@@ -427,34 +381,24 @@ impl DescribeDomainOutputBuilder {
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
-    pub fn get_app_network_access_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
+    pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
         &self.app_network_access_type
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn home_efs_file_system_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_efs_file_system_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_efs_file_system_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn set_home_efs_file_system_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_efs_file_system_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_efs_file_system_kms_key_id = input;
         self
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn get_home_efs_file_system_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_home_efs_file_system_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.home_efs_file_system_kms_key_id
     }
     /// Appends an item to `subnet_ids`.
@@ -469,10 +413,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -528,10 +469,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn set_domain_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainSettings>,
-    ) -> Self {
+    pub fn set_domain_settings(mut self, input: ::std::option::Option<crate::types::DomainSettings>) -> Self {
         self.domain_settings = input;
         self
     }
@@ -540,47 +478,31 @@ impl DescribeDomainOutputBuilder {
         &self.domain_settings
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn app_security_group_management(
-        mut self,
-        input: crate::types::AppSecurityGroupManagement,
-    ) -> Self {
+    pub fn app_security_group_management(mut self, input: crate::types::AppSecurityGroupManagement) -> Self {
         self.app_security_group_management = ::std::option::Option::Some(input);
         self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn set_app_security_group_management(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
-    ) -> Self {
+    pub fn set_app_security_group_management(mut self, input: ::std::option::Option<crate::types::AppSecurityGroupManagement>) -> Self {
         self.app_security_group_management = input;
         self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn get_app_security_group_management(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
+    pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
     }
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn security_group_id_for_domain_boundary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id_for_domain_boundary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id_for_domain_boundary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn set_security_group_id_for_domain_boundary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_id_for_domain_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group_id_for_domain_boundary = input;
         self
     }
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn get_security_group_id_for_domain_boundary(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_security_group_id_for_domain_boundary(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_group_id_for_domain_boundary
     }
     /// <p>The default settings used to create a space.</p>
@@ -589,17 +511,12 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The default settings used to create a space.</p>
-    pub fn set_default_space_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultSpaceSettings>,
-    ) -> Self {
+    pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
         self.default_space_settings = input;
         self
     }
     /// <p>The default settings used to create a space.</p>
-    pub fn get_default_space_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
+    pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
         &self.default_space_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -618,8 +535,7 @@ impl DescribeDomainOutputBuilder {
             domain_id: self.domain_id,
             domain_name: self.domain_name,
             home_efs_file_system_id: self.home_efs_file_system_id,
-            single_sign_on_managed_application_instance_id: self
-                .single_sign_on_managed_application_instance_id,
+            single_sign_on_managed_application_instance_id: self.single_sign_on_managed_application_instance_id,
             status: self.status,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,

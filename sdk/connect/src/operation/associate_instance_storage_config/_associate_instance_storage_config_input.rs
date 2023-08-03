@@ -19,9 +19,7 @@ impl AssociateInstanceStorageConfigInput {
         self.instance_id.as_deref()
     }
     /// <p>A valid resource type.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceStorageResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::InstanceStorageResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>A valid storage type.</p>
@@ -31,16 +29,14 @@ impl AssociateInstanceStorageConfigInput {
 }
 impl AssociateInstanceStorageConfigInput {
     /// Creates a new builder-style object to manufacture [`AssociateInstanceStorageConfigInput`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput).
-    pub fn builder() -> crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder{
+    pub fn builder() -> crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder {
         crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateInstanceStorageConfigInput`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateInstanceStorageConfigInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,
@@ -67,17 +63,12 @@ impl AssociateInstanceStorageConfigInputBuilder {
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::InstanceStorageResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
         &self.resource_type
     }
     /// <p>A valid storage type.</p>
@@ -86,17 +77,12 @@ impl AssociateInstanceStorageConfigInputBuilder {
         self
     }
     /// <p>A valid storage type.</p>
-    pub fn set_storage_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageConfig>,
-    ) -> Self {
+    pub fn set_storage_config(mut self, input: ::std::option::Option<crate::types::InstanceStorageConfig>) -> Self {
         self.storage_config = input;
         self
     }
     /// <p>A valid storage type.</p>
-    pub fn get_storage_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
+    pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
         &self.storage_config
     }
     /// Consumes the builder and constructs a [`AssociateInstanceStorageConfigInput`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput).
@@ -106,15 +92,10 @@ impl AssociateInstanceStorageConfigInputBuilder {
         crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput {
-                instance_id: self.instance_id
-                ,
-                resource_type: self.resource_type
-                ,
-                storage_config: self.storage_config
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput {
+            instance_id: self.instance_id,
+            resource_type: self.resource_type,
+            storage_config: self.storage_config,
+        })
     }
 }

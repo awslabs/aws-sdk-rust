@@ -36,9 +36,7 @@ impl ListProposalsInput {
 
 /// A builder for [`ListProposalsInput`](crate::operation::list_proposals::ListProposalsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProposalsInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl ListProposalsInputBuilder {
     /// Consumes the builder and constructs a [`ListProposalsInput`](crate::operation::list_proposals::ListProposalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_proposals::ListProposalsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_proposals::ListProposalsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_proposals::ListProposalsInput {
             network_id: self.network_id,
             max_results: self.max_results,

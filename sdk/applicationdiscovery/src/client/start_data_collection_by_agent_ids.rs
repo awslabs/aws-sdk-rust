@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`StartDataCollectionByAgentIdsOutput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput) with field(s):
     ///   - [`agents_configuration_status(Option<Vec<AgentConfigurationStatus>>)`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput::agents_configuration_status): <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
     /// - On failure, responds with [`SdkError<StartDataCollectionByAgentIdsError>`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError)
-    pub fn start_data_collection_by_agent_ids(&self) -> crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsFluentBuilder{
+    pub fn start_data_collection_by_agent_ids(
+        &self,
+    ) -> crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsFluentBuilder {
         crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsFluentBuilder::new(self.handle.clone())
     }
 }

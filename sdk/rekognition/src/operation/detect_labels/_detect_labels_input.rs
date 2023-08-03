@@ -54,15 +54,12 @@ impl DetectLabelsInput {
 
 /// A builder for [`DetectLabelsInput`](crate::operation::detect_labels::DetectLabelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectLabelsInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) max_labels: ::std::option::Option<i32>,
     pub(crate) min_confidence: ::std::option::Option<f32>,
-    pub(crate) features:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
     pub(crate) settings: ::std::option::Option<crate::types::DetectLabelsSettings>,
 }
 impl DetectLabelsInputBuilder {
@@ -126,17 +123,12 @@ impl DetectLabelsInputBuilder {
         self
     }
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>) -> Self {
         self.features = input;
         self
     }
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>> {
         &self.features
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
@@ -145,10 +137,7 @@ impl DetectLabelsInputBuilder {
         self
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectLabelsSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::DetectLabelsSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -157,12 +146,7 @@ impl DetectLabelsInputBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`DetectLabelsInput`](crate::operation::detect_labels::DetectLabelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_labels::DetectLabelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_labels::DetectLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_labels::DetectLabelsInput {
             image: self.image,
             max_labels: self.max_labels,

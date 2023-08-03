@@ -37,9 +37,7 @@ impl ConnectAttachment {
 
 /// A builder for [`ConnectAttachment`](crate::types::ConnectAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectAttachmentBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) transport_attachment_id: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ConnectAttachmentBuilder {
         self
     }
     /// <p>The attachment details.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::Attachment>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
         self.attachment = input;
         self
     }
@@ -64,18 +59,12 @@ impl ConnectAttachmentBuilder {
         &self.attachment
     }
     /// <p>The ID of the transport attachment.</p>
-    pub fn transport_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transport_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transport_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transport attachment.</p>
-    pub fn set_transport_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transport_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transport_attachment_id = input;
         self
     }
@@ -89,10 +78,7 @@ impl ConnectAttachmentBuilder {
         self
     }
     /// <p>Options for connecting an attachment.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::ConnectAttachmentOptions>) -> Self {
         self.options = input;
         self
     }

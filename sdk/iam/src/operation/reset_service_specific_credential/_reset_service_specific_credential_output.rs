@@ -14,9 +14,7 @@ impl ResetServiceSpecificCredentialOutput {
     /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
-    pub fn service_specific_credential(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceSpecificCredential> {
+    pub fn service_specific_credential(&self) -> ::std::option::Option<&crate::types::ServiceSpecificCredential> {
         self.service_specific_credential.as_ref()
     }
 }
@@ -27,48 +25,37 @@ impl ::aws_http::request_id::RequestId for ResetServiceSpecificCredentialOutput 
 }
 impl ResetServiceSpecificCredentialOutput {
     /// Creates a new builder-style object to manufacture [`ResetServiceSpecificCredentialOutput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput).
-    pub fn builder() -> crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialOutputBuilder{
+    pub fn builder() -> crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialOutputBuilder {
         crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetServiceSpecificCredentialOutput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetServiceSpecificCredentialOutputBuilder {
-    pub(crate) service_specific_credential:
-        ::std::option::Option<crate::types::ServiceSpecificCredential>,
+    pub(crate) service_specific_credential: ::std::option::Option<crate::types::ServiceSpecificCredential>,
     _request_id: Option<String>,
 }
 impl ResetServiceSpecificCredentialOutputBuilder {
     /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
-    pub fn service_specific_credential(
-        mut self,
-        input: crate::types::ServiceSpecificCredential,
-    ) -> Self {
+    pub fn service_specific_credential(mut self, input: crate::types::ServiceSpecificCredential) -> Self {
         self.service_specific_credential = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
-    pub fn set_service_specific_credential(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceSpecificCredential>,
-    ) -> Self {
+    pub fn set_service_specific_credential(mut self, input: ::std::option::Option<crate::types::ServiceSpecificCredential>) -> Self {
         self.service_specific_credential = input;
         self
     }
     /// <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>
     /// <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>
     /// </important>
-    pub fn get_service_specific_credential(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceSpecificCredential> {
+    pub fn get_service_specific_credential(&self) -> &::std::option::Option<crate::types::ServiceSpecificCredential> {
         &self.service_specific_credential
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -81,10 +68,7 @@ impl ResetServiceSpecificCredentialOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetServiceSpecificCredentialOutput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput
-    {
+    pub fn build(self) -> crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput {
         crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput {
             service_specific_credential: self.service_specific_credential,
             _request_id: self._request_id,

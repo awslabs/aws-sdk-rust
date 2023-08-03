@@ -10,9 +10,7 @@ pub struct GetPermissionsBoundaryForPermissionSetOutput {
 }
 impl GetPermissionsBoundaryForPermissionSetOutput {
     /// <p>The permissions boundary attached to the specified permission set.</p>
-    pub fn permissions_boundary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PermissionsBoundary> {
+    pub fn permissions_boundary(&self) -> ::std::option::Option<&crate::types::PermissionsBoundary> {
         self.permissions_boundary.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPermissionsBoundaryForPermissionSe
 }
 impl GetPermissionsBoundaryForPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`GetPermissionsBoundaryForPermissionSetOutput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput).
-    pub fn builder() -> crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetOutputBuilder {
         crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPermissionsBoundaryForPermissionSetOutput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPermissionsBoundaryForPermissionSetOutputBuilder {
     pub(crate) permissions_boundary: ::std::option::Option<crate::types::PermissionsBoundary>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetPermissionsBoundaryForPermissionSetOutputBuilder {
         self
     }
     /// <p>The permissions boundary attached to the specified permission set.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionsBoundary>,
-    ) -> Self {
+    pub fn set_permissions_boundary(mut self, input: ::std::option::Option<crate::types::PermissionsBoundary>) -> Self {
         self.permissions_boundary = input;
         self
     }
     /// <p>The permissions boundary attached to the specified permission set.</p>
-    pub fn get_permissions_boundary(
-        &self,
-    ) -> &::std::option::Option<crate::types::PermissionsBoundary> {
+    pub fn get_permissions_boundary(&self) -> &::std::option::Option<crate::types::PermissionsBoundary> {
         &self.permissions_boundary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,9 @@ impl GetPermissionsBoundaryForPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPermissionsBoundaryForPermissionSetOutput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput).
-    pub fn build(self) -> crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput{
+    pub fn build(self) -> crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput {
         crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput {
-            permissions_boundary: self.permissions_boundary
-            ,
+            permissions_boundary: self.permissions_boundary,
             _request_id: self._request_id,
         }
     }

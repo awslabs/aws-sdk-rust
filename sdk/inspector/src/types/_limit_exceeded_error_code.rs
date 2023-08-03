@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LimitExceededErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,19 +61,11 @@ impl ::std::convert::From<&str> for LimitExceededErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ASSESSMENT_RUN_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentRunLimitExceeded,
-            "ASSESSMENT_TARGET_LIMIT_EXCEEDED" => {
-                LimitExceededErrorCode::AssessmentTargetLimitExceeded
-            }
-            "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED" => {
-                LimitExceededErrorCode::AssessmentTemplateLimitExceeded
-            }
-            "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED" => {
-                LimitExceededErrorCode::EventSubscriptionLimitExceeded
-            }
+            "ASSESSMENT_TARGET_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentTargetLimitExceeded,
+            "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentTemplateLimitExceeded,
+            "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED" => LimitExceededErrorCode::EventSubscriptionLimitExceeded,
             "RESOURCE_GROUP_LIMIT_EXCEEDED" => LimitExceededErrorCode::ResourceGroupLimitExceeded,
-            other => LimitExceededErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LimitExceededErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -95,15 +81,9 @@ impl LimitExceededErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             LimitExceededErrorCode::AssessmentRunLimitExceeded => "ASSESSMENT_RUN_LIMIT_EXCEEDED",
-            LimitExceededErrorCode::AssessmentTargetLimitExceeded => {
-                "ASSESSMENT_TARGET_LIMIT_EXCEEDED"
-            }
-            LimitExceededErrorCode::AssessmentTemplateLimitExceeded => {
-                "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED"
-            }
-            LimitExceededErrorCode::EventSubscriptionLimitExceeded => {
-                "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED"
-            }
+            LimitExceededErrorCode::AssessmentTargetLimitExceeded => "ASSESSMENT_TARGET_LIMIT_EXCEEDED",
+            LimitExceededErrorCode::AssessmentTemplateLimitExceeded => "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED",
+            LimitExceededErrorCode::EventSubscriptionLimitExceeded => "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED",
             LimitExceededErrorCode::ResourceGroupLimitExceeded => "RESOURCE_GROUP_LIMIT_EXCEEDED",
             LimitExceededErrorCode::Unknown(value) => value.as_str(),
         }

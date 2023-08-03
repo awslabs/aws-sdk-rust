@@ -23,17 +23,14 @@ impl ListApplicationsInput {
 }
 impl ListApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder {
         crate::operation::list_applications::builders::ListApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) exclusive_start_application_name: ::std::option::Option<::std::string::String>,
@@ -54,34 +51,23 @@ impl ListApplicationsInputBuilder {
         &self.limit
     }
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
-    pub fn exclusive_start_application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
-    pub fn set_exclusive_start_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_application_name = input;
         self
     }
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
-    pub fn get_exclusive_start_application_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_exclusive_start_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.exclusive_start_application_name
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_applications::ListApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
             limit: self.limit,
             exclusive_start_application_name: self.exclusive_start_application_name,

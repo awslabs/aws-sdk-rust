@@ -20,9 +20,7 @@ pub struct CreateAssociationBatchRequestEntry {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameters for a document. </p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Specify the target for the association. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
     #[doc(hidden)]
     pub automation_target_parameter_name: ::std::option::Option<::std::string::String>,
@@ -71,14 +69,8 @@ pub struct CreateAssociationBatchRequestEntry {
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     #[doc(hidden)]
-    pub target_maps: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
+    pub target_maps:
+        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
@@ -101,11 +93,7 @@ impl CreateAssociationBatchRequestEntry {
         self.instance_id.as_deref()
     }
     /// <p>A description of the parameters for a document. </p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>Specify the target for the association. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
@@ -125,9 +113,7 @@ impl CreateAssociationBatchRequestEntry {
         self.schedule_expression.as_deref()
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    pub fn output_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceAssociationOutputLocation> {
+    pub fn output_location(&self) -> ::std::option::Option<&crate::types::InstanceAssociationOutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>Specify a descriptive name for the association.</p>
@@ -145,17 +131,13 @@ impl CreateAssociationBatchRequestEntry {
         self.max_concurrency.as_deref()
     }
     /// <p>The severity level to assign to the association.</p>
-    pub fn compliance_severity(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssociationComplianceSeverity> {
+    pub fn compliance_severity(&self) -> ::std::option::Option<&crate::types::AssociationComplianceSeverity> {
         self.compliance_severity.as_ref()
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>. </p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-    pub fn sync_compliance(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssociationSyncCompliance> {
+    pub fn sync_compliance(&self) -> ::std::option::Option<&crate::types::AssociationSyncCompliance> {
         self.sync_compliance.as_ref()
     }
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
@@ -177,12 +159,7 @@ impl CreateAssociationBatchRequestEntry {
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub fn target_maps(
         &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >],
-    > {
+    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
         self.target_maps.as_deref()
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
@@ -196,10 +173,7 @@ impl ::std::fmt::Debug for CreateAssociationBatchRequestEntry {
         formatter.field("name", &self.name);
         formatter.field("instance_id", &self.instance_id);
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "automation_target_parameter_name",
-            &self.automation_target_parameter_name,
-        );
+        formatter.field("automation_target_parameter_name", &self.automation_target_parameter_name);
         formatter.field("document_version", &self.document_version);
         formatter.field("targets", &self.targets);
         formatter.field("schedule_expression", &self.schedule_expression);
@@ -209,10 +183,7 @@ impl ::std::fmt::Debug for CreateAssociationBatchRequestEntry {
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("compliance_severity", &self.compliance_severity);
         formatter.field("sync_compliance", &self.sync_compliance);
-        formatter.field(
-            "apply_only_at_cron_interval",
-            &self.apply_only_at_cron_interval,
-        );
+        formatter.field("apply_only_at_cron_interval", &self.apply_only_at_cron_interval);
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
@@ -234,34 +205,23 @@ impl CreateAssociationBatchRequestEntry {
 pub struct CreateAssociationBatchRequestEntryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) automation_target_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) output_location:
-        ::std::option::Option<crate::types::InstanceAssociationOutputLocation>,
+    pub(crate) output_location: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>,
     pub(crate) association_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_errors: ::std::option::Option<::std::string::String>,
     pub(crate) max_concurrency: ::std::option::Option<::std::string::String>,
-    pub(crate) compliance_severity:
-        ::std::option::Option<crate::types::AssociationComplianceSeverity>,
+    pub(crate) compliance_severity: ::std::option::Option<crate::types::AssociationComplianceSeverity>,
     pub(crate) sync_compliance: ::std::option::Option<crate::types::AssociationSyncCompliance>,
     pub(crate) apply_only_at_cron_interval: ::std::option::Option<bool>,
     pub(crate) calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) target_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
+    pub(crate) target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     pub(crate) schedule_offset: ::std::option::Option<i32>,
-    pub(crate) target_maps: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
+    pub(crate) target_maps:
+        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl CreateAssociationBatchRequestEntryBuilder {
@@ -322,11 +282,7 @@ impl CreateAssociationBatchRequestEntryBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A description of the parameters for a document. </p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -335,12 +291,7 @@ impl CreateAssociationBatchRequestEntryBuilder {
     /// <p>A description of the parameters for a document. </p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -348,46 +299,30 @@ impl CreateAssociationBatchRequestEntryBuilder {
     /// <p>A description of the parameters for a document. </p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.parameters
     }
     /// <p>Specify the target for the association. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn automation_target_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_target_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_target_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the target for the association. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn set_automation_target_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_target_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_target_parameter_name = input;
         self
     }
     /// <p>Specify the target for the association. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn get_automation_target_parameter_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_automation_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.automation_target_parameter_name
     }
     /// <p>The document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -407,10 +342,7 @@ impl CreateAssociationBatchRequestEntryBuilder {
         self
     }
     /// <p>The managed nodes targeted by the request.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -419,18 +351,12 @@ impl CreateAssociationBatchRequestEntryBuilder {
         &self.targets
     }
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
@@ -439,40 +365,26 @@ impl CreateAssociationBatchRequestEntryBuilder {
         &self.schedule_expression
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    pub fn output_location(
-        mut self,
-        input: crate::types::InstanceAssociationOutputLocation,
-    ) -> Self {
+    pub fn output_location(mut self, input: crate::types::InstanceAssociationOutputLocation) -> Self {
         self.output_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>) -> Self {
         self.output_location = input;
         self
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    pub fn get_output_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAssociationOutputLocation> {
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::InstanceAssociationOutputLocation> {
         &self.output_location
     }
     /// <p>Specify a descriptive name for the association.</p>
-    pub fn association_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify a descriptive name for the association.</p>
-    pub fn set_association_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_name = input;
         self
     }
@@ -499,19 +411,13 @@ impl CreateAssociationBatchRequestEntryBuilder {
     }
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
-    pub fn max_concurrency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
-    pub fn set_max_concurrency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
@@ -521,25 +427,17 @@ impl CreateAssociationBatchRequestEntryBuilder {
         &self.max_concurrency
     }
     /// <p>The severity level to assign to the association.</p>
-    pub fn compliance_severity(
-        mut self,
-        input: crate::types::AssociationComplianceSeverity,
-    ) -> Self {
+    pub fn compliance_severity(mut self, input: crate::types::AssociationComplianceSeverity) -> Self {
         self.compliance_severity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The severity level to assign to the association.</p>
-    pub fn set_compliance_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationComplianceSeverity>,
-    ) -> Self {
+    pub fn set_compliance_severity(mut self, input: ::std::option::Option<crate::types::AssociationComplianceSeverity>) -> Self {
         self.compliance_severity = input;
         self
     }
     /// <p>The severity level to assign to the association.</p>
-    pub fn get_compliance_severity(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationComplianceSeverity> {
+    pub fn get_compliance_severity(&self) -> &::std::option::Option<crate::types::AssociationComplianceSeverity> {
         &self.compliance_severity
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>. </p>
@@ -552,19 +450,14 @@ impl CreateAssociationBatchRequestEntryBuilder {
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>. </p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-    pub fn set_sync_compliance(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationSyncCompliance>,
-    ) -> Self {
+    pub fn set_sync_compliance(mut self, input: ::std::option::Option<crate::types::AssociationSyncCompliance>) -> Self {
         self.sync_compliance = input;
         self
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>. </p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-    pub fn get_sync_compliance(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationSyncCompliance> {
+    pub fn get_sync_compliance(&self) -> &::std::option::Option<crate::types::AssociationSyncCompliance> {
         &self.sync_compliance
     }
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
@@ -586,27 +479,19 @@ impl CreateAssociationBatchRequestEntryBuilder {
     /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
     ///
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn calendar_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calendar_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.calendar_names.unwrap_or_default();
         v.push(input.into());
         self.calendar_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn set_calendar_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.calendar_names = input;
         self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn get_calendar_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.calendar_names
     }
     /// Appends an item to `target_locations`.
@@ -621,17 +506,12 @@ impl CreateAssociationBatchRequestEntryBuilder {
         self
     }
     /// <p>Use this action to create an association in multiple Regions and multiple accounts.</p>
-    pub fn set_target_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
-    ) -> Self {
+    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
         self.target_locations = input;
         self
     }
     /// <p>Use this action to create an association in multiple Regions and multiple accounts.</p>
-    pub fn get_target_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
+    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         &self.target_locations
     }
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
@@ -653,13 +533,7 @@ impl CreateAssociationBatchRequestEntryBuilder {
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
     ///
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(
-        mut self,
-        input: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn target_maps(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>) -> Self {
         let mut v = self.target_maps.unwrap_or_default();
         v.push(input);
         self.target_maps = ::std::option::Option::Some(v);
@@ -668,14 +542,7 @@ impl CreateAssociationBatchRequestEntryBuilder {
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub fn set_target_maps(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     ) -> Self {
         self.target_maps = input;
         self
@@ -683,14 +550,7 @@ impl CreateAssociationBatchRequestEntryBuilder {
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub fn get_target_maps(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
         &self.target_maps
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
@@ -699,17 +559,12 @@ impl CreateAssociationBatchRequestEntryBuilder {
         self
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.alarm_configuration = input;
         self
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     /// Consumes the builder and constructs a [`CreateAssociationBatchRequestEntry`](crate::types::CreateAssociationBatchRequestEntry).
@@ -743,10 +598,7 @@ impl ::std::fmt::Debug for CreateAssociationBatchRequestEntryBuilder {
         formatter.field("name", &self.name);
         formatter.field("instance_id", &self.instance_id);
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "automation_target_parameter_name",
-            &self.automation_target_parameter_name,
-        );
+        formatter.field("automation_target_parameter_name", &self.automation_target_parameter_name);
         formatter.field("document_version", &self.document_version);
         formatter.field("targets", &self.targets);
         formatter.field("schedule_expression", &self.schedule_expression);
@@ -756,10 +608,7 @@ impl ::std::fmt::Debug for CreateAssociationBatchRequestEntryBuilder {
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("compliance_severity", &self.compliance_severity);
         formatter.field("sync_compliance", &self.sync_compliance);
-        formatter.field(
-            "apply_only_at_cron_interval",
-            &self.apply_only_at_cron_interval,
-        );
+        formatter.field("apply_only_at_cron_interval", &self.apply_only_at_cron_interval);
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);

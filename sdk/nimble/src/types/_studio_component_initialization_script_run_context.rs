@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StudioComponentInitializationScriptRunContext {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum StudioComponentInitializationScriptRunContext {
 impl ::std::convert::From<&str> for StudioComponentInitializationScriptRunContext {
     fn from(s: &str) -> Self {
         match s {
-            "SYSTEM_INITIALIZATION" => {
-                StudioComponentInitializationScriptRunContext::SystemInitialization
-            }
-            "USER_INITIALIZATION" => {
-                StudioComponentInitializationScriptRunContext::UserInitialization
-            }
-            other => StudioComponentInitializationScriptRunContext::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "SYSTEM_INITIALIZATION" => StudioComponentInitializationScriptRunContext::SystemInitialization,
+            "USER_INITIALIZATION" => StudioComponentInitializationScriptRunContext::UserInitialization,
+            other => StudioComponentInitializationScriptRunContext::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,12 +68,8 @@ impl StudioComponentInitializationScriptRunContext {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            StudioComponentInitializationScriptRunContext::SystemInitialization => {
-                "SYSTEM_INITIALIZATION"
-            }
-            StudioComponentInitializationScriptRunContext::UserInitialization => {
-                "USER_INITIALIZATION"
-            }
+            StudioComponentInitializationScriptRunContext::SystemInitialization => "SYSTEM_INITIALIZATION",
+            StudioComponentInitializationScriptRunContext::UserInitialization => "USER_INITIALIZATION",
             StudioComponentInitializationScriptRunContext::Unknown(value) => value.as_str(),
         }
     }

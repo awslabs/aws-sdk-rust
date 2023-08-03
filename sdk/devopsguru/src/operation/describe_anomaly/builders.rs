@@ -10,10 +10,7 @@ impl DescribeAnomalyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_anomaly::DescribeAnomalyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_anomaly::DescribeAnomalyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_anomaly::DescribeAnomalyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_anomaly();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeAnomalyFluentBuilder {
         }
     }
     /// Access the DescribeAnomaly as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_anomaly::builders::DescribeAnomalyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_anomaly::builders::DescribeAnomalyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeAnomalyFluentBuilder {
             crate::operation::describe_anomaly::DescribeAnomaly,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_anomaly::DescribeAnomalyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_anomaly::DescribeAnomalyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeAnomalyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeAnomalyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_anomaly::DescribeAnomalyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_anomaly::DescribeAnomalyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_anomaly::DescribeAnomalyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeAnomalyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_anomaly::DescribeAnomalyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_anomaly::DescribeAnomalyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_anomaly::DescribeAnomalyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeAnomalyFluentBuilder {
             crate::operation::describe_anomaly::DescribeAnomaly,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_anomaly::DescribeAnomalyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_anomaly::DescribeAnomalyError>,
     > {
         self.customize_middleware().await
     }

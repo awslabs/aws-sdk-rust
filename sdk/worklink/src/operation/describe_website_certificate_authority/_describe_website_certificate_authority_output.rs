@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeWebsiteCertificateAuthorityOu
 }
 impl DescribeWebsiteCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWebsiteCertificateAuthorityOutput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityOutputBuilder {
         crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWebsiteCertificateAuthorityOutput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWebsiteCertificateAuthorityOutputBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -72,10 +70,7 @@ impl DescribeWebsiteCertificateAuthorityOutputBuilder {
         self
     }
     /// <p>The time that the certificate authority was added.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -107,14 +102,11 @@ impl DescribeWebsiteCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWebsiteCertificateAuthorityOutput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput).
-    pub fn build(self) -> crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput{
+    pub fn build(self) -> crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput {
         crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput {
-            certificate: self.certificate
-            ,
-            created_time: self.created_time
-            ,
-            display_name: self.display_name
-            ,
+            certificate: self.certificate,
+            created_time: self.created_time,
+            display_name: self.display_name,
             _request_id: self._request_id,
         }
     }

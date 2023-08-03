@@ -15,10 +15,7 @@ pub fn ser_update_billing_group_input(
     if let Some(var_4) = &input.computation_preference {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ComputationPreference").start_object();
-        crate::protocol_serde::shape_computation_preference::ser_computation_preference(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_computation_preference::ser_computation_preference(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.description {

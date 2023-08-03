@@ -26,13 +26,11 @@ impl GetVoiceConnectorOriginationInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorOrigination.html">GetVoiceConnectorOrigination</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by GetVoiceConnectorOrigination in the Amazon Chime SDK Voice Namespace"
-)]
+#[deprecated(note = "Replaced by GetVoiceConnectorOrigination in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorOriginationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationInputBuilder,
+    inner: crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationInputBuilder,
 }
 impl GetVoiceConnectorOriginationFluentBuilder {
     /// Creates a new `GetVoiceConnectorOrigination`.
@@ -43,7 +41,7 @@ impl GetVoiceConnectorOriginationFluentBuilder {
         }
     }
     /// Access the GetVoiceConnectorOrigination as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl GetVoiceConnectorOriginationFluentBuilder {
             crate::operation::get_voice_connector_origination::GetVoiceConnectorOrigination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl GetVoiceConnectorOriginationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl GetVoiceConnectorOriginationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl GetVoiceConnectorOriginationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl GetVoiceConnectorOriginationFluentBuilder {
             crate::operation::get_voice_connector_origination::GetVoiceConnectorOrigination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }

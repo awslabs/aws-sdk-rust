@@ -31,9 +31,7 @@ impl super::Client {
     ///   - [`route_response_selection_expression(Option<String>)`](crate::operation::update_route::UpdateRouteOutput::route_response_selection_expression): <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
     ///   - [`target(Option<String>)`](crate::operation::update_route::UpdateRouteOutput::target): <p>The target for the route.</p>
     /// - On failure, responds with [`SdkError<UpdateRouteError>`](crate::operation::update_route::UpdateRouteError)
-    pub fn update_route(
-        &self,
-    ) -> crate::operation::update_route::builders::UpdateRouteFluentBuilder {
+    pub fn update_route(&self) -> crate::operation::update_route::builders::UpdateRouteFluentBuilder {
         crate::operation::update_route::builders::UpdateRouteFluentBuilder::new(self.handle.clone())
     }
 }

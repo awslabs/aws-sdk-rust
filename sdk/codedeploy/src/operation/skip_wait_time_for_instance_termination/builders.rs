@@ -5,16 +5,16 @@ pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_ti
 
 impl SkipWaitTimeForInstanceTerminationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.skip_wait_time_for_instance_termination();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -23,13 +23,11 @@ impl SkipWaitTimeForInstanceTerminationInputBuilder {
 /// Fluent builder constructing a request to `SkipWaitTimeForInstanceTermination`.
 ///
 /// <p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is complete.</p>
-#[deprecated(
-    note = "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead."
-)]
+#[deprecated(note = "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SkipWaitTimeForInstanceTerminationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder,
+    inner: crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder,
 }
 impl SkipWaitTimeForInstanceTerminationFluentBuilder {
     /// Creates a new `SkipWaitTimeForInstanceTermination`.
@@ -40,15 +38,20 @@ impl SkipWaitTimeForInstanceTerminationFluentBuilder {
         }
     }
     /// Access the SkipWaitTimeForInstanceTermination as a reference.
-    pub fn as_input(&self) -> &crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTermination, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTermination,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +60,17 @@ impl SkipWaitTimeForInstanceTerminationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput, ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,32 +88,35 @@ impl SkipWaitTimeForInstanceTerminationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput, ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTermination, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTermination,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

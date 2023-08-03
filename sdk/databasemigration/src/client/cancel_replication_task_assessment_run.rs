@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`CancelReplicationTaskAssessmentRunOutput`](crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunOutput) with field(s):
     ///   - [`replication_task_assessment_run(Option<ReplicationTaskAssessmentRun>)`](crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunOutput::replication_task_assessment_run): <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
     /// - On failure, responds with [`SdkError<CancelReplicationTaskAssessmentRunError>`](crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunError)
-    pub fn cancel_replication_task_assessment_run(&self) -> crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunFluentBuilder{
+    pub fn cancel_replication_task_assessment_run(
+        &self,
+    ) -> crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunFluentBuilder {
         crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunFluentBuilder::new(self.handle.clone())
     }
 }

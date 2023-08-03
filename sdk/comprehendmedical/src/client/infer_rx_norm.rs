@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`pagination_token(Option<String>)`](crate::operation::infer_rx_norm::InferRxNormOutput::pagination_token): <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
     ///   - [`model_version(Option<String>)`](crate::operation::infer_rx_norm::InferRxNormOutput::model_version): <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     /// - On failure, responds with [`SdkError<InferRxNormError>`](crate::operation::infer_rx_norm::InferRxNormError)
-    pub fn infer_rx_norm(
-        &self,
-    ) -> crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder {
-        crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn infer_rx_norm(&self) -> crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder {
+        crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder::new(self.handle.clone())
     }
 }

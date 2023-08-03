@@ -30,9 +30,7 @@ impl NonCompliantSummary {
 
 /// A builder for [`NonCompliantSummary`](crate::types::NonCompliantSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NonCompliantSummaryBuilder {
     pub(crate) non_compliant_count: ::std::option::Option<i32>,
     pub(crate) severity_summary: ::std::option::Option<crate::types::SeveritySummary>,
@@ -58,10 +56,7 @@ impl NonCompliantSummaryBuilder {
         self
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
-    pub fn set_severity_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::SeveritySummary>,
-    ) -> Self {
+    pub fn set_severity_summary(mut self, input: ::std::option::Option<crate::types::SeveritySummary>) -> Self {
         self.severity_summary = input;
         self
     }

@@ -26,16 +26,14 @@ impl ListElasticsearchVersionsInput {
 }
 impl ListElasticsearchVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsInput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput).
-    pub fn builder() -> crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder {
         crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListElasticsearchVersionsInput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListElasticsearchVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -76,11 +74,9 @@ impl ListElasticsearchVersionsInputBuilder {
         crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

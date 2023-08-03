@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`maintenance_windows(Option<Vec<MaintenanceWindow>>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::maintenance_windows): <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
     ///   - [`destination_package_versions(Option<Vec<String>>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::destination_package_versions): <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>  <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
     /// - On failure, responds with [`SdkError<DescribeJobTemplateError>`](crate::operation::describe_job_template::DescribeJobTemplateError)
-    pub fn describe_job_template(
-        &self,
-    ) -> crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder {
-        crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_job_template(&self) -> crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder {
+        crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::new(self.handle.clone())
     }
 }

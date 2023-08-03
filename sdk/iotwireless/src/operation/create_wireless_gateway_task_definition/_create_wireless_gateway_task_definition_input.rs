@@ -43,16 +43,14 @@ impl CreateWirelessGatewayTaskDefinitionInput {
 }
 impl CreateWirelessGatewayTaskDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionInput`](crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionInput).
-    pub fn builder() -> crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionInputBuilder {
         crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWirelessGatewayTaskDefinitionInput`](crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskDefinitionInputBuilder {
     pub(crate) auto_create_tasks: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -95,32 +93,21 @@ impl CreateWirelessGatewayTaskDefinitionInputBuilder {
         self
     }
     /// <p>Information about the gateways to update.</p>
-    pub fn set_update(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate>,
-    ) -> Self {
+    pub fn set_update(mut self, input: ::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate>) -> Self {
         self.update = input;
         self
     }
     /// <p>Information about the gateways to update.</p>
-    pub fn get_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate> {
+    pub fn get_update(&self) -> &::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate> {
         &self.update
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -140,10 +127,7 @@ impl CreateWirelessGatewayTaskDefinitionInputBuilder {
         self
     }
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -152,20 +136,20 @@ impl CreateWirelessGatewayTaskDefinitionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskDefinitionInput`](crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionInput {
-                auto_create_tasks: self.auto_create_tasks
-                ,
-                name: self.name
-                ,
-                update: self.update
-                ,
-                client_request_token: self.client_request_token
-                ,
-                tags: self.tags
-                ,
-            }
+                auto_create_tasks: self.auto_create_tasks,
+                name: self.name,
+                update: self.update,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            },
         )
     }
 }

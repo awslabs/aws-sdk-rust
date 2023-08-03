@@ -44,9 +44,7 @@ impl UpdateGrokClassifierRequest {
 
 /// A builder for [`UpdateGrokClassifierRequest`](crate::types::UpdateGrokClassifierRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGrokClassifierRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) classification: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl UpdateGrokClassifierRequestBuilder {
         &self.name
     }
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification = input;
         self
     }
@@ -103,18 +95,12 @@ impl UpdateGrokClassifierRequestBuilder {
         &self.grok_pattern
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
-    pub fn custom_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_patterns = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
-    pub fn set_custom_patterns(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_patterns(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_patterns = input;
         self
     }

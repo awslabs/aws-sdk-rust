@@ -30,9 +30,7 @@ impl BatchDetectKeyPhrasesItemResult {
 
 /// A builder for [`BatchDetectKeyPhrasesItemResult`](crate::types::BatchDetectKeyPhrasesItemResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetectKeyPhrasesItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
@@ -64,17 +62,12 @@ impl BatchDetectKeyPhrasesItemResultBuilder {
         self
     }
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
-    pub fn set_key_phrases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
-    ) -> Self {
+    pub fn set_key_phrases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>) -> Self {
         self.key_phrases = input;
         self
     }
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
-    pub fn get_key_phrases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
+    pub fn get_key_phrases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
         &self.key_phrases
     }
     /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesItemResult`](crate::types::BatchDetectKeyPhrasesItemResult).

@@ -22,36 +22,26 @@ impl DeleteLifecycleHookInput {
 }
 impl DeleteLifecycleHookInput {
     /// Creates a new builder-style object to manufacture [`DeleteLifecycleHookInput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput).
-    pub fn builder(
-    ) -> crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookInputBuilder {
-        crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookInputBuilder {
+        crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLifecycleHookInput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLifecycleHookInputBuilder {
     pub(crate) lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLifecycleHookInputBuilder {
     /// <p>The name of the lifecycle hook.</p>
-    pub fn lifecycle_hook_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn set_lifecycle_hook_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_hook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_hook_name = input;
         self
     }
@@ -60,18 +50,12 @@ impl DeleteLifecycleHookInputBuilder {
         &self.lifecycle_hook_name
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -82,15 +66,11 @@ impl DeleteLifecycleHookInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLifecycleHookInput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput {
-                lifecycle_hook_name: self.lifecycle_hook_name,
-                auto_scaling_group_name: self.auto_scaling_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput {
+            lifecycle_hook_name: self.lifecycle_hook_name,
+            auto_scaling_group_name: self.auto_scaling_group_name,
+        })
     }
 }

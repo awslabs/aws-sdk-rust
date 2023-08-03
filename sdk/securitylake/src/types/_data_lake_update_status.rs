@@ -37,9 +37,7 @@ impl DataLakeUpdateStatus {
 
 /// A builder for [`DataLakeUpdateStatus`](crate::types::DataLakeUpdateStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeUpdateStatusBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataLakeStatus>,
@@ -66,10 +64,7 @@ impl DataLakeUpdateStatusBuilder {
         self
     }
     /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request that was requested.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataLakeStatus>) -> Self {
         self.status = input;
         self
     }
@@ -83,10 +78,7 @@ impl DataLakeUpdateStatusBuilder {
         self
     }
     /// <p>The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request which failed.</p>
-    pub fn set_exception(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeUpdateException>,
-    ) -> Self {
+    pub fn set_exception(mut self, input: ::std::option::Option<crate::types::DataLakeUpdateException>) -> Self {
         self.exception = input;
         self
     }

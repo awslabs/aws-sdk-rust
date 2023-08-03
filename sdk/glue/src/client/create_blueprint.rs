@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBlueprintOutput`](crate::operation::create_blueprint::CreateBlueprintOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_blueprint::CreateBlueprintOutput::name): <p>Returns the name of the blueprint that was registered.</p>
     /// - On failure, responds with [`SdkError<CreateBlueprintError>`](crate::operation::create_blueprint::CreateBlueprintError)
-    pub fn create_blueprint(
-        &self,
-    ) -> crate::operation::create_blueprint::builders::CreateBlueprintFluentBuilder {
-        crate::operation::create_blueprint::builders::CreateBlueprintFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_blueprint(&self) -> crate::operation::create_blueprint::builders::CreateBlueprintFluentBuilder {
+        crate::operation::create_blueprint::builders::CreateBlueprintFluentBuilder::new(self.handle.clone())
     }
 }

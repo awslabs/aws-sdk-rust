@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_prompts::SearchPromptsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_prompts::SearchPromptsOutput::approximate_total_count): <p>The total number of quick connects which matched your search query.</p>
     /// - On failure, responds with [`SdkError<SearchPromptsError>`](crate::operation::search_prompts::SearchPromptsError)
-    pub fn search_prompts(
-        &self,
-    ) -> crate::operation::search_prompts::builders::SearchPromptsFluentBuilder {
-        crate::operation::search_prompts::builders::SearchPromptsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_prompts(&self) -> crate::operation::search_prompts::builders::SearchPromptsFluentBuilder {
+        crate::operation::search_prompts::builders::SearchPromptsFluentBuilder::new(self.handle.clone())
     }
 }

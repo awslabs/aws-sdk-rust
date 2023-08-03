@@ -37,18 +37,14 @@ impl CreateBackendEnvironmentInput {
 }
 impl CreateBackendEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateBackendEnvironmentInput`](crate::operation::create_backend_environment::CreateBackendEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::create_backend_environment::builders::CreateBackendEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_backend_environment::builders::CreateBackendEnvironmentInputBuilder {
         crate::operation::create_backend_environment::builders::CreateBackendEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBackendEnvironmentInput`](crate::operation::create_backend_environment::CreateBackendEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendEnvironmentInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +67,12 @@ impl CreateBackendEnvironmentInputBuilder {
         &self.app_id
     }
     /// <p> The name for the backend environment. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name for the backend environment. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -105,18 +95,12 @@ impl CreateBackendEnvironmentInputBuilder {
         &self.stack_name
     }
     /// <p> The name of deployment artifacts. </p>
-    pub fn deployment_artifacts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_artifacts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_artifacts = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of deployment artifacts. </p>
-    pub fn set_deployment_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_artifacts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_artifacts = input;
         self
     }
@@ -131,13 +115,11 @@ impl CreateBackendEnvironmentInputBuilder {
         crate::operation::create_backend_environment::CreateBackendEnvironmentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_backend_environment::CreateBackendEnvironmentInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                stack_name: self.stack_name,
-                deployment_artifacts: self.deployment_artifacts,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_backend_environment::CreateBackendEnvironmentInput {
+            app_id: self.app_id,
+            environment_name: self.environment_name,
+            stack_name: self.stack_name,
+            deployment_artifacts: self.deployment_artifacts,
+        })
     }
 }

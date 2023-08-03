@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetStudioSessionMappingOutput {
 }
 impl GetStudioSessionMappingOutput {
     /// Creates a new builder-style object to manufacture [`GetStudioSessionMappingOutput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingOutputBuilder {
         crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStudioSessionMappingOutput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStudioSessionMappingOutputBuilder {
     pub(crate) session_mapping: ::std::option::Option<crate::types::SessionMappingDetail>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetStudioSessionMappingOutputBuilder {
         self
     }
     /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
-    pub fn set_session_mapping(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionMappingDetail>,
-    ) -> Self {
+    pub fn set_session_mapping(mut self, input: ::std::option::Option<crate::types::SessionMappingDetail>) -> Self {
         self.session_mapping = input;
         self
     }
     /// <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
-    pub fn get_session_mapping(
-        &self,
-    ) -> &::std::option::Option<crate::types::SessionMappingDetail> {
+    pub fn get_session_mapping(&self) -> &::std::option::Option<crate::types::SessionMappingDetail> {
         &self.session_mapping
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl GetStudioSessionMappingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetStudioSessionMappingOutput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput {
+    pub fn build(self) -> crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput {
         crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput {
             session_mapping: self.session_mapping,
             _request_id: self._request_id,

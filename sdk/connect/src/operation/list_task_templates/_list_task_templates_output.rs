@@ -32,20 +32,16 @@ impl ::aws_http::request_id::RequestId for ListTaskTemplatesOutput {
 }
 impl ListTaskTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTaskTemplatesOutput`](crate::operation::list_task_templates::ListTaskTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_task_templates::builders::ListTaskTemplatesOutputBuilder {
+    pub fn builder() -> crate::operation::list_task_templates::builders::ListTaskTemplatesOutputBuilder {
         crate::operation::list_task_templates::builders::ListTaskTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTaskTemplatesOutput`](crate::operation::list_task_templates::ListTaskTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTaskTemplatesOutputBuilder {
-    pub(crate) task_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>,
+    pub(crate) task_templates: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +58,12 @@ impl ListTaskTemplatesOutputBuilder {
         self
     }
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
-    pub fn set_task_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>,
-    ) -> Self {
+    pub fn set_task_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>) -> Self {
         self.task_templates = input;
         self
     }
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
-    pub fn get_task_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>> {
+    pub fn get_task_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>> {
         &self.task_templates
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>

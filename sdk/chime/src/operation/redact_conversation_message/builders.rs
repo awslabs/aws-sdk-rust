@@ -26,7 +26,7 @@ impl RedactConversationMessageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RedactConversationMessageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::redact_conversation_message::builders::RedactConversationMessageInputBuilder,
+    inner: crate::operation::redact_conversation_message::builders::RedactConversationMessageInputBuilder,
 }
 impl RedactConversationMessageFluentBuilder {
     /// Creates a new `RedactConversationMessage`.
@@ -37,7 +37,7 @@ impl RedactConversationMessageFluentBuilder {
         }
     }
     /// Access the RedactConversationMessage as a reference.
-    pub fn as_input(&self) -> &crate::operation::redact_conversation_message::builders::RedactConversationMessageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::redact_conversation_message::builders::RedactConversationMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RedactConversationMessageFluentBuilder {
             crate::operation::redact_conversation_message::RedactConversationMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::redact_conversation_message::RedactConversationMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::redact_conversation_message::RedactConversationMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RedactConversationMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RedactConversationMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::redact_conversation_message::RedactConversationMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::redact_conversation_message::RedactConversationMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::redact_conversation_message::RedactConversationMessageError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RedactConversationMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::redact_conversation_message::RedactConversationMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::redact_conversation_message::RedactConversationMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::redact_conversation_message::RedactConversationMessageError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RedactConversationMessageFluentBuilder {
             crate::operation::redact_conversation_message::RedactConversationMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::redact_conversation_message::RedactConversationMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::redact_conversation_message::RedactConversationMessageError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl RedactConversationMessageFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>The conversation ID.</p>
-    pub fn conversation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conversation_id(input.into());
         self
     }
     /// <p>The conversation ID.</p>
-    pub fn set_conversation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conversation_id(input);
         self
     }

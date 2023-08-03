@@ -10,10 +10,7 @@ impl CancelRotateSecretInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_rotate_secret::CancelRotateSecretOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_rotate_secret::CancelRotateSecretError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_rotate_secret::CancelRotateSecretError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_rotate_secret();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CancelRotateSecretFluentBuilder {
         }
     }
     /// Access the CancelRotateSecret as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_rotate_secret::builders::CancelRotateSecretInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_rotate_secret::builders::CancelRotateSecretInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl CancelRotateSecretFluentBuilder {
             crate::operation::cancel_rotate_secret::CancelRotateSecret,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_rotate_secret::CancelRotateSecretError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_rotate_secret::CancelRotateSecretError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl CancelRotateSecretFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl CancelRotateSecretFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_rotate_secret::CancelRotateSecretOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_rotate_secret::CancelRotateSecretError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_rotate_secret::CancelRotateSecretError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl CancelRotateSecretFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_rotate_secret::CancelRotateSecretOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_rotate_secret::CancelRotateSecretError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_rotate_secret::CancelRotateSecretError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl CancelRotateSecretFluentBuilder {
             crate::operation::cancel_rotate_secret::CancelRotateSecret,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_rotate_secret::CancelRotateSecretError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_rotate_secret::CancelRotateSecretError>,
     > {
         self.customize_middleware().await
     }

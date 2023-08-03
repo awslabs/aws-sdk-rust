@@ -26,8 +26,7 @@ impl ResetFpgaImageAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetFpgaImageAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder,
+    inner: crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder,
 }
 impl ResetFpgaImageAttributeFluentBuilder {
     /// Creates a new `ResetFpgaImageAttribute`.
@@ -38,10 +37,7 @@ impl ResetFpgaImageAttributeFluentBuilder {
         }
     }
     /// Access the ResetFpgaImageAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ResetFpgaImageAttributeFluentBuilder {
             crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ResetFpgaImageAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ResetFpgaImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ResetFpgaImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ResetFpgaImageAttributeFluentBuilder {
             crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl ResetFpgaImageAttributeFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fpga_image_id(input.into());
         self
     }
     /// <p>The ID of the AFI.</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fpga_image_id(input);
         self
     }
@@ -164,17 +143,12 @@ impl ResetFpgaImageAttributeFluentBuilder {
         self
     }
     /// <p>The attribute.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ResetFpgaImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResetFpgaImageAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
     /// <p>The attribute.</p>
-    pub fn get_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResetFpgaImageAttributeName> {
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ResetFpgaImageAttributeName> {
         self.inner.get_attribute()
     }
 }

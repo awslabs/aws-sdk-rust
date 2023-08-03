@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTrialComponentOutput`](crate::operation::delete_trial_component::DeleteTrialComponentOutput) with field(s):
     ///   - [`trial_component_arn(Option<String>)`](crate::operation::delete_trial_component::DeleteTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTrialComponentError>`](crate::operation::delete_trial_component::DeleteTrialComponentError)
-    pub fn delete_trial_component(
-        &self,
-    ) -> crate::operation::delete_trial_component::builders::DeleteTrialComponentFluentBuilder {
-        crate::operation::delete_trial_component::builders::DeleteTrialComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_trial_component(&self) -> crate::operation::delete_trial_component::builders::DeleteTrialComponentFluentBuilder {
+        crate::operation::delete_trial_component::builders::DeleteTrialComponentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ApiMapping>>)`](crate::operation::get_api_mappings::GetApiMappingsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_api_mappings::GetApiMappingsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetApiMappingsError>`](crate::operation::get_api_mappings::GetApiMappingsError)
-    pub fn get_api_mappings(
-        &self,
-    ) -> crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder {
-        crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_api_mappings(&self) -> crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder {
+        crate::operation::get_api_mappings::builders::GetApiMappingsFluentBuilder::new(self.handle.clone())
     }
 }

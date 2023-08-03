@@ -40,29 +40,20 @@ impl ReloadTablesInput {
 
 /// A builder for [`ReloadTablesInput`](crate::operation::reload_tables::ReloadTablesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReloadTablesInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tables_to_reload:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
+    pub(crate) tables_to_reload: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
     pub(crate) reload_option: ::std::option::Option<crate::types::ReloadOptionValue>,
 }
 impl ReloadTablesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -82,17 +73,12 @@ impl ReloadTablesInputBuilder {
         self
     }
     /// <p>The name and schema of the table to be reloaded. </p>
-    pub fn set_tables_to_reload(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
-    ) -> Self {
+    pub fn set_tables_to_reload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>) -> Self {
         self.tables_to_reload = input;
         self
     }
     /// <p>The name and schema of the table to be reloaded. </p>
-    pub fn get_tables_to_reload(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
+    pub fn get_tables_to_reload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
         &self.tables_to_reload
     }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
@@ -105,10 +91,7 @@ impl ReloadTablesInputBuilder {
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
-    pub fn set_reload_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ReloadOptionValue>,
-    ) -> Self {
+    pub fn set_reload_option(mut self, input: ::std::option::Option<crate::types::ReloadOptionValue>) -> Self {
         self.reload_option = input;
         self
     }
@@ -119,12 +102,7 @@ impl ReloadTablesInputBuilder {
         &self.reload_option
     }
     /// Consumes the builder and constructs a [`ReloadTablesInput`](crate::operation::reload_tables::ReloadTablesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reload_tables::ReloadTablesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reload_tables::ReloadTablesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reload_tables::ReloadTablesInput {
             replication_task_arn: self.replication_task_arn,
             tables_to_reload: self.tables_to_reload,

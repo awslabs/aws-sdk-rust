@@ -50,18 +50,14 @@ impl CreateVpcAttachmentInput {
 }
 impl CreateVpcAttachmentInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcAttachmentInput`](crate::operation::create_vpc_attachment::CreateVpcAttachmentInput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentInputBuilder {
-        crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentInputBuilder {
+        crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcAttachmentInput`](crate::operation::create_vpc_attachment::CreateVpcAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcAttachmentInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_arn: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct CreateVpcAttachmentInputBuilder {
 }
 impl CreateVpcAttachmentInputBuilder {
     /// <p>The ID of a core network for the VPC attachment.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network for the VPC attachment.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -117,17 +107,12 @@ impl CreateVpcAttachmentInputBuilder {
         self
     }
     /// <p>The subnet ARN of the VPC attachment.</p>
-    pub fn set_subnet_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_arns = input;
         self
     }
     /// <p>The subnet ARN of the VPC attachment.</p>
-    pub fn get_subnet_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_arns
     }
     /// <p>Options for the VPC attachment.</p>
@@ -156,10 +141,7 @@ impl CreateVpcAttachmentInputBuilder {
         self
     }
     /// <p>The key-value tags associated with the request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -184,19 +166,15 @@ impl CreateVpcAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcAttachmentInput`](crate::operation::create_vpc_attachment::CreateVpcAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_attachment::CreateVpcAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_vpc_attachment::CreateVpcAttachmentInput {
-                core_network_id: self.core_network_id,
-                vpc_arn: self.vpc_arn,
-                subnet_arns: self.subnet_arns,
-                options: self.options,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_vpc_attachment::CreateVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_vpc_attachment::CreateVpcAttachmentInput {
+            core_network_id: self.core_network_id,
+            vpc_arn: self.vpc_arn,
+            subnet_arns: self.subnet_arns,
+            options: self.options,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

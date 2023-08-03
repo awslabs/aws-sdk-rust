@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::arn): <p>The ARN of the secret.</p>
     ///   - [`name(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::name): <p>The name of the secret.</p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::operation::put_resource_policy::PutResourcePolicyError)
-    pub fn put_resource_policy(
-        &self,
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
-        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_policy(&self) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
+        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

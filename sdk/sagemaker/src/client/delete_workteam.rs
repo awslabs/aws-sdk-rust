@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteWorkteamOutput`](crate::operation::delete_workteam::DeleteWorkteamOutput) with field(s):
     ///   - [`success(bool)`](crate::operation::delete_workteam::DeleteWorkteamOutput::success): <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkteamError>`](crate::operation::delete_workteam::DeleteWorkteamError)
-    pub fn delete_workteam(
-        &self,
-    ) -> crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder {
-        crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workteam(&self) -> crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder {
+        crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder::new(self.handle.clone())
     }
 }

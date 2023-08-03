@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput) with field(s):
     ///   - [`workflow(Option<Workflow>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow): <p>The resource metadata for the workflow.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
-    pub fn get_workflow(
-        &self,
-    ) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
+    pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
         crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

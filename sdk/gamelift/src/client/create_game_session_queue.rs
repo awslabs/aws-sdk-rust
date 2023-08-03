@@ -15,10 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGameSessionQueueOutput`](crate::operation::create_game_session_queue::CreateGameSessionQueueOutput) with field(s):
     ///   - [`game_session_queue(Option<GameSessionQueue>)`](crate::operation::create_game_session_queue::CreateGameSessionQueueOutput::game_session_queue): <p>An object that describes the newly created game session queue.</p>
     /// - On failure, responds with [`SdkError<CreateGameSessionQueueError>`](crate::operation::create_game_session_queue::CreateGameSessionQueueError)
-    pub fn create_game_session_queue(
-        &self,
-    ) -> crate::operation::create_game_session_queue::builders::CreateGameSessionQueueFluentBuilder
-    {
+    pub fn create_game_session_queue(&self) -> crate::operation::create_game_session_queue::builders::CreateGameSessionQueueFluentBuilder {
         crate::operation::create_game_session_queue::builders::CreateGameSessionQueueFluentBuilder::new(self.handle.clone())
     }
 }

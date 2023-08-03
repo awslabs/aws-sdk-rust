@@ -23,9 +23,7 @@ impl AwsWafRegionalWebAclRulesListActionDetails {
 
 /// A builder for [`AwsWafRegionalWebAclRulesListActionDetails`](crate::types::AwsWafRegionalWebAclRulesListActionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRegionalWebAclRulesListActionDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AwsWafRegionalWebAclRulesListActionDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListActionDetails`](crate::types::AwsWafRegionalWebAclRulesListActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListActionDetails {
-        crate::types::AwsWafRegionalWebAclRulesListActionDetails {
-            r#type: self.r#type,
-        }
+        crate::types::AwsWafRegionalWebAclRulesListActionDetails { r#type: self.r#type }
     }
 }

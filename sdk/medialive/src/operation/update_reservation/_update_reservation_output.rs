@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateReservationOutput {
 }
 impl UpdateReservationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReservationOutput`](crate::operation::update_reservation::UpdateReservationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_reservation::builders::UpdateReservationOutputBuilder {
+    pub fn builder() -> crate::operation::update_reservation::builders::UpdateReservationOutputBuilder {
         crate::operation::update_reservation::builders::UpdateReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReservationOutput`](crate::operation::update_reservation::UpdateReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReservationOutputBuilder {
     pub(crate) reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl UpdateReservationOutputBuilder {
         self
     }
     /// Reserved resources available to use
-    pub fn set_reservation(
-        mut self,
-        input: ::std::option::Option<crate::types::Reservation>,
-    ) -> Self {
+    pub fn set_reservation(mut self, input: ::std::option::Option<crate::types::Reservation>) -> Self {
         self.reservation = input;
         self
     }

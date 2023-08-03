@@ -22,9 +22,7 @@ pub struct ResourceCollectionFilter {
 }
 impl ResourceCollectionFilter {
     /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
-    pub fn cloud_formation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudFormationCollectionFilter> {
+    pub fn cloud_formation(&self) -> ::std::option::Option<&crate::types::CloudFormationCollectionFilter> {
         self.cloud_formation.as_ref()
     }
     /// <p>The Amazon Web Services tags used to filter the resources in the resource collection.</p>
@@ -50,9 +48,7 @@ impl ResourceCollectionFilter {
 
 /// A builder for [`ResourceCollectionFilter`](crate::types::ResourceCollectionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceCollectionFilterBuilder {
     pub(crate) cloud_formation: ::std::option::Option<crate::types::CloudFormationCollectionFilter>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagCollectionFilter>>,
@@ -64,17 +60,12 @@ impl ResourceCollectionFilterBuilder {
         self
     }
     /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
-    pub fn set_cloud_formation(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudFormationCollectionFilter>,
-    ) -> Self {
+    pub fn set_cloud_formation(mut self, input: ::std::option::Option<crate::types::CloudFormationCollectionFilter>) -> Self {
         self.cloud_formation = input;
         self
     }
     /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
-    pub fn get_cloud_formation(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudFormationCollectionFilter> {
+    pub fn get_cloud_formation(&self) -> &::std::option::Option<crate::types::CloudFormationCollectionFilter> {
         &self.cloud_formation
     }
     /// Appends an item to `tags`.
@@ -107,10 +98,7 @@ impl ResourceCollectionFilterBuilder {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagCollectionFilter>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagCollectionFilter>>) -> Self {
         self.tags = input;
         self
     }
@@ -124,9 +112,7 @@ impl ResourceCollectionFilterBuilder {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagCollectionFilter>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagCollectionFilter>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ResourceCollectionFilter`](crate::types::ResourceCollectionFilter).

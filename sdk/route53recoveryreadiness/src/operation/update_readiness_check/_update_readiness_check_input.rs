@@ -23,35 +23,26 @@ impl UpdateReadinessCheckInput {
 }
 impl UpdateReadinessCheckInput {
     /// Creates a new builder-style object to manufacture [`UpdateReadinessCheckInput`](crate::operation::update_readiness_check::UpdateReadinessCheckInput).
-    pub fn builder(
-    ) -> crate::operation::update_readiness_check::builders::UpdateReadinessCheckInputBuilder {
+    pub fn builder() -> crate::operation::update_readiness_check::builders::UpdateReadinessCheckInputBuilder {
         crate::operation::update_readiness_check::builders::UpdateReadinessCheckInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReadinessCheckInput`](crate::operation::update_readiness_check::UpdateReadinessCheckInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReadinessCheckInputBuilder {
     pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReadinessCheckInputBuilder {
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.readiness_check_name = input;
         self
     }
@@ -60,18 +51,12 @@ impl UpdateReadinessCheckInputBuilder {
         &self.readiness_check_name
     }
     /// <p>The name of the resource set to be checked.</p>
-    pub fn resource_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource set to be checked.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_set_name = input;
         self
     }
@@ -82,15 +67,11 @@ impl UpdateReadinessCheckInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReadinessCheckInput`](crate::operation::update_readiness_check::UpdateReadinessCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_readiness_check::UpdateReadinessCheckInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_readiness_check::UpdateReadinessCheckInput {
-                readiness_check_name: self.readiness_check_name,
-                resource_set_name: self.resource_set_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_readiness_check::UpdateReadinessCheckInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_readiness_check::UpdateReadinessCheckInput {
+            readiness_check_name: self.readiness_check_name,
+            resource_set_name: self.resource_set_name,
+        })
     }
 }

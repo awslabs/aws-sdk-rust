@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetVaultNotificationsOutput`](crate::operation::get_vault_notifications::GetVaultNotificationsOutput) with field(s):
     ///   - [`vault_notification_config(Option<VaultNotificationConfig>)`](crate::operation::get_vault_notifications::GetVaultNotificationsOutput::vault_notification_config): <p>Returns the notification configuration set on the vault.</p>
     /// - On failure, responds with [`SdkError<GetVaultNotificationsError>`](crate::operation::get_vault_notifications::GetVaultNotificationsError)
-    pub fn get_vault_notifications(
-        &self,
-    ) -> crate::operation::get_vault_notifications::builders::GetVaultNotificationsFluentBuilder
-    {
-        crate::operation::get_vault_notifications::builders::GetVaultNotificationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_vault_notifications(&self) -> crate::operation::get_vault_notifications::builders::GetVaultNotificationsFluentBuilder {
+        crate::operation::get_vault_notifications::builders::GetVaultNotificationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl AwsElbLbCookieStickinessPolicy {
 
 /// A builder for [`AwsElbLbCookieStickinessPolicy`](crate::types::AwsElbLbCookieStickinessPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLbCookieStickinessPolicyBuilder {
     pub(crate) cookie_expiration_period: ::std::option::Option<i64>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

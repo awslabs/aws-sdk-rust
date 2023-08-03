@@ -37,9 +37,7 @@ impl DeleteSecurityPolicyFluentBuilder {
         }
     }
     /// Access the DeleteSecurityPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteSecurityPolicyFluentBuilder {
             crate::operation::delete_security_policy::DeleteSecurityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_policy::DeleteSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_policy::DeleteSecurityPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteSecurityPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteSecurityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_security_policy::DeleteSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_policy::DeleteSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_policy::DeleteSecurityPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteSecurityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_security_policy::DeleteSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_policy::DeleteSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_policy::DeleteSecurityPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteSecurityPolicyFluentBuilder {
             crate::operation::delete_security_policy::DeleteSecurityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_policy::DeleteSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_policy::DeleteSecurityPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl DeleteSecurityPolicyFluentBuilder {
         self
     }
     /// <p>The type of policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

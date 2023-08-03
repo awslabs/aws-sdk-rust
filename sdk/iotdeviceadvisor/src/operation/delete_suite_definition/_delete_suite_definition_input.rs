@@ -15,35 +15,25 @@ impl DeleteSuiteDefinitionInput {
 }
 impl DeleteSuiteDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder {
         crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSuiteDefinitionInputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSuiteDefinitionInputBuilder {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition ID of the test suite to be deleted.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteSuiteDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput {
-                suite_definition_id: self.suite_definition_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput {
+            suite_definition_id: self.suite_definition_id,
+        })
     }
 }

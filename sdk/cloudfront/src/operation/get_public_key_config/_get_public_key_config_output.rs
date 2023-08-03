@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetPublicKeyConfigOutput {
 }
 impl GetPublicKeyConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetPublicKeyConfigOutput`](crate::operation::get_public_key_config::GetPublicKeyConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_public_key_config::builders::GetPublicKeyConfigOutputBuilder {
-        crate::operation::get_public_key_config::builders::GetPublicKeyConfigOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_public_key_config::builders::GetPublicKeyConfigOutputBuilder {
+        crate::operation::get_public_key_config::builders::GetPublicKeyConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPublicKeyConfigOutput`](crate::operation::get_public_key_config::GetPublicKeyConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPublicKeyConfigOutputBuilder {
     pub(crate) public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -52,10 +48,7 @@ impl GetPublicKeyConfigOutputBuilder {
         self
     }
     /// <p>A public key configuration.</p>
-    pub fn set_public_key_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicKeyConfig>,
-    ) -> Self {
+    pub fn set_public_key_config(mut self, input: ::std::option::Option<crate::types::PublicKeyConfig>) -> Self {
         self.public_key_config = input;
         self
     }

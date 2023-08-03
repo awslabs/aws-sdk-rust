@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDataCellsFilterOutput {
 }
 impl UpdateDataCellsFilterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataCellsFilterOutput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterOutputBuilder {
         crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataCellsFilterOutput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataCellsFilterOutputBuilder {
     _request_id: Option<String>,
 }

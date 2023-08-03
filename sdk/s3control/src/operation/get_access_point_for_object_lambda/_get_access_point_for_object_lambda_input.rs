@@ -22,16 +22,14 @@ impl GetAccessPointForObjectLambdaInput {
 }
 impl GetAccessPointForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaInput`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput).
-    pub fn builder() -> crate::operation::get_access_point_for_object_lambda::builders::GetAccessPointForObjectLambdaInputBuilder{
+    pub fn builder() -> crate::operation::get_access_point_for_object_lambda::builders::GetAccessPointForObjectLambdaInputBuilder {
         crate::operation::get_access_point_for_object_lambda::builders::GetAccessPointForObjectLambdaInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessPointForObjectLambdaInput`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -72,13 +70,9 @@ impl GetAccessPointForObjectLambdaInputBuilder {
         crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput {
+            account_id: self.account_id,
+            name: self.name,
+        })
     }
 }

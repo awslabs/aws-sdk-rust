@@ -11,9 +11,7 @@ pub struct UpdateApplicationVersionOutput {
 }
 impl UpdateApplicationVersionOutput {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
-    pub fn application_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationVersionDescription> {
+    pub fn application_version(&self) -> ::std::option::Option<&crate::types::ApplicationVersionDescription> {
         self.application_version.as_ref()
     }
 }
@@ -24,44 +22,31 @@ impl ::aws_http::request_id::RequestId for UpdateApplicationVersionOutput {
 }
 impl UpdateApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationVersionOutput`](crate::operation::update_application_version::UpdateApplicationVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_application_version::builders::UpdateApplicationVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application_version::builders::UpdateApplicationVersionOutputBuilder {
         crate::operation::update_application_version::builders::UpdateApplicationVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationVersionOutput`](crate::operation::update_application_version::UpdateApplicationVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationVersionOutputBuilder {
-    pub(crate) application_version:
-        ::std::option::Option<crate::types::ApplicationVersionDescription>,
+    pub(crate) application_version: ::std::option::Option<crate::types::ApplicationVersionDescription>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationVersionOutputBuilder {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
-    pub fn application_version(
-        mut self,
-        input: crate::types::ApplicationVersionDescription,
-    ) -> Self {
+    pub fn application_version(mut self, input: crate::types::ApplicationVersionDescription) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
     }
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationVersionDescription>,
-    ) -> Self {
+    pub fn set_application_version(mut self, input: ::std::option::Option<crate::types::ApplicationVersionDescription>) -> Self {
         self.application_version = input;
         self
     }
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
-    pub fn get_application_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationVersionDescription> {
+    pub fn get_application_version(&self) -> &::std::option::Option<crate::types::ApplicationVersionDescription> {
         &self.application_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +59,7 @@ impl UpdateApplicationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationVersionOutput`](crate::operation::update_application_version::UpdateApplicationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_application_version::UpdateApplicationVersionOutput {
+    pub fn build(self) -> crate::operation::update_application_version::UpdateApplicationVersionOutput {
         crate::operation::update_application_version::UpdateApplicationVersionOutput {
             application_version: self.application_version,
             _request_id: self._request_id,

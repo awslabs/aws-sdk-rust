@@ -43,16 +43,14 @@ impl DescribeBrokerInstanceOptionsInput {
 }
 impl DescribeBrokerInstanceOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeBrokerInstanceOptionsInput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput).
-    pub fn builder() -> crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder {
         crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBrokerInstanceOptionsInput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBrokerInstanceOptionsInputBuilder {
     pub(crate) engine_type: ::std::option::Option<::std::string::String>,
     pub(crate) host_instance_type: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
         &self.engine_type
     }
     /// <p>Filter response by host instance type.</p>
-    pub fn host_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter response by host instance type.</p>
-    pub fn set_host_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_instance_type = input;
         self
     }
@@ -144,19 +136,12 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
         crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput {
-                engine_type: self.engine_type
-                ,
-                host_instance_type: self.host_instance_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                storage_type: self.storage_type
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput {
+            engine_type: self.engine_type,
+            host_instance_type: self.host_instance_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            storage_type: self.storage_type,
+        })
     }
 }

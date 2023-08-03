@@ -37,10 +37,7 @@ impl ListDeploymentConfigsFluentBuilder {
         }
     }
     /// Access the ListDeploymentConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployment_configs::builders::ListDeploymentConfigsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_deployment_configs::builders::ListDeploymentConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDeploymentConfigsFluentBuilder {
             crate::operation::list_deployment_configs::ListDeploymentConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_configs::ListDeploymentConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_configs::ListDeploymentConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDeploymentConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDeploymentConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_configs::ListDeploymentConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_configs::ListDeploymentConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_configs::ListDeploymentConfigsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDeploymentConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_configs::ListDeploymentConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_configs::ListDeploymentConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_configs::ListDeploymentConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListDeploymentConfigsFluentBuilder {
             crate::operation::list_deployment_configs::ListDeploymentConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_configs::ListDeploymentConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_configs::ListDeploymentConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployment_configs::paginator::ListDeploymentConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployment_configs::paginator::ListDeploymentConfigsPaginator {
-        crate::operation::list_deployment_configs::paginator::ListDeploymentConfigsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_deployment_configs::paginator::ListDeploymentConfigsPaginator {
+        crate::operation::list_deployment_configs::paginator::ListDeploymentConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListCalculatedAttributeDefinitionItem>>)`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput::items): <p>The list of calculated attribute definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput::next_token): <p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>
     /// - On failure, responds with [`SdkError<ListCalculatedAttributeDefinitionsError>`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError)
-    pub fn list_calculated_attribute_definitions(&self) -> crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsFluentBuilder{
+    pub fn list_calculated_attribute_definitions(
+        &self,
+    ) -> crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsFluentBuilder {
         crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

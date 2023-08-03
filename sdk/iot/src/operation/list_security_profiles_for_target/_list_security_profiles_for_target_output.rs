@@ -5,8 +5,7 @@
 pub struct ListSecurityProfilesForTargetOutput {
     /// <p>A list of security profiles and their associated targets.</p>
     #[doc(hidden)]
-    pub security_profile_target_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileTargetMapping>>,
+    pub security_profile_target_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileTargetMapping>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSecurityProfilesForTargetOutput {
 }
 impl ListSecurityProfilesForTargetOutput {
     /// <p>A list of security profiles and their associated targets.</p>
-    pub fn security_profile_target_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityProfileTargetMapping]> {
+    pub fn security_profile_target_mappings(&self) -> ::std::option::Option<&[crate::types::SecurityProfileTargetMapping]> {
         self.security_profile_target_mappings.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSecurityProfilesForTargetOutput {
 }
 impl ListSecurityProfilesForTargetOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesForTargetOutput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput).
-    pub fn builder() -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetOutputBuilder{
+    pub fn builder() -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetOutputBuilder {
         crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityProfilesForTargetOutput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesForTargetOutputBuilder {
-    pub(crate) security_profile_target_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileTargetMapping>>,
+    pub(crate) security_profile_target_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileTargetMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListSecurityProfilesForTargetOutputBuilder {
     /// To override the contents of this collection use [`set_security_profile_target_mappings`](Self::set_security_profile_target_mappings).
     ///
     /// <p>A list of security profiles and their associated targets.</p>
-    pub fn security_profile_target_mappings(
-        mut self,
-        input: crate::types::SecurityProfileTargetMapping,
-    ) -> Self {
+    pub fn security_profile_target_mappings(mut self, input: crate::types::SecurityProfileTargetMapping) -> Self {
         let mut v = self.security_profile_target_mappings.unwrap_or_default();
         v.push(input);
         self.security_profile_target_mappings = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListSecurityProfilesForTargetOutputBuilder {
         self
     }
     /// <p>A list of security profiles and their associated targets.</p>
-    pub fn get_security_profile_target_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileTargetMapping>> {
+    pub fn get_security_profile_target_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileTargetMapping>> {
         &self.security_profile_target_mappings
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -100,10 +89,7 @@ impl ListSecurityProfilesForTargetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSecurityProfilesForTargetOutput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput
-    {
+    pub fn build(self) -> crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput {
         crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput {
             security_profile_target_mappings: self.security_profile_target_mappings,
             next_token: self.next_token,

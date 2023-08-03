@@ -6,10 +6,7 @@ pub fn ser_update_security_input(
     if let Some(var_1) = &input.client_authentication {
         #[allow(unused_mut)]
         let mut object_2 = object.key("clientAuthentication").start_object();
-        crate::protocol_serde::shape_client_authentication::ser_client_authentication(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_client_authentication::ser_client_authentication(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.current_version {

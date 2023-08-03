@@ -23,16 +23,14 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuilder {
     pub(crate) max: ::std::option::Option<f64>,
     pub(crate) min: ::std::option::Option<f64>,
@@ -67,9 +65,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuild
         &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
             max: self.max.unwrap_or_default(),
             min: self.min.unwrap_or_default(),

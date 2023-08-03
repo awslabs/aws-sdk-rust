@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`user_rules(Vec<IpRuleItem>)`](crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesFluentBuilder::user_rules) / [`set_user_rules(Option<Vec<IpRuleItem>>)`](crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesFluentBuilder::set_user_rules): <p>The rules to add to the group.</p>
     /// - On success, responds with [`AuthorizeIpRulesOutput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput)
     /// - On failure, responds with [`SdkError<AuthorizeIpRulesError>`](crate::operation::authorize_ip_rules::AuthorizeIpRulesError)
-    pub fn authorize_ip_rules(
-        &self,
-    ) -> crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesFluentBuilder {
-        crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn authorize_ip_rules(&self) -> crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesFluentBuilder {
+        crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesFluentBuilder::new(self.handle.clone())
     }
 }

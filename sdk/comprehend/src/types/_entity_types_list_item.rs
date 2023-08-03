@@ -25,9 +25,7 @@ impl EntityTypesListItem {
 
 /// A builder for [`EntityTypesListItem`](crate::types::EntityTypesListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityTypesListItemBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -51,8 +49,6 @@ impl EntityTypesListItemBuilder {
     }
     /// Consumes the builder and constructs a [`EntityTypesListItem`](crate::types::EntityTypesListItem).
     pub fn build(self) -> crate::types::EntityTypesListItem {
-        crate::types::EntityTypesListItem {
-            r#type: self.r#type,
-        }
+        crate::types::EntityTypesListItem { r#type: self.r#type }
     }
 }

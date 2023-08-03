@@ -70,8 +70,7 @@ pub struct GlacierJobDescription {
     pub tier: ::std::option::Option<::std::string::String>,
     /// <p>Parameters used for range inventory retrieval.</p>
     #[doc(hidden)]
-    pub inventory_retrieval_parameters:
-        ::std::option::Option<crate::types::InventoryRetrievalJobDescription>,
+    pub inventory_retrieval_parameters: ::std::option::Option<crate::types::InventoryRetrievalJobDescription>,
     /// <p>Contains the job output location.</p>
     #[doc(hidden)]
     pub job_output_path: ::std::option::Option<::std::string::String>,
@@ -165,9 +164,7 @@ impl GlacierJobDescription {
         self.tier.as_deref()
     }
     /// <p>Parameters used for range inventory retrieval.</p>
-    pub fn inventory_retrieval_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InventoryRetrievalJobDescription> {
+    pub fn inventory_retrieval_parameters(&self) -> ::std::option::Option<&crate::types::InventoryRetrievalJobDescription> {
         self.inventory_retrieval_parameters.as_ref()
     }
     /// <p>Contains the job output location.</p>
@@ -192,9 +189,7 @@ impl GlacierJobDescription {
 
 /// A builder for [`GlacierJobDescription`](crate::types::GlacierJobDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlacierJobDescriptionBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_description: ::std::option::Option<::std::string::String>,
@@ -213,8 +208,7 @@ pub struct GlacierJobDescriptionBuilder {
     pub(crate) archive_sha256_tree_hash: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval_byte_range: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
-    pub(crate) inventory_retrieval_parameters:
-        ::std::option::Option<crate::types::InventoryRetrievalJobDescription>,
+    pub(crate) inventory_retrieval_parameters: ::std::option::Option<crate::types::InventoryRetrievalJobDescription>,
     pub(crate) job_output_path: ::std::option::Option<::std::string::String>,
     pub(crate) select_parameters: ::std::option::Option<crate::types::SelectParameters>,
     pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
@@ -235,18 +229,12 @@ impl GlacierJobDescriptionBuilder {
         &self.job_id
     }
     /// <p>The job description provided when initiating the job.</p>
-    pub fn job_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job description provided when initiating the job.</p>
-    pub fn set_job_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_description = input;
         self
     }
@@ -297,18 +285,12 @@ impl GlacierJobDescriptionBuilder {
         &self.vault_arn
     }
     /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -336,10 +318,7 @@ impl GlacierJobDescriptionBuilder {
         self
     }
     /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::StatusCode>) -> Self {
         self.status_code = input;
         self
     }
@@ -348,18 +327,12 @@ impl GlacierJobDescriptionBuilder {
         &self.status_code
     }
     /// <p>A friendly message that describes the job status.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A friendly message that describes the job status.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -410,18 +383,12 @@ impl GlacierJobDescriptionBuilder {
         &self.sns_topic
     }
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
-    pub fn completion_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn completion_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completion_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
-    pub fn set_completion_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_completion_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completion_date = input;
         self
     }
@@ -443,10 +410,7 @@ impl GlacierJobDescriptionBuilder {
     /// <li> <p>Inventory jobs</p> </li>
     /// <li> <p>Select jobs</p> </li>
     /// </ul>
-    pub fn sha256_tree_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sha256_tree_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sha256_tree_hash = ::std::option::Option::Some(input.into());
         self
     }
@@ -464,10 +428,7 @@ impl GlacierJobDescriptionBuilder {
     /// <li> <p>Inventory jobs</p> </li>
     /// <li> <p>Select jobs</p> </li>
     /// </ul>
-    pub fn set_sha256_tree_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sha256_tree_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha256_tree_hash = input;
         self
     }
@@ -489,18 +450,12 @@ impl GlacierJobDescriptionBuilder {
         &self.sha256_tree_hash
     }
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
-    pub fn archive_sha256_tree_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archive_sha256_tree_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_sha256_tree_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
-    pub fn set_archive_sha256_tree_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archive_sha256_tree_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_sha256_tree_hash = input;
         self
     }
@@ -509,18 +464,12 @@ impl GlacierJobDescriptionBuilder {
         &self.archive_sha256_tree_hash
     }
     /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
-    pub fn retrieval_byte_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retrieval_byte_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retrieval_byte_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
-    pub fn set_retrieval_byte_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retrieval_byte_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retrieval_byte_range = input;
         self
     }
@@ -543,40 +492,26 @@ impl GlacierJobDescriptionBuilder {
         &self.tier
     }
     /// <p>Parameters used for range inventory retrieval.</p>
-    pub fn inventory_retrieval_parameters(
-        mut self,
-        input: crate::types::InventoryRetrievalJobDescription,
-    ) -> Self {
+    pub fn inventory_retrieval_parameters(mut self, input: crate::types::InventoryRetrievalJobDescription) -> Self {
         self.inventory_retrieval_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Parameters used for range inventory retrieval.</p>
-    pub fn set_inventory_retrieval_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryRetrievalJobDescription>,
-    ) -> Self {
+    pub fn set_inventory_retrieval_parameters(mut self, input: ::std::option::Option<crate::types::InventoryRetrievalJobDescription>) -> Self {
         self.inventory_retrieval_parameters = input;
         self
     }
     /// <p>Parameters used for range inventory retrieval.</p>
-    pub fn get_inventory_retrieval_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::InventoryRetrievalJobDescription> {
+    pub fn get_inventory_retrieval_parameters(&self) -> &::std::option::Option<crate::types::InventoryRetrievalJobDescription> {
         &self.inventory_retrieval_parameters
     }
     /// <p>Contains the job output location.</p>
-    pub fn job_output_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the job output location.</p>
-    pub fn set_job_output_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_output_path = input;
         self
     }
@@ -590,10 +525,7 @@ impl GlacierJobDescriptionBuilder {
         self
     }
     /// <p>Contains the parameters used for a select.</p>
-    pub fn set_select_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectParameters>,
-    ) -> Self {
+    pub fn set_select_parameters(mut self, input: ::std::option::Option<crate::types::SelectParameters>) -> Self {
         self.select_parameters = input;
         self
     }
@@ -607,10 +539,7 @@ impl GlacierJobDescriptionBuilder {
         self
     }
     /// <p>Contains the location where the data from the select job is stored.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocation>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::OutputLocation>) -> Self {
         self.output_location = input;
         self
     }

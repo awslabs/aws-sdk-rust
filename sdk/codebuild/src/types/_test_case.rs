@@ -72,9 +72,7 @@ impl TestCase {
 
 /// A builder for [`TestCase`](crate::types::TestCase).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestCaseBuilder {
     pub(crate) report_arn: ::std::option::Option<::std::string::String>,
     pub(crate) test_raw_data_path: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl TestCaseBuilder {
         &self.report_arn
     }
     /// <p> The path to the raw data file that contains the test result. </p>
-    pub fn test_raw_data_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_raw_data_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_raw_data_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The path to the raw data file that contains the test result. </p>
-    pub fn set_test_raw_data_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_raw_data_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_raw_data_path = input;
         self
     }
@@ -196,10 +188,7 @@ impl TestCaseBuilder {
         self
     }
     /// <p> The date and time a test case expires. A test case expires 30 days after it is created. An expired test case is not available to view in CodeBuild. </p>
-    pub fn set_expired(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expired(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expired = input;
         self
     }

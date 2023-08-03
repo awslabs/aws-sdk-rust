@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`deletion_mode(DeletionMode)`](crate::operation::delete_record::builders::DeleteRecordFluentBuilder::deletion_mode) / [`set_deletion_mode(Option<DeletionMode>)`](crate::operation::delete_record::builders::DeleteRecordFluentBuilder::set_deletion_mode): <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
     /// - On success, responds with [`DeleteRecordOutput`](crate::operation::delete_record::DeleteRecordOutput)
     /// - On failure, responds with [`SdkError<DeleteRecordError>`](crate::operation::delete_record::DeleteRecordError)
-    pub fn delete_record(
-        &self,
-    ) -> crate::operation::delete_record::builders::DeleteRecordFluentBuilder {
-        crate::operation::delete_record::builders::DeleteRecordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_record(&self) -> crate::operation::delete_record::builders::DeleteRecordFluentBuilder {
+        crate::operation::delete_record::builders::DeleteRecordFluentBuilder::new(self.handle.clone())
     }
 }

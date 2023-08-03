@@ -24,18 +24,14 @@ impl CreateGlobalNetworkInput {
 }
 impl CreateGlobalNetworkInput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalNetworkInput`](crate::operation::create_global_network::CreateGlobalNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder {
-        crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder {
+        crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGlobalNetworkInput`](crate::operation::create_global_network::CreateGlobalNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGlobalNetworkInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -70,10 +66,7 @@ impl CreateGlobalNetworkInputBuilder {
         self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -84,15 +77,11 @@ impl CreateGlobalNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlobalNetworkInput`](crate::operation::create_global_network::CreateGlobalNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_global_network::CreateGlobalNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_global_network::CreateGlobalNetworkInput {
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_global_network::CreateGlobalNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_global_network::CreateGlobalNetworkInput {
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

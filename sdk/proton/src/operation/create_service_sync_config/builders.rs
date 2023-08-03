@@ -26,8 +26,7 @@ impl CreateServiceSyncConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceSyncConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder,
+    inner: crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder,
 }
 impl CreateServiceSyncConfigFluentBuilder {
     /// Creates a new `CreateServiceSyncConfig`.
@@ -38,10 +37,7 @@ impl CreateServiceSyncConfigFluentBuilder {
         }
     }
     /// Access the CreateServiceSyncConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateServiceSyncConfigFluentBuilder {
             crate::operation::create_service_sync_config::CreateServiceSyncConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_sync_config::CreateServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_sync_config::CreateServiceSyncConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateServiceSyncConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateServiceSyncConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_sync_config::CreateServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_sync_config::CreateServiceSyncConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateServiceSyncConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_sync_config::CreateServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_sync_config::CreateServiceSyncConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateServiceSyncConfigFluentBuilder {
             crate::operation::create_service_sync_config::CreateServiceSyncConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_sync_config::CreateServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_sync_config::CreateServiceSyncConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -144,32 +129,21 @@ impl CreateServiceSyncConfigFluentBuilder {
         self
     }
     /// <p>The provider type for your repository.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
     }
     /// <p>The provider type for your repository.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         self.inner.get_repository_provider()
     }
     /// <p>The repository name.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository name.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

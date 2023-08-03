@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UploadSshPublicKeyOutput {
 }
 impl UploadSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`UploadSshPublicKeyOutput`](crate::operation::upload_ssh_public_key::UploadSshPublicKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyOutputBuilder {
-        crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyOutputBuilder {
+        crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UploadSshPublicKeyOutput`](crate::operation::upload_ssh_public_key::UploadSshPublicKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadSshPublicKeyOutputBuilder {
     pub(crate) ssh_public_key: ::std::option::Option<crate::types::SshPublicKey>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl UploadSshPublicKeyOutputBuilder {
         self
     }
     /// <p>Contains information about the SSH public key.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<crate::types::SshPublicKey>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<crate::types::SshPublicKey>) -> Self {
         self.ssh_public_key = input;
         self
     }

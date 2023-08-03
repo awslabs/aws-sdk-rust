@@ -50,17 +50,14 @@ impl ListProfileObjectsInput {
 }
 impl ListProfileObjectsInput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectsInput`](crate::operation::list_profile_objects::ListProfileObjectsInput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_objects::builders::ListProfileObjectsInputBuilder {
+    pub fn builder() -> crate::operation::list_profile_objects::builders::ListProfileObjectsInputBuilder {
         crate::operation::list_profile_objects::builders::ListProfileObjectsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileObjectsInput`](crate::operation::list_profile_objects::ListProfileObjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileObjectsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -113,18 +110,12 @@ impl ListProfileObjectsInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_type_name = input;
         self
     }
@@ -152,10 +143,7 @@ impl ListProfileObjectsInputBuilder {
         self
     }
     /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
-    pub fn set_object_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectFilter>,
-    ) -> Self {
+    pub fn set_object_filter(mut self, input: ::std::option::Option<crate::types::ObjectFilter>) -> Self {
         self.object_filter = input;
         self
     }
@@ -166,19 +154,14 @@ impl ListProfileObjectsInputBuilder {
     /// Consumes the builder and constructs a [`ListProfileObjectsInput`](crate::operation::list_profile_objects::ListProfileObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_profile_objects::ListProfileObjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_profile_objects::ListProfileObjectsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                domain_name: self.domain_name,
-                object_type_name: self.object_type_name,
-                profile_id: self.profile_id,
-                object_filter: self.object_filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_profile_objects::ListProfileObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_profile_objects::ListProfileObjectsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            domain_name: self.domain_name,
+            object_type_name: self.object_type_name,
+            profile_id: self.profile_id,
+            object_filter: self.object_filter,
+        })
     }
 }

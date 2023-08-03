@@ -36,16 +36,14 @@ impl AddApplicationVpcConfigurationInput {
 }
 impl AddApplicationVpcConfigurationInput {
     /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationInput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput).
-    pub fn builder() -> crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationInputBuilder {
         crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationVpcConfigurationInput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationVpcConfigurationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
@@ -54,18 +52,12 @@ pub struct AddApplicationVpcConfigurationInputBuilder {
 }
 impl AddApplicationVpcConfigurationInputBuilder {
     /// <p>The name of an existing application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an existing application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -93,10 +85,7 @@ impl AddApplicationVpcConfigurationInputBuilder {
         self
     }
     /// <p>Description of the VPC to add to the application.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
@@ -105,18 +94,12 @@ impl AddApplicationVpcConfigurationInputBuilder {
         &self.vpc_configuration
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conditional_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conditional_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conditional_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conditional_token = input;
         self
     }
@@ -131,17 +114,11 @@ impl AddApplicationVpcConfigurationInputBuilder {
         crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput {
-                application_name: self.application_name
-                ,
-                current_application_version_id: self.current_application_version_id
-                ,
-                vpc_configuration: self.vpc_configuration
-                ,
-                conditional_token: self.conditional_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput {
+            application_name: self.application_name,
+            current_application_version_id: self.current_application_version_id,
+            vpc_configuration: self.vpc_configuration,
+            conditional_token: self.conditional_token,
+        })
     }
 }

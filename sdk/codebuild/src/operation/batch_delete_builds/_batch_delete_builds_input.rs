@@ -15,17 +15,14 @@ impl BatchDeleteBuildsInput {
 }
 impl BatchDeleteBuildsInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_builds::builders::BatchDeleteBuildsInputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_builds::builders::BatchDeleteBuildsInputBuilder {
         crate::operation::batch_delete_builds::builders::BatchDeleteBuildsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteBuildsInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl BatchDeleteBuildsInputBuilder {
         self
     }
     /// <p>The IDs of the builds to delete.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -56,12 +50,7 @@ impl BatchDeleteBuildsInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_builds::BatchDeleteBuildsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_builds::BatchDeleteBuildsInput { ids: self.ids },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_delete_builds::BatchDeleteBuildsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_delete_builds::BatchDeleteBuildsInput { ids: self.ids })
     }
 }

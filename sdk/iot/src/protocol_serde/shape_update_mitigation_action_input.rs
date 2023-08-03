@@ -6,10 +6,7 @@ pub fn ser_update_mitigation_action_input(
     if let Some(var_1) = &input.action_params {
         #[allow(unused_mut)]
         let mut object_2 = object.key("actionParams").start_object();
-        crate::protocol_serde::shape_mitigation_action_params::ser_mitigation_action_params(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_mitigation_action_params::ser_mitigation_action_params(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.role_arn {

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`price_lists(Option<Vec<PriceList>>)`](crate::operation::list_price_lists::ListPriceListsOutput::price_lists): <p>The type of price list references that match your request. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_price_lists::ListPriceListsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve. </p>
     /// - On failure, responds with [`SdkError<ListPriceListsError>`](crate::operation::list_price_lists::ListPriceListsError)
-    pub fn list_price_lists(
-        &self,
-    ) -> crate::operation::list_price_lists::builders::ListPriceListsFluentBuilder {
-        crate::operation::list_price_lists::builders::ListPriceListsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_price_lists(&self) -> crate::operation::list_price_lists::builders::ListPriceListsFluentBuilder {
+        crate::operation::list_price_lists::builders::ListPriceListsFluentBuilder::new(self.handle.clone())
     }
 }

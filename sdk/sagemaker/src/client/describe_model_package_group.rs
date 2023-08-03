@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`model_package_group_status(Option<ModelPackageGroupStatus>)`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput::model_package_group_status): <p>The status of the model group.</p>
     /// - On failure, responds with [`SdkError<DescribeModelPackageGroupError>`](crate::operation::describe_model_package_group::DescribeModelPackageGroupError)
-    pub fn describe_model_package_group(&self) -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder{
+    pub fn describe_model_package_group(&self) -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder {
         crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartUserAccessTasksOutput`](crate::operation::start_user_access_tasks::StartUserAccessTasksOutput) with field(s):
     ///   - [`user_access_tasks_list(Option<Vec<UserAccessTaskItem>>)`](crate::operation::start_user_access_tasks::StartUserAccessTasksOutput::user_access_tasks_list): <p>Contains a list of user access task information.</p>
     /// - On failure, responds with [`SdkError<StartUserAccessTasksError>`](crate::operation::start_user_access_tasks::StartUserAccessTasksError)
-    pub fn start_user_access_tasks(
-        &self,
-    ) -> crate::operation::start_user_access_tasks::builders::StartUserAccessTasksFluentBuilder
-    {
-        crate::operation::start_user_access_tasks::builders::StartUserAccessTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_user_access_tasks(&self) -> crate::operation::start_user_access_tasks::builders::StartUserAccessTasksFluentBuilder {
+        crate::operation::start_user_access_tasks::builders::StartUserAccessTasksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyLaunchTemplateOutput`](crate::operation::modify_launch_template::ModifyLaunchTemplateOutput) with field(s):
     ///   - [`launch_template(Option<LaunchTemplate>)`](crate::operation::modify_launch_template::ModifyLaunchTemplateOutput::launch_template): <p>Information about the launch template.</p>
     /// - On failure, responds with [`SdkError<ModifyLaunchTemplateError>`](crate::operation::modify_launch_template::ModifyLaunchTemplateError)
-    pub fn modify_launch_template(
-        &self,
-    ) -> crate::operation::modify_launch_template::builders::ModifyLaunchTemplateFluentBuilder {
-        crate::operation::modify_launch_template::builders::ModifyLaunchTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_launch_template(&self) -> crate::operation::modify_launch_template::builders::ModifyLaunchTemplateFluentBuilder {
+        crate::operation::modify_launch_template::builders::ModifyLaunchTemplateFluentBuilder::new(self.handle.clone())
     }
 }

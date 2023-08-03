@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`world_generation_job_summaries(Option<Vec<WorldGenerationJobSummary>>)`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput::world_generation_job_summaries): <p>Summary information for world generator jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     /// - On failure, responds with [`SdkError<ListWorldGenerationJobsError>`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError)
-    pub fn list_world_generation_jobs(
-        &self,
-    ) -> crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsFluentBuilder
-    {
+    pub fn list_world_generation_jobs(&self) -> crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsFluentBuilder {
         crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsFluentBuilder::new(self.handle.clone())
     }
 }

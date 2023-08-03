@@ -30,9 +30,7 @@ impl ExternalMetricStatus {
 
 /// A builder for [`ExternalMetricStatus`](crate::types::ExternalMetricStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalMetricStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,21 @@ impl ExternalMetricStatusBuilder {
         self
     }
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ExternalMetricStatusCode>) -> Self {
         self.status_code = input;
         self
     }
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExternalMetricStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ExternalMetricStatusCode> {
         &self.status_code
     }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

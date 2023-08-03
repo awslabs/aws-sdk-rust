@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RebootReplicationInstanceOutput`](crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput) with field(s):
     ///   - [`replication_instance(Option<ReplicationInstance>)`](crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput::replication_instance): <p>The replication instance that is being rebooted. </p>
     /// - On failure, responds with [`SdkError<RebootReplicationInstanceError>`](crate::operation::reboot_replication_instance::RebootReplicationInstanceError)
-    pub fn reboot_replication_instance(&self) -> crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceFluentBuilder{
+    pub fn reboot_replication_instance(&self) -> crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceFluentBuilder {
         crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceFluentBuilder::new(self.handle.clone())
     }
 }

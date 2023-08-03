@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`status(i32)`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<ListIAMPolicyAssignmentsForUserError>`](crate::operation::list_iam_policy_assignments_for_user::ListIAMPolicyAssignmentsForUserError)
-    pub fn list_iam_policy_assignments_for_user(&self) -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder{
+    pub fn list_iam_policy_assignments_for_user(
+        &self,
+    ) -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder {
         crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::new(self.handle.clone())
     }
 }

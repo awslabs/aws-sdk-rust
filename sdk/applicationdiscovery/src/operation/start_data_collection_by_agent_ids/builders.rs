@@ -5,16 +5,16 @@ pub use crate::operation::start_data_collection_by_agent_ids::_start_data_collec
 
 impl StartDataCollectionByAgentIdsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_data_collection_by_agent_ids();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl StartDataCollectionByAgentIdsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDataCollectionByAgentIdsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsInputBuilder,
+    inner: crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsInputBuilder,
 }
 impl StartDataCollectionByAgentIdsFluentBuilder {
     /// Creates a new `StartDataCollectionByAgentIds`.
@@ -37,15 +37,20 @@ impl StartDataCollectionByAgentIdsFluentBuilder {
         }
     }
     /// Access the StartDataCollectionByAgentIds as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIds, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIds,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl StartDataCollectionByAgentIdsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl StartDataCollectionByAgentIdsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIds, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIds,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `agentIds`.
@@ -104,10 +119,7 @@ impl StartDataCollectionByAgentIdsFluentBuilder {
         self
     }
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
-    pub fn set_agent_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_ids(input);
         self
     }

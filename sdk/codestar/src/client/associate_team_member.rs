@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateTeamMemberOutput`](crate::operation::associate_team_member::AssociateTeamMemberOutput) with field(s):
     ///   - [`client_request_token(Option<String>)`](crate::operation::associate_team_member::AssociateTeamMemberOutput::client_request_token): <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
     /// - On failure, responds with [`SdkError<AssociateTeamMemberError>`](crate::operation::associate_team_member::AssociateTeamMemberError)
-    pub fn associate_team_member(
-        &self,
-    ) -> crate::operation::associate_team_member::builders::AssociateTeamMemberFluentBuilder {
-        crate::operation::associate_team_member::builders::AssociateTeamMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_team_member(&self) -> crate::operation::associate_team_member::builders::AssociateTeamMemberFluentBuilder {
+        crate::operation::associate_team_member::builders::AssociateTeamMemberFluentBuilder::new(self.handle.clone())
     }
 }

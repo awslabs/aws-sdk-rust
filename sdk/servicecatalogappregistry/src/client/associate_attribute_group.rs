@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::associate_attribute_group::AssociateAttributeGroupOutput::application_arn): <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
     ///   - [`attribute_group_arn(Option<String>)`](crate::operation::associate_attribute_group::AssociateAttributeGroupOutput::attribute_group_arn): <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
     /// - On failure, responds with [`SdkError<AssociateAttributeGroupError>`](crate::operation::associate_attribute_group::AssociateAttributeGroupError)
-    pub fn associate_attribute_group(
-        &self,
-    ) -> crate::operation::associate_attribute_group::builders::AssociateAttributeGroupFluentBuilder
-    {
+    pub fn associate_attribute_group(&self) -> crate::operation::associate_attribute_group::builders::AssociateAttributeGroupFluentBuilder {
         crate::operation::associate_attribute_group::builders::AssociateAttributeGroupFluentBuilder::new(self.handle.clone())
     }
 }

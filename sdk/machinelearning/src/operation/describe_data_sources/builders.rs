@@ -37,9 +37,7 @@ impl DescribeDataSourcesFluentBuilder {
         }
     }
     /// Access the DescribeDataSources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeDataSourcesFluentBuilder {
             crate::operation::describe_data_sources::DescribeDataSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_sources::DescribeDataSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_sources::DescribeDataSourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeDataSourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeDataSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_sources::DescribeDataSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_sources::DescribeDataSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_sources::DescribeDataSourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeDataSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_sources::DescribeDataSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_sources::DescribeDataSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_sources::DescribeDataSourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl DescribeDataSourcesFluentBuilder {
             crate::operation::describe_data_sources::DescribeDataSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_sources::DescribeDataSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_sources::DescribeDataSourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator {
-        crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator {
+        crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
@@ -153,10 +135,7 @@ impl DescribeDataSourcesFluentBuilder {
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::DataSourceFilterVariable>) -> Self {
         self.inner = self.inner.set_filter_variable(input);
         self
     }
@@ -168,9 +147,7 @@ impl DescribeDataSourcesFluentBuilder {
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
-    pub fn get_filter_variable(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceFilterVariable> {
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::DataSourceFilterVariable> {
         self.inner.get_filter_variable()
     }
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>

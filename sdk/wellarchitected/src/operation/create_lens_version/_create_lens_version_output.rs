@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateLensVersionOutput {
 }
 impl CreateLensVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLensVersionOutput`](crate::operation::create_lens_version::CreateLensVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_lens_version::builders::CreateLensVersionOutputBuilder {
+    pub fn builder() -> crate::operation::create_lens_version::builders::CreateLensVersionOutputBuilder {
         crate::operation::create_lens_version::builders::CreateLensVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLensVersionOutput`](crate::operation::create_lens_version::CreateLensVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLensVersionOutputBuilder {
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_version: ::std::option::Option<::std::string::String>,

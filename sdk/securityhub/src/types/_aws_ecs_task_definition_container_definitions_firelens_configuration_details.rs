@@ -12,9 +12,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails 
     /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -27,11 +25,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
     /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
     /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.options.as_ref()
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
@@ -41,20 +35,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder {
-    pub(crate) options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder {
@@ -69,11 +59,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
     /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
-    pub fn options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.options = ::std::option::Option::Some(hash_map);
@@ -86,12 +72,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
     /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.options = input;
         self
     }
@@ -102,11 +83,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// <li> <p> <code>config-file-type</code>. The value can be <code>s3</code> or <code>file</code>.</p> </li>
     /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.options
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
@@ -124,9 +101,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
         &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
             options: self.options,
             r#type: self.r#type,

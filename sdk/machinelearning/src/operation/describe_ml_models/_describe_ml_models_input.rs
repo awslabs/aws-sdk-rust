@@ -129,17 +129,14 @@ impl DescribeMlModelsInput {
 }
 impl DescribeMlModelsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMlModelsInput`](crate::operation::describe_ml_models::DescribeMlModelsInput).
-    pub fn builder() -> crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder {
         crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMlModelsInput`](crate::operation::describe_ml_models::DescribeMlModelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMlModelsInputBuilder {
     pub(crate) filter_variable: ::std::option::Option<crate::types::MlModelFilterVariable>,
     pub(crate) eq: ::std::option::Option<::std::string::String>,
@@ -182,10 +179,7 @@ impl DescribeMlModelsInputBuilder {
     /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
     /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::MlModelFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::MlModelFilterVariable>) -> Self {
         self.filter_variable = input;
         self
     }
@@ -201,9 +195,7 @@ impl DescribeMlModelsInputBuilder {
     /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
     /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn get_filter_variable(
-        &self,
-    ) -> &::std::option::Option<crate::types::MlModelFilterVariable> {
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::MlModelFilterVariable> {
         &self.filter_variable
     }
     /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
@@ -382,24 +374,19 @@ impl DescribeMlModelsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMlModelsInput`](crate::operation::describe_ml_models::DescribeMlModelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ml_models::DescribeMlModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ml_models::DescribeMlModelsInput {
-                filter_variable: self.filter_variable,
-                eq: self.eq,
-                gt: self.gt,
-                lt: self.lt,
-                ge: self.ge,
-                le: self.le,
-                ne: self.ne,
-                prefix: self.prefix,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ml_models::DescribeMlModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ml_models::DescribeMlModelsInput {
+            filter_variable: self.filter_variable,
+            eq: self.eq,
+            gt: self.gt,
+            lt: self.lt,
+            ge: self.ge,
+            le: self.le,
+            ne: self.ne,
+            prefix: self.prefix,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

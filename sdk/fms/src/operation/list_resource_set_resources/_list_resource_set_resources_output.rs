@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListResourceSetResourcesOutput {
 }
 impl ListResourceSetResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceSetResourcesOutput`](crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput).
-    pub fn builder() -> crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesOutputBuilder {
         crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceSetResourcesOutput`](crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceSetResourcesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListResourceSetResourcesOutputBuilder {
         self
     }
     /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.items = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListResourceSetResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourceSetResourcesOutput`](crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput {
+    pub fn build(self) -> crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput {
         crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput {
             items: self.items,
             next_token: self.next_token,

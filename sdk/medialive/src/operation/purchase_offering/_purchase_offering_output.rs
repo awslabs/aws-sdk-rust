@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for PurchaseOfferingOutput {
 }
 impl PurchaseOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder {
         crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseOfferingOutputBuilder {
     pub(crate) reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl PurchaseOfferingOutputBuilder {
         self
     }
     /// Reserved resources available to use
-    pub fn set_reservation(
-        mut self,
-        input: ::std::option::Option<crate::types::Reservation>,
-    ) -> Self {
+    pub fn set_reservation(mut self, input: ::std::option::Option<crate::types::Reservation>) -> Self {
         self.reservation = input;
         self
     }

@@ -9,8 +9,7 @@ pub struct DescribePatchGroupsOutput {
     /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
+    pub mappings: ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,9 +21,7 @@ impl DescribePatchGroupsOutput {
     /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
     /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
     /// </ul>
-    pub fn mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PatchGroupPatchBaselineMapping]> {
+    pub fn mappings(&self) -> ::std::option::Option<&[crate::types::PatchGroupPatchBaselineMapping]> {
         self.mappings.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -39,21 +36,16 @@ impl ::aws_http::request_id::RequestId for DescribePatchGroupsOutput {
 }
 impl DescribePatchGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchGroupsOutput`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_groups::builders::DescribePatchGroupsOutputBuilder {
-        crate::operation::describe_patch_groups::builders::DescribePatchGroupsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_patch_groups::builders::DescribePatchGroupsOutputBuilder {
+        crate::operation::describe_patch_groups::builders::DescribePatchGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePatchGroupsOutput`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePatchGroupsOutputBuilder {
-    pub(crate) mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
+    pub(crate) mappings: ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -78,10 +70,7 @@ impl DescribePatchGroupsOutputBuilder {
     /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
     /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
     /// </ul>
-    pub fn set_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
-    ) -> Self {
+    pub fn set_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>) -> Self {
         self.mappings = input;
         self
     }
@@ -90,9 +79,7 @@ impl DescribePatchGroupsOutputBuilder {
     /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
     /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
     /// </ul>
-    pub fn get_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>> {
+    pub fn get_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>> {
         &self.mappings
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

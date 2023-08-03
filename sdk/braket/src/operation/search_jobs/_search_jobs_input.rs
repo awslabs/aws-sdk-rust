@@ -36,9 +36,7 @@ impl SearchJobsInput {
 
 /// A builder for [`SearchJobsInput`](crate::operation::search_jobs::SearchJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -85,26 +83,16 @@ impl SearchJobsInputBuilder {
         self
     }
     /// <p>The filter values to use when searching for a job.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filter values to use when searching for a job.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchJobsInput`](crate::operation::search_jobs::SearchJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_jobs::SearchJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_jobs::SearchJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

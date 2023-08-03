@@ -15,16 +15,14 @@ impl DescribeSentimentDetectionJobInput {
 }
 impl DescribeSentimentDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobInput`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobInput).
-    pub fn builder() -> crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder {
         crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSentimentDetectionJobInput`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSentimentDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl DescribeSentimentDetectionJobInputBuilder {
         crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobInput {
-                job_id: self.job_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobInput { job_id: self.job_id })
     }
 }

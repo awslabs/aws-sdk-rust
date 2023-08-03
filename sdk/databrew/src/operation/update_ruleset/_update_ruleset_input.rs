@@ -36,9 +36,7 @@ impl UpdateRulesetInput {
 
 /// A builder for [`UpdateRulesetInput`](crate::operation::update_ruleset::UpdateRulesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl UpdateRulesetInputBuilder {
         self
     }
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -99,10 +94,7 @@ impl UpdateRulesetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRulesetInput`](crate::operation::update_ruleset::UpdateRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ruleset::UpdateRulesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_ruleset::UpdateRulesetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ruleset::UpdateRulesetInput {
             name: self.name,
             description: self.description,

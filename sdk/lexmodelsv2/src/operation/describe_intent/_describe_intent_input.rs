@@ -43,9 +43,7 @@ impl DescribeIntentInput {
 
 /// A builder for [`DescribeIntentInput`](crate::operation::describe_intent::DescribeIntentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIntentInputBuilder {
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl DescribeIntentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIntentInput`](crate::operation::describe_intent::DescribeIntentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_intent::DescribeIntentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_intent::DescribeIntentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_intent::DescribeIntentInput {
             intent_id: self.intent_id,
             bot_id: self.bot_id,

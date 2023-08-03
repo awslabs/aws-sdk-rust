@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`deployment_config_name(impl ::std::convert::Into<String>)`](crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
     /// - On success, responds with [`DeleteDeploymentConfigOutput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteDeploymentConfigError>`](crate::operation::delete_deployment_config::DeleteDeploymentConfigError)
-    pub fn delete_deployment_config(
-        &self,
-    ) -> crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder
-    {
+    pub fn delete_deployment_config(&self) -> crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder {
         crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder::new(self.handle.clone())
     }
 }

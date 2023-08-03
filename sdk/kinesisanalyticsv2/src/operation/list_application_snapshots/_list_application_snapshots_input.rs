@@ -29,18 +29,14 @@ impl ListApplicationSnapshotsInput {
 }
 impl ListApplicationSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsInput`](crate::operation::list_application_snapshots::ListApplicationSnapshotsInput).
-    pub fn builder(
-    ) -> crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsInputBuilder {
         crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationSnapshotsInput`](crate::operation::list_application_snapshots::ListApplicationSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationSnapshotsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -48,18 +44,12 @@ pub struct ListApplicationSnapshotsInputBuilder {
 }
 impl ListApplicationSnapshotsInputBuilder {
     /// <p>The name of an existing application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an existing application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -102,12 +92,10 @@ impl ListApplicationSnapshotsInputBuilder {
         crate::operation::list_application_snapshots::ListApplicationSnapshotsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_application_snapshots::ListApplicationSnapshotsInput {
-                application_name: self.application_name,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_application_snapshots::ListApplicationSnapshotsInput {
+            application_name: self.application_name,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`events(Option<Vec<Event>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>A list of events. Each element in the list contains detailed information about one event.</p>
     /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
-    pub fn describe_events(
-        &self,
-    ) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
-        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
+        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
     }
 }

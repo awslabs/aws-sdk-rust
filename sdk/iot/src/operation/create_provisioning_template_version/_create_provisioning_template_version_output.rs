@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateProvisioningTemplateVersionOutp
 }
 impl CreateProvisioningTemplateVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningTemplateVersionOutput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput).
-    pub fn builder() -> crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionOutputBuilder {
         crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProvisioningTemplateVersionOutput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProvisioningTemplateVersionOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CreateProvisioningTemplateVersionOutputBuilder {
         &self.template_arn
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -132,17 +124,12 @@ impl CreateProvisioningTemplateVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProvisioningTemplateVersionOutput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput).
-    pub fn build(self) -> crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput{
+    pub fn build(self) -> crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput {
         crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput {
-            template_arn: self.template_arn
-            ,
-            template_name: self.template_name
-            ,
-            version_id: self.version_id
-            ,
-            is_default_version: self.is_default_version
-                .unwrap_or_default()
-            ,
+            template_arn: self.template_arn,
+            template_name: self.template_name,
+            version_id: self.version_id,
+            is_default_version: self.is_default_version.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

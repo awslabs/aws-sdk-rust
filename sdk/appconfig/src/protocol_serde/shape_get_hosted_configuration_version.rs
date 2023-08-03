@@ -9,65 +9,68 @@ pub fn de_get_hosted_configuration_version_http_error(
     crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InternalServerException" => crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerException" => {
+            crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::generic(generic),
     })
 }
 
@@ -84,35 +87,53 @@ pub fn de_get_hosted_configuration_version_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionOutputBuilder::default();
         output = output.set_application_id(
-            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_application_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse ApplicationId from header `Application-Id"))?
+            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_application_id_header(_response_headers).map_err(|_| {
+                crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled(
+                    "Failed to parse ApplicationId from header `Application-Id",
+                )
+            })?,
         );
         output = output.set_configuration_profile_id(
-            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_configuration_profile_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id"))?
+            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_configuration_profile_id_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled(
+                        "Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id",
+                    )
+                },
+            )?,
         );
-        output = output.set_content(
-            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_content_payload(_response_body)?
-        );
+        output = output.set_content(crate::protocol_serde::shape_get_hosted_configuration_version_output::de_content_payload(
+            _response_body,
+        )?);
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_content_type_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_content_type_header(_response_headers).map_err(|_| {
+                crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled(
+                    "Failed to parse ContentType from header `Content-Type",
+                )
+            })?,
         );
         output = output.set_description(
-            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_description_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse Description from header `Description"))?
+            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_description_header(_response_headers).map_err(|_| {
+                crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled(
+                    "Failed to parse Description from header `Description",
+                )
+            })?,
         );
         output = output.set_version_label(
-            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_version_label_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse VersionLabel from header `VersionLabel"))?
+            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_version_label_header(_response_headers).map_err(|_| {
+                crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled(
+                    "Failed to parse VersionLabel from header `VersionLabel",
+                )
+            })?,
         );
         output = output.set_version_number(
-            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_version_number_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled("Failed to parse VersionNumber from header `Version-Number"))?
+            crate::protocol_serde::shape_get_hosted_configuration_version_output::de_version_number_header(_response_headers).map_err(|_| {
+                crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError::unhandled(
+                    "Failed to parse VersionNumber from header `Version-Number",
+                )
+            })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

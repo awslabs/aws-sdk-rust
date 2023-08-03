@@ -3,10 +3,7 @@
 pub fn de_invalid_domain_name_for_origin_access_control_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder,
-) -> Result<
-    crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

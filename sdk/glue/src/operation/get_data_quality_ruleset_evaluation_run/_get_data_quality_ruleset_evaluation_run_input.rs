@@ -15,16 +15,14 @@ impl GetDataQualityRulesetEvaluationRunInput {
 }
 impl GetDataQualityRulesetEvaluationRunInput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetEvaluationRunInput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput).
-    pub fn builder() -> crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder{
+    pub fn builder() -> crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder {
         crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataQualityRulesetEvaluationRunInput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataQualityRulesetEvaluationRunInputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl GetDataQualityRulesetEvaluationRunInputBuilder {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`GetDataQualityRulesetEvaluationRunInput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput {
-                run_id: self.run_id
-                ,
-            }
+            crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput { run_id: self.run_id },
         )
     }
 }

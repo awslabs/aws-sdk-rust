@@ -37,10 +37,8 @@ impl ::aws_http::request_id::RequestId for StartProjectSessionOutput {
 }
 impl StartProjectSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartProjectSessionOutput`](crate::operation::start_project_session::StartProjectSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder {
-        crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder {
+        crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder::default()
     }
 }
 
@@ -68,18 +66,12 @@ impl StartProjectSessionOutputBuilder {
         &self.name
     }
     /// <p>A system-generated identifier for the session.</p>
-    pub fn client_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A system-generated identifier for the session.</p>
-    pub fn set_client_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_session_id = input;
         self
     }

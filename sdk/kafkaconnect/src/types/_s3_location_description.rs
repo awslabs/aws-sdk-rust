@@ -37,9 +37,7 @@ impl S3LocationDescription {
 
 /// A builder for [`S3LocationDescription`](crate::types::S3LocationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3LocationDescriptionBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_key: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl S3LocationDescriptionBuilder {
         &self.file_key
     }
     /// <p>The version of an object in an S3 bucket.</p>
-    pub fn object_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of an object in an S3 bucket.</p>
-    pub fn set_object_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_version = input;
         self
     }

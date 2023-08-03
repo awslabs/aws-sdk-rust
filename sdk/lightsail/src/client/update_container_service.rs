@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateContainerServiceOutput`](crate::operation::update_container_service::UpdateContainerServiceOutput) with field(s):
     ///   - [`container_service(Option<ContainerService>)`](crate::operation::update_container_service::UpdateContainerServiceOutput::container_service): <p>An object that describes a container service.</p>
     /// - On failure, responds with [`SdkError<UpdateContainerServiceError>`](crate::operation::update_container_service::UpdateContainerServiceError)
-    pub fn update_container_service(
-        &self,
-    ) -> crate::operation::update_container_service::builders::UpdateContainerServiceFluentBuilder
-    {
+    pub fn update_container_service(&self) -> crate::operation::update_container_service::builders::UpdateContainerServiceFluentBuilder {
         crate::operation::update_container_service::builders::UpdateContainerServiceFluentBuilder::new(self.handle.clone())
     }
 }

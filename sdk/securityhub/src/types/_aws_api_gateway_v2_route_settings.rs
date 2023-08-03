@@ -57,9 +57,7 @@ impl AwsApiGatewayV2RouteSettings {
 
 /// A builder for [`AwsApiGatewayV2RouteSettings`](crate::types::AwsApiGatewayV2RouteSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayV2RouteSettingsBuilder {
     pub(crate) detailed_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
-    pub fn logging_level(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logging_level = ::std::option::Option::Some(input.into());
         self
     }
@@ -97,10 +92,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
-    pub fn set_logging_level(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging_level = input;
         self
     }

@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for StartAssetBundleImportJobOutput {
 }
 impl StartAssetBundleImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartAssetBundleImportJobOutput`](crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobOutput).
-    pub fn builder() -> crate::operation::start_asset_bundle_import_job::builders::StartAssetBundleImportJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_asset_bundle_import_job::builders::StartAssetBundleImportJobOutputBuilder {
         crate::operation::start_asset_bundle_import_job::builders::StartAssetBundleImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartAssetBundleImportJobOutput`](crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAssetBundleImportJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl StartAssetBundleImportJobOutputBuilder {
         &self.arn
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    pub fn asset_bundle_import_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_bundle_import_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_bundle_import_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    pub fn set_asset_bundle_import_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_bundle_import_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_bundle_import_job_id = input;
         self
     }
@@ -132,9 +124,7 @@ impl StartAssetBundleImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartAssetBundleImportJobOutput`](crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobOutput {
+    pub fn build(self) -> crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobOutput {
         crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobOutput {
             arn: self.arn,
             asset_bundle_import_job_id: self.asset_bundle_import_job_id,

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StartAppReplicationOutput {
 }
 impl StartAppReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartAppReplicationOutput`](crate::operation::start_app_replication::StartAppReplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_app_replication::builders::StartAppReplicationOutputBuilder {
-        crate::operation::start_app_replication::builders::StartAppReplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_app_replication::builders::StartAppReplicationOutputBuilder {
+        crate::operation::start_app_replication::builders::StartAppReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartAppReplicationOutput`](crate::operation::start_app_replication::StartAppReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAppReplicationOutputBuilder {
     _request_id: Option<String>,
 }

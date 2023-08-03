@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_prepared_statement::builders::UpdatePreparedStatementFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_prepared_statement::builders::UpdatePreparedStatementFluentBuilder::set_description): <p>The description of the prepared statement.</p>
     /// - On success, responds with [`UpdatePreparedStatementOutput`](crate::operation::update_prepared_statement::UpdatePreparedStatementOutput)
     /// - On failure, responds with [`SdkError<UpdatePreparedStatementError>`](crate::operation::update_prepared_statement::UpdatePreparedStatementError)
-    pub fn update_prepared_statement(
-        &self,
-    ) -> crate::operation::update_prepared_statement::builders::UpdatePreparedStatementFluentBuilder
-    {
+    pub fn update_prepared_statement(&self) -> crate::operation::update_prepared_statement::builders::UpdatePreparedStatementFluentBuilder {
         crate::operation::update_prepared_statement::builders::UpdatePreparedStatementFluentBuilder::new(self.handle.clone())
     }
 }

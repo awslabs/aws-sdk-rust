@@ -33,8 +33,7 @@ pub fn ser_delete_multi_region_access_point_input(
 
 pub fn de_delete_multi_region_access_point_input(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::DeleteMultiRegionAccessPointInput, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::DeleteMultiRegionAccessPointInput, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::DeleteMultiRegionAccessPointInput::builder();
     while let Some(mut tag) = decoder.next_tag() {

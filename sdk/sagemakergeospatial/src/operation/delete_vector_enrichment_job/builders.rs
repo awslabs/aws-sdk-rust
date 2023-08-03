@@ -26,7 +26,7 @@ impl DeleteVectorEnrichmentJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVectorEnrichmentJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobInputBuilder,
+    inner: crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobInputBuilder,
 }
 impl DeleteVectorEnrichmentJobFluentBuilder {
     /// Creates a new `DeleteVectorEnrichmentJob`.
@@ -37,7 +37,7 @@ impl DeleteVectorEnrichmentJobFluentBuilder {
         }
     }
     /// Access the DeleteVectorEnrichmentJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteVectorEnrichmentJobFluentBuilder {
             crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteVectorEnrichmentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteVectorEnrichmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteVectorEnrichmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteVectorEnrichmentJobFluentBuilder {
             crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError>,
     > {
         self.customize_middleware().await
     }

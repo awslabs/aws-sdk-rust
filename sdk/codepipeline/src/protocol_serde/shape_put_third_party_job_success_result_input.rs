@@ -21,10 +21,7 @@ pub fn ser_put_third_party_job_success_result_input(
     if let Some(var_6) = &input.execution_details {
         #[allow(unused_mut)]
         let mut object_7 = object.key("executionDetails").start_object();
-        crate::protocol_serde::shape_execution_details::ser_execution_details(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_execution_details::ser_execution_details(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

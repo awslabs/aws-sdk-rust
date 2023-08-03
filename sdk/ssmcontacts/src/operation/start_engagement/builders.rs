@@ -10,10 +10,7 @@ impl StartEngagementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_engagement::StartEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_engagement::StartEngagementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_engagement::StartEngagementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_engagement();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartEngagementFluentBuilder {
         }
     }
     /// Access the StartEngagement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_engagement::builders::StartEngagementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_engagement::builders::StartEngagementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartEngagementFluentBuilder {
             crate::operation::start_engagement::StartEngagement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_engagement::StartEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_engagement::StartEngagementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartEngagementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartEngagementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_engagement::StartEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_engagement::StartEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_engagement::StartEngagementError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartEngagementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_engagement::StartEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_engagement::StartEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_engagement::StartEngagementError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartEngagementFluentBuilder {
             crate::operation::start_engagement::StartEngagement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_engagement::StartEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_engagement::StartEngagementError>,
     > {
         self.customize_middleware().await
     }
@@ -179,18 +163,12 @@ impl StartEngagementFluentBuilder {
         self.inner.get_content()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_subject(input.into());
         self
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_subject(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_subject(input);
         self
     }
@@ -199,18 +177,12 @@ impl StartEngagementFluentBuilder {
         self.inner.get_public_subject()
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_content(input.into());
         self
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_content(input);
         self
     }
@@ -233,18 +205,12 @@ impl StartEngagementFluentBuilder {
         self.inner.get_incident_id()
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`behavior_on_mx_failure(BehaviorOnMxFailure)`](crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainFluentBuilder::behavior_on_mx_failure) / [`set_behavior_on_mx_failure(Option<BehaviorOnMxFailure>)`](crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainFluentBuilder::set_behavior_on_mx_failure): <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>  <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     /// - On success, responds with [`SetIdentityMailFromDomainOutput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput)
     /// - On failure, responds with [`SdkError<SetIdentityMailFromDomainError>`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError)
-    pub fn set_identity_mail_from_domain(&self) -> crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainFluentBuilder{
+    pub fn set_identity_mail_from_domain(&self) -> crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainFluentBuilder {
         crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainFluentBuilder::new(self.handle.clone())
     }
 }

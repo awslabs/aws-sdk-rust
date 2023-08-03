@@ -37,9 +37,7 @@ impl CoreNetworkSegmentEdgeIdentifier {
 
 /// A builder for [`CoreNetworkSegmentEdgeIdentifier`](crate::types::CoreNetworkSegmentEdgeIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkSegmentEdgeIdentifierBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct CoreNetworkSegmentEdgeIdentifierBuilder {
 }
 impl CoreNetworkSegmentEdgeIdentifierBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -81,18 +73,12 @@ impl CoreNetworkSegmentEdgeIdentifierBuilder {
         &self.segment_name
     }
     /// <p>The Region where the segment edge is located.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where the segment edge is located.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }

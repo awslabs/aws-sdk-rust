@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteActivationOutput {
 }
 impl DeleteActivationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteActivationOutput`](crate::operation::delete_activation::DeleteActivationOutput).
-    pub fn builder() -> crate::operation::delete_activation::builders::DeleteActivationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_activation::builders::DeleteActivationOutputBuilder {
         crate::operation::delete_activation::builders::DeleteActivationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteActivationOutput`](crate::operation::delete_activation::DeleteActivationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteActivationOutputBuilder {
     _request_id: Option<String>,
 }

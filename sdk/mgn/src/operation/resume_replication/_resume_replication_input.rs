@@ -22,35 +22,26 @@ impl ResumeReplicationInput {
 }
 impl ResumeReplicationInput {
     /// Creates a new builder-style object to manufacture [`ResumeReplicationInput`](crate::operation::resume_replication::ResumeReplicationInput).
-    pub fn builder() -> crate::operation::resume_replication::builders::ResumeReplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::resume_replication::builders::ResumeReplicationInputBuilder {
         crate::operation::resume_replication::builders::ResumeReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`ResumeReplicationInput`](crate::operation::resume_replication::ResumeReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeReplicationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl ResumeReplicationInputBuilder {
     /// <p>Resume Replication Request source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resume Replication Request source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl ResumeReplicationInputBuilder {
     /// Consumes the builder and constructs a [`ResumeReplicationInput`](crate::operation::resume_replication::ResumeReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_replication::ResumeReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::resume_replication::ResumeReplicationInput {
-                source_server_id: self.source_server_id,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::resume_replication::ResumeReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::resume_replication::ResumeReplicationInput {
+            source_server_id: self.source_server_id,
+            account_id: self.account_id,
+        })
     }
 }

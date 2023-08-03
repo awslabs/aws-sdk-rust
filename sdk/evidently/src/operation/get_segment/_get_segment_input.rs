@@ -22,9 +22,7 @@ impl GetSegmentInput {
 
 /// A builder for [`GetSegmentInput`](crate::operation::get_segment::GetSegmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSegmentInputBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetSegmentInputBuilder {
         &self.segment
     }
     /// Consumes the builder and constructs a [`GetSegmentInput`](crate::operation::get_segment::GetSegmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_segment::GetSegmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_segment::GetSegmentInput {
-            segment: self.segment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_segment::GetSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_segment::GetSegmentInput { segment: self.segment })
     }
 }

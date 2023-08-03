@@ -37,10 +37,7 @@ impl ListEnvironmentOutputsFluentBuilder {
         }
     }
     /// Access the ListEnvironmentOutputs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListEnvironmentOutputsFluentBuilder {
             crate::operation::list_environment_outputs::ListEnvironmentOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_outputs::ListEnvironmentOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_outputs::ListEnvironmentOutputsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListEnvironmentOutputsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListEnvironmentOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_outputs::ListEnvironmentOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_outputs::ListEnvironmentOutputsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListEnvironmentOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_outputs::ListEnvironmentOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_outputs::ListEnvironmentOutputsError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl ListEnvironmentOutputsFluentBuilder {
             crate::operation::list_environment_outputs::ListEnvironmentOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_outputs::ListEnvironmentOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_outputs::ListEnvironmentOutputsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator
-    {
-        crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator {
+        crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator::new(self.handle, self.inner)
     }
     /// <p>The environment name.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The environment name.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -170,18 +144,12 @@ impl ListEnvironmentOutputsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

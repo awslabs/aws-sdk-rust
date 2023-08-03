@@ -9,10 +9,7 @@ pub fn ser_create_form_data(
     if let Some(var_2) = &input.data_type {
         #[allow(unused_mut)]
         let mut object_3 = object.key("dataType").start_object();
-        crate::protocol_serde::shape_form_data_type_config::ser_form_data_type_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_form_data_type_config::ser_form_data_type_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.form_action_type {
@@ -25,10 +22,7 @@ pub fn ser_create_form_data(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_field_config::ser_field_config(
-                    &mut object_9,
-                    value_8,
-                )?;
+                crate::protocol_serde::shape_field_config::ser_field_config(&mut object_9, value_8)?;
                 object_9.finish();
             }
         }
@@ -47,10 +41,7 @@ pub fn ser_create_form_data(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_sectional_element::ser_sectional_element(
-                    &mut object_16,
-                    value_15,
-                )?;
+                crate::protocol_serde::shape_sectional_element::ser_sectional_element(&mut object_16, value_15)?;
                 object_16.finish();
             }
         }

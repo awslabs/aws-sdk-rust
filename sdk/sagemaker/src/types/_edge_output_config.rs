@@ -36,9 +36,7 @@ impl EdgeOutputConfig {
         self.kms_key_id.as_deref()
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    pub fn preset_deployment_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EdgePresetDeploymentType> {
+    pub fn preset_deployment_type(&self) -> ::std::option::Option<&crate::types::EdgePresetDeploymentType> {
         self.preset_deployment_type.as_ref()
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
@@ -64,30 +62,21 @@ impl EdgeOutputConfig {
 
 /// A builder for [`EdgeOutputConfig`](crate::types::EdgeOutputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeOutputConfigBuilder {
     pub(crate) s3_output_location: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) preset_deployment_type:
-        ::std::option::Option<crate::types::EdgePresetDeploymentType>,
+    pub(crate) preset_deployment_type: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
     pub(crate) preset_deployment_config: ::std::option::Option<::std::string::String>,
 }
 impl EdgeOutputConfigBuilder {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
-    pub fn s3_output_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
-    pub fn set_s3_output_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_location = input;
         self
     }
@@ -115,17 +104,12 @@ impl EdgeOutputConfigBuilder {
         self
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    pub fn set_preset_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
-    ) -> Self {
+    pub fn set_preset_deployment_type(mut self, input: ::std::option::Option<crate::types::EdgePresetDeploymentType>) -> Self {
         self.preset_deployment_type = input;
         self
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    pub fn get_preset_deployment_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EdgePresetDeploymentType> {
+    pub fn get_preset_deployment_type(&self) -> &::std::option::Option<crate::types::EdgePresetDeploymentType> {
         &self.preset_deployment_type
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
@@ -138,10 +122,7 @@ impl EdgeOutputConfigBuilder {
     /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
     /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
-    pub fn preset_deployment_config(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preset_deployment_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preset_deployment_config = ::std::option::Option::Some(input.into());
         self
     }
@@ -155,10 +136,7 @@ impl EdgeOutputConfigBuilder {
     /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
     /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
-    pub fn set_preset_deployment_config(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preset_deployment_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preset_deployment_config = input;
         self
     }

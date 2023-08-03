@@ -33,7 +33,7 @@ impl UpdateParticipantRoleConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateParticipantRoleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder,
+    inner: crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder,
 }
 impl UpdateParticipantRoleConfigFluentBuilder {
     /// Creates a new `UpdateParticipantRoleConfig`.
@@ -44,7 +44,7 @@ impl UpdateParticipantRoleConfigFluentBuilder {
         }
     }
     /// Access the UpdateParticipantRoleConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl UpdateParticipantRoleConfigFluentBuilder {
             crate::operation::update_participant_role_config::UpdateParticipantRoleConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl UpdateParticipantRoleConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl UpdateParticipantRoleConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl UpdateParticipantRoleConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +112,7 @@ impl UpdateParticipantRoleConfigFluentBuilder {
             crate::operation::update_participant_role_config::UpdateParticipantRoleConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -156,25 +145,17 @@ impl UpdateParticipantRoleConfigFluentBuilder {
         self.inner.get_contact_id()
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
-    pub fn channel_configuration(
-        mut self,
-        input: crate::types::UpdateParticipantRoleConfigChannelInfo,
-    ) -> Self {
+    pub fn channel_configuration(mut self, input: crate::types::UpdateParticipantRoleConfigChannelInfo) -> Self {
         self.inner = self.inner.channel_configuration(input);
         self
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
-    pub fn set_channel_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>,
-    ) -> Self {
+    pub fn set_channel_configuration(mut self, input: ::std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>) -> Self {
         self.inner = self.inner.set_channel_configuration(input);
         self
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
-    pub fn get_channel_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo> {
+    pub fn get_channel_configuration(&self) -> &::std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo> {
         self.inner.get_channel_configuration()
     }
 }

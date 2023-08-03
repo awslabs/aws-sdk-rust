@@ -10,10 +10,7 @@ impl UpdateDatabaseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_database::UpdateDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_database::UpdateDatabaseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_database::UpdateDatabaseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_database();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDatabaseFluentBuilder {
         }
     }
     /// Access the UpdateDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_database::builders::UpdateDatabaseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_database::builders::UpdateDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,10 +140,7 @@ impl UpdateDatabaseFluentBuilder {
         self
     }
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
-    pub fn set_database_input(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseInput>,
-    ) -> Self {
+    pub fn set_database_input(mut self, input: ::std::option::Option<crate::types::DatabaseInput>) -> Self {
         self.inner = self.inner.set_database_input(input);
         self
     }

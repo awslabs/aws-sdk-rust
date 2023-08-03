@@ -19,9 +19,7 @@ impl UpdateInstanceOutput {
 
 /// A builder for [`UpdateInstanceOutput`](crate::operation::update_instance::UpdateInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceOutputBuilder {
     _request_id: Option<String>,
 }

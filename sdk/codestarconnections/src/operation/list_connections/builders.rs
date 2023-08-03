@@ -10,10 +10,7 @@ impl ListConnectionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_connections::ListConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connections::ListConnectionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connections::ListConnectionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_connections();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListConnectionsFluentBuilder {
         }
     }
     /// Access the ListConnections as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_connections::builders::ListConnectionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_connections::builders::ListConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListConnectionsFluentBuilder {
             crate::operation::list_connections::ListConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connections::ListConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connections::ListConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_connections::ListConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connections::ListConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connections::ListConnectionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_connections::ListConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connections::ListConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connections::ListConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListConnectionsFluentBuilder {
             crate::operation::list_connections::ListConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_connections::ListConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_connections::ListConnectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_connections::paginator::ListConnectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_connections::paginator::ListConnectionsPaginator {
-        crate::operation::list_connections::paginator::ListConnectionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_connections::paginator::ListConnectionsPaginator {
+        crate::operation::list_connections::paginator::ListConnectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
     pub fn provider_type_filter(mut self, input: crate::types::ProviderType) -> Self {
@@ -139,10 +118,7 @@ impl ListConnectionsFluentBuilder {
         self
     }
     /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn set_provider_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
+    pub fn set_provider_type_filter(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.inner = self.inner.set_provider_type_filter(input);
         self
     }
@@ -151,18 +127,12 @@ impl ListConnectionsFluentBuilder {
         self.inner.get_provider_type_filter()
     }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
-    pub fn host_arn_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_arn_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_arn_filter(input.into());
         self
     }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
-    pub fn set_host_arn_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_arn_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_arn_filter(input);
         self
     }

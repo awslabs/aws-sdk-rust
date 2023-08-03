@@ -48,9 +48,7 @@ impl Snapshot {
         self.arn.as_deref()
     }
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
-    pub fn cluster_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
+    pub fn cluster_configuration(&self) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
         self.cluster_configuration.as_ref()
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
@@ -67,9 +65,7 @@ impl Snapshot {
 
 /// A builder for [`Snapshot`](crate::types::Snapshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -156,17 +152,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
-    pub fn set_cluster_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterConfiguration>,
-    ) -> Self {
+    pub fn set_cluster_configuration(mut self, input: ::std::option::Option<crate::types::ClusterConfiguration>) -> Self {
         self.cluster_configuration = input;
         self
     }
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
-    pub fn get_cluster_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClusterConfiguration> {
+    pub fn get_cluster_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
         &self.cluster_configuration
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
@@ -175,10 +166,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
-    pub fn set_data_tiering(
-        mut self,
-        input: ::std::option::Option<crate::types::DataTieringStatus>,
-    ) -> Self {
+    pub fn set_data_tiering(mut self, input: ::std::option::Option<crate::types::DataTieringStatus>) -> Self {
         self.data_tiering = input;
         self
     }

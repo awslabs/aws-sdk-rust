@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLifecyclePolicyOutput {
 }
 impl CreateLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateLifecyclePolicyOutput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyOutputBuilder {
         crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLifecyclePolicyOutput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLifecyclePolicyOutputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

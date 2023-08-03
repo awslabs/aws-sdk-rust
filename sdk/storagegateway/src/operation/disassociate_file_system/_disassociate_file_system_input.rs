@@ -22,36 +22,26 @@ impl DisassociateFileSystemInput {
 }
 impl DisassociateFileSystemInput {
     /// Creates a new builder-style object to manufacture [`DisassociateFileSystemInput`](crate::operation::disassociate_file_system::DisassociateFileSystemInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_file_system::builders::DisassociateFileSystemInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_file_system::builders::DisassociateFileSystemInputBuilder {
         crate::operation::disassociate_file_system::builders::DisassociateFileSystemInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateFileSystemInput`](crate::operation::disassociate_file_system::DisassociateFileSystemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateFileSystemInputBuilder {
     pub(crate) file_system_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete: ::std::option::Option<bool>,
 }
 impl DisassociateFileSystemInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
-    pub fn file_system_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
-    pub fn set_file_system_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_association_arn = input;
         self
     }
@@ -76,15 +66,11 @@ impl DisassociateFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFileSystemInput`](crate::operation::disassociate_file_system::DisassociateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_file_system::DisassociateFileSystemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_file_system::DisassociateFileSystemInput {
-                file_system_association_arn: self.file_system_association_arn,
-                force_delete: self.force_delete.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_file_system::DisassociateFileSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_file_system::DisassociateFileSystemInput {
+            file_system_association_arn: self.file_system_association_arn,
+            force_delete: self.force_delete.unwrap_or_default(),
+        })
     }
 }

@@ -9,10 +9,12 @@ impl super::Client {
     /// - On success, responds with [`AssociateWebsiteAuthorizationProviderOutput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput) with field(s):
     ///   - [`authorization_provider_id(Option<String>)`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput::authorization_provider_id): <p>A unique identifier for the authorization provider.</p>
     /// - On failure, responds with [`SdkError<AssociateWebsiteAuthorizationProviderError>`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn associate_website_authorization_provider(&self) -> crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderFluentBuilder{
-        crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn associate_website_authorization_provider(
+        &self,
+    ) -> crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderFluentBuilder {
+        crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -47,17 +47,14 @@ impl TranslateDocumentInput {
 }
 impl TranslateDocumentInput {
     /// Creates a new builder-style object to manufacture [`TranslateDocumentInput`](crate::operation::translate_document::TranslateDocumentInput).
-    pub fn builder() -> crate::operation::translate_document::builders::TranslateDocumentInputBuilder
-    {
+    pub fn builder() -> crate::operation::translate_document::builders::TranslateDocumentInputBuilder {
         crate::operation::translate_document::builders::TranslateDocumentInputBuilder::default()
     }
 }
 
 /// A builder for [`TranslateDocumentInput`](crate::operation::translate_document::TranslateDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranslateDocumentInputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::Document>,
     pub(crate) terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -87,10 +84,7 @@ impl TranslateDocumentInputBuilder {
     /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
     /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
     /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn terminology_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn terminology_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.terminology_names.unwrap_or_default();
         v.push(input.into());
         self.terminology_names = ::std::option::Option::Some(v);
@@ -99,34 +93,23 @@ impl TranslateDocumentInputBuilder {
     /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
     /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
     /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn set_terminology_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_terminology_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.terminology_names = input;
         self
     }
     /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
     /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
     /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn get_terminology_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_terminology_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.terminology_names
     }
     /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn source_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn set_source_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_language_code = input;
         self
     }
@@ -135,18 +118,12 @@ impl TranslateDocumentInputBuilder {
         &self.source_language_code
     }
     /// <p>The language code requested for the translated document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn target_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code requested for the translated document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn set_target_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_language_code = input;
         self
     }
@@ -160,10 +137,7 @@ impl TranslateDocumentInputBuilder {
         self
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TranslationSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -174,18 +148,13 @@ impl TranslateDocumentInputBuilder {
     /// Consumes the builder and constructs a [`TranslateDocumentInput`](crate::operation::translate_document::TranslateDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::translate_document::TranslateDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::translate_document::TranslateDocumentInput {
-                document: self.document,
-                terminology_names: self.terminology_names,
-                source_language_code: self.source_language_code,
-                target_language_code: self.target_language_code,
-                settings: self.settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::translate_document::TranslateDocumentInput {
+            document: self.document,
+            terminology_names: self.terminology_names,
+            source_language_code: self.source_language_code,
+            target_language_code: self.target_language_code,
+            settings: self.settings,
+        })
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ShareDirectoryOutput`](crate::operation::share_directory::ShareDirectoryOutput) with field(s):
     ///   - [`shared_directory_id(Option<String>)`](crate::operation::share_directory::ShareDirectoryOutput::shared_directory_id): <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
     /// - On failure, responds with [`SdkError<ShareDirectoryError>`](crate::operation::share_directory::ShareDirectoryError)
-    pub fn share_directory(
-        &self,
-    ) -> crate::operation::share_directory::builders::ShareDirectoryFluentBuilder {
-        crate::operation::share_directory::builders::ShareDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn share_directory(&self) -> crate::operation::share_directory::builders::ShareDirectoryFluentBuilder {
+        crate::operation::share_directory::builders::ShareDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

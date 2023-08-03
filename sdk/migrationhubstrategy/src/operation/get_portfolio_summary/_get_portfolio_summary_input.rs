@@ -5,29 +5,21 @@
 pub struct GetPortfolioSummaryInput {}
 impl GetPortfolioSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetPortfolioSummaryInput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryInputBuilder {
-        crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryInputBuilder {
+        crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPortfolioSummaryInput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPortfolioSummaryInputBuilder {}
 impl GetPortfolioSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetPortfolioSummaryInput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_portfolio_summary::GetPortfolioSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_portfolio_summary::GetPortfolioSummaryInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_portfolio_summary::GetPortfolioSummaryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_portfolio_summary::GetPortfolioSummaryInput {})
     }
 }

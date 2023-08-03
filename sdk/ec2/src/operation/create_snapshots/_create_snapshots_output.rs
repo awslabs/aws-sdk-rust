@@ -28,9 +28,7 @@ impl CreateSnapshotsOutput {
 
 /// A builder for [`CreateSnapshotsOutput`](crate::operation::create_snapshots::CreateSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotsOutputBuilder {
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl CreateSnapshotsOutputBuilder {
         self
     }
     /// <p>List of snapshots.</p>
-    pub fn set_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>>,
-    ) -> Self {
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>>) -> Self {
         self.snapshots = input;
         self
     }
     /// <p>List of snapshots.</p>
-    pub fn get_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>> {
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>> {
         &self.snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

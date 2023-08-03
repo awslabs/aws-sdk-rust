@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeUploadBufferOutput {
 }
 impl DescribeUploadBufferOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUploadBufferOutput`](crate::operation::describe_upload_buffer::DescribeUploadBufferOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_upload_buffer::builders::DescribeUploadBufferOutputBuilder {
+    pub fn builder() -> crate::operation::describe_upload_buffer::builders::DescribeUploadBufferOutputBuilder {
         crate::operation::describe_upload_buffer::builders::DescribeUploadBufferOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUploadBufferOutput`](crate::operation::describe_upload_buffer::DescribeUploadBufferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUploadBufferOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -87,10 +84,7 @@ impl DescribeUploadBufferOutputBuilder {
         self
     }
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    pub fn set_disk_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disk_ids = input;
         self
     }
@@ -118,10 +112,7 @@ impl DescribeUploadBufferOutputBuilder {
         self
     }
     /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
-    pub fn set_upload_buffer_allocated_in_bytes(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_upload_buffer_allocated_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.upload_buffer_allocated_in_bytes = input;
         self
     }
@@ -144,9 +135,7 @@ impl DescribeUploadBufferOutputBuilder {
             gateway_arn: self.gateway_arn,
             disk_ids: self.disk_ids,
             upload_buffer_used_in_bytes: self.upload_buffer_used_in_bytes.unwrap_or_default(),
-            upload_buffer_allocated_in_bytes: self
-                .upload_buffer_allocated_in_bytes
-                .unwrap_or_default(),
+            upload_buffer_allocated_in_bytes: self.upload_buffer_allocated_in_bytes.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

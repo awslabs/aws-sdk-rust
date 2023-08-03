@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CancelImportTaskOutput {
 }
 impl CancelImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelImportTaskOutput`](crate::operation::cancel_import_task::CancelImportTaskOutput).
-    pub fn builder() -> crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder {
         crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelImportTaskOutput`](crate::operation::cancel_import_task::CancelImportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelImportTaskOutputBuilder {
     pub(crate) import_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) previous_state: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ pub struct CancelImportTaskOutputBuilder {
 }
 impl CancelImportTaskOutputBuilder {
     /// <p>The ID of the task being canceled.</p>
-    pub fn import_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the task being canceled.</p>
-    pub fn set_import_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_task_id = input;
         self
     }
@@ -74,18 +65,12 @@ impl CancelImportTaskOutputBuilder {
         &self.import_task_id
     }
     /// <p>The current state of the task being canceled.</p>
-    pub fn previous_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn previous_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current state of the task being canceled.</p>
-    pub fn set_previous_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_previous_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.previous_state = input;
         self
     }

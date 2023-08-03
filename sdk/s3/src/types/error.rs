@@ -15,9 +15,7 @@ pub enum SelectObjectContentEventStreamError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for SelectObjectContentEventStreamError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -34,27 +32,19 @@ impl ::std::fmt::Display for SelectObjectContentEventStreamError {
         }
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for SelectObjectContentEventStreamError
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SelectObjectContentEventStreamError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl crate::s3_request_id::RequestIdExt
-    for crate::types::error::SelectObjectContentEventStreamError
-{
+impl crate::s3_request_id::RequestIdExt for crate::types::error::SelectObjectContentEventStreamError {
     fn extended_request_id(&self) -> Option<&str> {
         self.meta().extended_request_id()
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::SelectObjectContentEventStreamError
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::SelectObjectContentEventStreamError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -70,27 +60,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for SelectObjectContentEventStr
 impl SelectObjectContentEventStreamError {
     /// Creates the `SelectObjectContentEventStreamError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `SelectObjectContentEventStreamError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

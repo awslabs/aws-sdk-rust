@@ -79,9 +79,7 @@ impl Preset {
 
 /// A builder for [`Preset`](crate::types::Preset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PresetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -170,10 +168,7 @@ impl PresetBuilder {
         self
     }
     /// <p>A section of the response body that provides information about the audio preset values.</p>
-    pub fn set_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioParameters>,
-    ) -> Self {
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioParameters>) -> Self {
         self.audio = input;
         self
     }
@@ -187,10 +182,7 @@ impl PresetBuilder {
         self
     }
     /// <p>A section of the response body that provides information about the video preset values.</p>
-    pub fn set_video(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoParameters>,
-    ) -> Self {
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoParameters>) -> Self {
         self.video = input;
         self
     }
@@ -204,10 +196,7 @@ impl PresetBuilder {
         self
     }
     /// <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
-    pub fn set_thumbnails(
-        mut self,
-        input: ::std::option::Option<crate::types::Thumbnails>,
-    ) -> Self {
+    pub fn set_thumbnails(mut self, input: ::std::option::Option<crate::types::Thumbnails>) -> Self {
         self.thumbnails = input;
         self
     }

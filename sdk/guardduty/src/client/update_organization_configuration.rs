@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`auto_enable_organization_members(AutoEnableMembers)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::auto_enable_organization_members) / [`set_auto_enable_organization_members(Option<AutoEnableMembers>)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::set_auto_enable_organization_members): <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. </p>  <ul>   <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically. </p> </li>   <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>   <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>  </ul>
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError)
-    pub fn update_organization_configuration(&self) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder{
+    pub fn update_organization_configuration(
+        &self,
+    ) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

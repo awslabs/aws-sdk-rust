@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`access_policy_summaries(Option<Vec<AccessPolicySummary>>)`](crate::operation::list_access_policies::ListAccessPoliciesOutput::access_policy_summaries): <p>A list that summarizes each access policy.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_policies::ListAccessPoliciesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListAccessPoliciesError>`](crate::operation::list_access_policies::ListAccessPoliciesError)
-    pub fn list_access_policies(
-        &self,
-    ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder {
-        crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_access_policies(&self) -> crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder {
+        crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

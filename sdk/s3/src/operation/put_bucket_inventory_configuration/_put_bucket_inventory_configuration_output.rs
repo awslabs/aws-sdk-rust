@@ -18,16 +18,14 @@ impl ::aws_http::request_id::RequestId for PutBucketInventoryConfigurationOutput
 }
 impl PutBucketInventoryConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketInventoryConfigurationOutput`](crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput).
-    pub fn builder() -> crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationOutputBuilder {
         crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketInventoryConfigurationOutput`](crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketInventoryConfigurationOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -38,10 +36,7 @@ impl PutBucketInventoryConfigurationOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -55,10 +50,7 @@ impl PutBucketInventoryConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutBucketInventoryConfigurationOutput`](crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput {
         crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput {
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,

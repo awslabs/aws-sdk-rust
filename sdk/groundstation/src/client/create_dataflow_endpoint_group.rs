@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateDataflowEndpointGroupOutput`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput) with field(s):
     ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On failure, responds with [`SdkError<CreateDataflowEndpointGroupError>`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError)
-    pub fn create_dataflow_endpoint_group(&self) -> crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupFluentBuilder{
+    pub fn create_dataflow_endpoint_group(
+        &self,
+    ) -> crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupFluentBuilder {
         crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

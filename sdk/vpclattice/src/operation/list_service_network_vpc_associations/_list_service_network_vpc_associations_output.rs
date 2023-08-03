@@ -5,8 +5,7 @@
 pub struct ListServiceNetworkVpcAssociationsOutput {
     /// <p>Information about the associations.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListServiceNetworkVpcAssociationsOutput {
 }
 impl ListServiceNetworkVpcAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceNetworkVpcAssociationSummary]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ServiceNetworkVpcAssociationSummary]> {
         self.items.as_deref()
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListServiceNetworkVpcAssociationsOutp
 }
 impl ListServiceNetworkVpcAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceNetworkVpcAssociationsOutput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput).
-    pub fn builder() -> crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder {
         crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceNetworkVpcAssociationsOutput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceNetworkVpcAssociationsOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListServiceNetworkVpcAssociationsOutputBuilder {
         self
     }
     /// <p>Information about the associations.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the associations.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>> {
         &self.items
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
@@ -100,12 +86,10 @@ impl ListServiceNetworkVpcAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceNetworkVpcAssociationsOutput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput).
-    pub fn build(self) -> crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput{
+    pub fn build(self) -> crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput {
         crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput {
-            items: self.items
-            ,
-            next_token: self.next_token
-            ,
+            items: self.items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

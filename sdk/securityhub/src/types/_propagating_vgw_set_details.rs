@@ -23,9 +23,7 @@ impl PropagatingVgwSetDetails {
 
 /// A builder for [`PropagatingVgwSetDetails`](crate::types::PropagatingVgwSetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropagatingVgwSetDetailsBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PropagatingVgwSetDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`PropagatingVgwSetDetails`](crate::types::PropagatingVgwSetDetails).
     pub fn build(self) -> crate::types::PropagatingVgwSetDetails {
-        crate::types::PropagatingVgwSetDetails {
-            gateway_id: self.gateway_id,
-        }
+        crate::types::PropagatingVgwSetDetails { gateway_id: self.gateway_id }
     }
 }

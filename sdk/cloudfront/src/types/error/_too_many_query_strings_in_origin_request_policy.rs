@@ -27,34 +27,27 @@ impl ::std::fmt::Display for TooManyQueryStringsInOriginRequestPolicy {
     }
 }
 impl ::std::error::Error for TooManyQueryStringsInOriginRequestPolicy {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyQueryStringsInOriginRequestPolicy
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyQueryStringsInOriginRequestPolicy {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyQueryStringsInOriginRequestPolicy
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyQueryStringsInOriginRequestPolicy {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyQueryStringsInOriginRequestPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyQueryStringsInOriginRequestPolicy`](crate::types::error::TooManyQueryStringsInOriginRequestPolicy).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyQueryStringsInOriginRequestPolicyBuilder {
+    pub fn builder() -> crate::types::error::builders::TooManyQueryStringsInOriginRequestPolicyBuilder {
         crate::types::error::builders::TooManyQueryStringsInOriginRequestPolicyBuilder::default()
     }
 }
 
 /// A builder for [`TooManyQueryStringsInOriginRequestPolicy`](crate::types::error::TooManyQueryStringsInOriginRequestPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyQueryStringsInOriginRequestPolicyBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl TooManyQueryStringsInOriginRequestPolicyBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

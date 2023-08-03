@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`actions_executions(Option<Vec<AuditMitigationActionExecutionMetadata>>)`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput::actions_executions): <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput::next_token): <p>The token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAuditMitigationActionsExecutionsError>`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError)
-    pub fn list_audit_mitigation_actions_executions(&self) -> crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder{
-        crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::new(self.handle.clone())
+    pub fn list_audit_mitigation_actions_executions(
+        &self,
+    ) -> crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder {
+        crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

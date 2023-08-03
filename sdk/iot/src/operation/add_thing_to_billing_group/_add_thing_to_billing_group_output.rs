@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AddThingToBillingGroupOutput {
 }
 impl AddThingToBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`AddThingToBillingGroupOutput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupOutputBuilder {
         crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddThingToBillingGroupOutput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddThingToBillingGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl AddThingToBillingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddThingToBillingGroupOutput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput {
+    pub fn build(self) -> crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput {
         crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput {
             _request_id: self._request_id,
         }

@@ -35,16 +35,14 @@ impl DescribeTableDataImportJobInput {
 }
 impl DescribeTableDataImportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeTableDataImportJobInput`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobInput).
-    pub fn builder() -> crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobInputBuilder {
         crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTableDataImportJobInput`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableDataImportJobInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
@@ -109,12 +107,10 @@ impl DescribeTableDataImportJobInputBuilder {
         crate::operation::describe_table_data_import_job::DescribeTableDataImportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobInput {
-                workbook_id: self.workbook_id,
-                table_id: self.table_id,
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_table_data_import_job::DescribeTableDataImportJobInput {
+            workbook_id: self.workbook_id,
+            table_id: self.table_id,
+            job_id: self.job_id,
+        })
     }
 }

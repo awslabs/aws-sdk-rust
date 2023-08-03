@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeMetricFiltersOutput {
 }
 impl DescribeMetricFiltersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricFiltersOutput`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersOutputBuilder {
         crate::operation::describe_metric_filters::builders::DescribeMetricFiltersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMetricFiltersOutput`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMetricFiltersOutputBuilder {
     pub(crate) metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeMetricFiltersOutputBuilder {
         self
     }
     /// <p>The metric filters.</p>
-    pub fn set_metric_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilter>>,
-    ) -> Self {
+    pub fn set_metric_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilter>>) -> Self {
         self.metric_filters = input;
         self
     }
     /// <p>The metric filters.</p>
-    pub fn get_metric_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricFilter>> {
+    pub fn get_metric_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricFilter>> {
         &self.metric_filters
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>

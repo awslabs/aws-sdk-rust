@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`access_policy_summaries(Option<Vec<AccessPolicySummary>>)`](crate::operation::list_access_policies::ListAccessPoliciesOutput::access_policy_summaries): <p>Details about the requested access policies.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_policies::ListAccessPoliciesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListAccessPoliciesError>`](crate::operation::list_access_policies::ListAccessPoliciesError)
-    pub fn list_access_policies(
-        &self,
-    ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder {
-        crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_access_policies(&self) -> crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder {
+        crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

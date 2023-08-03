@@ -15,18 +15,14 @@ impl DeleteSolFunctionPackageInput {
 }
 impl DeleteSolFunctionPackageInput {
     /// Creates a new builder-style object to manufacture [`DeleteSolFunctionPackageInput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput).
-    pub fn builder(
-    ) -> crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageInputBuilder {
         crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSolFunctionPackageInput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSolFunctionPackageInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteSolFunctionPackageInputBuilder {
         crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput {
-                vnf_pkg_id: self.vnf_pkg_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput { vnf_pkg_id: self.vnf_pkg_id })
     }
 }

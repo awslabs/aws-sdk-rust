@@ -10,10 +10,7 @@ impl UpdateExperimentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_experiment::UpdateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_experiment();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateExperimentFluentBuilder {
         }
     }
     /// Access the UpdateExperiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_experiment::builders::UpdateExperimentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_experiment::builders::UpdateExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateExperimentFluentBuilder {
             crate::operation::update_experiment::UpdateExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experiment::UpdateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experiment::UpdateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdateExperimentFluentBuilder {
             crate::operation::update_experiment::UpdateExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_experiment::UpdateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_experiment::UpdateExperimentError>,
     > {
         self.customize_middleware().await
     }
@@ -175,17 +159,12 @@ impl UpdateExperimentFluentBuilder {
         self
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub fn set_treatments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
-    ) -> Self {
+    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>) -> Self {
         self.inner = self.inner.set_treatments(input);
         self
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub fn get_treatments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
+    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
         self.inner.get_treatments()
     }
     /// Appends an item to `metricGoals`.
@@ -198,32 +177,21 @@ impl UpdateExperimentFluentBuilder {
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn set_metric_goals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
-    ) -> Self {
+    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>) -> Self {
         self.inner = self.inner.set_metric_goals(input);
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn get_metric_goals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
+    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
         self.inner.get_metric_goals()
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn randomization_salt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.randomization_salt(input.into());
         self
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn set_randomization_salt(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_randomization_salt(input);
         self
     }
@@ -282,10 +250,7 @@ impl UpdateExperimentFluentBuilder {
         self
     }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn set_online_ab_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnlineAbConfig>,
-    ) -> Self {
+    pub fn set_online_ab_config(mut self, input: ::std::option::Option<crate::types::OnlineAbConfig>) -> Self {
         self.inner = self.inner.set_online_ab_config(input);
         self
     }

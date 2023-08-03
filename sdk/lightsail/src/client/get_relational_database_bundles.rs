@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`bundles(Option<Vec<RelationalDatabaseBundle>>)`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput::bundles): <p>An object describing the result of your get relational database bundles request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseBundlesError>`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError)
-    pub fn get_relational_database_bundles(&self) -> crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesFluentBuilder{
+    pub fn get_relational_database_bundles(
+        &self,
+    ) -> crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesFluentBuilder {
         crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesFluentBuilder::new(self.handle.clone())
     }
 }

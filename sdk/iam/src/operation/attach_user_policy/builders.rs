@@ -10,10 +10,7 @@ impl AttachUserPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::attach_user_policy::AttachUserPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_user_policy::AttachUserPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_user_policy::AttachUserPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.attach_user_policy();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl AttachUserPolicyFluentBuilder {
         }
     }
     /// Access the AttachUserPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::attach_user_policy::builders::AttachUserPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::attach_user_policy::builders::AttachUserPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl AttachUserPolicyFluentBuilder {
             crate::operation::attach_user_policy::AttachUserPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_user_policy::AttachUserPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_user_policy::AttachUserPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl AttachUserPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl AttachUserPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_user_policy::AttachUserPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_user_policy::AttachUserPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_user_policy::AttachUserPolicyError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl AttachUserPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_user_policy::AttachUserPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_user_policy::AttachUserPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_user_policy::AttachUserPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl AttachUserPolicyFluentBuilder {
             crate::operation::attach_user_policy::AttachUserPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_user_policy::AttachUserPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_user_policy::AttachUserPolicyError>,
     > {
         self.customize_middleware().await
     }

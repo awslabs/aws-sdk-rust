@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAutoPredictorOutput`](crate::operation::create_auto_predictor::CreateAutoPredictorOutput) with field(s):
     ///   - [`predictor_arn(Option<String>)`](crate::operation::create_auto_predictor::CreateAutoPredictorOutput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor.</p>
     /// - On failure, responds with [`SdkError<CreateAutoPredictorError>`](crate::operation::create_auto_predictor::CreateAutoPredictorError)
-    pub fn create_auto_predictor(
-        &self,
-    ) -> crate::operation::create_auto_predictor::builders::CreateAutoPredictorFluentBuilder {
-        crate::operation::create_auto_predictor::builders::CreateAutoPredictorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_auto_predictor(&self) -> crate::operation::create_auto_predictor::builders::CreateAutoPredictorFluentBuilder {
+        crate::operation::create_auto_predictor::builders::CreateAutoPredictorFluentBuilder::new(self.handle.clone())
     }
 }

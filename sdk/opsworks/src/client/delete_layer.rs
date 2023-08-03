@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`layer_id(impl ::std::convert::Into<String>)`](crate::operation::delete_layer::builders::DeleteLayerFluentBuilder::layer_id) / [`set_layer_id(Option<String>)`](crate::operation::delete_layer::builders::DeleteLayerFluentBuilder::set_layer_id): <p>The layer ID.</p>
     /// - On success, responds with [`DeleteLayerOutput`](crate::operation::delete_layer::DeleteLayerOutput)
     /// - On failure, responds with [`SdkError<DeleteLayerError>`](crate::operation::delete_layer::DeleteLayerError)
-    pub fn delete_layer(
-        &self,
-    ) -> crate::operation::delete_layer::builders::DeleteLayerFluentBuilder {
+    pub fn delete_layer(&self) -> crate::operation::delete_layer::builders::DeleteLayerFluentBuilder {
         crate::operation::delete_layer::builders::DeleteLayerFluentBuilder::new(self.handle.clone())
     }
 }

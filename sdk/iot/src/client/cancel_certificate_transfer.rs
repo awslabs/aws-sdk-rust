@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`certificate_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferFluentBuilder::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     /// - On success, responds with [`CancelCertificateTransferOutput`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput)
     /// - On failure, responds with [`SdkError<CancelCertificateTransferError>`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferError)
-    pub fn cancel_certificate_transfer(&self) -> crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferFluentBuilder{
+    pub fn cancel_certificate_transfer(&self) -> crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferFluentBuilder {
         crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferFluentBuilder::new(self.handle.clone())
     }
 }

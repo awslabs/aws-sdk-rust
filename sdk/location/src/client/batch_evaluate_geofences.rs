@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchEvaluateGeofencesOutput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchEvaluateGeofencesError>>)`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput::errors): <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
     /// - On failure, responds with [`SdkError<BatchEvaluateGeofencesError>`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError)
-    pub fn batch_evaluate_geofences(
-        &self,
-    ) -> crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesFluentBuilder
-    {
+    pub fn batch_evaluate_geofences(&self) -> crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesFluentBuilder {
         crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesFluentBuilder::new(self.handle.clone())
     }
 }

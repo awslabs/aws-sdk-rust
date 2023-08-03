@@ -34,8 +34,7 @@ pub struct RecommendationJobContainerConfig {
     pub data_input_config: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
     #[doc(hidden)]
-    pub supported_endpoint_type:
-        ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
+    pub supported_endpoint_type: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
 }
 impl RecommendationJobContainerConfig {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -58,9 +57,7 @@ impl RecommendationJobContainerConfig {
         self.framework_version.as_deref()
     }
     /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
-    pub fn payload_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationJobPayloadConfig> {
+    pub fn payload_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobPayloadConfig> {
         self.payload_config.as_ref()
     }
     /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
@@ -77,9 +74,7 @@ impl RecommendationJobContainerConfig {
         self.data_input_config.as_deref()
     }
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
-    pub fn supported_endpoint_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationJobSupportedEndpointType> {
+    pub fn supported_endpoint_type(&self) -> ::std::option::Option<&crate::types::RecommendationJobSupportedEndpointType> {
         self.supported_endpoint_type.as_ref()
     }
 }
@@ -92,9 +87,7 @@ impl RecommendationJobContainerConfig {
 
 /// A builder for [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationJobContainerConfigBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task: ::std::option::Option<::std::string::String>,
@@ -102,11 +95,9 @@ pub struct RecommendationJobContainerConfigBuilder {
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
     pub(crate) payload_config: ::std::option::Option<crate::types::RecommendationJobPayloadConfig>,
     pub(crate) nearest_model_name: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_instance_types:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_input_config: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_endpoint_type:
-        ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
+    pub(crate) supported_endpoint_type: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
 }
 impl RecommendationJobContainerConfigBuilder {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -161,18 +152,12 @@ impl RecommendationJobContainerConfigBuilder {
         &self.framework
     }
     /// <p>The framework version of the container image.</p>
-    pub fn framework_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The framework version of the container image.</p>
-    pub fn set_framework_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_version = input;
         self
     }
@@ -186,34 +171,23 @@ impl RecommendationJobContainerConfigBuilder {
         self
     }
     /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
-    pub fn set_payload_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobPayloadConfig>,
-    ) -> Self {
+    pub fn set_payload_config(mut self, input: ::std::option::Option<crate::types::RecommendationJobPayloadConfig>) -> Self {
         self.payload_config = input;
         self
     }
     /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
-    pub fn get_payload_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationJobPayloadConfig> {
+    pub fn get_payload_config(&self) -> &::std::option::Option<crate::types::RecommendationJobPayloadConfig> {
         &self.payload_config
     }
     /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
     /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code> </p>
-    pub fn nearest_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nearest_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nearest_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
     /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code> </p>
-    pub fn set_nearest_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nearest_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nearest_model_name = input;
         self
     }
@@ -227,42 +201,28 @@ impl RecommendationJobContainerConfigBuilder {
     /// To override the contents of this collection use [`set_supported_instance_types`](Self::set_supported_instance_types).
     ///
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub fn supported_instance_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_instance_types.unwrap_or_default();
         v.push(input.into());
         self.supported_instance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub fn set_supported_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_instance_types = input;
         self
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub fn get_supported_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_instance_types
     }
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
-    pub fn data_input_config(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_input_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_input_config = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
-    pub fn set_data_input_config(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_input_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_input_config = input;
         self
     }
@@ -271,25 +231,17 @@ impl RecommendationJobContainerConfigBuilder {
         &self.data_input_config
     }
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
-    pub fn supported_endpoint_type(
-        mut self,
-        input: crate::types::RecommendationJobSupportedEndpointType,
-    ) -> Self {
+    pub fn supported_endpoint_type(mut self, input: crate::types::RecommendationJobSupportedEndpointType) -> Self {
         self.supported_endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
-    pub fn set_supported_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
-    ) -> Self {
+    pub fn set_supported_endpoint_type(mut self, input: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>) -> Self {
         self.supported_endpoint_type = input;
         self
     }
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
-    pub fn get_supported_endpoint_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationJobSupportedEndpointType> {
+    pub fn get_supported_endpoint_type(&self) -> &::std::option::Option<crate::types::RecommendationJobSupportedEndpointType> {
         &self.supported_endpoint_type
     }
     /// Consumes the builder and constructs a [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).

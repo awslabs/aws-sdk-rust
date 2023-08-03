@@ -12,10 +12,7 @@ pub fn ser_write_treatment_resource(
     if let Some(var_3) = &input.message_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("MessageConfiguration").start_object();
-        crate::protocol_serde::shape_message_configuration::ser_message_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_message_configuration::ser_message_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.schedule {
@@ -33,10 +30,7 @@ pub fn ser_write_treatment_resource(
     if let Some(var_8) = &input.template_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("TemplateConfiguration").start_object();
-        crate::protocol_serde::shape_template_configuration::ser_template_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_template_configuration::ser_template_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.treatment_description {

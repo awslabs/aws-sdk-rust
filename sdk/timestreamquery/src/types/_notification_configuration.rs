@@ -23,9 +23,7 @@ impl NotificationConfiguration {
 
 /// A builder for [`NotificationConfiguration`](crate::types::NotificationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationConfigurationBuilder {
     pub(crate) sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
 }
@@ -36,10 +34,7 @@ impl NotificationConfigurationBuilder {
         self
     }
     /// <p>Details on SNS configuration. </p>
-    pub fn set_sns_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SnsConfiguration>,
-    ) -> Self {
+    pub fn set_sns_configuration(mut self, input: ::std::option::Option<crate::types::SnsConfiguration>) -> Self {
         self.sns_configuration = input;
         self
     }

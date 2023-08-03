@@ -30,9 +30,7 @@ impl AggregationType {
 
 /// A builder for [`AggregationType`](crate::types::AggregationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregationTypeBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AggregationTypeName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl AggregationTypeBuilder {
         self
     }
     /// <p>The name of the aggregation type.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationTypeName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AggregationTypeName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl AggregationTypeBuilder {
         self
     }
     /// <p>A list of the values of aggregation types.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

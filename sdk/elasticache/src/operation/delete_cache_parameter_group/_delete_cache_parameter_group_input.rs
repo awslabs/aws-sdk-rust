@@ -20,16 +20,14 @@ impl DeleteCacheParameterGroupInput {
 }
 impl DeleteCacheParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheParameterGroupInput`](crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupInput).
-    pub fn builder() -> crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder {
         crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCacheParameterGroupInput`](crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCacheParameterGroupInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +35,14 @@ impl DeleteCacheParameterGroupInputBuilder {
     /// <p>The name of the cache parameter group to delete.</p> <note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache parameter group to delete.</p> <note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
@@ -67,10 +59,8 @@ impl DeleteCacheParameterGroupInputBuilder {
         crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupInput {
-                cache_parameter_group_name: self.cache_parameter_group_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupInput {
+            cache_parameter_group_name: self.cache_parameter_group_name,
+        })
     }
 }

@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`accelerator_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorFluentBuilder::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
     /// - On success, responds with [`DeleteCustomRoutingAcceleratorOutput`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomRoutingAcceleratorError>`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorError)
-    pub fn delete_custom_routing_accelerator(&self) -> crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorFluentBuilder{
+    pub fn delete_custom_routing_accelerator(
+        &self,
+    ) -> crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorFluentBuilder {
         crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSchedulingPolicyOutput {
 }
 impl DeleteSchedulingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchedulingPolicyOutput`](crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyOutputBuilder {
         crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSchedulingPolicyOutput`](crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSchedulingPolicyOutputBuilder {
     _request_id: Option<String>,
 }

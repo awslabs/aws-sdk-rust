@@ -29,17 +29,14 @@ impl DescribeJobExecutionInput {
 }
 impl DescribeJobExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobExecutionInput`](crate::operation::describe_job_execution::DescribeJobExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_execution::builders::DescribeJobExecutionInputBuilder {
+    pub fn builder() -> crate::operation::describe_job_execution::builders::DescribeJobExecutionInputBuilder {
         crate::operation::describe_job_execution::builders::DescribeJobExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobExecutionInput`](crate::operation::describe_job_execution::DescribeJobExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobExecutionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl DescribeJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobExecutionInput`](crate::operation::describe_job_execution::DescribeJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_execution::DescribeJobExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_job_execution::DescribeJobExecutionInput {
-                job_id: self.job_id,
-                thing_name: self.thing_name,
-                execution_number: self.execution_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_job_execution::DescribeJobExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_job_execution::DescribeJobExecutionInput {
+            job_id: self.job_id,
+            thing_name: self.thing_name,
+            execution_number: self.execution_number,
+        })
     }
 }

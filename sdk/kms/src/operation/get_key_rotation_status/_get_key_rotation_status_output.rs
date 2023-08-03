@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetKeyRotationStatusOutput {
 }
 impl GetKeyRotationStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyRotationStatusOutput`](crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusOutputBuilder {
         crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetKeyRotationStatusOutput`](crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyRotationStatusOutputBuilder {
     pub(crate) key_rotation_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,

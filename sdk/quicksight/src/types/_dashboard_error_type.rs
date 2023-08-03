@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DashboardErrorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for DashboardErrorType {
             "PARAMETER_TYPE_INVALID" => DashboardErrorType::ParameterTypeInvalid,
             "PARAMETER_VALUE_INCOMPATIBLE" => DashboardErrorType::ParameterValueIncompatible,
             "SOURCE_NOT_FOUND" => DashboardErrorType::SourceNotFound,
-            other => DashboardErrorType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DashboardErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

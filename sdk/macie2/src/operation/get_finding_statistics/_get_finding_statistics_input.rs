@@ -42,25 +42,20 @@ impl GetFindingStatisticsInput {
         self.size
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn sort_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingStatisticsSortCriteria> {
+    pub fn sort_criteria(&self) -> ::std::option::Option<&crate::types::FindingStatisticsSortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
 impl GetFindingStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder {
+    pub fn builder() -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder {
         crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingStatisticsInputBuilder {
     pub(crate) finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     pub(crate) group_by: ::std::option::Option<crate::types::GroupBy>,
@@ -74,10 +69,7 @@ impl GetFindingStatisticsInputBuilder {
         self
     }
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
         self
     }
@@ -137,33 +129,24 @@ impl GetFindingStatisticsInputBuilder {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingStatisticsSortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::FindingStatisticsSortCriteria>) -> Self {
         self.sort_criteria = input;
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn get_sort_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingStatisticsSortCriteria> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::FindingStatisticsSortCriteria> {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_finding_statistics::GetFindingStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_finding_statistics::GetFindingStatisticsInput {
-                finding_criteria: self.finding_criteria,
-                group_by: self.group_by,
-                size: self.size,
-                sort_criteria: self.sort_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_finding_statistics::GetFindingStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_finding_statistics::GetFindingStatisticsInput {
+            finding_criteria: self.finding_criteria,
+            group_by: self.group_by,
+            size: self.size,
+            sort_criteria: self.sort_criteria,
+        })
     }
 }

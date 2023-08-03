@@ -10,10 +10,7 @@ impl ConfirmDeviceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::confirm_device::ConfirmDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_device::ConfirmDeviceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.confirm_device();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ConfirmDeviceFluentBuilder {
         }
     }
     /// Access the ConfirmDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ConfirmDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -143,25 +135,17 @@ impl ConfirmDeviceFluentBuilder {
         self.inner.get_device_key()
     }
     /// <p>The configuration of the device secret verifier.</p>
-    pub fn device_secret_verifier_config(
-        mut self,
-        input: crate::types::DeviceSecretVerifierConfigType,
-    ) -> Self {
+    pub fn device_secret_verifier_config(mut self, input: crate::types::DeviceSecretVerifierConfigType) -> Self {
         self.inner = self.inner.device_secret_verifier_config(input);
         self
     }
     /// <p>The configuration of the device secret verifier.</p>
-    pub fn set_device_secret_verifier_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceSecretVerifierConfigType>,
-    ) -> Self {
+    pub fn set_device_secret_verifier_config(mut self, input: ::std::option::Option<crate::types::DeviceSecretVerifierConfigType>) -> Self {
         self.inner = self.inner.set_device_secret_verifier_config(input);
         self
     }
     /// <p>The configuration of the device secret verifier.</p>
-    pub fn get_device_secret_verifier_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceSecretVerifierConfigType> {
+    pub fn get_device_secret_verifier_config(&self) -> &::std::option::Option<crate::types::DeviceSecretVerifierConfigType> {
         self.inner.get_device_secret_verifier_config()
     }
     /// <p>The device name.</p>

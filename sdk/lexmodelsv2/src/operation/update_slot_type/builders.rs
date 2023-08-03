@@ -10,10 +10,7 @@ impl UpdateSlotTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_slot_type::UpdateSlotTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_slot_type::UpdateSlotTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_slot_type();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSlotTypeFluentBuilder {
         }
     }
     /// Access the UpdateSlotType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_slot_type::builders::UpdateSlotTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_slot_type::builders::UpdateSlotTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateSlotTypeFluentBuilder {
             crate::operation::update_slot_type::UpdateSlotType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_slot_type::UpdateSlotTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateSlotTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateSlotTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_slot_type::UpdateSlotTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_slot_type::UpdateSlotTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateSlotTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_slot_type::UpdateSlotTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_slot_type::UpdateSlotTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateSlotTypeFluentBuilder {
             crate::operation::update_slot_type::UpdateSlotType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_slot_type::UpdateSlotTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateSlotTypeFluentBuilder {
         self.inner.get_slot_type_id()
     }
     /// <p>The new name of the slot type.</p>
-    pub fn slot_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slot_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.slot_type_name(input.into());
         self
     }
     /// <p>The new name of the slot type.</p>
-    pub fn set_slot_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slot_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_slot_type_name(input);
         self
     }
@@ -180,54 +158,35 @@ impl UpdateSlotTypeFluentBuilder {
         self
     }
     /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
-    pub fn set_slot_type_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>>,
-    ) -> Self {
+    pub fn set_slot_type_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>>) -> Self {
         self.inner = self.inner.set_slot_type_values(input);
         self
     }
     /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
-    pub fn get_slot_type_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>> {
+    pub fn get_slot_type_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>> {
         self.inner.get_slot_type_values()
     }
     /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
-    pub fn value_selection_setting(
-        mut self,
-        input: crate::types::SlotValueSelectionSetting,
-    ) -> Self {
+    pub fn value_selection_setting(mut self, input: crate::types::SlotValueSelectionSetting) -> Self {
         self.inner = self.inner.value_selection_setting(input);
         self
     }
     /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
-    pub fn set_value_selection_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotValueSelectionSetting>,
-    ) -> Self {
+    pub fn set_value_selection_setting(mut self, input: ::std::option::Option<crate::types::SlotValueSelectionSetting>) -> Self {
         self.inner = self.inner.set_value_selection_setting(input);
         self
     }
     /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
-    pub fn get_value_selection_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotValueSelectionSetting> {
+    pub fn get_value_selection_setting(&self) -> &::std::option::Option<crate::types::SlotValueSelectionSetting> {
         self.inner.get_value_selection_setting()
     }
     /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
-    pub fn parent_slot_type_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_slot_type_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_slot_type_signature(input.into());
         self
     }
     /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
-    pub fn set_parent_slot_type_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_slot_type_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_slot_type_signature(input);
         self
     }
@@ -283,39 +242,26 @@ impl UpdateSlotTypeFluentBuilder {
         self
     }
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    pub fn set_external_source_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalSourceSetting>,
-    ) -> Self {
+    pub fn set_external_source_setting(mut self, input: ::std::option::Option<crate::types::ExternalSourceSetting>) -> Self {
         self.inner = self.inner.set_external_source_setting(input);
         self
     }
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    pub fn get_external_source_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExternalSourceSetting> {
+    pub fn get_external_source_setting(&self) -> &::std::option::Option<crate::types::ExternalSourceSetting> {
         self.inner.get_external_source_setting()
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn composite_slot_type_setting(
-        mut self,
-        input: crate::types::CompositeSlotTypeSetting,
-    ) -> Self {
+    pub fn composite_slot_type_setting(mut self, input: crate::types::CompositeSlotTypeSetting) -> Self {
         self.inner = self.inner.composite_slot_type_setting(input);
         self
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn set_composite_slot_type_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::CompositeSlotTypeSetting>,
-    ) -> Self {
+    pub fn set_composite_slot_type_setting(mut self, input: ::std::option::Option<crate::types::CompositeSlotTypeSetting>) -> Self {
         self.inner = self.inner.set_composite_slot_type_setting(input);
         self
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn get_composite_slot_type_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompositeSlotTypeSetting> {
+    pub fn get_composite_slot_type_setting(&self) -> &::std::option::Option<crate::types::CompositeSlotTypeSetting> {
         self.inner.get_composite_slot_type_setting()
     }
 }

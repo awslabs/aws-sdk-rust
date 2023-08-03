@@ -32,8 +32,7 @@ impl UpdateQualificationTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQualificationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder,
+    inner: crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder,
 }
 impl UpdateQualificationTypeFluentBuilder {
     /// Creates a new `UpdateQualificationType`.
@@ -44,10 +43,7 @@ impl UpdateQualificationTypeFluentBuilder {
         }
     }
     /// Access the UpdateQualificationType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +55,7 @@ impl UpdateQualificationTypeFluentBuilder {
             crate::operation::update_qualification_type::UpdateQualificationType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_qualification_type::UpdateQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_qualification_type::UpdateQualificationTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +65,7 @@ impl UpdateQualificationTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +74,7 @@ impl UpdateQualificationTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_qualification_type::UpdateQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_qualification_type::UpdateQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_qualification_type::UpdateQualificationTypeError>,
     > {
         let op = self
             .inner
@@ -108,9 +97,7 @@ impl UpdateQualificationTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_qualification_type::UpdateQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_qualification_type::UpdateQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_qualification_type::UpdateQualificationTypeError>,
     > {
         self.send_middleware().await
     }
@@ -124,25 +111,17 @@ impl UpdateQualificationTypeFluentBuilder {
             crate::operation::update_qualification_type::UpdateQualificationType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_qualification_type::UpdateQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_qualification_type::UpdateQualificationTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Qualification type to update.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());
         self
     }
     /// <p>The ID of the Qualification type to update.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }
@@ -165,25 +144,17 @@ impl UpdateQualificationTypeFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn qualification_type_status(
-        mut self,
-        input: crate::types::QualificationTypeStatus,
-    ) -> Self {
+    pub fn qualification_type_status(mut self, input: crate::types::QualificationTypeStatus) -> Self {
         self.inner = self.inner.qualification_type_status(input);
         self
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn set_qualification_type_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationTypeStatus>,
-    ) -> Self {
+    pub fn set_qualification_type_status(mut self, input: ::std::option::Option<crate::types::QualificationTypeStatus>) -> Self {
         self.inner = self.inner.set_qualification_type_status(input);
         self
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn get_qualification_type_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
+    pub fn get_qualification_type_status(&self) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
         self.inner.get_qualification_type_status()
     }
     /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>

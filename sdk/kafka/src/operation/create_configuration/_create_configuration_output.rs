@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateConfigurationOutput {
 }
 impl CreateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationOutput`](crate::operation::create_configuration::CreateConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder {
-        crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder {
+        crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationOutput`](crate::operation::create_configuration::CreateConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -90,10 +86,7 @@ impl CreateConfigurationOutputBuilder {
         self
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -107,17 +100,12 @@ impl CreateConfigurationOutputBuilder {
         self
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationRevision>,
-    ) -> Self {
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<crate::types::ConfigurationRevision>) -> Self {
         self.latest_revision = input;
         self
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn get_latest_revision(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationRevision> {
+    pub fn get_latest_revision(&self) -> &::std::option::Option<crate::types::ConfigurationRevision> {
         &self.latest_revision
     }
     /// <p>The name of the configuration.</p>
@@ -140,10 +128,7 @@ impl CreateConfigurationOutputBuilder {
         self
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConfigurationState>) -> Self {
         self.state = input;
         self
     }

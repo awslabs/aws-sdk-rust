@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateAgentStatusOutput {
 }
 impl CreateAgentStatusOutput {
     /// Creates a new builder-style object to manufacture [`CreateAgentStatusOutput`](crate::operation::create_agent_status::CreateAgentStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::create_agent_status::builders::CreateAgentStatusOutputBuilder {
+    pub fn builder() -> crate::operation::create_agent_status::builders::CreateAgentStatusOutputBuilder {
         crate::operation::create_agent_status::builders::CreateAgentStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAgentStatusOutput`](crate::operation::create_agent_status::CreateAgentStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAgentStatusOutputBuilder {
     pub(crate) agent_status_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_status_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateAgentStatusOutputBuilder {
 }
 impl CreateAgentStatusOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
-    pub fn agent_status_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_status_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_status_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
-    pub fn set_agent_status_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_status_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_status_arn = input;
         self
     }
@@ -66,18 +57,12 @@ impl CreateAgentStatusOutputBuilder {
         &self.agent_status_arn
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn agent_status_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_status_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_status_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn set_agent_status_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_status_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_status_id = input;
         self
     }

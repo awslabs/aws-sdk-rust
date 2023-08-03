@@ -22,17 +22,14 @@ impl DeleteLayerVersionInput {
 }
 impl DeleteLayerVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteLayerVersionInput`](crate::operation::delete_layer_version::DeleteLayerVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_layer_version::builders::DeleteLayerVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_layer_version::builders::DeleteLayerVersionInputBuilder {
         crate::operation::delete_layer_version::builders::DeleteLayerVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLayerVersionInput`](crate::operation::delete_layer_version::DeleteLayerVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLayerVersionInputBuilder {
     pub(crate) layer_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i64>,
@@ -69,15 +66,10 @@ impl DeleteLayerVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLayerVersionInput`](crate::operation::delete_layer_version::DeleteLayerVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_layer_version::DeleteLayerVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_layer_version::DeleteLayerVersionInput {
-                layer_name: self.layer_name,
-                version_number: self.version_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_layer_version::DeleteLayerVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_layer_version::DeleteLayerVersionInput {
+            layer_name: self.layer_name,
+            version_number: self.version_number,
+        })
     }
 }

@@ -32,11 +32,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::put_template_action::PutTemplateActionOutput::description): <p>Template post migration custom action description.</p>
     ///   - [`category(Option<ActionCategory>)`](crate::operation::put_template_action::PutTemplateActionOutput::category): <p>Template post migration custom action category.</p>
     /// - On failure, responds with [`SdkError<PutTemplateActionError>`](crate::operation::put_template_action::PutTemplateActionError)
-    pub fn put_template_action(
-        &self,
-    ) -> crate::operation::put_template_action::builders::PutTemplateActionFluentBuilder {
-        crate::operation::put_template_action::builders::PutTemplateActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_template_action(&self) -> crate::operation::put_template_action::builders::PutTemplateActionFluentBuilder {
+        crate::operation::put_template_action::builders::PutTemplateActionFluentBuilder::new(self.handle.clone())
     }
 }

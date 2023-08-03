@@ -23,9 +23,7 @@ impl MsSmoothEncryptionSettings {
 
 /// A builder for [`MsSmoothEncryptionSettings`](crate::types::MsSmoothEncryptionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MsSmoothEncryptionSettingsBuilder {
     pub(crate) speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
@@ -36,10 +34,7 @@ impl MsSmoothEncryptionSettingsBuilder {
         self
     }
     /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
-    pub fn set_speke_key_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::SpekeKeyProvider>,
-    ) -> Self {
+    pub fn set_speke_key_provider(mut self, input: ::std::option::Option<crate::types::SpekeKeyProvider>) -> Self {
         self.speke_key_provider = input;
         self
     }

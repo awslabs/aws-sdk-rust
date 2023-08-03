@@ -22,36 +22,26 @@ impl DeleteBackupSelectionInput {
 }
 impl DeleteBackupSelectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupSelectionInput`](crate::operation::delete_backup_selection::DeleteBackupSelectionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_backup_selection::builders::DeleteBackupSelectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_backup_selection::builders::DeleteBackupSelectionInputBuilder {
         crate::operation::delete_backup_selection::builders::DeleteBackupSelectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackupSelectionInput`](crate::operation::delete_backup_selection::DeleteBackupSelectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackupSelectionInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) selection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBackupSelectionInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteBackupSelectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBackupSelectionInput`](crate::operation::delete_backup_selection::DeleteBackupSelectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_backup_selection::DeleteBackupSelectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_backup_selection::DeleteBackupSelectionInput {
-                backup_plan_id: self.backup_plan_id,
-                selection_id: self.selection_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_backup_selection::DeleteBackupSelectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_backup_selection::DeleteBackupSelectionInput {
+            backup_plan_id: self.backup_plan_id,
+            selection_id: self.selection_id,
+        })
     }
 }

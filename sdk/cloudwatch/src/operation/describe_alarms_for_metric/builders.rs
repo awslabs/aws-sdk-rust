@@ -27,8 +27,7 @@ impl DescribeAlarmsForMetricInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder,
+    inner: crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder,
 }
 impl DescribeAlarmsForMetricFluentBuilder {
     /// Creates a new `DescribeAlarmsForMetric`.
@@ -39,10 +38,7 @@ impl DescribeAlarmsForMetricFluentBuilder {
         }
     }
     /// Access the DescribeAlarmsForMetric as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DescribeAlarmsForMetricFluentBuilder {
             crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DescribeAlarmsForMetricFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DescribeAlarmsForMetricFluentBuilder {
             crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError>,
     > {
         self.customize_middleware().await
     }
@@ -168,18 +153,12 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self.inner.get_statistic()
     }
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
-    pub fn extended_statistic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extended_statistic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extended_statistic(input.into());
         self
     }
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
-    pub fn set_extended_statistic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extended_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_extended_statistic(input);
         self
     }
@@ -197,17 +176,12 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         self.inner.get_dimensions()
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>

@@ -19,9 +19,7 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_details(
         );
     }
     if input.expired_object_delete_marker {
-        object
-            .key("ExpiredObjectDeleteMarker")
-            .boolean(input.expired_object_delete_marker);
+        object.key("ExpiredObjectDeleteMarker").boolean(input.expired_object_delete_marker);
     }
     if let Some(var_4) = &input.filter {
         #[allow(unused_mut)]
@@ -35,9 +33,7 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_details(
     if input.noncurrent_version_expiration_in_days != 0 {
         object.key("NoncurrentVersionExpirationInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt(
-                (input.noncurrent_version_expiration_in_days).into(),
-            ),
+            ::aws_smithy_types::Number::NegInt((input.noncurrent_version_expiration_in_days).into()),
         );
     }
     if let Some(var_7) = &input.noncurrent_version_transitions {
@@ -75,17 +71,9 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_details(
 
 pub(crate) fn de_aws_s3_bucket_bucket_lifecycle_configuration_rules_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -95,107 +83,87 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AbortIncompleteMultipartUpload" => {
-                                builder = builder.set_abort_incomplete_multipart_upload(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AbortIncompleteMultipartUpload" => {
+                            builder = builder.set_abort_incomplete_multipart_upload(
                                     crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details(tokens)?
                                 );
-                            }
-                            "ExpirationDate" => {
-                                builder = builder.set_expiration_date(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "ExpirationDate" => {
+                            builder = builder.set_expiration_date(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ExpirationInDays" => {
-                                builder = builder.set_expiration_in_days(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ExpirationInDays" => {
+                            builder = builder.set_expiration_in_days(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "ExpiredObjectDeleteMarker" => {
-                                builder = builder.set_expired_object_delete_marker(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "Filter" => {
-                                builder = builder.set_filter(
+                            );
+                        }
+                        "ExpiredObjectDeleteMarker" => {
+                            builder =
+                                builder.set_expired_object_delete_marker(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Filter" => {
+                            builder = builder.set_filter(
                                     crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details(tokens)?
                                 );
-                            }
-                            "ID" => {
-                                builder = builder.set_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "ID" => {
+                            builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "NoncurrentVersionExpirationInDays" => {
-                                builder = builder.set_noncurrent_version_expiration_in_days(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "NoncurrentVersionExpirationInDays" => {
+                            builder = builder.set_noncurrent_version_expiration_in_days(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "NoncurrentVersionTransitions" => {
-                                builder = builder.set_noncurrent_version_transitions(
+                            );
+                        }
+                        "NoncurrentVersionTransitions" => {
+                            builder = builder.set_noncurrent_version_transitions(
                                     crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_list::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_list(tokens)?
                                 );
-                            }
-                            "Prefix" => {
-                                builder = builder.set_prefix(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "Prefix" => {
+                            builder = builder.set_prefix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Status" => {
-                                builder = builder.set_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Transitions" => {
-                                builder = builder.set_transitions(
+                            );
+                        }
+                        "Transitions" => {
+                            builder = builder.set_transitions(
                                     crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_list::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_list(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`job(impl ::std::convert::Into<String>)`](crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder::set_job): <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     /// - On success, responds with [`RestartSimulationJobOutput`](crate::operation::restart_simulation_job::RestartSimulationJobOutput)
     /// - On failure, responds with [`SdkError<RestartSimulationJobError>`](crate::operation::restart_simulation_job::RestartSimulationJobError)
-    pub fn restart_simulation_job(
-        &self,
-    ) -> crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder {
-        crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restart_simulation_job(&self) -> crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder {
+        crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder::new(self.handle.clone())
     }
 }

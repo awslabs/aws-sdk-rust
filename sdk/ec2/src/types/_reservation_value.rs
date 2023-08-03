@@ -37,9 +37,7 @@ impl ReservationValue {
 
 /// A builder for [`ReservationValue`](crate::types::ReservationValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationValueBuilder {
     pub(crate) hourly_price: ::std::option::Option<::std::string::String>,
     pub(crate) remaining_total_value: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ReservationValueBuilder {
         &self.hourly_price
     }
     /// <p>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</p>
-    pub fn remaining_total_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remaining_total_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remaining_total_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</p>
-    pub fn set_remaining_total_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remaining_total_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remaining_total_value = input;
         self
     }
@@ -81,18 +73,12 @@ impl ReservationValueBuilder {
         &self.remaining_total_value
     }
     /// <p>The remaining upfront cost of the reservation.</p>
-    pub fn remaining_upfront_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remaining_upfront_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remaining_upfront_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The remaining upfront cost of the reservation.</p>
-    pub fn set_remaining_upfront_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remaining_upfront_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remaining_upfront_value = input;
         self
     }

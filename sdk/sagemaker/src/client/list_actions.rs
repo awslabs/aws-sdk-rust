@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`action_summaries(Option<Vec<ActionSummary>>)`](crate::operation::list_actions::ListActionsOutput::action_summaries): <p>A list of actions and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_actions::ListActionsOutput::next_token): <p>A token for getting the next set of actions, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListActionsError>`](crate::operation::list_actions::ListActionsError)
-    pub fn list_actions(
-        &self,
-    ) -> crate::operation::list_actions::builders::ListActionsFluentBuilder {
+    pub fn list_actions(&self) -> crate::operation::list_actions::builders::ListActionsFluentBuilder {
         crate::operation::list_actions::builders::ListActionsFluentBuilder::new(self.handle.clone())
     }
 }

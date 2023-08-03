@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeTemplatePermissionsError>`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsError)
-    pub fn describe_template_permissions(&self) -> crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsFluentBuilder{
+    pub fn describe_template_permissions(
+        &self,
+    ) -> crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsFluentBuilder {
         crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

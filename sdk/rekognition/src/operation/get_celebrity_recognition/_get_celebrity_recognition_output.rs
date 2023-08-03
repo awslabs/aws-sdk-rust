@@ -70,25 +70,20 @@ impl ::aws_http::request_id::RequestId for GetCelebrityRecognitionOutput {
 }
 impl GetCelebrityRecognitionOutput {
     /// Creates a new builder-style object to manufacture [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionOutputBuilder {
         crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCelebrityRecognitionOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) celebrities:
-        ::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>>,
+    pub(crate) celebrities: ::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) job_tag: ::std::option::Option<::std::string::String>,
@@ -101,10 +96,7 @@ impl GetCelebrityRecognitionOutputBuilder {
         self
     }
     /// <p>The current status of the celebrity recognition job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -113,18 +105,12 @@ impl GetCelebrityRecognitionOutputBuilder {
         &self.job_status
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -138,10 +124,7 @@ impl GetCelebrityRecognitionOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
-    pub fn set_video_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
+    pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
         self.video_metadata = input;
         self
     }
@@ -175,17 +158,12 @@ impl GetCelebrityRecognitionOutputBuilder {
         self
     }
     /// <p>Array of celebrities recognized in the video.</p>
-    pub fn set_celebrities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>>,
-    ) -> Self {
+    pub fn set_celebrities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>>) -> Self {
         self.celebrities = input;
         self
     }
     /// <p>Array of celebrities recognized in the video.</p>
-    pub fn get_celebrities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>> {
+    pub fn get_celebrities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CelebrityRecognition>> {
         &self.celebrities
     }
     /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
@@ -240,9 +218,7 @@ impl GetCelebrityRecognitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput {
+    pub fn build(self) -> crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput {
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput {
             job_status: self.job_status,
             status_message: self.status_message,

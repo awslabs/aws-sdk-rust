@@ -12,9 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSceneOutput`](crate::operation::update_scene::UpdateSceneOutput) with field(s):
     ///   - [`update_date_time(Option<DateTime>)`](crate::operation::update_scene::UpdateSceneOutput::update_date_time): <p>The date and time when the scene was last updated.</p>
     /// - On failure, responds with [`SdkError<UpdateSceneError>`](crate::operation::update_scene::UpdateSceneError)
-    pub fn update_scene(
-        &self,
-    ) -> crate::operation::update_scene::builders::UpdateSceneFluentBuilder {
+    pub fn update_scene(&self) -> crate::operation::update_scene::builders::UpdateSceneFluentBuilder {
         crate::operation::update_scene::builders::UpdateSceneFluentBuilder::new(self.handle.clone())
     }
 }

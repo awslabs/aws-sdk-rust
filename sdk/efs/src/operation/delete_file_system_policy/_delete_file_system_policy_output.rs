@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFileSystemPolicyOutput {
 }
 impl DeleteFileSystemPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemPolicyOutput`](crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyOutputBuilder {
         crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFileSystemPolicyOutput`](crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileSystemPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteFileSystemPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemPolicyOutput`](crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput {
+    pub fn build(self) -> crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput {
         crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput {
             _request_id: self._request_id,
         }

@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`IncreaseReplicationFactorOutput`](crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput::cluster): <p>A description of the DAX cluster. with its new replication factor.</p>
     /// - On failure, responds with [`SdkError<IncreaseReplicationFactorError>`](crate::operation::increase_replication_factor::IncreaseReplicationFactorError)
-    pub fn increase_replication_factor(&self) -> crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorFluentBuilder{
+    pub fn increase_replication_factor(&self) -> crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorFluentBuilder {
         crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorFluentBuilder::new(self.handle.clone())
     }
 }

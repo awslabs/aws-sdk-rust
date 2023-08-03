@@ -37,9 +37,7 @@ impl InstanceStatusDetails {
 
 /// A builder for [`InstanceStatusDetails`](crate::types::InstanceStatusDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStatusDetailsBuilder {
     pub(crate) impaired_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<crate::types::StatusName>,
@@ -52,10 +50,7 @@ impl InstanceStatusDetailsBuilder {
         self
     }
     /// <p>The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.</p>
-    pub fn set_impaired_since(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_impaired_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.impaired_since = input;
         self
     }

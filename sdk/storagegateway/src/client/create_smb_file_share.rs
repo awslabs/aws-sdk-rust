@@ -32,11 +32,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSmbFileShareOutput`](crate::operation::create_smb_file_share::CreateSmbFileShareOutput) with field(s):
     ///   - [`file_share_arn(Option<String>)`](crate::operation::create_smb_file_share::CreateSmbFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     /// - On failure, responds with [`SdkError<CreateSMBFileShareError>`](crate::operation::create_smb_file_share::CreateSMBFileShareError)
-    pub fn create_smb_file_share(
-        &self,
-    ) -> crate::operation::create_smb_file_share::builders::CreateSMBFileShareFluentBuilder {
-        crate::operation::create_smb_file_share::builders::CreateSMBFileShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_smb_file_share(&self) -> crate::operation::create_smb_file_share::builders::CreateSMBFileShareFluentBuilder {
+        crate::operation::create_smb_file_share::builders::CreateSMBFileShareFluentBuilder::new(self.handle.clone())
     }
 }

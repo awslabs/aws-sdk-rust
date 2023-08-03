@@ -37,8 +37,7 @@ impl UpdateProjectVisibilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProjectVisibilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_project_visibility::builders::UpdateProjectVisibilityInputBuilder,
+    inner: crate::operation::update_project_visibility::builders::UpdateProjectVisibilityInputBuilder,
 }
 impl UpdateProjectVisibilityFluentBuilder {
     /// Creates a new `UpdateProjectVisibility`.
@@ -49,10 +48,7 @@ impl UpdateProjectVisibilityFluentBuilder {
         }
     }
     /// Access the UpdateProjectVisibility as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_project_visibility::builders::UpdateProjectVisibilityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_project_visibility::builders::UpdateProjectVisibilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +60,7 @@ impl UpdateProjectVisibilityFluentBuilder {
             crate::operation::update_project_visibility::UpdateProjectVisibility,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project_visibility::UpdateProjectVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project_visibility::UpdateProjectVisibilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +70,7 @@ impl UpdateProjectVisibilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +79,7 @@ impl UpdateProjectVisibilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_project_visibility::UpdateProjectVisibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project_visibility::UpdateProjectVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project_visibility::UpdateProjectVisibilityError>,
     > {
         let op = self
             .inner
@@ -113,9 +102,7 @@ impl UpdateProjectVisibilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_project_visibility::UpdateProjectVisibilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project_visibility::UpdateProjectVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project_visibility::UpdateProjectVisibilityError>,
     > {
         self.send_middleware().await
     }
@@ -129,9 +116,7 @@ impl UpdateProjectVisibilityFluentBuilder {
             crate::operation::update_project_visibility::UpdateProjectVisibility,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project_visibility::UpdateProjectVisibilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project_visibility::UpdateProjectVisibilityError>,
     > {
         self.customize_middleware().await
     }
@@ -183,10 +168,7 @@ impl UpdateProjectVisibilityFluentBuilder {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    pub fn set_project_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectVisibilityType>,
-    ) -> Self {
+    pub fn set_project_visibility(mut self, input: ::std::option::Option<crate::types::ProjectVisibilityType>) -> Self {
         self.inner = self.inner.set_project_visibility(input);
         self
     }
@@ -205,24 +187,16 @@ impl UpdateProjectVisibilityFluentBuilder {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    pub fn get_project_visibility(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProjectVisibilityType> {
+    pub fn get_project_visibility(&self) -> &::std::option::Option<crate::types::ProjectVisibilityType> {
         self.inner.get_project_visibility()
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
-    pub fn resource_access_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_access_role(input.into());
         self
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
-    pub fn set_resource_access_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_access_role(input);
         self
     }

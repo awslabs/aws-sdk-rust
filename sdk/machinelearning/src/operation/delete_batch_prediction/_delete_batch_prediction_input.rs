@@ -15,35 +15,25 @@ impl DeleteBatchPredictionInput {
 }
 impl DeleteBatchPredictionInput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionInput`](crate::operation::delete_batch_prediction::DeleteBatchPredictionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionInputBuilder {
         crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBatchPredictionInput`](crate::operation::delete_batch_prediction::DeleteBatchPredictionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBatchPredictionInputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBatchPredictionInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBatchPredictionInput`](crate::operation::delete_batch_prediction::DeleteBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_batch_prediction::DeleteBatchPredictionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_batch_prediction::DeleteBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_batch_prediction::DeleteBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_batch_prediction::DeleteBatchPredictionInput {
+            batch_prediction_id: self.batch_prediction_id,
+        })
     }
 }

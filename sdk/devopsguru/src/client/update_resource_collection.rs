@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`resource_collection(UpdateResourceCollectionFilter)`](crate::operation::update_resource_collection::builders::UpdateResourceCollectionFluentBuilder::resource_collection) / [`set_resource_collection(Option<UpdateResourceCollectionFilter>)`](crate::operation::update_resource_collection::builders::UpdateResourceCollectionFluentBuilder::set_resource_collection): <p> Contains information used to update a collection of Amazon Web Services resources. </p>
     /// - On success, responds with [`UpdateResourceCollectionOutput`](crate::operation::update_resource_collection::UpdateResourceCollectionOutput)
     /// - On failure, responds with [`SdkError<UpdateResourceCollectionError>`](crate::operation::update_resource_collection::UpdateResourceCollectionError)
-    pub fn update_resource_collection(
-        &self,
-    ) -> crate::operation::update_resource_collection::builders::UpdateResourceCollectionFluentBuilder
-    {
+    pub fn update_resource_collection(&self) -> crate::operation::update_resource_collection::builders::UpdateResourceCollectionFluentBuilder {
         crate::operation::update_resource_collection::builders::UpdateResourceCollectionFluentBuilder::new(self.handle.clone())
     }
 }

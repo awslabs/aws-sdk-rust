@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for SearchQuantumTasksOutput {
 }
 impl SearchQuantumTasksOutput {
     /// Creates a new builder-style object to manufacture [`SearchQuantumTasksOutput`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksOutputBuilder {
+    pub fn builder() -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksOutputBuilder {
         crate::operation::search_quantum_tasks::builders::SearchQuantumTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchQuantumTasksOutput`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksOutputBuilder {
-    pub(crate) quantum_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>>,
+    pub(crate) quantum_tasks: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl SearchQuantumTasksOutputBuilder {
         self
     }
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-    pub fn set_quantum_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>>,
-    ) -> Self {
+    pub fn set_quantum_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>>) -> Self {
         self.quantum_tasks = input;
         self
     }
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-    pub fn get_quantum_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>> {
+    pub fn get_quantum_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>> {
         &self.quantum_tasks
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>

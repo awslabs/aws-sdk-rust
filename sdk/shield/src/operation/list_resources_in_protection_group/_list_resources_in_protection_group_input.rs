@@ -37,16 +37,14 @@ impl ListResourcesInProtectionGroupInput {
 }
 impl ListResourcesInProtectionGroupInput {
     /// Creates a new builder-style object to manufacture [`ListResourcesInProtectionGroupInput`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupInput).
-    pub fn builder() -> crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder{
+    pub fn builder() -> crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder {
         crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesInProtectionGroupInput`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesInProtectionGroupInputBuilder {
     pub(crate) protection_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListResourcesInProtectionGroupInputBuilder {
 }
 impl ListResourcesInProtectionGroupInputBuilder {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn set_protection_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protection_group_id = input;
         self
     }
@@ -122,13 +114,10 @@ impl ListResourcesInProtectionGroupInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupInput {
-                protection_group_id: self.protection_group_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                protection_group_id: self.protection_group_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

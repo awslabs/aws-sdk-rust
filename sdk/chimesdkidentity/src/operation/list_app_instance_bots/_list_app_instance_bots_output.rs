@@ -8,8 +8,7 @@ pub struct ListAppInstanceBotsOutput {
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information for each requested <code>AppInstanceBot</code>.</p>
     #[doc(hidden)]
-    pub app_instance_bots:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>>,
+    pub app_instance_bots: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>>,
     /// <p>The token passed by previous API calls until all requested bots are returned.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListAppInstanceBotsOutput {
         self.app_instance_arn.as_deref()
     }
     /// <p>The information for each requested <code>AppInstanceBot</code>.</p>
-    pub fn app_instance_bots(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppInstanceBotSummary]> {
+    pub fn app_instance_bots(&self) -> ::std::option::Option<&[crate::types::AppInstanceBotSummary]> {
         self.app_instance_bots.as_deref()
     }
     /// <p>The token passed by previous API calls until all requested bots are returned.</p>
@@ -48,8 +45,7 @@ impl ::aws_http::request_id::RequestId for ListAppInstanceBotsOutput {
 }
 impl ListAppInstanceBotsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceBotsOutput`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsOutputBuilder {
+    pub fn builder() -> crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsOutputBuilder {
         crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsOutputBuilder::default()
     }
 }
@@ -59,25 +55,18 @@ impl ListAppInstanceBotsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListAppInstanceBotsOutputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) app_instance_bots:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>>,
+    pub(crate) app_instance_bots: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppInstanceBotsOutputBuilder {
     /// <p>The ARN of the AppInstance.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the AppInstance.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -97,17 +86,12 @@ impl ListAppInstanceBotsOutputBuilder {
         self
     }
     /// <p>The information for each requested <code>AppInstanceBot</code>.</p>
-    pub fn set_app_instance_bots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>>,
-    ) -> Self {
+    pub fn set_app_instance_bots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>>) -> Self {
         self.app_instance_bots = input;
         self
     }
     /// <p>The information for each requested <code>AppInstanceBot</code>.</p>
-    pub fn get_app_instance_bots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>> {
+    pub fn get_app_instance_bots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>> {
         &self.app_instance_bots
     }
     /// <p>The token passed by previous API calls until all requested bots are returned.</p>

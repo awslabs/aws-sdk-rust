@@ -18,8 +18,7 @@ pub struct RollbackDetails {
     pub instances_to_update_on_rollback: ::std::option::Option<i32>,
     /// <p>Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
     #[doc(hidden)]
-    pub progress_details_on_rollback:
-        ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
+    pub progress_details_on_rollback: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
 }
 impl RollbackDetails {
     /// <p>The reason for this instance refresh rollback (for example, whether a manual or automatic rollback was initiated).</p>
@@ -39,9 +38,7 @@ impl RollbackDetails {
         self.instances_to_update_on_rollback
     }
     /// <p>Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
-    pub fn progress_details_on_rollback(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceRefreshProgressDetails> {
+    pub fn progress_details_on_rollback(&self) -> ::std::option::Option<&crate::types::InstanceRefreshProgressDetails> {
         self.progress_details_on_rollback.as_ref()
     }
 }
@@ -54,31 +51,22 @@ impl RollbackDetails {
 
 /// A builder for [`RollbackDetails`](crate::types::RollbackDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RollbackDetailsBuilder {
     pub(crate) rollback_reason: ::std::option::Option<::std::string::String>,
     pub(crate) rollback_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) percentage_complete_on_rollback: ::std::option::Option<i32>,
     pub(crate) instances_to_update_on_rollback: ::std::option::Option<i32>,
-    pub(crate) progress_details_on_rollback:
-        ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
+    pub(crate) progress_details_on_rollback: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
 }
 impl RollbackDetailsBuilder {
     /// <p>The reason for this instance refresh rollback (for example, whether a manual or automatic rollback was initiated).</p>
-    pub fn rollback_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rollback_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rollback_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for this instance refresh rollback (for example, whether a manual or automatic rollback was initiated).</p>
-    pub fn set_rollback_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rollback_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rollback_reason = input;
         self
     }
@@ -92,10 +80,7 @@ impl RollbackDetailsBuilder {
         self
     }
     /// <p>The date and time at which the rollback began.</p>
-    pub fn set_rollback_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_rollback_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.rollback_start_time = input;
         self
     }
@@ -109,10 +94,7 @@ impl RollbackDetailsBuilder {
         self
     }
     /// <p>Indicates the value of <code>PercentageComplete</code> at the time the rollback started.</p>
-    pub fn set_percentage_complete_on_rollback(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_percentage_complete_on_rollback(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percentage_complete_on_rollback = input;
         self
     }
@@ -126,10 +108,7 @@ impl RollbackDetailsBuilder {
         self
     }
     /// <p>Indicates the value of <code>InstancesToUpdate</code> at the time the rollback started.</p>
-    pub fn set_instances_to_update_on_rollback(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_instances_to_update_on_rollback(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_to_update_on_rollback = input;
         self
     }
@@ -138,25 +117,17 @@ impl RollbackDetailsBuilder {
         &self.instances_to_update_on_rollback
     }
     /// <p>Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
-    pub fn progress_details_on_rollback(
-        mut self,
-        input: crate::types::InstanceRefreshProgressDetails,
-    ) -> Self {
+    pub fn progress_details_on_rollback(mut self, input: crate::types::InstanceRefreshProgressDetails) -> Self {
         self.progress_details_on_rollback = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
-    pub fn set_progress_details_on_rollback(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
-    ) -> Self {
+    pub fn set_progress_details_on_rollback(mut self, input: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>) -> Self {
         self.progress_details_on_rollback = input;
         self
     }
     /// <p>Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
-    pub fn get_progress_details_on_rollback(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRefreshProgressDetails> {
+    pub fn get_progress_details_on_rollback(&self) -> &::std::option::Option<crate::types::InstanceRefreshProgressDetails> {
         &self.progress_details_on_rollback
     }
     /// Consumes the builder and constructs a [`RollbackDetails`](crate::types::RollbackDetails).

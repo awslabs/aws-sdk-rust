@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartContactStreamingOutput`](crate::operation::start_contact_streaming::StartContactStreamingOutput) with field(s):
     ///   - [`streaming_id(Option<String>)`](crate::operation::start_contact_streaming::StartContactStreamingOutput::streaming_id): <p>The identifier of the streaming configuration enabled. </p>
     /// - On failure, responds with [`SdkError<StartContactStreamingError>`](crate::operation::start_contact_streaming::StartContactStreamingError)
-    pub fn start_contact_streaming(
-        &self,
-    ) -> crate::operation::start_contact_streaming::builders::StartContactStreamingFluentBuilder
-    {
-        crate::operation::start_contact_streaming::builders::StartContactStreamingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_contact_streaming(&self) -> crate::operation::start_contact_streaming::builders::StartContactStreamingFluentBuilder {
+        crate::operation::start_contact_streaming::builders::StartContactStreamingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,15 +5,12 @@
 pub struct DescribePiiEntitiesDetectionJobOutput {
     /// <p>Provides information about a PII entities detection job.</p>
     #[doc(hidden)]
-    pub pii_entities_detection_job_properties:
-        ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>,
+    pub pii_entities_detection_job_properties: ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribePiiEntitiesDetectionJobOutput {
     /// <p>Provides information about a PII entities detection job.</p>
-    pub fn pii_entities_detection_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PiiEntitiesDetectionJobProperties> {
+    pub fn pii_entities_detection_job_properties(&self) -> ::std::option::Option<&crate::types::PiiEntitiesDetectionJobProperties> {
         self.pii_entities_detection_job_properties.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DescribePiiEntitiesDetectionJobOutput
 }
 impl DescribePiiEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribePiiEntitiesDetectionJobOutput`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::operation::describe_pii_entities_detection_job::builders::DescribePiiEntitiesDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_pii_entities_detection_job::builders::DescribePiiEntitiesDetectionJobOutputBuilder {
         crate::operation::describe_pii_entities_detection_job::builders::DescribePiiEntitiesDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePiiEntitiesDetectionJobOutput`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePiiEntitiesDetectionJobOutputBuilder {
-    pub(crate) pii_entities_detection_job_properties:
-        ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>,
+    pub(crate) pii_entities_detection_job_properties: ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribePiiEntitiesDetectionJobOutputBuilder {
     /// <p>Provides information about a PII entities detection job.</p>
-    pub fn pii_entities_detection_job_properties(
-        mut self,
-        input: crate::types::PiiEntitiesDetectionJobProperties,
-    ) -> Self {
+    pub fn pii_entities_detection_job_properties(mut self, input: crate::types::PiiEntitiesDetectionJobProperties) -> Self {
         self.pii_entities_detection_job_properties = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DescribePiiEntitiesDetectionJobOutputBuilder {
         self
     }
     /// <p>Provides information about a PII entities detection job.</p>
-    pub fn get_pii_entities_detection_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties> {
+    pub fn get_pii_entities_detection_job_properties(&self) -> &::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties> {
         &self.pii_entities_detection_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +61,9 @@ impl DescribePiiEntitiesDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePiiEntitiesDetectionJobOutput`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput
-    {
+    pub fn build(self) -> crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput {
         crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput {
-            pii_entities_detection_job_properties: self.pii_entities_detection_job_properties
-            ,
+            pii_entities_detection_job_properties: self.pii_entities_detection_job_properties,
             _request_id: self._request_id,
         }
     }

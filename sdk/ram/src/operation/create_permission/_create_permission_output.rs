@@ -13,9 +13,7 @@ pub struct CreatePermissionOutput {
 }
 impl CreatePermissionOutput {
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn permission(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceSharePermissionSummary> {
+    pub fn permission(&self) -> ::std::option::Option<&crate::types::ResourceSharePermissionSummary> {
         self.permission.as_ref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
@@ -30,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreatePermissionOutput {
 }
 impl CreatePermissionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionOutput`](crate::operation::create_permission::CreatePermissionOutput).
-    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionOutputBuilder {
         crate::operation::create_permission::builders::CreatePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionOutput`](crate::operation::create_permission::CreatePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionOutputBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +48,12 @@ impl CreatePermissionOutputBuilder {
         self
     }
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::ResourceSharePermissionSummary>) -> Self {
         self.permission = input;
         self
     }
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn get_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceSharePermissionSummary> {
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::ResourceSharePermissionSummary> {
         &self.permission
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>

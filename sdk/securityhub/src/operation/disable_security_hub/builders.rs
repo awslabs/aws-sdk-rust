@@ -10,10 +10,7 @@ impl DisableSecurityHubInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_security_hub::DisableSecurityHubOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_security_hub::DisableSecurityHubError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_security_hub::DisableSecurityHubError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable_security_hub();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DisableSecurityHubFluentBuilder {
         }
     }
     /// Access the DisableSecurityHub as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_security_hub::builders::DisableSecurityHubInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_security_hub::builders::DisableSecurityHubInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DisableSecurityHubFluentBuilder {
             crate::operation::disable_security_hub::DisableSecurityHub,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_security_hub::DisableSecurityHubError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_security_hub::DisableSecurityHubError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DisableSecurityHubFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DisableSecurityHubFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_security_hub::DisableSecurityHubOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_security_hub::DisableSecurityHubError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_security_hub::DisableSecurityHubError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DisableSecurityHubFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_security_hub::DisableSecurityHubOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_security_hub::DisableSecurityHubError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_security_hub::DisableSecurityHubError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DisableSecurityHubFluentBuilder {
             crate::operation::disable_security_hub::DisableSecurityHub,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_security_hub::DisableSecurityHubError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_security_hub::DisableSecurityHubError>,
     > {
         self.customize_middleware().await
     }

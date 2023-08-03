@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ModifySnapshotTierOutput {
 }
 impl ModifySnapshotTierOutput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotTierOutput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierOutputBuilder {
+    pub fn builder() -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierOutputBuilder {
         crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySnapshotTierOutput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySnapshotTierOutputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) tiering_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -65,10 +62,7 @@ impl ModifySnapshotTierOutputBuilder {
         self
     }
     /// <p>The date and time when the archive process was started.</p>
-    pub fn set_tiering_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_tiering_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.tiering_start_time = input;
         self
     }

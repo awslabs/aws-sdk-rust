@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_signal_catalog::CreateSignalCatalogOutput::name): <p> The name of the created signal catalog. </p>
     ///   - [`arn(Option<String>)`](crate::operation::create_signal_catalog::CreateSignalCatalogOutput::arn): <p> The ARN of the created signal catalog. </p>
     /// - On failure, responds with [`SdkError<CreateSignalCatalogError>`](crate::operation::create_signal_catalog::CreateSignalCatalogError)
-    pub fn create_signal_catalog(
-        &self,
-    ) -> crate::operation::create_signal_catalog::builders::CreateSignalCatalogFluentBuilder {
-        crate::operation::create_signal_catalog::builders::CreateSignalCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_signal_catalog(&self) -> crate::operation::create_signal_catalog::builders::CreateSignalCatalogFluentBuilder {
+        crate::operation::create_signal_catalog::builders::CreateSignalCatalogFluentBuilder::new(self.handle.clone())
     }
 }

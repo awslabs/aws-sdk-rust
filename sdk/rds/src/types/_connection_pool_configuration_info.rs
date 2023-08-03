@@ -51,15 +51,12 @@ impl ConnectionPoolConfigurationInfo {
 
 /// A builder for [`ConnectionPoolConfigurationInfo`](crate::types::ConnectionPoolConfigurationInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionPoolConfigurationInfoBuilder {
     pub(crate) max_connections_percent: ::std::option::Option<i32>,
     pub(crate) max_idle_connections_percent: ::std::option::Option<i32>,
     pub(crate) connection_borrow_timeout: ::std::option::Option<i32>,
-    pub(crate) session_pinning_filters:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) session_pinning_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) init_query: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionPoolConfigurationInfoBuilder {
@@ -110,27 +107,19 @@ impl ConnectionPoolConfigurationInfoBuilder {
     /// To override the contents of this collection use [`set_session_pinning_filters`](Self::set_session_pinning_filters).
     ///
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
-    pub fn session_pinning_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_pinning_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.session_pinning_filters.unwrap_or_default();
         v.push(input.into());
         self.session_pinning_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
-    pub fn set_session_pinning_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_session_pinning_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.session_pinning_filters = input;
         self
     }
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
-    pub fn get_session_pinning_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_session_pinning_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.session_pinning_filters
     }
     /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>

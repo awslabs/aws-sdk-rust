@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`summary(Option<SearchPlaceIndexForPositionSummary>)`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     ///   - [`results(Option<Vec<SearchForPositionResult>>)`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionOutput::results): <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
     /// - On failure, responds with [`SdkError<SearchPlaceIndexForPositionError>`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError)
-    pub fn search_place_index_for_position(&self) -> crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionFluentBuilder{
+    pub fn search_place_index_for_position(
+        &self,
+    ) -> crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionFluentBuilder {
         crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,18 +23,14 @@ impl ListRemoteAccessSessionsInput {
 }
 impl ListRemoteAccessSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListRemoteAccessSessionsInput`](crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsInputBuilder {
         crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRemoteAccessSessionsInput`](crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRemoteAccessSessionsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,11 +71,9 @@ impl ListRemoteAccessSessionsInputBuilder {
         crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsInput {
-                arn: self.arn,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsInput {
+            arn: self.arn,
+            next_token: self.next_token,
+        })
     }
 }

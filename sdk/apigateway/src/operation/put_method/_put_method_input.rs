@@ -27,13 +27,10 @@ pub struct PutMethodInput {
     pub operation_name: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
     #[doc(hidden)]
-    pub request_parameters:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub request_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
     #[doc(hidden)]
-    pub request_models: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub request_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier of a RequestValidator for validating the method request.</p>
     #[doc(hidden)]
     pub request_validator_id: ::std::option::Option<::std::string::String>,
@@ -71,17 +68,11 @@ impl PutMethodInput {
         self.operation_name.as_deref()
     }
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
-    pub fn request_parameters(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn request_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
         self.request_parameters.as_ref()
     }
     /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub fn request_models(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn request_models(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_models.as_ref()
     }
     /// <p>The identifier of a RequestValidator for validating the method request.</p>
@@ -102,9 +93,7 @@ impl PutMethodInput {
 
 /// A builder for [`PutMethodInput`](crate::operation::put_method::PutMethodInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMethodInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -113,11 +102,8 @@ pub struct PutMethodInputBuilder {
     pub(crate) authorizer_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_required: ::std::option::Option<bool>,
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,
-    pub(crate) request_parameters:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
-    pub(crate) request_models: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) request_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub(crate) request_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) request_validator_id: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -165,18 +151,12 @@ impl PutMethodInputBuilder {
         &self.http_method
     }
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-    pub fn authorization_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-    pub fn set_authorization_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_type = input;
         self
     }
@@ -185,18 +165,12 @@ impl PutMethodInputBuilder {
         &self.authorization_type
     }
     /// <p>Specifies the identifier of an Authorizer to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-    pub fn authorizer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the identifier of an Authorizer to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-    pub fn set_authorizer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_id = input;
         self
     }
@@ -219,18 +193,12 @@ impl PutMethodInputBuilder {
         &self.api_key_required
     }
     /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-    pub fn operation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-    pub fn set_operation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_name = input;
         self
     }
@@ -243,28 +211,19 @@ impl PutMethodInputBuilder {
     /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
     ///
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
-    pub fn request_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: bool,
-    ) -> Self {
+    pub fn request_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         let mut hash_map = self.request_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.request_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
-    pub fn set_request_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
-    ) -> Self {
+    pub fn set_request_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>) -> Self {
         self.request_parameters = input;
         self
     }
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
-    pub fn get_request_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         &self.request_parameters
     }
     /// Adds a key-value pair to `request_models`.
@@ -285,34 +244,22 @@ impl PutMethodInputBuilder {
     /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
     pub fn set_request_models(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.request_models = input;
         self
     }
     /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub fn get_request_models(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_models(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_models
     }
     /// <p>The identifier of a RequestValidator for validating the method request.</p>
-    pub fn request_validator_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_validator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_validator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a RequestValidator for validating the method request.</p>
-    pub fn set_request_validator_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_validator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_validator_id = input;
         self
     }
@@ -325,36 +272,23 @@ impl PutMethodInputBuilder {
     /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
     ///
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
-    pub fn authorization_scopes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorization_scopes.unwrap_or_default();
         v.push(input.into());
         self.authorization_scopes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
-    pub fn set_authorization_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_authorization_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.authorization_scopes = input;
         self
     }
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
-    pub fn get_authorization_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorization_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.authorization_scopes
     }
     /// Consumes the builder and constructs a [`PutMethodInput`](crate::operation::put_method::PutMethodInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_method::PutMethodInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_method::PutMethodInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_method::PutMethodInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

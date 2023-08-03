@@ -5,17 +5,14 @@
 pub struct CreatePushTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     #[doc(hidden)]
-    pub push_notification_template_request:
-        ::std::option::Option<crate::types::PushNotificationTemplateRequest>,
+    pub push_notification_template_request: ::std::option::Option<crate::types::PushNotificationTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
 }
 impl CreatePushTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn push_notification_template_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PushNotificationTemplateRequest> {
+    pub fn push_notification_template_request(&self) -> ::std::option::Option<&crate::types::PushNotificationTemplateRequest> {
         self.push_notification_template_request.as_ref()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -25,58 +22,40 @@ impl CreatePushTemplateInput {
 }
 impl CreatePushTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreatePushTemplateInput`](crate::operation::create_push_template::CreatePushTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_push_template::builders::CreatePushTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_push_template::builders::CreatePushTemplateInputBuilder {
         crate::operation::create_push_template::builders::CreatePushTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePushTemplateInput`](crate::operation::create_push_template::CreatePushTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePushTemplateInputBuilder {
-    pub(crate) push_notification_template_request:
-        ::std::option::Option<crate::types::PushNotificationTemplateRequest>,
+    pub(crate) push_notification_template_request: ::std::option::Option<crate::types::PushNotificationTemplateRequest>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }
 impl CreatePushTemplateInputBuilder {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn push_notification_template_request(
-        mut self,
-        input: crate::types::PushNotificationTemplateRequest,
-    ) -> Self {
+    pub fn push_notification_template_request(mut self, input: crate::types::PushNotificationTemplateRequest) -> Self {
         self.push_notification_template_request = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn set_push_notification_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PushNotificationTemplateRequest>,
-    ) -> Self {
+    pub fn set_push_notification_template_request(mut self, input: ::std::option::Option<crate::types::PushNotificationTemplateRequest>) -> Self {
         self.push_notification_template_request = input;
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn get_push_notification_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::PushNotificationTemplateRequest> {
+    pub fn get_push_notification_template_request(&self) -> &::std::option::Option<crate::types::PushNotificationTemplateRequest> {
         &self.push_notification_template_request
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -87,15 +66,10 @@ impl CreatePushTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreatePushTemplateInput`](crate::operation::create_push_template::CreatePushTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_push_template::CreatePushTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_push_template::CreatePushTemplateInput {
-                push_notification_template_request: self.push_notification_template_request,
-                template_name: self.template_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_push_template::CreatePushTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_push_template::CreatePushTemplateInput {
+            push_notification_template_request: self.push_notification_template_request,
+            template_name: self.template_name,
+        })
     }
 }

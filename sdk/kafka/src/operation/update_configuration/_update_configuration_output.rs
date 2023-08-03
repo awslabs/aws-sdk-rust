@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateConfigurationOutput {
 }
 impl UpdateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
-        crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
+        crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) latest_revision: ::std::option::Option<crate::types::ConfigurationRevision>,
@@ -66,17 +62,12 @@ impl UpdateConfigurationOutputBuilder {
         self
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationRevision>,
-    ) -> Self {
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<crate::types::ConfigurationRevision>) -> Self {
         self.latest_revision = input;
         self
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn get_latest_revision(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationRevision> {
+    pub fn get_latest_revision(&self) -> &::std::option::Option<crate::types::ConfigurationRevision> {
         &self.latest_revision
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

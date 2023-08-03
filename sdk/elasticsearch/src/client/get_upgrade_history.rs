@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`upgrade_histories(Option<Vec<UpgradeHistory>>)`](crate::operation::get_upgrade_history::GetUpgradeHistoryOutput::upgrade_histories): <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_upgrade_history::GetUpgradeHistoryOutput::next_token): <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
     /// - On failure, responds with [`SdkError<GetUpgradeHistoryError>`](crate::operation::get_upgrade_history::GetUpgradeHistoryError)
-    pub fn get_upgrade_history(
-        &self,
-    ) -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryFluentBuilder {
-        crate::operation::get_upgrade_history::builders::GetUpgradeHistoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_upgrade_history(&self) -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryFluentBuilder {
+        crate::operation::get_upgrade_history::builders::GetUpgradeHistoryFluentBuilder::new(self.handle.clone())
     }
 }

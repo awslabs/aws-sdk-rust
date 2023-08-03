@@ -5,15 +5,12 @@
 pub struct DescribeDocumentClassifierOutput {
     /// <p>An object that contains the properties associated with a document classifier.</p>
     #[doc(hidden)]
-    pub document_classifier_properties:
-        ::std::option::Option<crate::types::DocumentClassifierProperties>,
+    pub document_classifier_properties: ::std::option::Option<crate::types::DocumentClassifierProperties>,
     _request_id: Option<String>,
 }
 impl DescribeDocumentClassifierOutput {
     /// <p>An object that contains the properties associated with a document classifier.</p>
-    pub fn document_classifier_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentClassifierProperties> {
+    pub fn document_classifier_properties(&self) -> ::std::option::Option<&crate::types::DocumentClassifierProperties> {
         self.document_classifier_properties.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeDocumentClassifierOutput {
 }
 impl DescribeDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassifierOutput`](crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput).
-    pub fn builder() -> crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierOutputBuilder{
+    pub fn builder() -> crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierOutputBuilder {
         crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDocumentClassifierOutput`](crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDocumentClassifierOutputBuilder {
-    pub(crate) document_classifier_properties:
-        ::std::option::Option<crate::types::DocumentClassifierProperties>,
+    pub(crate) document_classifier_properties: ::std::option::Option<crate::types::DocumentClassifierProperties>,
     _request_id: Option<String>,
 }
 impl DescribeDocumentClassifierOutputBuilder {
     /// <p>An object that contains the properties associated with a document classifier.</p>
-    pub fn document_classifier_properties(
-        mut self,
-        input: crate::types::DocumentClassifierProperties,
-    ) -> Self {
+    pub fn document_classifier_properties(mut self, input: crate::types::DocumentClassifierProperties) -> Self {
         self.document_classifier_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the properties associated with a document classifier.</p>
-    pub fn set_document_classifier_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierProperties>,
-    ) -> Self {
+    pub fn set_document_classifier_properties(mut self, input: ::std::option::Option<crate::types::DocumentClassifierProperties>) -> Self {
         self.document_classifier_properties = input;
         self
     }
     /// <p>An object that contains the properties associated with a document classifier.</p>
-    pub fn get_document_classifier_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassifierProperties> {
+    pub fn get_document_classifier_properties(&self) -> &::std::option::Option<crate::types::DocumentClassifierProperties> {
         &self.document_classifier_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl DescribeDocumentClassifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDocumentClassifierOutput`](crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput {
+    pub fn build(self) -> crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput {
         crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput {
             document_classifier_properties: self.document_classifier_properties,
             _request_id: self._request_id,

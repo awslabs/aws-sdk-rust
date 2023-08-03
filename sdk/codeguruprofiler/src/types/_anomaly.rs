@@ -37,9 +37,7 @@ impl Anomaly {
 
 /// A builder for [`Anomaly`](crate::types::Anomaly).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -86,17 +84,12 @@ impl AnomalyBuilder {
         self
     }
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>>) -> Self {
         self.instances = input;
         self
     }
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>> {
         &self.instances
     }
     /// Consumes the builder and constructs a [`Anomaly`](crate::types::Anomaly).

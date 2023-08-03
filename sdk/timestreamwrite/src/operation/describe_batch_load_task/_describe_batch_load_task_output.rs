@@ -10,9 +10,7 @@ pub struct DescribeBatchLoadTaskOutput {
 }
 impl DescribeBatchLoadTaskOutput {
     /// <p>Description of the batch load task.</p>
-    pub fn batch_load_task_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchLoadTaskDescription> {
+    pub fn batch_load_task_description(&self) -> ::std::option::Option<&crate::types::BatchLoadTaskDescription> {
         self.batch_load_task_description.as_ref()
     }
 }
@@ -23,44 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeBatchLoadTaskOutput {
 }
 impl DescribeBatchLoadTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchLoadTaskOutput`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskOutputBuilder {
         crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBatchLoadTaskOutput`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBatchLoadTaskOutputBuilder {
-    pub(crate) batch_load_task_description:
-        ::std::option::Option<crate::types::BatchLoadTaskDescription>,
+    pub(crate) batch_load_task_description: ::std::option::Option<crate::types::BatchLoadTaskDescription>,
     _request_id: Option<String>,
 }
 impl DescribeBatchLoadTaskOutputBuilder {
     /// <p>Description of the batch load task.</p>
-    pub fn batch_load_task_description(
-        mut self,
-        input: crate::types::BatchLoadTaskDescription,
-    ) -> Self {
+    pub fn batch_load_task_description(mut self, input: crate::types::BatchLoadTaskDescription) -> Self {
         self.batch_load_task_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Description of the batch load task.</p>
-    pub fn set_batch_load_task_description(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchLoadTaskDescription>,
-    ) -> Self {
+    pub fn set_batch_load_task_description(mut self, input: ::std::option::Option<crate::types::BatchLoadTaskDescription>) -> Self {
         self.batch_load_task_description = input;
         self
     }
     /// <p>Description of the batch load task.</p>
-    pub fn get_batch_load_task_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchLoadTaskDescription> {
+    pub fn get_batch_load_task_description(&self) -> &::std::option::Option<crate::types::BatchLoadTaskDescription> {
         &self.batch_load_task_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

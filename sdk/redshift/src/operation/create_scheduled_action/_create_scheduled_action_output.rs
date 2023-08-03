@@ -84,18 +84,14 @@ impl ::aws_http::request_id::RequestId for CreateScheduledActionOutput {
 }
 impl CreateScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateScheduledActionOutput`](crate::operation::create_scheduled_action::CreateScheduledActionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_scheduled_action::builders::CreateScheduledActionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_scheduled_action::builders::CreateScheduledActionOutputBuilder {
         crate::operation::create_scheduled_action::builders::CreateScheduledActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateScheduledActionOutput`](crate::operation::create_scheduled_action::CreateScheduledActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScheduledActionOutputBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_action: ::std::option::Option<crate::types::ScheduledActionType>,
@@ -103,26 +99,19 @@ pub struct CreateScheduledActionOutputBuilder {
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_action_description: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ScheduledActionState>,
-    pub(crate) next_invocations:
-        ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) next_invocations: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateScheduledActionOutputBuilder {
     /// <p>The name of the scheduled action. </p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled action. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
@@ -138,10 +127,7 @@ impl CreateScheduledActionOutputBuilder {
     }
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
-    pub fn set_target_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledActionType>,
-    ) -> Self {
+    pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::ScheduledActionType>) -> Self {
         self.target_action = input;
         self
     }
@@ -185,25 +171,17 @@ impl CreateScheduledActionOutputBuilder {
         &self.iam_role
     }
     /// <p>The description of the scheduled action. </p>
-    pub fn scheduled_action_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the scheduled action. </p>
-    pub fn set_scheduled_action_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_description = input;
         self
     }
     /// <p>The description of the scheduled action. </p>
-    pub fn get_scheduled_action_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_scheduled_action_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_action_description
     }
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
@@ -212,10 +190,7 @@ impl CreateScheduledActionOutputBuilder {
         self
     }
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledActionState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledActionState>) -> Self {
         self.state = input;
         self
     }
@@ -235,17 +210,12 @@ impl CreateScheduledActionOutputBuilder {
         self
     }
     /// <p>List of times when the scheduled action will run. </p>
-    pub fn set_next_invocations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_next_invocations(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.next_invocations = input;
         self
     }
     /// <p>List of times when the scheduled action will run. </p>
-    pub fn get_next_invocations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_next_invocations(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.next_invocations
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
@@ -254,10 +224,7 @@ impl CreateScheduledActionOutputBuilder {
         self
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -271,10 +238,7 @@ impl CreateScheduledActionOutputBuilder {
         self
     }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

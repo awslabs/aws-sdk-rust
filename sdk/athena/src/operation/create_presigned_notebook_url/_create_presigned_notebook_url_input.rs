@@ -15,16 +15,14 @@ impl CreatePresignedNotebookUrlInput {
 }
 impl CreatePresignedNotebookUrlInput {
     /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookUrlInput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput).
-    pub fn builder() -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder{
+    pub fn builder() -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder {
         crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePresignedNotebookUrlInput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePresignedNotebookUrlInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl CreatePresignedNotebookUrlInputBuilder {
         crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput {
-                session_id: self.session_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput { session_id: self.session_id })
     }
 }

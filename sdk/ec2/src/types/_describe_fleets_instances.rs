@@ -6,8 +6,7 @@
 pub struct DescribeFleetsInstances {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
     #[doc(hidden)]
-    pub launch_template_and_overrides:
-        ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    pub launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
     #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
@@ -23,9 +22,7 @@ pub struct DescribeFleetsInstances {
 }
 impl DescribeFleetsInstances {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn launch_template_and_overrides(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateAndOverridesResponse> {
+    pub fn launch_template_and_overrides(&self) -> ::std::option::Option<&crate::types::LaunchTemplateAndOverridesResponse> {
         self.launch_template_and_overrides.as_ref()
     }
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
@@ -54,12 +51,9 @@ impl DescribeFleetsInstances {
 
 /// A builder for [`DescribeFleetsInstances`](crate::types::DescribeFleetsInstances).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetsInstancesBuilder {
-    pub(crate) launch_template_and_overrides:
-        ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    pub(crate) launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -67,25 +61,17 @@ pub struct DescribeFleetsInstancesBuilder {
 }
 impl DescribeFleetsInstancesBuilder {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn launch_template_and_overrides(
-        mut self,
-        input: crate::types::LaunchTemplateAndOverridesResponse,
-    ) -> Self {
+    pub fn launch_template_and_overrides(mut self, input: crate::types::LaunchTemplateAndOverridesResponse) -> Self {
         self.launch_template_and_overrides = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn set_launch_template_and_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
-    ) -> Self {
+    pub fn set_launch_template_and_overrides(mut self, input: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>) -> Self {
         self.launch_template_and_overrides = input;
         self
     }
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn get_launch_template_and_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
+    pub fn get_launch_template_and_overrides(&self) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
         &self.launch_template_and_overrides
     }
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
@@ -94,10 +80,7 @@ impl DescribeFleetsInstancesBuilder {
         self
     }
     /// <p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::InstanceLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -117,17 +100,12 @@ impl DescribeFleetsInstancesBuilder {
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>The instance type.</p>
@@ -136,10 +114,7 @@ impl DescribeFleetsInstancesBuilder {
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -153,10 +128,7 @@ impl DescribeFleetsInstancesBuilder {
         self
     }
     /// <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformValues>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
         self.platform = input;
         self
     }

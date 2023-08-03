@@ -22,9 +22,7 @@ impl DeleteScriptInput {
 
 /// A builder for [`DeleteScriptInput`](crate::operation::delete_script::DeleteScriptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScriptInputBuilder {
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteScriptInputBuilder {
         &self.script_id
     }
     /// Consumes the builder and constructs a [`DeleteScriptInput`](crate::operation::delete_script::DeleteScriptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_script::DeleteScriptInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_script::DeleteScriptInput {
-            script_id: self.script_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_script::DeleteScriptInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_script::DeleteScriptInput { script_id: self.script_id })
     }
 }

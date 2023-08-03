@@ -43,9 +43,7 @@ impl UpdateMapRunInput {
 
 /// A builder for [`UpdateMapRunInput`](crate::operation::update_map_run::UpdateMapRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMapRunInputBuilder {
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_concurrency: ::std::option::Option<i32>,
@@ -112,10 +110,7 @@ impl UpdateMapRunInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMapRunInput`](crate::operation::update_map_run::UpdateMapRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_map_run::UpdateMapRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_map_run::UpdateMapRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_map_run::UpdateMapRunInput {
             map_run_arn: self.map_run_arn,
             max_concurrency: self.max_concurrency,

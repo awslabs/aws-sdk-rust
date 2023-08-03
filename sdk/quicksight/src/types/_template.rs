@@ -59,9 +59,7 @@ impl Template {
 
 /// A builder for [`Template`](crate::types::Template).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -105,10 +103,7 @@ impl TemplateBuilder {
         self
     }
     /// <p>A structure describing the versions of the template.</p>
-    pub fn set_version(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersion>,
-    ) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<crate::types::TemplateVersion>) -> Self {
         self.version = input;
         self
     }
@@ -136,10 +131,7 @@ impl TemplateBuilder {
         self
     }
     /// <p>Time when this was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -153,10 +145,7 @@ impl TemplateBuilder {
         self
     }
     /// <p>Time when this was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

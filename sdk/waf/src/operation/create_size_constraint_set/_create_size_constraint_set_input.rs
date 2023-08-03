@@ -22,18 +22,14 @@ impl CreateSizeConstraintSetInput {
 }
 impl CreateSizeConstraintSetInput {
     /// Creates a new builder-style object to manufacture [`CreateSizeConstraintSetInput`](crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetInputBuilder {
         crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSizeConstraintSetInput`](crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSizeConstraintSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl CreateSizeConstraintSetInputBuilder {
         crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_size_constraint_set::CreateSizeConstraintSetInput {
+            name: self.name,
+            change_token: self.change_token,
+        })
     }
 }

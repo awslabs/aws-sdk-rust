@@ -15,16 +15,14 @@ impl DescribeTopicsDetectionJobInput {
 }
 impl DescribeTopicsDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobInput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobInput).
-    pub fn builder() -> crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobInputBuilder {
         crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTopicsDetectionJobInput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTopicsDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeTopicsDetectionJobInputBuilder {
         crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobInput { job_id: self.job_id })
     }
 }

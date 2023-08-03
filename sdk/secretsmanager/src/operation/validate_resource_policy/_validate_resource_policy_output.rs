@@ -8,8 +8,7 @@ pub struct ValidateResourcePolicyOutput {
     pub policy_validation_passed: bool,
     /// <p>Validation errors if your policy didn't pass validation.</p>
     #[doc(hidden)]
-    pub validation_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
+    pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
     _request_id: Option<String>,
 }
 impl ValidateResourcePolicyOutput {
@@ -18,9 +17,7 @@ impl ValidateResourcePolicyOutput {
         self.policy_validation_passed
     }
     /// <p>Validation errors if your policy didn't pass validation.</p>
-    pub fn validation_errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ValidationErrorsEntry]> {
+    pub fn validation_errors(&self) -> ::std::option::Option<&[crate::types::ValidationErrorsEntry]> {
         self.validation_errors.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ValidateResourcePolicyOutput {
 }
 impl ValidateResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyOutput`](crate::operation::validate_resource_policy::ValidateResourcePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::validate_resource_policy::builders::ValidateResourcePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::validate_resource_policy::builders::ValidateResourcePolicyOutputBuilder {
         crate::operation::validate_resource_policy::builders::ValidateResourcePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateResourcePolicyOutput`](crate::operation::validate_resource_policy::ValidateResourcePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateResourcePolicyOutputBuilder {
     pub(crate) policy_validation_passed: ::std::option::Option<bool>,
-    pub(crate) validation_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
+    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
     _request_id: Option<String>,
 }
 impl ValidateResourcePolicyOutputBuilder {
@@ -76,17 +68,12 @@ impl ValidateResourcePolicyOutputBuilder {
         self
     }
     /// <p>Validation errors if your policy didn't pass validation.</p>
-    pub fn set_validation_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
-    ) -> Self {
+    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>) -> Self {
         self.validation_errors = input;
         self
     }
     /// <p>Validation errors if your policy didn't pass validation.</p>
-    pub fn get_validation_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>> {
+    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>> {
         &self.validation_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

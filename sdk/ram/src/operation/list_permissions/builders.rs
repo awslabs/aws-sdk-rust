@@ -10,10 +10,7 @@ impl ListPermissionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_permissions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListPermissionsFluentBuilder {
         }
     }
     /// Access the ListPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListPermissionsFluentBuilder {
             crate::operation::list_permissions::ListPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,38 +102,25 @@ impl ListPermissionsFluentBuilder {
             crate::operation::list_permissions::ListPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_permissions::paginator::ListPermissionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
-        crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
+        crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p>
     /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p>
     /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -202,10 +175,7 @@ impl ListPermissionsFluentBuilder {
     /// <li> <p> <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionTypeFilter>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionTypeFilter>) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
     }
@@ -216,9 +186,7 @@ impl ListPermissionsFluentBuilder {
     /// <li> <p> <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
-    pub fn get_permission_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PermissionTypeFilter> {
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionTypeFilter> {
         self.inner.get_permission_type()
     }
 }

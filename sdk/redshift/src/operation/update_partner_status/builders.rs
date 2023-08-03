@@ -37,9 +37,7 @@ impl UpdatePartnerStatusFluentBuilder {
         }
     }
     /// Access the UpdatePartnerStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdatePartnerStatusFluentBuilder {
             crate::operation::update_partner_status::UpdatePartnerStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partner_status::UpdatePartnerStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partner_status::UpdatePartnerStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdatePartnerStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdatePartnerStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_partner_status::UpdatePartnerStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partner_status::UpdatePartnerStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partner_status::UpdatePartnerStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdatePartnerStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_partner_status::UpdatePartnerStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partner_status::UpdatePartnerStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partner_status::UpdatePartnerStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdatePartnerStatusFluentBuilder {
             crate::operation::update_partner_status::UpdatePartnerStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partner_status::UpdatePartnerStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partner_status::UpdatePartnerStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl UpdatePartnerStatusFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -157,18 +138,12 @@ impl UpdatePartnerStatusFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -196,10 +171,7 @@ impl UpdatePartnerStatusFluentBuilder {
         self
     }
     /// <p>The value of the updated status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerIntegrationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PartnerIntegrationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -208,18 +180,12 @@ impl UpdatePartnerStatusFluentBuilder {
         self.inner.get_status()
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_message(input.into());
         self
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_message(input);
         self
     }

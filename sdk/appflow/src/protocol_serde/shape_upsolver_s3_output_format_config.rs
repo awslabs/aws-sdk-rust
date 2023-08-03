@@ -15,10 +15,7 @@ pub fn ser_upsolver_s3_output_format_config(
     if let Some(var_4) = &input.aggregation_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("aggregationConfig").start_object();
-        crate::protocol_serde::shape_aggregation_config::ser_aggregation_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_aggregation_config::ser_aggregation_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())
@@ -26,71 +23,46 @@ pub fn ser_upsolver_s3_output_format_config(
 
 pub(crate) fn de_upsolver_s3_output_format_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::UpsolverS3OutputFormatConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::UpsolverS3OutputFormatConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::UpsolverS3OutputFormatConfigBuilder::default();
+            let mut builder = crate::types::builders::UpsolverS3OutputFormatConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "fileType" => {
-                                builder = builder.set_file_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::FileType::from(u.as_ref()))
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "fileType" => {
+                            builder = builder.set_file_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FileType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "prefixConfig" => {
-                                builder = builder.set_prefix_config(
-                                    crate::protocol_serde::shape_prefix_config::de_prefix_config(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "aggregationConfig" => {
-                                builder = builder.set_aggregation_config(
-                                    crate::protocol_serde::shape_aggregation_config::de_aggregation_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "prefixConfig" => {
+                            builder = builder.set_prefix_config(crate::protocol_serde::shape_prefix_config::de_prefix_config(tokens)?);
+                        }
+                        "aggregationConfig" => {
+                            builder = builder.set_aggregation_config(crate::protocol_serde::shape_aggregation_config::de_aggregation_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

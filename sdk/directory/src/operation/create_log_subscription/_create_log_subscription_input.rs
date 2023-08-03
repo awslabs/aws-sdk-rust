@@ -22,18 +22,14 @@ impl CreateLogSubscriptionInput {
 }
 impl CreateLogSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateLogSubscriptionInput`](crate::operation::create_log_subscription::CreateLogSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::create_log_subscription::builders::CreateLogSubscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_log_subscription::builders::CreateLogSubscriptionInputBuilder {
         crate::operation::create_log_subscription::builders::CreateLogSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLogSubscriptionInput`](crate::operation::create_log_subscription::CreateLogSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLogSubscriptionInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl CreateLogSubscriptionInputBuilder {
         &self.directory_id
     }
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -76,15 +66,11 @@ impl CreateLogSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`CreateLogSubscriptionInput`](crate::operation::create_log_subscription::CreateLogSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_log_subscription::CreateLogSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_log_subscription::CreateLogSubscriptionInput {
-                directory_id: self.directory_id,
-                log_group_name: self.log_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_log_subscription::CreateLogSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_log_subscription::CreateLogSubscriptionInput {
+            directory_id: self.directory_id,
+            log_group_name: self.log_group_name,
+        })
     }
 }

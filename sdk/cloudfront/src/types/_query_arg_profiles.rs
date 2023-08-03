@@ -30,9 +30,7 @@ impl QueryArgProfiles {
 
 /// A builder for [`QueryArgProfiles`](crate::types::QueryArgProfiles).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryArgProfilesBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::QueryArgProfile>>,
@@ -64,17 +62,12 @@ impl QueryArgProfilesBuilder {
         self
     }
     /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryArgProfile>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryArgProfile>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryArgProfile>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryArgProfile>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`QueryArgProfiles`](crate::types::QueryArgProfiles).

@@ -37,25 +37,20 @@ impl SearchResourceTagsInput {
         self.max_results
     }
     /// <p>The search criteria to be used to return tags.</p>
-    pub fn search_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceTagsSearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::ResourceTagsSearchCriteria> {
         self.search_criteria.as_ref()
     }
 }
 impl SearchResourceTagsInput {
     /// Creates a new builder-style object to manufacture [`SearchResourceTagsInput`](crate::operation::search_resource_tags::SearchResourceTagsInput).
-    pub fn builder(
-    ) -> crate::operation::search_resource_tags::builders::SearchResourceTagsInputBuilder {
+    pub fn builder() -> crate::operation::search_resource_tags::builders::SearchResourceTagsInputBuilder {
         crate::operation::search_resource_tags::builders::SearchResourceTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchResourceTagsInput`](crate::operation::search_resource_tags::SearchResourceTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourceTagsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -83,27 +78,19 @@ impl SearchResourceTagsInputBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn resource_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
         v.push(input.into());
         self.resource_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_types
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -140,34 +127,24 @@ impl SearchResourceTagsInputBuilder {
         self
     }
     /// <p>The search criteria to be used to return tags.</p>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTagsSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::ResourceTagsSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
     /// <p>The search criteria to be used to return tags.</p>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceTagsSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::ResourceTagsSearchCriteria> {
         &self.search_criteria
     }
     /// Consumes the builder and constructs a [`SearchResourceTagsInput`](crate::operation::search_resource_tags::SearchResourceTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_resource_tags::SearchResourceTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_resource_tags::SearchResourceTagsInput {
-                instance_id: self.instance_id,
-                resource_types: self.resource_types,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                search_criteria: self.search_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_resource_tags::SearchResourceTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_resource_tags::SearchResourceTagsInput {
+            instance_id: self.instance_id,
+            resource_types: self.resource_types,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            search_criteria: self.search_criteria,
+        })
     }
 }

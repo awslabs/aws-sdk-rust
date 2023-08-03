@@ -22,9 +22,7 @@ impl GetAppMonitorInput {
 
 /// A builder for [`GetAppMonitorInput`](crate::operation::get_app_monitor::GetAppMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppMonitorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetAppMonitorInputBuilder {
     /// Consumes the builder and constructs a [`GetAppMonitorInput`](crate::operation::get_app_monitor::GetAppMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_app_monitor::GetAppMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_app_monitor::GetAppMonitorInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_app_monitor::GetAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_app_monitor::GetAppMonitorInput { name: self.name })
     }
 }

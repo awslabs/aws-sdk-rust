@@ -35,9 +35,7 @@ impl SearchSchemasOutput {
 
 /// A builder for [`SearchSchemasOutput`](crate::operation::search_schemas::SearchSchemasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSchemasOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaSummary>>,
@@ -70,17 +68,12 @@ impl SearchSchemasOutputBuilder {
         self
     }
     /// <p>An array of SearchSchemaSummary information.</p>
-    pub fn set_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaSummary>>,
-    ) -> Self {
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaSummary>>) -> Self {
         self.schemas = input;
         self
     }
     /// <p>An array of SearchSchemaSummary information.</p>
-    pub fn get_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaSummary>> {
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaSummary>> {
         &self.schemas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -36,9 +36,7 @@ impl DetachFromIndexInput {
 
 /// A builder for [`DetachFromIndexInput`](crate::operation::detach_from_index::DetachFromIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachFromIndexInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) index_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -46,18 +44,12 @@ pub struct DetachFromIndexInputBuilder {
 }
 impl DetachFromIndexInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -71,10 +63,7 @@ impl DetachFromIndexInputBuilder {
         self
     }
     /// <p>A reference to the index object.</p>
-    pub fn set_index_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_index_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.index_reference = input;
         self
     }
@@ -88,10 +77,7 @@ impl DetachFromIndexInputBuilder {
         self
     }
     /// <p>A reference to the object being detached from the index.</p>
-    pub fn set_target_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_target_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.target_reference = input;
         self
     }
@@ -102,10 +88,7 @@ impl DetachFromIndexInputBuilder {
     /// Consumes the builder and constructs a [`DetachFromIndexInput`](crate::operation::detach_from_index::DetachFromIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_from_index::DetachFromIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::detach_from_index::DetachFromIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_from_index::DetachFromIndexInput {
             directory_arn: self.directory_arn,
             index_reference: self.index_reference,

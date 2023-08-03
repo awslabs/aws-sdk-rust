@@ -15,16 +15,14 @@ impl RegisterWebhookWithThirdPartyInput {
 }
 impl RegisterWebhookWithThirdPartyInput {
     /// Creates a new builder-style object to manufacture [`RegisterWebhookWithThirdPartyInput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput).
-    pub fn builder() -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder{
+    pub fn builder() -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder {
         crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterWebhookWithThirdPartyInput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdPartyInputBuilder {
     pub(crate) webhook_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,8 @@ impl RegisterWebhookWithThirdPartyInputBuilder {
         crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput {
-                webhook_name: self.webhook_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput {
+            webhook_name: self.webhook_name,
+        })
     }
 }

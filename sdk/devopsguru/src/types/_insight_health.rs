@@ -37,9 +37,7 @@ impl InsightHealth {
 
 /// A builder for [`InsightHealth`](crate::types::InsightHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightHealthBuilder {
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl InsightHealthBuilder {
         self
     }
     /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
-    pub fn set_mean_time_to_recover_in_milliseconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_mean_time_to_recover_in_milliseconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.mean_time_to_recover_in_milliseconds = input;
         self
     }

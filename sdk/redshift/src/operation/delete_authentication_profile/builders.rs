@@ -26,7 +26,7 @@ impl DeleteAuthenticationProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAuthenticationProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileInputBuilder,
+    inner: crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileInputBuilder,
 }
 impl DeleteAuthenticationProfileFluentBuilder {
     /// Creates a new `DeleteAuthenticationProfile`.
@@ -37,7 +37,7 @@ impl DeleteAuthenticationProfileFluentBuilder {
         }
     }
     /// Access the DeleteAuthenticationProfile as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAuthenticationProfileFluentBuilder {
             crate::operation::delete_authentication_profile::DeleteAuthenticationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAuthenticationProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAuthenticationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAuthenticationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteAuthenticationProfileFluentBuilder {
             crate::operation::delete_authentication_profile::DeleteAuthenticationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the authentication profile to delete.</p>
-    pub fn authentication_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_profile_name(input.into());
         self
     }
     /// <p>The name of the authentication profile to delete.</p>
-    pub fn set_authentication_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_profile_name(input);
         self
     }

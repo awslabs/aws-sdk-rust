@@ -45,9 +45,7 @@ impl ListFindingsInput {
 
 /// A builder for [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsInputBuilder {
     pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter: ::std::option::Option<crate::types::FindingFilter>,
@@ -60,27 +58,19 @@ impl ListFindingsInputBuilder {
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
     ///
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    pub fn assessment_run_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_run_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_run_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    pub fn set_assessment_run_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_run_arns = input;
         self
     }
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    pub fn get_assessment_run_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_run_arns
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
@@ -129,12 +119,7 @@ impl ListFindingsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_findings::ListFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             assessment_run_arns: self.assessment_run_arns,
             filter: self.filter,

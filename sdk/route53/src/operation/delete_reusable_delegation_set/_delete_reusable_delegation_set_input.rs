@@ -16,16 +16,14 @@ impl DeleteReusableDelegationSetInput {
 }
 impl DeleteReusableDelegationSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetInput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput).
-    pub fn builder() -> crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder{
+    pub fn builder() -> crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder {
         crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReusableDelegationSetInput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReusableDelegationSetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,6 @@ impl DeleteReusableDelegationSetInputBuilder {
         crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput { id: self.id })
     }
 }

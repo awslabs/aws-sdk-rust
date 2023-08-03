@@ -42,9 +42,7 @@ impl AutoSnapshotAddOnRequest {
 
 /// A builder for [`AutoSnapshotAddOnRequest`](crate::types::AutoSnapshotAddOnRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoSnapshotAddOnRequestBuilder {
     pub(crate) snapshot_time_of_day: ::std::option::Option<::std::string::String>,
 }
@@ -56,10 +54,7 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
     /// </ul>
-    pub fn snapshot_time_of_day(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_time_of_day(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_time_of_day = ::std::option::Option::Some(input.into());
         self
     }
@@ -70,10 +65,7 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
     /// </ul>
-    pub fn set_snapshot_time_of_day(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_time_of_day(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_time_of_day = input;
         self
     }

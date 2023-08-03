@@ -46,16 +46,14 @@ impl DescribeSnapshotTierStatusInput {
 }
 impl DescribeSnapshotTierStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotTierStatusInput`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusInput).
-    pub fn builder() -> crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusInputBuilder {
         crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotTierStatusInput`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotTierStatusInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -85,10 +83,7 @@ impl DescribeSnapshotTierStatusInputBuilder {
     /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
     /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -150,13 +145,11 @@ impl DescribeSnapshotTierStatusInputBuilder {
         crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

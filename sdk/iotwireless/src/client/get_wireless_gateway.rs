@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`thing_name(Option<String>)`](crate::operation::get_wireless_gateway::GetWirelessGatewayOutput::thing_name): <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
     ///   - [`thing_arn(Option<String>)`](crate::operation::get_wireless_gateway::GetWirelessGatewayOutput::thing_arn): <p>The ARN of the thing associated with the wireless gateway.</p>
     /// - On failure, responds with [`SdkError<GetWirelessGatewayError>`](crate::operation::get_wireless_gateway::GetWirelessGatewayError)
-    pub fn get_wireless_gateway(
-        &self,
-    ) -> crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder {
-        crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_wireless_gateway(&self) -> crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder {
+        crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder::new(self.handle.clone())
     }
 }

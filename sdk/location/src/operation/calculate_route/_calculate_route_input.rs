@@ -161,16 +161,12 @@ impl CalculateRouteInput {
     }
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-    pub fn car_mode_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CalculateRouteCarModeOptions> {
+    pub fn car_mode_options(&self) -> ::std::option::Option<&crate::types::CalculateRouteCarModeOptions> {
         self.car_mode_options.as_ref()
     }
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    pub fn truck_mode_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CalculateRouteTruckModeOptions> {
+    pub fn truck_mode_options(&self) -> ::std::option::Option<&crate::types::CalculateRouteTruckModeOptions> {
         self.truck_mode_options.as_ref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
@@ -217,24 +213,17 @@ pub struct CalculateRouteInputBuilder {
     pub(crate) distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
     pub(crate) include_leg_geometry: ::std::option::Option<bool>,
     pub(crate) car_mode_options: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>,
-    pub(crate) truck_mode_options:
-        ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
+    pub(crate) truck_mode_options: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl CalculateRouteInputBuilder {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_name = input;
         self
     }
@@ -266,10 +255,7 @@ impl CalculateRouteInputBuilder {
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn set_departure_position(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<f64>>,
-    ) -> Self {
+    pub fn set_departure_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.departure_position = input;
         self
     }
@@ -307,10 +293,7 @@ impl CalculateRouteInputBuilder {
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn set_destination_position(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<f64>>,
-    ) -> Self {
+    pub fn set_destination_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.destination_position = input;
         self
     }
@@ -352,10 +335,7 @@ impl CalculateRouteInputBuilder {
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn set_waypoint_positions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
-    ) -> Self {
+    pub fn set_waypoint_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.waypoint_positions = input;
         self
     }
@@ -368,9 +348,7 @@ impl CalculateRouteInputBuilder {
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn get_waypoint_positions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+    pub fn get_waypoint_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         &self.waypoint_positions
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
@@ -399,10 +377,7 @@ impl CalculateRouteInputBuilder {
     /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
     /// </ul>
     /// <p>Default Value: <code>Car</code> </p>
-    pub fn set_travel_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TravelMode>,
-    ) -> Self {
+    pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::TravelMode>) -> Self {
         self.travel_mode = input;
         self
     }
@@ -436,10 +411,7 @@ impl CalculateRouteInputBuilder {
     /// <ul>
     /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    pub fn set_departure_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_departure_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.departure_time = input;
         self
     }
@@ -480,10 +452,7 @@ impl CalculateRouteInputBuilder {
     }
     /// <p>Set the unit system to specify the distance.</p>
     /// <p>Default Value: <code>Kilometers</code> </p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.distance_unit = input;
         self
     }
@@ -520,43 +489,30 @@ impl CalculateRouteInputBuilder {
     }
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-    pub fn set_car_mode_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>,
-    ) -> Self {
+    pub fn set_car_mode_options(mut self, input: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>) -> Self {
         self.car_mode_options = input;
         self
     }
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-    pub fn get_car_mode_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculateRouteCarModeOptions> {
+    pub fn get_car_mode_options(&self) -> &::std::option::Option<crate::types::CalculateRouteCarModeOptions> {
         &self.car_mode_options
     }
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    pub fn truck_mode_options(
-        mut self,
-        input: crate::types::CalculateRouteTruckModeOptions,
-    ) -> Self {
+    pub fn truck_mode_options(mut self, input: crate::types::CalculateRouteTruckModeOptions) -> Self {
         self.truck_mode_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    pub fn set_truck_mode_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
-    ) -> Self {
+    pub fn set_truck_mode_options(mut self, input: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>) -> Self {
         self.truck_mode_options = input;
         self
     }
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    pub fn get_truck_mode_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculateRouteTruckModeOptions> {
+    pub fn get_truck_mode_options(&self) -> &::std::option::Option<crate::types::CalculateRouteTruckModeOptions> {
         &self.truck_mode_options
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
@@ -576,10 +532,7 @@ impl CalculateRouteInputBuilder {
     /// Consumes the builder and constructs a [`CalculateRouteInput`](crate::operation::calculate_route::CalculateRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::calculate_route::CalculateRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::calculate_route::CalculateRouteInput {
             calculator_name: self.calculator_name,
             departure_position: self.departure_position,

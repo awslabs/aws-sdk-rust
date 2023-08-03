@@ -29,9 +29,7 @@ impl DeleteThesaurusInput {
 
 /// A builder for [`DeleteThesaurusInput`](crate::operation::delete_thesaurus::DeleteThesaurusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThesaurusInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThesaurusInput`](crate::operation::delete_thesaurus::DeleteThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_thesaurus::DeleteThesaurusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_thesaurus::DeleteThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_thesaurus::DeleteThesaurusInput {
             id: self.id,
             index_id: self.index_id,

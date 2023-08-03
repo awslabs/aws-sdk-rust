@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RebootInstanceOutput`](crate::operation::reboot_instance::RebootInstanceOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::reboot_instance::RebootInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<RebootInstanceError>`](crate::operation::reboot_instance::RebootInstanceError)
-    pub fn reboot_instance(
-        &self,
-    ) -> crate::operation::reboot_instance::builders::RebootInstanceFluentBuilder {
-        crate::operation::reboot_instance::builders::RebootInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reboot_instance(&self) -> crate::operation::reboot_instance::builders::RebootInstanceFluentBuilder {
+        crate::operation::reboot_instance::builders::RebootInstanceFluentBuilder::new(self.handle.clone())
     }
 }

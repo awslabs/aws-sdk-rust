@@ -10,10 +10,7 @@ impl ConfigureLogsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::configure_logs::ConfigureLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_logs::ConfigureLogsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_logs::ConfigureLogsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.configure_logs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ConfigureLogsFluentBuilder {
         }
     }
     /// Access the ConfigureLogs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::configure_logs::builders::ConfigureLogsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::configure_logs::builders::ConfigureLogsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ConfigureLogsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,10 +112,7 @@ impl ConfigureLogsFluentBuilder {
         self
     }
     /// Configure egress access logging.
-    pub fn set_egress_access_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::EgressAccessLogs>,
-    ) -> Self {
+    pub fn set_egress_access_logs(mut self, input: ::std::option::Option<crate::types::EgressAccessLogs>) -> Self {
         self.inner = self.inner.set_egress_access_logs(input);
         self
     }

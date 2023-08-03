@@ -37,9 +37,7 @@ impl FrameMetric {
 
 /// A builder for [`FrameMetric`](crate::types::FrameMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameMetricBuilder {
     pub(crate) frame_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MetricType>,
@@ -79,27 +77,19 @@ impl FrameMetricBuilder {
     /// To override the contents of this collection use [`set_thread_states`](Self::set_thread_states).
     ///
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn thread_states(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thread_states(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thread_states.unwrap_or_default();
         v.push(input.into());
         self.thread_states = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn set_thread_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_thread_states(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.thread_states = input;
         self
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn get_thread_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thread_states(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.thread_states
     }
     /// Consumes the builder and constructs a [`FrameMetric`](crate::types::FrameMetric).

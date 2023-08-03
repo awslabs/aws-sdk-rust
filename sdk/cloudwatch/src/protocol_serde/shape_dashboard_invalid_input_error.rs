@@ -3,10 +3,7 @@
 pub fn de_dashboard_invalid_input_error_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DashboardInvalidInputErrorBuilder,
-) -> Result<
-    crate::types::error::builders::DashboardInvalidInputErrorBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::DashboardInvalidInputErrorBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

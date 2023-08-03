@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeQueueOutput`](crate::operation::describe_queue::DescribeQueueOutput) with field(s):
     ///   - [`queue(Option<Queue>)`](crate::operation::describe_queue::DescribeQueueOutput::queue): <p>The name of the queue.</p>
     /// - On failure, responds with [`SdkError<DescribeQueueError>`](crate::operation::describe_queue::DescribeQueueError)
-    pub fn describe_queue(
-        &self,
-    ) -> crate::operation::describe_queue::builders::DescribeQueueFluentBuilder {
-        crate::operation::describe_queue::builders::DescribeQueueFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_queue(&self) -> crate::operation::describe_queue::builders::DescribeQueueFluentBuilder {
+        crate::operation::describe_queue::builders::DescribeQueueFluentBuilder::new(self.handle.clone())
     }
 }

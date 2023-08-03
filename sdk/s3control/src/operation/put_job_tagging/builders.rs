@@ -10,10 +10,7 @@ impl PutJobTaggingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_job_tagging::PutJobTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_job_tagging::PutJobTaggingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_job_tagging::PutJobTaggingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_job_tagging();
         fluent_builder.inner = self;
@@ -60,9 +57,7 @@ impl PutJobTaggingFluentBuilder {
         }
     }
     /// Access the PutJobTagging as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_job_tagging::builders::PutJobTaggingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_job_tagging::builders::PutJobTaggingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -84,10 +79,7 @@ impl PutJobTaggingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -175,10 +167,7 @@ impl PutJobTaggingFluentBuilder {
         self
     }
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

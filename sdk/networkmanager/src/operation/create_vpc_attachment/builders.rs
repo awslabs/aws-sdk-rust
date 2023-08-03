@@ -37,9 +37,7 @@ impl CreateVpcAttachmentFluentBuilder {
         }
     }
     /// Access the CreateVpcAttachment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateVpcAttachmentFluentBuilder {
             crate::operation::create_vpc_attachment::CreateVpcAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_attachment::CreateVpcAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_attachment::CreateVpcAttachmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateVpcAttachmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateVpcAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_attachment::CreateVpcAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_attachment::CreateVpcAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_attachment::CreateVpcAttachmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateVpcAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_attachment::CreateVpcAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_attachment::CreateVpcAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_attachment::CreateVpcAttachmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateVpcAttachmentFluentBuilder {
             crate::operation::create_vpc_attachment::CreateVpcAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_attachment::CreateVpcAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_attachment::CreateVpcAttachmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of a core network for the VPC attachment.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network for the VPC attachment.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
@@ -166,17 +147,12 @@ impl CreateVpcAttachmentFluentBuilder {
         self
     }
     /// <p>The subnet ARN of the VPC attachment.</p>
-    pub fn set_subnet_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_arns(input);
         self
     }
     /// <p>The subnet ARN of the VPC attachment.</p>
-    pub fn get_subnet_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_arns()
     }
     /// <p>Options for the VPC attachment.</p>
@@ -203,10 +179,7 @@ impl CreateVpcAttachmentFluentBuilder {
         self
     }
     /// <p>The key-value tags associated with the request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

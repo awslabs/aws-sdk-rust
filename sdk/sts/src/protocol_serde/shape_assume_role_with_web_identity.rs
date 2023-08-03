@@ -9,136 +9,137 @@ pub fn de_assume_role_with_web_identity_http_error(
     crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ExpiredTokenException" => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::ExpiredTokenException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ExpiredTokenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_expired_token_exception::de_expired_token_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ExpiredTokenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_expired_token_exception::de_expired_token_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "IDPCommunicationError" => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::IdpCommunicationErrorException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::IdpCommunicationErrorExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_idp_communication_error_exception::de_idp_communication_error_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::IdpCommunicationErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_idp_communication_error_exception::de_idp_communication_error_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "IDPRejectedClaim" => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::IdpRejectedClaimException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::IdpRejectedClaimExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_idp_rejected_claim_exception::de_idp_rejected_claim_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::IdpRejectedClaimExceptionBuilder::default();
+                output = crate::protocol_serde::shape_idp_rejected_claim_exception::de_idp_rejected_claim_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidIdentityToken" => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::InvalidIdentityTokenException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidIdentityTokenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_identity_token_exception::de_invalid_identity_token_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidIdentityTokenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_identity_token_exception::de_invalid_identity_token_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "MalformedPolicyDocument" => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::MalformedPolicyDocumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "MalformedPolicyDocument" => {
+            crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::MalformedPolicyDocumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
+                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "PackedPolicyTooLarge" => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::PackedPolicyTooLargeException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "RegionDisabledException" => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::RegionDisabledException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::RegionDisabledExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RegionDisabledExceptionBuilder::default();
+                output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::generic(generic)
+        _ => crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::generic(generic),
     })
 }
 
@@ -154,16 +155,19 @@ pub fn de_assume_role_with_web_identity_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder::default();
-        output = crate::protocol_serde::shape_assume_role_with_web_identity::de_assume_role_with_web_identity(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_assume_role_with_web_identity::de_assume_role_with_web_identity(_response_body, output)
+            .map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder) -> Result<crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_assume_role_with_web_identity(
+    inp: &[u8],
+    mut builder: crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder,
+) -> Result<crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

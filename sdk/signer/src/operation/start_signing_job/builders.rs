@@ -10,10 +10,7 @@ impl StartSigningJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_signing_job::StartSigningJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_signing_job::StartSigningJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_signing_job::StartSigningJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_signing_job();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl StartSigningJobFluentBuilder {
         }
     }
     /// Access the StartSigningJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_signing_job::builders::StartSigningJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_signing_job::builders::StartSigningJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl StartSigningJobFluentBuilder {
             crate::operation::start_signing_job::StartSigningJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_signing_job::StartSigningJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_signing_job::StartSigningJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl StartSigningJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl StartSigningJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_signing_job::StartSigningJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_signing_job::StartSigningJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_signing_job::StartSigningJobError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl StartSigningJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_signing_job::StartSigningJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_signing_job::StartSigningJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_signing_job::StartSigningJobError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +111,7 @@ impl StartSigningJobFluentBuilder {
             crate::operation::start_signing_job::StartSigningJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_signing_job::StartSigningJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_signing_job::StartSigningJobError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +135,7 @@ impl StartSigningJobFluentBuilder {
         self
     }
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -177,18 +158,12 @@ impl StartSigningJobFluentBuilder {
         self.inner.get_profile_name()
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -197,18 +172,12 @@ impl StartSigningJobFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>The AWS account ID of the signing profile owner.</p>
-    pub fn profile_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_owner(input.into());
         self
     }
     /// <p>The AWS account ID of the signing profile owner.</p>
-    pub fn set_profile_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_owner(input);
         self
     }

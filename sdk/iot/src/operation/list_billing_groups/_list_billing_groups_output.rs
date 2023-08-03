@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBillingGroupsOutput {
 }
 impl ListBillingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupsOutput`](crate::operation::list_billing_groups::ListBillingGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_billing_groups::builders::ListBillingGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_billing_groups::builders::ListBillingGroupsOutputBuilder {
         crate::operation::list_billing_groups::builders::ListBillingGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBillingGroupsOutput`](crate::operation::list_billing_groups::ListBillingGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupsOutputBuilder {
-    pub(crate) billing_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
+    pub(crate) billing_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListBillingGroupsOutputBuilder {
         self
     }
     /// <p>The list of billing groups.</p>
-    pub fn set_billing_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
-    ) -> Self {
+    pub fn set_billing_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>) -> Self {
         self.billing_groups = input;
         self
     }
     /// <p>The list of billing groups.</p>
-    pub fn get_billing_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>> {
+    pub fn get_billing_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>> {
         &self.billing_groups
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>

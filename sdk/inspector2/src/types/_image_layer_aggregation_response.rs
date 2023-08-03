@@ -51,9 +51,7 @@ impl ImageLayerAggregationResponse {
 
 /// A builder for [`ImageLayerAggregationResponse`](crate::types::ImageLayerAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageLayerAggregationResponseBuilder {
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl ImageLayerAggregationResponseBuilder {
         self
     }
     /// <p>An object that represents the count of matched findings per severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }

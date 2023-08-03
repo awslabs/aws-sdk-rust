@@ -18,16 +18,14 @@ impl ::aws_http::request_id::RequestId for PutBucketAnalyticsConfigurationOutput
 }
 impl PutBucketAnalyticsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketAnalyticsConfigurationOutput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput).
-    pub fn builder() -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationOutputBuilder {
         crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketAnalyticsConfigurationOutput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfigurationOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -38,10 +36,7 @@ impl PutBucketAnalyticsConfigurationOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -55,10 +50,7 @@ impl PutBucketAnalyticsConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutBucketAnalyticsConfigurationOutput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput {
         crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput {
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,

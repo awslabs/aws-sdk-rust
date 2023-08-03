@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateDashboardPublishedVersionOutput
 }
 impl UpdateDashboardPublishedVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDashboardPublishedVersionOutput`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput).
-    pub fn builder() -> crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionOutputBuilder{
+    pub fn builder() -> crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionOutputBuilder {
         crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDashboardPublishedVersionOutput`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDashboardPublishedVersionOutputBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_arn: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl UpdateDashboardPublishedVersionOutputBuilder {
         &self.dashboard_id
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn set_dashboard_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_arn = input;
         self
     }
@@ -132,20 +124,12 @@ impl UpdateDashboardPublishedVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDashboardPublishedVersionOutput`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput
-    {
+    pub fn build(self) -> crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput {
         crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput {
-            dashboard_id: self.dashboard_id
-            ,
-            dashboard_arn: self.dashboard_arn
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            dashboard_id: self.dashboard_id,
+            dashboard_arn: self.dashboard_arn,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }

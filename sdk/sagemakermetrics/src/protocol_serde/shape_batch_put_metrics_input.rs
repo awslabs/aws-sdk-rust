@@ -9,10 +9,7 @@ pub fn ser_batch_put_metrics_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_raw_metric_data::ser_raw_metric_data(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_raw_metric_data::ser_raw_metric_data(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetPriceListFileUrlOutput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput) with field(s):
     ///   - [`url(Option<String>)`](crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput::url): <p>The URL to download your Price List file from. </p>
     /// - On failure, responds with [`SdkError<GetPriceListFileUrlError>`](crate::operation::get_price_list_file_url::GetPriceListFileUrlError)
-    pub fn get_price_list_file_url(
-        &self,
-    ) -> crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlFluentBuilder {
-        crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_price_list_file_url(&self) -> crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlFluentBuilder {
+        crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlFluentBuilder::new(self.handle.clone())
     }
 }

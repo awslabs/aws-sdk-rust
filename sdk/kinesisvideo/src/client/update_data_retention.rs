@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`data_retention_change_in_hours(i32)`](crate::operation::update_data_retention::builders::UpdateDataRetentionFluentBuilder::data_retention_change_in_hours) / [`set_data_retention_change_in_hours(Option<i32>)`](crate::operation::update_data_retention::builders::UpdateDataRetentionFluentBuilder::set_data_retention_change_in_hours): <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
     /// - On success, responds with [`UpdateDataRetentionOutput`](crate::operation::update_data_retention::UpdateDataRetentionOutput)
     /// - On failure, responds with [`SdkError<UpdateDataRetentionError>`](crate::operation::update_data_retention::UpdateDataRetentionError)
-    pub fn update_data_retention(
-        &self,
-    ) -> crate::operation::update_data_retention::builders::UpdateDataRetentionFluentBuilder {
-        crate::operation::update_data_retention::builders::UpdateDataRetentionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_data_retention(&self) -> crate::operation::update_data_retention::builders::UpdateDataRetentionFluentBuilder {
+        crate::operation::update_data_retention::builders::UpdateDataRetentionFluentBuilder::new(self.handle.clone())
     }
 }

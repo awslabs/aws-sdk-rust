@@ -19,9 +19,7 @@ impl TerminateJobOutput {
 
 /// A builder for [`TerminateJobOutput`](crate::operation::terminate_job::TerminateJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateJobOutputBuilder {
     _request_id: Option<String>,
 }

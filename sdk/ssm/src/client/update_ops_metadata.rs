@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateOpsMetadataOutput`](crate::operation::update_ops_metadata::UpdateOpsMetadataOutput) with field(s):
     ///   - [`ops_metadata_arn(Option<String>)`](crate::operation::update_ops_metadata::UpdateOpsMetadataOutput::ops_metadata_arn): <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateOpsMetadataError>`](crate::operation::update_ops_metadata::UpdateOpsMetadataError)
-    pub fn update_ops_metadata(
-        &self,
-    ) -> crate::operation::update_ops_metadata::builders::UpdateOpsMetadataFluentBuilder {
-        crate::operation::update_ops_metadata::builders::UpdateOpsMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ops_metadata(&self) -> crate::operation::update_ops_metadata::builders::UpdateOpsMetadataFluentBuilder {
+        crate::operation::update_ops_metadata::builders::UpdateOpsMetadataFluentBuilder::new(self.handle.clone())
     }
 }

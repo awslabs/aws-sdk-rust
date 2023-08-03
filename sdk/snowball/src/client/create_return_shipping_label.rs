@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateReturnShippingLabelOutput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput) with field(s):
     ///   - [`status(Option<ShippingLabelStatus>)`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput::status): <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
     /// - On failure, responds with [`SdkError<CreateReturnShippingLabelError>`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelError)
-    pub fn create_return_shipping_label(&self) -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelFluentBuilder{
+    pub fn create_return_shipping_label(&self) -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelFluentBuilder {
         crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelFluentBuilder::new(self.handle.clone())
     }
 }

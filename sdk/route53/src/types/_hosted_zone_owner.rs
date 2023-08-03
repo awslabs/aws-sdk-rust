@@ -30,27 +30,19 @@ impl HostedZoneOwner {
 
 /// A builder for [`HostedZoneOwner`](crate::types::HostedZoneOwner).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostedZoneOwnerBuilder {
     pub(crate) owning_account: ::std::option::Option<::std::string::String>,
     pub(crate) owning_service: ::std::option::Option<::std::string::String>,
 }
 impl HostedZoneOwnerBuilder {
     /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current Amazon Web Services account. </p>
-    pub fn owning_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owning_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current Amazon Web Services account. </p>
-    pub fn set_owning_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owning_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owning_account = input;
         self
     }
@@ -59,18 +51,12 @@ impl HostedZoneOwnerBuilder {
         &self.owning_account
     }
     /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
-    pub fn owning_service(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owning_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_service = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
-    pub fn set_owning_service(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owning_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owning_service = input;
         self
     }

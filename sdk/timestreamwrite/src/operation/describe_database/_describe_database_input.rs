@@ -15,34 +15,25 @@ impl DescribeDatabaseInput {
 }
 impl DescribeDatabaseInput {
     /// Creates a new builder-style object to manufacture [`DescribeDatabaseInput`](crate::operation::describe_database::DescribeDatabaseInput).
-    pub fn builder() -> crate::operation::describe_database::builders::DescribeDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_database::builders::DescribeDatabaseInputBuilder {
         crate::operation::describe_database::builders::DescribeDatabaseInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatabaseInput`](crate::operation::describe_database::DescribeDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatabaseInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatabaseInputBuilder {
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Timestream database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -53,10 +44,7 @@ impl DescribeDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatabaseInput`](crate::operation::describe_database::DescribeDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_database::DescribeDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_database::DescribeDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_database::DescribeDatabaseInput {
             database_name: self.database_name,
         })

@@ -35,9 +35,7 @@ impl DeleteConnectorOutput {
 
 /// A builder for [`DeleteConnectorOutput`](crate::operation::delete_connector::DeleteConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectorOutputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_state: ::std::option::Option<crate::types::ConnectorState>,
@@ -45,18 +43,12 @@ pub struct DeleteConnectorOutputBuilder {
 }
 impl DeleteConnectorOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
-    pub fn connector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
-    pub fn set_connector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_arn = input;
         self
     }
@@ -70,10 +62,7 @@ impl DeleteConnectorOutputBuilder {
         self
     }
     /// <p>The state of the connector that you requested to delete.</p>
-    pub fn set_connector_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorState>,
-    ) -> Self {
+    pub fn set_connector_state(mut self, input: ::std::option::Option<crate::types::ConnectorState>) -> Self {
         self.connector_state = input;
         self
     }

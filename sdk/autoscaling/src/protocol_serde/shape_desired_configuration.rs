@@ -12,9 +12,7 @@ pub fn ser_desired_configuration(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("MixedInstancesPolicy");
     if let Some(var_4) = &input.mixed_instances_policy {
-        crate::protocol_serde::shape_mixed_instances_policy::ser_mixed_instances_policy(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_mixed_instances_policy::ser_mixed_instances_policy(scope_3, var_4)?;
     }
     Ok(())
 }

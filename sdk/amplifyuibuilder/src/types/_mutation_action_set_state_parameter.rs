@@ -37,9 +37,7 @@ impl MutationActionSetStateParameter {
 
 /// A builder for [`MutationActionSetStateParameter`](crate::types::MutationActionSetStateParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MutationActionSetStateParameterBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) property: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct MutationActionSetStateParameterBuilder {
 }
 impl MutationActionSetStateParameterBuilder {
     /// <p>The name of the component that is being modified.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component that is being modified.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -86,10 +78,7 @@ impl MutationActionSetStateParameterBuilder {
         self
     }
     /// <p>The state configuration to assign to the property.</p>
-    pub fn set_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentProperty>,
-    ) -> Self {
+    pub fn set_set(mut self, input: ::std::option::Option<crate::types::ComponentProperty>) -> Self {
         self.set = input;
         self
     }

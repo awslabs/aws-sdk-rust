@@ -9,19 +9,13 @@ pub fn ser_start_text_translation_job_input(
     if let Some(var_2) = &input.input_data_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("InputDataConfig").start_object();
-        crate::protocol_serde::shape_input_data_config::ser_input_data_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_input_data_config::ser_input_data_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.data_access_role_arn {
@@ -63,10 +57,7 @@ pub fn ser_start_text_translation_job_input(
     if let Some(var_18) = &input.settings {
         #[allow(unused_mut)]
         let mut object_19 = object.key("Settings").start_object();
-        crate::protocol_serde::shape_translation_settings::ser_translation_settings(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_translation_settings::ser_translation_settings(&mut object_19, var_18)?;
         object_19.finish();
     }
     Ok(())

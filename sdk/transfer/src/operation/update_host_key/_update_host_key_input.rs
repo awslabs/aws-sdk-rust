@@ -36,9 +36,7 @@ impl UpdateHostKeyInput {
 
 /// A builder for [`UpdateHostKeyInput`](crate::operation::update_host_key::UpdateHostKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHostKeyInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_key_id: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl UpdateHostKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHostKeyInput`](crate::operation::update_host_key::UpdateHostKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_host_key::UpdateHostKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_host_key::UpdateHostKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_host_key::UpdateHostKeyInput {
             server_id: self.server_id,
             host_key_id: self.host_key_id,

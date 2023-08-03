@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`commit_id(Option<String>)`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashOutput::commit_id): <p>The commit ID of the merge in the destination or target branch.</p>
     ///   - [`tree_id(Option<String>)`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashOutput::tree_id): <p>The tree ID of the merge in the destination or target branch.</p>
     /// - On failure, responds with [`SdkError<MergeBranchesBySquashError>`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashError)
-    pub fn merge_branches_by_squash(
-        &self,
-    ) -> crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashFluentBuilder
-    {
+    pub fn merge_branches_by_squash(&self) -> crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashFluentBuilder {
         crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashFluentBuilder::new(self.handle.clone())
     }
 }

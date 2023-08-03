@@ -23,9 +23,7 @@ impl KnownGender {
 
 /// A builder for [`KnownGender`](crate::types::KnownGender).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KnownGenderBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::KnownGenderType>,
 }
@@ -46,8 +44,6 @@ impl KnownGenderBuilder {
     }
     /// Consumes the builder and constructs a [`KnownGender`](crate::types::KnownGender).
     pub fn build(self) -> crate::types::KnownGender {
-        crate::types::KnownGender {
-            r#type: self.r#type,
-        }
+        crate::types::KnownGender { r#type: self.r#type }
     }
 }

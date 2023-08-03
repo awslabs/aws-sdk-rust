@@ -51,9 +51,7 @@ impl UtteranceData {
 
 /// A builder for [`UtteranceData`](crate::types::UtteranceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceDataBuilder {
     pub(crate) utterance_string: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
@@ -63,18 +61,12 @@ pub struct UtteranceDataBuilder {
 }
 impl UtteranceDataBuilder {
     /// <p>The text that was entered by the user or the text representation of an audio clip.</p>
-    pub fn utterance_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn utterance_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.utterance_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text that was entered by the user or the text representation of an audio clip.</p>
-    pub fn set_utterance_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_utterance_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.utterance_string = input;
         self
     }
@@ -116,10 +108,7 @@ impl UtteranceDataBuilder {
         self
     }
     /// <p>The date that the utterance was first recorded.</p>
-    pub fn set_first_uttered_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_uttered_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_uttered_date = input;
         self
     }
@@ -133,10 +122,7 @@ impl UtteranceDataBuilder {
         self
     }
     /// <p>The date that the utterance was last recorded.</p>
-    pub fn set_last_uttered_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_uttered_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_uttered_date = input;
         self
     }

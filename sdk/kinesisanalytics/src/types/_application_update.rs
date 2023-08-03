@@ -15,12 +15,10 @@ pub struct ApplicationUpdate {
     pub output_updates: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>,
     /// <p>Describes application reference data source updates.</p>
     #[doc(hidden)]
-    pub reference_data_source_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
+    pub reference_data_source_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
     /// <p>Describes application CloudWatch logging option updates.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
+    pub cloud_watch_logging_option_updates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
 }
 impl ApplicationUpdate {
     /// <p>Describes application input configuration updates.</p>
@@ -36,15 +34,11 @@ impl ApplicationUpdate {
         self.output_updates.as_deref()
     }
     /// <p>Describes application reference data source updates.</p>
-    pub fn reference_data_source_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReferenceDataSourceUpdate]> {
+    pub fn reference_data_source_updates(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSourceUpdate]> {
         self.reference_data_source_updates.as_deref()
     }
     /// <p>Describes application CloudWatch logging option updates.</p>
-    pub fn cloud_watch_logging_option_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionUpdate]> {
+    pub fn cloud_watch_logging_option_updates(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionUpdate]> {
         self.cloud_watch_logging_option_updates.as_deref()
     }
 }
@@ -57,17 +51,13 @@ impl ApplicationUpdate {
 
 /// A builder for [`ApplicationUpdate`](crate::types::ApplicationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationUpdateBuilder {
     pub(crate) input_updates: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>,
     pub(crate) application_code_update: ::std::option::Option<::std::string::String>,
     pub(crate) output_updates: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>,
-    pub(crate) reference_data_source_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
-    pub(crate) cloud_watch_logging_option_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
+    pub(crate) reference_data_source_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
+    pub(crate) cloud_watch_logging_option_updates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
 }
 impl ApplicationUpdateBuilder {
     /// Appends an item to `input_updates`.
@@ -82,32 +72,21 @@ impl ApplicationUpdateBuilder {
         self
     }
     /// <p>Describes application input configuration updates.</p>
-    pub fn set_input_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>,
-    ) -> Self {
+    pub fn set_input_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>) -> Self {
         self.input_updates = input;
         self
     }
     /// <p>Describes application input configuration updates.</p>
-    pub fn get_input_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>> {
+    pub fn get_input_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>> {
         &self.input_updates
     }
     /// <p>Describes application code updates.</p>
-    pub fn application_code_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_code_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_code_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes application code updates.</p>
-    pub fn set_application_code_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_code_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_code_update = input;
         self
     }
@@ -127,17 +106,12 @@ impl ApplicationUpdateBuilder {
         self
     }
     /// <p>Describes application output configuration updates.</p>
-    pub fn set_output_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>,
-    ) -> Self {
+    pub fn set_output_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>) -> Self {
         self.output_updates = input;
         self
     }
     /// <p>Describes application output configuration updates.</p>
-    pub fn get_output_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>> {
+    pub fn get_output_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>> {
         &self.output_updates
     }
     /// Appends an item to `reference_data_source_updates`.
@@ -145,10 +119,7 @@ impl ApplicationUpdateBuilder {
     /// To override the contents of this collection use [`set_reference_data_source_updates`](Self::set_reference_data_source_updates).
     ///
     /// <p>Describes application reference data source updates.</p>
-    pub fn reference_data_source_updates(
-        mut self,
-        input: crate::types::ReferenceDataSourceUpdate,
-    ) -> Self {
+    pub fn reference_data_source_updates(mut self, input: crate::types::ReferenceDataSourceUpdate) -> Self {
         let mut v = self.reference_data_source_updates.unwrap_or_default();
         v.push(input);
         self.reference_data_source_updates = ::std::option::Option::Some(v);
@@ -163,9 +134,7 @@ impl ApplicationUpdateBuilder {
         self
     }
     /// <p>Describes application reference data source updates.</p>
-    pub fn get_reference_data_source_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>> {
+    pub fn get_reference_data_source_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>> {
         &self.reference_data_source_updates
     }
     /// Appends an item to `cloud_watch_logging_option_updates`.
@@ -173,10 +142,7 @@ impl ApplicationUpdateBuilder {
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).
     ///
     /// <p>Describes application CloudWatch logging option updates.</p>
-    pub fn cloud_watch_logging_option_updates(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptionUpdate,
-    ) -> Self {
+    pub fn cloud_watch_logging_option_updates(mut self, input: crate::types::CloudWatchLoggingOptionUpdate) -> Self {
         let mut v = self.cloud_watch_logging_option_updates.unwrap_or_default();
         v.push(input);
         self.cloud_watch_logging_option_updates = ::std::option::Option::Some(v);
@@ -191,9 +157,7 @@ impl ApplicationUpdateBuilder {
         self
     }
     /// <p>Describes application CloudWatch logging option updates.</p>
-    pub fn get_cloud_watch_logging_option_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>> {
+    pub fn get_cloud_watch_logging_option_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>> {
         &self.cloud_watch_logging_option_updates
     }
     /// Consumes the builder and constructs a [`ApplicationUpdate`](crate::types::ApplicationUpdate).

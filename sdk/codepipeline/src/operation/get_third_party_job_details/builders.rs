@@ -28,7 +28,7 @@ impl GetThirdPartyJobDetailsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetThirdPartyJobDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder,
+    inner: crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder,
 }
 impl GetThirdPartyJobDetailsFluentBuilder {
     /// Creates a new `GetThirdPartyJobDetails`.
@@ -39,10 +39,7 @@ impl GetThirdPartyJobDetailsFluentBuilder {
         }
     }
     /// Access the GetThirdPartyJobDetails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl GetThirdPartyJobDetailsFluentBuilder {
             crate::operation::get_third_party_job_details::GetThirdPartyJobDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl GetThirdPartyJobDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl GetThirdPartyJobDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl GetThirdPartyJobDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl GetThirdPartyJobDetailsFluentBuilder {
             crate::operation::get_third_party_job_details::GetThirdPartyJobDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError>,
     > {
         self.customize_middleware().await
     }

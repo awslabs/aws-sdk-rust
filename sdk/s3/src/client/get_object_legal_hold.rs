@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetObjectLegalHoldOutput`](crate::operation::get_object_legal_hold::GetObjectLegalHoldOutput) with field(s):
     ///   - [`legal_hold(Option<ObjectLockLegalHold>)`](crate::operation::get_object_legal_hold::GetObjectLegalHoldOutput::legal_hold): <p>The current legal hold status for the specified object.</p>
     /// - On failure, responds with [`SdkError<GetObjectLegalHoldError>`](crate::operation::get_object_legal_hold::GetObjectLegalHoldError)
-    pub fn get_object_legal_hold(
-        &self,
-    ) -> crate::operation::get_object_legal_hold::builders::GetObjectLegalHoldFluentBuilder {
-        crate::operation::get_object_legal_hold::builders::GetObjectLegalHoldFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_legal_hold(&self) -> crate::operation::get_object_legal_hold::builders::GetObjectLegalHoldFluentBuilder {
+        crate::operation::get_object_legal_hold::builders::GetObjectLegalHoldFluentBuilder::new(self.handle.clone())
     }
 }

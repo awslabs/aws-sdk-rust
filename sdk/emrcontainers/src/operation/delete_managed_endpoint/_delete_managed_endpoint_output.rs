@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteManagedEndpointOutput {
 }
 impl DeleteManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteManagedEndpointOutput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointOutputBuilder {
         crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteManagedEndpointOutput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteManagedEndpointOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl DeleteManagedEndpointOutputBuilder {
         &self.id
     }
     /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }

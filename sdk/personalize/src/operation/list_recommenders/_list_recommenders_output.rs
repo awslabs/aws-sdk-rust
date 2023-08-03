@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRecommendersOutput {
 }
 impl ListRecommendersOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendersOutput`](crate::operation::list_recommenders::ListRecommendersOutput).
-    pub fn builder() -> crate::operation::list_recommenders::builders::ListRecommendersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_recommenders::builders::ListRecommendersOutputBuilder {
         crate::operation::list_recommenders::builders::ListRecommendersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendersOutput`](crate::operation::list_recommenders::ListRecommendersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendersOutputBuilder {
-    pub(crate) recommenders:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>>,
+    pub(crate) recommenders: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListRecommendersOutputBuilder {
         self
     }
     /// <p>A list of the recommenders.</p>
-    pub fn set_recommenders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>>,
-    ) -> Self {
+    pub fn set_recommenders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>>) -> Self {
         self.recommenders = input;
         self
     }
     /// <p>A list of the recommenders.</p>
-    pub fn get_recommenders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>> {
+    pub fn get_recommenders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>> {
         &self.recommenders
     }
     /// <p>A token for getting the next set of recommenders (if they exist).</p>

@@ -12,8 +12,7 @@ pub struct WaitAndContinueSpecification {
     pub continue_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
     #[doc(hidden)]
-    pub still_waiting_response:
-        ::std::option::Option<crate::types::StillWaitingResponseSpecification>,
+    pub still_waiting_response: ::std::option::Option<crate::types::StillWaitingResponseSpecification>,
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
     #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
@@ -28,9 +27,7 @@ impl WaitAndContinueSpecification {
         self.continue_response.as_ref()
     }
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-    pub fn still_waiting_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StillWaitingResponseSpecification> {
+    pub fn still_waiting_response(&self) -> ::std::option::Option<&crate::types::StillWaitingResponseSpecification> {
         self.still_waiting_response.as_ref()
     }
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
@@ -47,14 +44,11 @@ impl WaitAndContinueSpecification {
 
 /// A builder for [`WaitAndContinueSpecification`](crate::types::WaitAndContinueSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WaitAndContinueSpecificationBuilder {
     pub(crate) waiting_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) continue_response: ::std::option::Option<crate::types::ResponseSpecification>,
-    pub(crate) still_waiting_response:
-        ::std::option::Option<crate::types::StillWaitingResponseSpecification>,
+    pub(crate) still_waiting_response: ::std::option::Option<crate::types::StillWaitingResponseSpecification>,
     pub(crate) active: ::std::option::Option<bool>,
 }
 impl WaitAndContinueSpecificationBuilder {
@@ -64,17 +58,12 @@ impl WaitAndContinueSpecificationBuilder {
         self
     }
     /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-    pub fn set_waiting_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_waiting_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.waiting_response = input;
         self
     }
     /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-    pub fn get_waiting_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_waiting_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.waiting_response
     }
     /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
@@ -83,39 +72,26 @@ impl WaitAndContinueSpecificationBuilder {
         self
     }
     /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-    pub fn set_continue_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_continue_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.continue_response = input;
         self
     }
     /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-    pub fn get_continue_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_continue_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.continue_response
     }
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-    pub fn still_waiting_response(
-        mut self,
-        input: crate::types::StillWaitingResponseSpecification,
-    ) -> Self {
+    pub fn still_waiting_response(mut self, input: crate::types::StillWaitingResponseSpecification) -> Self {
         self.still_waiting_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-    pub fn set_still_waiting_response(
-        mut self,
-        input: ::std::option::Option<crate::types::StillWaitingResponseSpecification>,
-    ) -> Self {
+    pub fn set_still_waiting_response(mut self, input: ::std::option::Option<crate::types::StillWaitingResponseSpecification>) -> Self {
         self.still_waiting_response = input;
         self
     }
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-    pub fn get_still_waiting_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::StillWaitingResponseSpecification> {
+    pub fn get_still_waiting_response(&self) -> &::std::option::Option<crate::types::StillWaitingResponseSpecification> {
         &self.still_waiting_response
     }
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>

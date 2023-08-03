@@ -49,9 +49,7 @@ impl UpdateFleetCapacityFluentBuilder {
         }
     }
     /// Access the UpdateFleetCapacity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +61,7 @@ impl UpdateFleetCapacityFluentBuilder {
             crate::operation::update_fleet_capacity::UpdateFleetCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_capacity::UpdateFleetCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_capacity::UpdateFleetCapacityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +71,7 @@ impl UpdateFleetCapacityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +80,7 @@ impl UpdateFleetCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_capacity::UpdateFleetCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_capacity::UpdateFleetCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_capacity::UpdateFleetCapacityError>,
     > {
         let op = self
             .inner
@@ -112,9 +103,7 @@ impl UpdateFleetCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_capacity::UpdateFleetCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_capacity::UpdateFleetCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_capacity::UpdateFleetCapacityError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +117,7 @@ impl UpdateFleetCapacityFluentBuilder {
             crate::operation::update_fleet_capacity::UpdateFleetCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_capacity::UpdateFleetCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_capacity::UpdateFleetCapacityError>,
     > {
         self.customize_middleware().await
     }

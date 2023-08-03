@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<MetricDataResult>>)`](crate::operation::batch_get_metric_data::BatchGetMetricDataOutput::results): <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
     ///   - [`errors(Option<Vec<MetricDataError>>)`](crate::operation::batch_get_metric_data::BatchGetMetricDataOutput::errors): <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
     /// - On failure, responds with [`SdkError<BatchGetMetricDataError>`](crate::operation::batch_get_metric_data::BatchGetMetricDataError)
-    pub fn batch_get_metric_data(
-        &self,
-    ) -> crate::operation::batch_get_metric_data::builders::BatchGetMetricDataFluentBuilder {
-        crate::operation::batch_get_metric_data::builders::BatchGetMetricDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_metric_data(&self) -> crate::operation::batch_get_metric_data::builders::BatchGetMetricDataFluentBuilder {
+        crate::operation::batch_get_metric_data::builders::BatchGetMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

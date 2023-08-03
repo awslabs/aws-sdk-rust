@@ -64,9 +64,7 @@ impl AuditFinding {
         self.severity.as_ref()
     }
     /// <p>The resource that was found to be noncompliant with the audit check.</p>
-    pub fn non_compliant_resource(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NonCompliantResource> {
+    pub fn non_compliant_resource(&self) -> ::std::option::Option<&crate::types::NonCompliantResource> {
         self.non_compliant_resource.as_ref()
     }
     /// <p>The list of related resources.</p>
@@ -95,9 +93,7 @@ impl AuditFinding {
 
 /// A builder for [`AuditFinding`](crate::types::AuditFinding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditFindingBuilder {
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
@@ -106,8 +102,7 @@ pub struct AuditFindingBuilder {
     pub(crate) finding_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) severity: ::std::option::Option<crate::types::AuditFindingSeverity>,
     pub(crate) non_compliant_resource: ::std::option::Option<crate::types::NonCompliantResource>,
-    pub(crate) related_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>,
+    pub(crate) related_resources: ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>,
     pub(crate) reason_for_non_compliance: ::std::option::Option<::std::string::String>,
     pub(crate) reason_for_non_compliance_code: ::std::option::Option<::std::string::String>,
     pub(crate) is_suppressed: ::std::option::Option<bool>,
@@ -161,10 +156,7 @@ impl AuditFindingBuilder {
         self
     }
     /// <p>The time the audit started.</p>
-    pub fn set_task_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_task_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.task_start_time = input;
         self
     }
@@ -178,10 +170,7 @@ impl AuditFindingBuilder {
         self
     }
     /// <p>The time the result (finding) was discovered.</p>
-    pub fn set_finding_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_finding_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.finding_time = input;
         self
     }
@@ -195,10 +184,7 @@ impl AuditFindingBuilder {
         self
     }
     /// <p>The severity of the result (finding).</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditFindingSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::AuditFindingSeverity>) -> Self {
         self.severity = input;
         self
     }
@@ -212,17 +198,12 @@ impl AuditFindingBuilder {
         self
     }
     /// <p>The resource that was found to be noncompliant with the audit check.</p>
-    pub fn set_non_compliant_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::NonCompliantResource>,
-    ) -> Self {
+    pub fn set_non_compliant_resource(mut self, input: ::std::option::Option<crate::types::NonCompliantResource>) -> Self {
         self.non_compliant_resource = input;
         self
     }
     /// <p>The resource that was found to be noncompliant with the audit check.</p>
-    pub fn get_non_compliant_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::NonCompliantResource> {
+    pub fn get_non_compliant_resource(&self) -> &::std::option::Option<crate::types::NonCompliantResource> {
         &self.non_compliant_resource
     }
     /// Appends an item to `related_resources`.
@@ -237,32 +218,21 @@ impl AuditFindingBuilder {
         self
     }
     /// <p>The list of related resources.</p>
-    pub fn set_related_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>,
-    ) -> Self {
+    pub fn set_related_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>) -> Self {
         self.related_resources = input;
         self
     }
     /// <p>The list of related resources.</p>
-    pub fn get_related_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>> {
+    pub fn get_related_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>> {
         &self.related_resources
     }
     /// <p>The reason the resource was noncompliant.</p>
-    pub fn reason_for_non_compliance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reason_for_non_compliance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason_for_non_compliance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason the resource was noncompliant.</p>
-    pub fn set_reason_for_non_compliance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reason_for_non_compliance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason_for_non_compliance = input;
         self
     }
@@ -271,25 +241,17 @@ impl AuditFindingBuilder {
         &self.reason_for_non_compliance
     }
     /// <p>A code that indicates the reason that the resource was noncompliant.</p>
-    pub fn reason_for_non_compliance_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reason_for_non_compliance_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason_for_non_compliance_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A code that indicates the reason that the resource was noncompliant.</p>
-    pub fn set_reason_for_non_compliance_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reason_for_non_compliance_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason_for_non_compliance_code = input;
         self
     }
     /// <p>A code that indicates the reason that the resource was noncompliant.</p>
-    pub fn get_reason_for_non_compliance_code(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reason_for_non_compliance_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason_for_non_compliance_code
     }
     /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>

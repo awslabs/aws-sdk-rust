@@ -22,35 +22,26 @@ impl DeleteCarrierGatewayInput {
 }
 impl DeleteCarrierGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteCarrierGatewayInput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayInputBuilder {
+    pub fn builder() -> crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayInputBuilder {
         crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCarrierGatewayInput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCarrierGatewayInputBuilder {
     pub(crate) carrier_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteCarrierGatewayInputBuilder {
     /// <p>The ID of the carrier gateway.</p>
-    pub fn carrier_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn carrier_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the carrier gateway.</p>
-    pub fn set_carrier_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_carrier_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_gateway_id = input;
         self
     }
@@ -75,15 +66,11 @@ impl DeleteCarrierGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCarrierGatewayInput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput {
-                carrier_gateway_id: self.carrier_gateway_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput {
+            carrier_gateway_id: self.carrier_gateway_id,
+            dry_run: self.dry_run,
+        })
     }
 }

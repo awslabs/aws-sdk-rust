@@ -66,9 +66,7 @@ impl CreateRateBasedRuleFluentBuilder {
         }
     }
     /// Access the CreateRateBasedRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +78,7 @@ impl CreateRateBasedRuleFluentBuilder {
             crate::operation::create_rate_based_rule::CreateRateBasedRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rate_based_rule::CreateRateBasedRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -92,10 +88,7 @@ impl CreateRateBasedRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,9 +97,7 @@ impl CreateRateBasedRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rate_based_rule::CreateRateBasedRuleError>,
     > {
         let op = self
             .inner
@@ -129,9 +120,7 @@ impl CreateRateBasedRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rate_based_rule::CreateRateBasedRuleError>,
     > {
         self.send_middleware().await
     }
@@ -145,9 +134,7 @@ impl CreateRateBasedRuleFluentBuilder {
             crate::operation::create_rate_based_rule::CreateRateBasedRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rate_based_rule::CreateRateBasedRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -231,10 +218,7 @@ impl CreateRateBasedRuleFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

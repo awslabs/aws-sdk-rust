@@ -59,17 +59,14 @@ impl ListCheckSummariesInput {
 }
 impl ListCheckSummariesInput {
     /// Creates a new builder-style object to manufacture [`ListCheckSummariesInput`](crate::operation::list_check_summaries::ListCheckSummariesInput).
-    pub fn builder(
-    ) -> crate::operation::list_check_summaries::builders::ListCheckSummariesInputBuilder {
+    pub fn builder() -> crate::operation::list_check_summaries::builders::ListCheckSummariesInputBuilder {
         crate::operation::list_check_summaries::builders::ListCheckSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCheckSummariesInput`](crate::operation::list_check_summaries::ListCheckSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCheckSummariesInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -184,20 +181,15 @@ impl ListCheckSummariesInputBuilder {
     /// Consumes the builder and constructs a [`ListCheckSummariesInput`](crate::operation::list_check_summaries::ListCheckSummariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_check_summaries::ListCheckSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_check_summaries::ListCheckSummariesInput {
-                workload_id: self.workload_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                lens_arn: self.lens_arn,
-                pillar_id: self.pillar_id,
-                question_id: self.question_id,
-                choice_id: self.choice_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_check_summaries::ListCheckSummariesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_check_summaries::ListCheckSummariesInput {
+            workload_id: self.workload_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            lens_arn: self.lens_arn,
+            pillar_id: self.pillar_id,
+            question_id: self.question_id,
+            choice_id: self.choice_id,
+        })
     }
 }

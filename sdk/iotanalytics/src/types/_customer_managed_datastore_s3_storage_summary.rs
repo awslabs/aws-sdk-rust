@@ -37,9 +37,7 @@ impl CustomerManagedDatastoreS3StorageSummary {
 
 /// A builder for [`CustomerManagedDatastoreS3StorageSummary`](crate::types::CustomerManagedDatastoreS3StorageSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomerManagedDatastoreS3StorageSummaryBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,

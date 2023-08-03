@@ -15,17 +15,14 @@ impl StartCrawlerScheduleInput {
 }
 impl StartCrawlerScheduleInput {
     /// Creates a new builder-style object to manufacture [`StartCrawlerScheduleInput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleInputBuilder {
+    pub fn builder() -> crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleInputBuilder {
         crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`StartCrawlerScheduleInput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCrawlerScheduleInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl StartCrawlerScheduleInputBuilder {
     /// Consumes the builder and constructs a [`StartCrawlerScheduleInput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_crawler_schedule::StartCrawlerScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_crawler_schedule::StartCrawlerScheduleInput {
-                crawler_name: self.crawler_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_crawler_schedule::StartCrawlerScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_crawler_schedule::StartCrawlerScheduleInput {
+            crawler_name: self.crawler_name,
+        })
     }
 }

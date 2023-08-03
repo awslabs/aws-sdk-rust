@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::get_component_policy::GetComponentPolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_component_policy::GetComponentPolicyOutput::policy): <p>The component policy.</p>
     /// - On failure, responds with [`SdkError<GetComponentPolicyError>`](crate::operation::get_component_policy::GetComponentPolicyError)
-    pub fn get_component_policy(
-        &self,
-    ) -> crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder {
-        crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_component_policy(&self) -> crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder {
+        crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder::new(self.handle.clone())
     }
 }

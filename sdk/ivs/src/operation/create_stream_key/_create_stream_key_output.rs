@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateStreamKeyOutput {
 }
 impl CreateStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamKeyOutput`](crate::operation::create_stream_key::CreateStreamKeyOutput).
-    pub fn builder() -> crate::operation::create_stream_key::builders::CreateStreamKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_stream_key::builders::CreateStreamKeyOutputBuilder {
         crate::operation::create_stream_key::builders::CreateStreamKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamKeyOutput`](crate::operation::create_stream_key::CreateStreamKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamKeyOutputBuilder {
     pub(crate) stream_key: ::std::option::Option<crate::types::StreamKey>,
     _request_id: Option<String>,

@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListDeploymentInstancesOutput {
 }
 impl ListDeploymentInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentInstancesOutput`](crate::operation::list_deployment_instances::ListDeploymentInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_instances::builders::ListDeploymentInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_deployment_instances::builders::ListDeploymentInstancesOutputBuilder {
         crate::operation::list_deployment_instances::builders::ListDeploymentInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentInstancesOutput`](crate::operation::list_deployment_instances::ListDeploymentInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentInstancesOutputBuilder {
     pub(crate) instances_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,27 +48,19 @@ impl ListDeploymentInstancesOutputBuilder {
     /// To override the contents of this collection use [`set_instances_list`](Self::set_instances_list).
     ///
     /// <p>A list of instance IDs.</p>
-    pub fn instances_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instances_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instances_list.unwrap_or_default();
         v.push(input.into());
         self.instances_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of instance IDs.</p>
-    pub fn set_instances_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instances_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instances_list = input;
         self
     }
     /// <p>A list of instance IDs.</p>
-    pub fn get_instances_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instances_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instances_list
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
@@ -99,9 +87,7 @@ impl ListDeploymentInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeploymentInstancesOutput`](crate::operation::list_deployment_instances::ListDeploymentInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_deployment_instances::ListDeploymentInstancesOutput {
+    pub fn build(self) -> crate::operation::list_deployment_instances::ListDeploymentInstancesOutput {
         crate::operation::list_deployment_instances::ListDeploymentInstancesOutput {
             instances_list: self.instances_list,
             next_token: self.next_token,

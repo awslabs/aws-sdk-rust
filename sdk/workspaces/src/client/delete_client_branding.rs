@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`platforms(Vec<ClientDeviceType>)`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::platforms) / [`set_platforms(Option<Vec<ClientDeviceType>>)`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::set_platforms): <p>The device type for which you want to delete client branding.</p>
     /// - On success, responds with [`DeleteClientBrandingOutput`](crate::operation::delete_client_branding::DeleteClientBrandingOutput)
     /// - On failure, responds with [`SdkError<DeleteClientBrandingError>`](crate::operation::delete_client_branding::DeleteClientBrandingError)
-    pub fn delete_client_branding(
-        &self,
-    ) -> crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder {
-        crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_client_branding(&self) -> crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder {
+        crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::new(self.handle.clone())
     }
 }

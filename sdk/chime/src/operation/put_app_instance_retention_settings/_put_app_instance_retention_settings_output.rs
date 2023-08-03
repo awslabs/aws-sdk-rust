@@ -5,8 +5,7 @@
 pub struct PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
     #[doc(hidden)]
-    pub app_instance_retention_settings:
-        ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
+    pub app_instance_retention_settings: ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
     /// <p>The time at which the API deletes data.</p>
     #[doc(hidden)]
     pub initiate_deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -14,15 +13,11 @@ pub struct PutAppInstanceRetentionSettingsOutput {
 }
 impl PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
-    pub fn app_instance_retention_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppInstanceRetentionSettings> {
+    pub fn app_instance_retention_settings(&self) -> ::std::option::Option<&crate::types::AppInstanceRetentionSettings> {
         self.app_instance_retention_settings.as_ref()
     }
     /// <p>The time at which the API deletes data.</p>
-    pub fn initiate_deletion_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn initiate_deletion_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
@@ -33,43 +28,32 @@ impl ::aws_http::request_id::RequestId for PutAppInstanceRetentionSettingsOutput
 }
 impl PutAppInstanceRetentionSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutAppInstanceRetentionSettingsOutput`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput).
-    pub fn builder() -> crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsOutputBuilder {
         crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAppInstanceRetentionSettingsOutput`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsOutputBuilder {
-    pub(crate) app_instance_retention_settings:
-        ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
+    pub(crate) app_instance_retention_settings: ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
     pub(crate) initiate_deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl PutAppInstanceRetentionSettingsOutputBuilder {
     /// <p>The time in days to retain data. Data type: number.</p>
-    pub fn app_instance_retention_settings(
-        mut self,
-        input: crate::types::AppInstanceRetentionSettings,
-    ) -> Self {
+    pub fn app_instance_retention_settings(mut self, input: crate::types::AppInstanceRetentionSettings) -> Self {
         self.app_instance_retention_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time in days to retain data. Data type: number.</p>
-    pub fn set_app_instance_retention_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
-    ) -> Self {
+    pub fn set_app_instance_retention_settings(mut self, input: ::std::option::Option<crate::types::AppInstanceRetentionSettings>) -> Self {
         self.app_instance_retention_settings = input;
         self
     }
     /// <p>The time in days to retain data. Data type: number.</p>
-    pub fn get_app_instance_retention_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppInstanceRetentionSettings> {
+    pub fn get_app_instance_retention_settings(&self) -> &::std::option::Option<crate::types::AppInstanceRetentionSettings> {
         &self.app_instance_retention_settings
     }
     /// <p>The time at which the API deletes data.</p>
@@ -78,17 +62,12 @@ impl PutAppInstanceRetentionSettingsOutputBuilder {
         self
     }
     /// <p>The time at which the API deletes data.</p>
-    pub fn set_initiate_deletion_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_initiate_deletion_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.initiate_deletion_timestamp = input;
         self
     }
     /// <p>The time at which the API deletes data.</p>
-    pub fn get_initiate_deletion_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_initiate_deletion_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.initiate_deletion_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,15 +80,10 @@ impl PutAppInstanceRetentionSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAppInstanceRetentionSettingsOutput`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput {
         crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput {
-            app_instance_retention_settings: self.app_instance_retention_settings
-            ,
-            initiate_deletion_timestamp: self.initiate_deletion_timestamp
-            ,
+            app_instance_retention_settings: self.app_instance_retention_settings,
+            initiate_deletion_timestamp: self.initiate_deletion_timestamp,
             _request_id: self._request_id,
         }
     }

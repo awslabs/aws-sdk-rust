@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`replications(Option<Vec<ReplicationConfigurationDescription>>)`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput::replications): <p>The collection of replication configurations that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput::next_token): <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationsError>`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError)
-    pub fn describe_replication_configurations(&self) -> crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsFluentBuilder{
+    pub fn describe_replication_configurations(
+        &self,
+    ) -> crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsFluentBuilder {
         crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisableInsightRulesOutput`](crate::operation::disable_insight_rules::DisableInsightRulesOutput) with field(s):
     ///   - [`failures(Option<Vec<PartialFailure>>)`](crate::operation::disable_insight_rules::DisableInsightRulesOutput::failures): <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
     /// - On failure, responds with [`SdkError<DisableInsightRulesError>`](crate::operation::disable_insight_rules::DisableInsightRulesError)
-    pub fn disable_insight_rules(
-        &self,
-    ) -> crate::operation::disable_insight_rules::builders::DisableInsightRulesFluentBuilder {
-        crate::operation::disable_insight_rules::builders::DisableInsightRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_insight_rules(&self) -> crate::operation::disable_insight_rules::builders::DisableInsightRulesFluentBuilder {
+        crate::operation::disable_insight_rules::builders::DisableInsightRulesFluentBuilder::new(self.handle.clone())
     }
 }

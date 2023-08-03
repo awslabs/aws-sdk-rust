@@ -20,9 +20,7 @@ pub struct CreateQueueInput {
     pub status: ::std::option::Option<crate::types::QueueStatus>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInput {
     /// Optional. A description of the queue that you are creating.
@@ -38,9 +36,7 @@ impl CreateQueueInput {
         self.pricing_plan.as_ref()
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn reservation_plan_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservationPlanSettings> {
+    pub fn reservation_plan_settings(&self) -> ::std::option::Option<&crate::types::ReservationPlanSettings> {
         self.reservation_plan_settings.as_ref()
     }
     /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
@@ -48,11 +44,7 @@ impl CreateQueueInput {
         self.status.as_ref()
     }
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -65,19 +57,14 @@ impl CreateQueueInput {
 
 /// A builder for [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQueueInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
-    pub(crate) reservation_plan_settings:
-        ::std::option::Option<crate::types::ReservationPlanSettings>,
+    pub(crate) reservation_plan_settings: ::std::option::Option<crate::types::ReservationPlanSettings>,
     pub(crate) status: ::std::option::Option<crate::types::QueueStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInputBuilder {
     /// Optional. A description of the queue that you are creating.
@@ -114,10 +101,7 @@ impl CreateQueueInputBuilder {
         self
     }
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.pricing_plan = input;
         self
     }
@@ -126,25 +110,17 @@ impl CreateQueueInputBuilder {
         &self.pricing_plan
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn reservation_plan_settings(
-        mut self,
-        input: crate::types::ReservationPlanSettings,
-    ) -> Self {
+    pub fn reservation_plan_settings(mut self, input: crate::types::ReservationPlanSettings) -> Self {
         self.reservation_plan_settings = ::std::option::Option::Some(input);
         self
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn set_reservation_plan_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationPlanSettings>,
-    ) -> Self {
+    pub fn set_reservation_plan_settings(mut self, input: ::std::option::Option<crate::types::ReservationPlanSettings>) -> Self {
         self.reservation_plan_settings = input;
         self
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn get_reservation_plan_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
+    pub fn get_reservation_plan_settings(&self) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
         &self.reservation_plan_settings
     }
     /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
@@ -166,41 +142,23 @@ impl CreateQueueInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_queue::CreateQueueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
             description: self.description,
             name: self.name,

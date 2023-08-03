@@ -22,18 +22,14 @@ impl DeleteSkillAuthorizationInput {
 }
 impl DeleteSkillAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSkillAuthorizationInput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder {
         crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSkillAuthorizationInput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSkillAuthorizationInputBuilder {
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DeleteSkillAuthorizationInputBuilder {
         crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput {
-                skill_id: self.skill_id,
-                room_arn: self.room_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput {
+            skill_id: self.skill_id,
+            room_arn: self.room_arn,
+        })
     }
 }

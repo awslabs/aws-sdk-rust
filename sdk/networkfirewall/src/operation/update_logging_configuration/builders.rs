@@ -34,7 +34,7 @@ impl UpdateLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder,
+    inner: crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder,
 }
 impl UpdateLoggingConfigurationFluentBuilder {
     /// Creates a new `UpdateLoggingConfiguration`.
@@ -45,7 +45,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateLoggingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
             crate::operation::update_logging_configuration::UpdateLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logging_configuration::UpdateLoggingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logging_configuration::UpdateLoggingConfigurationError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logging_configuration::UpdateLoggingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl UpdateLoggingConfigurationFluentBuilder {
             crate::operation::update_logging_configuration::UpdateLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_logging_configuration::UpdateLoggingConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -147,19 +136,13 @@ impl UpdateLoggingConfigurationFluentBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
@@ -174,17 +157,12 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self
     }
     /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
     /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
 }

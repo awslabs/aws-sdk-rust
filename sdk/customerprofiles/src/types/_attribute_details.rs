@@ -30,9 +30,7 @@ impl AttributeDetails {
 
 /// A builder for [`AttributeDetails`](crate::types::AttributeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeDetailsBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
@@ -50,17 +48,12 @@ impl AttributeDetailsBuilder {
         self
     }
     /// <p>A list of attribute items specified in the mathematical expression.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A list of attribute items specified in the mathematical expression.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>> {
         &self.attributes
     }
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>

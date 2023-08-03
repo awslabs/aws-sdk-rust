@@ -42,17 +42,14 @@ impl CreateAnomalyMonitorInput {
 }
 impl CreateAnomalyMonitorInput {
     /// Creates a new builder-style object to manufacture [`CreateAnomalyMonitorInput`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput).
-    pub fn builder(
-    ) -> crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorInputBuilder {
+    pub fn builder() -> crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorInputBuilder {
         crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAnomalyMonitorInput`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnomalyMonitorInputBuilder {
     pub(crate) anomaly_monitor: ::std::option::Option<crate::types::AnomalyMonitor>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
@@ -64,10 +61,7 @@ impl CreateAnomalyMonitorInputBuilder {
         self
     }
     /// <p>The cost anomaly detection monitor object that you want to create.</p>
-    pub fn set_anomaly_monitor(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyMonitor>,
-    ) -> Self {
+    pub fn set_anomaly_monitor(mut self, input: ::std::option::Option<crate::types::AnomalyMonitor>) -> Self {
         self.anomaly_monitor = input;
         self
     }
@@ -107,10 +101,7 @@ impl CreateAnomalyMonitorInputBuilder {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tags = input;
         self
     }
@@ -125,23 +116,17 @@ impl CreateAnomalyMonitorInputBuilder {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// Consumes the builder and constructs a [`CreateAnomalyMonitorInput`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput {
-                anomaly_monitor: self.anomaly_monitor,
-                resource_tags: self.resource_tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput {
+            anomaly_monitor: self.anomaly_monitor,
+            resource_tags: self.resource_tags,
+        })
     }
 }

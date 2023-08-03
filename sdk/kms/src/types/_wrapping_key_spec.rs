@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WrappingKeySpec {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for WrappingKeySpec {
             "RSA_2048" => WrappingKeySpec::Rsa2048,
             "RSA_3072" => WrappingKeySpec::Rsa3072,
             "RSA_4096" => WrappingKeySpec::Rsa4096,
-            other => {
-                WrappingKeySpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => WrappingKeySpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

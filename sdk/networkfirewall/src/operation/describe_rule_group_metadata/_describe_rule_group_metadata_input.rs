@@ -37,16 +37,14 @@ impl DescribeRuleGroupMetadataInput {
 }
 impl DescribeRuleGroupMetadataInput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataInput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput).
-    pub fn builder() -> crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder{
+    pub fn builder() -> crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder {
         crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRuleGroupMetadataInput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupMetadataInputBuilder {
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
@@ -55,19 +53,13 @@ pub struct DescribeRuleGroupMetadataInputBuilder {
 impl DescribeRuleGroupMetadataInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_name = input;
         self
     }
@@ -78,19 +70,13 @@ impl DescribeRuleGroupMetadataInputBuilder {
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
@@ -126,12 +112,10 @@ impl DescribeRuleGroupMetadataInputBuilder {
         crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput {
-                rule_group_name: self.rule_group_name,
-                rule_group_arn: self.rule_group_arn,
-                r#type: self.r#type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput {
+            rule_group_name: self.rule_group_name,
+            rule_group_arn: self.rule_group_arn,
+            r#type: self.r#type,
+        })
     }
 }

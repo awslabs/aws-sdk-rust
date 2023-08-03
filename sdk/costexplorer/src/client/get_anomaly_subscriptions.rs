@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`anomaly_subscriptions(Option<Vec<AnomalySubscription>>)`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput::anomaly_subscriptions): <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput::next_page_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     /// - On failure, responds with [`SdkError<GetAnomalySubscriptionsError>`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError)
-    pub fn get_anomaly_subscriptions(
-        &self,
-    ) -> crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsFluentBuilder
-    {
+    pub fn get_anomaly_subscriptions(&self) -> crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsFluentBuilder {
         crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

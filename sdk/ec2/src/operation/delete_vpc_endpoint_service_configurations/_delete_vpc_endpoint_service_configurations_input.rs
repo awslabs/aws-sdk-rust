@@ -22,16 +22,14 @@ impl DeleteVpcEndpointServiceConfigurationsInput {
 }
 impl DeleteVpcEndpointServiceConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointServiceConfigurationsInput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput).
-    pub fn builder() -> crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsInputBuilder {
         crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcEndpointServiceConfigurationsInput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointServiceConfigurationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,28 +61,26 @@ impl DeleteVpcEndpointServiceConfigurationsInputBuilder {
         self
     }
     /// <p>The IDs of the services.</p>
-    pub fn set_service_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.service_ids = input;
         self
     }
     /// <p>The IDs of the services.</p>
-    pub fn get_service_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_ids
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointServiceConfigurationsInput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput {
-                dry_run: self.dry_run
-                ,
-                service_ids: self.service_ids
-                ,
-            }
+                dry_run: self.dry_run,
+                service_ids: self.service_ids,
+            },
         )
     }
 }

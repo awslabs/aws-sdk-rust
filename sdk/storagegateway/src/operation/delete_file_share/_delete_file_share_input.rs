@@ -32,27 +32,19 @@ impl DeleteFileShareInput {
 
 /// A builder for [`DeleteFileShareInput`](crate::operation::delete_file_share::DeleteFileShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileShareInputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete: ::std::option::Option<bool>,
 }
 impl DeleteFileShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_arn = input;
         self
     }
@@ -80,10 +72,7 @@ impl DeleteFileShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFileShareInput`](crate::operation::delete_file_share::DeleteFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_file_share::DeleteFileShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_file_share::DeleteFileShareInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file_share::DeleteFileShareInput {
             file_share_arn: self.file_share_arn,
             force_delete: self.force_delete.unwrap_or_default(),

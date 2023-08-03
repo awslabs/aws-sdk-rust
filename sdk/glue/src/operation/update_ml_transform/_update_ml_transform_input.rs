@@ -97,17 +97,14 @@ impl UpdateMlTransformInput {
 }
 impl UpdateMlTransformInput {
     /// Creates a new builder-style object to manufacture [`UpdateMlTransformInput`](crate::operation::update_ml_transform::UpdateMlTransformInput).
-    pub fn builder(
-    ) -> crate::operation::update_ml_transform::builders::UpdateMlTransformInputBuilder {
+    pub fn builder() -> crate::operation::update_ml_transform::builders::UpdateMlTransformInputBuilder {
         crate::operation::update_ml_transform::builders::UpdateMlTransformInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMlTransformInput`](crate::operation::update_ml_transform::UpdateMlTransformInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMlTransformInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -170,10 +167,7 @@ impl UpdateMlTransformInputBuilder {
         self
     }
     /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformParameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::TransformParameters>) -> Self {
         self.parameters = input;
         self
     }
@@ -242,10 +236,7 @@ impl UpdateMlTransformInputBuilder {
     /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -303,24 +294,19 @@ impl UpdateMlTransformInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMlTransformInput`](crate::operation::update_ml_transform::UpdateMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ml_transform::UpdateMlTransformInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_ml_transform::UpdateMlTransformInput {
-                transform_id: self.transform_id,
-                name: self.name,
-                description: self.description,
-                parameters: self.parameters,
-                role: self.role,
-                glue_version: self.glue_version,
-                max_capacity: self.max_capacity,
-                worker_type: self.worker_type,
-                number_of_workers: self.number_of_workers,
-                timeout: self.timeout,
-                max_retries: self.max_retries,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_ml_transform::UpdateMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_ml_transform::UpdateMlTransformInput {
+            transform_id: self.transform_id,
+            name: self.name,
+            description: self.description,
+            parameters: self.parameters,
+            role: self.role,
+            glue_version: self.glue_version,
+            max_capacity: self.max_capacity,
+            worker_type: self.worker_type,
+            number_of_workers: self.number_of_workers,
+            timeout: self.timeout,
+            max_retries: self.max_retries,
+        })
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutContainerPolicyOutput {
 }
 impl PutContainerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutContainerPolicyOutput`](crate::operation::put_container_policy::PutContainerPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_container_policy::builders::PutContainerPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_container_policy::builders::PutContainerPolicyOutputBuilder {
         crate::operation::put_container_policy::builders::PutContainerPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutContainerPolicyOutput`](crate::operation::put_container_policy::PutContainerPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutContainerPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,9 +10,7 @@ pub struct ImageClassificationJobConfig {
 }
 impl ImageClassificationJobConfig {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn completion_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
+    pub fn completion_criteria(&self) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
         self.completion_criteria.as_ref()
     }
 }
@@ -25,12 +23,9 @@ impl ImageClassificationJobConfig {
 
 /// A builder for [`ImageClassificationJobConfig`](crate::types::ImageClassificationJobConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageClassificationJobConfigBuilder {
-    pub(crate) completion_criteria:
-        ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
+    pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }
 impl ImageClassificationJobConfigBuilder {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
@@ -39,17 +34,12 @@ impl ImageClassificationJobConfigBuilder {
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn set_completion_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
-    ) -> Self {
+    pub fn set_completion_criteria(mut self, input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>) -> Self {
         self.completion_criteria = input;
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn get_completion_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
+    pub fn get_completion_criteria(&self) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
         &self.completion_criteria
     }
     /// Consumes the builder and constructs a [`ImageClassificationJobConfig`](crate::types::ImageClassificationJobConfig).

@@ -37,9 +37,7 @@ impl DeleteFHIRDatastoreFluentBuilder {
         }
     }
     /// Access the DeleteFHIRDatastore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteFHIRDatastoreFluentBuilder {
             crate::operation::delete_fhir_datastore::DeleteFHIRDatastore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteFHIRDatastoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteFHIRDatastoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteFHIRDatastoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteFHIRDatastoreFluentBuilder {
             crate::operation::delete_fhir_datastore::DeleteFHIRDatastore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError>,
     > {
         self.customize_middleware().await
     }

@@ -10,10 +10,7 @@ impl CreateStageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_stage::CreateStageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stage::CreateStageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_stage();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateStageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_stage::CreateStage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_stage::CreateStage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateStageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateStageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_stage::CreateStage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_stage::CreateStage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
     > {
         self.customize_middleware().await
@@ -131,10 +119,7 @@ impl CreateStageFluentBuilder {
     /// To override the contents of this collection use [`set_participant_token_configurations`](Self::set_participant_token_configurations).
     ///
     /// <p>Array of participant token configuration objects to attach to the new stage.</p>
-    pub fn participant_token_configurations(
-        mut self,
-        input: crate::types::ParticipantTokenConfiguration,
-    ) -> Self {
+    pub fn participant_token_configurations(mut self, input: crate::types::ParticipantTokenConfiguration) -> Self {
         self.inner = self.inner.participant_token_configurations(input);
         self
     }
@@ -147,9 +132,7 @@ impl CreateStageFluentBuilder {
         self
     }
     /// <p>Array of participant token configuration objects to attach to the new stage.</p>
-    pub fn get_participant_token_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>> {
+    pub fn get_participant_token_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>> {
         self.inner.get_participant_token_configurations()
     }
     /// Adds a key-value pair to `tags`.
@@ -157,30 +140,17 @@ impl CreateStageFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

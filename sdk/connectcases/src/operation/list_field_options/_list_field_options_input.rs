@@ -43,17 +43,14 @@ impl ListFieldOptionsInput {
 }
 impl ListFieldOptionsInput {
     /// Creates a new builder-style object to manufacture [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
-    pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder {
         crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFieldOptionsInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
@@ -130,10 +127,7 @@ impl ListFieldOptionsInputBuilder {
         self
     }
     /// <p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -144,18 +138,13 @@ impl ListFieldOptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_field_options::ListFieldOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_field_options::ListFieldOptionsInput {
-                domain_id: self.domain_id,
-                field_id: self.field_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                values: self.values,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_field_options::ListFieldOptionsInput {
+            domain_id: self.domain_id,
+            field_id: self.field_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            values: self.values,
+        })
     }
 }

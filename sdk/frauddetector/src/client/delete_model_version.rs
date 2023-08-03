@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`model_version_number(impl ::std::convert::Into<String>)`](crate::operation::delete_model_version::builders::DeleteModelVersionFluentBuilder::model_version_number) / [`set_model_version_number(Option<String>)`](crate::operation::delete_model_version::builders::DeleteModelVersionFluentBuilder::set_model_version_number): <p>The model version number of the model version to delete.</p>
     /// - On success, responds with [`DeleteModelVersionOutput`](crate::operation::delete_model_version::DeleteModelVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteModelVersionError>`](crate::operation::delete_model_version::DeleteModelVersionError)
-    pub fn delete_model_version(
-        &self,
-    ) -> crate::operation::delete_model_version::builders::DeleteModelVersionFluentBuilder {
-        crate::operation::delete_model_version::builders::DeleteModelVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_model_version(&self) -> crate::operation::delete_model_version::builders::DeleteModelVersionFluentBuilder {
+        crate::operation::delete_model_version::builders::DeleteModelVersionFluentBuilder::new(self.handle.clone())
     }
 }

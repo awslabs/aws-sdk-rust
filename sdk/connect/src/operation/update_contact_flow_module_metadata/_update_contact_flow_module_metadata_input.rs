@@ -43,16 +43,14 @@ impl UpdateContactFlowModuleMetadataInput {
 }
 impl UpdateContactFlowModuleMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowModuleMetadataInput`](crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataInput).
-    pub fn builder() -> crate::operation::update_contact_flow_module_metadata::builders::UpdateContactFlowModuleMetadataInputBuilder{
+    pub fn builder() -> crate::operation::update_contact_flow_module_metadata::builders::UpdateContactFlowModuleMetadataInputBuilder {
         crate::operation::update_contact_flow_module_metadata::builders::UpdateContactFlowModuleMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactFlowModuleMetadataInput`](crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactFlowModuleMetadataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_module_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl UpdateContactFlowModuleMetadataInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn contact_flow_module_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_module_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_module_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn set_contact_flow_module_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_module_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_module_id = input;
         self
     }
@@ -129,10 +121,7 @@ impl UpdateContactFlowModuleMetadataInputBuilder {
         self
     }
     /// <p>The state of flow module.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactFlowModuleState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ContactFlowModuleState>) -> Self {
         self.state = input;
         self
     }
@@ -149,17 +138,12 @@ impl UpdateContactFlowModuleMetadataInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataInput {
-                instance_id: self.instance_id
-                ,
-                contact_flow_module_id: self.contact_flow_module_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                state: self.state
-                ,
-            }
+                instance_id: self.instance_id,
+                contact_flow_module_id: self.contact_flow_module_id,
+                name: self.name,
+                description: self.description,
+                state: self.state,
+            },
         )
     }
 }

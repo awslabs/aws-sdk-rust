@@ -37,9 +37,7 @@ impl DeleteServiceProfileFluentBuilder {
         }
     }
     /// Access the DeleteServiceProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_service_profile::builders::DeleteServiceProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_service_profile::builders::DeleteServiceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteServiceProfileFluentBuilder {
             crate::operation::delete_service_profile::DeleteServiceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_profile::DeleteServiceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_profile::DeleteServiceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteServiceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteServiceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_profile::DeleteServiceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_profile::DeleteServiceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_profile::DeleteServiceProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteServiceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_profile::DeleteServiceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_profile::DeleteServiceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_profile::DeleteServiceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteServiceProfileFluentBuilder {
             crate::operation::delete_service_profile::DeleteServiceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_profile::DeleteServiceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_profile::DeleteServiceProfileError>,
     > {
         self.customize_middleware().await
     }

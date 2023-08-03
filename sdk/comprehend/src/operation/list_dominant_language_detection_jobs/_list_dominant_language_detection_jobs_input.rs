@@ -15,9 +15,7 @@ pub struct ListDominantLanguageDetectionJobsInput {
 }
 impl ListDominantLanguageDetectionJobsInput {
     /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DominantLanguageDetectionJobFilter> {
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::DominantLanguageDetectionJobFilter> {
         self.filter.as_ref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,16 +29,14 @@ impl ListDominantLanguageDetectionJobsInput {
 }
 impl ListDominantLanguageDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsInput`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsInput).
-    pub fn builder() -> crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsInputBuilder {
         crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDominantLanguageDetectionJobsInput`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDominantLanguageDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DominantLanguageDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,12 @@ impl ListDominantLanguageDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DominantLanguageDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DominantLanguageDetectionJobFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DominantLanguageDetectionJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DominantLanguageDetectionJobFilter> {
         &self.filter
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -95,16 +86,18 @@ impl ListDominantLanguageDetectionJobsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDominantLanguageDetectionJobsInput`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsInput {
-                filter: self.filter
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

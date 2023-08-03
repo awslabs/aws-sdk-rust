@@ -36,9 +36,7 @@ impl ListTeamMembersInput {
 
 /// A builder for [`ListTeamMembersInput`](crate::operation::list_team_members::ListTeamMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTeamMembersInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListTeamMembersInputBuilder {
     /// Consumes the builder and constructs a [`ListTeamMembersInput`](crate::operation::list_team_members::ListTeamMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_team_members::ListTeamMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_team_members::ListTeamMembersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_team_members::ListTeamMembersInput {
             project_id: self.project_id,
             next_token: self.next_token,

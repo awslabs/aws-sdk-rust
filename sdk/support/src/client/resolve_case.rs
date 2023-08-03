@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`initial_case_status(Option<String>)`](crate::operation::resolve_case::ResolveCaseOutput::initial_case_status): <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
     ///   - [`final_case_status(Option<String>)`](crate::operation::resolve_case::ResolveCaseOutput::final_case_status): <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
     /// - On failure, responds with [`SdkError<ResolveCaseError>`](crate::operation::resolve_case::ResolveCaseError)
-    pub fn resolve_case(
-        &self,
-    ) -> crate::operation::resolve_case::builders::ResolveCaseFluentBuilder {
+    pub fn resolve_case(&self) -> crate::operation::resolve_case::builders::ResolveCaseFluentBuilder {
         crate::operation::resolve_case::builders::ResolveCaseFluentBuilder::new(self.handle.clone())
     }
 }

@@ -64,9 +64,7 @@ impl DescribeStackDriftDetectionStatusOutput {
     /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
     /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
     /// </ul>
-    pub fn detection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackDriftDetectionStatus> {
+    pub fn detection_status(&self) -> ::std::option::Option<&crate::types::StackDriftDetectionStatus> {
         self.detection_status.as_ref()
     }
     /// <p>The reason the stack drift detection operation has its current status.</p>
@@ -89,16 +87,14 @@ impl ::aws_http::request_id::RequestId for DescribeStackDriftDetectionStatusOutp
 }
 impl DescribeStackDriftDetectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackDriftDetectionStatusOutput`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput).
-    pub fn builder() -> crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusOutputBuilder {
         crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackDriftDetectionStatusOutput`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackDriftDetectionStatusOutputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_drift_detection_id: ::std::option::Option<::std::string::String>,
@@ -126,19 +122,13 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn stack_drift_detection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_drift_detection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_drift_detection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn set_stack_drift_detection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_drift_detection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_drift_detection_id = input;
         self
     }
@@ -165,10 +155,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
-    pub fn set_stack_drift_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackDriftStatus>,
-    ) -> Self {
+    pub fn set_stack_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
         self.stack_drift_status = input;
         self
     }
@@ -198,10 +185,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
     /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
     /// </ul>
-    pub fn set_detection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackDriftDetectionStatus>,
-    ) -> Self {
+    pub fn set_detection_status(mut self, input: ::std::option::Option<crate::types::StackDriftDetectionStatus>) -> Self {
         self.detection_status = input;
         self
     }
@@ -211,24 +195,16 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
     /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
     /// </ul>
-    pub fn get_detection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackDriftDetectionStatus> {
+    pub fn get_detection_status(&self) -> &::std::option::Option<crate::types::StackDriftDetectionStatus> {
         &self.detection_status
     }
     /// <p>The reason the stack drift detection operation has its current status.</p>
-    pub fn detection_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detection_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detection_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason the stack drift detection operation has its current status.</p>
-    pub fn set_detection_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detection_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detection_status_reason = input;
         self
     }
@@ -256,10 +232,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
         self
     }
     /// <p>Time at which the stack drift detection operation was initiated.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -277,22 +250,15 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStackDriftDetectionStatusOutput`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput).
-    pub fn build(self) -> crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput{
+    pub fn build(self) -> crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput {
         crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput {
-            stack_id: self.stack_id
-            ,
-            stack_drift_detection_id: self.stack_drift_detection_id
-            ,
-            stack_drift_status: self.stack_drift_status
-            ,
-            detection_status: self.detection_status
-            ,
-            detection_status_reason: self.detection_status_reason
-            ,
-            drifted_stack_resource_count: self.drifted_stack_resource_count
-            ,
-            timestamp: self.timestamp
-            ,
+            stack_id: self.stack_id,
+            stack_drift_detection_id: self.stack_drift_detection_id,
+            stack_drift_status: self.stack_drift_status,
+            detection_status: self.detection_status,
+            detection_status_reason: self.detection_status_reason,
+            drifted_stack_resource_count: self.drifted_stack_resource_count,
+            timestamp: self.timestamp,
             _request_id: self._request_id,
         }
     }

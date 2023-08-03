@@ -36,9 +36,7 @@ impl UpdateBotInput {
 
 /// A builder for [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBotInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl UpdateBotInputBuilder {
         &self.disabled
     }
     /// Consumes the builder and constructs a [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bot::UpdateBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bot::UpdateBotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bot::UpdateBotInput {
             account_id: self.account_id,
             bot_id: self.bot_id,

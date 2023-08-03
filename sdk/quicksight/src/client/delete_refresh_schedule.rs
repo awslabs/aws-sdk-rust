@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`schedule_id(Option<String>)`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleOutput::schedule_id): <p>The ID of the refresh schedule.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleOutput::arn): <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
     /// - On failure, responds with [`SdkError<DeleteRefreshScheduleError>`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError)
-    pub fn delete_refresh_schedule(
-        &self,
-    ) -> crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleFluentBuilder
-    {
-        crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_refresh_schedule(&self) -> crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleFluentBuilder {
+        crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleFluentBuilder::new(self.handle.clone())
     }
 }

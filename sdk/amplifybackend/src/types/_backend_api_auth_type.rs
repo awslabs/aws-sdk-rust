@@ -30,9 +30,7 @@ impl BackendApiAuthType {
 
 /// A builder for [`BackendApiAuthType`](crate::types::BackendApiAuthType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendApiAuthTypeBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::Mode>,
     pub(crate) settings: ::std::option::Option<crate::types::BackendApiAppSyncAuthSettings>,
@@ -58,17 +56,12 @@ impl BackendApiAuthTypeBuilder {
         self
     }
     /// <p>Describes settings for the authentication mode.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendApiAppSyncAuthSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::BackendApiAppSyncAuthSettings>) -> Self {
         self.settings = input;
         self
     }
     /// <p>Describes settings for the authentication mode.</p>
-    pub fn get_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendApiAppSyncAuthSettings> {
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::BackendApiAppSyncAuthSettings> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`BackendApiAuthType`](crate::types::BackendApiAuthType).

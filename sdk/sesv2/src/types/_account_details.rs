@@ -22,8 +22,7 @@ pub struct AccountDetails {
     pub use_case_description: ::std::option::Option<::std::string::String>,
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
     #[doc(hidden)]
-    pub additional_contact_email_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub additional_contact_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the review of the latest details you submitted.</p>
     #[doc(hidden)]
     pub review_details: ::std::option::Option<crate::types::ReviewDetails>,
@@ -50,9 +49,7 @@ impl AccountDetails {
         self.use_case_description.as_deref()
     }
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    pub fn additional_contact_email_addresses(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn additional_contact_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.additional_contact_email_addresses.as_deref()
     }
     /// <p>Information about the review of the latest details you submitted.</p>
@@ -67,10 +64,7 @@ impl ::std::fmt::Debug for AccountDetails {
         formatter.field("website_url", &"*** Sensitive Data Redacted ***");
         formatter.field("contact_language", &self.contact_language);
         formatter.field("use_case_description", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "additional_contact_email_addresses",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("additional_contact_email_addresses", &"*** Sensitive Data Redacted ***");
         formatter.field("review_details", &self.review_details);
         formatter.finish()
     }
@@ -90,8 +84,7 @@ pub struct AccountDetailsBuilder {
     pub(crate) website_url: ::std::option::Option<::std::string::String>,
     pub(crate) contact_language: ::std::option::Option<crate::types::ContactLanguage>,
     pub(crate) use_case_description: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_contact_email_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_contact_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) review_details: ::std::option::Option<crate::types::ReviewDetails>,
 }
 impl AccountDetailsBuilder {
@@ -141,10 +134,7 @@ impl AccountDetailsBuilder {
         self
     }
     /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
-    pub fn set_contact_language(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactLanguage>,
-    ) -> Self {
+    pub fn set_contact_language(mut self, input: ::std::option::Option<crate::types::ContactLanguage>) -> Self {
         self.contact_language = input;
         self
     }
@@ -153,18 +143,12 @@ impl AccountDetailsBuilder {
         &self.contact_language
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    pub fn use_case_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn use_case_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.use_case_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    pub fn set_use_case_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_use_case_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.use_case_description = input;
         self
     }
@@ -177,27 +161,19 @@ impl AccountDetailsBuilder {
     /// To override the contents of this collection use [`set_additional_contact_email_addresses`](Self::set_additional_contact_email_addresses).
     ///
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    pub fn additional_contact_email_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_contact_email_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_contact_email_addresses.unwrap_or_default();
         v.push(input.into());
         self.additional_contact_email_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    pub fn set_additional_contact_email_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_contact_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_contact_email_addresses = input;
         self
     }
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    pub fn get_additional_contact_email_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_contact_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_contact_email_addresses
     }
     /// <p>Information about the review of the latest details you submitted.</p>
@@ -206,10 +182,7 @@ impl AccountDetailsBuilder {
         self
     }
     /// <p>Information about the review of the latest details you submitted.</p>
-    pub fn set_review_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewDetails>,
-    ) -> Self {
+    pub fn set_review_details(mut self, input: ::std::option::Option<crate::types::ReviewDetails>) -> Self {
         self.review_details = input;
         self
     }
@@ -236,10 +209,7 @@ impl ::std::fmt::Debug for AccountDetailsBuilder {
         formatter.field("website_url", &"*** Sensitive Data Redacted ***");
         formatter.field("contact_language", &self.contact_language);
         formatter.field("use_case_description", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "additional_contact_email_addresses",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("additional_contact_email_addresses", &"*** Sensitive Data Redacted ***");
         formatter.field("review_details", &self.review_details);
         formatter.finish()
     }

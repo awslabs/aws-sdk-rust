@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetStageSessionOutput {
 }
 impl GetStageSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetStageSessionOutput`](crate::operation::get_stage_session::GetStageSessionOutput).
-    pub fn builder() -> crate::operation::get_stage_session::builders::GetStageSessionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_stage_session::builders::GetStageSessionOutputBuilder {
         crate::operation::get_stage_session::builders::GetStageSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStageSessionOutput`](crate::operation::get_stage_session::GetStageSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStageSessionOutputBuilder {
     pub(crate) stage_session: ::std::option::Option<crate::types::StageSession>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetStageSessionOutputBuilder {
         self
     }
     /// <p>The stage session that is returned.</p>
-    pub fn set_stage_session(
-        mut self,
-        input: ::std::option::Option<crate::types::StageSession>,
-    ) -> Self {
+    pub fn set_stage_session(mut self, input: ::std::option::Option<crate::types::StageSession>) -> Self {
         self.stage_session = input;
         self
     }

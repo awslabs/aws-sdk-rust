@@ -10,10 +10,7 @@ impl CreateAccountAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_account_alias::CreateAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_alias::CreateAccountAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_alias::CreateAccountAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_account_alias();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAccountAliasFluentBuilder {
         }
     }
     /// Access the CreateAccountAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_account_alias::builders::CreateAccountAliasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_account_alias::builders::CreateAccountAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateAccountAliasFluentBuilder {
             crate::operation::create_account_alias::CreateAccountAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_alias::CreateAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_alias::CreateAccountAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateAccountAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateAccountAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_alias::CreateAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_alias::CreateAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_alias::CreateAccountAliasError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateAccountAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_alias::CreateAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_alias::CreateAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_alias::CreateAccountAliasError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl CreateAccountAliasFluentBuilder {
             crate::operation::create_account_alias::CreateAccountAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_alias::CreateAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_alias::CreateAccountAliasError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The account alias to create.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
-    pub fn account_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_alias(input.into());
         self
     }
     /// <p>The account alias to create.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
-    pub fn set_account_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_alias(input);
         self
     }

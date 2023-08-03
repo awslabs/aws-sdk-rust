@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`locale_id(impl ::std::convert::Into<String>)`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::locale_id) / [`set_locale_id(Option<String>)`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::set_locale_id): <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     /// - On success, responds with [`DeleteIntentOutput`](crate::operation::delete_intent::DeleteIntentOutput)
     /// - On failure, responds with [`SdkError<DeleteIntentError>`](crate::operation::delete_intent::DeleteIntentError)
-    pub fn delete_intent(
-        &self,
-    ) -> crate::operation::delete_intent::builders::DeleteIntentFluentBuilder {
-        crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_intent(&self) -> crate::operation::delete_intent::builders::DeleteIntentFluentBuilder {
+        crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::new(self.handle.clone())
     }
 }

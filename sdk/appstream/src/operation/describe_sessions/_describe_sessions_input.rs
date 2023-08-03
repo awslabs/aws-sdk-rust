@@ -50,17 +50,14 @@ impl DescribeSessionsInput {
 }
 impl DescribeSessionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
-    pub fn builder() -> crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {
         crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSessionsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
@@ -146,26 +143,18 @@ impl DescribeSessionsInputBuilder {
         self
     }
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_sessions::DescribeSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_sessions::DescribeSessionsInput {
             stack_name: self.stack_name,
             fleet_name: self.fleet_name,

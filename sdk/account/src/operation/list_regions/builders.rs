@@ -10,10 +10,7 @@ impl ListRegionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_regions::ListRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_regions::ListRegionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_regions::ListRegionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_regions();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListRegionsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_regions::ListRegions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_regions::ListRegions, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_regions::ListRegionsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListRegionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListRegionsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_regions::ListRegions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_regions::ListRegions, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_regions::ListRegionsError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListRegionsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_regions::paginator::ListRegionsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_regions::paginator::ListRegionsPaginator {
-        crate::operation::list_regions::paginator::ListRegionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_regions::paginator::ListRegionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don't specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account. The specified account ID must also be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
     /// <p>The management account can't specify its own <code>AccountId</code>. It must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
@@ -182,17 +167,12 @@ impl ListRegionsFluentBuilder {
         self
     }
     /// <p>A list of Region statuses (Enabling, Enabled, Disabling, Disabled, Enabled_by_default) to use to filter the list of Regions for a given account. For example, passing in a value of ENABLING will only return a list of Regions with a Region status of ENABLING.</p>
-    pub fn set_region_opt_status_contains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>>,
-    ) -> Self {
+    pub fn set_region_opt_status_contains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>>) -> Self {
         self.inner = self.inner.set_region_opt_status_contains(input);
         self
     }
     /// <p>A list of Region statuses (Enabling, Enabled, Disabling, Disabled, Enabled_by_default) to use to filter the list of Regions for a given account. For example, passing in a value of ENABLING will only return a list of Regions with a Region status of ENABLING.</p>
-    pub fn get_region_opt_status_contains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>> {
+    pub fn get_region_opt_status_contains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>> {
         self.inner.get_region_opt_status_contains()
     }
 }

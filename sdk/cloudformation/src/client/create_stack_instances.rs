@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStackInstancesOutput`](crate::operation::create_stack_instances::CreateStackInstancesOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::create_stack_instances::CreateStackInstancesOutput::operation_id): <p>The unique identifier for this stack set operation.</p>
     /// - On failure, responds with [`SdkError<CreateStackInstancesError>`](crate::operation::create_stack_instances::CreateStackInstancesError)
-    pub fn create_stack_instances(
-        &self,
-    ) -> crate::operation::create_stack_instances::builders::CreateStackInstancesFluentBuilder {
-        crate::operation::create_stack_instances::builders::CreateStackInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_stack_instances(&self) -> crate::operation::create_stack_instances::builders::CreateStackInstancesFluentBuilder {
+        crate::operation::create_stack_instances::builders::CreateStackInstancesFluentBuilder::new(self.handle.clone())
     }
 }

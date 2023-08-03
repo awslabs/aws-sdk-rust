@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput::channel_arn): <p>The channel ARN.</p>
     ///   - [`expiration_settings(Option<ExpirationSettings>)`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput::expiration_settings): <p>Settings that control the interval after which a channel is deleted.</p>
     /// - On failure, responds with [`SdkError<PutChannelExpirationSettingsError>`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError)
-    pub fn put_channel_expiration_settings(&self) -> crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsFluentBuilder{
+    pub fn put_channel_expiration_settings(
+        &self,
+    ) -> crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsFluentBuilder {
         crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsFluentBuilder::new(self.handle.clone())
     }
 }

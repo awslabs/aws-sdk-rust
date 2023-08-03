@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`instances(Option<Vec<ClassicLinkInstance>>)`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput::instances): <p>Information about one or more linked EC2-Classic instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeClassicLinkInstancesError>`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesError)
-    pub fn describe_classic_link_instances(&self) -> crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesFluentBuilder{
+    pub fn describe_classic_link_instances(
+        &self,
+    ) -> crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesFluentBuilder {
         crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesFluentBuilder::new(self.handle.clone())
     }
 }

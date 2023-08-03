@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateSolutionVersionOutput {
 }
 impl CreateSolutionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSolutionVersionOutput`](crate::operation::create_solution_version::CreateSolutionVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_solution_version::builders::CreateSolutionVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_solution_version::builders::CreateSolutionVersionOutputBuilder {
         crate::operation::create_solution_version::builders::CreateSolutionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSolutionVersionOutput`](crate::operation::create_solution_version::CreateSolutionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSolutionVersionOutputBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSolutionVersionOutputBuilder {
     /// <p>The ARN of the new solution version.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the new solution version.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_version_arn = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetApplicationPolicyOutput`](crate::operation::get_application_policy::GetApplicationPolicyOutput) with field(s):
     ///   - [`statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::operation::get_application_policy::GetApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationPolicyError>`](crate::operation::get_application_policy::GetApplicationPolicyError)
-    pub fn get_application_policy(
-        &self,
-    ) -> crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder {
-        crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_application_policy(&self) -> crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder {
+        crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder::new(self.handle.clone())
     }
 }

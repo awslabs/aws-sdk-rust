@@ -10,9 +10,7 @@ pub struct DescribeRoleAliasOutput {
 }
 impl DescribeRoleAliasOutput {
     /// <p>The role alias description.</p>
-    pub fn role_alias_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RoleAliasDescription> {
+    pub fn role_alias_description(&self) -> ::std::option::Option<&crate::types::RoleAliasDescription> {
         self.role_alias_description.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeRoleAliasOutput {
 }
 impl DescribeRoleAliasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRoleAliasOutput`](crate::operation::describe_role_alias::DescribeRoleAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_role_alias::builders::DescribeRoleAliasOutputBuilder {
+    pub fn builder() -> crate::operation::describe_role_alias::builders::DescribeRoleAliasOutputBuilder {
         crate::operation::describe_role_alias::builders::DescribeRoleAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRoleAliasOutput`](crate::operation::describe_role_alias::DescribeRoleAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRoleAliasOutputBuilder {
     pub(crate) role_alias_description: ::std::option::Option<crate::types::RoleAliasDescription>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl DescribeRoleAliasOutputBuilder {
         self
     }
     /// <p>The role alias description.</p>
-    pub fn set_role_alias_description(
-        mut self,
-        input: ::std::option::Option<crate::types::RoleAliasDescription>,
-    ) -> Self {
+    pub fn set_role_alias_description(mut self, input: ::std::option::Option<crate::types::RoleAliasDescription>) -> Self {
         self.role_alias_description = input;
         self
     }
     /// <p>The role alias description.</p>
-    pub fn get_role_alias_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoleAliasDescription> {
+    pub fn get_role_alias_description(&self) -> &::std::option::Option<crate::types::RoleAliasDescription> {
         &self.role_alias_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateConfiguredTableAnalysisRuleOutput`](crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput) with field(s):
     ///   - [`analysis_rule(Option<ConfiguredTableAnalysisRule>)`](crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput::analysis_rule): <p>The entire updated analysis rule.</p>
     /// - On failure, responds with [`SdkError<UpdateConfiguredTableAnalysisRuleError>`](crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleError)
-    pub fn update_configured_table_analysis_rule(&self) -> crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleFluentBuilder{
+    pub fn update_configured_table_analysis_rule(
+        &self,
+    ) -> crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleFluentBuilder {
         crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleFluentBuilder::new(self.handle.clone())
     }
 }

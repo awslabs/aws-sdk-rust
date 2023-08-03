@@ -92,16 +92,14 @@ impl DescribeDbClusterBacktracksInput {
 }
 impl DescribeDbClusterBacktracksInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterBacktracksInput`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksInput).
-    pub fn builder() -> crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder {
         crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterBacktracksInput`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterBacktracksInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) backtrack_identifier: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -133,10 +128,7 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -157,10 +149,7 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p> </li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
-    pub fn backtrack_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backtrack_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backtrack_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -170,10 +159,7 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p> </li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
-    pub fn set_backtrack_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backtrack_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backtrack_identifier = input;
         self
     }
@@ -218,10 +204,7 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <li> <p> <code>pending</code> </p> </li>
     /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -280,14 +263,12 @@ impl DescribeDbClusterBacktracksInputBuilder {
         crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                backtrack_identifier: self.backtrack_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+            backtrack_identifier: self.backtrack_identifier,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

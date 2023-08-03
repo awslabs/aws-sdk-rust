@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
     ///   - [`table_list(Option<Vec<TaggedTable>>)`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput::table_list): <p>A list of tables that meet the LF-tag conditions.</p>
     /// - On failure, responds with [`SdkError<SearchTablesByLFTagsError>`](crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError)
-    pub fn search_tables_by_lf_tags(
-        &self,
-    ) -> crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLFTagsFluentBuilder
-    {
-        crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLFTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_tables_by_lf_tags(&self) -> crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLFTagsFluentBuilder {
+        crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLFTagsFluentBuilder::new(self.handle.clone())
     }
 }

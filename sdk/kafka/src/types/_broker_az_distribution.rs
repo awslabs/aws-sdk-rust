@@ -38,13 +38,7 @@
 /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BrokerAzDistribution {
     #[allow(missing_docs)] // documentation missing in model
@@ -56,9 +50,7 @@ impl ::std::convert::From<&str> for BrokerAzDistribution {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => BrokerAzDistribution::Default,
-            other => BrokerAzDistribution::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BrokerAzDistribution::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

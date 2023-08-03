@@ -30,17 +30,14 @@ impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
 }
 impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
     /// Creates a new builder-style object to manufacture [`AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails`](crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
         crate::types::builders::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails`](crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
     pub(crate) day_of_week: ::std::option::Option<::std::string::String>,
     pub(crate) time_of_day: ::std::option::Option<::std::string::String>,

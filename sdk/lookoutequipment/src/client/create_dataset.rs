@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`dataset_arn(Option<String>)`](crate::operation::create_dataset::CreateDatasetOutput::dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
     ///   - [`status(Option<DatasetStatus>)`](crate::operation::create_dataset::CreateDatasetOutput::status): <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::operation::create_dataset::CreateDatasetError)
-    pub fn create_dataset(
-        &self,
-    ) -> crate::operation::create_dataset::builders::CreateDatasetFluentBuilder {
-        crate::operation::create_dataset::builders::CreateDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dataset(&self) -> crate::operation::create_dataset::builders::CreateDatasetFluentBuilder {
+        crate::operation::create_dataset::builders::CreateDatasetFluentBuilder::new(self.handle.clone())
     }
 }

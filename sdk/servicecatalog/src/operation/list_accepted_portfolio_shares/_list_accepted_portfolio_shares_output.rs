@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAcceptedPortfolioSharesOutput {
 }
 impl ListAcceptedPortfolioSharesOutput {
     /// Creates a new builder-style object to manufacture [`ListAcceptedPortfolioSharesOutput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput).
-    pub fn builder() -> crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesOutputBuilder{
+    pub fn builder() -> crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesOutputBuilder {
         crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAcceptedPortfolioSharesOutput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAcceptedPortfolioSharesOutputBuilder {
-    pub(crate) portfolio_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::PortfolioDetail>>,
+    pub(crate) portfolio_details: ::std::option::Option<::std::vec::Vec<crate::types::PortfolioDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,32 +54,21 @@ impl ListAcceptedPortfolioSharesOutputBuilder {
         self
     }
     /// <p>Information about the portfolios.</p>
-    pub fn set_portfolio_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortfolioDetail>>,
-    ) -> Self {
+    pub fn set_portfolio_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortfolioDetail>>) -> Self {
         self.portfolio_details = input;
         self
     }
     /// <p>Information about the portfolios.</p>
-    pub fn get_portfolio_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortfolioDetail>> {
+    pub fn get_portfolio_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortfolioDetail>> {
         &self.portfolio_details
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -100,9 +86,7 @@ impl ListAcceptedPortfolioSharesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAcceptedPortfolioSharesOutput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput {
+    pub fn build(self) -> crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput {
         crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput {
             portfolio_details: self.portfolio_details,
             next_page_token: self.next_page_token,

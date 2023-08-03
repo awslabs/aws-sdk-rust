@@ -15,16 +15,14 @@ impl DescribeDocumentClassificationJobInput {
 }
 impl DescribeDocumentClassificationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobInput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput).
-    pub fn builder() -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobInputBuilder {
         crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDocumentClassificationJobInput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDocumentClassificationJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DescribeDocumentClassificationJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeDocumentClassificationJobInput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput {
-                job_id: self.job_id
-                ,
-            }
+            crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput { job_id: self.job_id },
         )
     }
 }

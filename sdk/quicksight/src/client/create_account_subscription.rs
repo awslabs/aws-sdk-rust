@@ -23,7 +23,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::create_account_subscription::CreateAccountSubscriptionOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::create_account_subscription::CreateAccountSubscriptionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<CreateAccountSubscriptionError>`](crate::operation::create_account_subscription::CreateAccountSubscriptionError)
-    pub fn create_account_subscription(&self) -> crate::operation::create_account_subscription::builders::CreateAccountSubscriptionFluentBuilder{
+    pub fn create_account_subscription(&self) -> crate::operation::create_account_subscription::builders::CreateAccountSubscriptionFluentBuilder {
         crate::operation::create_account_subscription::builders::CreateAccountSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,10 +23,7 @@ impl super::Client {
     ///   - [`monitoring_execution_summaries(Option<Vec<MonitoringExecutionSummary>>)`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput::monitoring_execution_summaries): <p>A JSON array in which each element is a summary for a monitoring execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent reques</p>
     /// - On failure, responds with [`SdkError<ListMonitoringExecutionsError>`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsError)
-    pub fn list_monitoring_executions(
-        &self,
-    ) -> crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder
-    {
+    pub fn list_monitoring_executions(&self) -> crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder {
         crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

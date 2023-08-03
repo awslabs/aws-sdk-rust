@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFargateProfileOutput {
 }
 impl DescribeFargateProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFargateProfileOutput`](crate::operation::describe_fargate_profile::DescribeFargateProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fargate_profile::builders::DescribeFargateProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fargate_profile::builders::DescribeFargateProfileOutputBuilder {
         crate::operation::describe_fargate_profile::builders::DescribeFargateProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFargateProfileOutput`](crate::operation::describe_fargate_profile::DescribeFargateProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFargateProfileOutputBuilder {
     pub(crate) fargate_profile: ::std::option::Option<crate::types::FargateProfile>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeFargateProfileOutputBuilder {
         self
     }
     /// <p>The full description of your Fargate profile.</p>
-    pub fn set_fargate_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::FargateProfile>,
-    ) -> Self {
+    pub fn set_fargate_profile(mut self, input: ::std::option::Option<crate::types::FargateProfile>) -> Self {
         self.fargate_profile = input;
         self
     }

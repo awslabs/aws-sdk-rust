@@ -36,18 +36,14 @@ impl ::aws_http::request_id::RequestId for UpdateBasePathMappingOutput {
 }
 impl UpdateBasePathMappingOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBasePathMappingOutput`](crate::operation::update_base_path_mapping::UpdateBasePathMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingOutputBuilder {
         crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBasePathMappingOutput`](crate::operation::update_base_path_mapping::UpdateBasePathMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBasePathMappingOutputBuilder {
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,

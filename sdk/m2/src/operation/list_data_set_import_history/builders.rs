@@ -26,7 +26,7 @@ impl ListDataSetImportHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataSetImportHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder,
+    inner: crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder,
 }
 impl ListDataSetImportHistoryFluentBuilder {
     /// Creates a new `ListDataSetImportHistory`.
@@ -37,7 +37,7 @@ impl ListDataSetImportHistoryFluentBuilder {
         }
     }
     /// Access the ListDataSetImportHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListDataSetImportHistoryFluentBuilder {
             crate::operation::list_data_set_import_history::ListDataSetImportHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_set_import_history::ListDataSetImportHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_set_import_history::ListDataSetImportHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListDataSetImportHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListDataSetImportHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_set_import_history::ListDataSetImportHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_set_import_history::ListDataSetImportHistoryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListDataSetImportHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_set_import_history::ListDataSetImportHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_set_import_history::ListDataSetImportHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListDataSetImportHistoryFluentBuilder {
             crate::operation::list_data_set_import_history::ListDataSetImportHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_set_import_history::ListDataSetImportHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_set_import_history::ListDataSetImportHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_data_set_import_history::paginator::ListDataSetImportHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_data_set_import_history::paginator::ListDataSetImportHistoryPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_data_set_import_history::paginator::ListDataSetImportHistoryPaginator {
         crate::operation::list_data_set_import_history::paginator::ListDataSetImportHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
@@ -158,18 +144,12 @@ impl ListDataSetImportHistoryFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

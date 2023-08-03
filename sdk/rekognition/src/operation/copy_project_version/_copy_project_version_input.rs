@@ -20,9 +20,7 @@ pub struct CopyProjectVersionInput {
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The key-value tags to assign to the model version. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
@@ -57,11 +55,7 @@ impl CopyProjectVersionInput {
         self.output_config.as_ref()
     }
     /// <p>The key-value tags to assign to the model version. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
@@ -79,42 +73,31 @@ impl CopyProjectVersionInput {
 }
 impl CopyProjectVersionInput {
     /// Creates a new builder-style object to manufacture [`CopyProjectVersionInput`](crate::operation::copy_project_version::CopyProjectVersionInput).
-    pub fn builder(
-    ) -> crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder {
+    pub fn builder() -> crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder {
         crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CopyProjectVersionInput`](crate::operation::copy_project_version::CopyProjectVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyProjectVersionInputBuilder {
     pub(crate) source_project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_project_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CopyProjectVersionInputBuilder {
     /// <p>The ARN of the source project in the trusting AWS account.</p>
-    pub fn source_project_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_project_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the source project in the trusting AWS account.</p>
-    pub fn set_source_project_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_project_arn = input;
         self
     }
@@ -123,18 +106,12 @@ impl CopyProjectVersionInputBuilder {
         &self.source_project_arn
     }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
-    pub fn source_project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
-    pub fn set_source_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_project_version_arn = input;
         self
     }
@@ -143,18 +120,12 @@ impl CopyProjectVersionInputBuilder {
         &self.source_project_version_arn
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
-    pub fn destination_project_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_project_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
-    pub fn set_destination_project_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_project_arn = input;
         self
     }
@@ -182,10 +153,7 @@ impl CopyProjectVersionInputBuilder {
         self
     }
     /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -198,32 +166,19 @@ impl CopyProjectVersionInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value tags to assign to the model version. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The key-value tags to assign to the model version. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The key-value tags to assign to the model version. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
@@ -267,20 +222,15 @@ impl CopyProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`CopyProjectVersionInput`](crate::operation::copy_project_version::CopyProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_project_version::CopyProjectVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::copy_project_version::CopyProjectVersionInput {
-                source_project_arn: self.source_project_arn,
-                source_project_version_arn: self.source_project_version_arn,
-                destination_project_arn: self.destination_project_arn,
-                version_name: self.version_name,
-                output_config: self.output_config,
-                tags: self.tags,
-                kms_key_id: self.kms_key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::copy_project_version::CopyProjectVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::copy_project_version::CopyProjectVersionInput {
+            source_project_arn: self.source_project_arn,
+            source_project_version_arn: self.source_project_version_arn,
+            destination_project_arn: self.destination_project_arn,
+            version_name: self.version_name,
+            output_config: self.output_config,
+            tags: self.tags,
+            kms_key_id: self.kms_key_id,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl StartUserImportJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_user_import_job::StartUserImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_user_import_job::StartUserImportJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_user_import_job::StartUserImportJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_user_import_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartUserImportJobFluentBuilder {
         }
     }
     /// Access the StartUserImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_user_import_job::builders::StartUserImportJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_user_import_job::builders::StartUserImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartUserImportJobFluentBuilder {
             crate::operation::start_user_import_job::StartUserImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_user_import_job::StartUserImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_user_import_job::StartUserImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartUserImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartUserImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_user_import_job::StartUserImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_user_import_job::StartUserImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_user_import_job::StartUserImportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartUserImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_user_import_job::StartUserImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_user_import_job::StartUserImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_user_import_job::StartUserImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartUserImportJobFluentBuilder {
             crate::operation::start_user_import_job::StartUserImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_user_import_job::StartUserImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_user_import_job::StartUserImportJobError>,
     > {
         self.customize_middleware().await
     }

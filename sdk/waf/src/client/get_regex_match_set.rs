@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRegexMatchSetOutput`](crate::operation::get_regex_match_set::GetRegexMatchSetOutput) with field(s):
     ///   - [`regex_match_set(Option<RegexMatchSet>)`](crate::operation::get_regex_match_set::GetRegexMatchSetOutput::regex_match_set): <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
     /// - On failure, responds with [`SdkError<GetRegexMatchSetError>`](crate::operation::get_regex_match_set::GetRegexMatchSetError)
-    pub fn get_regex_match_set(
-        &self,
-    ) -> crate::operation::get_regex_match_set::builders::GetRegexMatchSetFluentBuilder {
-        crate::operation::get_regex_match_set::builders::GetRegexMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_regex_match_set(&self) -> crate::operation::get_regex_match_set::builders::GetRegexMatchSetFluentBuilder {
+        crate::operation::get_regex_match_set::builders::GetRegexMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

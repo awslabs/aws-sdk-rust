@@ -36,17 +36,14 @@ impl DeletePartitionIndexInput {
 }
 impl DeletePartitionIndexInput {
     /// Creates a new builder-style object to manufacture [`DeletePartitionIndexInput`](crate::operation::delete_partition_index::DeletePartitionIndexInput).
-    pub fn builder(
-    ) -> crate::operation::delete_partition_index::builders::DeletePartitionIndexInputBuilder {
+    pub fn builder() -> crate::operation::delete_partition_index::builders::DeletePartitionIndexInputBuilder {
         crate::operation::delete_partition_index::builders::DeletePartitionIndexInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePartitionIndexInput`](crate::operation::delete_partition_index::DeletePartitionIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePartitionIndexInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl DeletePartitionIndexInputBuilder {
         &self.catalog_id
     }
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -119,17 +110,13 @@ impl DeletePartitionIndexInputBuilder {
     /// Consumes the builder and constructs a [`DeletePartitionIndexInput`](crate::operation::delete_partition_index::DeletePartitionIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_partition_index::DeletePartitionIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_partition_index::DeletePartitionIndexInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                index_name: self.index_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_partition_index::DeletePartitionIndexInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_partition_index::DeletePartitionIndexInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            index_name: self.index_name,
+        })
     }
 }

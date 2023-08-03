@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateEnvironmentOutput {
 }
 impl CreateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
         crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentOutputBuilder {
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateEnvironmentOutputBuilder {
         self
     }
     /// <p>The environment detail data that's returned by Proton.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }

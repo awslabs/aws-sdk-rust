@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
     /// - On success, responds with [`DeleteSchedulingPolicyOutput`](crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteSchedulingPolicyError>`](crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyError)
-    pub fn delete_scheduling_policy(
-        &self,
-    ) -> crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyFluentBuilder
-    {
+    pub fn delete_scheduling_policy(&self) -> crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyFluentBuilder {
         crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

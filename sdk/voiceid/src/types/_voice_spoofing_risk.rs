@@ -23,9 +23,7 @@ impl VoiceSpoofingRisk {
 
 /// A builder for [`VoiceSpoofingRisk`](crate::types::VoiceSpoofingRisk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceSpoofingRiskBuilder {
     pub(crate) risk_score: ::std::option::Option<i32>,
 }
@@ -46,8 +44,6 @@ impl VoiceSpoofingRiskBuilder {
     }
     /// Consumes the builder and constructs a [`VoiceSpoofingRisk`](crate::types::VoiceSpoofingRisk).
     pub fn build(self) -> crate::types::VoiceSpoofingRisk {
-        crate::types::VoiceSpoofingRisk {
-            risk_score: self.risk_score,
-        }
+        crate::types::VoiceSpoofingRisk { risk_score: self.risk_score }
     }
 }

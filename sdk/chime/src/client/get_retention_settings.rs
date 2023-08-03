@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`retention_settings(Option<RetentionSettings>)`](crate::operation::get_retention_settings::GetRetentionSettingsOutput::retention_settings): <p>The retention settings.</p>
     ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::operation::get_retention_settings::GetRetentionSettingsOutput::initiate_deletion_timestamp): <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetRetentionSettingsError>`](crate::operation::get_retention_settings::GetRetentionSettingsError)
-    pub fn get_retention_settings(
-        &self,
-    ) -> crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder {
-        crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_retention_settings(&self) -> crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder {
+        crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,8 +9,7 @@ pub struct ModifyInstanceGroupsInput {
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Instance groups to change.</p>
     #[doc(hidden)]
-    pub instance_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
+    pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
 }
 impl ModifyInstanceGroupsInput {
     /// <p>The ID of the cluster to which the instance group belongs.</p>
@@ -18,29 +17,23 @@ impl ModifyInstanceGroupsInput {
         self.cluster_id.as_deref()
     }
     /// <p>Instance groups to change.</p>
-    pub fn instance_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceGroupModifyConfig]> {
+    pub fn instance_groups(&self) -> ::std::option::Option<&[crate::types::InstanceGroupModifyConfig]> {
         self.instance_groups.as_deref()
     }
 }
 impl ModifyInstanceGroupsInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceGroupsInput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder {
+    pub fn builder() -> crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder {
         crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceGroupsInput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceGroupsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
 }
 impl ModifyInstanceGroupsInputBuilder {
     /// <p>The ID of the cluster to which the instance group belongs.</p>
@@ -69,31 +62,22 @@ impl ModifyInstanceGroupsInputBuilder {
         self
     }
     /// <p>Instance groups to change.</p>
-    pub fn set_instance_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
-    ) -> Self {
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>) -> Self {
         self.instance_groups = input;
         self
     }
     /// <p>Instance groups to change.</p>
-    pub fn get_instance_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>> {
         &self.instance_groups
     }
     /// Consumes the builder and constructs a [`ModifyInstanceGroupsInput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_groups::ModifyInstanceGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_instance_groups::ModifyInstanceGroupsInput {
-                cluster_id: self.cluster_id,
-                instance_groups: self.instance_groups,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_instance_groups::ModifyInstanceGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_instance_groups::ModifyInstanceGroupsInput {
+            cluster_id: self.cluster_id,
+            instance_groups: self.instance_groups,
+        })
     }
 }

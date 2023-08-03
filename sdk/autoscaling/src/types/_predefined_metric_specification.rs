@@ -78,9 +78,7 @@ impl PredefinedMetricSpecification {
 
 /// A builder for [`PredefinedMetricSpecification`](crate::types::PredefinedMetricSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredefinedMetricSpecificationBuilder {
     pub(crate) predefined_metric_type: ::std::option::Option<crate::types::MetricType>,
     pub(crate) resource_label: ::std::option::Option<::std::string::String>,
@@ -104,10 +102,7 @@ impl PredefinedMetricSpecificationBuilder {
     /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
     /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
-    pub fn set_predefined_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricType>,
-    ) -> Self {
+    pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.predefined_metric_type = input;
         self
     }
@@ -140,10 +135,7 @@ impl PredefinedMetricSpecificationBuilder {
     /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn resource_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_label = ::std::option::Option::Some(input.into());
         self
     }
@@ -166,10 +158,7 @@ impl PredefinedMetricSpecificationBuilder {
     /// </target-group-name></p> </li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn set_resource_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_label = input;
         self
     }

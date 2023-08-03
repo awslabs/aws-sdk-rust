@@ -10,10 +10,7 @@ impl DeleteIdentitiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_identities::DeleteIdentitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identities::DeleteIdentitiesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identities::DeleteIdentitiesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_identities();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteIdentitiesFluentBuilder {
         }
     }
     /// Access the DeleteIdentities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_identities::builders::DeleteIdentitiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_identities::builders::DeleteIdentitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteIdentitiesFluentBuilder {
             crate::operation::delete_identities::DeleteIdentities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identities::DeleteIdentitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identities::DeleteIdentitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteIdentitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteIdentitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_identities::DeleteIdentitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identities::DeleteIdentitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identities::DeleteIdentitiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteIdentitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_identities::DeleteIdentitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identities::DeleteIdentitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identities::DeleteIdentitiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeleteIdentitiesFluentBuilder {
             crate::operation::delete_identities::DeleteIdentities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identities::DeleteIdentitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identities::DeleteIdentitiesError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +112,17 @@ impl DeleteIdentitiesFluentBuilder {
     /// To override the contents of this collection use [`set_identity_ids_to_delete`](Self::set_identity_ids_to_delete).
     ///
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn identity_ids_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_ids_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_ids_to_delete(input.into());
         self
     }
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn set_identity_ids_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identity_ids_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_identity_ids_to_delete(input);
         self
     }
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn get_identity_ids_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identity_ids_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_identity_ids_to_delete()
     }
 }

@@ -15,35 +15,25 @@ impl DeleteIdentityProviderInput {
 }
 impl DeleteIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
-    pub fn builder(
-    ) -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder {
         crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIdentityProviderInputBuilder {
     pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIdentityProviderInputBuilder {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn set_identity_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_identity_provider::DeleteIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
-                identity_provider_arn: self.identity_provider_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_identity_provider::DeleteIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
+            identity_provider_arn: self.identity_provider_arn,
+        })
     }
 }

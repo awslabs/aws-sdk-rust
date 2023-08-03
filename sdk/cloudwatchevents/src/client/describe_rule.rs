@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`event_bus_name(Option<String>)`](crate::operation::describe_rule::DescribeRuleOutput::event_bus_name): <p>The name of the event bus associated with the rule.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_rule::DescribeRuleOutput::created_by): <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
     /// - On failure, responds with [`SdkError<DescribeRuleError>`](crate::operation::describe_rule::DescribeRuleError)
-    pub fn describe_rule(
-        &self,
-    ) -> crate::operation::describe_rule::builders::DescribeRuleFluentBuilder {
-        crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_rule(&self) -> crate::operation::describe_rule::builders::DescribeRuleFluentBuilder {
+        crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::new(self.handle.clone())
     }
 }

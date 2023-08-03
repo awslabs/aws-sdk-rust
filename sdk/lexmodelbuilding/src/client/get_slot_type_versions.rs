@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`slot_types(Option<Vec<SlotTypeMetadata>>)`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput::slot_types): <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput::next_token): <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     /// - On failure, responds with [`SdkError<GetSlotTypeVersionsError>`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsError)
-    pub fn get_slot_type_versions(
-        &self,
-    ) -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsFluentBuilder {
-        crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_slot_type_versions(&self) -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsFluentBuilder {
+        crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsFluentBuilder::new(self.handle.clone())
     }
 }

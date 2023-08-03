@@ -37,9 +37,7 @@ impl UpdateIpRestrictionFluentBuilder {
         }
     }
     /// Access the UpdateIpRestriction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_ip_restriction::builders::UpdateIpRestrictionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_ip_restriction::builders::UpdateIpRestrictionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateIpRestrictionFluentBuilder {
             crate::operation::update_ip_restriction::UpdateIpRestriction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_restriction::UpdateIpRestrictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_restriction::UpdateIpRestrictionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateIpRestrictionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateIpRestrictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ip_restriction::UpdateIpRestrictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_restriction::UpdateIpRestrictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_restriction::UpdateIpRestrictionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateIpRestrictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ip_restriction::UpdateIpRestrictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_restriction::UpdateIpRestrictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_restriction::UpdateIpRestrictionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateIpRestrictionFluentBuilder {
             crate::operation::update_ip_restriction::UpdateIpRestriction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_restriction::UpdateIpRestrictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_restriction::UpdateIpRestrictionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -158,19 +139,13 @@ impl UpdateIpRestrictionFluentBuilder {
     /// <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
     pub fn set_ip_restriction_rule_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_ip_restriction_rule_map(input);
         self
     }
     /// <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
-    pub fn get_ip_restriction_rule_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_ip_restriction_rule_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_ip_restriction_rule_map()
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>

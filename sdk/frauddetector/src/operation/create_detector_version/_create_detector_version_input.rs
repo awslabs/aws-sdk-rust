@@ -65,23 +65,18 @@ impl CreateDetectorVersionInput {
 }
 impl CreateDetectorVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateDetectorVersionInput`](crate::operation::create_detector_version::CreateDetectorVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder {
         crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDetectorVersionInput`](crate::operation::create_detector_version::CreateDetectorVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDetectorVersionInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) external_model_endpoints:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) external_model_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     pub(crate) model_versions: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
     pub(crate) rule_execution_mode: ::std::option::Option<crate::types::RuleExecutionMode>,
@@ -121,27 +116,19 @@ impl CreateDetectorVersionInputBuilder {
     /// To override the contents of this collection use [`set_external_model_endpoints`](Self::set_external_model_endpoints).
     ///
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn external_model_endpoints(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_model_endpoints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.external_model_endpoints.unwrap_or_default();
         v.push(input.into());
         self.external_model_endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn set_external_model_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_external_model_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.external_model_endpoints = input;
         self
     }
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn get_external_model_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_external_model_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.external_model_endpoints
     }
     /// Appends an item to `rules`.
@@ -156,10 +143,7 @@ impl CreateDetectorVersionInputBuilder {
         self
     }
     /// <p>The rules to include in the detector version.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -179,17 +163,12 @@ impl CreateDetectorVersionInputBuilder {
         self
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn set_model_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
-    ) -> Self {
+    pub fn set_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>) -> Self {
         self.model_versions = input;
         self
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn get_model_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
+    pub fn get_model_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
         &self.model_versions
     }
     /// <p>The rule execution mode for the rules included in the detector version.</p>
@@ -206,10 +185,7 @@ impl CreateDetectorVersionInputBuilder {
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
-    pub fn set_rule_execution_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleExecutionMode>,
-    ) -> Self {
+    pub fn set_rule_execution_mode(mut self, input: ::std::option::Option<crate::types::RuleExecutionMode>) -> Self {
         self.rule_execution_mode = input;
         self
     }
@@ -218,9 +194,7 @@ impl CreateDetectorVersionInputBuilder {
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
-    pub fn get_rule_execution_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleExecutionMode> {
+    pub fn get_rule_execution_mode(&self) -> &::std::option::Option<crate::types::RuleExecutionMode> {
         &self.rule_execution_mode
     }
     /// Appends an item to `tags`.
@@ -235,10 +209,7 @@ impl CreateDetectorVersionInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -249,20 +220,16 @@ impl CreateDetectorVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateDetectorVersionInput`](crate::operation::create_detector_version::CreateDetectorVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_detector_version::CreateDetectorVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_detector_version::CreateDetectorVersionInput {
-                detector_id: self.detector_id,
-                description: self.description,
-                external_model_endpoints: self.external_model_endpoints,
-                rules: self.rules,
-                model_versions: self.model_versions,
-                rule_execution_mode: self.rule_execution_mode,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_detector_version::CreateDetectorVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_detector_version::CreateDetectorVersionInput {
+            detector_id: self.detector_id,
+            description: self.description,
+            external_model_endpoints: self.external_model_endpoints,
+            rules: self.rules,
+            model_versions: self.model_versions,
+            rule_execution_mode: self.rule_execution_mode,
+            tags: self.tags,
+        })
     }
 }

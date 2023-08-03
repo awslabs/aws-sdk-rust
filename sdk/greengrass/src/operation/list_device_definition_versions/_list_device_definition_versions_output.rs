@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDeviceDefinitionVersionsOutput {
 }
 impl ListDeviceDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceDefinitionVersionsOutput`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput).
-    pub fn builder() -> crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsOutputBuilder {
         crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceDefinitionVersionsOutput`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceDefinitionVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
@@ -70,17 +68,12 @@ impl ListDeviceDefinitionVersionsOutputBuilder {
         self
     }
     /// Information about a version.
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>) -> Self {
         self.versions = input;
         self
     }
     /// Information about a version.
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +86,7 @@ impl ListDeviceDefinitionVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeviceDefinitionVersionsOutput`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput {
+    pub fn build(self) -> crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput {
         crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput {
             next_token: self.next_token,
             versions: self.versions,

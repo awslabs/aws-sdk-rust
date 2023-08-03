@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`status(Option<SchemaStatus>)`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput::status): <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     ///   - [`details(Option<String>)`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput::details): <p>Detailed information about the status of the schema creation operation.</p>
     /// - On failure, responds with [`SdkError<GetSchemaCreationStatusError>`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusError)
-    pub fn get_schema_creation_status(
-        &self,
-    ) -> crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusFluentBuilder
-    {
+    pub fn get_schema_creation_status(&self) -> crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusFluentBuilder {
         crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusFluentBuilder::new(self.handle.clone())
     }
 }

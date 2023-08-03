@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDedicatedIpOutput`](crate::operation::get_dedicated_ip::GetDedicatedIpOutput) with field(s):
     ///   - [`dedicated_ip(Option<DedicatedIp>)`](crate::operation::get_dedicated_ip::GetDedicatedIpOutput::dedicated_ip): <p>An object that contains information about a dedicated IP address.</p>
     /// - On failure, responds with [`SdkError<GetDedicatedIpError>`](crate::operation::get_dedicated_ip::GetDedicatedIpError)
-    pub fn get_dedicated_ip(
-        &self,
-    ) -> crate::operation::get_dedicated_ip::builders::GetDedicatedIpFluentBuilder {
-        crate::operation::get_dedicated_ip::builders::GetDedicatedIpFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dedicated_ip(&self) -> crate::operation::get_dedicated_ip::builders::GetDedicatedIpFluentBuilder {
+        crate::operation::get_dedicated_ip::builders::GetDedicatedIpFluentBuilder::new(self.handle.clone())
     }
 }

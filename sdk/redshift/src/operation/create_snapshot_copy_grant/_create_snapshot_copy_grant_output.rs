@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for CreateSnapshotCopyGrantOutput {
 }
 impl CreateSnapshotCopyGrantOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotCopyGrantOutput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput).
-    pub fn builder(
-    ) -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantOutputBuilder {
         crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSnapshotCopyGrantOutput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotCopyGrantOutputBuilder {
     pub(crate) snapshot_copy_grant: ::std::option::Option<crate::types::SnapshotCopyGrant>,
     _request_id: Option<String>,
@@ -48,18 +44,13 @@ impl CreateSnapshotCopyGrantOutputBuilder {
     }
     /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
     /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    pub fn set_snapshot_copy_grant(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotCopyGrant>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grant(mut self, input: ::std::option::Option<crate::types::SnapshotCopyGrant>) -> Self {
         self.snapshot_copy_grant = input;
         self
     }
     /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
     /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    pub fn get_snapshot_copy_grant(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotCopyGrant> {
+    pub fn get_snapshot_copy_grant(&self) -> &::std::option::Option<crate::types::SnapshotCopyGrant> {
         &self.snapshot_copy_grant
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +63,7 @@ impl CreateSnapshotCopyGrantOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSnapshotCopyGrantOutput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput {
+    pub fn build(self) -> crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput {
         crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput {
             snapshot_copy_grant: self.snapshot_copy_grant,
             _request_id: self._request_id,

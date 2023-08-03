@@ -10,9 +10,7 @@ pub struct CreateReplaceRootVolumeTaskOutput {
 }
 impl CreateReplaceRootVolumeTaskOutput {
     /// <p>Information about the root volume replacement task.</p>
-    pub fn replace_root_volume_task(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplaceRootVolumeTask> {
+    pub fn replace_root_volume_task(&self) -> ::std::option::Option<&crate::types::ReplaceRootVolumeTask> {
         self.replace_root_volume_task.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateReplaceRootVolumeTaskOutput {
 }
 impl CreateReplaceRootVolumeTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplaceRootVolumeTaskOutput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput).
-    pub fn builder() -> crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskOutputBuilder{
+    pub fn builder() -> crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskOutputBuilder {
         crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplaceRootVolumeTaskOutput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplaceRootVolumeTaskOutputBuilder {
     pub(crate) replace_root_volume_task: ::std::option::Option<crate::types::ReplaceRootVolumeTask>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateReplaceRootVolumeTaskOutputBuilder {
         self
     }
     /// <p>Information about the root volume replacement task.</p>
-    pub fn set_replace_root_volume_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplaceRootVolumeTask>,
-    ) -> Self {
+    pub fn set_replace_root_volume_task(mut self, input: ::std::option::Option<crate::types::ReplaceRootVolumeTask>) -> Self {
         self.replace_root_volume_task = input;
         self
     }
     /// <p>Information about the root volume replacement task.</p>
-    pub fn get_replace_root_volume_task(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplaceRootVolumeTask> {
+    pub fn get_replace_root_volume_task(&self) -> &::std::option::Option<crate::types::ReplaceRootVolumeTask> {
         &self.replace_root_volume_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateReplaceRootVolumeTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateReplaceRootVolumeTaskOutput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput {
+    pub fn build(self) -> crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput {
         crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput {
             replace_root_volume_task: self.replace_root_volume_task,
             _request_id: self._request_id,

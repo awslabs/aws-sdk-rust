@@ -23,17 +23,14 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
     /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
-    pub fn builder(
-    ) -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
+    pub fn builder() -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
         crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder::default()
     }
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,

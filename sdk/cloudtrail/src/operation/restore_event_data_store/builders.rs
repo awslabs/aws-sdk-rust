@@ -37,10 +37,7 @@ impl RestoreEventDataStoreFluentBuilder {
         }
     }
     /// Access the RestoreEventDataStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_event_data_store::builders::RestoreEventDataStoreInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::restore_event_data_store::builders::RestoreEventDataStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl RestoreEventDataStoreFluentBuilder {
             crate::operation::restore_event_data_store::RestoreEventDataStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_event_data_store::RestoreEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_event_data_store::RestoreEventDataStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl RestoreEventDataStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl RestoreEventDataStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_event_data_store::RestoreEventDataStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_event_data_store::RestoreEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_event_data_store::RestoreEventDataStoreError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl RestoreEventDataStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_event_data_store::RestoreEventDataStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_event_data_store::RestoreEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_event_data_store::RestoreEventDataStoreError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl RestoreEventDataStoreFluentBuilder {
             crate::operation::restore_event_data_store::RestoreEventDataStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_event_data_store::RestoreEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_event_data_store::RestoreEventDataStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }

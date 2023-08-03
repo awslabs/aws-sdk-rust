@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSpotDatafeedSubscriptionOutput 
 }
 impl DeleteSpotDatafeedSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSpotDatafeedSubscriptionOutput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionOutput).
-    pub fn builder() -> crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionOutputBuilder {
         crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSpotDatafeedSubscriptionOutput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSpotDatafeedSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteSpotDatafeedSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSpotDatafeedSubscriptionOutput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionOutput
-    {
+    pub fn build(self) -> crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionOutput {
         crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionOutput {
             _request_id: self._request_id,
         }

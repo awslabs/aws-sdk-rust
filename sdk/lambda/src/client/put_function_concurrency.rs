@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutFunctionConcurrencyOutput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput) with field(s):
     ///   - [`reserved_concurrent_executions(Option<i32>)`](crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput::reserved_concurrent_executions): <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     /// - On failure, responds with [`SdkError<PutFunctionConcurrencyError>`](crate::operation::put_function_concurrency::PutFunctionConcurrencyError)
-    pub fn put_function_concurrency(
-        &self,
-    ) -> crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyFluentBuilder
-    {
+    pub fn put_function_concurrency(&self) -> crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyFluentBuilder {
         crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyFluentBuilder::new(self.handle.clone())
     }
 }

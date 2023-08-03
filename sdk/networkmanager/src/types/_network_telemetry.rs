@@ -79,9 +79,7 @@ impl NetworkTelemetry {
 
 /// A builder for [`NetworkTelemetry`](crate::types::NetworkTelemetry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkTelemetryBuilder {
     pub(crate) registered_gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct NetworkTelemetryBuilder {
 }
 impl NetworkTelemetryBuilder {
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn set_registered_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_gateway_arn = input;
         self
     }
@@ -115,18 +107,12 @@ impl NetworkTelemetryBuilder {
         &self.registered_gateway_arn
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -163,18 +149,12 @@ impl NetworkTelemetryBuilder {
         &self.account_id
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -230,10 +210,7 @@ impl NetworkTelemetryBuilder {
         self
     }
     /// <p>The connection health.</p>
-    pub fn set_health(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionHealth>,
-    ) -> Self {
+    pub fn set_health(mut self, input: ::std::option::Option<crate::types::ConnectionHealth>) -> Self {
         self.health = input;
         self
     }

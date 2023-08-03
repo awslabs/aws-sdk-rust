@@ -5,8 +5,7 @@
 pub struct ListIntegrationAssociationsOutput {
     /// <p>The associations.</p>
     #[doc(hidden)]
-    pub integration_association_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::IntegrationAssociationSummary>>,
+    pub integration_association_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListIntegrationAssociationsOutput {
 }
 impl ListIntegrationAssociationsOutput {
     /// <p>The associations.</p>
-    pub fn integration_association_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IntegrationAssociationSummary]> {
+    pub fn integration_association_summary_list(&self) -> ::std::option::Option<&[crate::types::IntegrationAssociationSummary]> {
         self.integration_association_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListIntegrationAssociationsOutput {
 }
 impl ListIntegrationAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntegrationAssociationsOutput`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput).
-    pub fn builder() -> crate::operation::list_integration_associations::builders::ListIntegrationAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_integration_associations::builders::ListIntegrationAssociationsOutputBuilder {
         crate::operation::list_integration_associations::builders::ListIntegrationAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntegrationAssociationsOutput`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntegrationAssociationsOutputBuilder {
-    pub(crate) integration_association_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::IntegrationAssociationSummary>>,
+    pub(crate) integration_association_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListIntegrationAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_integration_association_summary_list`](Self::set_integration_association_summary_list).
     ///
     /// <p>The associations.</p>
-    pub fn integration_association_summary_list(
-        mut self,
-        input: crate::types::IntegrationAssociationSummary,
-    ) -> Self {
-        let mut v = self
-            .integration_association_summary_list
-            .unwrap_or_default();
+    pub fn integration_association_summary_list(mut self, input: crate::types::IntegrationAssociationSummary) -> Self {
+        let mut v = self.integration_association_summary_list.unwrap_or_default();
         v.push(input);
         self.integration_association_summary_list = ::std::option::Option::Some(v);
         self
@@ -73,9 +62,7 @@ impl ListIntegrationAssociationsOutputBuilder {
         self
     }
     /// <p>The associations.</p>
-    pub fn get_integration_association_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationAssociationSummary>> {
+    pub fn get_integration_association_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationAssociationSummary>> {
         &self.integration_association_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -102,9 +89,7 @@ impl ListIntegrationAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIntegrationAssociationsOutput`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_integration_associations::ListIntegrationAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_integration_associations::ListIntegrationAssociationsOutput {
         crate::operation::list_integration_associations::ListIntegrationAssociationsOutput {
             integration_association_summary_list: self.integration_association_summary_list,
             next_token: self.next_token,

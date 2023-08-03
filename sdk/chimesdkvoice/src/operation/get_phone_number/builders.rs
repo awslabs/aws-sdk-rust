@@ -10,10 +10,7 @@ impl GetPhoneNumberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_phone_number::GetPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_phone_number::GetPhoneNumberError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_phone_number::GetPhoneNumberError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_phone_number();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetPhoneNumberFluentBuilder {
         }
     }
     /// Access the GetPhoneNumber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_phone_number::builders::GetPhoneNumberInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_phone_number::builders::GetPhoneNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetPhoneNumberFluentBuilder {
             crate::operation::get_phone_number::GetPhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_phone_number::GetPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_phone_number::GetPhoneNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetPhoneNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetPhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_phone_number::GetPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_phone_number::GetPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_phone_number::GetPhoneNumberError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetPhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_phone_number::GetPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_phone_number::GetPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_phone_number::GetPhoneNumberError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetPhoneNumberFluentBuilder {
             crate::operation::get_phone_number::GetPhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_phone_number::GetPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_phone_number::GetPhoneNumberError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The phone number ID.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_id(input.into());
         self
     }
     /// <p>The phone number ID.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_id(input);
         self
     }

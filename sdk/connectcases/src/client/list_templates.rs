@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`templates(Option<Vec<TemplateSummary>>)`](crate::operation::list_templates::ListTemplatesOutput::templates): <p>List of template summary objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
-    pub fn list_templates(
-        &self,
-    ) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
-        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
+        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

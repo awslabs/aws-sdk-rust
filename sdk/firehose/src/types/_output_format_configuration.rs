@@ -23,9 +23,7 @@ impl OutputFormatConfiguration {
 
 /// A builder for [`OutputFormatConfiguration`](crate::types::OutputFormatConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputFormatConfigurationBuilder {
     pub(crate) serializer: ::std::option::Option<crate::types::Serializer>,
 }
@@ -36,10 +34,7 @@ impl OutputFormatConfigurationBuilder {
         self
     }
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
-    pub fn set_serializer(
-        mut self,
-        input: ::std::option::Option<crate::types::Serializer>,
-    ) -> Self {
+    pub fn set_serializer(mut self, input: ::std::option::Option<crate::types::Serializer>) -> Self {
         self.serializer = input;
         self
     }
@@ -49,8 +44,6 @@ impl OutputFormatConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`OutputFormatConfiguration`](crate::types::OutputFormatConfiguration).
     pub fn build(self) -> crate::types::OutputFormatConfiguration {
-        crate::types::OutputFormatConfiguration {
-            serializer: self.serializer,
-        }
+        crate::types::OutputFormatConfiguration { serializer: self.serializer }
     }
 }

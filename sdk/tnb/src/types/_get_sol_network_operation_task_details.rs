@@ -10,9 +10,7 @@ pub struct GetSolNetworkOperationTaskDetails {
     pub task_name: ::std::option::Option<::std::string::String>,
     /// <p>Context for the network operation task.</p>
     #[doc(hidden)]
-    pub task_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub task_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Task error details.</p>
     #[doc(hidden)]
     pub task_error_details: ::std::option::Option<crate::types::ErrorInfo>,
@@ -32,11 +30,7 @@ impl GetSolNetworkOperationTaskDetails {
         self.task_name.as_deref()
     }
     /// <p>Context for the network operation task.</p>
-    pub fn task_context(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn task_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.task_context.as_ref()
     }
     /// <p>Task error details.</p>
@@ -65,14 +59,10 @@ impl GetSolNetworkOperationTaskDetails {
 
 /// A builder for [`GetSolNetworkOperationTaskDetails`](crate::types::GetSolNetworkOperationTaskDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkOperationTaskDetailsBuilder {
     pub(crate) task_name: ::std::option::Option<::std::string::String>,
-    pub(crate) task_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) task_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) task_error_details: ::std::option::Option<crate::types::ErrorInfo>,
     pub(crate) task_status: ::std::option::Option<crate::types::TaskStatus>,
     pub(crate) task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -98,11 +88,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     /// To override the contents of this collection use [`set_task_context`](Self::set_task_context).
     ///
     /// <p>Context for the network operation task.</p>
-    pub fn task_context(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.task_context.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.task_context = ::std::option::Option::Some(hash_map);
@@ -111,19 +97,13 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     /// <p>Context for the network operation task.</p>
     pub fn set_task_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.task_context = input;
         self
     }
     /// <p>Context for the network operation task.</p>
-    pub fn get_task_context(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_task_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.task_context
     }
     /// <p>Task error details.</p>
@@ -132,10 +112,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
         self
     }
     /// <p>Task error details.</p>
-    pub fn set_task_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorInfo>,
-    ) -> Self {
+    pub fn set_task_error_details(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
         self.task_error_details = input;
         self
     }
@@ -149,10 +126,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
         self
     }
     /// <p>Task status.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.task_status = input;
         self
     }
@@ -166,10 +140,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
         self
     }
     /// <p>Task start time.</p>
-    pub fn set_task_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_task_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.task_start_time = input;
         self
     }
@@ -183,10 +154,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
         self
     }
     /// <p>Task end time.</p>
-    pub fn set_task_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_task_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.task_end_time = input;
         self
     }

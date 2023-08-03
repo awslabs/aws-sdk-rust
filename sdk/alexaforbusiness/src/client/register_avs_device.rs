@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`device_arn(Option<String>)`](crate::operation::register_avs_device::RegisterAvsDeviceOutput::device_arn): <p>The ARN of the device.</p>
     /// - On failure, responds with [`SdkError<RegisterAVSDeviceError>`](crate::operation::register_avs_device::RegisterAVSDeviceError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn register_avs_device(
-        &self,
-    ) -> crate::operation::register_avs_device::builders::RegisterAVSDeviceFluentBuilder {
-        crate::operation::register_avs_device::builders::RegisterAVSDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_avs_device(&self) -> crate::operation::register_avs_device::builders::RegisterAVSDeviceFluentBuilder {
+        crate::operation::register_avs_device::builders::RegisterAVSDeviceFluentBuilder::new(self.handle.clone())
     }
 }

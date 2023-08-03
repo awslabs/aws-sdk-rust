@@ -22,17 +22,12 @@ pub fn ser_create_rest_api_input(
         object.key("description").string(var_6.as_str());
     }
     if input.disable_execute_api_endpoint {
-        object
-            .key("disableExecuteApiEndpoint")
-            .boolean(input.disable_execute_api_endpoint);
+        object.key("disableExecuteApiEndpoint").boolean(input.disable_execute_api_endpoint);
     }
     if let Some(var_7) = &input.endpoint_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("endpointConfiguration").start_object();
-        crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.minimum_compression_size {

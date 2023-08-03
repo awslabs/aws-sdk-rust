@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`metrics_analyzed(i32)`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput::metrics_analyzed): <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
     ///   - [`resource_hours(Option<i64>)`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput::resource_hours): <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationHealthError>`](crate::operation::describe_organization_health::DescribeOrganizationHealthError)
-    pub fn describe_organization_health(&self) -> crate::operation::describe_organization_health::builders::DescribeOrganizationHealthFluentBuilder{
+    pub fn describe_organization_health(&self) -> crate::operation::describe_organization_health::builders::DescribeOrganizationHealthFluentBuilder {
         crate::operation::describe_organization_health::builders::DescribeOrganizationHealthFluentBuilder::new(self.handle.clone())
     }
 }

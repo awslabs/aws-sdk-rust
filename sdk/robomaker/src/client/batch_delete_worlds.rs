@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteWorldsOutput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput) with field(s):
     ///   - [`unprocessed_worlds(Option<Vec<String>>)`](crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput::unprocessed_worlds): <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteWorldsError>`](crate::operation::batch_delete_worlds::BatchDeleteWorldsError)
-    pub fn batch_delete_worlds(
-        &self,
-    ) -> crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder {
-        crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_worlds(&self) -> crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder {
+        crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder::new(self.handle.clone())
     }
 }

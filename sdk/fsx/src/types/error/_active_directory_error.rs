@@ -63,9 +63,7 @@ impl ActiveDirectoryError {
 
 /// A builder for [`ActiveDirectoryError`](crate::types::error::ActiveDirectoryError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveDirectoryErrorBuilder {
     pub(crate) active_directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ActiveDirectoryErrorType>,
@@ -74,18 +72,12 @@ pub struct ActiveDirectoryErrorBuilder {
 }
 impl ActiveDirectoryErrorBuilder {
     /// <p>The directory ID of the directory that an error pertains to.</p>
-    pub fn active_directory_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The directory ID of the directory that an error pertains to.</p>
-    pub fn set_active_directory_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_directory_id = input;
         self
     }
@@ -99,10 +91,7 @@ impl ActiveDirectoryErrorBuilder {
         self
     }
     /// <p>The type of Active Directory error.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveDirectoryErrorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ActiveDirectoryErrorType>) -> Self {
         self.r#type = input;
         self
     }
@@ -131,10 +120,7 @@ impl ActiveDirectoryErrorBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

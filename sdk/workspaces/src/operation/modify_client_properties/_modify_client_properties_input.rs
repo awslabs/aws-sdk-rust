@@ -22,18 +22,14 @@ impl ModifyClientPropertiesInput {
 }
 impl ModifyClientPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifyClientPropertiesInput`](crate::operation::modify_client_properties::ModifyClientPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder {
         crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClientPropertiesInput`](crate::operation::modify_client_properties::ModifyClientPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClientPropertiesInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_properties: ::std::option::Option<crate::types::ClientProperties>,
@@ -59,10 +55,7 @@ impl ModifyClientPropertiesInputBuilder {
         self
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
-    pub fn set_client_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientProperties>,
-    ) -> Self {
+    pub fn set_client_properties(mut self, input: ::std::option::Option<crate::types::ClientProperties>) -> Self {
         self.client_properties = input;
         self
     }
@@ -73,15 +66,11 @@ impl ModifyClientPropertiesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClientPropertiesInput`](crate::operation::modify_client_properties::ModifyClientPropertiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_client_properties::ModifyClientPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_client_properties::ModifyClientPropertiesInput {
-                resource_id: self.resource_id,
-                client_properties: self.client_properties,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_client_properties::ModifyClientPropertiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_client_properties::ModifyClientPropertiesInput {
+            resource_id: self.resource_id,
+            client_properties: self.client_properties,
+        })
     }
 }

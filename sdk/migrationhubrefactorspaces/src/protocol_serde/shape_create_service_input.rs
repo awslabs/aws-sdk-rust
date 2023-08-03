@@ -15,10 +15,7 @@ pub fn ser_create_service_input(
     if let Some(var_4) = &input.lambda_endpoint {
         #[allow(unused_mut)]
         let mut object_5 = object.key("LambdaEndpoint").start_object();
-        crate::protocol_serde::shape_lambda_endpoint_input::ser_lambda_endpoint_input(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_lambda_endpoint_input::ser_lambda_endpoint_input(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.name {
@@ -37,10 +34,7 @@ pub fn ser_create_service_input(
     if let Some(var_11) = &input.url_endpoint {
         #[allow(unused_mut)]
         let mut object_12 = object.key("UrlEndpoint").start_object();
-        crate::protocol_serde::shape_url_endpoint_input::ser_url_endpoint_input(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_url_endpoint_input::ser_url_endpoint_input(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.vpc_id {

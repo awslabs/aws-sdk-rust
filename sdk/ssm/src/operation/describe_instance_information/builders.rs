@@ -29,7 +29,7 @@ impl DescribeInstanceInformationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceInformationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_information::builders::DescribeInstanceInformationInputBuilder,
+    inner: crate::operation::describe_instance_information::builders::DescribeInstanceInformationInputBuilder,
 }
 impl DescribeInstanceInformationFluentBuilder {
     /// Creates a new `DescribeInstanceInformation`.
@@ -40,7 +40,7 @@ impl DescribeInstanceInformationFluentBuilder {
         }
     }
     /// Access the DescribeInstanceInformation as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_information::builders::DescribeInstanceInformationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_information::builders::DescribeInstanceInformationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DescribeInstanceInformationFluentBuilder {
             crate::operation::describe_instance_information::DescribeInstanceInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_information::DescribeInstanceInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_information::DescribeInstanceInformationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DescribeInstanceInformationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DescribeInstanceInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_information::DescribeInstanceInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_information::DescribeInstanceInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_information::DescribeInstanceInformationError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DescribeInstanceInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_information::DescribeInstanceInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_information::DescribeInstanceInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_information::DescribeInstanceInformationError>,
     > {
         self.send_middleware().await
     }
@@ -117,16 +108,14 @@ impl DescribeInstanceInformationFluentBuilder {
             crate::operation::describe_instance_information::DescribeInstanceInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_information::DescribeInstanceInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_information::DescribeInstanceInformationError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator {
         crate::operation::describe_instance_information::paginator::DescribeInstanceInformationPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `InstanceInformationFilterList`.
@@ -136,10 +125,7 @@ impl DescribeInstanceInformationFluentBuilder {
     /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
     /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
-    pub fn instance_information_filter_list(
-        mut self,
-        input: crate::types::InstanceInformationFilter,
-    ) -> Self {
+    pub fn instance_information_filter_list(mut self, input: crate::types::InstanceInformationFilter) -> Self {
         self.inner = self.inner.instance_information_filter_list(input);
         self
     }
@@ -156,9 +142,7 @@ impl DescribeInstanceInformationFluentBuilder {
     /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
     /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
-    pub fn get_instance_information_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>> {
+    pub fn get_instance_information_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>> {
         self.inner.get_instance_information_filter_list()
     }
     /// Appends an item to `Filters`.
@@ -171,20 +155,12 @@ impl DescribeInstanceInformationFluentBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceInformationStringFilter>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>

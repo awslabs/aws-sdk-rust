@@ -72,9 +72,7 @@ impl ::std::fmt::Debug for CreateServiceInstanceInput {
 }
 impl CreateServiceInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceInstanceInput`](crate::operation::create_service_instance::CreateServiceInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder {
         crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder::default()
     }
 }
@@ -135,18 +133,12 @@ impl CreateServiceInstanceInputBuilder {
         &self.spec
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_major_version = input;
         self
     }
@@ -155,18 +147,12 @@ impl CreateServiceInstanceInputBuilder {
         &self.template_major_version
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_minor_version = input;
         self
     }
@@ -188,10 +174,7 @@ impl CreateServiceInstanceInputBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -217,21 +200,17 @@ impl CreateServiceInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInstanceInput`](crate::operation::create_service_instance::CreateServiceInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service_instance::CreateServiceInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_service_instance::CreateServiceInstanceInput {
-                name: self.name,
-                service_name: self.service_name,
-                spec: self.spec,
-                template_major_version: self.template_major_version,
-                template_minor_version: self.template_minor_version,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_service_instance::CreateServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_service_instance::CreateServiceInstanceInput {
+            name: self.name,
+            service_name: self.service_name,
+            spec: self.spec,
+            template_major_version: self.template_major_version,
+            template_minor_version: self.template_minor_version,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateServiceInstanceInputBuilder {

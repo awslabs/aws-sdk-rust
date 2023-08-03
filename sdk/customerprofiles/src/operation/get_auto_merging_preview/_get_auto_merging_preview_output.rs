@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for GetAutoMergingPreviewOutput {
 }
 impl GetAutoMergingPreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetAutoMergingPreviewOutput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput).
-    pub fn builder(
-    ) -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewOutputBuilder {
         crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutoMergingPreviewOutput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutoMergingPreviewOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_matches_in_sample: ::std::option::Option<i64>,
@@ -110,10 +106,7 @@ impl GetAutoMergingPreviewOutputBuilder {
         self
     }
     /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
-    pub fn set_number_of_profiles_will_be_merged(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_number_of_profiles_will_be_merged(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_profiles_will_be_merged = input;
         self
     }
@@ -136,9 +129,7 @@ impl GetAutoMergingPreviewOutputBuilder {
             domain_name: self.domain_name,
             number_of_matches_in_sample: self.number_of_matches_in_sample.unwrap_or_default(),
             number_of_profiles_in_sample: self.number_of_profiles_in_sample.unwrap_or_default(),
-            number_of_profiles_will_be_merged: self
-                .number_of_profiles_will_be_merged
-                .unwrap_or_default(),
+            number_of_profiles_will_be_merged: self.number_of_profiles_will_be_merged.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

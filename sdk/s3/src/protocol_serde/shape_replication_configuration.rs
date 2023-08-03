@@ -13,10 +13,7 @@ pub fn ser_replication_configuration(
         for list_item_3 in var_2 {
             {
                 let inner_writer = scope.start_el("Rule");
-                crate::protocol_serde::shape_replication_rule::ser_replication_rule(
-                    list_item_3,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_replication_rule::ser_replication_rule(list_item_3, inner_writer)?
             }
         }
     }

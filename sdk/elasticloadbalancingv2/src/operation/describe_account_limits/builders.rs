@@ -43,10 +43,7 @@ impl DescribeAccountLimitsFluentBuilder {
         }
     }
     /// Access the DescribeAccountLimits as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +55,7 @@ impl DescribeAccountLimitsFluentBuilder {
             crate::operation::describe_account_limits::DescribeAccountLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_limits::DescribeAccountLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_limits::DescribeAccountLimitsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +65,7 @@ impl DescribeAccountLimitsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +74,7 @@ impl DescribeAccountLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_limits::DescribeAccountLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_limits::DescribeAccountLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_limits::DescribeAccountLimitsError>,
     > {
         let op = self
             .inner
@@ -107,9 +97,7 @@ impl DescribeAccountLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_limits::DescribeAccountLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_limits::DescribeAccountLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_limits::DescribeAccountLimitsError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +111,7 @@ impl DescribeAccountLimitsFluentBuilder {
             crate::operation::describe_account_limits::DescribeAccountLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_limits::DescribeAccountLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_limits::DescribeAccountLimitsError>,
     > {
         self.customize_middleware().await
     }

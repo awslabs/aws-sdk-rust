@@ -29,18 +29,14 @@ impl GetIngestionDestinationInput {
 }
 impl GetIngestionDestinationInput {
     /// Creates a new builder-style object to manufacture [`GetIngestionDestinationInput`](crate::operation::get_ingestion_destination::GetIngestionDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::get_ingestion_destination::builders::GetIngestionDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ingestion_destination::builders::GetIngestionDestinationInputBuilder {
         crate::operation::get_ingestion_destination::builders::GetIngestionDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIngestionDestinationInput`](crate::operation::get_ingestion_destination::GetIngestionDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIngestionDestinationInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_identifier: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct GetIngestionDestinationInputBuilder {
 }
 impl GetIngestionDestinationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -68,18 +58,12 @@ impl GetIngestionDestinationInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn ingestion_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn set_ingestion_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_identifier = input;
         self
     }
@@ -88,25 +72,17 @@ impl GetIngestionDestinationInputBuilder {
         &self.ingestion_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
-    pub fn ingestion_destination_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_destination_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_destination_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
-    pub fn set_ingestion_destination_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_destination_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_destination_identifier = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
-    pub fn get_ingestion_destination_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ingestion_destination_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.ingestion_destination_identifier
     }
     /// Consumes the builder and constructs a [`GetIngestionDestinationInput`](crate::operation::get_ingestion_destination::GetIngestionDestinationInput).
@@ -116,12 +92,10 @@ impl GetIngestionDestinationInputBuilder {
         crate::operation::get_ingestion_destination::GetIngestionDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ingestion_destination::GetIngestionDestinationInput {
-                app_bundle_identifier: self.app_bundle_identifier,
-                ingestion_identifier: self.ingestion_identifier,
-                ingestion_destination_identifier: self.ingestion_destination_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_ingestion_destination::GetIngestionDestinationInput {
+            app_bundle_identifier: self.app_bundle_identifier,
+            ingestion_identifier: self.ingestion_identifier,
+            ingestion_destination_identifier: self.ingestion_destination_identifier,
+        })
     }
 }

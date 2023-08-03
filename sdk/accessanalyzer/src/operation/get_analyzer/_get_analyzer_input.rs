@@ -23,26 +23,18 @@ impl GetAnalyzerInput {
 
 /// A builder for [`GetAnalyzerInput`](crate::operation::get_analyzer::GetAnalyzerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnalyzerInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
 }
 impl GetAnalyzerInputBuilder {
     /// <p>The name of the analyzer retrieved.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer retrieved.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_name = input;
         self
     }
@@ -51,12 +43,7 @@ impl GetAnalyzerInputBuilder {
         &self.analyzer_name
     }
     /// Consumes the builder and constructs a [`GetAnalyzerInput`](crate::operation::get_analyzer::GetAnalyzerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_analyzer::GetAnalyzerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_analyzer::GetAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_analyzer::GetAnalyzerInput {
             analyzer_name: self.analyzer_name,
         })

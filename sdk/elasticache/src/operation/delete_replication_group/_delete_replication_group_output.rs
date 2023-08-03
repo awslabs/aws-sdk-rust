@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteReplicationGroupOutput {
 }
 impl DeleteReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupOutput`](crate::operation::delete_replication_group::DeleteReplicationGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_replication_group::builders::DeleteReplicationGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_replication_group::builders::DeleteReplicationGroupOutputBuilder {
         crate::operation::delete_replication_group::builders::DeleteReplicationGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReplicationGroupOutput`](crate::operation::delete_replication_group::DeleteReplicationGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReplicationGroupOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteReplicationGroupOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationGroup>,
-    ) -> Self {
+    pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
         self.replication_group = input;
         self
     }

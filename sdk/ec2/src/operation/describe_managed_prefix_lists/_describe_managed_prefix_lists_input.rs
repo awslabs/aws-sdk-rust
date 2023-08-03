@@ -53,16 +53,14 @@ impl DescribeManagedPrefixListsInput {
 }
 impl DescribeManagedPrefixListsInput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedPrefixListsInput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput).
-    pub fn builder() -> crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsInputBuilder{
+    pub fn builder() -> crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsInputBuilder {
         crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeManagedPrefixListsInput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedPrefixListsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -107,10 +105,7 @@ impl DescribeManagedPrefixListsInputBuilder {
     /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
     /// <li> <p> <code>prefix-list-name</code> - The name of the prefix list.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -156,27 +151,19 @@ impl DescribeManagedPrefixListsInputBuilder {
     /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
     ///
     /// <p>One or more prefix list IDs.</p>
-    pub fn prefix_list_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
         v.push(input.into());
         self.prefix_list_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn set_prefix_list_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.prefix_list_ids = input;
         self
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn get_prefix_list_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.prefix_list_ids
     }
     /// Consumes the builder and constructs a [`DescribeManagedPrefixListsInput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput).
@@ -186,14 +173,12 @@ impl DescribeManagedPrefixListsInputBuilder {
         crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                prefix_list_ids: self.prefix_list_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput {
+            dry_run: self.dry_run,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            prefix_list_ids: self.prefix_list_ids,
+        })
     }
 }

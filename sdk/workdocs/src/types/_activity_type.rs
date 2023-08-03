@@ -69,13 +69,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActivityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -162,9 +156,7 @@ impl ::std::convert::From<&str> for ActivityType {
             "DOCUMENT_RESTORED" => ActivityType::DocumentRestored,
             "DOCUMENT_REVERTED" => ActivityType::DocumentReverted,
             "DOCUMENT_SHAREABLE_LINK_CREATED" => ActivityType::DocumentShareableLinkCreated,
-            "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED" => {
-                ActivityType::DocumentShareableLinkPermissionChanged
-            }
+            "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED" => ActivityType::DocumentShareableLinkPermissionChanged,
             "DOCUMENT_SHAREABLE_LINK_REMOVED" => ActivityType::DocumentShareableLinkRemoved,
             "DOCUMENT_SHARED" => ActivityType::DocumentShared,
             "DOCUMENT_SHARE_PERMISSION_CHANGED" => ActivityType::DocumentSharePermissionChanged,
@@ -180,16 +172,12 @@ impl ::std::convert::From<&str> for ActivityType {
             "FOLDER_RENAMED" => ActivityType::FolderRenamed,
             "FOLDER_RESTORED" => ActivityType::FolderRestored,
             "FOLDER_SHAREABLE_LINK_CREATED" => ActivityType::FolderShareableLinkCreated,
-            "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED" => {
-                ActivityType::FolderShareableLinkPermissionChanged
-            }
+            "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED" => ActivityType::FolderShareableLinkPermissionChanged,
             "FOLDER_SHAREABLE_LINK_REMOVED" => ActivityType::FolderShareableLinkRemoved,
             "FOLDER_SHARED" => ActivityType::FolderShared,
             "FOLDER_SHARE_PERMISSION_CHANGED" => ActivityType::FolderSharePermissionChanged,
             "FOLDER_UNSHARED" => ActivityType::FolderUnshared,
-            other => {
-                ActivityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActivityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -216,9 +204,7 @@ impl ActivityType {
             ActivityType::DocumentRestored => "DOCUMENT_RESTORED",
             ActivityType::DocumentReverted => "DOCUMENT_REVERTED",
             ActivityType::DocumentShareableLinkCreated => "DOCUMENT_SHAREABLE_LINK_CREATED",
-            ActivityType::DocumentShareableLinkPermissionChanged => {
-                "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED"
-            }
+            ActivityType::DocumentShareableLinkPermissionChanged => "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED",
             ActivityType::DocumentShareableLinkRemoved => "DOCUMENT_SHAREABLE_LINK_REMOVED",
             ActivityType::DocumentShared => "DOCUMENT_SHARED",
             ActivityType::DocumentSharePermissionChanged => "DOCUMENT_SHARE_PERMISSION_CHANGED",
@@ -234,9 +220,7 @@ impl ActivityType {
             ActivityType::FolderRenamed => "FOLDER_RENAMED",
             ActivityType::FolderRestored => "FOLDER_RESTORED",
             ActivityType::FolderShareableLinkCreated => "FOLDER_SHAREABLE_LINK_CREATED",
-            ActivityType::FolderShareableLinkPermissionChanged => {
-                "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"
-            }
+            ActivityType::FolderShareableLinkPermissionChanged => "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED",
             ActivityType::FolderShareableLinkRemoved => "FOLDER_SHAREABLE_LINK_REMOVED",
             ActivityType::FolderShared => "FOLDER_SHARED",
             ActivityType::FolderSharePermissionChanged => "FOLDER_SHARE_PERMISSION_CHANGED",

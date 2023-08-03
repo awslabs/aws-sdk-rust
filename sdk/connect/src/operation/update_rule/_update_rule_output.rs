@@ -19,9 +19,7 @@ impl UpdateRuleOutput {
 
 /// A builder for [`UpdateRuleOutput`](crate::operation::update_rule::UpdateRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleOutputBuilder {
     _request_id: Option<String>,
 }

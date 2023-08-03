@@ -5,8 +5,7 @@
 pub struct ListPermissionGroupsByUserOutput {
     /// <p>A list of returned permission groups.</p>
     #[doc(hidden)]
-    pub permission_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>>,
+    pub permission_groups: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>>,
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPermissionGroupsByUserOutput {
 }
 impl ListPermissionGroupsByUserOutput {
     /// <p>A list of returned permission groups.</p>
-    pub fn permission_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PermissionGroupByUser]> {
+    pub fn permission_groups(&self) -> ::std::option::Option<&[crate::types::PermissionGroupByUser]> {
         self.permission_groups.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPermissionGroupsByUserOutput {
 }
 impl ListPermissionGroupsByUserOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionGroupsByUserOutput`](crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserOutput).
-    pub fn builder() -> crate::operation::list_permission_groups_by_user::builders::ListPermissionGroupsByUserOutputBuilder{
+    pub fn builder() -> crate::operation::list_permission_groups_by_user::builders::ListPermissionGroupsByUserOutputBuilder {
         crate::operation::list_permission_groups_by_user::builders::ListPermissionGroupsByUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionGroupsByUserOutput`](crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionGroupsByUserOutputBuilder {
-    pub(crate) permission_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>>,
+    pub(crate) permission_groups: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListPermissionGroupsByUserOutputBuilder {
         self
     }
     /// <p>A list of returned permission groups.</p>
-    pub fn set_permission_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>>,
-    ) -> Self {
+    pub fn set_permission_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>>) -> Self {
         self.permission_groups = input;
         self
     }
     /// <p>A list of returned permission groups.</p>
-    pub fn get_permission_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>> {
+    pub fn get_permission_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>> {
         &self.permission_groups
     }
     /// <p>A token that indicates where a results page should begin.</p>
@@ -97,9 +86,7 @@ impl ListPermissionGroupsByUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPermissionGroupsByUserOutput`](crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserOutput {
+    pub fn build(self) -> crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserOutput {
         crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserOutput {
             permission_groups: self.permission_groups,
             next_token: self.next_token,

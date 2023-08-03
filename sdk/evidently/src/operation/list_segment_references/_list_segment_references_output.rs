@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSegmentReferencesOutput {
 }
 impl ListSegmentReferencesOutput {
     /// Creates a new builder-style object to manufacture [`ListSegmentReferencesOutput`](crate::operation::list_segment_references::ListSegmentReferencesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_segment_references::builders::ListSegmentReferencesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_segment_references::builders::ListSegmentReferencesOutputBuilder {
         crate::operation::list_segment_references::builders::ListSegmentReferencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSegmentReferencesOutput`](crate::operation::list_segment_references::ListSegmentReferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSegmentReferencesOutputBuilder {
     pub(crate) referenced_by: ::std::option::Option<::std::vec::Vec<crate::types::RefResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListSegmentReferencesOutputBuilder {
         self
     }
     /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
-    pub fn set_referenced_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RefResource>>,
-    ) -> Self {
+    pub fn set_referenced_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RefResource>>) -> Self {
         self.referenced_by = input;
         self
     }
     /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
-    pub fn get_referenced_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RefResource>> {
+    pub fn get_referenced_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RefResource>> {
         &self.referenced_by
     }
     /// <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>

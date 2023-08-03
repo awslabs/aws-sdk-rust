@@ -29,17 +29,14 @@ impl DescribeSubnetGroupsInput {
 }
 impl DescribeSubnetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder {
+    pub fn builder() -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder {
         crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubnetGroupsInputBuilder {
     pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct DescribeSubnetGroupsInputBuilder {
 }
 impl DescribeSubnetGroupsInputBuilder {
     /// <p>The name of the subnet group to return details for.</p>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group to return details for.</p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_name = input;
         self
     }
@@ -97,16 +88,12 @@ impl DescribeSubnetGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput {
-                subnet_group_name: self.subnet_group_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput {
+            subnet_group_name: self.subnet_group_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

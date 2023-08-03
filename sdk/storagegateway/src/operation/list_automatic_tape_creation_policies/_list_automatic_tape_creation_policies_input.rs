@@ -15,16 +15,14 @@ impl ListAutomaticTapeCreationPoliciesInput {
 }
 impl ListAutomaticTapeCreationPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListAutomaticTapeCreationPoliciesInput`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesInput).
-    pub fn builder() -> crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesInputBuilder {
         crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAutomaticTapeCreationPoliciesInput`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutomaticTapeCreationPoliciesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,16 @@ impl ListAutomaticTapeCreationPoliciesInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`ListAutomaticTapeCreationPoliciesInput`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesInput {
-                gateway_arn: self.gateway_arn
-                ,
-            }
+                gateway_arn: self.gateway_arn,
+            },
         )
     }
 }

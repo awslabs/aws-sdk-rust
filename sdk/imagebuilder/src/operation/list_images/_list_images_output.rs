@@ -70,13 +70,10 @@ impl ListImagesOutput {
 
 /// A builder for [`ListImagesOutput`](crate::operation::list_images::ListImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) image_version_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>,
+    pub(crate) image_version_list: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -135,10 +132,7 @@ impl ListImagesOutputBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn set_image_version_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>,
-    ) -> Self {
+    pub fn set_image_version_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>) -> Self {
         self.image_version_list = input;
         self
     }
@@ -157,9 +151,7 @@ impl ListImagesOutputBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn get_image_version_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>> {
+    pub fn get_image_version_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>> {
         &self.image_version_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>

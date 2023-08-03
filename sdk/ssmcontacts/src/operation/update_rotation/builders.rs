@@ -10,10 +10,7 @@ impl UpdateRotationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_rotation::UpdateRotationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rotation::UpdateRotationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rotation::UpdateRotationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_rotation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateRotationFluentBuilder {
         }
     }
     /// Access the UpdateRotation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_rotation::builders::UpdateRotationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_rotation::builders::UpdateRotationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateRotationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -140,18 +132,13 @@ impl UpdateRotationFluentBuilder {
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn set_contact_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_contact_ids(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn get_contact_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_contact_ids()
     }
     /// <p>The date and time the rotation goes into effect.</p>
@@ -160,10 +147,7 @@ impl UpdateRotationFluentBuilder {
         self
     }
     /// <p>The date and time the rotation goes into effect.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -197,10 +181,7 @@ impl UpdateRotationFluentBuilder {
         self
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::RecurrenceSettings>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::RecurrenceSettings>) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
     }

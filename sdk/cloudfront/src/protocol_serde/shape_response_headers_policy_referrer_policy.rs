@@ -19,10 +19,7 @@ pub fn ser_response_headers_policy_referrer_policy(
 
 pub fn de_response_headers_policy_referrer_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ResponseHeadersPolicyReferrerPolicy,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ResponseHeadersPolicyReferrerPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyReferrerPolicy::builder();
     while let Some(mut tag) = decoder.next_tag() {

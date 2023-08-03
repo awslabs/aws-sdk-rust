@@ -30,9 +30,7 @@ impl CurrentMetricResult {
 
 /// A builder for [`CurrentMetricResult`](crate::types::CurrentMetricResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CurrentMetricResultBuilder {
     pub(crate) dimensions: ::std::option::Option<crate::types::Dimensions>,
     pub(crate) collections: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricData>>,
@@ -44,10 +42,7 @@ impl CurrentMetricResultBuilder {
         self
     }
     /// <p>The dimensions for the metrics.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<crate::types::Dimensions>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<crate::types::Dimensions>) -> Self {
         self.dimensions = input;
         self
     }
@@ -67,17 +62,12 @@ impl CurrentMetricResultBuilder {
         self
     }
     /// <p>The set of metrics.</p>
-    pub fn set_collections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricData>>,
-    ) -> Self {
+    pub fn set_collections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricData>>) -> Self {
         self.collections = input;
         self
     }
     /// <p>The set of metrics.</p>
-    pub fn get_collections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricData>> {
+    pub fn get_collections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricData>> {
         &self.collections
     }
     /// Consumes the builder and constructs a [`CurrentMetricResult`](crate::types::CurrentMetricResult).

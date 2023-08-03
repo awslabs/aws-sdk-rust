@@ -5,9 +5,7 @@
 pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId
-    for DetachCustomerManagedPolicyReferenceFromPermissionSetOutput
-{
+impl ::aws_http::request_id::RequestId for DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,9 +19,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
 
 /// A builder for [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,7 +34,10 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
-    pub fn build(self) -> crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput
+    {
         crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
             _request_id: self._request_id,
         }

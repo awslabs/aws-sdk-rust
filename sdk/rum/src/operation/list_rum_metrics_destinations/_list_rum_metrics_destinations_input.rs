@@ -31,16 +31,14 @@ impl ListRumMetricsDestinationsInput {
 }
 impl ListRumMetricsDestinationsInput {
     /// Creates a new builder-style object to manufacture [`ListRumMetricsDestinationsInput`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput).
-    pub fn builder() -> crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsInputBuilder{
+    pub fn builder() -> crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsInputBuilder {
         crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRumMetricsDestinationsInput`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRumMetricsDestinationsInputBuilder {
     pub(crate) app_monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +46,12 @@ pub struct ListRumMetricsDestinationsInputBuilder {
 }
 impl ListRumMetricsDestinationsInputBuilder {
     /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_monitor_name = input;
         self
     }
@@ -105,12 +97,10 @@ impl ListRumMetricsDestinationsInputBuilder {
         crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput {
-                app_monitor_name: self.app_monitor_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput {
+            app_monitor_name: self.app_monitor_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

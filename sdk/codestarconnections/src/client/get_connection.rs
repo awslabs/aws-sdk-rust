@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput) with field(s):
     ///   - [`connection(Option<Connection>)`](crate::operation::get_connection::GetConnectionOutput::connection): <p>The connection details, such as status, owner, and provider type.</p>
     /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::operation::get_connection::GetConnectionError)
-    pub fn get_connection(
-        &self,
-    ) -> crate::operation::get_connection::builders::GetConnectionFluentBuilder {
-        crate::operation::get_connection::builders::GetConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connection(&self) -> crate::operation::get_connection::builders::GetConnectionFluentBuilder {
+        crate::operation::get_connection::builders::GetConnectionFluentBuilder::new(self.handle.clone())
     }
 }

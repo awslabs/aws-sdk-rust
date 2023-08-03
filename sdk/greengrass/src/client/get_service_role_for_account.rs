@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`associated_at(Option<String>)`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput::associated_at): The time when the service role was associated with the account.
     ///   - [`role_arn(Option<String>)`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput::role_arn): The ARN of the role which is associated with the account.
     /// - On failure, responds with [`SdkError<GetServiceRoleForAccountError>`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountError)
-    pub fn get_service_role_for_account(&self) -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountFluentBuilder{
+    pub fn get_service_role_for_account(&self) -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountFluentBuilder {
         crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountFluentBuilder::new(self.handle.clone())
     }
 }

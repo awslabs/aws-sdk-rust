@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StartDeviceSyncOutput {
 }
 impl StartDeviceSyncOutput {
     /// Creates a new builder-style object to manufacture [`StartDeviceSyncOutput`](crate::operation::start_device_sync::StartDeviceSyncOutput).
-    pub fn builder() -> crate::operation::start_device_sync::builders::StartDeviceSyncOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_device_sync::builders::StartDeviceSyncOutputBuilder {
         crate::operation::start_device_sync::builders::StartDeviceSyncOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDeviceSyncOutput`](crate::operation::start_device_sync::StartDeviceSyncOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDeviceSyncOutputBuilder {
     _request_id: Option<String>,
 }

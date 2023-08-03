@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCoipCidrOutput`](crate::operation::create_coip_cidr::CreateCoipCidrOutput) with field(s):
     ///   - [`coip_cidr(Option<CoipCidr>)`](crate::operation::create_coip_cidr::CreateCoipCidrOutput::coip_cidr): <p> Information about a range of customer-owned IP addresses. </p>
     /// - On failure, responds with [`SdkError<CreateCoipCidrError>`](crate::operation::create_coip_cidr::CreateCoipCidrError)
-    pub fn create_coip_cidr(
-        &self,
-    ) -> crate::operation::create_coip_cidr::builders::CreateCoipCidrFluentBuilder {
-        crate::operation::create_coip_cidr::builders::CreateCoipCidrFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_coip_cidr(&self) -> crate::operation::create_coip_cidr::builders::CreateCoipCidrFluentBuilder {
+        crate::operation::create_coip_cidr::builders::CreateCoipCidrFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListSchemasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_schemas::ListSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schemas::ListSchemasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schemas::ListSchemasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_schemas();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListSchemasFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_schemas::ListSchemas,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_schemas::ListSchemas, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_schemas::ListSchemasError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListSchemasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListSchemasFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_schemas::ListSchemas,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_schemas::ListSchemas, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_schemas::ListSchemasError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListSchemasFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_schemas::paginator::ListSchemasPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_schemas::paginator::ListSchemasPaginator {
-        crate::operation::list_schemas::paginator::ListSchemasPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_schemas::paginator::ListSchemasPaginator::new(self.handle, self.inner)
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn limit(mut self, input: i32) -> Self {
@@ -150,18 +135,12 @@ impl ListSchemasFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }
@@ -170,18 +149,12 @@ impl ListSchemasFluentBuilder {
         self.inner.get_registry_name()
     }
     /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
-    pub fn schema_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_name_prefix(input.into());
         self
     }
     /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
-    pub fn set_schema_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_name_prefix(input);
         self
     }

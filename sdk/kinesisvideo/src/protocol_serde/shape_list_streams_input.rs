@@ -15,10 +15,7 @@ pub fn ser_list_streams_input(
     if let Some(var_3) = &input.stream_name_condition {
         #[allow(unused_mut)]
         let mut object_4 = object.key("StreamNameCondition").start_object();
-        crate::protocol_serde::shape_stream_name_condition::ser_stream_name_condition(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_stream_name_condition::ser_stream_name_condition(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

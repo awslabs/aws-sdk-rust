@@ -15,16 +15,14 @@ impl DeleteSmsSandboxPhoneNumberInput {
 }
 impl DeleteSmsSandboxPhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`DeleteSmsSandboxPhoneNumberInput`](crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput).
-    pub fn builder() -> crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSmsSandboxPhoneNumberInputBuilder{
+    pub fn builder() -> crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSmsSandboxPhoneNumberInputBuilder {
         crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSmsSandboxPhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSmsSandboxPhoneNumberInput`](crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSmsSandboxPhoneNumberInputBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DeleteSmsSandboxPhoneNumberInputBuilder {
         crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput {
-                phone_number: self.phone_number,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput {
+            phone_number: self.phone_number,
+        })
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeRefreshSchemasStatusOutput`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusOutput) with field(s):
     ///   - [`refresh_schemas_status(Option<RefreshSchemasStatus>)`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusOutput::refresh_schemas_status): <p>The status of the schema.</p>
     /// - On failure, responds with [`SdkError<DescribeRefreshSchemasStatusError>`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError)
-    pub fn describe_refresh_schemas_status(&self) -> crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusFluentBuilder{
+    pub fn describe_refresh_schemas_status(
+        &self,
+    ) -> crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusFluentBuilder {
         crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusFluentBuilder::new(self.handle.clone())
     }
 }

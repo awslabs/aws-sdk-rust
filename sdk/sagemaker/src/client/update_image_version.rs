@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateImageVersionOutput`](crate::operation::update_image_version::UpdateImageVersionOutput) with field(s):
     ///   - [`image_version_arn(Option<String>)`](crate::operation::update_image_version::UpdateImageVersionOutput::image_version_arn): <p>The ARN of the image version.</p>
     /// - On failure, responds with [`SdkError<UpdateImageVersionError>`](crate::operation::update_image_version::UpdateImageVersionError)
-    pub fn update_image_version(
-        &self,
-    ) -> crate::operation::update_image_version::builders::UpdateImageVersionFluentBuilder {
-        crate::operation::update_image_version::builders::UpdateImageVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_image_version(&self) -> crate::operation::update_image_version::builders::UpdateImageVersionFluentBuilder {
+        crate::operation::update_image_version::builders::UpdateImageVersionFluentBuilder::new(self.handle.clone())
     }
 }

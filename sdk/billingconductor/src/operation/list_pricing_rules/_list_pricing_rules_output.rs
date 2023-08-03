@@ -35,38 +35,28 @@ impl ::aws_http::request_id::RequestId for ListPricingRulesOutput {
 }
 impl ListPricingRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingRulesOutput`](crate::operation::list_pricing_rules::ListPricingRulesOutput).
-    pub fn builder() -> crate::operation::list_pricing_rules::builders::ListPricingRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pricing_rules::builders::ListPricingRulesOutputBuilder {
         crate::operation::list_pricing_rules::builders::ListPricingRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPricingRulesOutput`](crate::operation::list_pricing_rules::ListPricingRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingRulesOutputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
-    pub(crate) pricing_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::PricingRuleListElement>>,
+    pub(crate) pricing_rules: ::std::option::Option<::std::vec::Vec<crate::types::PricingRuleListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPricingRulesOutputBuilder {
     /// <p> The billing period for which the described pricing rules are applicable. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The billing period for which the described pricing rules are applicable. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
@@ -86,17 +76,12 @@ impl ListPricingRulesOutputBuilder {
         self
     }
     /// <p> A list containing the described pricing rules. </p>
-    pub fn set_pricing_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PricingRuleListElement>>,
-    ) -> Self {
+    pub fn set_pricing_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PricingRuleListElement>>) -> Self {
         self.pricing_rules = input;
         self
     }
     /// <p> A list containing the described pricing rules. </p>
-    pub fn get_pricing_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PricingRuleListElement>> {
+    pub fn get_pricing_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PricingRuleListElement>> {
         &self.pricing_rules
     }
     /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>

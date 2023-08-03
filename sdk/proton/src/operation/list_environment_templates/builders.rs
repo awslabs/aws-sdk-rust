@@ -26,7 +26,7 @@ impl ListEnvironmentTemplatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder,
+    inner: crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder,
 }
 impl ListEnvironmentTemplatesFluentBuilder {
     /// Creates a new `ListEnvironmentTemplates`.
@@ -37,10 +37,7 @@ impl ListEnvironmentTemplatesFluentBuilder {
         }
     }
     /// Access the ListEnvironmentTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListEnvironmentTemplatesFluentBuilder {
             crate::operation::list_environment_templates::ListEnvironmentTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_templates::ListEnvironmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_templates::ListEnvironmentTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListEnvironmentTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListEnvironmentTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_templates::ListEnvironmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_templates::ListEnvironmentTemplatesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListEnvironmentTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_templates::ListEnvironmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_templates::ListEnvironmentTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListEnvironmentTemplatesFluentBuilder {
             crate::operation::list_environment_templates::ListEnvironmentTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_templates::ListEnvironmentTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_templates::ListEnvironmentTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator {
         crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>

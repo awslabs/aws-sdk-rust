@@ -26,7 +26,7 @@ impl DescribeConformancePacksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConformancePacksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder,
+    inner: crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder,
 }
 impl DescribeConformancePacksFluentBuilder {
     /// Creates a new `DescribeConformancePacks`.
@@ -37,10 +37,7 @@ impl DescribeConformancePacksFluentBuilder {
         }
     }
     /// Access the DescribeConformancePacks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeConformancePacksFluentBuilder {
             crate::operation::describe_conformance_packs::DescribeConformancePacks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conformance_packs::DescribeConformancePacksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conformance_packs::DescribeConformancePacksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeConformancePacksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeConformancePacksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conformance_packs::DescribeConformancePacksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conformance_packs::DescribeConformancePacksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conformance_packs::DescribeConformancePacksError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeConformancePacksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conformance_packs::DescribeConformancePacksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conformance_packs::DescribeConformancePacksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conformance_packs::DescribeConformancePacksError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl DescribeConformancePacksFluentBuilder {
             crate::operation::describe_conformance_packs::DescribeConformancePacks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conformance_packs::DescribeConformancePacksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conformance_packs::DescribeConformancePacksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator {
         crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ConformancePackNames`.
@@ -137,25 +120,17 @@ impl DescribeConformancePacksFluentBuilder {
     /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).
     ///
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
-    pub fn conformance_pack_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conformance_pack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conformance_pack_names(input.into());
         self
     }
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
-    pub fn set_conformance_pack_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_conformance_pack_names(input);
         self
     }
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
-    pub fn get_conformance_pack_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_conformance_pack_names()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>

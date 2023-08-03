@@ -108,10 +108,7 @@ impl ListPipesInputBuilder {
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedPipeState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::RequestedPipeState>) -> Self {
         self.desired_state = input;
         self
     }
@@ -125,10 +122,7 @@ impl ListPipesInputBuilder {
         self
     }
     /// <p>The state the pipe is in.</p>
-    pub fn set_current_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeState>,
-    ) -> Self {
+    pub fn set_current_state(mut self, input: ::std::option::Option<crate::types::PipeState>) -> Self {
         self.current_state = input;
         self
     }
@@ -137,18 +131,12 @@ impl ListPipesInputBuilder {
         &self.current_state
     }
     /// <p>The prefix matching the pipe source.</p>
-    pub fn source_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix matching the pipe source.</p>
-    pub fn set_source_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_prefix = input;
         self
     }
@@ -157,18 +145,12 @@ impl ListPipesInputBuilder {
         &self.source_prefix
     }
     /// <p>The prefix matching the pipe target.</p>
-    pub fn target_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix matching the pipe target.</p>
-    pub fn set_target_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_prefix = input;
         self
     }
@@ -205,12 +187,7 @@ impl ListPipesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListPipesInput`](crate::operation::list_pipes::ListPipesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipes::ListPipesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipes::ListPipesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_pipes::ListPipesInput {
             name_prefix: self.name_prefix,
             desired_state: self.desired_state,

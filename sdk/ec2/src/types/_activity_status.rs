@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActivityStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ActivityStatus {
             "fulfilled" => ActivityStatus::Fulfilled,
             "pending_fulfillment" => ActivityStatus::PendingFulfillment,
             "pending_termination" => ActivityStatus::PendingTermination,
-            other => {
-                ActivityStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActivityStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ActivityStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "error",
-            "fulfilled",
-            "pending_fulfillment",
-            "pending_termination",
-        ]
+        &["error", "fulfilled", "pending_fulfillment", "pending_termination"]
     }
 }
 impl ::std::convert::AsRef<str> for ActivityStatus {

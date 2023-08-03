@@ -58,15 +58,11 @@ impl DescribeStateMachineForExecutionOutput {
         self.update_date.as_ref()
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TracingConfiguration> {
+    pub fn tracing_configuration(&self) -> ::std::option::Option<&crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
@@ -107,7 +103,7 @@ impl ::aws_http::request_id::RequestId for DescribeStateMachineForExecutionOutpu
 }
 impl DescribeStateMachineForExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStateMachineForExecutionOutput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput).
-    pub fn builder() -> crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionOutputBuilder {
         crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionOutputBuilder::default()
     }
 }
@@ -130,18 +126,12 @@ pub struct DescribeStateMachineForExecutionOutputBuilder {
 }
 impl DescribeStateMachineForExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -197,10 +187,7 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self
     }
     /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
-    pub fn set_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date = input;
         self
     }
@@ -214,17 +201,12 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
@@ -233,17 +215,12 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn set_tracing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TracingConfiguration>,
-    ) -> Self {
+    pub fn set_tracing_configuration(mut self, input: ::std::option::Option<crate::types::TracingConfiguration>) -> Self {
         self.tracing_configuration = input;
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn get_tracing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+    pub fn get_tracing_configuration(&self) -> &::std::option::Option<crate::types::TracingConfiguration> {
         &self.tracing_configuration
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
@@ -301,28 +278,18 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStateMachineForExecutionOutput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput).
-    pub fn build(self) -> crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput{
+    pub fn build(self) -> crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput {
         crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput {
-            state_machine_arn: self.state_machine_arn
-            ,
-            name: self.name
-            ,
-            definition: self.definition
-            ,
-            role_arn: self.role_arn
-            ,
-            update_date: self.update_date
-            ,
-            logging_configuration: self.logging_configuration
-            ,
-            tracing_configuration: self.tracing_configuration
-            ,
-            map_run_arn: self.map_run_arn
-            ,
-            label: self.label
-            ,
-            revision_id: self.revision_id
-            ,
+            state_machine_arn: self.state_machine_arn,
+            name: self.name,
+            definition: self.definition,
+            role_arn: self.role_arn,
+            update_date: self.update_date,
+            logging_configuration: self.logging_configuration,
+            tracing_configuration: self.tracing_configuration,
+            map_run_arn: self.map_run_arn,
+            label: self.label,
+            revision_id: self.revision_id,
             _request_id: self._request_id,
         }
     }

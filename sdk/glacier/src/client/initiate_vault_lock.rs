@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`InitiateVaultLockOutput`](crate::operation::initiate_vault_lock::InitiateVaultLockOutput) with field(s):
     ///   - [`lock_id(Option<String>)`](crate::operation::initiate_vault_lock::InitiateVaultLockOutput::lock_id): <p>The lock ID, which is used to complete the vault locking process.</p>
     /// - On failure, responds with [`SdkError<InitiateVaultLockError>`](crate::operation::initiate_vault_lock::InitiateVaultLockError)
-    pub fn initiate_vault_lock(
-        &self,
-    ) -> crate::operation::initiate_vault_lock::builders::InitiateVaultLockFluentBuilder {
-        crate::operation::initiate_vault_lock::builders::InitiateVaultLockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn initiate_vault_lock(&self) -> crate::operation::initiate_vault_lock::builders::InitiateVaultLockFluentBuilder {
+        crate::operation::initiate_vault_lock::builders::InitiateVaultLockFluentBuilder::new(self.handle.clone())
     }
 }

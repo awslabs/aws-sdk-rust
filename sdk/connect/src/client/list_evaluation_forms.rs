@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`evaluation_form_summary_list(Option<Vec<EvaluationFormSummary>>)`](crate::operation::list_evaluation_forms::ListEvaluationFormsOutput::evaluation_form_summary_list): <p>Provides details about a list of evaluation forms belonging to an instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_evaluation_forms::ListEvaluationFormsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListEvaluationFormsError>`](crate::operation::list_evaluation_forms::ListEvaluationFormsError)
-    pub fn list_evaluation_forms(
-        &self,
-    ) -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsFluentBuilder {
-        crate::operation::list_evaluation_forms::builders::ListEvaluationFormsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_evaluation_forms(&self) -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsFluentBuilder {
+        crate::operation::list_evaluation_forms::builders::ListEvaluationFormsFluentBuilder::new(self.handle.clone())
     }
 }

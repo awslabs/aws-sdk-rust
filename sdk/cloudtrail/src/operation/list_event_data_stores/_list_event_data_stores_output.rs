@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEventDataStoresOutput {
 }
 impl ListEventDataStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListEventDataStoresOutput`](crate::operation::list_event_data_stores::ListEventDataStoresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_event_data_stores::builders::ListEventDataStoresOutputBuilder {
+    pub fn builder() -> crate::operation::list_event_data_stores::builders::ListEventDataStoresOutputBuilder {
         crate::operation::list_event_data_stores::builders::ListEventDataStoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventDataStoresOutput`](crate::operation::list_event_data_stores::ListEventDataStoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventDataStoresOutputBuilder {
-    pub(crate) event_data_stores:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>>,
+    pub(crate) event_data_stores: ::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListEventDataStoresOutputBuilder {
         self
     }
     /// <p>Contains information about event data stores in the account, in the current Region.</p>
-    pub fn set_event_data_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>>,
-    ) -> Self {
+    pub fn set_event_data_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>>) -> Self {
         self.event_data_stores = input;
         self
     }
     /// <p>Contains information about event data stores in the account, in the current Region.</p>
-    pub fn get_event_data_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>> {
+    pub fn get_event_data_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>> {
         &self.event_data_stores
     }
     /// <p>A token you can use to get the next page of results.</p>

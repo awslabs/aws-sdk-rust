@@ -58,15 +58,12 @@ impl DescribedWorkflow {
 
 /// A builder for [`DescribedWorkflow`](crate::types::DescribedWorkflow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribedWorkflowBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    pub(crate) on_exception_steps:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
+    pub(crate) on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -111,10 +108,7 @@ impl DescribedWorkflowBuilder {
         self
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.steps = input;
         self
     }
@@ -134,17 +128,12 @@ impl DescribedWorkflowBuilder {
         self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    pub fn set_on_exception_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    ) -> Self {
+    pub fn set_on_exception_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.on_exception_steps = input;
         self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    pub fn get_on_exception_steps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+    pub fn get_on_exception_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
         &self.on_exception_steps
     }
     /// <p>A unique identifier for the workflow.</p>
@@ -173,10 +162,7 @@ impl DescribedWorkflowBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

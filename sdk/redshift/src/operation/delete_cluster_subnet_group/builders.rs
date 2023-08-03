@@ -26,7 +26,7 @@ impl DeleteClusterSubnetGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterSubnetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupInputBuilder,
+    inner: crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupInputBuilder,
 }
 impl DeleteClusterSubnetGroupFluentBuilder {
     /// Creates a new `DeleteClusterSubnetGroup`.
@@ -37,7 +37,7 @@ impl DeleteClusterSubnetGroupFluentBuilder {
         }
     }
     /// Access the DeleteClusterSubnetGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteClusterSubnetGroupFluentBuilder {
             crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteClusterSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteClusterSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteClusterSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteClusterSubnetGroupFluentBuilder {
             crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the cluster subnet group name to be deleted.</p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_subnet_group_name(input.into());
         self
     }
     /// <p>The name of the cluster subnet group name to be deleted.</p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_subnet_group_name(input);
         self
     }

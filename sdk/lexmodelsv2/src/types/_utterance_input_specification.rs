@@ -17,9 +17,7 @@ impl UtteranceInputSpecification {
         self.text_input.as_deref()
     }
     /// <p>Contains information about the audio input for an utterance.</p>
-    pub fn audio_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UtteranceAudioInputSpecification> {
+    pub fn audio_input(&self) -> ::std::option::Option<&crate::types::UtteranceAudioInputSpecification> {
         self.audio_input.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl UtteranceInputSpecification {
 
 /// A builder for [`UtteranceInputSpecification`](crate::types::UtteranceInputSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceInputSpecificationBuilder {
     pub(crate) text_input: ::std::option::Option<::std::string::String>,
     pub(crate) audio_input: ::std::option::Option<crate::types::UtteranceAudioInputSpecification>,
@@ -60,17 +56,12 @@ impl UtteranceInputSpecificationBuilder {
         self
     }
     /// <p>Contains information about the audio input for an utterance.</p>
-    pub fn set_audio_input(
-        mut self,
-        input: ::std::option::Option<crate::types::UtteranceAudioInputSpecification>,
-    ) -> Self {
+    pub fn set_audio_input(mut self, input: ::std::option::Option<crate::types::UtteranceAudioInputSpecification>) -> Self {
         self.audio_input = input;
         self
     }
     /// <p>Contains information about the audio input for an utterance.</p>
-    pub fn get_audio_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::UtteranceAudioInputSpecification> {
+    pub fn get_audio_input(&self) -> &::std::option::Option<crate::types::UtteranceAudioInputSpecification> {
         &self.audio_input
     }
     /// Consumes the builder and constructs a [`UtteranceInputSpecification`](crate::types::UtteranceInputSpecification).

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeImageTagsOutput {
 }
 impl DescribeImageTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageTagsOutput`](crate::operation::describe_image_tags::DescribeImageTagsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_tags::builders::DescribeImageTagsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_image_tags::builders::DescribeImageTagsOutputBuilder {
         crate::operation::describe_image_tags::builders::DescribeImageTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageTagsOutput`](crate::operation::describe_image_tags::DescribeImageTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageTagsOutputBuilder {
-    pub(crate) image_tag_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImageTagDetail>>,
+    pub(crate) image_tag_details: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribeImageTagsOutputBuilder {
         self
     }
     /// <p>The image tag details for the images in the requested repository.</p>
-    pub fn set_image_tag_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagDetail>>,
-    ) -> Self {
+    pub fn set_image_tag_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagDetail>>) -> Self {
         self.image_tag_details = input;
         self
     }
     /// <p>The image tag details for the images in the requested repository.</p>
-    pub fn get_image_tag_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageTagDetail>> {
+    pub fn get_image_tag_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageTagDetail>> {
         &self.image_tag_details
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`PhoneNumberValidateOutput`](crate::operation::phone_number_validate::PhoneNumberValidateOutput) with field(s):
     ///   - [`number_validate_response(Option<NumberValidateResponse>)`](crate::operation::phone_number_validate::PhoneNumberValidateOutput::number_validate_response): <p>Provides information about a phone number.</p>
     /// - On failure, responds with [`SdkError<PhoneNumberValidateError>`](crate::operation::phone_number_validate::PhoneNumberValidateError)
-    pub fn phone_number_validate(
-        &self,
-    ) -> crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder {
-        crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn phone_number_validate(&self) -> crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder {
+        crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder::new(self.handle.clone())
     }
 }

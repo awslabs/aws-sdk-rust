@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`key_arn(Option<String>)`](crate::operation::translate_pin_data::TranslatePinDataOutput::key_arn): <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to encrypt outgoing PIN block data after translation.</p>
     ///   - [`key_check_value(Option<String>)`](crate::operation::translate_pin_data::TranslatePinDataOutput::key_check_value): <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     /// - On failure, responds with [`SdkError<TranslatePinDataError>`](crate::operation::translate_pin_data::TranslatePinDataError)
-    pub fn translate_pin_data(
-        &self,
-    ) -> crate::operation::translate_pin_data::builders::TranslatePinDataFluentBuilder {
-        crate::operation::translate_pin_data::builders::TranslatePinDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn translate_pin_data(&self) -> crate::operation::translate_pin_data::builders::TranslatePinDataFluentBuilder {
+        crate::operation::translate_pin_data::builders::TranslatePinDataFluentBuilder::new(self.handle.clone())
     }
 }

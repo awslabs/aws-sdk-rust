@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateFirewallRuleOutput {
 }
 impl UpdateFirewallRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleOutput`](crate::operation::update_firewall_rule::UpdateFirewallRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_firewall_rule::builders::UpdateFirewallRuleOutputBuilder {
+    pub fn builder() -> crate::operation::update_firewall_rule::builders::UpdateFirewallRuleOutputBuilder {
         crate::operation::update_firewall_rule::builders::UpdateFirewallRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallRuleOutput`](crate::operation::update_firewall_rule::UpdateFirewallRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleOutputBuilder {
     pub(crate) firewall_rule: ::std::option::Option<crate::types::FirewallRule>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateFirewallRuleOutputBuilder {
         self
     }
     /// <p>The firewall rule that you just updated. </p>
-    pub fn set_firewall_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallRule>,
-    ) -> Self {
+    pub fn set_firewall_rule(mut self, input: ::std::option::Option<crate::types::FirewallRule>) -> Self {
         self.firewall_rule = input;
         self
     }

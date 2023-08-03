@@ -12,12 +12,10 @@ pub struct DeleteMultiplexProgramOutput {
     pub multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     /// The packet identifier map for this multiplex program.
     #[doc(hidden)]
-    pub packet_identifiers_map:
-        ::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap>,
+    pub packet_identifiers_map: ::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap>,
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
     #[doc(hidden)]
-    pub pipeline_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>>,
+    pub pipeline_details: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>>,
     /// The name of the multiplex program.
     #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
@@ -29,21 +27,15 @@ impl DeleteMultiplexProgramOutput {
         self.channel_id.as_deref()
     }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
+    pub fn multiplex_program_settings(&self) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
         self.multiplex_program_settings.as_ref()
     }
     /// The packet identifier map for this multiplex program.
-    pub fn packet_identifiers_map(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiplexProgramPacketIdentifiersMap> {
+    pub fn packet_identifiers_map(&self) -> ::std::option::Option<&crate::types::MultiplexProgramPacketIdentifiersMap> {
         self.packet_identifiers_map.as_ref()
     }
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-    pub fn pipeline_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MultiplexProgramPipelineDetail]> {
+    pub fn pipeline_details(&self) -> ::std::option::Option<&[crate::types::MultiplexProgramPipelineDetail]> {
         self.pipeline_details.as_deref()
     }
     /// The name of the multiplex program.
@@ -58,26 +50,19 @@ impl ::aws_http::request_id::RequestId for DeleteMultiplexProgramOutput {
 }
 impl DeleteMultiplexProgramOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMultiplexProgramOutput`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramOutputBuilder {
         crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMultiplexProgramOutput`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMultiplexProgramOutputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
-    pub(crate) multiplex_program_settings:
-        ::std::option::Option<crate::types::MultiplexProgramSettings>,
-    pub(crate) packet_identifiers_map:
-        ::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap>,
-    pub(crate) pipeline_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>>,
+    pub(crate) multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
+    pub(crate) packet_identifiers_map: ::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap>,
+    pub(crate) pipeline_details: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -97,47 +82,31 @@ impl DeleteMultiplexProgramOutputBuilder {
         &self.channel_id
     }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(
-        mut self,
-        input: crate::types::MultiplexProgramSettings,
-    ) -> Self {
+    pub fn multiplex_program_settings(mut self, input: crate::types::MultiplexProgramSettings) -> Self {
         self.multiplex_program_settings = ::std::option::Option::Some(input);
         self
     }
     /// The settings for this multiplex program.
-    pub fn set_multiplex_program_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
-    ) -> Self {
+    pub fn set_multiplex_program_settings(mut self, input: ::std::option::Option<crate::types::MultiplexProgramSettings>) -> Self {
         self.multiplex_program_settings = input;
         self
     }
     /// The settings for this multiplex program.
-    pub fn get_multiplex_program_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
+    pub fn get_multiplex_program_settings(&self) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
         &self.multiplex_program_settings
     }
     /// The packet identifier map for this multiplex program.
-    pub fn packet_identifiers_map(
-        mut self,
-        input: crate::types::MultiplexProgramPacketIdentifiersMap,
-    ) -> Self {
+    pub fn packet_identifiers_map(mut self, input: crate::types::MultiplexProgramPacketIdentifiersMap) -> Self {
         self.packet_identifiers_map = ::std::option::Option::Some(input);
         self
     }
     /// The packet identifier map for this multiplex program.
-    pub fn set_packet_identifiers_map(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap>,
-    ) -> Self {
+    pub fn set_packet_identifiers_map(mut self, input: ::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap>) -> Self {
         self.packet_identifiers_map = input;
         self
     }
     /// The packet identifier map for this multiplex program.
-    pub fn get_packet_identifiers_map(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap> {
+    pub fn get_packet_identifiers_map(&self) -> &::std::option::Option<crate::types::MultiplexProgramPacketIdentifiersMap> {
         &self.packet_identifiers_map
     }
     /// Appends an item to `pipeline_details`.
@@ -152,17 +121,12 @@ impl DeleteMultiplexProgramOutputBuilder {
         self
     }
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-    pub fn set_pipeline_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>>,
-    ) -> Self {
+    pub fn set_pipeline_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>>) -> Self {
         self.pipeline_details = input;
         self
     }
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-    pub fn get_pipeline_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>> {
+    pub fn get_pipeline_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>> {
         &self.pipeline_details
     }
     /// The name of the multiplex program.

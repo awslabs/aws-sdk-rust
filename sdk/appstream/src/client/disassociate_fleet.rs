@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`stack_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_fleet::builders::DisassociateFleetFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::disassociate_fleet::builders::DisassociateFleetFluentBuilder::set_stack_name): <p>The name of the stack.</p>
     /// - On success, responds with [`DisassociateFleetOutput`](crate::operation::disassociate_fleet::DisassociateFleetOutput)
     /// - On failure, responds with [`SdkError<DisassociateFleetError>`](crate::operation::disassociate_fleet::DisassociateFleetError)
-    pub fn disassociate_fleet(
-        &self,
-    ) -> crate::operation::disassociate_fleet::builders::DisassociateFleetFluentBuilder {
-        crate::operation::disassociate_fleet::builders::DisassociateFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_fleet(&self) -> crate::operation::disassociate_fleet::builders::DisassociateFleetFluentBuilder {
+        crate::operation::disassociate_fleet::builders::DisassociateFleetFluentBuilder::new(self.handle.clone())
     }
 }

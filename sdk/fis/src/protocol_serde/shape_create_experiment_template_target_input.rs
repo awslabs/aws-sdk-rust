@@ -31,7 +31,10 @@ pub fn ser_create_experiment_template_target_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_experiment_template_target_input_filter::ser_experiment_template_target_input_filter(&mut object_12, item_11)?;
+                crate::protocol_serde::shape_experiment_template_target_input_filter::ser_experiment_template_target_input_filter(
+                    &mut object_12,
+                    item_11,
+                )?;
                 object_12.finish();
             }
         }

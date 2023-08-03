@@ -7,10 +7,7 @@ pub fn ser_chat_channel(
         crate::types::ChatChannel::Empty(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_6.key("empty").start_object();
-            crate::protocol_serde::shape_empty_chat_channel::ser_empty_chat_channel(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_empty_chat_channel::ser_empty_chat_channel(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::ChatChannel::ChatbotSns(inner) => {
@@ -22,30 +19,16 @@ pub fn ser_chat_channel(
             }
             array_2.finish();
         }
-        crate::types::ChatChannel::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ChatChannel",
-                ),
-            )
-        }
+        crate::types::ChatChannel::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("ChatChannel")),
     }
     Ok(())
 }
 
 pub(crate) fn de_chat_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ChatChannel>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ChatChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -55,47 +38,38 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "empty" => {
-                                Some(crate::types::ChatChannel::Empty(
-                                    crate::protocol_serde::shape_empty_chat_channel::de_empty_chat_channel(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'empty' cannot be null"))?
-                                ))
-                            }
-                            "chatbotSns" => {
-                                Some(crate::types::ChatChannel::ChatbotSns(
-                                    crate::protocol_serde::shape_chatbot_sns_configuration_set::de_chatbot_sns_configuration_set(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'chatbotSns' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::ChatChannel::Unknown)
-                                                                    }
-                        };
+                        "empty" => Some(crate::types::ChatChannel::Empty(
+                            crate::protocol_serde::shape_empty_chat_channel::de_empty_chat_channel(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'empty' cannot be null"))?,
+                        )),
+                        "chatbotSns" => Some(crate::types::ChatChannel::ChatbotSns(
+                            crate::protocol_serde::shape_chatbot_sns_configuration_set::de_chatbot_sns_configuration_set(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'chatbotSns' cannot be null"),
+                            )?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::ChatChannel::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

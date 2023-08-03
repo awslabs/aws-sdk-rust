@@ -10,10 +10,7 @@ impl FailoverDbClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::failover_db_cluster::FailoverDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_db_cluster::FailoverDBClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_db_cluster::FailoverDBClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.failover_db_cluster();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl FailoverDBClusterFluentBuilder {
         }
     }
     /// Access the FailoverDBCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl FailoverDBClusterFluentBuilder {
             crate::operation::failover_db_cluster::FailoverDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_db_cluster::FailoverDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_db_cluster::FailoverDBClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl FailoverDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl FailoverDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::failover_db_cluster::FailoverDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_db_cluster::FailoverDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_db_cluster::FailoverDBClusterError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl FailoverDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::failover_db_cluster::FailoverDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_db_cluster::FailoverDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_db_cluster::FailoverDBClusterError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl FailoverDBClusterFluentBuilder {
             crate::operation::failover_db_cluster::FailoverDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_db_cluster::FailoverDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_db_cluster::FailoverDBClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +117,7 @@ impl FailoverDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -145,10 +126,7 @@ impl FailoverDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -163,29 +141,21 @@ impl FailoverDBClusterFluentBuilder {
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
-    pub fn target_db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_db_instance_identifier(input.into());
         self
     }
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
-    pub fn set_target_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_instance_identifier(input);
         self
     }
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
-    pub fn get_target_db_instance_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_instance_identifier()
     }
 }

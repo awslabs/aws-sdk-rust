@@ -28,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DeprovisionPublicIpv4PoolCidrOutput {
 }
 impl DeprovisionPublicIpv4PoolCidrOutput {
     /// Creates a new builder-style object to manufacture [`DeprovisionPublicIpv4PoolCidrOutput`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput).
-    pub fn builder() -> crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrOutputBuilder{
+    pub fn builder() -> crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrOutputBuilder {
         crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeprovisionPublicIpv4PoolCidrOutput`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprovisionPublicIpv4PoolCidrOutputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) deprovisioned_addresses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deprovisioned_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeprovisionPublicIpv4PoolCidrOutputBuilder {
@@ -64,27 +61,19 @@ impl DeprovisionPublicIpv4PoolCidrOutputBuilder {
     /// To override the contents of this collection use [`set_deprovisioned_addresses`](Self::set_deprovisioned_addresses).
     ///
     /// <p>The deprovisioned CIDRs.</p>
-    pub fn deprovisioned_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deprovisioned_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deprovisioned_addresses.unwrap_or_default();
         v.push(input.into());
         self.deprovisioned_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The deprovisioned CIDRs.</p>
-    pub fn set_deprovisioned_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deprovisioned_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deprovisioned_addresses = input;
         self
     }
     /// <p>The deprovisioned CIDRs.</p>
-    pub fn get_deprovisioned_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deprovisioned_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.deprovisioned_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,10 +86,7 @@ impl DeprovisionPublicIpv4PoolCidrOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeprovisionPublicIpv4PoolCidrOutput`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput
-    {
+    pub fn build(self) -> crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput {
         crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput {
             pool_id: self.pool_id,
             deprovisioned_addresses: self.deprovisioned_addresses,

@@ -36,9 +36,7 @@ impl GetTemplateStepInput {
 
 /// A builder for [`GetTemplateStepInput`](crate::operation::get_template_step::GetTemplateStepInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateStepInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl GetTemplateStepInputBuilder {
         &self.template_id
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl GetTemplateStepInputBuilder {
     /// Consumes the builder and constructs a [`GetTemplateStepInput`](crate::operation::get_template_step::GetTemplateStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_template_step::GetTemplateStepInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_template_step::GetTemplateStepInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_template_step::GetTemplateStepInput {
             id: self.id,
             template_id: self.template_id,

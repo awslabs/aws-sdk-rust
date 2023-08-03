@@ -10,10 +10,7 @@ impl DescribeEndpointsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoints::DescribeEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoints::DescribeEndpointsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoints::DescribeEndpointsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_endpoints();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeEndpointsFluentBuilder {
         }
     }
     /// Access the DescribeEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeEndpointsFluentBuilder {
             crate::operation::describe_endpoints::DescribeEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoints::DescribeEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoints::DescribeEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoints::DescribeEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoints::DescribeEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoints::DescribeEndpointsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoints::DescribeEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoints::DescribeEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoints::DescribeEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeEndpointsFluentBuilder {
             crate::operation::describe_endpoints::DescribeEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoints::DescribeEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoints::DescribeEndpointsError>,
     > {
         self.customize_middleware().await
     }

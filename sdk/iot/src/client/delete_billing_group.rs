@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`expected_version(i64)`](crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::set_expected_version): <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     /// - On success, responds with [`DeleteBillingGroupOutput`](crate::operation::delete_billing_group::DeleteBillingGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteBillingGroupError>`](crate::operation::delete_billing_group::DeleteBillingGroupError)
-    pub fn delete_billing_group(
-        &self,
-    ) -> crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder {
-        crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_billing_group(&self) -> crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder {
+        crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

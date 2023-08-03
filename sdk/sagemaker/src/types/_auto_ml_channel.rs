@@ -65,9 +65,7 @@ impl AutoMlChannel {
 
 /// A builder for [`AutoMlChannel`](crate::types::AutoMlChannel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlChannelBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::AutoMlDataSource>,
     pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,
@@ -83,10 +81,7 @@ impl AutoMlChannelBuilder {
         self
     }
     /// <p>The data source for an AutoML channel.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlDataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::AutoMlDataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -100,10 +95,7 @@ impl AutoMlChannelBuilder {
         self
     }
     /// <p>You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.</p>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionType>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::CompressionType>) -> Self {
         self.compression_type = input;
         self
     }
@@ -112,18 +104,12 @@ impl AutoMlChannelBuilder {
         &self.compression_type
     }
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
-    pub fn target_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
-    pub fn set_target_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_attribute_name = input;
         self
     }
@@ -151,10 +137,7 @@ impl AutoMlChannelBuilder {
         self
     }
     /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How to specify training and validation datasets</a>.</p>
-    pub fn set_channel_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlChannelType>,
-    ) -> Self {
+    pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::AutoMlChannelType>) -> Self {
         self.channel_type = input;
         self
     }
@@ -165,29 +148,21 @@ impl AutoMlChannelBuilder {
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    pub fn sample_weight_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sample_weight_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_weight_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    pub fn set_sample_weight_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sample_weight_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_weight_attribute_name = input;
         self
     }
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    pub fn get_sample_weight_attribute_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_sample_weight_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_weight_attribute_name
     }
     /// Consumes the builder and constructs a [`AutoMlChannel`](crate::types::AutoMlChannel).

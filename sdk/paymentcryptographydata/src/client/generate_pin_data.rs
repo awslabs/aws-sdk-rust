@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`encrypted_pin_block(Option<String>)`](crate::operation::generate_pin_data::GeneratePinDataOutput::encrypted_pin_block): <p>The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with ISO 9564 standard.</p>
     ///   - [`pin_data(Option<PinData>)`](crate::operation::generate_pin_data::GeneratePinDataOutput::pin_data): <p>The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.</p>
     /// - On failure, responds with [`SdkError<GeneratePinDataError>`](crate::operation::generate_pin_data::GeneratePinDataError)
-    pub fn generate_pin_data(
-        &self,
-    ) -> crate::operation::generate_pin_data::builders::GeneratePinDataFluentBuilder {
-        crate::operation::generate_pin_data::builders::GeneratePinDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn generate_pin_data(&self) -> crate::operation::generate_pin_data::builders::GeneratePinDataFluentBuilder {
+        crate::operation::generate_pin_data::builders::GeneratePinDataFluentBuilder::new(self.handle.clone())
     }
 }

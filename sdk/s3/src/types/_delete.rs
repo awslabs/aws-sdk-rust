@@ -30,9 +30,7 @@ impl Delete {
 
 /// A builder for [`Delete`](crate::types::Delete).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBuilder {
     pub(crate) objects: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>,
     pub(crate) quiet: ::std::option::Option<bool>,
@@ -50,17 +48,12 @@ impl DeleteBuilder {
         self
     }
     /// <p>The object to delete.</p>
-    pub fn set_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>,
-    ) -> Self {
+    pub fn set_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>) -> Self {
         self.objects = input;
         self
     }
     /// <p>The object to delete.</p>
-    pub fn get_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>> {
+    pub fn get_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>> {
         &self.objects
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>

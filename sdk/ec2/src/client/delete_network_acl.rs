@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`network_acl_id(impl ::std::convert::Into<String>)`](crate::operation::delete_network_acl::builders::DeleteNetworkAclFluentBuilder::network_acl_id) / [`set_network_acl_id(Option<String>)`](crate::operation::delete_network_acl::builders::DeleteNetworkAclFluentBuilder::set_network_acl_id): <p>The ID of the network ACL.</p>
     /// - On success, responds with [`DeleteNetworkAclOutput`](crate::operation::delete_network_acl::DeleteNetworkAclOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkAclError>`](crate::operation::delete_network_acl::DeleteNetworkAclError)
-    pub fn delete_network_acl(
-        &self,
-    ) -> crate::operation::delete_network_acl::builders::DeleteNetworkAclFluentBuilder {
-        crate::operation::delete_network_acl::builders::DeleteNetworkAclFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_network_acl(&self) -> crate::operation::delete_network_acl::builders::DeleteNetworkAclFluentBuilder {
+        crate::operation::delete_network_acl::builders::DeleteNetworkAclFluentBuilder::new(self.handle.clone())
     }
 }

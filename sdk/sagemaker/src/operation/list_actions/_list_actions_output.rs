@@ -35,12 +35,9 @@ impl ListActionsOutput {
 
 /// A builder for [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionsOutputBuilder {
-    pub(crate) action_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
+    pub(crate) action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListActionsOutputBuilder {
         self
     }
     /// <p>A list of actions and their properties.</p>
-    pub fn set_action_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
-    ) -> Self {
+    pub fn set_action_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>) -> Self {
         self.action_summaries = input;
         self
     }
     /// <p>A list of actions and their properties.</p>
-    pub fn get_action_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+    pub fn get_action_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
         &self.action_summaries
     }
     /// <p>A token for getting the next set of actions, if there are any.</p>

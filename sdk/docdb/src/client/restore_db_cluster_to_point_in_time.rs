@@ -18,7 +18,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreDbClusterToPointInTimeOutput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput::db_cluster): <p>Detailed information about a cluster. </p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterToPointInTimeError>`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError)
-    pub fn restore_db_cluster_to_point_in_time(&self) -> crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDBClusterToPointInTimeFluentBuilder{
+    pub fn restore_db_cluster_to_point_in_time(
+        &self,
+    ) -> crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDBClusterToPointInTimeFluentBuilder {
         crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDBClusterToPointInTimeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum QueryStateString {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for QueryStateString {
             "FINISHED" => QueryStateString::Finished,
             "PENDING" => QueryStateString::Pending,
             "WORKUNITS_AVAILABLE" => QueryStateString::WorkunitsAvailable,
-            other => {
-                QueryStateString::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => QueryStateString::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl QueryStateString {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ERROR",
-            "EXPIRED",
-            "FINISHED",
-            "PENDING",
-            "WORKUNITS_AVAILABLE",
-        ]
+        &["ERROR", "EXPIRED", "FINISHED", "PENDING", "WORKUNITS_AVAILABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for QueryStateString {

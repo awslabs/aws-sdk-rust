@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_assessments::ListAppAssessmentsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`assessment_summaries(Option<Vec<AppAssessmentSummary>>)`](crate::operation::list_app_assessments::ListAppAssessmentsOutput::assessment_summaries): <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
     /// - On failure, responds with [`SdkError<ListAppAssessmentsError>`](crate::operation::list_app_assessments::ListAppAssessmentsError)
-    pub fn list_app_assessments(
-        &self,
-    ) -> crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder {
-        crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_app_assessments(&self) -> crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder {
+        crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,15 +5,12 @@
 pub struct CreateEmailTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
-    pub create_template_message_body:
-        ::std::option::Option<crate::types::CreateTemplateMessageBody>,
+    pub create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,
 }
 impl CreateEmailTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateTemplateMessageBody> {
+    pub fn create_template_message_body(&self) -> ::std::option::Option<&crate::types::CreateTemplateMessageBody> {
         self.create_template_message_body.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateEmailTemplateOutput {
 }
 impl CreateEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder {
-        crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder {
+        crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEmailTemplateOutputBuilder {
-    pub(crate) create_template_message_body:
-        ::std::option::Option<crate::types::CreateTemplateMessageBody>,
+    pub(crate) create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,
 }
 impl CreateEmailTemplateOutputBuilder {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        mut self,
-        input: crate::types::CreateTemplateMessageBody,
-    ) -> Self {
+    pub fn create_template_message_body(mut self, input: crate::types::CreateTemplateMessageBody) -> Self {
         self.create_template_message_body = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn set_create_template_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
-    ) -> Self {
+    pub fn set_create_template_message_body(mut self, input: ::std::option::Option<crate::types::CreateTemplateMessageBody>) -> Self {
         self.create_template_message_body = input;
         self
     }
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn get_create_template_message_body(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateTemplateMessageBody> {
+    pub fn get_create_template_message_body(&self) -> &::std::option::Option<crate::types::CreateTemplateMessageBody> {
         &self.create_template_message_body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

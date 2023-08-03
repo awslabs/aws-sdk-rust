@@ -43,9 +43,7 @@ impl LambdaAction {
 
 /// A builder for [`LambdaAction`](crate::types::LambdaAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaActionBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl LambdaActionBuilder {
     /// <p>The invocation type of the AWS Lambda function. An invocation type of <code>RequestResponse</code> means that the execution of the function will immediately result in a response, and a value of <code>Event</code> means that the function will be invoked asynchronously. The default value is <code>Event</code>. For information about AWS Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p> <important>
     /// <p>There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use <code>Event</code> invocation in most cases. Use <code>RequestResponse</code> only when you want to make a mail flow decision, such as whether to stop the receipt rule or the receipt rule set.</p>
     /// </important>
-    pub fn set_invocation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InvocationType>,
-    ) -> Self {
+    pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::InvocationType>) -> Self {
         self.invocation_type = input;
         self
     }

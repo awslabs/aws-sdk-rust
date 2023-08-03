@@ -30,9 +30,7 @@ impl TextWithHighlights {
 
 /// A builder for [`TextWithHighlights`](crate::types::TextWithHighlights).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextWithHighlightsBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
@@ -64,17 +62,12 @@ impl TextWithHighlightsBuilder {
         self
     }
     /// <p>The beginning and end of the text that should be highlighted.</p>
-    pub fn set_highlights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
-    ) -> Self {
+    pub fn set_highlights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>) -> Self {
         self.highlights = input;
         self
     }
     /// <p>The beginning and end of the text that should be highlighted.</p>
-    pub fn get_highlights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
+    pub fn get_highlights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
         &self.highlights
     }
     /// Consumes the builder and constructs a [`TextWithHighlights`](crate::types::TextWithHighlights).

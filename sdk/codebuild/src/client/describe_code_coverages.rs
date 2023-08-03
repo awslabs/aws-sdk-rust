@@ -15,12 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
     ///   - [`code_coverages(Option<Vec<CodeCoverage>>)`](crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput::code_coverages): <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
     /// - On failure, responds with [`SdkError<DescribeCodeCoveragesError>`](crate::operation::describe_code_coverages::DescribeCodeCoveragesError)
-    pub fn describe_code_coverages(
-        &self,
-    ) -> crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesFluentBuilder
-    {
-        crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_code_coverages(&self) -> crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesFluentBuilder {
+        crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesFluentBuilder::new(self.handle.clone())
     }
 }

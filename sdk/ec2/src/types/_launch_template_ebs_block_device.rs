@@ -72,9 +72,7 @@ impl LaunchTemplateEbsBlockDevice {
 
 /// A builder for [`LaunchTemplateEbsBlockDevice`](crate::types::LaunchTemplateEbsBlockDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateEbsBlockDeviceBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
@@ -176,10 +174,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
         self
     }
     /// <p>The volume type.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }

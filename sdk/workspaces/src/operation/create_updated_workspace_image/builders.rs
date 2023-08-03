@@ -33,7 +33,7 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUpdatedWorkspaceImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder,
+    inner: crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder,
 }
 impl CreateUpdatedWorkspaceImageFluentBuilder {
     /// Creates a new `CreateUpdatedWorkspaceImage`.
@@ -44,7 +44,7 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
         }
     }
     /// Access the CreateUpdatedWorkspaceImage as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
             crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +112,7 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
             crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError>,
     > {
         self.customize_middleware().await
     }
@@ -156,18 +145,12 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The identifier of the source WorkSpace image.</p>
-    pub fn source_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_image_id(input.into());
         self
     }
     /// <p>The identifier of the source WorkSpace image.</p>
-    pub fn set_source_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_image_id(input);
         self
     }
@@ -189,10 +172,7 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
     /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
     /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

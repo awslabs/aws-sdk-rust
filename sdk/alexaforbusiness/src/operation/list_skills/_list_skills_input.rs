@@ -50,9 +50,7 @@ impl ListSkillsInput {
 
 /// A builder for [`ListSkillsInput`](crate::operation::list_skills::ListSkillsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSkillsInputBuilder {
     pub(crate) skill_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enablement_type: ::std::option::Option<crate::types::EnablementTypeFilter>,
@@ -62,18 +60,12 @@ pub struct ListSkillsInputBuilder {
 }
 impl ListSkillsInputBuilder {
     /// <p>The ARN of the skill group for which to list enabled skills.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the skill group for which to list enabled skills.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_arn = input;
         self
     }
@@ -87,17 +79,12 @@ impl ListSkillsInputBuilder {
         self
     }
     /// <p>Whether the skill is enabled under the user's account.</p>
-    pub fn set_enablement_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EnablementTypeFilter>,
-    ) -> Self {
+    pub fn set_enablement_type(mut self, input: ::std::option::Option<crate::types::EnablementTypeFilter>) -> Self {
         self.enablement_type = input;
         self
     }
     /// <p>Whether the skill is enabled under the user's account.</p>
-    pub fn get_enablement_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnablementTypeFilter> {
+    pub fn get_enablement_type(&self) -> &::std::option::Option<crate::types::EnablementTypeFilter> {
         &self.enablement_type
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
@@ -106,10 +93,7 @@ impl ListSkillsInputBuilder {
         self
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
-    pub fn set_skill_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SkillTypeFilter>,
-    ) -> Self {
+    pub fn set_skill_type(mut self, input: ::std::option::Option<crate::types::SkillTypeFilter>) -> Self {
         self.skill_type = input;
         self
     }
@@ -146,12 +130,7 @@ impl ListSkillsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSkillsInput`](crate::operation::list_skills::ListSkillsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_skills::ListSkillsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_skills::ListSkillsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_skills::ListSkillsInput {
             skill_group_arn: self.skill_group_arn,
             enablement_type: self.enablement_type,

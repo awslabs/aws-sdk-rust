@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`window_identities(Option<Vec<MaintenanceWindowIdentityForTarget>>)`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput::window_identities): <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput::next_token): <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowsForTargetError>`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError)
-    pub fn describe_maintenance_windows_for_target(&self) -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder{
-        crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::new(self.handle.clone())
+    pub fn describe_maintenance_windows_for_target(
+        &self,
+    ) -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder {
+        crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

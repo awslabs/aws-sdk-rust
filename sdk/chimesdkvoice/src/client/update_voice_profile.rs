@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVoiceProfileOutput`](crate::operation::update_voice_profile::UpdateVoiceProfileOutput) with field(s):
     ///   - [`voice_profile(Option<VoiceProfile>)`](crate::operation::update_voice_profile::UpdateVoiceProfileOutput::voice_profile): <p>The updated voice profile settings.</p>
     /// - On failure, responds with [`SdkError<UpdateVoiceProfileError>`](crate::operation::update_voice_profile::UpdateVoiceProfileError)
-    pub fn update_voice_profile(
-        &self,
-    ) -> crate::operation::update_voice_profile::builders::UpdateVoiceProfileFluentBuilder {
-        crate::operation::update_voice_profile::builders::UpdateVoiceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_voice_profile(&self) -> crate::operation::update_voice_profile::builders::UpdateVoiceProfileFluentBuilder {
+        crate::operation::update_voice_profile::builders::UpdateVoiceProfileFluentBuilder::new(self.handle.clone())
     }
 }

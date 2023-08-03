@@ -35,9 +35,7 @@ pub enum Error {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::types::error::ServerInternalException),
     /// <p>The digital signature method is unsupported. Try your request again.</p>
-    UnsupportedDigitalSignatureMethodException(
-        crate::types::error::UnsupportedDigitalSignatureMethodException,
-    ),
+    UnsupportedDigitalSignatureMethodException(crate::types::error::UnsupportedDigitalSignatureMethodException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -67,28 +65,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::accept_grant::AcceptGrantError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::accept_grant::AcceptGrantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_grant::AcceptGrantError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::accept_grant::AcceptGrantError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -98,59 +84,27 @@ where
 impl From<crate::operation::accept_grant::AcceptGrantError> for Error {
     fn from(err: crate::operation::accept_grant::AcceptGrantError) -> Self {
         match err {
-            crate::operation::accept_grant::AcceptGrantError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::accept_grant::AcceptGrantError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::accept_grant::AcceptGrantError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::operation::accept_grant::AcceptGrantError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::accept_grant::AcceptGrantError::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::operation::accept_grant::AcceptGrantError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::accept_grant::AcceptGrantError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::accept_grant::AcceptGrantError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::accept_grant::AcceptGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::accept_grant::AcceptGrantError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::accept_grant::AcceptGrantError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::accept_grant::AcceptGrantError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::accept_grant::AcceptGrantError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::accept_grant::AcceptGrantError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::accept_grant::AcceptGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::accept_grant::AcceptGrantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_in_license::CheckInLicenseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::check_in_license::CheckInLicenseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::check_in_license::CheckInLicenseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::check_in_license::CheckInLicenseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -163,7 +117,9 @@ impl From<crate::operation::check_in_license::CheckInLicenseError> for Error {
             crate::operation::check_in_license::CheckInLicenseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::check_in_license::CheckInLicenseError::AuthorizationException(inner) => Error::AuthorizationException(inner),
             crate::operation::check_in_license::CheckInLicenseError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::check_in_license::CheckInLicenseError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::check_in_license::CheckInLicenseError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::check_in_license::CheckInLicenseError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
             crate::operation::check_in_license::CheckInLicenseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::check_in_license::CheckInLicenseError::ServerInternalException(inner) => Error::ServerInternalException(inner),
@@ -172,32 +128,16 @@ impl From<crate::operation::check_in_license::CheckInLicenseError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -207,47 +147,49 @@ where
 impl From<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError> for Error {
     fn from(err: crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError) -> Self {
         match err {
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::EntitlementNotAllowedException(inner) => Error::EntitlementNotAllowedException(inner),
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::NoEntitlementsAllowedException(inner) => Error::NoEntitlementsAllowedException(inner),
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::EntitlementNotAllowedException(inner) => {
+                Error::EntitlementNotAllowedException(inner)
+            }
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::NoEntitlementsAllowedException(inner) => {
+                Error::NoEntitlementsAllowedException(inner)
+            }
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
             crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::RedirectException(inner) => Error::RedirectException(inner),
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::UnsupportedDigitalSignatureMethodException(inner) => Error::UnsupportedDigitalSignatureMethodException(inner),
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::UnsupportedDigitalSignatureMethodException(inner) => {
+                Error::UnsupportedDigitalSignatureMethodException(inner)
+            }
             crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_license::CheckoutLicenseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_license::CheckoutLicenseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -259,40 +201,34 @@ impl From<crate::operation::checkout_license::CheckoutLicenseError> for Error {
         match err {
             crate::operation::checkout_license::CheckoutLicenseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::checkout_license::CheckoutLicenseError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::checkout_license::CheckoutLicenseError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::checkout_license::CheckoutLicenseError::NoEntitlementsAllowedException(inner) => Error::NoEntitlementsAllowedException(inner),
+            crate::operation::checkout_license::CheckoutLicenseError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::checkout_license::CheckoutLicenseError::NoEntitlementsAllowedException(inner) => {
+                Error::NoEntitlementsAllowedException(inner)
+            }
             crate::operation::checkout_license::CheckoutLicenseError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
             crate::operation::checkout_license::CheckoutLicenseError::RedirectException(inner) => Error::RedirectException(inner),
             crate::operation::checkout_license::CheckoutLicenseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::checkout_license::CheckoutLicenseError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::checkout_license::CheckoutLicenseError::UnsupportedDigitalSignatureMethodException(inner) => Error::UnsupportedDigitalSignatureMethodException(inner),
+            crate::operation::checkout_license::CheckoutLicenseError::UnsupportedDigitalSignatureMethodException(inner) => {
+                Error::UnsupportedDigitalSignatureMethodException(inner)
+            }
             crate::operation::checkout_license::CheckoutLicenseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::checkout_license::CheckoutLicenseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::create_grant::CreateGrantError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_grant::CreateGrantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant::CreateGrantError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_grant::CreateGrantError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -302,59 +238,27 @@ where
 impl From<crate::operation::create_grant::CreateGrantError> for Error {
     fn from(err: crate::operation::create_grant::CreateGrantError) -> Self {
         match err {
-            crate::operation::create_grant::CreateGrantError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_grant::CreateGrantError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::create_grant::CreateGrantError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::operation::create_grant::CreateGrantError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::create_grant::CreateGrantError::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::operation::create_grant::CreateGrantError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::create_grant::CreateGrantError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::create_grant::CreateGrantError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_grant::CreateGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_grant::CreateGrantError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::create_grant::CreateGrantError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_grant::CreateGrantError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::create_grant::CreateGrantError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_grant::CreateGrantError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::create_grant::CreateGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_grant::CreateGrantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant_version::CreateGrantVersionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_grant_version::CreateGrantVersionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant_version::CreateGrantVersionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_grant_version::CreateGrantVersionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -366,41 +270,31 @@ impl From<crate::operation::create_grant_version::CreateGrantVersionError> for E
         match err {
             crate::operation::create_grant_version::CreateGrantVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_grant_version::CreateGrantVersionError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::create_grant_version::CreateGrantVersionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::create_grant_version::CreateGrantVersionError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::create_grant_version::CreateGrantVersionError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_grant_version::CreateGrantVersionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_grant_version::CreateGrantVersionError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::create_grant_version::CreateGrantVersionError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
             crate::operation::create_grant_version::CreateGrantVersionError::ServerInternalException(inner) => Error::ServerInternalException(inner),
             crate::operation::create_grant_version::CreateGrantVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_grant_version::CreateGrantVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license::CreateLicenseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_license::CreateLicenseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license::CreateLicenseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_license::CreateLicenseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -412,7 +306,9 @@ impl From<crate::operation::create_license::CreateLicenseError> for Error {
         match err {
             crate::operation::create_license::CreateLicenseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_license::CreateLicenseError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::create_license::CreateLicenseError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_license::CreateLicenseError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::create_license::CreateLicenseError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
             crate::operation::create_license::CreateLicenseError::RedirectException(inner) => Error::RedirectException(inner),
             crate::operation::create_license::CreateLicenseError::ServerInternalException(inner) => Error::ServerInternalException(inner),
@@ -421,10 +317,51 @@ impl From<crate::operation::create_license::CreateLicenseError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_license_configuration::CreateLicenseConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_license_configuration::CreateLicenseConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_license_configuration::CreateLicenseConfigurationError> for Error {
+    fn from(err: crate::operation::create_license_configuration::CreateLicenseConfigurationError) -> Self {
+        match err {
+            crate::operation::create_license_configuration::CreateLicenseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_license_configuration::CreateLicenseConfigurationError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::create_license_configuration::CreateLicenseConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_license_configuration::CreateLicenseConfigurationError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::create_license_configuration::CreateLicenseConfigurationError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_license_configuration::CreateLicenseConfigurationError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::create_license_configuration::CreateLicenseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError,
+            crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceError,
             R,
         >,
     > for Error
@@ -433,53 +370,18 @@ where
 {
     fn from(
         err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError,
+            crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
-        }
-    }
-}
-impl From<crate::operation::create_license_configuration::CreateLicenseConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::create_license_configuration::CreateLicenseConfigurationError,
-    ) -> Self {
-        match err {
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
         }
     }
 }
@@ -496,60 +398,72 @@ impl From<crate::operation::create_license_conversion_task_for_resource::CreateL
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError, R>) -> Self {
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError> for Error {
     fn from(err: crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError) -> Self {
         match err {
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::RateLimitExceededException(
+                inner,
+            ) => Error::RateLimitExceededException(inner),
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::ResourceLimitExceededException(
+                inner,
+            ) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license_version::CreateLicenseVersionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_license_version::CreateLicenseVersionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license_version::CreateLicenseVersionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_license_version::CreateLicenseVersionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -560,39 +474,35 @@ impl From<crate::operation::create_license_version::CreateLicenseVersionError> f
     fn from(err: crate::operation::create_license_version::CreateLicenseVersionError) -> Self {
         match err {
             crate::operation::create_license_version::CreateLicenseVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_license_version::CreateLicenseVersionError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::create_license_version::CreateLicenseVersionError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
             crate::operation::create_license_version::CreateLicenseVersionError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_license_version::CreateLicenseVersionError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::create_license_version::CreateLicenseVersionError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
             crate::operation::create_license_version::CreateLicenseVersionError::RedirectException(inner) => Error::RedirectException(inner),
-            crate::operation::create_license_version::CreateLicenseVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_license_version::CreateLicenseVersionError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::create_license_version::CreateLicenseVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_license_version::CreateLicenseVersionError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::create_license_version::CreateLicenseVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_license_version::CreateLicenseVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_token::CreateTokenError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -602,58 +512,28 @@ where
 impl From<crate::operation::create_token::CreateTokenError> for Error {
     fn from(err: crate::operation::create_token::CreateTokenError) -> Self {
         match err {
-            crate::operation::create_token::CreateTokenError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_token::CreateTokenError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::create_token::CreateTokenError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::create_token::CreateTokenError::RedirectException(inner) => {
-                Error::RedirectException(inner)
-            }
-            crate::operation::create_token::CreateTokenError::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::operation::create_token::CreateTokenError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::create_token::CreateTokenError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::create_token::CreateTokenError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::create_token::CreateTokenError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_token::CreateTokenError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_token::CreateTokenError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::create_token::CreateTokenError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::create_token::CreateTokenError::RedirectException(inner) => Error::RedirectException(inner),
+            crate::operation::create_token::CreateTokenError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_token::CreateTokenError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_token::CreateTokenError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::create_token::CreateTokenError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_token::CreateTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::delete_grant::DeleteGrantError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_grant::DeleteGrantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_grant::DeleteGrantError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_grant::DeleteGrantError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -663,59 +543,27 @@ where
 impl From<crate::operation::delete_grant::DeleteGrantError> for Error {
     fn from(err: crate::operation::delete_grant::DeleteGrantError) -> Self {
         match err {
-            crate::operation::delete_grant::DeleteGrantError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_grant::DeleteGrantError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::delete_grant::DeleteGrantError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::operation::delete_grant::DeleteGrantError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::delete_grant::DeleteGrantError::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::operation::delete_grant::DeleteGrantError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::delete_grant::DeleteGrantError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_grant::DeleteGrantError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_grant::DeleteGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_grant::DeleteGrantError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::delete_grant::DeleteGrantError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_grant::DeleteGrantError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::delete_grant::DeleteGrantError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::delete_grant::DeleteGrantError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::delete_grant::DeleteGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_grant::DeleteGrantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license::DeleteLicenseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_license::DeleteLicenseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license::DeleteLicenseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_license::DeleteLicenseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -728,7 +576,9 @@ impl From<crate::operation::delete_license::DeleteLicenseError> for Error {
             crate::operation::delete_license::DeleteLicenseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_license::DeleteLicenseError::AuthorizationException(inner) => Error::AuthorizationException(inner),
             crate::operation::delete_license::DeleteLicenseError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::delete_license::DeleteLicenseError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_license::DeleteLicenseError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::delete_license::DeleteLicenseError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
             crate::operation::delete_license::DeleteLicenseError::RedirectException(inner) => Error::RedirectException(inner),
             crate::operation::delete_license::DeleteLicenseError::ServerInternalException(inner) => Error::ServerInternalException(inner),
@@ -737,104 +587,110 @@ impl From<crate::operation::delete_license::DeleteLicenseError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::delete_license_configuration::DeleteLicenseConfigurationError,
-    ) -> Self {
+impl From<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError> for Error {
+    fn from(err: crate::operation::delete_license_configuration::DeleteLicenseConfigurationError) -> Self {
         match err {
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::delete_license_configuration::DeleteLicenseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError> for Error {
-    fn from(err: crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError) -> Self {
-        match err {
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::delete_token::DeleteTokenError, R>>
+    From<::aws_smithy_http::result::SdkError<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_token::DeleteTokenError,
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError> for Error {
+    fn from(err: crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError) -> Self {
+        match err {
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::RateLimitExceededException(
+                inner,
+            ) => Error::RateLimitExceededException(inner),
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::ResourceLimitExceededException(
+                inner,
+            ) => Error::ResourceLimitExceededException(inner),
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_token::DeleteTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_token::DeleteTokenError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -844,59 +700,27 @@ where
 impl From<crate::operation::delete_token::DeleteTokenError> for Error {
     fn from(err: crate::operation::delete_token::DeleteTokenError) -> Self {
         match err {
-            crate::operation::delete_token::DeleteTokenError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_token::DeleteTokenError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::delete_token::DeleteTokenError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::delete_token::DeleteTokenError::RedirectException(inner) => {
-                Error::RedirectException(inner)
-            }
-            crate::operation::delete_token::DeleteTokenError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_token::DeleteTokenError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::delete_token::DeleteTokenError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_token::DeleteTokenError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_token::DeleteTokenError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_token::DeleteTokenError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::delete_token::DeleteTokenError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::delete_token::DeleteTokenError::RedirectException(inner) => Error::RedirectException(inner),
+            crate::operation::delete_token::DeleteTokenError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_token::DeleteTokenError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::delete_token::DeleteTokenError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_token::DeleteTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::extend_license_consumption::ExtendLicenseConsumptionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::extend_license_consumption::ExtendLicenseConsumptionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -904,47 +728,43 @@ where
     }
 }
 impl From<crate::operation::extend_license_consumption::ExtendLicenseConsumptionError> for Error {
-    fn from(
-        err: crate::operation::extend_license_consumption::ExtendLicenseConsumptionError,
-    ) -> Self {
+    fn from(err: crate::operation::extend_license_consumption::ExtendLicenseConsumptionError) -> Self {
         match err {
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::extend_license_consumption::ExtendLicenseConsumptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_token::GetAccessTokenError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_token::GetAccessTokenError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -954,45 +774,25 @@ where
 impl From<crate::operation::get_access_token::GetAccessTokenError> for Error {
     fn from(err: crate::operation::get_access_token::GetAccessTokenError) -> Self {
         match err {
-            crate::operation::get_access_token::GetAccessTokenError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::get_access_token::GetAccessTokenError::AuthorizationException(
-                inner,
-            ) => Error::AuthorizationException(inner),
-            crate::operation::get_access_token::GetAccessTokenError::RateLimitExceededException(
-                inner,
-            ) => Error::RateLimitExceededException(inner),
-            crate::operation::get_access_token::GetAccessTokenError::ServerInternalException(
-                inner,
-            ) => Error::ServerInternalException(inner),
-            crate::operation::get_access_token::GetAccessTokenError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_access_token::GetAccessTokenError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_access_token::GetAccessTokenError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_grant::GetGrantError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_grant::GetGrantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_grant::GetGrantError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_grant::GetGrantError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1002,49 +802,27 @@ where
 impl From<crate::operation::get_grant::GetGrantError> for Error {
     fn from(err: crate::operation::get_grant::GetGrantError) -> Self {
         match err {
-            crate::operation::get_grant::GetGrantError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_grant::GetGrantError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::get_grant::GetGrantError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::get_grant::GetGrantError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::get_grant::GetGrantError::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::operation::get_grant::GetGrantError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::get_grant::GetGrantError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::get_grant::GetGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_grant::GetGrantError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::get_grant::GetGrantError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_grant::GetGrantError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::get_grant::GetGrantError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::get_grant::GetGrantError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_grant::GetGrantError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_grant::GetGrantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_license::GetLicenseError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_license::GetLicenseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_license::GetLicenseError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_license::GetLicenseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1054,56 +832,26 @@ where
 impl From<crate::operation::get_license::GetLicenseError> for Error {
     fn from(err: crate::operation::get_license::GetLicenseError) -> Self {
         match err {
-            crate::operation::get_license::GetLicenseError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_license::GetLicenseError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::get_license::GetLicenseError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::operation::get_license::GetLicenseError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::get_license::GetLicenseError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::get_license::GetLicenseError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_license::GetLicenseError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_license::GetLicenseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_license::GetLicenseError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::get_license::GetLicenseError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_license::GetLicenseError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::get_license::GetLicenseError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_license::GetLicenseError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_license::GetLicenseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_configuration::GetLicenseConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_license_configuration::GetLicenseConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_configuration::GetLicenseConfigurationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_license_configuration::GetLicenseConfigurationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1111,45 +859,37 @@ where
     }
 }
 impl From<crate::operation::get_license_configuration::GetLicenseConfigurationError> for Error {
-    fn from(
-        err: crate::operation::get_license_configuration::GetLicenseConfigurationError,
-    ) -> Self {
+    fn from(err: crate::operation::get_license_configuration::GetLicenseConfigurationError) -> Self {
         match err {
-            crate::operation::get_license_configuration::GetLicenseConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_license_configuration::GetLicenseConfigurationError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::get_license_configuration::GetLicenseConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::get_license_configuration::GetLicenseConfigurationError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::get_license_configuration::GetLicenseConfigurationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_license_configuration::GetLicenseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_license_configuration::GetLicenseConfigurationError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::get_license_configuration::GetLicenseConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_license_configuration::GetLicenseConfigurationError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::get_license_configuration::GetLicenseConfigurationError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::get_license_configuration::GetLicenseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_license_conversion_task::GetLicenseConversionTaskError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_license_conversion_task::GetLicenseConversionTaskError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1157,73 +897,89 @@ where
     }
 }
 impl From<crate::operation::get_license_conversion_task::GetLicenseConversionTaskError> for Error {
-    fn from(
-        err: crate::operation::get_license_conversion_task::GetLicenseConversionTaskError,
-    ) -> Self {
+    fn from(err: crate::operation::get_license_conversion_task::GetLicenseConversionTaskError) -> Self {
         match err {
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::get_license_conversion_task::GetLicenseConversionTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError> for Error {
     fn from(err: crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError) -> Self {
         match err {
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_usage::GetLicenseUsageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_license_usage::GetLicenseUsageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_usage::GetLicenseUsageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_license_usage::GetLicenseUsageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1235,7 +991,9 @@ impl From<crate::operation::get_license_usage::GetLicenseUsageError> for Error {
         match err {
             crate::operation::get_license_usage::GetLicenseUsageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_license_usage::GetLicenseUsageError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::get_license_usage::GetLicenseUsageError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_license_usage::GetLicenseUsageError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::get_license_usage::GetLicenseUsageError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
             crate::operation::get_license_usage::GetLicenseUsageError::ServerInternalException(inner) => Error::ServerInternalException(inner),
             crate::operation::get_license_usage::GetLicenseUsageError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1243,32 +1001,16 @@ impl From<crate::operation::get_license_usage::GetLicenseUsageError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1280,22 +1022,38 @@ impl From<crate::operation::get_service_settings::GetServiceSettingsError> for E
         match err {
             crate::operation::get_service_settings::GetServiceSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_service_settings::GetServiceSettingsError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::get_service_settings::GetServiceSettingsError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::get_service_settings::GetServiceSettingsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
             crate::operation::get_service_settings::GetServiceSettingsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
             crate::operation::get_service_settings::GetServiceSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError, R>) -> Self {
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1312,32 +1070,16 @@ impl From<crate::operation::list_associations_for_license_configuration::ListAss
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributed_grants::ListDistributedGrantsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_distributed_grants::ListDistributedGrantsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributed_grants::ListDistributedGrantsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_distributed_grants::ListDistributedGrantsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1347,27 +1089,53 @@ where
 impl From<crate::operation::list_distributed_grants::ListDistributedGrantsError> for Error {
     fn from(err: crate::operation::list_distributed_grants::ListDistributedGrantsError) -> Self {
         match err {
-            crate::operation::list_distributed_grants::ListDistributedGrantsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_distributed_grants::ListDistributedGrantsError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_distributed_grants::ListDistributedGrantsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_distributed_grants::ListDistributedGrantsError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_distributed_grants::ListDistributedGrantsError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::list_distributed_grants::ListDistributedGrantsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_distributed_grants::ListDistributedGrantsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_distributed_grants::ListDistributedGrantsError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_distributed_grants::ListDistributedGrantsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_distributed_grants::ListDistributedGrantsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_distributed_grants::ListDistributedGrantsError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::list_distributed_grants::ListDistributedGrantsError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::list_distributed_grants::ListDistributedGrantsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_distributed_grants::ListDistributedGrantsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError, R>) -> Self {
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -1383,32 +1151,16 @@ impl From<crate::operation::list_failures_for_license_configuration_operations::
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_license_configurations::ListLicenseConfigurationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_license_configurations::ListLicenseConfigurationsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1416,118 +1168,134 @@ where
     }
 }
 impl From<crate::operation::list_license_configurations::ListLicenseConfigurationsError> for Error {
-    fn from(
-        err: crate::operation::list_license_configurations::ListLicenseConfigurationsError,
-    ) -> Self {
+    fn from(err: crate::operation::list_license_configurations::ListLicenseConfigurationsError) -> Self {
         match err {
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError::FilterLimitExceededException(inner) => Error::FilterLimitExceededException(inner),
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_license_configurations::ListLicenseConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_license_configurations::ListLicenseConfigurationsError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_license_configurations::ListLicenseConfigurationsError::FilterLimitExceededException(inner) => {
+                Error::FilterLimitExceededException(inner)
+            }
+            crate::operation::list_license_configurations::ListLicenseConfigurationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_license_configurations::ListLicenseConfigurationsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_license_configurations::ListLicenseConfigurationsError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::list_license_configurations::ListLicenseConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError,
-    ) -> Self {
+impl From<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError> for Error {
+    fn from(err: crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError) -> Self {
         match err {
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError> for Error {
-    fn from(err: crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError) -> Self {
-        match err {
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_licenses::ListLicensesError, R>>
+    From<::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_licenses::ListLicensesError,
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError> for Error {
+    fn from(err: crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError) -> Self {
+        match err {
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::ResourceLimitExceededException(
+                inner,
+            ) => Error::ResourceLimitExceededException(inner),
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_licenses::ListLicensesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_licenses::ListLicensesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1537,81 +1305,74 @@ where
 impl From<crate::operation::list_licenses::ListLicensesError> for Error {
     fn from(err: crate::operation::list_licenses::ListLicensesError) -> Self {
         match err {
-            crate::operation::list_licenses::ListLicensesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_licenses::ListLicensesError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::list_licenses::ListLicensesError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_licenses::ListLicensesError::RateLimitExceededException(
-                inner,
-            ) => Error::RateLimitExceededException(inner),
-            crate::operation::list_licenses::ListLicensesError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::list_licenses::ListLicensesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_licenses::ListLicensesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError> for Error {
-    fn from(err: crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError) -> Self {
-        match err {
-            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_licenses::ListLicensesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_licenses::ListLicensesError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::list_licenses::ListLicensesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_licenses::ListLicensesError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::list_licenses::ListLicensesError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_licenses::ListLicensesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_licenses::ListLicensesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_versions::ListLicenseVersionsError,
-            R,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError, R>,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_versions::ListLicenseVersionsError,
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError> for Error {
+    fn from(err: crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError) -> Self {
+        match err {
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::RateLimitExceededException(
+                inner,
+            ) => Error::RateLimitExceededException(inner),
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_license_versions::ListLicenseVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_license_versions::ListLicenseVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1623,39 +1384,29 @@ impl From<crate::operation::list_license_versions::ListLicenseVersionsError> for
         match err {
             crate::operation::list_license_versions::ListLicenseVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_license_versions::ListLicenseVersionsError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_license_versions::ListLicenseVersionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_license_versions::ListLicenseVersionsError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_license_versions::ListLicenseVersionsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_license_versions::ListLicenseVersionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_license_versions::ListLicenseVersionsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_license_versions::ListLicenseVersionsError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::list_license_versions::ListLicenseVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_grants::ListReceivedGrantsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_grants::ListReceivedGrantsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1667,68 +1418,80 @@ impl From<crate::operation::list_received_grants::ListReceivedGrantsError> for E
         match err {
             crate::operation::list_received_grants::ListReceivedGrantsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_received_grants::ListReceivedGrantsError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_received_grants::ListReceivedGrantsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_received_grants::ListReceivedGrantsError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_received_grants::ListReceivedGrantsError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::list_received_grants::ListReceivedGrantsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_received_grants::ListReceivedGrantsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_received_grants::ListReceivedGrantsError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
             crate::operation::list_received_grants::ListReceivedGrantsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
             crate::operation::list_received_grants::ListReceivedGrantsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_received_grants::ListReceivedGrantsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError> for Error {
     fn from(err: crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError) -> Self {
         match err {
-            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::ResourceLimitExceededException(
+                inner,
+            ) => Error::ResourceLimitExceededException(inner),
+            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_licenses::ListReceivedLicensesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses::ListReceivedLicensesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_licenses::ListReceivedLicensesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses::ListReceivedLicensesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1739,69 +1502,89 @@ impl From<crate::operation::list_received_licenses::ListReceivedLicensesError> f
     fn from(err: crate::operation::list_received_licenses::ListReceivedLicensesError) -> Self {
         match err {
             crate::operation::list_received_licenses::ListReceivedLicensesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_received_licenses::ListReceivedLicensesError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_received_licenses::ListReceivedLicensesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_received_licenses::ListReceivedLicensesError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_received_licenses::ListReceivedLicensesError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::list_received_licenses::ListReceivedLicensesError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_received_licenses::ListReceivedLicensesError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_received_licenses::ListReceivedLicensesError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_received_licenses::ListReceivedLicensesError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_received_licenses::ListReceivedLicensesError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::list_received_licenses::ListReceivedLicensesError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::list_received_licenses::ListReceivedLicensesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_received_licenses::ListReceivedLicensesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError, R>) -> Self {
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError> for Error {
     fn from(err: crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError) -> Self {
         match err {
-            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::RateLimitExceededException(
+                inner,
+            ) => Error::RateLimitExceededException(inner),
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::ResourceLimitExceededException(
+                inner,
+            ) => Error::ResourceLimitExceededException(inner),
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_inventory::ListResourceInventoryError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_resource_inventory::ListResourceInventoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_inventory::ListResourceInventoryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_resource_inventory::ListResourceInventoryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1811,43 +1594,41 @@ where
 impl From<crate::operation::list_resource_inventory::ListResourceInventoryError> for Error {
     fn from(err: crate::operation::list_resource_inventory::ListResourceInventoryError) -> Self {
         match err {
-            crate::operation::list_resource_inventory::ListResourceInventoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_resource_inventory::ListResourceInventoryError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_resource_inventory::ListResourceInventoryError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::operation::list_resource_inventory::ListResourceInventoryError::FilterLimitExceededException(inner) => Error::FilterLimitExceededException(inner),
-            crate::operation::list_resource_inventory::ListResourceInventoryError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_resource_inventory::ListResourceInventoryError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_resource_inventory::ListResourceInventoryError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_resource_inventory::ListResourceInventoryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_resource_inventory::ListResourceInventoryError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_resource_inventory::ListResourceInventoryError::FailedDependencyException(inner) => {
+                Error::FailedDependencyException(inner)
+            }
+            crate::operation::list_resource_inventory::ListResourceInventoryError::FilterLimitExceededException(inner) => {
+                Error::FilterLimitExceededException(inner)
+            }
+            crate::operation::list_resource_inventory::ListResourceInventoryError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_resource_inventory::ListResourceInventoryError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_resource_inventory::ListResourceInventoryError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::list_resource_inventory::ListResourceInventoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1859,31 +1640,29 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tokens::ListTokensError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tokens::ListTokensError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::list_tokens::ListTokensError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tokens::ListTokensError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1893,75 +1672,71 @@ where
 impl From<crate::operation::list_tokens::ListTokensError> for Error {
     fn from(err: crate::operation::list_tokens::ListTokensError) -> Self {
         match err {
-            crate::operation::list_tokens::ListTokensError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_tokens::ListTokensError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::list_tokens::ListTokensError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::list_tokens::ListTokensError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::list_tokens::ListTokensError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_tokens::ListTokensError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_tokens::ListTokensError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tokens::ListTokensError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::list_tokens::ListTokensError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::list_tokens::ListTokensError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_tokens::ListTokensError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tokens::ListTokensError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError> for Error {
     fn from(err: crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError) -> Self {
         match err {
-            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::FilterLimitExceededException(inner) => Error::FilterLimitExceededException(inner),
-            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::FilterLimitExceededException(inner) => {
+                Error::FilterLimitExceededException(inner)
+            }
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::reject_grant::RejectGrantError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::reject_grant::RejectGrantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_grant::RejectGrantError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::reject_grant::RejectGrantError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1971,55 +1746,27 @@ where
 impl From<crate::operation::reject_grant::RejectGrantError> for Error {
     fn from(err: crate::operation::reject_grant::RejectGrantError) -> Self {
         match err {
-            crate::operation::reject_grant::RejectGrantError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::reject_grant::RejectGrantError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::reject_grant::RejectGrantError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::operation::reject_grant::RejectGrantError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::reject_grant::RejectGrantError::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::operation::reject_grant::RejectGrantError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::reject_grant::RejectGrantError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::reject_grant::RejectGrantError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::reject_grant::RejectGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reject_grant::RejectGrantError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::reject_grant::RejectGrantError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::reject_grant::RejectGrantError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::reject_grant::RejectGrantError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::reject_grant::RejectGrantError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::reject_grant::RejectGrantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::reject_grant::RejectGrantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2029,53 +1776,25 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::AuthorizationException(inner) => {
-                Error::AuthorizationException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::operation::tag_resource::TagResourceError::RateLimitExceededException(inner) => {
-                Error::RateLimitExceededException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::tag_resource::TagResourceError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2087,17 +1806,116 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         match err {
             crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::untag_resource::UntagResourceError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::untag_resource::UntagResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::untag_resource::UntagResourceError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
             crate::operation::untag_resource::UntagResourceError::ServerInternalException(inner) => Error::ServerInternalException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_license_configuration::UpdateLicenseConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_license_configuration::UpdateLicenseConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_license_configuration::UpdateLicenseConfigurationError> for Error {
+    fn from(err: crate::operation::update_license_configuration::UpdateLicenseConfigurationError) -> Self {
+        match err {
+            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError> for Error {
+    fn from(err: crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError) -> Self {
+        match err {
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::RateLimitExceededException(
+                inner,
+            ) => Error::RateLimitExceededException(inner),
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::ResourceLimitExceededException(
+                inner,
+            ) => Error::ResourceLimitExceededException(inner),
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
+            crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError,
             R,
         >,
     > for Error
@@ -2106,81 +1924,18 @@ where
 {
     fn from(
         err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
+            crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
-        }
-    }
-}
-impl From<crate::operation::update_license_configuration::UpdateLicenseConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
-    ) -> Self {
-        match err {
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError> for Error {
-    fn from(err: crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError) -> Self {
-        match err {
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
         }
     }
 }
@@ -2198,32 +1953,16 @@ impl From<crate::operation::update_license_specifications_for_resource::UpdateLi
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2233,11 +1972,21 @@ where
 impl From<crate::operation::update_service_settings::UpdateServiceSettingsError> for Error {
     fn from(err: crate::operation::update_service_settings::UpdateServiceSettingsError) -> Self {
         match err {
-            crate::operation::update_service_settings::UpdateServiceSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_service_settings::UpdateServiceSettingsError::AuthorizationException(inner) => Error::AuthorizationException(inner),
-            crate::operation::update_service_settings::UpdateServiceSettingsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::update_service_settings::UpdateServiceSettingsError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
-            crate::operation::update_service_settings::UpdateServiceSettingsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::update_service_settings::UpdateServiceSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_service_settings::UpdateServiceSettingsError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::update_service_settings::UpdateServiceSettingsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_service_settings::UpdateServiceSettingsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::update_service_settings::UpdateServiceSettingsError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
             crate::operation::update_service_settings::UpdateServiceSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

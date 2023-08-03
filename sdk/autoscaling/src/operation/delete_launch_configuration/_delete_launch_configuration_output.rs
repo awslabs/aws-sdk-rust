@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLaunchConfigurationOutput {
 }
 impl DeleteLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchConfigurationOutput`](crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationOutputBuilder {
         crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLaunchConfigurationOutput`](crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteLaunchConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteLaunchConfigurationOutput`](crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput {
         crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput {
             _request_id: self._request_id,
         }

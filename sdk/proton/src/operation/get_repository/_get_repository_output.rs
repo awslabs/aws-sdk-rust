@@ -28,9 +28,7 @@ impl GetRepositoryOutput {
 
 /// A builder for [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositoryOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::Repository>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetRepositoryOutputBuilder {
         self
     }
     /// <p>The repository link's detail data that's returned by Proton.</p>
-    pub fn set_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::Repository>,
-    ) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<crate::types::Repository>) -> Self {
         self.repository = input;
         self
     }

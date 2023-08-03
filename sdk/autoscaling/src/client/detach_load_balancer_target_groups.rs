@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`target_group_ar_ns(Vec<String>)`](crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsFluentBuilder::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsFluentBuilder::set_target_group_ar_ns): <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
     /// - On success, responds with [`DetachLoadBalancerTargetGroupsOutput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput)
     /// - On failure, responds with [`SdkError<DetachLoadBalancerTargetGroupsError>`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError)
-    pub fn detach_load_balancer_target_groups(&self) -> crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsFluentBuilder{
+    pub fn detach_load_balancer_target_groups(
+        &self,
+    ) -> crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsFluentBuilder {
         crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -54,8 +54,7 @@ impl ::std::fmt::Debug for UpdateChannelMessageInput {
 }
 impl UpdateChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelMessageInput`](crate::operation::update_channel_message::UpdateChannelMessageInput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder {
+    pub fn builder() -> crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder {
         crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder::default()
     }
 }
@@ -144,19 +143,15 @@ impl UpdateChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelMessageInput`](crate::operation::update_channel_message::UpdateChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel_message::UpdateChannelMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_channel_message::UpdateChannelMessageInput {
-                channel_arn: self.channel_arn,
-                message_id: self.message_id,
-                content: self.content,
-                metadata: self.metadata,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_channel_message::UpdateChannelMessageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_channel_message::UpdateChannelMessageInput {
+            channel_arn: self.channel_arn,
+            message_id: self.message_id,
+            content: self.content,
+            metadata: self.metadata,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateChannelMessageInputBuilder {

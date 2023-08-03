@@ -7,14 +7,8 @@ impl super::Client {
     ///   - [`invitation_id(impl ::std::convert::Into<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::invitation_id) / [`set_invitation_id(Option<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::set_invitation_id): <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     /// - On success, responds with [`AcceptInvitationOutput`](crate::operation::accept_invitation::AcceptInvitationOutput)
     /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::operation::accept_invitation::AcceptInvitationError)
-    #[deprecated(
-        note = "This API has been deprecated, use AcceptAdministratorInvitation API instead."
-    )]
-    pub fn accept_invitation(
-        &self,
-    ) -> crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder {
-        crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "This API has been deprecated, use AcceptAdministratorInvitation API instead.")]
+    pub fn accept_invitation(&self) -> crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder {
+        crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::new(self.handle.clone())
     }
 }

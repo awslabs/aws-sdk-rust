@@ -23,9 +23,7 @@ pub struct MetricQuery {
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl MetricQuery {
     /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -48,11 +46,7 @@ impl MetricQuery {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filter.as_ref()
     }
 }
@@ -65,15 +59,11 @@ impl MetricQuery {
 
 /// A builder for [`MetricQuery`](crate::types::MetricQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricQueryBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) group_by: ::std::option::Option<crate::types::DimensionGroup>,
-    pub(crate) filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl MetricQueryBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -117,10 +107,7 @@ impl MetricQueryBuilder {
         self
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionGroup>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::DimensionGroup>) -> Self {
         self.group_by = input;
         self
     }
@@ -137,11 +124,7 @@ impl MetricQueryBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.filter = ::std::option::Option::Some(hash_map);
@@ -152,12 +135,7 @@ impl MetricQueryBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.filter = input;
         self
     }
@@ -166,11 +144,7 @@ impl MetricQueryBuilder {
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`MetricQuery`](crate::types::MetricQuery).

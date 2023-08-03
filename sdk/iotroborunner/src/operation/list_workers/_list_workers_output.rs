@@ -35,9 +35,7 @@ impl ListWorkersOutput {
 
 /// A builder for [`ListWorkersOutput`](crate::operation::list_workers::ListWorkersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workers: ::std::option::Option<::std::vec::Vec<crate::types::Worker>>,
@@ -70,10 +68,7 @@ impl ListWorkersOutputBuilder {
         self
     }
     /// List of workers.
-    pub fn set_workers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Worker>>,
-    ) -> Self {
+    pub fn set_workers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Worker>>) -> Self {
         self.workers = input;
         self
     }

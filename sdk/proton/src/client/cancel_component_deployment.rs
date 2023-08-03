@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelComponentDeploymentOutput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput::component): <p>The detailed data of the component with the deployment that is being canceled.</p>
     /// - On failure, responds with [`SdkError<CancelComponentDeploymentError>`](crate::operation::cancel_component_deployment::CancelComponentDeploymentError)
-    pub fn cancel_component_deployment(&self) -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentFluentBuilder{
+    pub fn cancel_component_deployment(&self) -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentFluentBuilder {
         crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

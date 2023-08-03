@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`state_machine_version_arn(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::state_machine_version_arn): <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>  <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
     ///   - [`state_machine_alias_arn(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::state_machine_alias_arn): <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>  <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
     /// - On failure, responds with [`SdkError<DescribeExecutionError>`](crate::operation::describe_execution::DescribeExecutionError)
-    pub fn describe_execution(
-        &self,
-    ) -> crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder {
-        crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_execution(&self) -> crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder {
+        crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::new(self.handle.clone())
     }
 }

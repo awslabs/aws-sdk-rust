@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_system_templates::SearchSystemTemplatesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchSystemTemplatesError>`](crate::operation::search_system_templates::SearchSystemTemplatesError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn search_system_templates(
-        &self,
-    ) -> crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder
-    {
-        crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_system_templates(&self) -> crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder {
+        crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

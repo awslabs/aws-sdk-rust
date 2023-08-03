@@ -5,16 +5,16 @@ pub use crate::operation::describe_instance_connect_endpoints::_describe_instanc
 
 impl DescribeInstanceConnectEndpointsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_instance_connect_endpoints();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeInstanceConnectEndpointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceConnectEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder,
+    inner: crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder,
 }
 impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// Creates a new `DescribeInstanceConnectEndpoints`.
@@ -37,15 +37,20 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
         }
     }
     /// Access the DescribeInstanceConnectEndpoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpoints, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpoints,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpoints, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpoints,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator {
         crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -182,10 +197,7 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// <li> <p> <code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -213,25 +225,17 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// To override the contents of this collection use [`set_instance_connect_endpoint_ids`](Self::set_instance_connect_endpoint_ids).
     ///
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn instance_connect_endpoint_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_connect_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_connect_endpoint_ids(input.into());
         self
     }
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn set_instance_connect_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_connect_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_connect_endpoint_ids(input);
         self
     }
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn get_instance_connect_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_connect_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_connect_endpoint_ids()
     }
 }

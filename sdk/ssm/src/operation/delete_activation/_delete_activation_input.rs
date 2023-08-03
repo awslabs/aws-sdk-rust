@@ -15,34 +15,25 @@ impl DeleteActivationInput {
 }
 impl DeleteActivationInput {
     /// Creates a new builder-style object to manufacture [`DeleteActivationInput`](crate::operation::delete_activation::DeleteActivationInput).
-    pub fn builder() -> crate::operation::delete_activation::builders::DeleteActivationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_activation::builders::DeleteActivationInputBuilder {
         crate::operation::delete_activation::builders::DeleteActivationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteActivationInput`](crate::operation::delete_activation::DeleteActivationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteActivationInputBuilder {
     pub(crate) activation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteActivationInputBuilder {
     /// <p>The ID of the activation that you want to delete.</p>
-    pub fn activation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the activation that you want to delete.</p>
-    pub fn set_activation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_activation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activation_id = input;
         self
     }
@@ -53,10 +44,7 @@ impl DeleteActivationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteActivationInput`](crate::operation::delete_activation::DeleteActivationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_activation::DeleteActivationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_activation::DeleteActivationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_activation::DeleteActivationInput {
             activation_id: self.activation_id,
         })

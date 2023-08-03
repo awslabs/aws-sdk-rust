@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetAssetPropertyValueOutput`](crate::operation::get_asset_property_value::GetAssetPropertyValueOutput) with field(s):
     ///   - [`property_value(Option<AssetPropertyValue>)`](crate::operation::get_asset_property_value::GetAssetPropertyValueOutput::property_value): <p>The current asset property value.</p>
     /// - On failure, responds with [`SdkError<GetAssetPropertyValueError>`](crate::operation::get_asset_property_value::GetAssetPropertyValueError)
-    pub fn get_asset_property_value(
-        &self,
-    ) -> crate::operation::get_asset_property_value::builders::GetAssetPropertyValueFluentBuilder
-    {
+    pub fn get_asset_property_value(&self) -> crate::operation::get_asset_property_value::builders::GetAssetPropertyValueFluentBuilder {
         crate::operation::get_asset_property_value::builders::GetAssetPropertyValueFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbSubnetGroupsOutput {
 }
 impl DescribeDbSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsOutput`](crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_subnet_groups::builders::DescribeDbSubnetGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_db_subnet_groups::builders::DescribeDbSubnetGroupsOutputBuilder {
         crate::operation::describe_db_subnet_groups::builders::DescribeDbSubnetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbSubnetGroupsOutput`](crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbSubnetGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_subnet_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbSubnetGroup>>,
+    pub(crate) db_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbSubnetGroupsOutputBuilder {
@@ -73,17 +68,12 @@ impl DescribeDbSubnetGroupsOutputBuilder {
         self
     }
     /// <p> A list of <code>DBSubnetGroup</code> instances.</p>
-    pub fn set_db_subnet_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbSubnetGroup>>,
-    ) -> Self {
+    pub fn set_db_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbSubnetGroup>>) -> Self {
         self.db_subnet_groups = input;
         self
     }
     /// <p> A list of <code>DBSubnetGroup</code> instances.</p>
-    pub fn get_db_subnet_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSubnetGroup>> {
+    pub fn get_db_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSubnetGroup>> {
         &self.db_subnet_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl DescribeDbSubnetGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbSubnetGroupsOutput`](crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput {
         crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput {
             marker: self.marker,
             db_subnet_groups: self.db_subnet_groups,

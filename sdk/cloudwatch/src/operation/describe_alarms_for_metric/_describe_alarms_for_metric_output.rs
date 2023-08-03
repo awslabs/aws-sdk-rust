@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAlarmsForMetricOutput {
 }
 impl DescribeAlarmsForMetricOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmsForMetricOutput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricOutputBuilder {
         crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAlarmsForMetricOutput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricOutputBuilder {
     pub(crate) metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl DescribeAlarmsForMetricOutputBuilder {
         self
     }
     /// <p>The information for each alarm with the specified metric.</p>
-    pub fn set_metric_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
-    ) -> Self {
+    pub fn set_metric_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>) -> Self {
         self.metric_alarms = input;
         self
     }
     /// <p>The information for each alarm with the specified metric.</p>
-    pub fn get_metric_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>> {
+    pub fn get_metric_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>> {
         &self.metric_alarms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl DescribeAlarmsForMetricOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAlarmsForMetricOutput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput {
+    pub fn build(self) -> crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput {
         crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput {
             metric_alarms: self.metric_alarms,
             _request_id: self._request_id,

@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateAnomalyDetectorOutput {
 }
 impl CreateAnomalyDetectorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnomalyDetectorOutput`](crate::operation::create_anomaly_detector::CreateAnomalyDetectorOutput).
-    pub fn builder(
-    ) -> crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorOutputBuilder {
         crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAnomalyDetectorOutput`](crate::operation::create_anomaly_detector::CreateAnomalyDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnomalyDetectorOutputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAnomalyDetectorOutputBuilder {
     /// <p>The ARN of the detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }

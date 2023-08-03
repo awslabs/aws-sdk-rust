@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`schedule_arn(Option<String>)`](crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput::schedule_arn): <p>The ARN of the business report schedule.</p>
     /// - On failure, responds with [`SdkError<CreateBusinessReportScheduleError>`](crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn create_business_report_schedule(&self) -> crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleFluentBuilder{
+    pub fn create_business_report_schedule(
+        &self,
+    ) -> crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleFluentBuilder {
         crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleFluentBuilder::new(self.handle.clone())
     }
 }

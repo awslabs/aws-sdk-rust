@@ -35,9 +35,7 @@ impl ListServersOutput {
 
 /// A builder for [`ListServersOutput`](crate::operation::list_servers::ListServersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServersOutputBuilder {
     pub(crate) server_infos: ::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListServersOutputBuilder {
         self
     }
     /// <p> The list of servers with detailed information about each server. </p>
-    pub fn set_server_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>>,
-    ) -> Self {
+    pub fn set_server_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>>) -> Self {
         self.server_infos = input;
         self
     }
     /// <p> The list of servers with detailed information about each server. </p>
-    pub fn get_server_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>> {
+    pub fn get_server_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>> {
         &self.server_infos
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>

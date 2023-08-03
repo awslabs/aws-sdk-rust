@@ -30,9 +30,7 @@ impl CoversBodyPart {
 
 /// A builder for [`CoversBodyPart`](crate::types::CoversBodyPart).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoversBodyPartBuilder {
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) value: ::std::option::Option<bool>,

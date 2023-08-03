@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetClientCertificatesOutput {
 }
 impl GetClientCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`GetClientCertificatesOutput`](crate::operation::get_client_certificates::GetClientCertificatesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_client_certificates::builders::GetClientCertificatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_client_certificates::builders::GetClientCertificatesOutputBuilder {
         crate::operation::get_client_certificates::builders::GetClientCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetClientCertificatesOutput`](crate::operation::get_client_certificates::GetClientCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClientCertificatesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl GetClientCertificatesOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>> {
         &self.items
     }
     /// <p>The current pagination position in the paged result set.</p>

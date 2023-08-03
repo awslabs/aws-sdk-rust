@@ -49,36 +49,27 @@ impl PutBackupVaultNotificationsInput {
 }
 impl PutBackupVaultNotificationsInput {
     /// Creates a new builder-style object to manufacture [`PutBackupVaultNotificationsInput`](crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput).
-    pub fn builder() -> crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder{
+    pub fn builder() -> crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder {
         crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBackupVaultNotificationsInput`](crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBackupVaultNotificationsInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_vault_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
+    pub(crate) backup_vault_events: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
 }
 impl PutBackupVaultNotificationsInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
@@ -87,18 +78,12 @@ impl PutBackupVaultNotificationsInputBuilder {
         &self.backup_vault_name
     }
     /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -138,10 +123,7 @@ impl PutBackupVaultNotificationsInputBuilder {
     /// </ul> <note>
     /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
     /// </note>
-    pub fn set_backup_vault_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
-    ) -> Self {
+    pub fn set_backup_vault_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>) -> Self {
         self.backup_vault_events = input;
         self
     }
@@ -156,9 +138,7 @@ impl PutBackupVaultNotificationsInputBuilder {
     /// </ul> <note>
     /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
     /// </note>
-    pub fn get_backup_vault_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
+    pub fn get_backup_vault_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
         &self.backup_vault_events
     }
     /// Consumes the builder and constructs a [`PutBackupVaultNotificationsInput`](crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput).
@@ -168,12 +148,10 @@ impl PutBackupVaultNotificationsInputBuilder {
         crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput {
-                backup_vault_name: self.backup_vault_name,
-                sns_topic_arn: self.sns_topic_arn,
-                backup_vault_events: self.backup_vault_events,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput {
+            backup_vault_name: self.backup_vault_name,
+            sns_topic_arn: self.sns_topic_arn,
+            backup_vault_events: self.backup_vault_events,
+        })
     }
 }

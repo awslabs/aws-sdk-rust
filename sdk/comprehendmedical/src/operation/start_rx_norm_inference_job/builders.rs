@@ -26,7 +26,7 @@ impl StartRxNormInferenceJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRxNormInferenceJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder,
+    inner: crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder,
 }
 impl StartRxNormInferenceJobFluentBuilder {
     /// Creates a new `StartRxNormInferenceJob`.
@@ -37,10 +37,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         }
     }
     /// Access the StartRxNormInferenceJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartRxNormInferenceJobFluentBuilder {
             crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartRxNormInferenceJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartRxNormInferenceJobFluentBuilder {
             crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -146,10 +129,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -158,18 +138,12 @@ impl StartRxNormInferenceJobFluentBuilder {
         self.inner.get_output_data_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -192,18 +166,12 @@ impl StartRxNormInferenceJobFluentBuilder {
         self.inner.get_job_name()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -231,10 +199,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self
     }
     /// <p>The language of the input documents. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

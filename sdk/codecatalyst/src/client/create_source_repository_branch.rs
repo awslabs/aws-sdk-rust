@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchOutput::last_updated_time): <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     ///   - [`head_commit_id(Option<String>)`](crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchOutput::head_commit_id): <p>The commit ID of the tip of the newly created branch.</p>
     /// - On failure, responds with [`SdkError<CreateSourceRepositoryBranchError>`](crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError)
-    pub fn create_source_repository_branch(&self) -> crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchFluentBuilder{
+    pub fn create_source_repository_branch(
+        &self,
+    ) -> crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchFluentBuilder {
         crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchFluentBuilder::new(self.handle.clone())
     }
 }

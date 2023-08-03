@@ -10,10 +10,7 @@ impl GetSuiteDefinitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_suite_definition::GetSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suite_definition::GetSuiteDefinitionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suite_definition::GetSuiteDefinitionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_suite_definition();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetSuiteDefinitionFluentBuilder {
         }
     }
     /// Access the GetSuiteDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_suite_definition::builders::GetSuiteDefinitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_suite_definition::builders::GetSuiteDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetSuiteDefinitionFluentBuilder {
             crate::operation::get_suite_definition::GetSuiteDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suite_definition::GetSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suite_definition::GetSuiteDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetSuiteDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetSuiteDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_suite_definition::GetSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suite_definition::GetSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suite_definition::GetSuiteDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetSuiteDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_suite_definition::GetSuiteDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suite_definition::GetSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suite_definition::GetSuiteDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl GetSuiteDefinitionFluentBuilder {
             crate::operation::get_suite_definition::GetSuiteDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suite_definition::GetSuiteDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suite_definition::GetSuiteDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Suite definition ID of the test suite to get.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Suite definition ID of the test suite to get.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
@@ -144,18 +122,12 @@ impl GetSuiteDefinitionFluentBuilder {
         self.inner.get_suite_definition_id()
     }
     /// <p>Suite definition version of the test suite to get.</p>
-    pub fn suite_definition_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_version(input.into());
         self
     }
     /// <p>Suite definition version of the test suite to get.</p>
-    pub fn set_suite_definition_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_version(input);
         self
     }

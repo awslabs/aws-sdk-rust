@@ -24,9 +24,7 @@ pub struct Campaign {
     pub outbound_call_config: ::std::option::Option<crate::types::OutboundCallConfig>,
     /// Tag map with key and value.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Campaign {
     /// Identifier representing a Campaign
@@ -54,11 +52,7 @@ impl Campaign {
         self.outbound_call_config.as_ref()
     }
     /// Tag map with key and value.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl Campaign {
 
 /// A builder for [`Campaign`](crate::types::Campaign).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CampaignBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -81,9 +73,7 @@ pub struct CampaignBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dialer_config: ::std::option::Option<crate::types::DialerConfig>,
     pub(crate) outbound_call_config: ::std::option::Option<crate::types::OutboundCallConfig>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CampaignBuilder {
     /// Identifier representing a Campaign
@@ -129,18 +119,12 @@ impl CampaignBuilder {
         &self.name
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_instance_id = input;
         self
     }
@@ -154,10 +138,7 @@ impl CampaignBuilder {
         self
     }
     /// The possible types of dialer config parameters
-    pub fn set_dialer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DialerConfig>,
-    ) -> Self {
+    pub fn set_dialer_config(mut self, input: ::std::option::Option<crate::types::DialerConfig>) -> Self {
         self.dialer_config = input;
         self
     }
@@ -171,17 +152,12 @@ impl CampaignBuilder {
         self
     }
     /// The configuration used for outbound calls.
-    pub fn set_outbound_call_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutboundCallConfig>,
-    ) -> Self {
+    pub fn set_outbound_call_config(mut self, input: ::std::option::Option<crate::types::OutboundCallConfig>) -> Self {
         self.outbound_call_config = input;
         self
     }
     /// The configuration used for outbound calls.
-    pub fn get_outbound_call_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutboundCallConfig> {
+    pub fn get_outbound_call_config(&self) -> &::std::option::Option<crate::types::OutboundCallConfig> {
         &self.outbound_call_config
     }
     /// Adds a key-value pair to `tags`.
@@ -189,32 +165,19 @@ impl CampaignBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag map with key and value.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// Tag map with key and value.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// Tag map with key and value.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Campaign`](crate::types::Campaign).

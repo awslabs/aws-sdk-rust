@@ -57,13 +57,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -123,9 +117,7 @@ impl ::std::convert::From<&str> for LastUpdateStatusReasonCode {
             "FunctionError" => LastUpdateStatusReasonCode::FunctionError,
             "ImageAccessDenied" => LastUpdateStatusReasonCode::ImageAccessDenied,
             "ImageDeleted" => LastUpdateStatusReasonCode::ImageDeleted,
-            "InsufficientRolePermissions" => {
-                LastUpdateStatusReasonCode::InsufficientRolePermissions
-            }
+            "InsufficientRolePermissions" => LastUpdateStatusReasonCode::InsufficientRolePermissions,
             "InternalError" => LastUpdateStatusReasonCode::InternalError,
             "InvalidConfiguration" => LastUpdateStatusReasonCode::InvalidConfiguration,
             "InvalidImage" => LastUpdateStatusReasonCode::InvalidImage,
@@ -137,9 +129,7 @@ impl ::std::convert::From<&str> for LastUpdateStatusReasonCode {
             "KMSKeyAccessDenied" => LastUpdateStatusReasonCode::KmsKeyAccessDenied,
             "KMSKeyNotFound" => LastUpdateStatusReasonCode::KmsKeyNotFound,
             "SubnetOutOfIPAddresses" => LastUpdateStatusReasonCode::SubnetOutOfIpAddresses,
-            other => LastUpdateStatusReasonCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LastUpdateStatusReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -163,9 +153,7 @@ impl LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::FunctionError => "FunctionError",
             LastUpdateStatusReasonCode::ImageAccessDenied => "ImageAccessDenied",
             LastUpdateStatusReasonCode::ImageDeleted => "ImageDeleted",
-            LastUpdateStatusReasonCode::InsufficientRolePermissions => {
-                "InsufficientRolePermissions"
-            }
+            LastUpdateStatusReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
             LastUpdateStatusReasonCode::InternalError => "InternalError",
             LastUpdateStatusReasonCode::InvalidConfiguration => "InvalidConfiguration",
             LastUpdateStatusReasonCode::InvalidImage => "InvalidImage",

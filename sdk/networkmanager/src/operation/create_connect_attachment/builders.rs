@@ -27,8 +27,7 @@ impl CreateConnectAttachmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectAttachmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_connect_attachment::builders::CreateConnectAttachmentInputBuilder,
+    inner: crate::operation::create_connect_attachment::builders::CreateConnectAttachmentInputBuilder,
 }
 impl CreateConnectAttachmentFluentBuilder {
     /// Creates a new `CreateConnectAttachment`.
@@ -39,10 +38,7 @@ impl CreateConnectAttachmentFluentBuilder {
         }
     }
     /// Access the CreateConnectAttachment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_connect_attachment::builders::CreateConnectAttachmentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_connect_attachment::builders::CreateConnectAttachmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl CreateConnectAttachmentFluentBuilder {
             crate::operation::create_connect_attachment::CreateConnectAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connect_attachment::CreateConnectAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connect_attachment::CreateConnectAttachmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl CreateConnectAttachmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl CreateConnectAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connect_attachment::CreateConnectAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connect_attachment::CreateConnectAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connect_attachment::CreateConnectAttachmentError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl CreateConnectAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connect_attachment::CreateConnectAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connect_attachment::CreateConnectAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connect_attachment::CreateConnectAttachmentError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl CreateConnectAttachmentFluentBuilder {
             crate::operation::create_connect_attachment::CreateConnectAttachment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connect_attachment::CreateConnectAttachmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connect_attachment::CreateConnectAttachmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of a core network where you want to create the attachment. </p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network where you want to create the attachment. </p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
@@ -146,18 +125,12 @@ impl CreateConnectAttachmentFluentBuilder {
         self.inner.get_core_network_id()
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.edge_location(input.into());
         self
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_edge_location(input);
         self
     }
@@ -166,18 +139,12 @@ impl CreateConnectAttachmentFluentBuilder {
         self.inner.get_edge_location()
     }
     /// <p>The ID of the attachment between the two connections.</p>
-    pub fn transport_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transport_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transport_attachment_id(input.into());
         self
     }
     /// <p>The ID of the attachment between the two connections.</p>
-    pub fn set_transport_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transport_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transport_attachment_id(input);
         self
     }
@@ -191,10 +158,7 @@ impl CreateConnectAttachmentFluentBuilder {
         self
     }
     /// <p>Options for creating an attachment.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::ConnectAttachmentOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
@@ -212,10 +176,7 @@ impl CreateConnectAttachmentFluentBuilder {
         self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -33,9 +33,7 @@ impl Tag {
 
 /// A builder for [`Tag`](crate::types::Tag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) tag_value: ::std::option::Option<::std::string::String>,

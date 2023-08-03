@@ -22,18 +22,14 @@ impl ListDeploymentStrategiesInput {
 }
 impl ListDeploymentStrategiesInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentStrategiesInput`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesInput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesInputBuilder {
         crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentStrategiesInput`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentStrategiesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl ListDeploymentStrategiesInputBuilder {
         crate::operation::list_deployment_strategies::ListDeploymentStrategiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_deployment_strategies::ListDeploymentStrategiesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_deployment_strategies::ListDeploymentStrategiesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

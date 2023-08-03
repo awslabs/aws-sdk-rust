@@ -63,13 +63,7 @@
 /// <p>The bucket event for which to send notifications.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Event {
     #[allow(missing_docs)] // documentation missing in model
@@ -135,15 +129,11 @@ impl ::std::convert::From<&str> for Event {
             "s3:IntelligentTiering" => Event::S3IntelligentTiering,
             "s3:LifecycleExpiration:*" => Event::S3LifecycleExpiration,
             "s3:LifecycleExpiration:Delete" => Event::S3LifecycleExpirationDelete,
-            "s3:LifecycleExpiration:DeleteMarkerCreated" => {
-                Event::S3LifecycleExpirationDeleteMarkerCreated
-            }
+            "s3:LifecycleExpiration:DeleteMarkerCreated" => Event::S3LifecycleExpirationDeleteMarkerCreated,
             "s3:LifecycleTransition" => Event::S3LifecycleTransition,
             "s3:ObjectAcl:Put" => Event::S3ObjectAclPut,
             "s3:ObjectCreated:*" => Event::S3ObjectCreated,
-            "s3:ObjectCreated:CompleteMultipartUpload" => {
-                Event::S3ObjectCreatedCompleteMultipartUpload
-            }
+            "s3:ObjectCreated:CompleteMultipartUpload" => Event::S3ObjectCreatedCompleteMultipartUpload,
             "s3:ObjectCreated:Copy" => Event::S3ObjectCreatedCopy,
             "s3:ObjectCreated:Post" => Event::S3ObjectCreatedPost,
             "s3:ObjectCreated:Put" => Event::S3ObjectCreatedPut,
@@ -159,16 +149,10 @@ impl ::std::convert::From<&str> for Event {
             "s3:ObjectTagging:Put" => Event::S3ObjectTaggingPut,
             "s3:ReducedRedundancyLostObject" => Event::S3ReducedRedundancyLostObject,
             "s3:Replication:*" => Event::S3Replication,
-            "s3:Replication:OperationFailedReplication" => {
-                Event::S3ReplicationOperationFailedReplication
-            }
-            "s3:Replication:OperationMissedThreshold" => {
-                Event::S3ReplicationOperationMissedThreshold
-            }
+            "s3:Replication:OperationFailedReplication" => Event::S3ReplicationOperationFailedReplication,
+            "s3:Replication:OperationMissedThreshold" => Event::S3ReplicationOperationMissedThreshold,
             "s3:Replication:OperationNotTracked" => Event::S3ReplicationOperationNotTracked,
-            "s3:Replication:OperationReplicatedAfterThreshold" => {
-                Event::S3ReplicationOperationReplicatedAfterThreshold
-            }
+            "s3:Replication:OperationReplicatedAfterThreshold" => Event::S3ReplicationOperationReplicatedAfterThreshold,
             other => Event::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -187,15 +171,11 @@ impl Event {
             Event::S3IntelligentTiering => "s3:IntelligentTiering",
             Event::S3LifecycleExpiration => "s3:LifecycleExpiration:*",
             Event::S3LifecycleExpirationDelete => "s3:LifecycleExpiration:Delete",
-            Event::S3LifecycleExpirationDeleteMarkerCreated => {
-                "s3:LifecycleExpiration:DeleteMarkerCreated"
-            }
+            Event::S3LifecycleExpirationDeleteMarkerCreated => "s3:LifecycleExpiration:DeleteMarkerCreated",
             Event::S3LifecycleTransition => "s3:LifecycleTransition",
             Event::S3ObjectAclPut => "s3:ObjectAcl:Put",
             Event::S3ObjectCreated => "s3:ObjectCreated:*",
-            Event::S3ObjectCreatedCompleteMultipartUpload => {
-                "s3:ObjectCreated:CompleteMultipartUpload"
-            }
+            Event::S3ObjectCreatedCompleteMultipartUpload => "s3:ObjectCreated:CompleteMultipartUpload",
             Event::S3ObjectCreatedCopy => "s3:ObjectCreated:Copy",
             Event::S3ObjectCreatedPost => "s3:ObjectCreated:Post",
             Event::S3ObjectCreatedPut => "s3:ObjectCreated:Put",
@@ -211,16 +191,10 @@ impl Event {
             Event::S3ObjectTaggingPut => "s3:ObjectTagging:Put",
             Event::S3ReducedRedundancyLostObject => "s3:ReducedRedundancyLostObject",
             Event::S3Replication => "s3:Replication:*",
-            Event::S3ReplicationOperationFailedReplication => {
-                "s3:Replication:OperationFailedReplication"
-            }
-            Event::S3ReplicationOperationMissedThreshold => {
-                "s3:Replication:OperationMissedThreshold"
-            }
+            Event::S3ReplicationOperationFailedReplication => "s3:Replication:OperationFailedReplication",
+            Event::S3ReplicationOperationMissedThreshold => "s3:Replication:OperationMissedThreshold",
             Event::S3ReplicationOperationNotTracked => "s3:Replication:OperationNotTracked",
-            Event::S3ReplicationOperationReplicatedAfterThreshold => {
-                "s3:Replication:OperationReplicatedAfterThreshold"
-            }
+            Event::S3ReplicationOperationReplicatedAfterThreshold => "s3:Replication:OperationReplicatedAfterThreshold",
             Event::Unknown(value) => value.as_str(),
         }
     }

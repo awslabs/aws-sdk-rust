@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`certificate_arn(Option<String>)`](crate::operation::register_ca_certificate::RegisterCaCertificateOutput::certificate_arn): <p>The CA certificate ARN.</p>
     ///   - [`certificate_id(Option<String>)`](crate::operation::register_ca_certificate::RegisterCaCertificateOutput::certificate_id): <p>The CA certificate identifier.</p>
     /// - On failure, responds with [`SdkError<RegisterCACertificateError>`](crate::operation::register_ca_certificate::RegisterCACertificateError)
-    pub fn register_ca_certificate(
-        &self,
-    ) -> crate::operation::register_ca_certificate::builders::RegisterCACertificateFluentBuilder
-    {
-        crate::operation::register_ca_certificate::builders::RegisterCACertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_ca_certificate(&self) -> crate::operation::register_ca_certificate::builders::RegisterCACertificateFluentBuilder {
+        crate::operation::register_ca_certificate::builders::RegisterCACertificateFluentBuilder::new(self.handle.clone())
     }
 }

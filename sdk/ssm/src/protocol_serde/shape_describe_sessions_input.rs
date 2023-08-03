@@ -21,10 +21,7 @@ pub fn ser_describe_sessions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_session_filter::ser_session_filter(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_session_filter::ser_session_filter(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

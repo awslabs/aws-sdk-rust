@@ -10,10 +10,7 @@ impl CreateUsageLimitInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_usage_limit::CreateUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_limit::CreateUsageLimitError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_limit::CreateUsageLimitError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_usage_limit();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateUsageLimitFluentBuilder {
         }
     }
     /// Access the CreateUsageLimit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_usage_limit::builders::CreateUsageLimitInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_usage_limit::builders::CreateUsageLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateUsageLimitFluentBuilder {
             crate::operation::create_usage_limit::CreateUsageLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_limit::CreateUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_limit::CreateUsageLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateUsageLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateUsageLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_usage_limit::CreateUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_limit::CreateUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_limit::CreateUsageLimitError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateUsageLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_usage_limit::CreateUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_limit::CreateUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_limit::CreateUsageLimitError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateUsageLimitFluentBuilder {
             crate::operation::create_usage_limit::CreateUsageLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_limit::CreateUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_limit::CreateUsageLimitError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl CreateUsageLimitFluentBuilder {
         self
     }
     /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
-    pub fn set_usage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitUsageType>,
-    ) -> Self {
+    pub fn set_usage_type(mut self, input: ::std::option::Option<crate::types::UsageLimitUsageType>) -> Self {
         self.inner = self.inner.set_usage_type(input);
         self
     }
@@ -173,10 +154,7 @@ impl CreateUsageLimitFluentBuilder {
         self
     }
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
-    pub fn set_period(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitPeriod>,
-    ) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::UsageLimitPeriod>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }
@@ -190,17 +168,12 @@ impl CreateUsageLimitFluentBuilder {
         self
     }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
-    pub fn set_breach_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitBreachAction>,
-    ) -> Self {
+    pub fn set_breach_action(mut self, input: ::std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
         self.inner = self.inner.set_breach_action(input);
         self
     }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.</p>
-    pub fn get_breach_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+    pub fn get_breach_action(&self) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
         self.inner.get_breach_action()
     }
 }

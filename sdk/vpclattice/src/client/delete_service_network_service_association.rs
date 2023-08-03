@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`status(Option<ServiceNetworkServiceAssociationStatus>)`](crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput::status): <p>The operation's status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput::arn): <p>The Amazon Resource Name (ARN) of the association.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceNetworkServiceAssociationError>`](crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationError)
-    pub fn delete_service_network_service_association(&self) -> crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationFluentBuilder{
-        crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationFluentBuilder::new(self.handle.clone())
+    pub fn delete_service_network_service_association(
+        &self,
+    ) -> crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationFluentBuilder {
+        crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

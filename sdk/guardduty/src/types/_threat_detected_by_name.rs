@@ -44,9 +44,7 @@ impl ThreatDetectedByName {
 
 /// A builder for [`ThreatDetectedByName`](crate::types::ThreatDetectedByName).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThreatDetectedByNameBuilder {
     pub(crate) item_count: ::std::option::Option<i32>,
     pub(crate) unique_threat_name_count: ::std::option::Option<i32>,
@@ -108,17 +106,12 @@ impl ThreatDetectedByNameBuilder {
         self
     }
     /// <p>List of identified threats with details, organized by threat name.</p>
-    pub fn set_threat_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScanThreatName>>,
-    ) -> Self {
+    pub fn set_threat_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanThreatName>>) -> Self {
         self.threat_names = input;
         self
     }
     /// <p>List of identified threats with details, organized by threat name.</p>
-    pub fn get_threat_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanThreatName>> {
+    pub fn get_threat_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanThreatName>> {
         &self.threat_names
     }
     /// Consumes the builder and constructs a [`ThreatDetectedByName`](crate::types::ThreatDetectedByName).

@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
     ///   - [`description(Option<String>)`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput::description): <p>A short text description of the job.</p>
     /// - On failure, responds with [`SdkError<AssociateTargetsWithJobError>`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobError)
-    pub fn associate_targets_with_job(
-        &self,
-    ) -> crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobFluentBuilder
-    {
+    pub fn associate_targets_with_job(&self) -> crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobFluentBuilder {
         crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobFluentBuilder::new(self.handle.clone())
     }
 }

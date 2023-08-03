@@ -22,9 +22,7 @@ impl DescribeSchemaInput {
 
 /// A builder for [`DescribeSchemaInput`](crate::operation::describe_schema::DescribeSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSchemaInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeSchemaInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSchemaInput`](crate::operation::describe_schema::DescribeSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_schema::DescribeSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_schema::DescribeSchemaInput {
-            schema_arn: self.schema_arn,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_schema::DescribeSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_schema::DescribeSchemaInput { schema_arn: self.schema_arn })
     }
 }

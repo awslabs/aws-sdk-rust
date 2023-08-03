@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeFlowExecutionRecordsOutput {
 }
 impl DescribeFlowExecutionRecordsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsOutput`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput).
-    pub fn builder() -> crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsOutputBuilder {
         crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFlowExecutionRecordsOutput`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlowExecutionRecordsOutputBuilder {
-    pub(crate) flow_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExecutionRecord>>,
+    pub(crate) flow_executions: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeFlowExecutionRecordsOutputBuilder {
         self
     }
     /// <p> Returns a list of all instances when this flow was run. </p>
-    pub fn set_flow_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionRecord>>,
-    ) -> Self {
+    pub fn set_flow_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionRecord>>) -> Self {
         self.flow_executions = input;
         self
     }
     /// <p> Returns a list of all instances when this flow was run. </p>
-    pub fn get_flow_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionRecord>> {
+    pub fn get_flow_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionRecord>> {
         &self.flow_executions
     }
     /// <p> The pagination token for the next page of data. </p>
@@ -94,9 +86,7 @@ impl DescribeFlowExecutionRecordsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFlowExecutionRecordsOutput`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput {
+    pub fn build(self) -> crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput {
         crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput {
             flow_executions: self.flow_executions,
             next_token: self.next_token,

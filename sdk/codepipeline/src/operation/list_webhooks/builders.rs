@@ -10,10 +10,7 @@ impl ListWebhooksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_webhooks::ListWebhooksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_webhooks::ListWebhooksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_webhooks::ListWebhooksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_webhooks();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListWebhooksFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_webhooks::ListWebhooks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_webhooks::ListWebhooks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_webhooks::ListWebhooksError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListWebhooksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListWebhooksFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_webhooks::ListWebhooks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_webhooks::ListWebhooks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_webhooks::ListWebhooksError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListWebhooksFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_webhooks::paginator::ListWebhooksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_webhooks::paginator::ListWebhooksPaginator {
-        crate::operation::list_webhooks::paginator::ListWebhooksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_webhooks::paginator::ListWebhooksPaginator {
+        crate::operation::list_webhooks::paginator::ListWebhooksPaginator::new(self.handle, self.inner)
     }
     /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

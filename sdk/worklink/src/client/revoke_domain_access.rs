@@ -7,14 +7,8 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::set_domain_name): <p>The name of the domain.</p>
     /// - On success, responds with [`RevokeDomainAccessOutput`](crate::operation::revoke_domain_access::RevokeDomainAccessOutput)
     /// - On failure, responds with [`SdkError<RevokeDomainAccessError>`](crate::operation::revoke_domain_access::RevokeDomainAccessError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn revoke_domain_access(
-        &self,
-    ) -> crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder {
-        crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn revoke_domain_access(&self) -> crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder {
+        crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::new(self.handle.clone())
     }
 }

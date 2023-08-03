@@ -5,16 +5,16 @@ pub use crate::operation::list_environment_account_connections::_list_environmen
 
 impl ListEnvironmentAccountConnectionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_environment_account_connections();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListEnvironmentAccountConnectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsInputBuilder,
+    inner: crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsInputBuilder,
 }
 impl ListEnvironmentAccountConnectionsFluentBuilder {
     /// Creates a new `ListEnvironmentAccountConnections`.
@@ -38,15 +38,20 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
         }
     }
     /// Access the ListEnvironmentAccountConnections as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnections, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_environment_account_connections::ListEnvironmentAccountConnections,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,63 +88,55 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnections, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_environment_account_connections::ListEnvironmentAccountConnections,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator {
         crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
-    pub fn requested_by(
-        mut self,
-        input: crate::types::EnvironmentAccountConnectionRequesterAccountType,
-    ) -> Self {
+    pub fn requested_by(mut self, input: crate::types::EnvironmentAccountConnectionRequesterAccountType) -> Self {
         self.inner = self.inner.requested_by(input);
         self
     }
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
-    pub fn set_requested_by(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::EnvironmentAccountConnectionRequesterAccountType,
-        >,
-    ) -> Self {
+    pub fn set_requested_by(mut self, input: ::std::option::Option<crate::types::EnvironmentAccountConnectionRequesterAccountType>) -> Self {
         self.inner = self.inner.set_requested_by(input);
         self
     }
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
-    pub fn get_requested_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentAccountConnectionRequesterAccountType>
-    {
+    pub fn get_requested_by(&self) -> &::std::option::Option<crate::types::EnvironmentAccountConnectionRequesterAccountType> {
         self.inner.get_requested_by()
     }
     /// <p>The environment name that's associated with each listed environment account connection.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The environment name that's associated with each listed environment account connection.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -156,20 +154,12 @@ impl ListEnvironmentAccountConnectionsFluentBuilder {
         self
     }
     /// <p>The status details for each listed environment account connection.</p>
-    pub fn set_statuses(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EnvironmentAccountConnectionStatus>,
-        >,
-    ) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionStatus>>) -> Self {
         self.inner = self.inner.set_statuses(input);
         self
     }
     /// <p>The status details for each listed environment account connection.</p>
-    pub fn get_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionStatus>>
-    {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionStatus>> {
         self.inner.get_statuses()
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>

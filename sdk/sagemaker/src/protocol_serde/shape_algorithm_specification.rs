@@ -18,10 +18,7 @@ pub fn ser_algorithm_specification(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_metric_definition::ser_metric_definition(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_metric_definition::ser_metric_definition(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -53,10 +50,7 @@ pub fn ser_algorithm_specification(
     if let Some(var_14) = &input.training_image_config {
         #[allow(unused_mut)]
         let mut object_15 = object.key("TrainingImageConfig").start_object();
-        crate::protocol_serde::shape_training_image_config::ser_training_image_config(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_training_image_config::ser_training_image_config(&mut object_15, var_14)?;
         object_15.finish();
     }
     Ok(())
@@ -64,17 +58,9 @@ pub fn ser_algorithm_specification(
 
 pub(crate) fn de_algorithm_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AlgorithmSpecification>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AlgorithmSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -84,84 +70,65 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TrainingImage" => {
-                                builder = builder.set_training_image(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TrainingImage" => {
+                            builder = builder.set_training_image(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "AlgorithmName" => {
-                                builder = builder.set_algorithm_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "TrainingInputMode" => {
-                                builder = builder.set_training_input_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::TrainingInputMode::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "MetricDefinitions" => {
-                                builder = builder.set_metric_definitions(
-                                    crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(tokens)?
-                                );
-                            }
-                            "EnableSageMakerMetricsTimeSeries" => {
-                                builder = builder.set_enable_sage_maker_metrics_time_series(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "ContainerEntrypoint" => {
-                                builder = builder.set_container_entrypoint(
-                                    crate::protocol_serde::shape_training_container_entrypoint::de_training_container_entrypoint(tokens)?
-                                );
-                            }
-                            "ContainerArguments" => {
-                                builder = builder.set_container_arguments(
-                                    crate::protocol_serde::shape_training_container_arguments::de_training_container_arguments(tokens)?
-                                );
-                            }
-                            "TrainingImageConfig" => {
-                                builder = builder.set_training_image_config(
-                                    crate::protocol_serde::shape_training_image_config::de_training_image_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "AlgorithmName" => {
+                            builder = builder.set_algorithm_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TrainingInputMode" => {
+                            builder = builder.set_training_input_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TrainingInputMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MetricDefinitions" => {
+                            builder = builder
+                                .set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(tokens)?);
+                        }
+                        "EnableSageMakerMetricsTimeSeries" => {
+                            builder = builder.set_enable_sage_maker_metrics_time_series(::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?);
+                        }
+                        "ContainerEntrypoint" => {
+                            builder = builder.set_container_entrypoint(
+                                crate::protocol_serde::shape_training_container_entrypoint::de_training_container_entrypoint(tokens)?,
+                            );
+                        }
+                        "ContainerArguments" => {
+                            builder = builder.set_container_arguments(
+                                crate::protocol_serde::shape_training_container_arguments::de_training_container_arguments(tokens)?,
+                            );
+                        }
+                        "TrainingImageConfig" => {
+                            builder = builder
+                                .set_training_image_config(crate::protocol_serde::shape_training_image_config::de_training_image_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

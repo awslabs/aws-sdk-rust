@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for AssociateAssessmentReportEvidenceFold
 }
 impl AssociateAssessmentReportEvidenceFolderOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAssessmentReportEvidenceFolderOutput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput).
-    pub fn builder() -> crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderOutputBuilder{
+    pub fn builder() -> crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderOutputBuilder
+    {
         crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAssessmentReportEvidenceFolderOutput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAssessmentReportEvidenceFolderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl AssociateAssessmentReportEvidenceFolderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateAssessmentReportEvidenceFolderOutput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput).
-    pub fn build(self) -> crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput{
+    pub fn build(self) -> crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput {
         crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput {
             _request_id: self._request_id,
         }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`function_summary(Option<FunctionSummary>)`](crate::operation::update_function::UpdateFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_function::UpdateFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionError>`](crate::operation::update_function::UpdateFunctionError)
-    pub fn update_function(
-        &self,
-    ) -> crate::operation::update_function::builders::UpdateFunctionFluentBuilder {
-        crate::operation::update_function::builders::UpdateFunctionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_function(&self) -> crate::operation::update_function::builders::UpdateFunctionFluentBuilder {
+        crate::operation::update_function::builders::UpdateFunctionFluentBuilder::new(self.handle.clone())
     }
 }

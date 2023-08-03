@@ -9,8 +9,7 @@ pub struct GetPackageVersionHistoryOutput {
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of package versions, along with their creation time and commit message.</p>
     #[doc(hidden)]
-    pub package_version_history_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
+    pub package_version_history_list: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,9 +21,7 @@ impl GetPackageVersionHistoryOutput {
         self.package_id.as_deref()
     }
     /// <p>A list of package versions, along with their creation time and commit message.</p>
-    pub fn package_version_history_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PackageVersionHistory]> {
+    pub fn package_version_history_list(&self) -> ::std::option::Option<&[crate::types::PackageVersionHistory]> {
         self.package_version_history_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -39,20 +36,17 @@ impl ::aws_http::request_id::RequestId for GetPackageVersionHistoryOutput {
 }
 impl GetPackageVersionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryOutput`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput).
-    pub fn builder() -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryOutputBuilder {
         crate::operation::get_package_version_history::builders::GetPackageVersionHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPackageVersionHistoryOutput`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageVersionHistoryOutputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
-    pub(crate) package_version_history_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
+    pub(crate) package_version_history_list: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -76,27 +70,19 @@ impl GetPackageVersionHistoryOutputBuilder {
     /// To override the contents of this collection use [`set_package_version_history_list`](Self::set_package_version_history_list).
     ///
     /// <p>A list of package versions, along with their creation time and commit message.</p>
-    pub fn package_version_history_list(
-        mut self,
-        input: crate::types::PackageVersionHistory,
-    ) -> Self {
+    pub fn package_version_history_list(mut self, input: crate::types::PackageVersionHistory) -> Self {
         let mut v = self.package_version_history_list.unwrap_or_default();
         v.push(input);
         self.package_version_history_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of package versions, along with their creation time and commit message.</p>
-    pub fn set_package_version_history_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
-    ) -> Self {
+    pub fn set_package_version_history_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>) -> Self {
         self.package_version_history_list = input;
         self
     }
     /// <p>A list of package versions, along with their creation time and commit message.</p>
-    pub fn get_package_version_history_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>> {
+    pub fn get_package_version_history_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>> {
         &self.package_version_history_list
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -123,9 +109,7 @@ impl GetPackageVersionHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPackageVersionHistoryOutput`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_package_version_history::GetPackageVersionHistoryOutput {
+    pub fn build(self) -> crate::operation::get_package_version_history::GetPackageVersionHistoryOutput {
         crate::operation::get_package_version_history::GetPackageVersionHistoryOutput {
             package_id: self.package_id,
             package_version_history_list: self.package_version_history_list,

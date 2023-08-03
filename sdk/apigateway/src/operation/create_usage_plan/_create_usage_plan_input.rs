@@ -21,9 +21,7 @@ pub struct CreateUsagePlanInput {
     pub quota: ::std::option::Option<crate::types::QuotaSettings>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateUsagePlanInput {
     /// <p>The name of the usage plan.</p>
@@ -47,11 +45,7 @@ impl CreateUsagePlanInput {
         self.quota.as_ref()
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -64,18 +58,14 @@ impl CreateUsagePlanInput {
 
 /// A builder for [`CreateUsagePlanInput`](crate::operation::create_usage_plan::CreateUsagePlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUsagePlanInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) api_stages: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>,
     pub(crate) throttle: ::std::option::Option<crate::types::ThrottleSettings>,
     pub(crate) quota: ::std::option::Option<crate::types::QuotaSettings>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateUsagePlanInputBuilder {
     /// <p>The name of the usage plan.</p>
@@ -118,17 +108,12 @@ impl CreateUsagePlanInputBuilder {
         self
     }
     /// <p>The associated API stages of the usage plan.</p>
-    pub fn set_api_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>,
-    ) -> Self {
+    pub fn set_api_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>) -> Self {
         self.api_stages = input;
         self
     }
     /// <p>The associated API stages of the usage plan.</p>
-    pub fn get_api_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiStage>> {
+    pub fn get_api_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiStage>> {
         &self.api_stages
     }
     /// <p>The throttling limits of the usage plan.</p>
@@ -137,10 +122,7 @@ impl CreateUsagePlanInputBuilder {
         self
     }
     /// <p>The throttling limits of the usage plan.</p>
-    pub fn set_throttle(
-        mut self,
-        input: ::std::option::Option<crate::types::ThrottleSettings>,
-    ) -> Self {
+    pub fn set_throttle(mut self, input: ::std::option::Option<crate::types::ThrottleSettings>) -> Self {
         self.throttle = input;
         self
     }
@@ -167,41 +149,25 @@ impl CreateUsagePlanInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUsagePlanInput`](crate::operation::create_usage_plan::CreateUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_usage_plan::CreateUsagePlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_usage_plan::CreateUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_usage_plan::CreateUsagePlanInput {
             name: self.name,
             description: self.description,

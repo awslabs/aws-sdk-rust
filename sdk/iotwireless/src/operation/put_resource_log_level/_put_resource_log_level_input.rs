@@ -29,18 +29,14 @@ impl PutResourceLogLevelInput {
 }
 impl PutResourceLogLevelInput {
     /// Creates a new builder-style object to manufacture [`PutResourceLogLevelInput`](crate::operation::put_resource_log_level::PutResourceLogLevelInput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_log_level::builders::PutResourceLogLevelInputBuilder {
-        crate::operation::put_resource_log_level::builders::PutResourceLogLevelInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_resource_log_level::builders::PutResourceLogLevelInputBuilder {
+        crate::operation::put_resource_log_level::builders::PutResourceLogLevelInputBuilder::default()
     }
 }
 
 /// A builder for [`PutResourceLogLevelInput`](crate::operation::put_resource_log_level::PutResourceLogLevelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResourceLogLevelInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct PutResourceLogLevelInputBuilder {
 }
 impl PutResourceLogLevelInputBuilder {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -68,18 +58,12 @@ impl PutResourceLogLevelInputBuilder {
         &self.resource_identifier
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -104,16 +88,12 @@ impl PutResourceLogLevelInputBuilder {
     /// Consumes the builder and constructs a [`PutResourceLogLevelInput`](crate::operation::put_resource_log_level::PutResourceLogLevelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resource_log_level::PutResourceLogLevelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_resource_log_level::PutResourceLogLevelInput {
-                resource_identifier: self.resource_identifier,
-                resource_type: self.resource_type,
-                log_level: self.log_level,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_resource_log_level::PutResourceLogLevelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_resource_log_level::PutResourceLogLevelInput {
+            resource_identifier: self.resource_identifier,
+            resource_type: self.resource_type,
+            log_level: self.log_level,
+        })
     }
 }

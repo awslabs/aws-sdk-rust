@@ -79,9 +79,7 @@ impl DescribedHostKey {
 
 /// A builder for [`DescribedHostKey`](crate::types::DescribedHostKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribedHostKeyBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) host_key_id: ::std::option::Option<::std::string::String>,
@@ -121,18 +119,12 @@ impl DescribedHostKeyBuilder {
         &self.host_key_id
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
-    pub fn host_key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
-    pub fn set_host_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_key_fingerprint = input;
         self
     }
@@ -195,10 +187,7 @@ impl DescribedHostKeyBuilder {
         self
     }
     /// <p>The date on which the host key was added to the server.</p>
-    pub fn set_date_imported(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_imported(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_imported = input;
         self
     }
@@ -218,10 +207,7 @@ impl DescribedHostKeyBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

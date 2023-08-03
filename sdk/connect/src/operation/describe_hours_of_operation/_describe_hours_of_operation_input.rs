@@ -22,18 +22,14 @@ impl DescribeHoursOfOperationInput {
 }
 impl DescribeHoursOfOperationInput {
     /// Creates a new builder-style object to manufacture [`DescribeHoursOfOperationInput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationInputBuilder {
         crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHoursOfOperationInput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHoursOfOperationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) hours_of_operation_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DescribeHoursOfOperationInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hours_of_operation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hours_of_operation_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DescribeHoursOfOperationInputBuilder {
         crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput {
-                instance_id: self.instance_id,
-                hours_of_operation_id: self.hours_of_operation_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput {
+            instance_id: self.instance_id,
+            hours_of_operation_id: self.hours_of_operation_id,
+        })
     }
 }

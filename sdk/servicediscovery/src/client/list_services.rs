@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`services(Option<Vec<ServiceSummary>>)`](crate::operation::list_services::ListServicesOutput::services): <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>  </note>
     /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
-    pub fn list_services(
-        &self,
-    ) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
-        crate::operation::list_services::builders::ListServicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
+        crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
     }
 }

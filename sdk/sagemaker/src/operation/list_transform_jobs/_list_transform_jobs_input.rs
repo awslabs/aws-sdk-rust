@@ -48,9 +48,7 @@ impl ListTransformJobsInput {
         self.last_modified_time_after.as_ref()
     }
     /// <p>A filter that returns only transform jobs modified before the specified time.</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</p>
@@ -80,17 +78,14 @@ impl ListTransformJobsInput {
 }
 impl ListTransformJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTransformJobsInput`](crate::operation::list_transform_jobs::ListTransformJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_transform_jobs::builders::ListTransformJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_transform_jobs::builders::ListTransformJobsInputBuilder {
         crate::operation::list_transform_jobs::builders::ListTransformJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTransformJobsInput`](crate::operation::list_transform_jobs::ListTransformJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransformJobsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -110,10 +105,7 @@ impl ListTransformJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only transform jobs created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -127,10 +119,7 @@ impl ListTransformJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only transform jobs created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -144,17 +133,12 @@ impl ListTransformJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only transform jobs modified after the specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p>A filter that returns only transform jobs modified after the specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p>A filter that returns only transform jobs modified before the specified time.</p>
@@ -163,32 +147,21 @@ impl ListTransformJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only transform jobs modified before the specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p>A filter that returns only transform jobs modified before the specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -202,10 +175,7 @@ impl ListTransformJobsInputBuilder {
         self
     }
     /// <p>A filter that retrieves only transform jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::TransformJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
@@ -272,23 +242,18 @@ impl ListTransformJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransformJobsInput`](crate::operation::list_transform_jobs::ListTransformJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_transform_jobs::ListTransformJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_transform_jobs::ListTransformJobsInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                last_modified_time_after: self.last_modified_time_after,
-                last_modified_time_before: self.last_modified_time_before,
-                name_contains: self.name_contains,
-                status_equals: self.status_equals,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_transform_jobs::ListTransformJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_transform_jobs::ListTransformJobsInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            last_modified_time_after: self.last_modified_time_after,
+            last_modified_time_before: self.last_modified_time_before,
+            name_contains: self.name_contains,
+            status_equals: self.status_equals,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -21,7 +21,10 @@ pub fn ser_aws_dynamo_db_table_replica(
     if let Some(var_6) = &input.provisioned_throughput_override {
         #[allow(unused_mut)]
         let mut object_7 = object.key("ProvisionedThroughputOverride").start_object();
-        crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput_override::ser_aws_dynamo_db_table_provisioned_throughput_override(&mut object_7, var_6)?;
+        crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput_override::ser_aws_dynamo_db_table_provisioned_throughput_override(
+            &mut object_7,
+            var_6,
+        )?;
         object_7.finish();
     }
     if let Some(var_8) = &input.region_name {
@@ -31,26 +34,16 @@ pub fn ser_aws_dynamo_db_table_replica(
         object.key("ReplicaStatus").string(var_9.as_str());
     }
     if let Some(var_10) = &input.replica_status_description {
-        object
-            .key("ReplicaStatusDescription")
-            .string(var_10.as_str());
+        object.key("ReplicaStatusDescription").string(var_10.as_str());
     }
     Ok(())
 }
 
 pub(crate) fn de_aws_dynamo_db_table_replica<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsDynamoDbTableReplica>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsDynamoDbTableReplica>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -60,72 +53,59 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "GlobalSecondaryIndexes" => {
-                                builder = builder.set_global_secondary_indexes(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "GlobalSecondaryIndexes" => {
+                            builder = builder.set_global_secondary_indexes(
                                     crate::protocol_serde::shape_aws_dynamo_db_table_replica_global_secondary_index_list::de_aws_dynamo_db_table_replica_global_secondary_index_list(tokens)?
                                 );
-                            }
-                            "KmsMasterKeyId" => {
-                                builder = builder.set_kms_master_key_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "KmsMasterKeyId" => {
+                            builder = builder.set_kms_master_key_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ProvisionedThroughputOverride" => {
-                                builder = builder.set_provisioned_throughput_override(
+                            );
+                        }
+                        "ProvisionedThroughputOverride" => {
+                            builder = builder.set_provisioned_throughput_override(
                                     crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput_override::de_aws_dynamo_db_table_provisioned_throughput_override(tokens)?
                                 );
-                            }
-                            "RegionName" => {
-                                builder = builder.set_region_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ReplicaStatus" => {
-                                builder = builder.set_replica_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ReplicaStatusDescription" => {
-                                builder = builder.set_replica_status_description(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "RegionName" => {
+                            builder = builder.set_region_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ReplicaStatus" => {
+                            builder = builder.set_replica_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ReplicaStatusDescription" => {
+                            builder = builder.set_replica_status_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

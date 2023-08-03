@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListParticipantEventsOutput {
 }
 impl ListParticipantEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListParticipantEventsOutput`](crate::operation::list_participant_events::ListParticipantEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_participant_events::builders::ListParticipantEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_participant_events::builders::ListParticipantEventsOutputBuilder {
         crate::operation::list_participant_events::builders::ListParticipantEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListParticipantEventsOutput`](crate::operation::list_participant_events::ListParticipantEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParticipantEventsOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListParticipantEventsOutputBuilder {
         self
     }
     /// <p>List of the matching events.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }

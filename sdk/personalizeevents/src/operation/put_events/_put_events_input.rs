@@ -115,10 +115,7 @@ impl PutEventsInputBuilder {
         self
     }
     /// <p>A list of event data from the session.</p>
-    pub fn set_event_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_event_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.event_list = input;
         self
     }
@@ -127,12 +124,7 @@ impl PutEventsInputBuilder {
         &self.event_list
     }
     /// Consumes the builder and constructs a [`PutEventsInput`](crate::operation::put_events::PutEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_events::PutEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_events::PutEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_events::PutEventsInput {
             tracking_id: self.tracking_id,
             user_id: self.user_id,

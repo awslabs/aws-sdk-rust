@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for PublishPackageVersionOutput {
 }
 impl PublishPackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`PublishPackageVersionOutput`](crate::operation::publish_package_version::PublishPackageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::publish_package_version::builders::PublishPackageVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::publish_package_version::builders::PublishPackageVersionOutputBuilder {
         crate::operation::publish_package_version::builders::PublishPackageVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PublishPackageVersionOutput`](crate::operation::publish_package_version::PublishPackageVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishPackageVersionOutputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -143,18 +139,12 @@ impl PublishPackageVersionOutputBuilder {
         &self.version
     }
     /// <p>The revision of the package version.</p>
-    pub fn version_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision of the package version.</p>
-    pub fn set_version_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_revision = input;
         self
     }
@@ -168,10 +158,7 @@ impl PublishPackageVersionOutputBuilder {
         self
     }
     /// <p>A string that contains the status of the package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.status = input;
         self
     }

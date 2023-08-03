@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetReportGroupsOutput {
 }
 impl BatchGetReportGroupsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetReportGroupsOutput`](crate::operation::batch_get_report_groups::BatchGetReportGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsOutputBuilder {
         crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetReportGroupsOutput`](crate::operation::batch_get_report_groups::BatchGetReportGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetReportGroupsOutputBuilder {
     pub(crate) report_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>>,
-    pub(crate) report_groups_not_found:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) report_groups_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetReportGroupsOutputBuilder {
@@ -59,17 +54,12 @@ impl BatchGetReportGroupsOutputBuilder {
         self
     }
     /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
-    pub fn set_report_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>>,
-    ) -> Self {
+    pub fn set_report_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>>) -> Self {
         self.report_groups = input;
         self
     }
     /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
-    pub fn get_report_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>> {
+    pub fn get_report_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>> {
         &self.report_groups
     }
     /// Appends an item to `report_groups_not_found`.
@@ -77,27 +67,19 @@ impl BatchGetReportGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_report_groups_not_found`](Self::set_report_groups_not_found).
     ///
     /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
-    pub fn report_groups_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_groups_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.report_groups_not_found.unwrap_or_default();
         v.push(input.into());
         self.report_groups_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
-    pub fn set_report_groups_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_report_groups_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.report_groups_not_found = input;
         self
     }
     /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
-    pub fn get_report_groups_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_report_groups_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.report_groups_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

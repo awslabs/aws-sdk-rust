@@ -17,17 +17,14 @@ impl DeclineHandshakeInput {
 }
 impl DeclineHandshakeInput {
     /// Creates a new builder-style object to manufacture [`DeclineHandshakeInput`](crate::operation::decline_handshake::DeclineHandshakeInput).
-    pub fn builder() -> crate::operation::decline_handshake::builders::DeclineHandshakeInputBuilder
-    {
+    pub fn builder() -> crate::operation::decline_handshake::builders::DeclineHandshakeInputBuilder {
         crate::operation::decline_handshake::builders::DeclineHandshakeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeclineHandshakeInput`](crate::operation::decline_handshake::DeclineHandshakeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeclineHandshakeInputBuilder {
     pub(crate) handshake_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +49,7 @@ impl DeclineHandshakeInputBuilder {
     /// Consumes the builder and constructs a [`DeclineHandshakeInput`](crate::operation::decline_handshake::DeclineHandshakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::decline_handshake::DeclineHandshakeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::decline_handshake::DeclineHandshakeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::decline_handshake::DeclineHandshakeInput {
             handshake_id: self.handshake_id,
         })

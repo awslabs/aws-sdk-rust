@@ -37,9 +37,7 @@ impl GetDeploymentConfigFluentBuilder {
         }
     }
     /// Access the GetDeploymentConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_deployment_config::builders::GetDeploymentConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_deployment_config::builders::GetDeploymentConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetDeploymentConfigFluentBuilder {
             crate::operation::get_deployment_config::GetDeploymentConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_config::GetDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_config::GetDeploymentConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetDeploymentConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetDeploymentConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_config::GetDeploymentConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_config::GetDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_config::GetDeploymentConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetDeploymentConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_config::GetDeploymentConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_config::GetDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_config::GetDeploymentConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetDeploymentConfigFluentBuilder {
             crate::operation::get_deployment_config::GetDeploymentConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_config::GetDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_config::GetDeploymentConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
-    pub fn deployment_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_config_name(input.into());
         self
     }
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_deployment_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_config_name(input);
         self
     }

@@ -38,13 +38,7 @@
 /// Mpeg2 Color Space
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2ColorSpace {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Mpeg2ColorSpace {
         match s {
             "AUTO" => Mpeg2ColorSpace::Auto,
             "PASSTHROUGH" => Mpeg2ColorSpace::Passthrough,
-            other => {
-                Mpeg2ColorSpace::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Mpeg2ColorSpace::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -5,15 +5,12 @@
 pub struct ListResponseHeadersPoliciesOutput {
     /// <p>A list of response headers policies.</p>
     #[doc(hidden)]
-    pub response_headers_policy_list:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
+    pub response_headers_policy_list: ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
     _request_id: Option<String>,
 }
 impl ListResponseHeadersPoliciesOutput {
     /// <p>A list of response headers policies.</p>
-    pub fn response_headers_policy_list(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyList> {
+    pub fn response_headers_policy_list(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyList> {
         self.response_headers_policy_list.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for ListResponseHeadersPoliciesOutput {
 }
 impl ListResponseHeadersPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListResponseHeadersPoliciesOutput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput).
-    pub fn builder() -> crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesOutputBuilder {
         crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResponseHeadersPoliciesOutput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResponseHeadersPoliciesOutputBuilder {
-    pub(crate) response_headers_policy_list:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
+    pub(crate) response_headers_policy_list: ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
     _request_id: Option<String>,
 }
 impl ListResponseHeadersPoliciesOutputBuilder {
     /// <p>A list of response headers policies.</p>
-    pub fn response_headers_policy_list(
-        mut self,
-        input: crate::types::ResponseHeadersPolicyList,
-    ) -> Self {
+    pub fn response_headers_policy_list(mut self, input: crate::types::ResponseHeadersPolicyList) -> Self {
         self.response_headers_policy_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of response headers policies.</p>
-    pub fn set_response_headers_policy_list(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
-    ) -> Self {
+    pub fn set_response_headers_policy_list(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyList>) -> Self {
         self.response_headers_policy_list = input;
         self
     }
     /// <p>A list of response headers policies.</p>
-    pub fn get_response_headers_policy_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyList> {
+    pub fn get_response_headers_policy_list(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyList> {
         &self.response_headers_policy_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl ListResponseHeadersPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResponseHeadersPoliciesOutput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput {
+    pub fn build(self) -> crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput {
         crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput {
             response_headers_policy_list: self.response_headers_policy_list,
             _request_id: self._request_id,

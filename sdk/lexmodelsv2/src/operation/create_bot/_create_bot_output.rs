@@ -29,14 +29,10 @@ pub struct CreateBotOutput {
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the bot.</p>
     #[doc(hidden)]
-    pub bot_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub bot_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of tags associated with the test alias for the bot.</p>
     #[doc(hidden)]
-    pub test_bot_alias_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of a bot that was created.</p>
     #[doc(hidden)]
     pub bot_type: ::std::option::Option<crate::types::BotType>,
@@ -79,19 +75,11 @@ impl CreateBotOutput {
         self.creation_date_time.as_ref()
     }
     /// <p>A list of tags associated with the bot.</p>
-    pub fn bot_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn bot_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.bot_tags.as_ref()
     }
     /// <p>A list of tags associated with the test alias for the bot.</p>
-    pub fn test_bot_alias_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn test_bot_alias_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.test_bot_alias_tags.as_ref()
     }
     /// <p>The type of a bot that was created.</p>
@@ -117,9 +105,7 @@ impl CreateBotOutput {
 
 /// A builder for [`CreateBotOutput`](crate::operation::create_bot::CreateBotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBotOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
@@ -129,12 +115,8 @@ pub struct CreateBotOutputBuilder {
     pub(crate) idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     pub(crate) bot_status: ::std::option::Option<crate::types::BotStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) bot_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) test_bot_alias_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) bot_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) bot_type: ::std::option::Option<crate::types::BotType>,
     pub(crate) bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
     _request_id: Option<String>,
@@ -202,10 +184,7 @@ impl CreateBotOutputBuilder {
         self
     }
     /// <p>The data privacy settings specified for the bot.</p>
-    pub fn set_data_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPrivacy>,
-    ) -> Self {
+    pub fn set_data_privacy(mut self, input: ::std::option::Option<crate::types::DataPrivacy>) -> Self {
         self.data_privacy = input;
         self
     }
@@ -247,10 +226,7 @@ impl CreateBotOutputBuilder {
         self
     }
     /// <p>A timestamp indicating the date and time that the bot was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -263,32 +239,19 @@ impl CreateBotOutputBuilder {
     /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
     ///
     /// <p>A list of tags associated with the bot.</p>
-    pub fn bot_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.bot_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.bot_tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags associated with the bot.</p>
-    pub fn set_bot_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_bot_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.bot_tags = input;
         self
     }
     /// <p>A list of tags associated with the bot.</p>
-    pub fn get_bot_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_bot_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.bot_tags
     }
     /// Adds a key-value pair to `test_bot_alias_tags`.
@@ -309,19 +272,13 @@ impl CreateBotOutputBuilder {
     /// <p>A list of tags associated with the test alias for the bot.</p>
     pub fn set_test_bot_alias_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.test_bot_alias_tags = input;
         self
     }
     /// <p>A list of tags associated with the test alias for the bot.</p>
-    pub fn get_test_bot_alias_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_test_bot_alias_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.test_bot_alias_tags
     }
     /// <p>The type of a bot that was created.</p>
@@ -350,17 +307,12 @@ impl CreateBotOutputBuilder {
         self
     }
     /// <p>The list of bots in a network that was created.</p>
-    pub fn set_bot_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
-    ) -> Self {
+    pub fn set_bot_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>) -> Self {
         self.bot_members = input;
         self
     }
     /// <p>The list of bots in a network that was created.</p>
-    pub fn get_bot_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+    pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         &self.bot_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::operation::list_resource_definitions::ListResourceDefinitionsOutput::definitions): Information about a definition.
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_definitions::ListResourceDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListResourceDefinitionsError>`](crate::operation::list_resource_definitions::ListResourceDefinitionsError)
-    pub fn list_resource_definitions(
-        &self,
-    ) -> crate::operation::list_resource_definitions::builders::ListResourceDefinitionsFluentBuilder
-    {
+    pub fn list_resource_definitions(&self) -> crate::operation::list_resource_definitions::builders::ListResourceDefinitionsFluentBuilder {
         crate::operation::list_resource_definitions::builders::ListResourceDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

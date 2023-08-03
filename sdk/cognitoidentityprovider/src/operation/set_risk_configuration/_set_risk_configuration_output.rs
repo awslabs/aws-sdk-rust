@@ -10,9 +10,7 @@ pub struct SetRiskConfigurationOutput {
 }
 impl SetRiskConfigurationOutput {
     /// <p>The risk configuration.</p>
-    pub fn risk_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RiskConfigurationType> {
+    pub fn risk_configuration(&self) -> ::std::option::Option<&crate::types::RiskConfigurationType> {
         self.risk_configuration.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for SetRiskConfigurationOutput {
 }
 impl SetRiskConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`SetRiskConfigurationOutput`](crate::operation::set_risk_configuration::SetRiskConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::set_risk_configuration::builders::SetRiskConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::set_risk_configuration::builders::SetRiskConfigurationOutputBuilder {
         crate::operation::set_risk_configuration::builders::SetRiskConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetRiskConfigurationOutput`](crate::operation::set_risk_configuration::SetRiskConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetRiskConfigurationOutputBuilder {
     pub(crate) risk_configuration: ::std::option::Option<crate::types::RiskConfigurationType>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl SetRiskConfigurationOutputBuilder {
         self
     }
     /// <p>The risk configuration.</p>
-    pub fn set_risk_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RiskConfigurationType>,
-    ) -> Self {
+    pub fn set_risk_configuration(mut self, input: ::std::option::Option<crate::types::RiskConfigurationType>) -> Self {
         self.risk_configuration = input;
         self
     }
     /// <p>The risk configuration.</p>
-    pub fn get_risk_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RiskConfigurationType> {
+    pub fn get_risk_configuration(&self) -> &::std::option::Option<crate::types::RiskConfigurationType> {
         &self.risk_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

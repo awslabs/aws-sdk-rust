@@ -23,9 +23,7 @@ impl MonitoringGroundTruthS3Input {
 
 /// A builder for [`MonitoringGroundTruthS3Input`](crate::types::MonitoringGroundTruthS3Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringGroundTruthS3InputBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl MonitoringGroundTruthS3InputBuilder {
     }
     /// Consumes the builder and constructs a [`MonitoringGroundTruthS3Input`](crate::types::MonitoringGroundTruthS3Input).
     pub fn build(self) -> crate::types::MonitoringGroundTruthS3Input {
-        crate::types::MonitoringGroundTruthS3Input {
-            s3_uri: self.s3_uri,
-        }
+        crate::types::MonitoringGroundTruthS3Input { s3_uri: self.s3_uri }
     }
 }

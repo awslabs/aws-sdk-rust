@@ -5,8 +5,7 @@
 pub struct ListTimeSeriesOutput {
     /// <p>One or more time series summaries to list.</p>
     #[doc(hidden)]
-    pub time_series_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>>,
+    pub time_series_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTimeSeriesOutput {
 }
 impl ListTimeSeriesOutput {
     /// <p>One or more time series summaries to list.</p>
-    pub fn time_series_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TimeSeriesSummary]> {
+    pub fn time_series_summaries(&self) -> ::std::option::Option<&[crate::types::TimeSeriesSummary]> {
         self.time_series_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -38,12 +35,9 @@ impl ListTimeSeriesOutput {
 
 /// A builder for [`ListTimeSeriesOutput`](crate::operation::list_time_series::ListTimeSeriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTimeSeriesOutputBuilder {
-    pub(crate) time_series_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>>,
+    pub(crate) time_series_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListTimeSeriesOutputBuilder {
         self
     }
     /// <p>One or more time series summaries to list.</p>
-    pub fn set_time_series_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>>,
-    ) -> Self {
+    pub fn set_time_series_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>>) -> Self {
         self.time_series_summaries = input;
         self
     }
     /// <p>One or more time series summaries to list.</p>
-    pub fn get_time_series_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>> {
+    pub fn get_time_series_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>> {
         &self.time_series_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

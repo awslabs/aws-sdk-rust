@@ -74,9 +74,7 @@ impl DescribedConnector {
 
 /// A builder for [`DescribedConnector`](crate::types::DescribedConnector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribedConnectorBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
@@ -136,10 +134,7 @@ impl DescribedConnectorBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
-    pub fn set_as2_config(
-        mut self,
-        input: ::std::option::Option<crate::types::As2ConnectorConfig>,
-    ) -> Self {
+    pub fn set_as2_config(mut self, input: ::std::option::Option<crate::types::As2ConnectorConfig>) -> Self {
         self.as2_config = input;
         self
     }
@@ -190,10 +185,7 @@ impl DescribedConnectorBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -207,10 +199,7 @@ impl DescribedConnectorBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
-    pub fn set_sftp_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SftpConnectorConfig>,
-    ) -> Self {
+    pub fn set_sftp_config(mut self, input: ::std::option::Option<crate::types::SftpConnectorConfig>) -> Self {
         self.sftp_config = input;
         self
     }

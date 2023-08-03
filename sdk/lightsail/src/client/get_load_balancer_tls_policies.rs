@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`tls_policies(Option<Vec<LoadBalancerTlsPolicy>>)`](crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesOutput::tls_policies): <p>An array of objects that describe the TLS security policies that are available.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetLoadBalancerTlsPoliciesError>`](crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError)
-    pub fn get_load_balancer_tls_policies(&self) -> crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesFluentBuilder{
+    pub fn get_load_balancer_tls_policies(
+        &self,
+    ) -> crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesFluentBuilder {
         crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

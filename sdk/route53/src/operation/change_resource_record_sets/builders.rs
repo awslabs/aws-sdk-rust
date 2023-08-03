@@ -50,7 +50,7 @@ impl ChangeResourceRecordSetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeResourceRecordSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsInputBuilder,
+    inner: crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsInputBuilder,
 }
 impl ChangeResourceRecordSetsFluentBuilder {
     /// Creates a new `ChangeResourceRecordSets`.
@@ -61,7 +61,7 @@ impl ChangeResourceRecordSetsFluentBuilder {
         }
     }
     /// Access the ChangeResourceRecordSets as a reference.
-    pub fn as_input(&self) -> &crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +73,7 @@ impl ChangeResourceRecordSetsFluentBuilder {
             crate::operation::change_resource_record_sets::ChangeResourceRecordSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -85,10 +83,7 @@ impl ChangeResourceRecordSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -97,9 +92,7 @@ impl ChangeResourceRecordSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError>,
     > {
         let op = self
             .inner
@@ -122,9 +115,7 @@ impl ChangeResourceRecordSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError>,
     > {
         self.send_middleware().await
     }
@@ -138,25 +129,17 @@ impl ChangeResourceRecordSetsFluentBuilder {
             crate::operation::change_resource_record_sets::ChangeResourceRecordSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
@@ -170,10 +153,7 @@ impl ChangeResourceRecordSetsFluentBuilder {
         self
     }
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
-    pub fn set_change_batch(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeBatch>,
-    ) -> Self {
+    pub fn set_change_batch(mut self, input: ::std::option::Option<crate::types::ChangeBatch>) -> Self {
         self.inner = self.inner.set_change_batch(input);
         self
     }

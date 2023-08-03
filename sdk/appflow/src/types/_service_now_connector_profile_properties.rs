@@ -23,9 +23,7 @@ impl ServiceNowConnectorProfileProperties {
 
 /// A builder for [`ServiceNowConnectorProfileProperties`](crate::types::ServiceNowConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceNowConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }

@@ -15,17 +15,14 @@ impl GetSignalCatalogInput {
 }
 impl GetSignalCatalogInput {
     /// Creates a new builder-style object to manufacture [`GetSignalCatalogInput`](crate::operation::get_signal_catalog::GetSignalCatalogInput).
-    pub fn builder() -> crate::operation::get_signal_catalog::builders::GetSignalCatalogInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_signal_catalog::builders::GetSignalCatalogInputBuilder {
         crate::operation::get_signal_catalog::builders::GetSignalCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSignalCatalogInput`](crate::operation::get_signal_catalog::GetSignalCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`GetSignalCatalogInput`](crate::operation::get_signal_catalog::GetSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signal_catalog::GetSignalCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_signal_catalog::GetSignalCatalogInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::get_signal_catalog::GetSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_signal_catalog::GetSignalCatalogInput { name: self.name })
     }
 }

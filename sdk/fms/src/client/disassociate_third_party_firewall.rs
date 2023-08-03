@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateThirdPartyFirewallOutput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallOutput) with field(s):
     ///   - [`third_party_firewall_status(Option<ThirdPartyFirewallAssociationStatus>)`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallOutput::third_party_firewall_status): <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
     /// - On failure, responds with [`SdkError<DisassociateThirdPartyFirewallError>`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallError)
-    pub fn disassociate_third_party_firewall(&self) -> crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallFluentBuilder{
+    pub fn disassociate_third_party_firewall(
+        &self,
+    ) -> crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallFluentBuilder {
         crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallFluentBuilder::new(self.handle.clone())
     }
 }

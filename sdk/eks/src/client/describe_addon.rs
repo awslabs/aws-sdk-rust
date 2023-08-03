@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAddonOutput`](crate::operation::describe_addon::DescribeAddonOutput) with field(s):
     ///   - [`addon(Option<Addon>)`](crate::operation::describe_addon::DescribeAddonOutput::addon): <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DescribeAddonError>`](crate::operation::describe_addon::DescribeAddonError)
-    pub fn describe_addon(
-        &self,
-    ) -> crate::operation::describe_addon::builders::DescribeAddonFluentBuilder {
-        crate::operation::describe_addon::builders::DescribeAddonFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_addon(&self) -> crate::operation::describe_addon::builders::DescribeAddonFluentBuilder {
+        crate::operation::describe_addon::builders::DescribeAddonFluentBuilder::new(self.handle.clone())
     }
 }

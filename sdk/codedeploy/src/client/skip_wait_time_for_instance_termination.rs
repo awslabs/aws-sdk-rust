@@ -6,10 +6,10 @@ impl super::Client {
     ///   - [`deployment_id(impl ::std::convert::Into<String>)`](crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationFluentBuilder::set_deployment_id): <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     /// - On success, responds with [`SkipWaitTimeForInstanceTerminationOutput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput)
     /// - On failure, responds with [`SdkError<SkipWaitTimeForInstanceTerminationError>`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError)
-    #[deprecated(
-        note = "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead."
-    )]
-    pub fn skip_wait_time_for_instance_termination(&self) -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationFluentBuilder{
+    #[deprecated(note = "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
+    pub fn skip_wait_time_for_instance_termination(
+        &self,
+    ) -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationFluentBuilder {
         crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationFluentBuilder::new(self.handle.clone())
     }
 }

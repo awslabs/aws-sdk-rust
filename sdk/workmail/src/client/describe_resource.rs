@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`enabled_date(Option<DateTime>)`](crate::operation::describe_resource::DescribeResourceOutput::enabled_date): <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
     ///   - [`disabled_date(Option<DateTime>)`](crate::operation::describe_resource::DescribeResourceOutput::disabled_date): <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
     /// - On failure, responds with [`SdkError<DescribeResourceError>`](crate::operation::describe_resource::DescribeResourceError)
-    pub fn describe_resource(
-        &self,
-    ) -> crate::operation::describe_resource::builders::DescribeResourceFluentBuilder {
-        crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_resource(&self) -> crate::operation::describe_resource::builders::DescribeResourceFluentBuilder {
+        crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::new(self.handle.clone())
     }
 }

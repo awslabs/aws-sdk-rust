@@ -24,9 +24,7 @@ impl ContainerServiceEcrImagePullerRoleRequest {
 
 /// A builder for [`ContainerServiceEcrImagePullerRoleRequest`](crate::types::ContainerServiceEcrImagePullerRoleRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerServiceEcrImagePullerRoleRequestBuilder {
     pub(crate) is_active: ::std::option::Option<bool>,
 }
@@ -47,8 +45,6 @@ impl ContainerServiceEcrImagePullerRoleRequestBuilder {
     }
     /// Consumes the builder and constructs a [`ContainerServiceEcrImagePullerRoleRequest`](crate::types::ContainerServiceEcrImagePullerRoleRequest).
     pub fn build(self) -> crate::types::ContainerServiceEcrImagePullerRoleRequest {
-        crate::types::ContainerServiceEcrImagePullerRoleRequest {
-            is_active: self.is_active,
-        }
+        crate::types::ContainerServiceEcrImagePullerRoleRequest { is_active: self.is_active }
     }
 }

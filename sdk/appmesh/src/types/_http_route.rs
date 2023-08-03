@@ -44,9 +44,7 @@ impl HttpRoute {
 
 /// A builder for [`HttpRoute`](crate::types::HttpRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpRouteBuilder {
     pub(crate) r#match: ::std::option::Option<crate::types::HttpRouteMatch>,
     pub(crate) action: ::std::option::Option<crate::types::HttpRouteAction>,
@@ -74,10 +72,7 @@ impl HttpRouteBuilder {
         self
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpRouteAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::HttpRouteAction>) -> Self {
         self.action = input;
         self
     }
@@ -91,10 +86,7 @@ impl HttpRouteBuilder {
         self
     }
     /// <p>An object that represents a retry policy.</p>
-    pub fn set_retry_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpRetryPolicy>,
-    ) -> Self {
+    pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::HttpRetryPolicy>) -> Self {
         self.retry_policy = input;
         self
     }

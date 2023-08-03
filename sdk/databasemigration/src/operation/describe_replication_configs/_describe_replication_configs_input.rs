@@ -30,16 +30,14 @@ impl DescribeReplicationConfigsInput {
 }
 impl DescribeReplicationConfigsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigsInput`](crate::operation::describe_replication_configs::DescribeReplicationConfigsInput).
-    pub fn builder() -> crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsInputBuilder {
         crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationConfigsInput`](crate::operation::describe_replication_configs::DescribeReplicationConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -58,10 +56,7 @@ impl DescribeReplicationConfigsInputBuilder {
         self
     }
     /// <p>Filters applied to the replication configs.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -104,12 +99,10 @@ impl DescribeReplicationConfigsInputBuilder {
         crate::operation::describe_replication_configs::DescribeReplicationConfigsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_replication_configs::DescribeReplicationConfigsInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_replication_configs::DescribeReplicationConfigsInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

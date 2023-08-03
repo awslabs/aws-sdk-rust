@@ -58,9 +58,7 @@ impl ListEventsFilters {
 
 /// A builder for [`ListEventsFilters`](crate::types::ListEventsFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventsFiltersBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_time_range: ::std::option::Option<crate::types::EventTimeRange>,
@@ -90,10 +88,7 @@ impl ListEventsFiltersBuilder {
         self
     }
     /// <p> A time range during which you want the filtered events to have occurred. </p>
-    pub fn set_event_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::EventTimeRange>,
-    ) -> Self {
+    pub fn set_event_time_range(mut self, input: ::std::option::Option<crate::types::EventTimeRange>) -> Self {
         self.event_time_range = input;
         self
     }
@@ -107,10 +102,7 @@ impl ListEventsFiltersBuilder {
         self
     }
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
-    pub fn set_event_class(
-        mut self,
-        input: ::std::option::Option<crate::types::EventClass>,
-    ) -> Self {
+    pub fn set_event_class(mut self, input: ::std::option::Option<crate::types::EventClass>) -> Self {
         self.event_class = input;
         self
     }
@@ -138,10 +130,7 @@ impl ListEventsFiltersBuilder {
         self
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::EventDataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::EventDataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -155,17 +144,12 @@ impl ListEventsFiltersBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollection>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::ResourceCollection>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::ResourceCollection> {
         &self.resource_collection
     }
     /// Consumes the builder and constructs a [`ListEventsFilters`](crate::types::ListEventsFilters).

@@ -26,7 +26,7 @@ impl UpdateRoutingProfileNameInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRoutingProfileNameFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameInputBuilder,
+    inner: crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameInputBuilder,
 }
 impl UpdateRoutingProfileNameFluentBuilder {
     /// Creates a new `UpdateRoutingProfileName`.
@@ -37,7 +37,7 @@ impl UpdateRoutingProfileNameFluentBuilder {
         }
     }
     /// Access the UpdateRoutingProfileName as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateRoutingProfileNameFluentBuilder {
             crate::operation::update_routing_profile_name::UpdateRoutingProfileName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateRoutingProfileNameFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateRoutingProfileNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateRoutingProfileNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateRoutingProfileNameFluentBuilder {
             crate::operation::update_routing_profile_name::UpdateRoutingProfileName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateRoutingProfileNameFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_profile_id(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
     }

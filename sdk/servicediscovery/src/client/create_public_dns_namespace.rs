@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePublicDnsNamespaceOutput`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<CreatePublicDnsNamespaceError>`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceError)
-    pub fn create_public_dns_namespace(&self) -> crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceFluentBuilder{
+    pub fn create_public_dns_namespace(&self) -> crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceFluentBuilder {
         crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

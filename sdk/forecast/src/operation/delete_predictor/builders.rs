@@ -10,10 +10,7 @@ impl DeletePredictorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_predictor::DeletePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_predictor::DeletePredictorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_predictor::DeletePredictorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_predictor();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeletePredictorFluentBuilder {
         }
     }
     /// Access the DeletePredictor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_predictor::builders::DeletePredictorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_predictor::builders::DeletePredictorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeletePredictorFluentBuilder {
             crate::operation::delete_predictor::DeletePredictor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_predictor::DeletePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_predictor::DeletePredictorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeletePredictorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeletePredictorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_predictor::DeletePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_predictor::DeletePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_predictor::DeletePredictorError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeletePredictorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_predictor::DeletePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_predictor::DeletePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_predictor::DeletePredictorError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeletePredictorFluentBuilder {
             crate::operation::delete_predictor::DeletePredictor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_predictor::DeletePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_predictor::DeletePredictorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predictor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predictor_arn(input);
         self
     }

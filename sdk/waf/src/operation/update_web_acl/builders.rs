@@ -10,10 +10,7 @@ impl UpdateWebAclInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_web_acl::UpdateWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_web_acl::UpdateWebACLError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_web_acl::UpdateWebACLError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_web_acl();
         fluent_builder.inner = self;
@@ -57,9 +54,7 @@ impl UpdateWebACLFluentBuilder {
         }
     }
     /// Access the UpdateWebACL as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_web_acl::builders::UpdateWebAclInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_web_acl::builders::UpdateWebAclInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -81,10 +76,7 @@ impl UpdateWebACLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -184,10 +176,7 @@ impl UpdateWebACLFluentBuilder {
     /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
     /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
@@ -198,9 +187,7 @@ impl UpdateWebACLFluentBuilder {
     /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
     /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>> {
         self.inner.get_updates()
     }
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
@@ -209,10 +196,7 @@ impl UpdateWebACLFluentBuilder {
         self
     }
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::WafAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::WafAction>) -> Self {
         self.inner = self.inner.set_default_action(input);
         self
     }

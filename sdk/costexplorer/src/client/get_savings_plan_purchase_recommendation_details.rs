@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`recommendation_detail_id(Option<String>)`](crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsOutput::recommendation_detail_id): <p>The ID that is associated with the Savings Plan recommendation.</p>
     ///   - [`recommendation_detail_data(Option<RecommendationDetailData>)`](crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsOutput::recommendation_detail_data): <p>Contains detailed information about a specific Savings Plan recommendation.</p>
     /// - On failure, responds with [`SdkError<GetSavingsPlanPurchaseRecommendationDetailsError>`](crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError)
-    pub fn get_savings_plan_purchase_recommendation_details(&self) -> crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsFluentBuilder{
-        crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsFluentBuilder::new(self.handle.clone())
+    pub fn get_savings_plan_purchase_recommendation_details(
+        &self,
+    ) -> crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsFluentBuilder {
+        crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

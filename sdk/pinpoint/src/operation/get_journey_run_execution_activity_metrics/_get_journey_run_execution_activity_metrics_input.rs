@@ -50,16 +50,14 @@ impl GetJourneyRunExecutionActivityMetricsInput {
 }
 impl GetJourneyRunExecutionActivityMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetJourneyRunExecutionActivityMetricsInput`](crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput).
-    pub fn builder() -> crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsInputBuilder{
+    pub fn builder() -> crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsInputBuilder {
         crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetJourneyRunExecutionActivityMetricsInput`](crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJourneyRunExecutionActivityMetricsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_activity_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct GetJourneyRunExecutionActivityMetricsInputBuilder {
 }
 impl GetJourneyRunExecutionActivityMetricsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -90,18 +82,12 @@ impl GetJourneyRunExecutionActivityMetricsInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the journey activity.</p>
-    pub fn journey_activity_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn journey_activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_activity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the journey activity.</p>
-    pub fn set_journey_activity_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_journey_activity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.journey_activity_id = input;
         self
     }
@@ -166,22 +152,21 @@ impl GetJourneyRunExecutionActivityMetricsInputBuilder {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`GetJourneyRunExecutionActivityMetricsInput`](crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput {
-                application_id: self.application_id
-                ,
-                journey_activity_id: self.journey_activity_id
-                ,
-                journey_id: self.journey_id
-                ,
-                next_token: self.next_token
-                ,
-                page_size: self.page_size
-                ,
-                run_id: self.run_id
-                ,
-            }
+                application_id: self.application_id,
+                journey_activity_id: self.journey_activity_id,
+                journey_id: self.journey_id,
+                next_token: self.next_token,
+                page_size: self.page_size,
+                run_id: self.run_id,
+            },
         )
     }
 }

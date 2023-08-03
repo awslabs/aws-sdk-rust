@@ -26,7 +26,7 @@ impl DescribeEntityRecognizerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEntityRecognizerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerInputBuilder,
+    inner: crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerInputBuilder,
 }
 impl DescribeEntityRecognizerFluentBuilder {
     /// Creates a new `DescribeEntityRecognizer`.
@@ -37,10 +37,7 @@ impl DescribeEntityRecognizerFluentBuilder {
         }
     }
     /// Access the DescribeEntityRecognizer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEntityRecognizerFluentBuilder {
             crate::operation::describe_entity_recognizer::DescribeEntityRecognizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEntityRecognizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEntityRecognizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEntityRecognizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeEntityRecognizerFluentBuilder {
             crate::operation::describe_entity_recognizer::DescribeEntityRecognizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn entity_recognizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_recognizer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn set_entity_recognizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_recognizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_recognizer_arn(input);
         self
     }

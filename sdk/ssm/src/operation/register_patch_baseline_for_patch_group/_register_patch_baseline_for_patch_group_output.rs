@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for RegisterPatchBaselineForPatchGroupOut
 }
 impl RegisterPatchBaselineForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`RegisterPatchBaselineForPatchGroupOutput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput).
-    pub fn builder() -> crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupOutputBuilder{
+    pub fn builder() -> crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupOutputBuilder {
         crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterPatchBaselineForPatchGroupOutput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterPatchBaselineForPatchGroupOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
@@ -82,12 +80,10 @@ impl RegisterPatchBaselineForPatchGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterPatchBaselineForPatchGroupOutput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput).
-    pub fn build(self) -> crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput{
+    pub fn build(self) -> crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput {
         crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput {
-            baseline_id: self.baseline_id
-            ,
-            patch_group: self.patch_group
-            ,
+            baseline_id: self.baseline_id,
+            patch_group: self.patch_group,
             _request_id: self._request_id,
         }
     }

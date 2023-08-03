@@ -23,9 +23,7 @@ pub fn ser_create_what_if_forecast_input(
     }
     if let Some(var_7) = &input.time_series_replacements_data_source {
         #[allow(unused_mut)]
-        let mut object_8 = object
-            .key("TimeSeriesReplacementsDataSource")
-            .start_object();
+        let mut object_8 = object.key("TimeSeriesReplacementsDataSource").start_object();
         crate::protocol_serde::shape_time_series_replacements_data_source::ser_time_series_replacements_data_source(&mut object_8, var_7)?;
         object_8.finish();
     }

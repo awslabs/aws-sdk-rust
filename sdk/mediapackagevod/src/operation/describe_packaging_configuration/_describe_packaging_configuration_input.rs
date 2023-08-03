@@ -15,16 +15,14 @@ impl DescribePackagingConfigurationInput {
 }
 impl DescribePackagingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribePackagingConfigurationInput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput).
-    pub fn builder() -> crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder {
         crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePackagingConfigurationInput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackagingConfigurationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl DescribePackagingConfigurationInputBuilder {
         crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput {
-                id: self.id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput { id: self.id })
     }
 }

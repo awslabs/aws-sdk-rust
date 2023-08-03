@@ -15,33 +15,25 @@ impl DescribeModelCardExportJobInput {
 }
 impl DescribeModelCardExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelCardExportJobInput`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput).
-    pub fn builder() -> crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder {
         crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelCardExportJobInput`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelCardExportJobInputBuilder {
     pub(crate) model_card_export_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelCardExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
-    pub fn model_card_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
-    pub fn set_model_card_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_export_job_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeModelCardExportJobInputBuilder {
         crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput {
-                model_card_export_job_arn: self.model_card_export_job_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput {
+            model_card_export_job_arn: self.model_card_export_job_arn,
+        })
     }
 }

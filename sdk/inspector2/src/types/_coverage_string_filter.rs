@@ -30,9 +30,7 @@ impl CoverageStringFilter {
 
 /// A builder for [`CoverageStringFilter`](crate::types::CoverageStringFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageStringFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::CoverageStringComparison>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl CoverageStringFilterBuilder {
         self
     }
     /// <p>The operator to compare strings on.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageStringComparison>,
-    ) -> Self {
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::CoverageStringComparison>) -> Self {
         self.comparison = input;
         self
     }

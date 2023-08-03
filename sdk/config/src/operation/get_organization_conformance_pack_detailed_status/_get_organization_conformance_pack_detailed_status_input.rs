@@ -22,9 +22,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
         self.organization_conformance_pack_name.as_deref()
     }
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationResourceDetailedStatusFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::OrganizationResourceDetailedStatusFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
@@ -38,66 +36,48 @@ impl GetOrganizationConformancePackDetailedStatusInput {
 }
 impl GetOrganizationConformancePackDetailedStatusInput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationConformancePackDetailedStatusInput`](crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput).
-    pub fn builder() -> crate::operation::get_organization_conformance_pack_detailed_status::builders::GetOrganizationConformancePackDetailedStatusInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_organization_conformance_pack_detailed_status::builders::GetOrganizationConformancePackDetailedStatusInputBuilder {
         crate::operation::get_organization_conformance_pack_detailed_status::builders::GetOrganizationConformancePackDetailedStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOrganizationConformancePackDetailedStatusInput`](crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOrganizationConformancePackDetailedStatusInputBuilder {
     pub(crate) organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>,
+    pub(crate) filters: ::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetOrganizationConformancePackDetailedStatusInputBuilder {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
-    pub fn organization_conformance_pack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
-    pub fn set_organization_conformance_pack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = input;
         self
     }
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
-    pub fn get_organization_conformance_pack_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_organization_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_conformance_pack_name
     }
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
-    pub fn filters(
-        mut self,
-        input: crate::types::OrganizationResourceDetailedStatusFilters,
-    ) -> Self {
+    pub fn filters(mut self, input: crate::types::OrganizationResourceDetailedStatusFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters> {
         &self.filters
     }
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
@@ -129,18 +109,19 @@ impl GetOrganizationConformancePackDetailedStatusInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetOrganizationConformancePackDetailedStatusInput`](crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput {
-                organization_conformance_pack_name: self.organization_conformance_pack_name
-                ,
-                filters: self.filters
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                organization_conformance_pack_name: self.organization_conformance_pack_name,
+                filters: self.filters,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

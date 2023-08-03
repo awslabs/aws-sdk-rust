@@ -45,9 +45,7 @@ impl ListCodeRepositoriesInput {
         self.last_modified_time_after.as_ref()
     }
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>The maximum number of Git repositories to return in the response.</p>
@@ -73,17 +71,14 @@ impl ListCodeRepositoriesInput {
 }
 impl ListCodeRepositoriesInput {
     /// Creates a new builder-style object to manufacture [`ListCodeRepositoriesInput`](crate::operation::list_code_repositories::ListCodeRepositoriesInput).
-    pub fn builder(
-    ) -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder {
+    pub fn builder() -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder {
         crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCodeRepositoriesInput`](crate::operation::list_code_repositories::ListCodeRepositoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCodeRepositoriesInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -102,10 +97,7 @@ impl ListCodeRepositoriesInputBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -119,10 +111,7 @@ impl ListCodeRepositoriesInputBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -136,17 +125,12 @@ impl ListCodeRepositoriesInputBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
@@ -155,17 +139,12 @@ impl ListCodeRepositoriesInputBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p>The maximum number of Git repositories to return in the response.</p>
@@ -183,18 +162,12 @@ impl ListCodeRepositoriesInputBuilder {
         &self.max_results
     }
     /// <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -222,10 +195,7 @@ impl ListCodeRepositoriesInputBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeRepositorySortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::CodeRepositorySortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -239,10 +209,7 @@ impl ListCodeRepositoriesInputBuilder {
         self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeRepositorySortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::CodeRepositorySortOrder>) -> Self {
         self.sort_order = input;
         self
     }
@@ -253,22 +220,18 @@ impl ListCodeRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`ListCodeRepositoriesInput`](crate::operation::list_code_repositories::ListCodeRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_code_repositories::ListCodeRepositoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_code_repositories::ListCodeRepositoriesInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                last_modified_time_after: self.last_modified_time_after,
-                last_modified_time_before: self.last_modified_time_before,
-                max_results: self.max_results,
-                name_contains: self.name_contains,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_code_repositories::ListCodeRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_code_repositories::ListCodeRepositoriesInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            last_modified_time_after: self.last_modified_time_after,
+            last_modified_time_before: self.last_modified_time_before,
+            max_results: self.max_results,
+            name_contains: self.name_contains,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

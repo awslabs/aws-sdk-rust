@@ -94,15 +94,11 @@ impl DescribeSimulationOutput {
         self.schema_error.as_deref()
     }
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
-    pub fn live_simulation_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LiveSimulationState> {
+    pub fn live_simulation_state(&self) -> ::std::option::Option<&crate::types::LiveSimulationState> {
         self.live_simulation_state.as_ref()
     }
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
@@ -125,17 +121,14 @@ impl ::aws_http::request_id::RequestId for DescribeSimulationOutput {
 }
 impl DescribeSimulationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationOutput`](crate::operation::describe_simulation::DescribeSimulationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder {
         crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSimulationOutput`](crate::operation::describe_simulation::DescribeSimulationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSimulationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
@@ -231,10 +224,7 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -248,10 +238,7 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>The current lifecycle state of the simulation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -265,17 +252,12 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>The desired lifecycle state of the simulation.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationTargetStatus>,
-    ) -> Self {
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::SimulationTargetStatus>) -> Self {
         self.target_status = input;
         self
     }
     /// <p>The desired lifecycle state of the simulation.</p>
-    pub fn get_target_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulationTargetStatus> {
+    pub fn get_target_status(&self) -> &::std::option::Option<crate::types::SimulationTargetStatus> {
         &self.target_status
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
@@ -284,10 +266,7 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    pub fn set_schema_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_schema_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.schema_s3_location = input;
         self
     }
@@ -318,17 +297,12 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
@@ -337,32 +311,21 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
-    pub fn set_live_simulation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LiveSimulationState>,
-    ) -> Self {
+    pub fn set_live_simulation_state(mut self, input: ::std::option::Option<crate::types::LiveSimulationState>) -> Self {
         self.live_simulation_state = input;
         self
     }
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
-    pub fn get_live_simulation_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::LiveSimulationState> {
+    pub fn get_live_simulation_state(&self) -> &::std::option::Option<crate::types::LiveSimulationState> {
         &self.live_simulation_state
     }
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
-    pub fn maximum_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
-    pub fn set_maximum_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maximum_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maximum_duration = input;
         self
     }
@@ -376,10 +339,7 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    pub fn set_snapshot_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_snapshot_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.snapshot_s3_location = input;
         self
     }

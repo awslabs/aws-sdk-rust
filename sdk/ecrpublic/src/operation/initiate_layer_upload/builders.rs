@@ -40,9 +40,7 @@ impl InitiateLayerUploadFluentBuilder {
         }
     }
     /// Access the InitiateLayerUpload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl InitiateLayerUploadFluentBuilder {
             crate::operation::initiate_layer_upload::InitiateLayerUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_layer_upload::InitiateLayerUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_layer_upload::InitiateLayerUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl InitiateLayerUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl InitiateLayerUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initiate_layer_upload::InitiateLayerUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_layer_upload::InitiateLayerUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_layer_upload::InitiateLayerUploadError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl InitiateLayerUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initiate_layer_upload::InitiateLayerUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_layer_upload::InitiateLayerUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_layer_upload::InitiateLayerUploadError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl InitiateLayerUploadFluentBuilder {
             crate::operation::initiate_layer_upload::InitiateLayerUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_layer_upload::InitiateLayerUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_layer_upload::InitiateLayerUploadError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +127,12 @@ impl InitiateLayerUploadFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository that you want to upload layers to.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that you want to upload layers to.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

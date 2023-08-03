@@ -26,7 +26,7 @@ impl GetWirelessDeviceImportTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWirelessDeviceImportTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskInputBuilder,
+    inner: crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskInputBuilder,
 }
 impl GetWirelessDeviceImportTaskFluentBuilder {
     /// Creates a new `GetWirelessDeviceImportTask`.
@@ -37,7 +37,7 @@ impl GetWirelessDeviceImportTaskFluentBuilder {
         }
     }
     /// Access the GetWirelessDeviceImportTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetWirelessDeviceImportTaskFluentBuilder {
             crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetWirelessDeviceImportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetWirelessDeviceImportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetWirelessDeviceImportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetWirelessDeviceImportTaskFluentBuilder {
             crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError>,
     > {
         self.customize_middleware().await
     }

@@ -58,9 +58,7 @@ impl LicenseConfigurationUsage {
 
 /// A builder for [`LicenseConfigurationUsage`](crate::types::LicenseConfigurationUsage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LicenseConfigurationUsageBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -90,10 +88,7 @@ impl LicenseConfigurationUsageBuilder {
         self
     }
     /// <p>Type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -102,18 +97,12 @@ impl LicenseConfigurationUsageBuilder {
         &self.resource_type
     }
     /// <p>Status of the resource.</p>
-    pub fn resource_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Status of the resource.</p>
-    pub fn set_resource_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_status = input;
         self
     }
@@ -122,18 +111,12 @@ impl LicenseConfigurationUsageBuilder {
         &self.resource_status
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn resource_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn set_resource_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner_id = input;
         self
     }
@@ -147,10 +130,7 @@ impl LicenseConfigurationUsageBuilder {
         self
     }
     /// <p>Time when the license configuration was initially associated with the resource.</p>
-    pub fn set_association_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_association_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.association_time = input;
         self
     }

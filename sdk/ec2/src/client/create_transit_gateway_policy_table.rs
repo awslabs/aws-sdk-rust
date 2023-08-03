@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayPolicyTableOutput`](crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput) with field(s):
     ///   - [`transit_gateway_policy_table(Option<TransitGatewayPolicyTable>)`](crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput::transit_gateway_policy_table): <p>Describes the created transit gateway policy table.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayPolicyTableError>`](crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError)
-    pub fn create_transit_gateway_policy_table(&self) -> crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableFluentBuilder{
+    pub fn create_transit_gateway_policy_table(
+        &self,
+    ) -> crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableFluentBuilder {
         crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableFluentBuilder::new(self.handle.clone())
     }
 }

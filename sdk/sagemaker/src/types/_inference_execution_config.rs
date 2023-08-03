@@ -31,9 +31,7 @@ impl InferenceExecutionConfig {
 
 /// A builder for [`InferenceExecutionConfig`](crate::types::InferenceExecutionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceExecutionConfigBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::InferenceExecutionMode>,
 }
@@ -52,10 +50,7 @@ impl InferenceExecutionConfigBuilder {
     /// <li> <p> <code>SERIAL</code> - Containers run as a serial pipeline.</p> </li>
     /// <li> <p> <code>DIRECT</code> - Only the individual container that you specify is run.</p> </li>
     /// </ul>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExecutionMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::InferenceExecutionMode>) -> Self {
         self.mode = input;
         self
     }

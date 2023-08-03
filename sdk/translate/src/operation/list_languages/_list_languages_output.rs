@@ -20,9 +20,7 @@ impl ListLanguagesOutput {
         self.languages.as_deref()
     }
     /// <p>The language code passed in with the request.</p>
-    pub fn display_language_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DisplayLanguageCode> {
+    pub fn display_language_code(&self) -> ::std::option::Option<&crate::types::DisplayLanguageCode> {
         self.display_language_code.as_ref()
     }
     /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
@@ -44,9 +42,7 @@ impl ListLanguagesOutput {
 
 /// A builder for [`ListLanguagesOutput`](crate::operation::list_languages::ListLanguagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLanguagesOutputBuilder {
     pub(crate) languages: ::std::option::Option<::std::vec::Vec<crate::types::Language>>,
     pub(crate) display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,
@@ -66,10 +62,7 @@ impl ListLanguagesOutputBuilder {
         self
     }
     /// <p>The list of supported languages.</p>
-    pub fn set_languages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Language>>,
-    ) -> Self {
+    pub fn set_languages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Language>>) -> Self {
         self.languages = input;
         self
     }
@@ -83,17 +76,12 @@ impl ListLanguagesOutputBuilder {
         self
     }
     /// <p>The language code passed in with the request.</p>
-    pub fn set_display_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DisplayLanguageCode>,
-    ) -> Self {
+    pub fn set_display_language_code(mut self, input: ::std::option::Option<crate::types::DisplayLanguageCode>) -> Self {
         self.display_language_code = input;
         self
     }
     /// <p>The language code passed in with the request.</p>
-    pub fn get_display_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
+    pub fn get_display_language_code(&self) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
         &self.display_language_code
     }
     /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>

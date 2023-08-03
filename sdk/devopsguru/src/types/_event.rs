@@ -72,9 +72,7 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBuilder {
     pub(crate) resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -92,17 +90,12 @@ impl EventBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollection>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::ResourceCollection>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::ResourceCollection> {
         &self.resource_collection
     }
     /// <p> The ID of the event. </p>
@@ -167,10 +160,7 @@ impl EventBuilder {
         self
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::EventDataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::EventDataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -184,10 +174,7 @@ impl EventBuilder {
         self
     }
     /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
-    pub fn set_event_class(
-        mut self,
-        input: ::std::option::Option<crate::types::EventClass>,
-    ) -> Self {
+    pub fn set_event_class(mut self, input: ::std::option::Option<crate::types::EventClass>) -> Self {
         self.event_class = input;
         self
     }
@@ -207,17 +194,12 @@ impl EventBuilder {
         self
     }
     /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventResource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventResource>>) -> Self {
         self.resources = input;
         self
     }
     /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventResource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventResource>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).

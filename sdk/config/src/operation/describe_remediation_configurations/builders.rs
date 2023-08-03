@@ -5,16 +5,16 @@ pub use crate::operation::describe_remediation_configurations::_describe_remedia
 
 impl DescribeRemediationConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_remediation_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeRemediationConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder,
+    inner: crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder,
 }
 impl DescribeRemediationConfigurationsFluentBuilder {
     /// Creates a new `DescribeRemediationConfigurations`.
@@ -37,15 +37,20 @@ impl DescribeRemediationConfigurationsFluentBuilder {
         }
     }
     /// Access the DescribeRemediationConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_remediation_configurations::DescribeRemediationConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeRemediationConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DescribeRemediationConfigurationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_remediation_configurations::DescribeRemediationConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `ConfigRuleNames`.
@@ -99,25 +114,17 @@ impl DescribeRemediationConfigurationsFluentBuilder {
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
-    pub fn config_rule_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_names(input.into());
         self
     }
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_config_rule_names(input);
         self
     }
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
-    pub fn get_config_rule_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_config_rule_names()
     }
 }

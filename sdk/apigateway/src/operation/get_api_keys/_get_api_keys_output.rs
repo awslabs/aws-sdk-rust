@@ -43,9 +43,7 @@ impl GetApiKeysOutput {
 
 /// A builder for [`GetApiKeysOutput`](crate::operation::get_api_keys::GetApiKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiKeysOutputBuilder {
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>,
@@ -65,10 +63,7 @@ impl GetApiKeysOutputBuilder {
         self
     }
     /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.warnings = input;
         self
     }
@@ -88,10 +83,7 @@ impl GetApiKeysOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>) -> Self {
         self.items = input;
         self
     }

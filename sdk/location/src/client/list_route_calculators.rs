@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`entries(Option<Vec<ListRouteCalculatorsResponseEntry>>)`](crate::operation::list_route_calculators::ListRouteCalculatorsOutput::entries): <p>Lists the route calculator resources that exist in your Amazon Web Services account</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_route_calculators::ListRouteCalculatorsOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListRouteCalculatorsError>`](crate::operation::list_route_calculators::ListRouteCalculatorsError)
-    pub fn list_route_calculators(
-        &self,
-    ) -> crate::operation::list_route_calculators::builders::ListRouteCalculatorsFluentBuilder {
-        crate::operation::list_route_calculators::builders::ListRouteCalculatorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_route_calculators(&self) -> crate::operation::list_route_calculators::builders::ListRouteCalculatorsFluentBuilder {
+        crate::operation::list_route_calculators::builders::ListRouteCalculatorsFluentBuilder::new(self.handle.clone())
     }
 }

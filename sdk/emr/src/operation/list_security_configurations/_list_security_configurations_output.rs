@@ -5,8 +5,7 @@
 pub struct ListSecurityConfigurationsOutput {
     /// <p>The creation date and time, and name, of each security configuration.</p>
     #[doc(hidden)]
-    pub security_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>,
+    pub security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>,
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSecurityConfigurationsOutput {
 }
 impl ListSecurityConfigurationsOutput {
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    pub fn security_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityConfigurationSummary]> {
+    pub fn security_configurations(&self) -> ::std::option::Option<&[crate::types::SecurityConfigurationSummary]> {
         self.security_configurations.as_deref()
     }
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSecurityConfigurationsOutput {
 }
 impl ListSecurityConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityConfigurationsOutput`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_security_configurations::builders::ListSecurityConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_security_configurations::builders::ListSecurityConfigurationsOutputBuilder {
         crate::operation::list_security_configurations::builders::ListSecurityConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityConfigurationsOutput`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityConfigurationsOutputBuilder {
-    pub(crate) security_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>,
+    pub(crate) security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListSecurityConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_security_configurations`](Self::set_security_configurations).
     ///
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    pub fn security_configurations(
-        mut self,
-        input: crate::types::SecurityConfigurationSummary,
-    ) -> Self {
+    pub fn security_configurations(mut self, input: crate::types::SecurityConfigurationSummary) -> Self {
         let mut v = self.security_configurations.unwrap_or_default();
         v.push(input);
         self.security_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    pub fn set_security_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>,
-    ) -> Self {
+    pub fn set_security_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>) -> Self {
         self.security_configurations = input;
         self
     }
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    pub fn get_security_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>> {
+    pub fn get_security_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>> {
         &self.security_configurations
     }
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
@@ -100,9 +86,7 @@ impl ListSecurityConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSecurityConfigurationsOutput`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_security_configurations::ListSecurityConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_security_configurations::ListSecurityConfigurationsOutput {
         crate::operation::list_security_configurations::ListSecurityConfigurationsOutput {
             security_configurations: self.security_configurations,
             marker: self.marker,

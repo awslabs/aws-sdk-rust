@@ -37,10 +37,7 @@ impl UpdateServiceSettingsFluentBuilder {
         }
     }
     /// Access the UpdateServiceSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateServiceSettingsFluentBuilder {
             crate::operation::update_service_settings::UpdateServiceSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateServiceSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateServiceSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateServiceSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_settings::UpdateServiceSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateServiceSettingsFluentBuilder {
             crate::operation::update_service_settings::UpdateServiceSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
-    pub fn s3_bucket_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
-    pub fn set_s3_bucket_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_arn(input);
         self
     }
@@ -144,18 +124,12 @@ impl UpdateServiceSettingsFluentBuilder {
         self.inner.get_s3_bucket_arn()
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -164,25 +138,17 @@ impl UpdateServiceSettingsFluentBuilder {
         self.inner.get_sns_topic_arn()
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
-    pub fn organization_configuration(
-        mut self,
-        input: crate::types::OrganizationConfiguration,
-    ) -> Self {
+    pub fn organization_configuration(mut self, input: crate::types::OrganizationConfiguration) -> Self {
         self.inner = self.inner.organization_configuration(input);
         self
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
-    pub fn set_organization_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationConfiguration>,
-    ) -> Self {
+    pub fn set_organization_configuration(mut self, input: ::std::option::Option<crate::types::OrganizationConfiguration>) -> Self {
         self.inner = self.inner.set_organization_configuration(input);
         self
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
-    pub fn get_organization_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
+    pub fn get_organization_configuration(&self) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
         self.inner.get_organization_configuration()
     }
     /// <p>Activates cross-account discovery.</p>
@@ -191,10 +157,7 @@ impl UpdateServiceSettingsFluentBuilder {
         self
     }
     /// <p>Activates cross-account discovery.</p>
-    pub fn set_enable_cross_accounts_discovery(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_cross_accounts_discovery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_cross_accounts_discovery(input);
         self
     }

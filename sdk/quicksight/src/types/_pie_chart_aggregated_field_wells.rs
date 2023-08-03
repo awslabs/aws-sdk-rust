@@ -37,14 +37,11 @@ impl PieChartAggregatedFieldWells {
 
 /// A builder for [`PieChartAggregatedFieldWells`](crate::types::PieChartAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PieChartAggregatedFieldWellsBuilder {
     pub(crate) category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    pub(crate) small_multiples:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) small_multiples: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl PieChartAggregatedFieldWellsBuilder {
     /// Appends an item to `category`.
@@ -59,17 +56,12 @@ impl PieChartAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The category (group/color) field wells of a pie chart.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.category = input;
         self
     }
     /// <p>The category (group/color) field wells of a pie chart.</p>
-    pub fn get_category(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_category(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.category
     }
     /// Appends an item to `values`.
@@ -84,17 +76,12 @@ impl PieChartAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The value field wells of a pie chart. Values are aggregated based on categories.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The value field wells of a pie chart. Values are aggregated based on categories.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.values
     }
     /// Appends an item to `small_multiples`.
@@ -109,17 +96,12 @@ impl PieChartAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The small multiples field well of a pie chart.</p>
-    pub fn set_small_multiples(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_small_multiples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.small_multiples = input;
         self
     }
     /// <p>The small multiples field well of a pie chart.</p>
-    pub fn get_small_multiples(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_small_multiples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.small_multiples
     }
     /// Consumes the builder and constructs a [`PieChartAggregatedFieldWells`](crate::types::PieChartAggregatedFieldWells).

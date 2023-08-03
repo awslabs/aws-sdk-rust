@@ -15,35 +15,25 @@ impl GetCalculationExecutionInput {
 }
 impl GetCalculationExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetCalculationExecutionInput`](crate::operation::get_calculation_execution::GetCalculationExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::get_calculation_execution::builders::GetCalculationExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_calculation_execution::builders::GetCalculationExecutionInputBuilder {
         crate::operation::get_calculation_execution::builders::GetCalculationExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCalculationExecutionInput`](crate::operation::get_calculation_execution::GetCalculationExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionInputBuilder {
     pub(crate) calculation_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCalculationExecutionInputBuilder {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculation_execution_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl GetCalculationExecutionInputBuilder {
         crate::operation::get_calculation_execution::GetCalculationExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_calculation_execution::GetCalculationExecutionInput {
-                calculation_execution_id: self.calculation_execution_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_calculation_execution::GetCalculationExecutionInput {
+            calculation_execution_id: self.calculation_execution_id,
+        })
     }
 }

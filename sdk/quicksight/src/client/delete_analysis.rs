@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`deletion_time(Option<DateTime>)`](crate::operation::delete_analysis::DeleteAnalysisOutput::deletion_time): <p>The date and time that the analysis is scheduled to be deleted.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::delete_analysis::DeleteAnalysisOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DeleteAnalysisError>`](crate::operation::delete_analysis::DeleteAnalysisError)
-    pub fn delete_analysis(
-        &self,
-    ) -> crate::operation::delete_analysis::builders::DeleteAnalysisFluentBuilder {
-        crate::operation::delete_analysis::builders::DeleteAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_analysis(&self) -> crate::operation::delete_analysis::builders::DeleteAnalysisFluentBuilder {
+        crate::operation::delete_analysis::builders::DeleteAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

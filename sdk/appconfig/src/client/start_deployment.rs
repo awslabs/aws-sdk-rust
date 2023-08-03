@@ -34,11 +34,7 @@ impl super::Client {
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::start_deployment::StartDeploymentOutput::kms_key_arn): <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     ///   - [`kms_key_identifier(Option<String>)`](crate::operation::start_deployment::StartDeploymentOutput::kms_key_identifier): <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
     /// - On failure, responds with [`SdkError<StartDeploymentError>`](crate::operation::start_deployment::StartDeploymentError)
-    pub fn start_deployment(
-        &self,
-    ) -> crate::operation::start_deployment::builders::StartDeploymentFluentBuilder {
-        crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_deployment(&self) -> crate::operation::start_deployment::builders::StartDeploymentFluentBuilder {
+        crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

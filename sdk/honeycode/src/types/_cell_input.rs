@@ -72,10 +72,7 @@ impl CellInputBuilder {
         self
     }
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
-    pub fn set_facts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_facts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.facts = input;
         self
     }

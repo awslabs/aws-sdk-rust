@@ -19,9 +19,7 @@ impl UpdateFolderOutput {
 
 /// A builder for [`UpdateFolderOutput`](crate::operation::update_folder::UpdateFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFolderOutputBuilder {
     _request_id: Option<String>,
 }

@@ -37,9 +37,7 @@ impl ModuleLoggingConfiguration {
 
 /// A builder for [`ModuleLoggingConfiguration`](crate::types::ModuleLoggingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModuleLoggingConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_level: ::std::option::Option<crate::types::LoggingLevel>,
@@ -66,10 +64,7 @@ impl ModuleLoggingConfigurationBuilder {
         self
     }
     /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
-    pub fn set_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingLevel>,
-    ) -> Self {
+    pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LoggingLevel>) -> Self {
         self.log_level = input;
         self
     }
@@ -78,18 +73,12 @@ impl ModuleLoggingConfigurationBuilder {
         &self.log_level
     }
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }

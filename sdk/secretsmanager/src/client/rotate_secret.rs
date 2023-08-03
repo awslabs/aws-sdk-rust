@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::rotate_secret::RotateSecretOutput::name): <p>The name of the secret.</p>
     ///   - [`version_id(Option<String>)`](crate::operation::rotate_secret::RotateSecretOutput::version_id): <p>The ID of the new version of the secret.</p>
     /// - On failure, responds with [`SdkError<RotateSecretError>`](crate::operation::rotate_secret::RotateSecretError)
-    pub fn rotate_secret(
-        &self,
-    ) -> crate::operation::rotate_secret::builders::RotateSecretFluentBuilder {
-        crate::operation::rotate_secret::builders::RotateSecretFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn rotate_secret(&self) -> crate::operation::rotate_secret::builders::RotateSecretFluentBuilder {
+        crate::operation::rotate_secret::builders::RotateSecretFluentBuilder::new(self.handle.clone())
     }
 }

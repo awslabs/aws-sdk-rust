@@ -22,34 +22,26 @@ impl GetMaintenanceWindowExecutionTaskInput {
 }
 impl GetMaintenanceWindowExecutionTaskInput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionTaskInput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput).
-    pub fn builder() -> crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskInputBuilder{
+    pub fn builder() -> crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskInputBuilder {
         crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMaintenanceWindowExecutionTaskInput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionTaskInputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMaintenanceWindowExecutionTaskInputBuilder {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -72,14 +64,17 @@ impl GetMaintenanceWindowExecutionTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskInput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput {
-                window_execution_id: self.window_execution_id
-                ,
-                task_id: self.task_id
-                ,
-            }
+                window_execution_id: self.window_execution_id,
+                task_id: self.task_id,
+            },
         )
     }
 }

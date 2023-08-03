@@ -43,9 +43,7 @@ impl ListFunctionsInput {
 
 /// A builder for [`ListFunctionsInput`](crate::operation::list_functions::ListFunctionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionsInputBuilder {
     pub(crate) master_region: ::std::option::Option<::std::string::String>,
     pub(crate) function_version: ::std::option::Option<crate::types::FunctionVersion>,
@@ -54,18 +52,12 @@ pub struct ListFunctionsInputBuilder {
 }
 impl ListFunctionsInputBuilder {
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
-    pub fn master_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
-    pub fn set_master_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_region = input;
         self
     }
@@ -79,10 +71,7 @@ impl ListFunctionsInputBuilder {
         self
     }
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
-    pub fn set_function_version(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionVersion>,
-    ) -> Self {
+    pub fn set_function_version(mut self, input: ::std::option::Option<crate::types::FunctionVersion>) -> Self {
         self.function_version = input;
         self
     }
@@ -121,10 +110,7 @@ impl ListFunctionsInputBuilder {
     /// Consumes the builder and constructs a [`ListFunctionsInput`](crate::operation::list_functions::ListFunctionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_functions::ListFunctionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_functions::ListFunctionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_functions::ListFunctionsInput {
             master_region: self.master_region,
             function_version: self.function_version,

@@ -29,9 +29,7 @@ impl DescribeStreamOutput {
 
 /// A builder for [`DescribeStreamOutput`](crate::operation::describe_stream::DescribeStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStreamOutputBuilder {
     pub(crate) stream_description: ::std::option::Option<crate::types::StreamDescription>,
     _request_id: Option<String>,
@@ -43,17 +41,12 @@ impl DescribeStreamOutputBuilder {
         self
     }
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
-    pub fn set_stream_description(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamDescription>,
-    ) -> Self {
+    pub fn set_stream_description(mut self, input: ::std::option::Option<crate::types::StreamDescription>) -> Self {
         self.stream_description = input;
         self
     }
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
-    pub fn get_stream_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamDescription> {
+    pub fn get_stream_description(&self) -> &::std::option::Option<crate::types::StreamDescription> {
         &self.stream_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -89,8 +89,7 @@ pub struct CacheCluster {
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
     #[doc(hidden)]
-    pub cache_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>>,
+    pub cache_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>>,
     /// <p>Status of the cache parameter group.</p>
     #[doc(hidden)]
     pub cache_parameter_group: ::std::option::Option<crate::types::CacheParameterGroupStatus>,
@@ -105,8 +104,7 @@ pub struct CacheCluster {
     pub auto_minor_version_upgrade: bool,
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
     #[doc(hidden)]
-    pub security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
     #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
@@ -145,8 +143,7 @@ pub struct CacheCluster {
     pub replication_group_log_delivery_enabled: bool,
     /// <p>Returns the destination, format and type of the logs.</p>
     #[doc(hidden)]
-    pub log_delivery_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
+    pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     #[doc(hidden)]
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
@@ -229,9 +226,7 @@ impl CacheCluster {
         self.preferred_outpost_arn.as_deref()
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn cache_cluster_create_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cache_cluster_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.cache_cluster_create_time.as_ref()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -250,27 +245,19 @@ impl CacheCluster {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
-    pub fn pending_modified_values(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PendingModifiedValues> {
+    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::PendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
-    pub fn notification_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
     /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
-    pub fn cache_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CacheSecurityGroupMembership]> {
+    pub fn cache_security_groups(&self) -> ::std::option::Option<&[crate::types::CacheSecurityGroupMembership]> {
         self.cache_security_groups.as_deref()
     }
     /// <p>Status of the cache parameter group.</p>
-    pub fn cache_parameter_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CacheParameterGroupStatus> {
+    pub fn cache_parameter_group(&self) -> ::std::option::Option<&crate::types::CacheParameterGroupStatus> {
         self.cache_parameter_group.as_ref()
     }
     /// <p>The name of the cache subnet group associated with the cluster.</p>
@@ -286,9 +273,7 @@ impl CacheCluster {
         self.auto_minor_version_upgrade
     }
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
-    pub fn security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityGroupMembership]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroupMembership]> {
         self.security_groups.as_deref()
     }
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
@@ -312,9 +297,7 @@ impl CacheCluster {
         self.auth_token_enabled
     }
     /// <p>The date the auth token was last modified</p>
-    pub fn auth_token_last_modified_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn auth_token_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.auth_token_last_modified_date.as_ref()
     }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
@@ -339,9 +322,7 @@ impl CacheCluster {
         self.replication_group_log_delivery_enabled
     }
     /// <p>Returns the destination, format and type of the logs.</p>
-    pub fn log_delivery_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LogDeliveryConfiguration]> {
+    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::LogDeliveryConfiguration]> {
         self.log_delivery_configurations.as_deref()
     }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
@@ -353,9 +334,7 @@ impl CacheCluster {
         self.ip_discovery.as_ref()
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    pub fn transit_encryption_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitEncryptionMode> {
+    pub fn transit_encryption_mode(&self) -> ::std::option::Option<&crate::types::TransitEncryptionMode> {
         self.transit_encryption_mode.as_ref()
     }
 }
@@ -368,9 +347,7 @@ impl CacheCluster {
 
 /// A builder for [`CacheCluster`](crate::types::CacheCluster).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheClusterBuilder {
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_endpoint: ::std::option::Option<crate::types::Endpoint>,
@@ -385,17 +362,13 @@ pub struct CacheClusterBuilder {
     pub(crate) cache_cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
-    pub(crate) notification_configuration:
-        ::std::option::Option<crate::types::NotificationConfiguration>,
-    pub(crate) cache_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>>,
-    pub(crate) cache_parameter_group:
-        ::std::option::Option<crate::types::CacheParameterGroupStatus>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) cache_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>>,
+    pub(crate) cache_parameter_group: ::std::option::Option<crate::types::CacheParameterGroupStatus>,
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CacheNode>>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
-    pub(crate) security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) snapshot_window: ::std::option::Option<::std::string::String>,
@@ -405,26 +378,19 @@ pub struct CacheClusterBuilder {
     pub(crate) at_rest_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_log_delivery_enabled: ::std::option::Option<bool>,
-    pub(crate) log_delivery_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
+    pub(crate) log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
     pub(crate) transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
 }
 impl CacheClusterBuilder {
     /// <p>The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -440,10 +406,7 @@ impl CacheClusterBuilder {
     }
     /// <p>Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
     /// <p>Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
-    pub fn set_configuration_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::Endpoint>,
-    ) -> Self {
+    pub fn set_configuration_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.configuration_endpoint = input;
         self
     }
@@ -453,25 +416,17 @@ impl CacheClusterBuilder {
         &self.configuration_endpoint
     }
     /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
-    pub fn client_download_landing_page(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_download_landing_page(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_download_landing_page = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
-    pub fn set_client_download_landing_page(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_download_landing_page(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_download_landing_page = input;
         self
     }
     /// <p>The URL of the web page where you can download the latest ElastiCache client library.</p>
-    pub fn get_client_download_landing_page(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_client_download_landing_page(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_download_landing_page
     }
     /// <p>The name of the compute and memory capacity node type for the cluster.</p>
@@ -503,10 +458,7 @@ impl CacheClusterBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -539,10 +491,7 @@ impl CacheClusterBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
         self
     }
@@ -593,18 +542,12 @@ impl CacheClusterBuilder {
         &self.engine
     }
     /// <p>The version of the cache engine that is used in this cluster.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the cache engine that is used in this cluster.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -613,18 +556,12 @@ impl CacheClusterBuilder {
         &self.engine_version
     }
     /// <p>The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.</p>
-    pub fn cache_cluster_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.</p>
-    pub fn set_cache_cluster_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_status = input;
         self
     }
@@ -650,18 +587,12 @@ impl CacheClusterBuilder {
         &self.num_cache_nodes
     }
     /// <p>The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in different Availability Zones.</p>
-    pub fn preferred_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in different Availability Zones.</p>
-    pub fn set_preferred_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_availability_zone = input;
         self
     }
@@ -670,18 +601,12 @@ impl CacheClusterBuilder {
         &self.preferred_availability_zone
     }
     /// <p>The outpost ARN in which the cache cluster is created.</p>
-    pub fn preferred_outpost_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outpost ARN in which the cache cluster is created.</p>
-    pub fn set_preferred_outpost_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_outpost_arn = input;
         self
     }
@@ -695,17 +620,12 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn set_cache_cluster_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cache_cluster_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.cache_cluster_create_time = input;
         self
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn get_cache_cluster_create_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_cache_cluster_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.cache_cluster_create_time
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -720,10 +640,7 @@ impl CacheClusterBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -739,10 +656,7 @@ impl CacheClusterBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -758,9 +672,7 @@ impl CacheClusterBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
@@ -769,39 +681,26 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
-    pub fn set_pending_modified_values(
-        mut self,
-        input: ::std::option::Option<crate::types::PendingModifiedValues>,
-    ) -> Self {
+    pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::PendingModifiedValues>) -> Self {
         self.pending_modified_values = input;
         self
     }
     /// <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
-    pub fn get_pending_modified_values(
-        &self,
-    ) -> &::std::option::Option<crate::types::PendingModifiedValues> {
+    pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::PendingModifiedValues> {
         &self.pending_modified_values
     }
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.notification_configuration = input;
         self
     }
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS). </p>
-    pub fn get_notification_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     /// Appends an item to `cache_security_groups`.
@@ -809,27 +708,19 @@ impl CacheClusterBuilder {
     /// To override the contents of this collection use [`set_cache_security_groups`](Self::set_cache_security_groups).
     ///
     /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
-    pub fn cache_security_groups(
-        mut self,
-        input: crate::types::CacheSecurityGroupMembership,
-    ) -> Self {
+    pub fn cache_security_groups(mut self, input: crate::types::CacheSecurityGroupMembership) -> Self {
         let mut v = self.cache_security_groups.unwrap_or_default();
         v.push(input);
         self.cache_security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
-    pub fn set_cache_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>>,
-    ) -> Self {
+    pub fn set_cache_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>>) -> Self {
         self.cache_security_groups = input;
         self
     }
     /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
-    pub fn get_cache_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>> {
+    pub fn get_cache_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroupMembership>> {
         &self.cache_security_groups
     }
     /// <p>Status of the cache parameter group.</p>
@@ -838,32 +729,21 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>Status of the cache parameter group.</p>
-    pub fn set_cache_parameter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheParameterGroupStatus>,
-    ) -> Self {
+    pub fn set_cache_parameter_group(mut self, input: ::std::option::Option<crate::types::CacheParameterGroupStatus>) -> Self {
         self.cache_parameter_group = input;
         self
     }
     /// <p>Status of the cache parameter group.</p>
-    pub fn get_cache_parameter_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheParameterGroupStatus> {
+    pub fn get_cache_parameter_group(&self) -> &::std::option::Option<crate::types::CacheParameterGroupStatus> {
         &self.cache_parameter_group
     }
     /// <p>The name of the cache subnet group associated with the cluster.</p>
-    pub fn cache_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache subnet group associated with the cluster.</p>
-    pub fn set_cache_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_subnet_group_name = input;
         self
     }
@@ -883,17 +763,12 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>A list of cache nodes that are members of the cluster.</p>
-    pub fn set_cache_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheNode>>,
-    ) -> Self {
+    pub fn set_cache_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheNode>>) -> Self {
         self.cache_nodes = input;
         self
     }
     /// <p>A list of cache nodes that are members of the cluster.</p>
-    pub fn get_cache_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNode>> {
+    pub fn get_cache_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNode>> {
         &self.cache_nodes
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
@@ -922,32 +797,21 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>> {
         &self.security_groups
     }
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -977,19 +841,13 @@ impl CacheClusterBuilder {
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
-    pub fn snapshot_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
-    pub fn set_snapshot_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_window = input;
         self
     }
@@ -1021,17 +879,12 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>The date the auth token was last modified</p>
-    pub fn set_auth_token_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_auth_token_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.auth_token_last_modified_date = input;
         self
     }
     /// <p>The date the auth token was last modified</p>
-    pub fn get_auth_token_last_modified_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_auth_token_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.auth_token_last_modified_date
     }
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
@@ -1097,10 +950,7 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>A boolean value indicating whether log delivery is enabled for the replication group.</p>
-    pub fn set_replication_group_log_delivery_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_replication_group_log_delivery_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replication_group_log_delivery_enabled = input;
         self
     }
@@ -1113,27 +963,19 @@ impl CacheClusterBuilder {
     /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
     ///
     /// <p>Returns the destination, format and type of the logs.</p>
-    pub fn log_delivery_configurations(
-        mut self,
-        input: crate::types::LogDeliveryConfiguration,
-    ) -> Self {
+    pub fn log_delivery_configurations(mut self, input: crate::types::LogDeliveryConfiguration) -> Self {
         let mut v = self.log_delivery_configurations.unwrap_or_default();
         v.push(input);
         self.log_delivery_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns the destination, format and type of the logs.</p>
-    pub fn set_log_delivery_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
-    ) -> Self {
+    pub fn set_log_delivery_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>) -> Self {
         self.log_delivery_configurations = input;
         self
     }
     /// <p>Returns the destination, format and type of the logs.</p>
-    pub fn get_log_delivery_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>> {
+    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>> {
         &self.log_delivery_configurations
     }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
@@ -1142,10 +984,7 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn set_network_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkType>,
-    ) -> Self {
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
         self.network_type = input;
         self
     }
@@ -1159,10 +998,7 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn set_ip_discovery(
-        mut self,
-        input: ::std::option::Option<crate::types::IpDiscovery>,
-    ) -> Self {
+    pub fn set_ip_discovery(mut self, input: ::std::option::Option<crate::types::IpDiscovery>) -> Self {
         self.ip_discovery = input;
         self
     }
@@ -1176,17 +1012,12 @@ impl CacheClusterBuilder {
         self
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    pub fn set_transit_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitEncryptionMode>,
-    ) -> Self {
+    pub fn set_transit_encryption_mode(mut self, input: ::std::option::Option<crate::types::TransitEncryptionMode>) -> Self {
         self.transit_encryption_mode = input;
         self
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    pub fn get_transit_encryption_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
+    pub fn get_transit_encryption_mode(&self) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
         &self.transit_encryption_mode
     }
     /// Consumes the builder and constructs a [`CacheCluster`](crate::types::CacheCluster).
@@ -1220,9 +1051,7 @@ impl CacheClusterBuilder {
             transit_encryption_enabled: self.transit_encryption_enabled,
             at_rest_encryption_enabled: self.at_rest_encryption_enabled,
             arn: self.arn,
-            replication_group_log_delivery_enabled: self
-                .replication_group_log_delivery_enabled
-                .unwrap_or_default(),
+            replication_group_log_delivery_enabled: self.replication_group_log_delivery_enabled.unwrap_or_default(),
             log_delivery_configurations: self.log_delivery_configurations,
             network_type: self.network_type,
             ip_discovery: self.ip_discovery,

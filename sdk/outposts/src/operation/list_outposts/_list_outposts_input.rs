@@ -50,18 +50,13 @@ impl ListOutpostsInput {
 
 /// A builder for [`ListOutpostsInput`](crate::operation::list_outposts::ListOutpostsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutpostsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) life_cycle_status_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) availability_zone_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) availability_zone_id_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) life_cycle_status_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_id_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListOutpostsInputBuilder {
     /// <p>The pagination token.</p>
@@ -97,27 +92,19 @@ impl ListOutpostsInputBuilder {
     /// To override the contents of this collection use [`set_life_cycle_status_filter`](Self::set_life_cycle_status_filter).
     ///
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn life_cycle_status_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn life_cycle_status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.life_cycle_status_filter.unwrap_or_default();
         v.push(input.into());
         self.life_cycle_status_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn set_life_cycle_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_life_cycle_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.life_cycle_status_filter = input;
         self
     }
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn get_life_cycle_status_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_life_cycle_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.life_cycle_status_filter
     }
     /// Appends an item to `availability_zone_filter`.
@@ -125,27 +112,19 @@ impl ListOutpostsInputBuilder {
     /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
     ///
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn availability_zone_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zone_filter.unwrap_or_default();
         v.push(input.into());
         self.availability_zone_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn set_availability_zone_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zone_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zone_filter = input;
         self
     }
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn get_availability_zone_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zone_filter
     }
     /// Appends an item to `availability_zone_id_filter`.
@@ -153,36 +132,23 @@ impl ListOutpostsInputBuilder {
     /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
     ///
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn availability_zone_id_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zone_id_filter.unwrap_or_default();
         v.push(input.into());
         self.availability_zone_id_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn set_availability_zone_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zone_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zone_id_filter = input;
         self
     }
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn get_availability_zone_id_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zone_id_filter
     }
     /// Consumes the builder and constructs a [`ListOutpostsInput`](crate::operation::list_outposts::ListOutpostsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_outposts::ListOutpostsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_outposts::ListOutpostsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_outposts::ListOutpostsInput {
             next_token: self.next_token,
             max_results: self.max_results,

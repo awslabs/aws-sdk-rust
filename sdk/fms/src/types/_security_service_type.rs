@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SecurityServiceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for SecurityServiceType {
             "THIRD_PARTY_FIREWALL" => SecurityServiceType::ThirdPartyFirewall,
             "WAF" => SecurityServiceType::Waf,
             "WAFV2" => SecurityServiceType::Wafv2,
-            other => SecurityServiceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SecurityServiceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

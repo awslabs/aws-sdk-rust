@@ -22,18 +22,14 @@ impl ListMatchingWorkflowsInput {
 }
 impl ListMatchingWorkflowsInput {
     /// Creates a new builder-style object to manufacture [`ListMatchingWorkflowsInput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsInput).
-    pub fn builder(
-    ) -> crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsInputBuilder {
         crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMatchingWorkflowsInput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMatchingWorkflowsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListMatchingWorkflowsInputBuilder {
     /// Consumes the builder and constructs a [`ListMatchingWorkflowsInput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_matching_workflows::ListMatchingWorkflowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_matching_workflows::ListMatchingWorkflowsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_matching_workflows::ListMatchingWorkflowsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_matching_workflows::ListMatchingWorkflowsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

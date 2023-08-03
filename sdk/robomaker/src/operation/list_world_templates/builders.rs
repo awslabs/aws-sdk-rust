@@ -10,10 +10,7 @@ impl ListWorldTemplatesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_world_templates::ListWorldTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_templates::ListWorldTemplatesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_templates::ListWorldTemplatesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_world_templates();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListWorldTemplatesFluentBuilder {
         }
     }
     /// Access the ListWorldTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_world_templates::builders::ListWorldTemplatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_world_templates::builders::ListWorldTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListWorldTemplatesFluentBuilder {
             crate::operation::list_world_templates::ListWorldTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_templates::ListWorldTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_templates::ListWorldTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListWorldTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListWorldTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_world_templates::ListWorldTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_templates::ListWorldTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_templates::ListWorldTemplatesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListWorldTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_world_templates::ListWorldTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_templates::ListWorldTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_templates::ListWorldTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListWorldTemplatesFluentBuilder {
             crate::operation::list_world_templates::ListWorldTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_templates::ListWorldTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_templates::ListWorldTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_world_templates::paginator::ListWorldTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_world_templates::paginator::ListWorldTemplatesPaginator {
-        crate::operation::list_world_templates::paginator::ListWorldTemplatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_world_templates::paginator::ListWorldTemplatesPaginator {
+        crate::operation::list_world_templates::paginator::ListWorldTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

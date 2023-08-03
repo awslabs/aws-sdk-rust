@@ -14,12 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCustomerGatewayOutput`](crate::operation::create_customer_gateway::CreateCustomerGatewayOutput) with field(s):
     ///   - [`customer_gateway(Option<CustomerGateway>)`](crate::operation::create_customer_gateway::CreateCustomerGatewayOutput::customer_gateway): <p>Information about the customer gateway.</p>
     /// - On failure, responds with [`SdkError<CreateCustomerGatewayError>`](crate::operation::create_customer_gateway::CreateCustomerGatewayError)
-    pub fn create_customer_gateway(
-        &self,
-    ) -> crate::operation::create_customer_gateway::builders::CreateCustomerGatewayFluentBuilder
-    {
-        crate::operation::create_customer_gateway::builders::CreateCustomerGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_customer_gateway(&self) -> crate::operation::create_customer_gateway::builders::CreateCustomerGatewayFluentBuilder {
+        crate::operation::create_customer_gateway::builders::CreateCustomerGatewayFluentBuilder::new(self.handle.clone())
     }
 }

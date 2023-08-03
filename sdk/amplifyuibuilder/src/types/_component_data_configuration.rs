@@ -44,9 +44,7 @@ impl ComponentDataConfiguration {
 
 /// A builder for [`ComponentDataConfiguration`](crate::types::ComponentDataConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentDataConfigurationBuilder {
     pub(crate) model: ::std::option::Option<::std::string::String>,
     pub(crate) sort: ::std::option::Option<::std::vec::Vec<crate::types::SortProperty>>,
@@ -80,10 +78,7 @@ impl ComponentDataConfigurationBuilder {
         self
     }
     /// <p>Describes how to sort the component's properties.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortProperty>>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortProperty>>) -> Self {
         self.sort = input;
         self
     }
@@ -117,17 +112,12 @@ impl ComponentDataConfigurationBuilder {
         self
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub fn set_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.identifiers = input;
         self
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub fn get_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.identifiers
     }
     /// Consumes the builder and constructs a [`ComponentDataConfiguration`](crate::types::ComponentDataConfiguration).

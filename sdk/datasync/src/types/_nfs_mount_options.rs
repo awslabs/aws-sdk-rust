@@ -41,9 +41,7 @@ impl NfsMountOptions {
 
 /// A builder for [`NfsMountOptions`](crate::types::NfsMountOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NfsMountOptionsBuilder {
     pub(crate) version: ::std::option::Option<crate::types::NfsVersion>,
 }
@@ -91,8 +89,6 @@ impl NfsMountOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`NfsMountOptions`](crate::types::NfsMountOptions).
     pub fn build(self) -> crate::types::NfsMountOptions {
-        crate::types::NfsMountOptions {
-            version: self.version,
-        }
+        crate::types::NfsMountOptions { version: self.version }
     }
 }

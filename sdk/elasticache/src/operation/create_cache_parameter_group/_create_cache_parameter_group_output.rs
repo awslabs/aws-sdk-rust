@@ -10,9 +10,7 @@ pub struct CreateCacheParameterGroupOutput {
 }
 impl CreateCacheParameterGroupOutput {
     /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
-    pub fn cache_parameter_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CacheParameterGroup> {
+    pub fn cache_parameter_group(&self) -> ::std::option::Option<&crate::types::CacheParameterGroup> {
         self.cache_parameter_group.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateCacheParameterGroupOutput {
 }
 impl CreateCacheParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateCacheParameterGroupOutput`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput).
-    pub fn builder() -> crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupOutputBuilder {
         crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCacheParameterGroupOutput`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCacheParameterGroupOutputBuilder {
     pub(crate) cache_parameter_group: ::std::option::Option<crate::types::CacheParameterGroup>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateCacheParameterGroupOutputBuilder {
         self
     }
     /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
-    pub fn set_cache_parameter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheParameterGroup>,
-    ) -> Self {
+    pub fn set_cache_parameter_group(mut self, input: ::std::option::Option<crate::types::CacheParameterGroup>) -> Self {
         self.cache_parameter_group = input;
         self
     }
     /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
-    pub fn get_cache_parameter_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheParameterGroup> {
+    pub fn get_cache_parameter_group(&self) -> &::std::option::Option<crate::types::CacheParameterGroup> {
         &self.cache_parameter_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateCacheParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCacheParameterGroupOutput`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput {
+    pub fn build(self) -> crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput {
         crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput {
             cache_parameter_group: self.cache_parameter_group,
             _request_id: self._request_id,

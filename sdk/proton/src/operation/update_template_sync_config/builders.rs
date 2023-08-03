@@ -26,7 +26,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTemplateSyncConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder,
+    inner: crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder,
 }
 impl UpdateTemplateSyncConfigFluentBuilder {
     /// Creates a new `UpdateTemplateSyncConfig`.
@@ -37,7 +37,7 @@ impl UpdateTemplateSyncConfigFluentBuilder {
         }
     }
     /// Access the UpdateTemplateSyncConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateTemplateSyncConfigFluentBuilder {
             crate::operation::update_template_sync_config::UpdateTemplateSyncConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateTemplateSyncConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateTemplateSyncConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateTemplateSyncConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateTemplateSyncConfigFluentBuilder {
             crate::operation::update_template_sync_config::UpdateTemplateSyncConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The synced template name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The synced template name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -146,10 +129,7 @@ impl UpdateTemplateSyncConfigFluentBuilder {
         self
     }
     /// <p>The synced template type.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
     }
@@ -163,32 +143,21 @@ impl UpdateTemplateSyncConfigFluentBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
     }
     /// <p>The repository provider.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         self.inner.get_repository_provider()
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

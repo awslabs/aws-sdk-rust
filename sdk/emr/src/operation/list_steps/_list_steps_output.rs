@@ -36,9 +36,7 @@ impl ListStepsOutput {
 
 /// A builder for [`ListStepsOutput`](crate::operation::list_steps::ListStepsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStepsOutputBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::StepSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListStepsOutputBuilder {
         self
     }
     /// <p>The filtered list of steps for the cluster.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepSummary>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepSummary>>) -> Self {
         self.steps = input;
         self
     }

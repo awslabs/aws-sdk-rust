@@ -37,9 +37,7 @@ impl UpdateBrokerStorageFluentBuilder {
         }
     }
     /// Access the UpdateBrokerStorage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_broker_storage::builders::UpdateBrokerStorageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_broker_storage::builders::UpdateBrokerStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateBrokerStorageFluentBuilder {
             crate::operation::update_broker_storage::UpdateBrokerStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_storage::UpdateBrokerStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_storage::UpdateBrokerStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateBrokerStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateBrokerStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_broker_storage::UpdateBrokerStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_storage::UpdateBrokerStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_storage::UpdateBrokerStorageError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateBrokerStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_broker_storage::UpdateBrokerStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_storage::UpdateBrokerStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_storage::UpdateBrokerStorageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateBrokerStorageFluentBuilder {
             crate::operation::update_broker_storage::UpdateBrokerStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_storage::UpdateBrokerStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_storage::UpdateBrokerStorageError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl UpdateBrokerStorageFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
@@ -161,25 +142,17 @@ impl UpdateBrokerStorageFluentBuilder {
     /// To override the contents of this collection use [`set_target_broker_ebs_volume_info`](Self::set_target_broker_ebs_volume_info).
     ///
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    pub fn target_broker_ebs_volume_info(
-        mut self,
-        input: crate::types::BrokerEbsVolumeInfo,
-    ) -> Self {
+    pub fn target_broker_ebs_volume_info(mut self, input: crate::types::BrokerEbsVolumeInfo) -> Self {
         self.inner = self.inner.target_broker_ebs_volume_info(input);
         self
     }
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    pub fn set_target_broker_ebs_volume_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
-    ) -> Self {
+    pub fn set_target_broker_ebs_volume_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>) -> Self {
         self.inner = self.inner.set_target_broker_ebs_volume_info(input);
         self
     }
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    pub fn get_target_broker_ebs_volume_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>> {
+    pub fn get_target_broker_ebs_volume_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>> {
         self.inner.get_target_broker_ebs_volume_info()
     }
 }

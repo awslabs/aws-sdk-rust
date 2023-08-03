@@ -22,35 +22,26 @@ impl UpdateGcmChannelInput {
 }
 impl UpdateGcmChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateGcmChannelInput`](crate::operation::update_gcm_channel::UpdateGcmChannelInput).
-    pub fn builder() -> crate::operation::update_gcm_channel::builders::UpdateGcmChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_gcm_channel::builders::UpdateGcmChannelInputBuilder {
         crate::operation::update_gcm_channel::builders::UpdateGcmChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGcmChannelInput`](crate::operation::update_gcm_channel::UpdateGcmChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGcmChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) gcm_channel_request: ::std::option::Option<crate::types::GcmChannelRequest>,
 }
 impl UpdateGcmChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -64,31 +55,21 @@ impl UpdateGcmChannelInputBuilder {
         self
     }
     /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    pub fn set_gcm_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::GcmChannelRequest>,
-    ) -> Self {
+    pub fn set_gcm_channel_request(mut self, input: ::std::option::Option<crate::types::GcmChannelRequest>) -> Self {
         self.gcm_channel_request = input;
         self
     }
     /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    pub fn get_gcm_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::GcmChannelRequest> {
+    pub fn get_gcm_channel_request(&self) -> &::std::option::Option<crate::types::GcmChannelRequest> {
         &self.gcm_channel_request
     }
     /// Consumes the builder and constructs a [`UpdateGcmChannelInput`](crate::operation::update_gcm_channel::UpdateGcmChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_gcm_channel::UpdateGcmChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_gcm_channel::UpdateGcmChannelInput {
-                application_id: self.application_id,
-                gcm_channel_request: self.gcm_channel_request,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_gcm_channel::UpdateGcmChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_gcm_channel::UpdateGcmChannelInput {
+            application_id: self.application_id,
+            gcm_channel_request: self.gcm_channel_request,
+        })
     }
 }

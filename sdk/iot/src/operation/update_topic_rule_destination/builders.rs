@@ -27,7 +27,7 @@ impl UpdateTopicRuleDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTopicRuleDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationInputBuilder,
+    inner: crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationInputBuilder,
 }
 impl UpdateTopicRuleDestinationFluentBuilder {
     /// Creates a new `UpdateTopicRuleDestination`.
@@ -38,7 +38,7 @@ impl UpdateTopicRuleDestinationFluentBuilder {
         }
     }
     /// Access the UpdateTopicRuleDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateTopicRuleDestinationFluentBuilder {
             crate::operation::update_topic_rule_destination::UpdateTopicRuleDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateTopicRuleDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateTopicRuleDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateTopicRuleDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateTopicRuleDestinationFluentBuilder {
             crate::operation::update_topic_rule_destination::UpdateTopicRuleDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationError>,
     > {
         self.customize_middleware().await
     }
@@ -193,10 +182,7 @@ impl UpdateTopicRuleDestinationFluentBuilder {
     /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRuleDestinationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TopicRuleDestinationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

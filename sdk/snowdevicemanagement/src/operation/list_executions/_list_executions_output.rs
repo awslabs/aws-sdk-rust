@@ -35,9 +35,7 @@ impl ListExecutionsOutput {
 
 /// A builder for [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExecutionsOutputBuilder {
     pub(crate) executions: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListExecutionsOutputBuilder {
         self
     }
     /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
-    pub fn set_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>>,
-    ) -> Self {
+    pub fn set_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>>) -> Self {
         self.executions = input;
         self
     }
     /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
-    pub fn get_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>> {
+    pub fn get_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>> {
         &self.executions
     }
     /// <p>A pagination token to continue to the next page of executions.</p>

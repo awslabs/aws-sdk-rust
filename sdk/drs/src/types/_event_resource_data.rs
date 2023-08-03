@@ -20,9 +20,7 @@ impl EventResourceData {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`SourceNetworkData`](crate::types::EventResourceData::SourceNetworkData), extracting the inner [`SourceNetworkData`](crate::types::SourceNetworkData).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_source_network_data(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SourceNetworkData, &Self> {
+    pub fn as_source_network_data(&self) -> ::std::result::Result<&crate::types::SourceNetworkData, &Self> {
         if let EventResourceData::SourceNetworkData(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

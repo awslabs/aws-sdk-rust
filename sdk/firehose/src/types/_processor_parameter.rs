@@ -30,9 +30,7 @@ impl ProcessorParameter {
 
 /// A builder for [`ProcessorParameter`](crate::types::ProcessorParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessorParameterBuilder {
     pub(crate) parameter_name: ::std::option::Option<crate::types::ProcessorParameterName>,
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,21 @@ impl ProcessorParameterBuilder {
         self
     }
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessorParameterName>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<crate::types::ProcessorParameterName>) -> Self {
         self.parameter_name = input;
         self
     }
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
-    pub fn get_parameter_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessorParameterName> {
+    pub fn get_parameter_name(&self) -> &::std::option::Option<crate::types::ProcessorParameterName> {
         &self.parameter_name
     }
     /// <p>The parameter value.</p>
-    pub fn parameter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter value.</p>
-    pub fn set_parameter_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }

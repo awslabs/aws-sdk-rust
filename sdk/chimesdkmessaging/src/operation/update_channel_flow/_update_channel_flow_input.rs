@@ -38,8 +38,7 @@ impl ::std::fmt::Debug for UpdateChannelFlowInput {
 }
 impl UpdateChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelFlowInput`](crate::operation::update_channel_flow::UpdateChannelFlowInput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_flow::builders::UpdateChannelFlowInputBuilder {
+    pub fn builder() -> crate::operation::update_channel_flow::builders::UpdateChannelFlowInputBuilder {
         crate::operation::update_channel_flow::builders::UpdateChannelFlowInputBuilder::default()
     }
 }
@@ -54,18 +53,12 @@ pub struct UpdateChannelFlowInputBuilder {
 }
 impl UpdateChannelFlowInputBuilder {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_flow_arn = input;
         self
     }
@@ -85,17 +78,12 @@ impl UpdateChannelFlowInputBuilder {
         self
     }
     /// <p>Information about the processor Lambda functions </p>
-    pub fn set_processors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
-    ) -> Self {
+    pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>) -> Self {
         self.processors = input;
         self
     }
     /// <p>Information about the processor Lambda functions </p>
-    pub fn get_processors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+    pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
         &self.processors
     }
     /// <p>The name of the channel flow.</p>
@@ -115,17 +103,12 @@ impl UpdateChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelFlowInput`](crate::operation::update_channel_flow::UpdateChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel_flow::UpdateChannelFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_channel_flow::UpdateChannelFlowInput {
-                channel_flow_arn: self.channel_flow_arn,
-                processors: self.processors,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_channel_flow::UpdateChannelFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_channel_flow::UpdateChannelFlowInput {
+            channel_flow_arn: self.channel_flow_arn,
+            processors: self.processors,
+            name: self.name,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateChannelFlowInputBuilder {

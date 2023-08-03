@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`reactive_insights(i32)`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput::reactive_insights): <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     ///   - [`proactive_insights(i32)`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput::proactive_insights): <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationOverviewError>`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewError)
-    pub fn describe_organization_overview(&self) -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewFluentBuilder{
+    pub fn describe_organization_overview(
+        &self,
+    ) -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewFluentBuilder {
         crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewFluentBuilder::new(self.handle.clone())
     }
 }

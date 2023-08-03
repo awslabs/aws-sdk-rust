@@ -84,17 +84,14 @@ impl ::aws_http::request_id::RequestId for DescribeEngagementOutput {
 }
 impl DescribeEngagementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngagementOutput`](crate::operation::describe_engagement::DescribeEngagementOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder {
+    pub fn builder() -> crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder {
         crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEngagementOutput`](crate::operation::describe_engagement::DescribeEngagementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngagementOutputBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_arn: ::std::option::Option<::std::string::String>,
@@ -124,18 +121,12 @@ impl DescribeEngagementOutputBuilder {
         &self.contact_arn
     }
     /// <p>The ARN of the engagement.</p>
-    pub fn engagement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engagement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the engagement.</p>
-    pub fn set_engagement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engagement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engagement_arn = input;
         self
     }
@@ -186,18 +177,12 @@ impl DescribeEngagementOutputBuilder {
         &self.content
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_subject(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_subject = input;
         self
     }
@@ -206,18 +191,12 @@ impl DescribeEngagementOutputBuilder {
         &self.public_subject
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_content = input;
         self
     }
@@ -245,10 +224,7 @@ impl DescribeEngagementOutputBuilder {
         self
     }
     /// <p>The time that the engagement started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -262,10 +238,7 @@ impl DescribeEngagementOutputBuilder {
         self
     }
     /// <p>The time that the engagement ended.</p>
-    pub fn set_stop_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_time = input;
         self
     }

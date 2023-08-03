@@ -35,9 +35,7 @@ impl ListImagesOutput {
 
 /// A builder for [`ListImagesOutput`](crate::operation::list_images::ListImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagesOutputBuilder {
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListImagesOutputBuilder {
         self
     }
     /// <p>A list of images and their properties.</p>
-    pub fn set_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
-    ) -> Self {
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Image>>) -> Self {
         self.images = input;
         self
     }

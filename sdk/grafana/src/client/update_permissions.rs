@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput) with field(s):
     ///   - [`errors(Option<Vec<UpdateError>>)`](crate::operation::update_permissions::UpdatePermissionsOutput::errors): <p>An array of structures that contain the errors from the operation, if any.</p>
     /// - On failure, responds with [`SdkError<UpdatePermissionsError>`](crate::operation::update_permissions::UpdatePermissionsError)
-    pub fn update_permissions(
-        &self,
-    ) -> crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder {
-        crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_permissions(&self) -> crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder {
+        crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

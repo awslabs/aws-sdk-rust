@@ -42,7 +42,7 @@ impl BatchDeleteRecipeVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder,
+    inner: crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder,
 }
 impl BatchDeleteRecipeVersionFluentBuilder {
     /// Creates a new `BatchDeleteRecipeVersion`.
@@ -53,7 +53,7 @@ impl BatchDeleteRecipeVersionFluentBuilder {
         }
     }
     /// Access the BatchDeleteRecipeVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +65,7 @@ impl BatchDeleteRecipeVersionFluentBuilder {
             crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +75,7 @@ impl BatchDeleteRecipeVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +84,7 @@ impl BatchDeleteRecipeVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError>,
     > {
         let op = self
             .inner
@@ -114,9 +107,7 @@ impl BatchDeleteRecipeVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +121,7 @@ impl BatchDeleteRecipeVersionFluentBuilder {
             crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -155,25 +144,17 @@ impl BatchDeleteRecipeVersionFluentBuilder {
     /// To override the contents of this collection use [`set_recipe_versions`](Self::set_recipe_versions).
     ///
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn recipe_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_versions(input.into());
         self
     }
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn set_recipe_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recipe_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_recipe_versions(input);
         self
     }
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn get_recipe_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recipe_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_recipe_versions()
     }
 }

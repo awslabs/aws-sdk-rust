@@ -22,17 +22,14 @@ impl DeleteTypedLinkFacetInput {
 }
 impl DeleteTypedLinkFacetInput {
     /// Creates a new builder-style object to manufacture [`DeleteTypedLinkFacetInput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetInputBuilder {
+    pub fn builder() -> crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetInputBuilder {
         crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTypedLinkFacetInput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTypedLinkFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl DeleteTypedLinkFacetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTypedLinkFacetInput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput {
-                schema_arn: self.schema_arn,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput {
+            schema_arn: self.schema_arn,
+            name: self.name,
+        })
     }
 }

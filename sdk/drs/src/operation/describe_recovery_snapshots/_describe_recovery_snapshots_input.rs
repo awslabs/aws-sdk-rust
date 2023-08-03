@@ -25,9 +25,7 @@ impl DescribeRecoverySnapshotsInput {
         self.source_server_id.as_deref()
     }
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DescribeRecoverySnapshotsRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::DescribeRecoverySnapshotsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
@@ -45,38 +43,29 @@ impl DescribeRecoverySnapshotsInput {
 }
 impl DescribeRecoverySnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecoverySnapshotsInput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput).
-    pub fn builder() -> crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder{
+    pub fn builder() -> crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder {
         crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecoverySnapshotsInput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>,
+    pub(crate) filters: ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>,
     pub(crate) order: ::std::option::Option<crate::types::RecoverySnapshotsOrder>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRecoverySnapshotsInputBuilder {
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -90,17 +79,12 @@ impl DescribeRecoverySnapshotsInputBuilder {
         self
     }
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters> {
         &self.filters
     }
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
@@ -109,10 +93,7 @@ impl DescribeRecoverySnapshotsInputBuilder {
         self
     }
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
-    pub fn set_order(
-        mut self,
-        input: ::std::option::Option<crate::types::RecoverySnapshotsOrder>,
-    ) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::RecoverySnapshotsOrder>) -> Self {
         self.order = input;
         self
     }
@@ -155,14 +136,12 @@ impl DescribeRecoverySnapshotsInputBuilder {
         crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput {
-                source_server_id: self.source_server_id,
-                filters: self.filters,
-                order: self.order,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput {
+            source_server_id: self.source_server_id,
+            filters: self.filters,
+            order: self.order,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

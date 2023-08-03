@@ -37,10 +37,7 @@ impl ListEdgePackagingJobsFluentBuilder {
         }
     }
     /// Access the ListEdgePackagingJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListEdgePackagingJobsFluentBuilder {
             crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListEdgePackagingJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListEdgePackagingJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListEdgePackagingJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListEdgePackagingJobsFluentBuilder {
             crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator {
-        crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator {
+        crate::operation::list_edge_packaging_jobs::paginator::ListEdgePackagingJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,10 +149,7 @@ impl ListEdgePackagingJobsFluentBuilder {
         self
     }
     /// <p>Select jobs where the job was created after specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -185,10 +163,7 @@ impl ListEdgePackagingJobsFluentBuilder {
         self
     }
     /// <p>Select jobs where the job was created before specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -202,17 +177,12 @@ impl ListEdgePackagingJobsFluentBuilder {
         self
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
@@ -221,32 +191,21 @@ impl ListEdgePackagingJobsFluentBuilder {
         self
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -255,18 +214,12 @@ impl ListEdgePackagingJobsFluentBuilder {
         self.inner.get_name_contains()
     }
     /// <p>Filter for jobs where the model name contains this string.</p>
-    pub fn model_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name_contains(input.into());
         self
     }
     /// <p>Filter for jobs where the model name contains this string.</p>
-    pub fn set_model_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name_contains(input);
         self
     }
@@ -280,17 +233,12 @@ impl ListEdgePackagingJobsFluentBuilder {
         self
     }
     /// <p>The job status to filter for.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::EdgePackagingJobStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
     /// <p>The job status to filter for.</p>
-    pub fn get_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
         self.inner.get_status_equals()
     }
     /// <p>Use to specify what column to sort by.</p>
@@ -299,10 +247,7 @@ impl ListEdgePackagingJobsFluentBuilder {
         self
     }
     /// <p>Use to specify what column to sort by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListEdgePackagingJobsSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListEdgePackagingJobsSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

@@ -37,9 +37,7 @@ impl NetworkInsightsAccessScopeContent {
 
 /// A builder for [`NetworkInsightsAccessScopeContent`](crate::types::NetworkInsightsAccessScopeContent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInsightsAccessScopeContentBuilder {
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) match_paths: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>>,
@@ -47,25 +45,17 @@ pub struct NetworkInsightsAccessScopeContentBuilder {
 }
 impl NetworkInsightsAccessScopeContentBuilder {
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn set_network_insights_access_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = input;
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn get_network_insights_access_scope_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_access_scope_id
     }
     /// Appends an item to `match_paths`.
@@ -80,17 +70,12 @@ impl NetworkInsightsAccessScopeContentBuilder {
         self
     }
     /// <p>The paths to match.</p>
-    pub fn set_match_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>>,
-    ) -> Self {
+    pub fn set_match_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>>) -> Self {
         self.match_paths = input;
         self
     }
     /// <p>The paths to match.</p>
-    pub fn get_match_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>> {
+    pub fn get_match_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>> {
         &self.match_paths
     }
     /// Appends an item to `exclude_paths`.
@@ -105,17 +90,12 @@ impl NetworkInsightsAccessScopeContentBuilder {
         self
     }
     /// <p>The paths to exclude.</p>
-    pub fn set_exclude_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>>,
-    ) -> Self {
+    pub fn set_exclude_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>>) -> Self {
         self.exclude_paths = input;
         self
     }
     /// <p>The paths to exclude.</p>
-    pub fn get_exclude_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>> {
+    pub fn get_exclude_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>> {
         &self.exclude_paths
     }
     /// Consumes the builder and constructs a [`NetworkInsightsAccessScopeContent`](crate::types::NetworkInsightsAccessScopeContent).

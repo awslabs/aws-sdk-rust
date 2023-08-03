@@ -9,8 +9,7 @@ pub struct ListCampaignsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of Amazon Connect campaigns.
     #[doc(hidden)]
-    pub campaign_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
+    pub campaign_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     _request_id: Option<String>,
 }
 impl ListCampaignsOutput {
@@ -37,13 +36,10 @@ impl ListCampaignsOutput {
 
 /// A builder for [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCampaignsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) campaign_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
+    pub(crate) campaign_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     _request_id: Option<String>,
 }
 impl ListCampaignsOutputBuilder {
@@ -73,17 +69,12 @@ impl ListCampaignsOutputBuilder {
         self
     }
     /// A list of Amazon Connect campaigns.
-    pub fn set_campaign_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
-    ) -> Self {
+    pub fn set_campaign_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>) -> Self {
         self.campaign_summary_list = input;
         self
     }
     /// A list of Amazon Connect campaigns.
-    pub fn get_campaign_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>> {
+    pub fn get_campaign_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>> {
         &self.campaign_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

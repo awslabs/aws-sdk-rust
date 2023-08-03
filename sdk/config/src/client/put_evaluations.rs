@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PutEvaluationsOutput`](crate::operation::put_evaluations::PutEvaluationsOutput) with field(s):
     ///   - [`failed_evaluations(Option<Vec<Evaluation>>)`](crate::operation::put_evaluations::PutEvaluationsOutput::failed_evaluations): <p>Requests that failed because of a client or server error.</p>
     /// - On failure, responds with [`SdkError<PutEvaluationsError>`](crate::operation::put_evaluations::PutEvaluationsError)
-    pub fn put_evaluations(
-        &self,
-    ) -> crate::operation::put_evaluations::builders::PutEvaluationsFluentBuilder {
-        crate::operation::put_evaluations::builders::PutEvaluationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_evaluations(&self) -> crate::operation::put_evaluations::builders::PutEvaluationsFluentBuilder {
+        crate::operation::put_evaluations::builders::PutEvaluationsFluentBuilder::new(self.handle.clone())
     }
 }

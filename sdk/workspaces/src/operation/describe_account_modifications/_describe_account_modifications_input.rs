@@ -15,16 +15,14 @@ impl DescribeAccountModificationsInput {
 }
 impl DescribeAccountModificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountModificationsInput`](crate::operation::describe_account_modifications::DescribeAccountModificationsInput).
-    pub fn builder() -> crate::operation::describe_account_modifications::builders::DescribeAccountModificationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_modifications::builders::DescribeAccountModificationsInputBuilder {
         crate::operation::describe_account_modifications::builders::DescribeAccountModificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountModificationsInput`](crate::operation::describe_account_modifications::DescribeAccountModificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountModificationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeAccountModificationsInputBuilder {
         crate::operation::describe_account_modifications::DescribeAccountModificationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_modifications::DescribeAccountModificationsInput {
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_account_modifications::DescribeAccountModificationsInput { next_token: self.next_token })
     }
 }

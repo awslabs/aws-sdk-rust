@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LoadBalancerTlsCertificateRevocationReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -85,17 +79,13 @@ impl ::std::convert::From<&str> for LoadBalancerTlsCertificateRevocationReason {
             "A_A_COMPROMISE" => LoadBalancerTlsCertificateRevocationReason::AaCompromise,
             "CA_COMPROMISE" => LoadBalancerTlsCertificateRevocationReason::CaCompromise,
             "CERTIFICATE_HOLD" => LoadBalancerTlsCertificateRevocationReason::CertificateHold,
-            "CESSATION_OF_OPERATION" => {
-                LoadBalancerTlsCertificateRevocationReason::CessationOfOperation
-            }
+            "CESSATION_OF_OPERATION" => LoadBalancerTlsCertificateRevocationReason::CessationOfOperation,
             "KEY_COMPROMISE" => LoadBalancerTlsCertificateRevocationReason::KeyCompromise,
             "PRIVILEGE_WITHDRAWN" => LoadBalancerTlsCertificateRevocationReason::PrivilegeWithdrawn,
             "REMOVE_FROM_CRL" => LoadBalancerTlsCertificateRevocationReason::RemoveFromCrl,
             "SUPERCEDED" => LoadBalancerTlsCertificateRevocationReason::Superceded,
             "UNSPECIFIED" => LoadBalancerTlsCertificateRevocationReason::Unspecified,
-            other => LoadBalancerTlsCertificateRevocationReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => LoadBalancerTlsCertificateRevocationReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -114,9 +104,7 @@ impl LoadBalancerTlsCertificateRevocationReason {
             LoadBalancerTlsCertificateRevocationReason::AaCompromise => "A_A_COMPROMISE",
             LoadBalancerTlsCertificateRevocationReason::CaCompromise => "CA_COMPROMISE",
             LoadBalancerTlsCertificateRevocationReason::CertificateHold => "CERTIFICATE_HOLD",
-            LoadBalancerTlsCertificateRevocationReason::CessationOfOperation => {
-                "CESSATION_OF_OPERATION"
-            }
+            LoadBalancerTlsCertificateRevocationReason::CessationOfOperation => "CESSATION_OF_OPERATION",
             LoadBalancerTlsCertificateRevocationReason::KeyCompromise => "KEY_COMPROMISE",
             LoadBalancerTlsCertificateRevocationReason::PrivilegeWithdrawn => "PRIVILEGE_WITHDRAWN",
             LoadBalancerTlsCertificateRevocationReason::RemoveFromCrl => "REMOVE_FROM_CRL",

@@ -51,9 +51,7 @@ impl ExternalEvaluation {
 
 /// A builder for [`ExternalEvaluation`](crate::types::ExternalEvaluation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalEvaluationBuilder {
     pub(crate) compliance_resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_resource_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct ExternalEvaluationBuilder {
 }
 impl ExternalEvaluationBuilder {
     /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
-    pub fn compliance_resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
-    pub fn set_compliance_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_resource_type = input;
         self
     }
@@ -83,18 +75,12 @@ impl ExternalEvaluationBuilder {
         &self.compliance_resource_type
     }
     /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
-    pub fn compliance_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
-    pub fn set_compliance_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_resource_id = input;
         self
     }
@@ -108,10 +94,7 @@ impl ExternalEvaluationBuilder {
         self
     }
     /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceType>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ComplianceType>) -> Self {
         self.compliance_type = input;
         self
     }
@@ -139,10 +122,7 @@ impl ExternalEvaluationBuilder {
         self
     }
     /// <p>The time when the compliance was recorded. </p>
-    pub fn set_ordering_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ordering_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ordering_timestamp = input;
         self
     }

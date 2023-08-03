@@ -37,9 +37,7 @@ impl Instance {
 
 /// A builder for [`Instance`](crate::types::Instance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -52,10 +50,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The position of the label instance on the image.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }
@@ -89,17 +84,12 @@ impl InstanceBuilder {
         self
     }
     /// <p>The dominant colors found in an individual instance of a label.</p>
-    pub fn set_dominant_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
-    ) -> Self {
+    pub fn set_dominant_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>) -> Self {
         self.dominant_colors = input;
         self
     }
     /// <p>The dominant colors found in an individual instance of a label.</p>
-    pub fn get_dominant_colors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantColor>> {
+    pub fn get_dominant_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantColor>> {
         &self.dominant_colors
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).

@@ -19,9 +19,7 @@ impl DeleteDashboardOutput {
 
 /// A builder for [`DeleteDashboardOutput`](crate::operation::delete_dashboard::DeleteDashboardOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDashboardOutputBuilder {
     _request_id: Option<String>,
 }

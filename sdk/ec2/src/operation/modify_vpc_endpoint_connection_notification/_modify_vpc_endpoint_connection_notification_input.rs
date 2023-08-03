@@ -36,16 +36,14 @@ impl ModifyVpcEndpointConnectionNotificationInput {
 }
 impl ModifyVpcEndpointConnectionNotificationInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointConnectionNotificationInput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder{
+    pub fn builder() -> crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder {
         crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcEndpointConnectionNotificationInput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointConnectionNotificationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) connection_notification_id: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the notification.</p>
-    pub fn connection_notification_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_notification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_notification_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the notification.</p>
-    pub fn set_connection_notification_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_notification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_notification_id = input;
         self
     }
@@ -88,18 +80,12 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
         &self.connection_notification_id
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
-    pub fn connection_notification_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_notification_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
-    pub fn set_connection_notification_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_notification_arn = input;
         self
     }
@@ -112,42 +98,35 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     /// To override the contents of this collection use [`set_connection_events`](Self::set_connection_events).
     ///
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn connection_events(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connection_events.unwrap_or_default();
         v.push(input.into());
         self.connection_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn set_connection_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connection_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.connection_events = input;
         self
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn get_connection_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connection_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.connection_events
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointConnectionNotificationInput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput {
-                dry_run: self.dry_run
-                ,
-                connection_notification_id: self.connection_notification_id
-                ,
-                connection_notification_arn: self.connection_notification_arn
-                ,
-                connection_events: self.connection_events
-                ,
-            }
+                dry_run: self.dry_run,
+                connection_notification_id: self.connection_notification_id,
+                connection_notification_arn: self.connection_notification_arn,
+                connection_events: self.connection_events,
+            },
         )
     }
 }

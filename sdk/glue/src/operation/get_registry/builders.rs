@@ -10,10 +10,7 @@ impl GetRegistryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_registry::GetRegistryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_registry::GetRegistryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_registry::GetRegistryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_registry();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetRegistryFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_registry::GetRegistry,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_registry::GetRegistry, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_registry::GetRegistryError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetRegistryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetRegistryFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_registry::GetRegistry,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_registry::GetRegistry, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_registry::GetRegistryError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl GetRegistryFluentBuilder {
         self
     }
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    pub fn set_registry_id(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryId>,
-    ) -> Self {
+    pub fn set_registry_id(mut self, input: ::std::option::Option<crate::types::RegistryId>) -> Self {
         self.inner = self.inner.set_registry_id(input);
         self
     }

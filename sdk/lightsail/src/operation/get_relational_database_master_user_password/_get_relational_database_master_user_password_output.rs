@@ -37,7 +37,8 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabaseMasterUserPasswo
 }
 impl GetRelationalDatabaseMasterUserPasswordOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput).
-    pub fn builder() -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordOutputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordOutputBuilder
+    {
         crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordOutputBuilder::default()
     }
 }
@@ -52,18 +53,12 @@ pub struct GetRelationalDatabaseMasterUserPasswordOutputBuilder {
 }
 impl GetRelationalDatabaseMasterUserPasswordOutputBuilder {
     /// <p>The master user password for the <code>password version</code> specified.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The master user password for the <code>password version</code> specified.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -77,10 +72,7 @@ impl GetRelationalDatabaseMasterUserPasswordOutputBuilder {
         self
     }
     /// <p>The timestamp when the specified version of the master user password was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -98,12 +90,10 @@ impl GetRelationalDatabaseMasterUserPasswordOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput).
-    pub fn build(self) -> crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput{
+    pub fn build(self) -> crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput {
         crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput {
-            master_user_password: self.master_user_password
-            ,
-            created_at: self.created_at
-            ,
+            master_user_password: self.master_user_password,
+            created_at: self.created_at,
             _request_id: self._request_id,
         }
     }

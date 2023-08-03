@@ -14,8 +14,7 @@ pub struct BatchDeletePartitionInput {
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
     #[doc(hidden)]
-    pub partitions_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
+    pub partitions_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
 }
 impl BatchDeletePartitionInput {
     /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -31,31 +30,25 @@ impl BatchDeletePartitionInput {
         self.table_name.as_deref()
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
-    pub fn partitions_to_delete(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PartitionValueList]> {
+    pub fn partitions_to_delete(&self) -> ::std::option::Option<&[crate::types::PartitionValueList]> {
         self.partitions_to_delete.as_deref()
     }
 }
 impl BatchDeletePartitionInput {
     /// Creates a new builder-style object to manufacture [`BatchDeletePartitionInput`](crate::operation::batch_delete_partition::BatchDeletePartitionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_partition::builders::BatchDeletePartitionInputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_partition::builders::BatchDeletePartitionInputBuilder {
         crate::operation::batch_delete_partition::builders::BatchDeletePartitionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeletePartitionInput`](crate::operation::batch_delete_partition::BatchDeletePartitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeletePartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) partitions_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
+    pub(crate) partitions_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
 }
 impl BatchDeletePartitionInputBuilder {
     /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -73,18 +66,12 @@ impl BatchDeletePartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -118,33 +105,24 @@ impl BatchDeletePartitionInputBuilder {
         self
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
-    pub fn set_partitions_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
-    ) -> Self {
+    pub fn set_partitions_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>) -> Self {
         self.partitions_to_delete = input;
         self
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
-    pub fn get_partitions_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+    pub fn get_partitions_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
         &self.partitions_to_delete
     }
     /// Consumes the builder and constructs a [`BatchDeletePartitionInput`](crate::operation::batch_delete_partition::BatchDeletePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_partition::BatchDeletePartitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_partition::BatchDeletePartitionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                partitions_to_delete: self.partitions_to_delete,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_delete_partition::BatchDeletePartitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_delete_partition::BatchDeletePartitionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            partitions_to_delete: self.partitions_to_delete,
+        })
     }
 }

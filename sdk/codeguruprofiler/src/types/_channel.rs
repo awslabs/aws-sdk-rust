@@ -37,14 +37,11 @@ impl Channel {
 
 /// A builder for [`Channel`](crate::types::Channel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
-    pub(crate) event_publishers:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>>,
+    pub(crate) event_publishers: ::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>>,
 }
 impl ChannelBuilder {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
@@ -87,17 +84,12 @@ impl ChannelBuilder {
         self
     }
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-    pub fn set_event_publishers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>>,
-    ) -> Self {
+    pub fn set_event_publishers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>>) -> Self {
         self.event_publishers = input;
         self
     }
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-    pub fn get_event_publishers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>> {
+    pub fn get_event_publishers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>> {
         &self.event_publishers
     }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).

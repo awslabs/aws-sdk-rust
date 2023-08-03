@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`resource_list(Vec<String>)`](crate::operation::update_component::builders::UpdateComponentFluentBuilder::resource_list) / [`set_resource_list(Option<Vec<String>>)`](crate::operation::update_component::builders::UpdateComponentFluentBuilder::set_resource_list): <p>The list of resource ARNs that belong to the component.</p>
     /// - On success, responds with [`UpdateComponentOutput`](crate::operation::update_component::UpdateComponentOutput)
     /// - On failure, responds with [`SdkError<UpdateComponentError>`](crate::operation::update_component::UpdateComponentError)
-    pub fn update_component(
-        &self,
-    ) -> crate::operation::update_component::builders::UpdateComponentFluentBuilder {
-        crate::operation::update_component::builders::UpdateComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_component(&self) -> crate::operation::update_component::builders::UpdateComponentFluentBuilder {
+        crate::operation::update_component::builders::UpdateComponentFluentBuilder::new(self.handle.clone())
     }
 }

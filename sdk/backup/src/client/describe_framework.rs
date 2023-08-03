@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`framework_status(Option<String>)`](crate::operation::describe_framework::DescribeFrameworkOutput::framework_status): <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>  <ul>   <li> <p> <code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p> </li>   <li> <p> <code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p> </li>   <li> <p> <code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p> </li>   <li> <p> <code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p> </li>  </ul>
     ///   - [`idempotency_token(Option<String>)`](crate::operation::describe_framework::DescribeFrameworkOutput::idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     /// - On failure, responds with [`SdkError<DescribeFrameworkError>`](crate::operation::describe_framework::DescribeFrameworkError)
-    pub fn describe_framework(
-        &self,
-    ) -> crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder {
-        crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_framework(&self) -> crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder {
+        crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder::new(self.handle.clone())
     }
 }

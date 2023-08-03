@@ -10,10 +10,7 @@ impl UpdateChannelFlowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_channel_flow::UpdateChannelFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_flow::UpdateChannelFlowError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_flow::UpdateChannelFlowError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_channel_flow();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateChannelFlowFluentBuilder {
         }
     }
     /// Access the UpdateChannelFlow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_channel_flow::builders::UpdateChannelFlowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_channel_flow::builders::UpdateChannelFlowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateChannelFlowFluentBuilder {
             crate::operation::update_channel_flow::UpdateChannelFlow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_flow::UpdateChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_flow::UpdateChannelFlowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateChannelFlowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateChannelFlowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_channel_flow::UpdateChannelFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_flow::UpdateChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_flow::UpdateChannelFlowError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateChannelFlowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_channel_flow::UpdateChannelFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_flow::UpdateChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_flow::UpdateChannelFlowError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateChannelFlowFluentBuilder {
             crate::operation::update_channel_flow::UpdateChannelFlow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_flow::UpdateChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_flow::UpdateChannelFlowError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_flow_arn(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_flow_arn(input);
         self
     }
@@ -152,17 +130,12 @@ impl UpdateChannelFlowFluentBuilder {
         self
     }
     /// <p>Information about the processor Lambda functions </p>
-    pub fn set_processors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
-    ) -> Self {
+    pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>) -> Self {
         self.inner = self.inner.set_processors(input);
         self
     }
     /// <p>Information about the processor Lambda functions </p>
-    pub fn get_processors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+    pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
         self.inner.get_processors()
     }
     /// <p>The name of the channel flow.</p>

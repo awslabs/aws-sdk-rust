@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SavingsPlanRateFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for SavingsPlanRateFilterAttribute {
             "productId" => SavingsPlanRateFilterAttribute::ProductId,
             "region" => SavingsPlanRateFilterAttribute::Region,
             "tenancy" => SavingsPlanRateFilterAttribute::Tenancy,
-            other => SavingsPlanRateFilterAttribute::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => SavingsPlanRateFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl SavingsPlanRateFilterAttribute {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "instanceFamily",
-            "instanceType",
-            "productDescription",
-            "productId",
-            "region",
-            "tenancy",
-        ]
+        &["instanceFamily", "instanceType", "productDescription", "productId", "region", "tenancy"]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlanRateFilterAttribute {

@@ -37,9 +37,7 @@ impl TrafficRoutingConfig {
 
 /// A builder for [`TrafficRoutingConfig`](crate::types::TrafficRoutingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficRoutingConfigBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TrafficRoutingType>,
     pub(crate) time_based_canary: ::std::option::Option<crate::types::TimeBasedCanary>,
@@ -52,10 +50,7 @@ impl TrafficRoutingConfigBuilder {
         self
     }
     /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficRoutingType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TrafficRoutingType>) -> Self {
         self.r#type = input;
         self
     }
@@ -69,10 +64,7 @@ impl TrafficRoutingConfigBuilder {
         self
     }
     /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
-    pub fn set_time_based_canary(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeBasedCanary>,
-    ) -> Self {
+    pub fn set_time_based_canary(mut self, input: ::std::option::Option<crate::types::TimeBasedCanary>) -> Self {
         self.time_based_canary = input;
         self
     }
@@ -86,10 +78,7 @@ impl TrafficRoutingConfigBuilder {
         self
     }
     /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
-    pub fn set_time_based_linear(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeBasedLinear>,
-    ) -> Self {
+    pub fn set_time_based_linear(mut self, input: ::std::option::Option<crate::types::TimeBasedLinear>) -> Self {
         self.time_based_linear = input;
         self
     }

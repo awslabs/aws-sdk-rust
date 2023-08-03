@@ -26,7 +26,7 @@ impl ListUsersByPermissionGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUsersByPermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder,
+    inner: crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder,
 }
 impl ListUsersByPermissionGroupFluentBuilder {
     /// Creates a new `ListUsersByPermissionGroup`.
@@ -37,7 +37,7 @@ impl ListUsersByPermissionGroupFluentBuilder {
         }
     }
     /// Access the ListUsersByPermissionGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListUsersByPermissionGroupFluentBuilder {
             crate::operation::list_users_by_permission_group::ListUsersByPermissionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListUsersByPermissionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListUsersByPermissionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListUsersByPermissionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ListUsersByPermissionGroupFluentBuilder {
             crate::operation::list_users_by_permission_group::ListUsersByPermissionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_group_id(input.into());
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_group_id(input);
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAuthorizerOutput`](crate::operation::describe_authorizer::DescribeAuthorizerOutput) with field(s):
     ///   - [`authorizer_description(Option<AuthorizerDescription>)`](crate::operation::describe_authorizer::DescribeAuthorizerOutput::authorizer_description): <p>The authorizer description.</p>
     /// - On failure, responds with [`SdkError<DescribeAuthorizerError>`](crate::operation::describe_authorizer::DescribeAuthorizerError)
-    pub fn describe_authorizer(
-        &self,
-    ) -> crate::operation::describe_authorizer::builders::DescribeAuthorizerFluentBuilder {
-        crate::operation::describe_authorizer::builders::DescribeAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_authorizer(&self) -> crate::operation::describe_authorizer::builders::DescribeAuthorizerFluentBuilder {
+        crate::operation::describe_authorizer::builders::DescribeAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,8 +12,7 @@ pub struct CreateBudgetInput {
     pub budget: ::std::option::Option<crate::types::Budget>,
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
     #[doc(hidden)]
-    pub notifications_with_subscribers:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>>,
+    pub notifications_with_subscribers: ::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>>,
 }
 impl CreateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
@@ -25,9 +24,7 @@ impl CreateBudgetInput {
         self.budget.as_ref()
     }
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-    pub fn notifications_with_subscribers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationWithSubscribers]> {
+    pub fn notifications_with_subscribers(&self) -> ::std::option::Option<&[crate::types::NotificationWithSubscribers]> {
         self.notifications_with_subscribers.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl CreateBudgetInput {
 
 /// A builder for [`CreateBudgetInput`](crate::operation::create_budget::CreateBudgetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBudgetInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget: ::std::option::Option<crate::types::Budget>,
-    pub(crate) notifications_with_subscribers:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>>,
+    pub(crate) notifications_with_subscribers: ::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>>,
 }
 impl CreateBudgetInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
@@ -83,10 +77,7 @@ impl CreateBudgetInputBuilder {
     /// To override the contents of this collection use [`set_notifications_with_subscribers`](Self::set_notifications_with_subscribers).
     ///
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-    pub fn notifications_with_subscribers(
-        mut self,
-        input: crate::types::NotificationWithSubscribers,
-    ) -> Self {
+    pub fn notifications_with_subscribers(mut self, input: crate::types::NotificationWithSubscribers) -> Self {
         let mut v = self.notifications_with_subscribers.unwrap_or_default();
         v.push(input);
         self.notifications_with_subscribers = ::std::option::Option::Some(v);
@@ -101,18 +92,11 @@ impl CreateBudgetInputBuilder {
         self
     }
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-    pub fn get_notifications_with_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>> {
+    pub fn get_notifications_with_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>> {
         &self.notifications_with_subscribers
     }
     /// Consumes the builder and constructs a [`CreateBudgetInput`](crate::operation::create_budget::CreateBudgetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_budget::CreateBudgetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_budget::CreateBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_budget::CreateBudgetInput {
             account_id: self.account_id,
             budget: self.budget,

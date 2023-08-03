@@ -17,9 +17,7 @@ impl LateDataRule {
         self.rule_name.as_deref()
     }
     /// <p>The information needed to configure the late data rule.</p>
-    pub fn rule_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LateDataRuleConfiguration> {
+    pub fn rule_configuration(&self) -> ::std::option::Option<&crate::types::LateDataRuleConfiguration> {
         self.rule_configuration.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl LateDataRule {
 
 /// A builder for [`LateDataRule`](crate::types::LateDataRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LateDataRuleBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_configuration: ::std::option::Option<crate::types::LateDataRuleConfiguration>,
@@ -60,17 +56,12 @@ impl LateDataRuleBuilder {
         self
     }
     /// <p>The information needed to configure the late data rule.</p>
-    pub fn set_rule_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LateDataRuleConfiguration>,
-    ) -> Self {
+    pub fn set_rule_configuration(mut self, input: ::std::option::Option<crate::types::LateDataRuleConfiguration>) -> Self {
         self.rule_configuration = input;
         self
     }
     /// <p>The information needed to configure the late data rule.</p>
-    pub fn get_rule_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LateDataRuleConfiguration> {
+    pub fn get_rule_configuration(&self) -> &::std::option::Option<crate::types::LateDataRuleConfiguration> {
         &self.rule_configuration
     }
     /// Consumes the builder and constructs a [`LateDataRule`](crate::types::LateDataRule).

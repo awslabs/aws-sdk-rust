@@ -29,16 +29,14 @@ impl ListAccessPointsForObjectLambdaInput {
 }
 impl ListAccessPointsForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaInput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaInput).
-    pub fn builder() -> crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaInputBuilder{
+    pub fn builder() -> crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaInputBuilder {
         crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPointsForObjectLambdaInput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPointsForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl ListAccessPointsForObjectLambdaInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAccessPointsForObjectLambdaInput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                account_id: self.account_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

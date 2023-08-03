@@ -15,35 +15,25 @@ impl DeleteMedicalVocabularyInput {
 }
 impl DeleteMedicalVocabularyInput {
     /// Creates a new builder-style object to manufacture [`DeleteMedicalVocabularyInput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder {
         crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMedicalVocabularyInput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMedicalVocabularyInputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMedicalVocabularyInputBuilder {
     /// <p>The name of the custom medical vocabulary you want to delete. Custom medical vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom medical vocabulary you want to delete. Custom medical vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteMedicalVocabularyInputBuilder {
         crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput {
-                vocabulary_name: self.vocabulary_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput {
+            vocabulary_name: self.vocabulary_name,
+        })
     }
 }

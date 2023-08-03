@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`instance_patch_states(Option<Vec<InstancePatchState>>)`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput::instance_patch_states): <p>The high-level patch state for the requested managed nodes. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeInstancePatchStatesForPatchGroupError>`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError)
-    pub fn describe_instance_patch_states_for_patch_group(&self) -> crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupFluentBuilder{
-        crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupFluentBuilder::new(self.handle.clone())
+    pub fn describe_instance_patch_states_for_patch_group(
+        &self,
+    ) -> crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupFluentBuilder {
+        crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

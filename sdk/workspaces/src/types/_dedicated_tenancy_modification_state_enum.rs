@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DedicatedTenancyModificationStateEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DedicatedTenancyModificationStateEnum {
             "COMPLETED" => DedicatedTenancyModificationStateEnum::Completed,
             "FAILED" => DedicatedTenancyModificationStateEnum::Failed,
             "PENDING" => DedicatedTenancyModificationStateEnum::Pending,
-            other => DedicatedTenancyModificationStateEnum::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DedicatedTenancyModificationStateEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePublicIpv4PoolOutput`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolOutput) with field(s):
     ///   - [`pool_id(Option<String>)`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolOutput::pool_id): <p>The ID of the public IPv4 pool.</p>
     /// - On failure, responds with [`SdkError<CreatePublicIpv4PoolError>`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolError)
-    pub fn create_public_ipv4_pool(
-        &self,
-    ) -> crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolFluentBuilder
-    {
-        crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_public_ipv4_pool(&self) -> crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolFluentBuilder {
+        crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolFluentBuilder::new(self.handle.clone())
     }
 }

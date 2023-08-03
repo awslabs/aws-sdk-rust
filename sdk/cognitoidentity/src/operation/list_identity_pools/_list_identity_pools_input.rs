@@ -23,17 +23,14 @@ impl ListIdentityPoolsInput {
 }
 impl ListIdentityPoolsInput {
     /// Creates a new builder-style object to manufacture [`ListIdentityPoolsInput`](crate::operation::list_identity_pools::ListIdentityPoolsInput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_pools::builders::ListIdentityPoolsInputBuilder {
+    pub fn builder() -> crate::operation::list_identity_pools::builders::ListIdentityPoolsInputBuilder {
         crate::operation::list_identity_pools::builders::ListIdentityPoolsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityPoolsInput`](crate::operation::list_identity_pools::ListIdentityPoolsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityPoolsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl ListIdentityPoolsInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityPoolsInput`](crate::operation::list_identity_pools::ListIdentityPoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_identity_pools::ListIdentityPoolsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_identity_pools::ListIdentityPoolsInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_identity_pools::ListIdentityPoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_identity_pools::ListIdentityPoolsInput {
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

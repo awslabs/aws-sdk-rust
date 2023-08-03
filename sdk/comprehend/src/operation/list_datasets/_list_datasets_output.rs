@@ -5,8 +5,7 @@
 pub struct ListDatasetsOutput {
     /// <p>The dataset properties list.</p>
     #[doc(hidden)]
-    pub dataset_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetProperties>>,
+    pub dataset_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DatasetProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDatasetsOutput {
 }
 impl ListDatasetsOutput {
     /// <p>The dataset properties list.</p>
-    pub fn dataset_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DatasetProperties]> {
+    pub fn dataset_properties_list(&self) -> ::std::option::Option<&[crate::types::DatasetProperties]> {
         self.dataset_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -38,12 +35,9 @@ impl ListDatasetsOutput {
 
 /// A builder for [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetsOutputBuilder {
-    pub(crate) dataset_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetProperties>>,
+    pub(crate) dataset_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DatasetProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListDatasetsOutputBuilder {
         self
     }
     /// <p>The dataset properties list.</p>
-    pub fn set_dataset_properties_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetProperties>>,
-    ) -> Self {
+    pub fn set_dataset_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetProperties>>) -> Self {
         self.dataset_properties_list = input;
         self
     }
     /// <p>The dataset properties list.</p>
-    pub fn get_dataset_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetProperties>> {
+    pub fn get_dataset_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetProperties>> {
         &self.dataset_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>

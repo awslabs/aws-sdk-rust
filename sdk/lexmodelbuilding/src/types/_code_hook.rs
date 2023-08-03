@@ -30,9 +30,7 @@ impl CodeHook {
 
 /// A builder for [`CodeHook`](crate::types::CodeHook).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeHookBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) message_version: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl CodeHookBuilder {
         &self.uri
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
-    pub fn message_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
-    pub fn set_message_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_message_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_version = input;
         self
     }

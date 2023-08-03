@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`status(MacieStatus)`](crate::operation::enable_macie::builders::EnableMacieFluentBuilder::status) / [`set_status(Option<MacieStatus>)`](crate::operation::enable_macie::builders::EnableMacieFluentBuilder::set_status): <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
     /// - On success, responds with [`EnableMacieOutput`](crate::operation::enable_macie::EnableMacieOutput)
     /// - On failure, responds with [`SdkError<EnableMacieError>`](crate::operation::enable_macie::EnableMacieError)
-    pub fn enable_macie(
-        &self,
-    ) -> crate::operation::enable_macie::builders::EnableMacieFluentBuilder {
+    pub fn enable_macie(&self) -> crate::operation::enable_macie::builders::EnableMacieFluentBuilder {
         crate::operation::enable_macie::builders::EnableMacieFluentBuilder::new(self.handle.clone())
     }
 }

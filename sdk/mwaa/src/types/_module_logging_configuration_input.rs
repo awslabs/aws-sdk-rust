@@ -30,9 +30,7 @@ impl ModuleLoggingConfigurationInput {
 
 /// A builder for [`ModuleLoggingConfigurationInput`](crate::types::ModuleLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModuleLoggingConfigurationInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_level: ::std::option::Option<crate::types::LoggingLevel>,
@@ -58,10 +56,7 @@ impl ModuleLoggingConfigurationInputBuilder {
         self
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
-    pub fn set_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingLevel>,
-    ) -> Self {
+    pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LoggingLevel>) -> Self {
         self.log_level = input;
         self
     }

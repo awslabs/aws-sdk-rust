@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartTriggerOutput`](crate::operation::start_trigger::StartTriggerOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::start_trigger::StartTriggerOutput::name): <p>The name of the trigger that was started.</p>
     /// - On failure, responds with [`SdkError<StartTriggerError>`](crate::operation::start_trigger::StartTriggerError)
-    pub fn start_trigger(
-        &self,
-    ) -> crate::operation::start_trigger::builders::StartTriggerFluentBuilder {
-        crate::operation::start_trigger::builders::StartTriggerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_trigger(&self) -> crate::operation::start_trigger::builders::StartTriggerFluentBuilder {
+        crate::operation::start_trigger::builders::StartTriggerFluentBuilder::new(self.handle.clone())
     }
 }

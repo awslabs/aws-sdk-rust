@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListBatchLoadTasksOutput {
 }
 impl ListBatchLoadTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListBatchLoadTasksOutput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksOutputBuilder {
-        crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksOutputBuilder {
+        crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchLoadTasksOutput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchLoadTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) batch_load_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>>,
+    pub(crate) batch_load_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>>,
     _request_id: Option<String>,
 }
 impl ListBatchLoadTasksOutputBuilder {
@@ -73,17 +68,12 @@ impl ListBatchLoadTasksOutputBuilder {
         self
     }
     /// <p>A list of batch load task details.</p>
-    pub fn set_batch_load_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>>,
-    ) -> Self {
+    pub fn set_batch_load_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>>) -> Self {
         self.batch_load_tasks = input;
         self
     }
     /// <p>A list of batch load task details.</p>
-    pub fn get_batch_load_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>> {
+    pub fn get_batch_load_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>> {
         &self.batch_load_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

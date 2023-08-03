@@ -26,10 +26,7 @@ impl super::Client {
     ///   - [`status(Option<ClientVpnEndpointStatus>)`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput::status): <p>The current state of the Client VPN endpoint.</p>
     ///   - [`dns_name(Option<String>)`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput::dns_name): <p>The DNS name to be used by clients when establishing their VPN session.</p>
     /// - On failure, responds with [`SdkError<CreateClientVpnEndpointError>`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointError)
-    pub fn create_client_vpn_endpoint(
-        &self,
-    ) -> crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointFluentBuilder
-    {
+    pub fn create_client_vpn_endpoint(&self) -> crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointFluentBuilder {
         crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointFluentBuilder::new(self.handle.clone())
     }
 }

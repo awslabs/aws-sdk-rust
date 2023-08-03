@@ -39,10 +39,7 @@ impl DeleteRouteCalculatorFluentBuilder {
         }
     }
     /// Access the DeleteRouteCalculator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteRouteCalculatorFluentBuilder {
             crate::operation::delete_route_calculator::DeleteRouteCalculator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_calculator::DeleteRouteCalculatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteRouteCalculatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteRouteCalculatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_calculator::DeleteRouteCalculatorError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteRouteCalculatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_calculator::DeleteRouteCalculatorError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl DeleteRouteCalculatorFluentBuilder {
             crate::operation::delete_route_calculator::DeleteRouteCalculator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_calculator::DeleteRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_calculator::DeleteRouteCalculatorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the route calculator resource to be deleted.</p>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculator_name(input.into());
         self
     }
     /// <p>The name of the route calculator resource to be deleted.</p>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculator_name(input);
         self
     }

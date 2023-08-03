@@ -28,9 +28,7 @@ impl UpdateCommentOutput {
 
 /// A builder for [`UpdateCommentOutput`](crate::operation::update_comment::UpdateCommentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCommentOutputBuilder {
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,

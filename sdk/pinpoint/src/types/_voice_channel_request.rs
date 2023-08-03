@@ -23,9 +23,7 @@ impl VoiceChannelRequest {
 
 /// A builder for [`VoiceChannelRequest`](crate::types::VoiceChannelRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceChannelRequestBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl VoiceChannelRequestBuilder {
     }
     /// Consumes the builder and constructs a [`VoiceChannelRequest`](crate::types::VoiceChannelRequest).
     pub fn build(self) -> crate::types::VoiceChannelRequest {
-        crate::types::VoiceChannelRequest {
-            enabled: self.enabled,
-        }
+        crate::types::VoiceChannelRequest { enabled: self.enabled }
     }
 }

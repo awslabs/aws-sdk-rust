@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAccountPoliciesOutput`](crate::operation::describe_account_policies::DescribeAccountPoliciesOutput) with field(s):
     ///   - [`account_policies(Option<Vec<AccountPolicy>>)`](crate::operation::describe_account_policies::DescribeAccountPoliciesOutput::account_policies): <p>An array of structures that contain information about the CloudWatch Logs account policies that match the specified filters.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountPoliciesError>`](crate::operation::describe_account_policies::DescribeAccountPoliciesError)
-    pub fn describe_account_policies(
-        &self,
-    ) -> crate::operation::describe_account_policies::builders::DescribeAccountPoliciesFluentBuilder
-    {
+    pub fn describe_account_policies(&self) -> crate::operation::describe_account_policies::builders::DescribeAccountPoliciesFluentBuilder {
         crate::operation::describe_account_policies::builders::DescribeAccountPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

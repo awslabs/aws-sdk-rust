@@ -23,9 +23,7 @@ impl AvailConfiguration {
 
 /// A builder for [`AvailConfiguration`](crate::types::AvailConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailConfigurationBuilder {
     pub(crate) avail_settings: ::std::option::Option<crate::types::AvailSettings>,
 }
@@ -36,10 +34,7 @@ impl AvailConfigurationBuilder {
         self
     }
     /// Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
-    pub fn set_avail_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailSettings>,
-    ) -> Self {
+    pub fn set_avail_settings(mut self, input: ::std::option::Option<crate::types::AvailSettings>) -> Self {
         self.avail_settings = input;
         self
     }

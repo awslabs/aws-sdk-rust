@@ -51,9 +51,7 @@ impl Connection {
     /// <p>The authorization type specified for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
     /// </note>
-    pub fn authorization_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectionAuthorizationType> {
+    pub fn authorization_type(&self) -> ::std::option::Option<&crate::types::ConnectionAuthorizationType> {
         self.authorization_type.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
@@ -78,9 +76,7 @@ impl Connection {
 
 /// A builder for [`Connection`](crate::types::Connection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -93,18 +89,12 @@ pub struct ConnectionBuilder {
 }
 impl ConnectionBuilder {
     /// <p>The ARN of the connection.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the connection.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
@@ -132,10 +122,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The state of the connection.</p>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.connection_state = input;
         self
     }
@@ -167,19 +154,14 @@ impl ConnectionBuilder {
     /// <p>The authorization type specified for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
     /// </note>
-    pub fn set_authorization_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
-    ) -> Self {
+    pub fn set_authorization_type(mut self, input: ::std::option::Option<crate::types::ConnectionAuthorizationType>) -> Self {
         self.authorization_type = input;
         self
     }
     /// <p>The authorization type specified for the connection.</p> <note>
     /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
     /// </note>
-    pub fn get_authorization_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
+    pub fn get_authorization_type(&self) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
         &self.authorization_type
     }
     /// <p>A time stamp for the time that the connection was created.</p>
@@ -188,10 +170,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -205,10 +184,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -222,10 +198,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn set_last_authorized_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_authorized_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_authorized_time = input;
         self
     }

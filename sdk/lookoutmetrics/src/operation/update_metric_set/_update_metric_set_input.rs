@@ -29,8 +29,7 @@ pub struct UpdateMetricSetInput {
     pub metric_source: ::std::option::Option<crate::types::MetricSource>,
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
     #[doc(hidden)]
-    pub dimension_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
+    pub dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
 }
 impl UpdateMetricSetInput {
     /// <p>The ARN of the dataset to update.</p>
@@ -66,9 +65,7 @@ impl UpdateMetricSetInput {
         self.metric_source.as_ref()
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn dimension_filter_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricSetDimensionFilter]> {
+    pub fn dimension_filter_list(&self) -> ::std::option::Option<&[crate::types::MetricSetDimensionFilter]> {
         self.dimension_filter_list.as_deref()
     }
 }
@@ -81,9 +78,7 @@ impl UpdateMetricSetInput {
 
 /// A builder for [`UpdateMetricSetInput`](crate::operation::update_metric_set::UpdateMetricSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMetricSetInputBuilder {
     pub(crate) metric_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metric_set_description: ::std::option::Option<::std::string::String>,
@@ -93,23 +88,16 @@ pub struct UpdateMetricSetInputBuilder {
     pub(crate) dimension_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) metric_set_frequency: ::std::option::Option<crate::types::Frequency>,
     pub(crate) metric_source: ::std::option::Option<crate::types::MetricSource>,
-    pub(crate) dimension_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
+    pub(crate) dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
 }
 impl UpdateMetricSetInputBuilder {
     /// <p>The ARN of the dataset to update.</p>
-    pub fn metric_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset to update.</p>
-    pub fn set_metric_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_set_arn = input;
         self
     }
@@ -118,18 +106,12 @@ impl UpdateMetricSetInputBuilder {
         &self.metric_set_arn
     }
     /// <p>The dataset's description.</p>
-    pub fn metric_set_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dataset's description.</p>
-    pub fn set_metric_set_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_set_description = input;
         self
     }
@@ -149,10 +131,7 @@ impl UpdateMetricSetInputBuilder {
         self
     }
     /// <p>The metric list.</p>
-    pub fn set_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
-    ) -> Self {
+    pub fn set_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
         self.metric_list = input;
         self
     }
@@ -180,10 +159,7 @@ impl UpdateMetricSetInputBuilder {
         self
     }
     /// <p>The timestamp column.</p>
-    pub fn set_timestamp_column(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestampColumn>,
-    ) -> Self {
+    pub fn set_timestamp_column(mut self, input: ::std::option::Option<crate::types::TimestampColumn>) -> Self {
         self.timestamp_column = input;
         self
     }
@@ -196,27 +172,19 @@ impl UpdateMetricSetInputBuilder {
     /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
     ///
     /// <p>The dimension list.</p>
-    pub fn dimension_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimension_list.unwrap_or_default();
         v.push(input.into());
         self.dimension_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The dimension list.</p>
-    pub fn set_dimension_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dimension_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dimension_list = input;
         self
     }
     /// <p>The dimension list.</p>
-    pub fn get_dimension_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimension_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dimension_list
     }
     /// <p>The dataset's interval.</p>
@@ -225,10 +193,7 @@ impl UpdateMetricSetInputBuilder {
         self
     }
     /// <p>The dataset's interval.</p>
-    pub fn set_metric_set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::Frequency>,
-    ) -> Self {
+    pub fn set_metric_set_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
         self.metric_set_frequency = input;
         self
     }
@@ -242,10 +207,7 @@ impl UpdateMetricSetInputBuilder {
         self
     }
     /// <p>Contains information about source data used to generate metrics.</p>
-    pub fn set_metric_source(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricSource>,
-    ) -> Self {
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
         self.metric_source = input;
         self
     }
@@ -265,26 +227,18 @@ impl UpdateMetricSetInputBuilder {
         self
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn set_dimension_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
-    ) -> Self {
+    pub fn set_dimension_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>) -> Self {
         self.dimension_filter_list = input;
         self
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn get_dimension_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
+    pub fn get_dimension_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
         &self.dimension_filter_list
     }
     /// Consumes the builder and constructs a [`UpdateMetricSetInput`](crate::operation::update_metric_set::UpdateMetricSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_metric_set::UpdateMetricSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_metric_set::UpdateMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_metric_set::UpdateMetricSetInput {
             metric_set_arn: self.metric_set_arn,
             metric_set_description: self.metric_set_description,

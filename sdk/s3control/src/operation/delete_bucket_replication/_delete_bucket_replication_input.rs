@@ -46,18 +46,14 @@ impl DeleteBucketReplicationInput {
 }
 impl DeleteBucketReplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketReplicationInput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder {
         crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketReplicationInput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketReplicationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -134,11 +130,9 @@ impl DeleteBucketReplicationInputBuilder {
         crate::operation::delete_bucket_replication::DeleteBucketReplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_bucket_replication::DeleteBucketReplicationInput {
-                account_id: self.account_id,
-                bucket: self.bucket,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_bucket_replication::DeleteBucketReplicationInput {
+            account_id: self.account_id,
+            bucket: self.bucket,
+        })
     }
 }

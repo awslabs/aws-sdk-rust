@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`global_settings(Option<HashMap<String, String>>)`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput::global_settings): <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
     ///   - [`last_update_time(Option<DateTime>)`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput::last_update_time): <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     /// - On failure, responds with [`SdkError<DescribeGlobalSettingsError>`](crate::operation::describe_global_settings::DescribeGlobalSettingsError)
-    pub fn describe_global_settings(
-        &self,
-    ) -> crate::operation::describe_global_settings::builders::DescribeGlobalSettingsFluentBuilder
-    {
+    pub fn describe_global_settings(&self) -> crate::operation::describe_global_settings::builders::DescribeGlobalSettingsFluentBuilder {
         crate::operation::describe_global_settings::builders::DescribeGlobalSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,9 +43,7 @@ impl UpdateLfTagInput {
 
 /// A builder for [`UpdateLfTagInput`](crate::operation::update_lf_tag::UpdateLfTagInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLfTagInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
@@ -86,27 +84,19 @@ impl UpdateLfTagInputBuilder {
     /// To override the contents of this collection use [`set_tag_values_to_delete`](Self::set_tag_values_to_delete).
     ///
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn tag_values_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_values_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values_to_delete.unwrap_or_default();
         v.push(input.into());
         self.tag_values_to_delete = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn set_tag_values_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values_to_delete = input;
         self
     }
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn get_tag_values_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_values_to_delete
     }
     /// Appends an item to `tag_values_to_add`.
@@ -114,36 +104,23 @@ impl UpdateLfTagInputBuilder {
     /// To override the contents of this collection use [`set_tag_values_to_add`](Self::set_tag_values_to_add).
     ///
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn tag_values_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_values_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values_to_add.unwrap_or_default();
         v.push(input.into());
         self.tag_values_to_add = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn set_tag_values_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values_to_add = input;
         self
     }
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn get_tag_values_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_values_to_add
     }
     /// Consumes the builder and constructs a [`UpdateLfTagInput`](crate::operation::update_lf_tag::UpdateLfTagInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_lf_tag::UpdateLfTagInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_lf_tag::UpdateLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_lf_tag::UpdateLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

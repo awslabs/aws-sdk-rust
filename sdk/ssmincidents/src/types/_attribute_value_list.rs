@@ -34,9 +34,7 @@ impl AttributeValueList {
     }
     /// Tries to convert the enum instance into [`StringValues`](crate::types::AttributeValueList::StringValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_values(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+    pub fn as_string_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
         if let AttributeValueList::StringValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

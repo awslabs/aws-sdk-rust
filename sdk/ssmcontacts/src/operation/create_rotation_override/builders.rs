@@ -37,10 +37,7 @@ impl CreateRotationOverrideFluentBuilder {
         }
     }
     /// Access the CreateRotationOverride as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_rotation_override::builders::CreateRotationOverrideInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_rotation_override::builders::CreateRotationOverrideInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateRotationOverrideFluentBuilder {
             crate::operation::create_rotation_override::CreateRotationOverride,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rotation_override::CreateRotationOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rotation_override::CreateRotationOverrideError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateRotationOverrideFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateRotationOverrideFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rotation_override::CreateRotationOverrideOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rotation_override::CreateRotationOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rotation_override::CreateRotationOverrideError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateRotationOverrideFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rotation_override::CreateRotationOverrideOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rotation_override::CreateRotationOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rotation_override::CreateRotationOverrideError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateRotationOverrideFluentBuilder {
             crate::operation::create_rotation_override::CreateRotationOverride,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rotation_override::CreateRotationOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rotation_override::CreateRotationOverrideError>,
     > {
         self.customize_middleware().await
     }
@@ -143,27 +129,19 @@ impl CreateRotationOverrideFluentBuilder {
     ///
     /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
     /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
-    pub fn new_contact_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_contact_ids(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
     /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
-    pub fn set_new_contact_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_new_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_new_contact_ids(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
     /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
-    pub fn get_new_contact_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_new_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_new_contact_ids()
     }
     /// <p>The date and time when the override goes into effect.</p>
@@ -172,10 +150,7 @@ impl CreateRotationOverrideFluentBuilder {
         self
     }
     /// <p>The date and time when the override goes into effect.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -189,10 +164,7 @@ impl CreateRotationOverrideFluentBuilder {
         self
     }
     /// <p>The date and time when the override ends.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -201,18 +173,12 @@ impl CreateRotationOverrideFluentBuilder {
         self.inner.get_end_time()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

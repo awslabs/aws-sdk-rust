@@ -10,9 +10,7 @@ pub struct PhoneNumberValidateOutput {
 }
 impl PhoneNumberValidateOutput {
     /// <p>Provides information about a phone number.</p>
-    pub fn number_validate_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumberValidateResponse> {
+    pub fn number_validate_response(&self) -> ::std::option::Option<&crate::types::NumberValidateResponse> {
         self.number_validate_response.as_ref()
     }
 }
@@ -23,21 +21,16 @@ impl ::aws_http::request_id::RequestId for PhoneNumberValidateOutput {
 }
 impl PhoneNumberValidateOutput {
     /// Creates a new builder-style object to manufacture [`PhoneNumberValidateOutput`](crate::operation::phone_number_validate::PhoneNumberValidateOutput).
-    pub fn builder(
-    ) -> crate::operation::phone_number_validate::builders::PhoneNumberValidateOutputBuilder {
-        crate::operation::phone_number_validate::builders::PhoneNumberValidateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::phone_number_validate::builders::PhoneNumberValidateOutputBuilder {
+        crate::operation::phone_number_validate::builders::PhoneNumberValidateOutputBuilder::default()
     }
 }
 
 /// A builder for [`PhoneNumberValidateOutput`](crate::operation::phone_number_validate::PhoneNumberValidateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhoneNumberValidateOutputBuilder {
-    pub(crate) number_validate_response:
-        ::std::option::Option<crate::types::NumberValidateResponse>,
+    pub(crate) number_validate_response: ::std::option::Option<crate::types::NumberValidateResponse>,
     _request_id: Option<String>,
 }
 impl PhoneNumberValidateOutputBuilder {
@@ -47,17 +40,12 @@ impl PhoneNumberValidateOutputBuilder {
         self
     }
     /// <p>Provides information about a phone number.</p>
-    pub fn set_number_validate_response(
-        mut self,
-        input: ::std::option::Option<crate::types::NumberValidateResponse>,
-    ) -> Self {
+    pub fn set_number_validate_response(mut self, input: ::std::option::Option<crate::types::NumberValidateResponse>) -> Self {
         self.number_validate_response = input;
         self
     }
     /// <p>Provides information about a phone number.</p>
-    pub fn get_number_validate_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumberValidateResponse> {
+    pub fn get_number_validate_response(&self) -> &::std::option::Option<crate::types::NumberValidateResponse> {
         &self.number_validate_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

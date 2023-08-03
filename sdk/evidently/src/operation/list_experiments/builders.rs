@@ -10,10 +10,7 @@ impl ListExperimentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_experiments::ListExperimentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiments::ListExperimentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiments::ListExperimentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_experiments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListExperimentsFluentBuilder {
         }
     }
     /// Access the ListExperiments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_experiments::builders::ListExperimentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_experiments::builders::ListExperimentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListExperimentsFluentBuilder {
             crate::operation::list_experiments::ListExperiments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiments::ListExperimentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiments::ListExperimentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListExperimentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListExperimentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_experiments::ListExperimentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiments::ListExperimentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiments::ListExperimentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListExperimentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_experiments::ListExperimentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiments::ListExperimentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiments::ListExperimentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListExperimentsFluentBuilder {
             crate::operation::list_experiments::ListExperiments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experiments::ListExperimentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experiments::ListExperimentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_experiments::paginator::ListExperimentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_experiments::paginator::ListExperimentsPaginator {
-        crate::operation::list_experiments::paginator::ListExperimentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_experiments::paginator::ListExperimentsPaginator {
+        crate::operation::list_experiments::paginator::ListExperimentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name or ARN of the project to return the experiment list from.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,10 +160,7 @@ impl ListExperimentsFluentBuilder {
         self
     }
     /// <p>Use this optional parameter to limit the returned results to only the experiments with the status that you specify here.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExperimentStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

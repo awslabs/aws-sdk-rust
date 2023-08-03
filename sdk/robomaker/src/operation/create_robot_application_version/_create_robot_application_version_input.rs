@@ -36,16 +36,14 @@ impl CreateRobotApplicationVersionInput {
 }
 impl CreateRobotApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateRobotApplicationVersionInput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput).
-    pub fn builder() -> crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder {
         crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRobotApplicationVersionInput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationVersionInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) current_revision_id: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl CreateRobotApplicationVersionInputBuilder {
         &self.application
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn current_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn set_current_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_revision_id = input;
         self
     }
@@ -99,10 +91,7 @@ impl CreateRobotApplicationVersionInputBuilder {
         self
     }
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    pub fn set_s3_etags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_s3_etags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.s3_etags = input;
         self
     }
@@ -131,17 +120,11 @@ impl CreateRobotApplicationVersionInputBuilder {
         crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput {
-                application: self.application
-                ,
-                current_revision_id: self.current_revision_id
-                ,
-                s3_etags: self.s3_etags
-                ,
-                image_digest: self.image_digest
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput {
+            application: self.application,
+            current_revision_id: self.current_revision_id,
+            s3_etags: self.s3_etags,
+            image_digest: self.image_digest,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl CreateReceiptRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_receipt_rule::CreateReceiptRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule::CreateReceiptRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule::CreateReceiptRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_receipt_rule();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateReceiptRuleFluentBuilder {
         }
     }
     /// Access the CreateReceiptRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_receipt_rule::builders::CreateReceiptRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_receipt_rule::builders::CreateReceiptRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateReceiptRuleFluentBuilder {
             crate::operation::create_receipt_rule::CreateReceiptRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule::CreateReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule::CreateReceiptRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateReceiptRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateReceiptRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_receipt_rule::CreateReceiptRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule::CreateReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule::CreateReceiptRuleError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateReceiptRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_receipt_rule::CreateReceiptRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule::CreateReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule::CreateReceiptRuleError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl CreateReceiptRuleFluentBuilder {
             crate::operation::create_receipt_rule::CreateReceiptRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule::CreateReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule::CreateReceiptRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the rule set that the receipt rule will be added to.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
     /// <p>The name of the rule set that the receipt rule will be added to.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }

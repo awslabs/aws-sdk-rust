@@ -13,9 +13,7 @@ impl EmptyChatChannel {
 
 /// A builder for [`EmptyChatChannel`](crate::types::EmptyChatChannel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmptyChatChannelBuilder {}
 impl EmptyChatChannelBuilder {
     /// Consumes the builder and constructs a [`EmptyChatChannel`](crate::types::EmptyChatChannel).

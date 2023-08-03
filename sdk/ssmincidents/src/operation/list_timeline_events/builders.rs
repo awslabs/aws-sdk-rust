@@ -10,10 +10,7 @@ impl ListTimelineEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_timeline_events::ListTimelineEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_timeline_events::ListTimelineEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_timeline_events::ListTimelineEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_timeline_events();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTimelineEventsFluentBuilder {
         }
     }
     /// Access the ListTimelineEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_timeline_events::builders::ListTimelineEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_timeline_events::builders::ListTimelineEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTimelineEventsFluentBuilder {
             crate::operation::list_timeline_events::ListTimelineEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_timeline_events::ListTimelineEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_timeline_events::ListTimelineEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTimelineEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTimelineEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_timeline_events::ListTimelineEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_timeline_events::ListTimelineEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_timeline_events::ListTimelineEventsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTimelineEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_timeline_events::ListTimelineEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_timeline_events::ListTimelineEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_timeline_events::ListTimelineEventsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListTimelineEventsFluentBuilder {
             crate::operation::list_timeline_events::ListTimelineEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_timeline_events::ListTimelineEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_timeline_events::ListTimelineEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_timeline_events::paginator::ListTimelineEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_timeline_events::paginator::ListTimelineEventsPaginator {
-        crate::operation::list_timeline_events::paginator::ListTimelineEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_timeline_events::paginator::ListTimelineEventsPaginator {
+        crate::operation::list_timeline_events::paginator::ListTimelineEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_record_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
@@ -183,10 +156,7 @@ impl ListTimelineEventsFluentBuilder {
     /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -210,10 +180,7 @@ impl ListTimelineEventsFluentBuilder {
         self
     }
     /// <p>Sort timeline events by the specified key value pair.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TimelineEventSort>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TimelineEventSort>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

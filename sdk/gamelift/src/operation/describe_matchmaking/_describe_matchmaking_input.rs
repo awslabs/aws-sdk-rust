@@ -15,17 +15,14 @@ impl DescribeMatchmakingInput {
 }
 impl DescribeMatchmakingInput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
-    pub fn builder(
-    ) -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder {
+    pub fn builder() -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder {
         crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingInputBuilder {
     pub(crate) ticket_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl DescribeMatchmakingInputBuilder {
         self
     }
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
-    pub fn set_ticket_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ticket_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ticket_ids = input;
         self
     }
@@ -56,14 +50,8 @@ impl DescribeMatchmakingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_matchmaking::DescribeMatchmakingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_matchmaking::DescribeMatchmakingInput {
-                ticket_ids: self.ticket_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_matchmaking::DescribeMatchmakingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_matchmaking::DescribeMatchmakingInput { ticket_ids: self.ticket_ids })
     }
 }

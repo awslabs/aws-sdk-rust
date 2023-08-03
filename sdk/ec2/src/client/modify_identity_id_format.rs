@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`use_long_ids(bool)`](crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatFluentBuilder::use_long_ids) / [`set_use_long_ids(Option<bool>)`](crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatFluentBuilder::set_use_long_ids): <p>Indicates whether the resource should use longer IDs (17-character IDs)</p>
     /// - On success, responds with [`ModifyIdentityIdFormatOutput`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput)
     /// - On failure, responds with [`SdkError<ModifyIdentityIdFormatError>`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError)
-    pub fn modify_identity_id_format(
-        &self,
-    ) -> crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatFluentBuilder
-    {
+    pub fn modify_identity_id_format(&self) -> crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatFluentBuilder {
         crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatFluentBuilder::new(self.handle.clone())
     }
 }

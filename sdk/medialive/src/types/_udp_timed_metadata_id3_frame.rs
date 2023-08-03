@@ -39,13 +39,7 @@
 /// Udp Timed Metadata Id3 Frame
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UdpTimedMetadataId3Frame {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for UdpTimedMetadataId3Frame {
             "NONE" => UdpTimedMetadataId3Frame::None,
             "PRIV" => UdpTimedMetadataId3Frame::Priv,
             "TDRL" => UdpTimedMetadataId3Frame::Tdrl,
-            other => UdpTimedMetadataId3Frame::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UdpTimedMetadataId3Frame::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

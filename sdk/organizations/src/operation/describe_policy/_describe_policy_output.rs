@@ -28,9 +28,7 @@ impl DescribePolicyOutput {
 
 /// A builder for [`DescribePolicyOutput`](crate::operation::describe_policy::DescribePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,

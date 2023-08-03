@@ -10,10 +10,7 @@ impl CreateRepositoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_repository();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateRepositoryFluentBuilder {
         }
     }
     /// Access the CreateRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +113,7 @@ impl CreateRepositoryFluentBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
@@ -155,18 +136,12 @@ impl CreateRepositoryFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_arn(input);
         self
     }
@@ -175,18 +150,12 @@ impl CreateRepositoryFluentBuilder {
         self.inner.get_connection_arn()
     }
     /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key(input.into());
         self
     }
     /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -206,10 +175,7 @@ impl CreateRepositoryFluentBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

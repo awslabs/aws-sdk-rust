@@ -70,9 +70,7 @@ impl ThrottlingException {
 
 /// A builder for [`ThrottlingException`](crate::types::error::ThrottlingException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThrottlingExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
@@ -124,18 +122,12 @@ impl ThrottlingExceptionBuilder {
         &self.quota_code
     }
     /// <p>The number of seconds after which the request should be safe to retry.</p>
-    pub fn retry_after_seconds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retry_after_seconds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of seconds after which the request should be safe to retry.</p>
-    pub fn set_retry_after_seconds(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retry_after_seconds = input;
         self
     }
@@ -150,10 +142,7 @@ impl ThrottlingExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

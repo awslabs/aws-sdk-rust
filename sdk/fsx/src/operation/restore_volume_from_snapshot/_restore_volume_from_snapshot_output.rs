@@ -11,8 +11,7 @@ pub struct RestoreVolumeFromSnapshotOutput {
     pub lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
     #[doc(hidden)]
-    pub administrative_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
+    pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
     _request_id: Option<String>,
 }
 impl RestoreVolumeFromSnapshotOutput {
@@ -25,9 +24,7 @@ impl RestoreVolumeFromSnapshotOutput {
         self.lifecycle.as_ref()
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    pub fn administrative_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
+    pub fn administrative_actions(&self) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
         self.administrative_actions.as_deref()
     }
 }
@@ -38,21 +35,18 @@ impl ::aws_http::request_id::RequestId for RestoreVolumeFromSnapshotOutput {
 }
 impl RestoreVolumeFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotOutput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput).
-    pub fn builder() -> crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotOutputBuilder{
+    pub fn builder() -> crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotOutputBuilder {
         crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreVolumeFromSnapshotOutput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotOutputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,
-    pub(crate) administrative_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
+    pub(crate) administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
     _request_id: Option<String>,
 }
 impl RestoreVolumeFromSnapshotOutputBuilder {
@@ -76,10 +70,7 @@ impl RestoreVolumeFromSnapshotOutputBuilder {
         self
     }
     /// <p>The lifecycle state of the volume being restored.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::VolumeLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -99,17 +90,12 @@ impl RestoreVolumeFromSnapshotOutputBuilder {
         self
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    pub fn set_administrative_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
-    ) -> Self {
+    pub fn set_administrative_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>) -> Self {
         self.administrative_actions = input;
         self
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    pub fn get_administrative_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
+    pub fn get_administrative_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
         &self.administrative_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -122,9 +108,7 @@ impl RestoreVolumeFromSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreVolumeFromSnapshotOutput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput {
+    pub fn build(self) -> crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput {
         crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput {
             volume_id: self.volume_id,
             lifecycle: self.lifecycle,

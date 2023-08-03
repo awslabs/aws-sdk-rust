@@ -37,9 +37,7 @@ impl CloudWatchLoggingOptions {
 
 /// A builder for [`CloudWatchLoggingOptions`](crate::types::CloudWatchLoggingOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl CloudWatchLoggingOptionsBuilder {
         &self.enabled
     }
     /// <p>The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -81,18 +73,12 @@ impl CloudWatchLoggingOptionsBuilder {
         &self.log_group_name
     }
     /// <p>The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.</p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.</p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_name = input;
         self
     }

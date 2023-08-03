@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`status(Option<GrantStatus>)`](crate::operation::delete_grant::DeleteGrantOutput::status): <p>Grant status.</p>
     ///   - [`version(Option<String>)`](crate::operation::delete_grant::DeleteGrantOutput::version): <p>Grant version.</p>
     /// - On failure, responds with [`SdkError<DeleteGrantError>`](crate::operation::delete_grant::DeleteGrantError)
-    pub fn delete_grant(
-        &self,
-    ) -> crate::operation::delete_grant::builders::DeleteGrantFluentBuilder {
+    pub fn delete_grant(&self) -> crate::operation::delete_grant::builders::DeleteGrantFluentBuilder {
         crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::new(self.handle.clone())
     }
 }

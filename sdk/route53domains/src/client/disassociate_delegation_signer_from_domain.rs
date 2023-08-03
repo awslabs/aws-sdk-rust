@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DisassociateDelegationSignerFromDomainOutput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<DisassociateDelegationSignerFromDomainError>`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainError)
-    pub fn disassociate_delegation_signer_from_domain(&self) -> crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainFluentBuilder{
-        crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_delegation_signer_from_domain(
+        &self,
+    ) -> crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainFluentBuilder {
+        crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

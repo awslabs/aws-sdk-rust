@@ -46,9 +46,7 @@ pub struct JobTemplate {
 }
 impl JobTemplate {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
-    pub fn acceleration_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccelerationSettings> {
+    pub fn acceleration_settings(&self) -> ::std::option::Option<&crate::types::AccelerationSettings> {
         self.acceleration_settings.as_ref()
     }
     /// An identifier for this resource that is unique within all of AWS.
@@ -92,9 +90,7 @@ impl JobTemplate {
         self.settings.as_ref()
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn status_update_interval(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatusUpdateInterval> {
+    pub fn status_update_interval(&self) -> ::std::option::Option<&crate::types::StatusUpdateInterval> {
         self.status_update_interval.as_ref()
     }
     /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.
@@ -111,17 +107,14 @@ impl JobTemplate {
 
 /// A builder for [`JobTemplate`](crate::types::JobTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobTemplateBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) hop_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
+    pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -137,17 +130,12 @@ impl JobTemplateBuilder {
         self
     }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
-    pub fn set_acceleration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccelerationSettings>,
-    ) -> Self {
+    pub fn set_acceleration_settings(mut self, input: ::std::option::Option<crate::types::AccelerationSettings>) -> Self {
         self.acceleration_settings = input;
         self
     }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
-    pub fn get_acceleration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccelerationSettings> {
+    pub fn get_acceleration_settings(&self) -> &::std::option::Option<crate::types::AccelerationSettings> {
         &self.acceleration_settings
     }
     /// An identifier for this resource that is unique within all of AWS.
@@ -184,10 +172,7 @@ impl JobTemplateBuilder {
         self
     }
     /// The timestamp in epoch seconds for Job template creation.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -221,17 +206,12 @@ impl JobTemplateBuilder {
         self
     }
     /// Optional list of hop destinations.
-    pub fn set_hop_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
-    ) -> Self {
+    pub fn set_hop_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>) -> Self {
         self.hop_destinations = input;
         self
     }
     /// Optional list of hop destinations.
-    pub fn get_hop_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
+    pub fn get_hop_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
         &self.hop_destinations
     }
     /// The timestamp in epoch seconds when the Job template was last updated.
@@ -240,10 +220,7 @@ impl JobTemplateBuilder {
         self
     }
     /// The timestamp in epoch seconds when the Job template was last updated.
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -299,10 +276,7 @@ impl JobTemplateBuilder {
         self
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::JobTemplateSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::JobTemplateSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -316,17 +290,12 @@ impl JobTemplateBuilder {
         self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn set_status_update_interval(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusUpdateInterval>,
-    ) -> Self {
+    pub fn set_status_update_interval(mut self, input: ::std::option::Option<crate::types::StatusUpdateInterval>) -> Self {
         self.status_update_interval = input;
         self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn get_status_update_interval(
-        &self,
-    ) -> &::std::option::Option<crate::types::StatusUpdateInterval> {
+    pub fn get_status_update_interval(&self) -> &::std::option::Option<crate::types::StatusUpdateInterval> {
         &self.status_update_interval
     }
     /// A job template can be of two types: system or custom. System or built-in job templates can't be modified or deleted by the user.

@@ -7,12 +7,10 @@ pub struct DescribeInstanceInformationInput {
     /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
     #[doc(hidden)]
-    pub instance_information_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>>,
+    pub instance_information_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>>,
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
     #[doc(hidden)]
-    pub filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -24,15 +22,11 @@ impl DescribeInstanceInformationInput {
     /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
     /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
-    pub fn instance_information_filter_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceInformationFilter]> {
+    pub fn instance_information_filter_list(&self) -> ::std::option::Option<&[crate::types::InstanceInformationFilter]> {
         self.instance_information_filter_list.as_deref()
     }
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceInformationStringFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::InstanceInformationStringFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
@@ -46,21 +40,17 @@ impl DescribeInstanceInformationInput {
 }
 impl DescribeInstanceInformationInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceInformationInput`](crate::operation::describe_instance_information::DescribeInstanceInformationInput).
-    pub fn builder() -> crate::operation::describe_instance_information::builders::DescribeInstanceInformationInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_information::builders::DescribeInstanceInformationInputBuilder {
         crate::operation::describe_instance_information::builders::DescribeInstanceInformationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceInformationInput`](crate::operation::describe_instance_information::DescribeInstanceInformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceInformationInputBuilder {
-    pub(crate) instance_information_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>,
+    pub(crate) instance_information_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -72,10 +62,7 @@ impl DescribeInstanceInformationInputBuilder {
     /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
     /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
-    pub fn instance_information_filter_list(
-        mut self,
-        input: crate::types::InstanceInformationFilter,
-    ) -> Self {
+    pub fn instance_information_filter_list(mut self, input: crate::types::InstanceInformationFilter) -> Self {
         let mut v = self.instance_information_filter_list.unwrap_or_default();
         v.push(input);
         self.instance_information_filter_list = ::std::option::Option::Some(v);
@@ -94,9 +81,7 @@ impl DescribeInstanceInformationInputBuilder {
     /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
     /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
-    pub fn get_instance_information_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>> {
+    pub fn get_instance_information_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>> {
         &self.instance_information_filter_list
     }
     /// Appends an item to `filters`.
@@ -111,20 +96,12 @@ impl DescribeInstanceInformationInputBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceInformationStringFilter>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
@@ -162,13 +139,11 @@ impl DescribeInstanceInformationInputBuilder {
         crate::operation::describe_instance_information::DescribeInstanceInformationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_information::DescribeInstanceInformationInput {
-                instance_information_filter_list: self.instance_information_filter_list,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instance_information::DescribeInstanceInformationInput {
+            instance_information_filter_list: self.instance_information_filter_list,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -9,81 +9,91 @@ pub fn de_delete_notification_subscription_http_error(
     crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityNotExistsException" => crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::EntityNotExistsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "EntityNotExistsException" => {
+            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::EntityNotExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output).map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ProhibitedStateException" => crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::ProhibitedStateException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ProhibitedStateException" => {
+            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::ProhibitedStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProhibitedStateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_prohibited_state_exception::de_prohibited_state_exception_json_err(_response_body, output).map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_prohibited_state_exception::de_prohibited_state_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ServiceUnavailableException" => crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "UnauthorizedResourceAccessException" => crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::UnauthorizedResourceAccessException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedResourceAccessException" => {
+            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::UnauthorizedResourceAccessException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(_response_body, output).map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError::generic(generic),
     })
 }
 
@@ -99,9 +109,7 @@ pub fn de_delete_notification_subscription_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

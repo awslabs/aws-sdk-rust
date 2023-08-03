@@ -23,9 +23,7 @@ impl DatadogSourceProperties {
 
 /// A builder for [`DatadogSourceProperties`](crate::types::DatadogSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatadogSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DatadogSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`DatadogSourceProperties`](crate::types::DatadogSourceProperties).
     pub fn build(self) -> crate::types::DatadogSourceProperties {
-        crate::types::DatadogSourceProperties {
-            object: self.object,
-        }
+        crate::types::DatadogSourceProperties { object: self.object }
     }
 }

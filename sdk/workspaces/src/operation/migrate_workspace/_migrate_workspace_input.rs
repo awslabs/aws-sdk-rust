@@ -22,35 +22,26 @@ impl MigrateWorkspaceInput {
 }
 impl MigrateWorkspaceInput {
     /// Creates a new builder-style object to manufacture [`MigrateWorkspaceInput`](crate::operation::migrate_workspace::MigrateWorkspaceInput).
-    pub fn builder() -> crate::operation::migrate_workspace::builders::MigrateWorkspaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::migrate_workspace::builders::MigrateWorkspaceInputBuilder {
         crate::operation::migrate_workspace::builders::MigrateWorkspaceInputBuilder::default()
     }
 }
 
 /// A builder for [`MigrateWorkspaceInput`](crate::operation::migrate_workspace::MigrateWorkspaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MigrateWorkspaceInputBuilder {
     pub(crate) source_workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
 }
 impl MigrateWorkspaceInputBuilder {
     /// <p>The identifier of the WorkSpace to migrate from.</p>
-    pub fn source_workspace_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the WorkSpace to migrate from.</p>
-    pub fn set_source_workspace_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_workspace_id = input;
         self
     }
@@ -75,10 +66,7 @@ impl MigrateWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`MigrateWorkspaceInput`](crate::operation::migrate_workspace::MigrateWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::migrate_workspace::MigrateWorkspaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::migrate_workspace::MigrateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::migrate_workspace::MigrateWorkspaceInput {
             source_workspace_id: self.source_workspace_id,
             bundle_id: self.bundle_id,

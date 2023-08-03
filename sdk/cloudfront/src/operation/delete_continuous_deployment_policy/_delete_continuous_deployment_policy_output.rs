@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteContinuousDeploymentPolicyOutpu
 }
 impl DeleteContinuousDeploymentPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContinuousDeploymentPolicyOutput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyOutput).
-    pub fn builder() -> crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyOutputBuilder {
         crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContinuousDeploymentPolicyOutput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContinuousDeploymentPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteContinuousDeploymentPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteContinuousDeploymentPolicyOutput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyOutput {
         crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyOutput {
             _request_id: self._request_id,
         }

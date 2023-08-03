@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`checksum(Option<String>)`](crate::operation::get_bot_alias::GetBotAliasOutput::checksum): <p>Checksum of the bot alias.</p>
     ///   - [`conversation_logs(Option<ConversationLogsResponse>)`](crate::operation::get_bot_alias::GetBotAliasOutput::conversation_logs): <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
     /// - On failure, responds with [`SdkError<GetBotAliasError>`](crate::operation::get_bot_alias::GetBotAliasError)
-    pub fn get_bot_alias(
-        &self,
-    ) -> crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder {
-        crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bot_alias(&self) -> crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder {
+        crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::new(self.handle.clone())
     }
 }

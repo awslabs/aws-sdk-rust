@@ -31,17 +31,14 @@ impl ListDecoderManifestsInput {
 }
 impl ListDecoderManifestsInput {
     /// Creates a new builder-style object to manufacture [`ListDecoderManifestsInput`](crate::operation::list_decoder_manifests::ListDecoderManifestsInput).
-    pub fn builder(
-    ) -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsInputBuilder {
+    pub fn builder() -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsInputBuilder {
         crate::operation::list_decoder_manifests::builders::ListDecoderManifestsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDecoderManifestsInput`](crate::operation::list_decoder_manifests::ListDecoderManifestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDecoderManifestsInputBuilder {
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,18 +46,12 @@ pub struct ListDecoderManifestsInputBuilder {
 }
 impl ListDecoderManifestsInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest. </p>
-    pub fn model_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest. </p>
-    pub fn set_model_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_manifest_arn = input;
         self
     }
@@ -102,16 +93,12 @@ impl ListDecoderManifestsInputBuilder {
     /// Consumes the builder and constructs a [`ListDecoderManifestsInput`](crate::operation::list_decoder_manifests::ListDecoderManifestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_decoder_manifests::ListDecoderManifestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_decoder_manifests::ListDecoderManifestsInput {
-                model_manifest_arn: self.model_manifest_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_decoder_manifests::ListDecoderManifestsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_decoder_manifests::ListDecoderManifestsInput {
+            model_manifest_arn: self.model_manifest_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

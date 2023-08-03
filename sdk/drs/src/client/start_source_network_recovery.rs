@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`StartSourceNetworkRecoveryOutput`](crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput::job): <p>The Source Network recovery Job.</p>
     /// - On failure, responds with [`SdkError<StartSourceNetworkRecoveryError>`](crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError)
-    pub fn start_source_network_recovery(&self) -> crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryFluentBuilder{
+    pub fn start_source_network_recovery(
+        &self,
+    ) -> crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryFluentBuilder {
         crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryFluentBuilder::new(self.handle.clone())
     }
 }

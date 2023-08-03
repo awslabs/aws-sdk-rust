@@ -22,21 +22,17 @@ impl CreateFleetLocationsInput {
 }
 impl CreateFleetLocationsInput {
     /// Creates a new builder-style object to manufacture [`CreateFleetLocationsInput`](crate::operation::create_fleet_locations::CreateFleetLocationsInput).
-    pub fn builder(
-    ) -> crate::operation::create_fleet_locations::builders::CreateFleetLocationsInputBuilder {
+    pub fn builder() -> crate::operation::create_fleet_locations::builders::CreateFleetLocationsInputBuilder {
         crate::operation::create_fleet_locations::builders::CreateFleetLocationsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFleetLocationsInput`](crate::operation::create_fleet_locations::CreateFleetLocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetLocationsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
+    pub(crate) locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
 }
 impl CreateFleetLocationsInputBuilder {
     /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
@@ -65,31 +61,22 @@ impl CreateFleetLocationsInputBuilder {
         self
     }
     /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>) -> Self {
         self.locations = input;
         self
     }
     /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn get_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         &self.locations
     }
     /// Consumes the builder and constructs a [`CreateFleetLocationsInput`](crate::operation::create_fleet_locations::CreateFleetLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_fleet_locations::CreateFleetLocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_fleet_locations::CreateFleetLocationsInput {
-                fleet_id: self.fleet_id,
-                locations: self.locations,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_fleet_locations::CreateFleetLocationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_fleet_locations::CreateFleetLocationsInput {
+            fleet_id: self.fleet_id,
+            locations: self.locations,
+        })
     }
 }

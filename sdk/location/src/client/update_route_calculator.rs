@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`calculator_arn(Option<String>)`](crate::operation::update_route_calculator::UpdateRouteCalculatorOutput::calculator_arn): <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>  </ul>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::update_route_calculator::UpdateRouteCalculatorOutput::update_time): <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateRouteCalculatorError>`](crate::operation::update_route_calculator::UpdateRouteCalculatorError)
-    pub fn update_route_calculator(
-        &self,
-    ) -> crate::operation::update_route_calculator::builders::UpdateRouteCalculatorFluentBuilder
-    {
-        crate::operation::update_route_calculator::builders::UpdateRouteCalculatorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_route_calculator(&self) -> crate::operation::update_route_calculator::builders::UpdateRouteCalculatorFluentBuilder {
+        crate::operation::update_route_calculator::builders::UpdateRouteCalculatorFluentBuilder::new(self.handle.clone())
     }
 }

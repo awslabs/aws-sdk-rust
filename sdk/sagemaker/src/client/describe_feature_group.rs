@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_feature_group::DescribeFeatureGroupOutput::next_token): <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).</p>
     ///   - [`online_store_total_size_bytes(Option<i64>)`](crate::operation::describe_feature_group::DescribeFeatureGroupOutput::online_store_total_size_bytes): <p>The size of the <code>OnlineStore</code> in bytes.</p>
     /// - On failure, responds with [`SdkError<DescribeFeatureGroupError>`](crate::operation::describe_feature_group::DescribeFeatureGroupError)
-    pub fn describe_feature_group(
-        &self,
-    ) -> crate::operation::describe_feature_group::builders::DescribeFeatureGroupFluentBuilder {
-        crate::operation::describe_feature_group::builders::DescribeFeatureGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_feature_group(&self) -> crate::operation::describe_feature_group::builders::DescribeFeatureGroupFluentBuilder {
+        crate::operation::describe_feature_group::builders::DescribeFeatureGroupFluentBuilder::new(self.handle.clone())
     }
 }

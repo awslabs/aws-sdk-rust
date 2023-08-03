@@ -65,16 +65,14 @@ impl CreateQuerySuggestionsBlockListInput {
 }
 impl CreateQuerySuggestionsBlockListInput {
     /// Creates a new builder-style object to manufacture [`CreateQuerySuggestionsBlockListInput`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListInput).
-    pub fn builder() -> crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListInputBuilder{
+    pub fn builder() -> crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListInputBuilder {
         crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateQuerySuggestionsBlockListInput`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQuerySuggestionsBlockListInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -143,10 +141,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     /// <p>The S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.source_s3_path = input;
         self
     }
@@ -196,10 +191,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -216,21 +208,14 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListInput {
-                index_id: self.index_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                source_s3_path: self.source_s3_path
-                ,
-                client_token: self.client_token
-                ,
-                role_arn: self.role_arn
-                ,
-                tags: self.tags
-                ,
-            }
+                index_id: self.index_id,
+                name: self.name,
+                description: self.description,
+                source_s3_path: self.source_s3_path,
+                client_token: self.client_token,
+                role_arn: self.role_arn,
+                tags: self.tags,
+            },
         )
     }
 }

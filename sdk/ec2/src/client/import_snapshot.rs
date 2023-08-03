@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`snapshot_task_detail(Option<SnapshotTaskDetail>)`](crate::operation::import_snapshot::ImportSnapshotOutput::snapshot_task_detail): <p>Information about the import snapshot task.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::import_snapshot::ImportSnapshotOutput::tags): <p>Any tags assigned to the import snapshot task.</p>
     /// - On failure, responds with [`SdkError<ImportSnapshotError>`](crate::operation::import_snapshot::ImportSnapshotError)
-    pub fn import_snapshot(
-        &self,
-    ) -> crate::operation::import_snapshot::builders::ImportSnapshotFluentBuilder {
-        crate::operation::import_snapshot::builders::ImportSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_snapshot(&self) -> crate::operation::import_snapshot::builders::ImportSnapshotFluentBuilder {
+        crate::operation::import_snapshot::builders::ImportSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

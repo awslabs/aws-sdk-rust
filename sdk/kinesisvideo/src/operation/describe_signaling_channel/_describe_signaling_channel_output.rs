@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeSignalingChannelOutput {
 }
 impl DescribeSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSignalingChannelOutput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelOutputBuilder {
         crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSignalingChannelOutput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSignalingChannelOutputBuilder {
     pub(crate) channel_info: ::std::option::Option<crate::types::ChannelInfo>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeSignalingChannelOutputBuilder {
         self
     }
     /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
-    pub fn set_channel_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelInfo>,
-    ) -> Self {
+    pub fn set_channel_info(mut self, input: ::std::option::Option<crate::types::ChannelInfo>) -> Self {
         self.channel_info = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeSignalingChannelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSignalingChannelOutput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput {
+    pub fn build(self) -> crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput {
         crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput {
             channel_info: self.channel_info,
             _request_id: self._request_id,

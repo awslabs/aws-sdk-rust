@@ -5,7 +5,9 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessFluentBuilder::send) it.
     /// - On success, responds with [`DeactivateOrganizationsAccessOutput`](crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput)
     /// - On failure, responds with [`SdkError<DeactivateOrganizationsAccessError>`](crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError)
-    pub fn deactivate_organizations_access(&self) -> crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessFluentBuilder{
+    pub fn deactivate_organizations_access(
+        &self,
+    ) -> crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessFluentBuilder {
         crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessFluentBuilder::new(self.handle.clone())
     }
 }

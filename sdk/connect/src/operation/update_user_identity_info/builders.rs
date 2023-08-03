@@ -28,8 +28,7 @@ impl UpdateUserIdentityInfoInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserIdentityInfoFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder,
+    inner: crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder,
 }
 impl UpdateUserIdentityInfoFluentBuilder {
     /// Creates a new `UpdateUserIdentityInfo`.
@@ -40,10 +39,7 @@ impl UpdateUserIdentityInfoFluentBuilder {
         }
     }
     /// Access the UpdateUserIdentityInfo as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl UpdateUserIdentityInfoFluentBuilder {
             crate::operation::update_user_identity_info::UpdateUserIdentityInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_identity_info::UpdateUserIdentityInfoError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl UpdateUserIdentityInfoFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl UpdateUserIdentityInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_identity_info::UpdateUserIdentityInfoError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl UpdateUserIdentityInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_identity_info::UpdateUserIdentityInfoError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl UpdateUserIdentityInfoFluentBuilder {
             crate::operation::update_user_identity_info::UpdateUserIdentityInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_identity_info::UpdateUserIdentityInfoError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +117,7 @@ impl UpdateUserIdentityInfoFluentBuilder {
         self
     }
     /// <p>The identity information for the user.</p>
-    pub fn set_identity_info(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentityInfo>,
-    ) -> Self {
+    pub fn set_identity_info(mut self, input: ::std::option::Option<crate::types::UserIdentityInfo>) -> Self {
         self.inner = self.inner.set_identity_info(input);
         self
     }

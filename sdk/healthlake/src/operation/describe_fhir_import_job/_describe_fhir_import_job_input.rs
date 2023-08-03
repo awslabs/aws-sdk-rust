@@ -22,18 +22,14 @@ impl DescribeFhirImportJobInput {
 }
 impl DescribeFhirImportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobInput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder {
         crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFhirImportJobInput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFhirImportJobInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DescribeFhirImportJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFhirImportJobInput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput {
-                datastore_id: self.datastore_id,
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput {
+            datastore_id: self.datastore_id,
+            job_id: self.job_id,
+        })
     }
 }

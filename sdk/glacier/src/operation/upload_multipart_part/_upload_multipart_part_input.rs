@@ -50,10 +50,8 @@ impl UploadMultipartPartInput {
 }
 impl UploadMultipartPartInput {
     /// Creates a new builder-style object to manufacture [`UploadMultipartPartInput`](crate::operation::upload_multipart_part::UploadMultipartPartInput).
-    pub fn builder(
-    ) -> crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder {
-        crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder {
+        crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder::default()
     }
 }
 
@@ -145,10 +143,7 @@ impl UploadMultipartPartInputBuilder {
         self
     }
     /// <p>The data to upload.</p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
@@ -159,19 +154,15 @@ impl UploadMultipartPartInputBuilder {
     /// Consumes the builder and constructs a [`UploadMultipartPartInput`](crate::operation::upload_multipart_part::UploadMultipartPartInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_multipart_part::UploadMultipartPartInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::upload_multipart_part::UploadMultipartPartInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                upload_id: self.upload_id,
-                checksum: self.checksum,
-                range: self.range,
-                body: self.body.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::upload_multipart_part::UploadMultipartPartInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::upload_multipart_part::UploadMultipartPartInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            upload_id: self.upload_id,
+            checksum: self.checksum,
+            range: self.range,
+            body: self.body.unwrap_or_default(),
+        })
     }
 }

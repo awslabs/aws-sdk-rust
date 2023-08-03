@@ -44,10 +44,7 @@ impl UpdateUserPoolDomainFluentBuilder {
         }
     }
     /// Access the UpdateUserPoolDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +56,7 @@ impl UpdateUserPoolDomainFluentBuilder {
             crate::operation::update_user_pool_domain::UpdateUserPoolDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +66,7 @@ impl UpdateUserPoolDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +75,7 @@ impl UpdateUserPoolDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError>,
     > {
         let op = self
             .inner
@@ -108,9 +98,7 @@ impl UpdateUserPoolDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +112,7 @@ impl UpdateUserPoolDomainFluentBuilder {
             crate::operation::update_user_pool_domain::UpdateUserPoolDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError>,
     > {
         self.customize_middleware().await
     }
@@ -167,17 +153,12 @@ impl UpdateUserPoolDomainFluentBuilder {
         self
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
-    pub fn set_custom_domain_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDomainConfigType>,
-    ) -> Self {
+    pub fn set_custom_domain_config(mut self, input: ::std::option::Option<crate::types::CustomDomainConfigType>) -> Self {
         self.inner = self.inner.set_custom_domain_config(input);
         self
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
-    pub fn get_custom_domain_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
+    pub fn get_custom_domain_config(&self) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
         self.inner.get_custom_domain_config()
     }
 }

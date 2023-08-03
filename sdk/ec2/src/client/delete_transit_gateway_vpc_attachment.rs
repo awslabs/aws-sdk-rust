@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteTransitGatewayVpcAttachmentOutput`](crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentOutput) with field(s):
     ///   - [`transit_gateway_vpc_attachment(Option<TransitGatewayVpcAttachment>)`](crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentOutput::transit_gateway_vpc_attachment): <p>Information about the deleted VPC attachment.</p>
     /// - On failure, responds with [`SdkError<DeleteTransitGatewayVpcAttachmentError>`](crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentError)
-    pub fn delete_transit_gateway_vpc_attachment(&self) -> crate::operation::delete_transit_gateway_vpc_attachment::builders::DeleteTransitGatewayVpcAttachmentFluentBuilder{
+    pub fn delete_transit_gateway_vpc_attachment(
+        &self,
+    ) -> crate::operation::delete_transit_gateway_vpc_attachment::builders::DeleteTransitGatewayVpcAttachmentFluentBuilder {
         crate::operation::delete_transit_gateway_vpc_attachment::builders::DeleteTransitGatewayVpcAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

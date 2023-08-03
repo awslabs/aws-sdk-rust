@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`templates(Option<Vec<ProvisioningTemplateSummary>>)`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput::templates): <p>A list of provisioning templates</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput::next_token): <p>A token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProvisioningTemplatesError>`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesError)
-    pub fn list_provisioning_templates(&self) -> crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder{
+    pub fn list_provisioning_templates(&self) -> crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder {
         crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

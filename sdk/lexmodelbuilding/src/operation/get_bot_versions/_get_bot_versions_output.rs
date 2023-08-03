@@ -35,9 +35,7 @@ impl GetBotVersionsOutput {
 
 /// A builder for [`GetBotVersionsOutput`](crate::operation::get_bot_versions::GetBotVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBotVersionsOutputBuilder {
     pub(crate) bots: ::std::option::Option<::std::vec::Vec<crate::types::BotMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetBotVersionsOutputBuilder {
         self
     }
     /// <p>An array of <code>BotMetadata</code> objects, one for each numbered version of the bot plus one for the <code>$LATEST</code> version.</p>
-    pub fn set_bots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotMetadata>>,
-    ) -> Self {
+    pub fn set_bots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotMetadata>>) -> Self {
         self.bots = input;
         self
     }

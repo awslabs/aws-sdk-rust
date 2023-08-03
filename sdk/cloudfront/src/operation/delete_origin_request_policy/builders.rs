@@ -28,7 +28,7 @@ impl DeleteOriginRequestPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOriginRequestPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyInputBuilder,
+    inner: crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyInputBuilder,
 }
 impl DeleteOriginRequestPolicyFluentBuilder {
     /// Creates a new `DeleteOriginRequestPolicy`.
@@ -39,7 +39,7 @@ impl DeleteOriginRequestPolicyFluentBuilder {
         }
     }
     /// Access the DeleteOriginRequestPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteOriginRequestPolicyFluentBuilder {
             crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteOriginRequestPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteOriginRequestPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteOriginRequestPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DeleteOriginRequestPolicyFluentBuilder {
             crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError>,
     > {
         self.customize_middleware().await
     }

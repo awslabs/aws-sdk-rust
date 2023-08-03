@@ -30,9 +30,7 @@ impl BatchAttachPolicy {
 
 /// A builder for [`BatchAttachPolicy`](crate::types::BatchAttachPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAttachPolicyBuilder {
     pub(crate) policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -44,10 +42,7 @@ impl BatchAttachPolicyBuilder {
         self
     }
     /// <p>The reference that is associated with the policy object.</p>
-    pub fn set_policy_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_policy_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.policy_reference = input;
         self
     }
@@ -61,10 +56,7 @@ impl BatchAttachPolicyBuilder {
         self
     }
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }

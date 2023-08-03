@@ -23,16 +23,14 @@ impl DescribeServiceAccessPoliciesInput {
 }
 impl DescribeServiceAccessPoliciesInput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesInput`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesInput).
-    pub fn builder() -> crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesInputBuilder {
         crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceAccessPoliciesInput`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceAccessPoliciesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployed: ::std::option::Option<bool>,
@@ -73,13 +71,9 @@ impl DescribeServiceAccessPoliciesInputBuilder {
         crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesInput {
-                domain_name: self.domain_name
-                ,
-                deployed: self.deployed
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesInput {
+            domain_name: self.domain_name,
+            deployed: self.deployed,
+        })
     }
 }

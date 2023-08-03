@@ -19,9 +19,7 @@ impl DeleteForecastOutput {
 
 /// A builder for [`DeleteForecastOutput`](crate::operation::delete_forecast::DeleteForecastOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteForecastOutputBuilder {
     _request_id: Option<String>,
 }

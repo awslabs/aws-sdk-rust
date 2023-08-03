@@ -50,16 +50,14 @@ impl PutBackupVaultLockConfigurationInput {
 }
 impl PutBackupVaultLockConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutBackupVaultLockConfigurationInput`](crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationInput).
-    pub fn builder() -> crate::operation::put_backup_vault_lock_configuration::builders::PutBackupVaultLockConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_backup_vault_lock_configuration::builders::PutBackupVaultLockConfigurationInputBuilder {
         crate::operation::put_backup_vault_lock_configuration::builders::PutBackupVaultLockConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBackupVaultLockConfigurationInput`](crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBackupVaultLockConfigurationInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) min_retention_days: ::std::option::Option<i64>,
@@ -68,18 +66,12 @@ pub struct PutBackupVaultLockConfigurationInputBuilder {
 }
 impl PutBackupVaultLockConfigurationInputBuilder {
     /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
@@ -159,15 +151,11 @@ impl PutBackupVaultLockConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationInput {
-                backup_vault_name: self.backup_vault_name
-                ,
-                min_retention_days: self.min_retention_days
-                ,
-                max_retention_days: self.max_retention_days
-                ,
-                changeable_for_days: self.changeable_for_days
-                ,
-            }
+                backup_vault_name: self.backup_vault_name,
+                min_retention_days: self.min_retention_days,
+                max_retention_days: self.max_retention_days,
+                changeable_for_days: self.changeable_for_days,
+            },
         )
     }
 }

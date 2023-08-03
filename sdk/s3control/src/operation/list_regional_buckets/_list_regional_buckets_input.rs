@@ -40,18 +40,14 @@ impl ListRegionalBucketsInput {
 }
 impl ListRegionalBucketsInput {
     /// Creates a new builder-style object to manufacture [`ListRegionalBucketsInput`](crate::operation::list_regional_buckets::ListRegionalBucketsInput).
-    pub fn builder(
-    ) -> crate::operation::list_regional_buckets::builders::ListRegionalBucketsInputBuilder {
-        crate::operation::list_regional_buckets::builders::ListRegionalBucketsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_regional_buckets::builders::ListRegionalBucketsInputBuilder {
+        crate::operation::list_regional_buckets::builders::ListRegionalBucketsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRegionalBucketsInput`](crate::operation::list_regional_buckets::ListRegionalBucketsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegionalBucketsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -124,17 +120,13 @@ impl ListRegionalBucketsInputBuilder {
     /// Consumes the builder and constructs a [`ListRegionalBucketsInput`](crate::operation::list_regional_buckets::ListRegionalBucketsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_regional_buckets::ListRegionalBucketsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_regional_buckets::ListRegionalBucketsInput {
-                account_id: self.account_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                outpost_id: self.outpost_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_regional_buckets::ListRegionalBucketsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_regional_buckets::ListRegionalBucketsInput {
+            account_id: self.account_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            outpost_id: self.outpost_id,
+        })
     }
 }

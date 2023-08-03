@@ -54,9 +54,7 @@ impl S3ExportConfiguration {
 
 /// A builder for [`S3ExportConfiguration`](crate::types::S3ExportConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ExportConfigurationBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,
@@ -94,10 +92,7 @@ impl S3ExportConfigurationBuilder {
     /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
     /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
     /// </ul>
-    pub fn set_disk_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageFormat>,
-    ) -> Self {
+    pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
         self.disk_image_format = input;
         self
     }

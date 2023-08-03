@@ -25,8 +25,7 @@ pub struct FunnelChartDataLabelOptions {
     pub label_color: ::std::option::Option<::std::string::String>,
     /// <p>Determines the style of the metric labels.</p>
     #[doc(hidden)]
-    pub measure_data_label_style:
-        ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>,
+    pub measure_data_label_style: ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>,
 }
 impl FunnelChartDataLabelOptions {
     /// <p>The visibility option that determines if data labels are displayed.</p>
@@ -47,9 +46,7 @@ impl FunnelChartDataLabelOptions {
     }
     /// <p>The font configuration for the data labels.</p>
     /// <p>Only the <code>FontSize</code> attribute of the font configuration is used for data labels.</p>
-    pub fn label_font_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FontConfiguration> {
+    pub fn label_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
         self.label_font_configuration.as_ref()
     }
     /// <p>The color of the data label text.</p>
@@ -57,9 +54,7 @@ impl FunnelChartDataLabelOptions {
         self.label_color.as_deref()
     }
     /// <p>Determines the style of the metric labels.</p>
-    pub fn measure_data_label_style(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunnelChartMeasureDataLabelStyle> {
+    pub fn measure_data_label_style(&self) -> ::std::option::Option<&crate::types::FunnelChartMeasureDataLabelStyle> {
         self.measure_data_label_style.as_ref()
     }
 }
@@ -72,9 +67,7 @@ impl FunnelChartDataLabelOptions {
 
 /// A builder for [`FunnelChartDataLabelOptions`](crate::types::FunnelChartDataLabelOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunnelChartDataLabelOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) category_label_visibility: ::std::option::Option<crate::types::Visibility>,
@@ -82,8 +75,7 @@ pub struct FunnelChartDataLabelOptionsBuilder {
     pub(crate) position: ::std::option::Option<crate::types::DataLabelPosition>,
     pub(crate) label_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     pub(crate) label_color: ::std::option::Option<::std::string::String>,
-    pub(crate) measure_data_label_style:
-        ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>,
+    pub(crate) measure_data_label_style: ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>,
 }
 impl FunnelChartDataLabelOptionsBuilder {
     /// <p>The visibility option that determines if data labels are displayed.</p>
@@ -92,10 +84,7 @@ impl FunnelChartDataLabelOptionsBuilder {
         self
     }
     /// <p>The visibility option that determines if data labels are displayed.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -109,17 +98,12 @@ impl FunnelChartDataLabelOptionsBuilder {
         self
     }
     /// <p>The visibility of the category labels within the data labels.</p>
-    pub fn set_category_label_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_category_label_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.category_label_visibility = input;
         self
     }
     /// <p>The visibility of the category labels within the data labels.</p>
-    pub fn get_category_label_visibility(
-        &self,
-    ) -> &::std::option::Option<crate::types::Visibility> {
+    pub fn get_category_label_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.category_label_visibility
     }
     /// <p>The visibility of the measure labels within the data labels.</p>
@@ -128,10 +112,7 @@ impl FunnelChartDataLabelOptionsBuilder {
         self
     }
     /// <p>The visibility of the measure labels within the data labels.</p>
-    pub fn set_measure_label_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_measure_label_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.measure_label_visibility = input;
         self
     }
@@ -145,10 +126,7 @@ impl FunnelChartDataLabelOptionsBuilder {
         self
     }
     /// <p>Determines the positioning of the data label relative to a section of the funnel.</p>
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLabelPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::DataLabelPosition>) -> Self {
         self.position = input;
         self
     }
@@ -164,18 +142,13 @@ impl FunnelChartDataLabelOptionsBuilder {
     }
     /// <p>The font configuration for the data labels.</p>
     /// <p>Only the <code>FontSize</code> attribute of the font configuration is used for data labels.</p>
-    pub fn set_label_font_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FontConfiguration>,
-    ) -> Self {
+    pub fn set_label_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
         self.label_font_configuration = input;
         self
     }
     /// <p>The font configuration for the data labels.</p>
     /// <p>Only the <code>FontSize</code> attribute of the font configuration is used for data labels.</p>
-    pub fn get_label_font_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+    pub fn get_label_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
         &self.label_font_configuration
     }
     /// <p>The color of the data label text.</p>
@@ -193,25 +166,17 @@ impl FunnelChartDataLabelOptionsBuilder {
         &self.label_color
     }
     /// <p>Determines the style of the metric labels.</p>
-    pub fn measure_data_label_style(
-        mut self,
-        input: crate::types::FunnelChartMeasureDataLabelStyle,
-    ) -> Self {
+    pub fn measure_data_label_style(mut self, input: crate::types::FunnelChartMeasureDataLabelStyle) -> Self {
         self.measure_data_label_style = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the style of the metric labels.</p>
-    pub fn set_measure_data_label_style(
-        mut self,
-        input: ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>,
-    ) -> Self {
+    pub fn set_measure_data_label_style(mut self, input: ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>) -> Self {
         self.measure_data_label_style = input;
         self
     }
     /// <p>Determines the style of the metric labels.</p>
-    pub fn get_measure_data_label_style(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle> {
+    pub fn get_measure_data_label_style(&self) -> &::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle> {
         &self.measure_data_label_style
     }
     /// Consumes the builder and constructs a [`FunnelChartDataLabelOptions`](crate::types::FunnelChartDataLabelOptions).

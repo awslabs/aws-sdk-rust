@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`alias_id(impl ::std::convert::Into<String>)`](crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder::set_alias_id): <p>The identifier of the connection alias to delete.</p>
     /// - On success, responds with [`DeleteConnectionAliasOutput`](crate::operation::delete_connection_alias::DeleteConnectionAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectionAliasError>`](crate::operation::delete_connection_alias::DeleteConnectionAliasError)
-    pub fn delete_connection_alias(
-        &self,
-    ) -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder
-    {
-        crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_connection_alias(&self) -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder {
+        crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRouteCalculatorOutput {
 }
 impl DeleteRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteCalculatorOutput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorOutputBuilder {
         crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRouteCalculatorOutput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteCalculatorOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,34 +27,27 @@ impl ::std::fmt::Display for UnsupportedDigitalSignatureMethodException {
     }
 }
 impl ::std::error::Error for UnsupportedDigitalSignatureMethodException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::UnsupportedDigitalSignatureMethodException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedDigitalSignatureMethodException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for UnsupportedDigitalSignatureMethodException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedDigitalSignatureMethodException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl UnsupportedDigitalSignatureMethodException {
     /// Creates a new builder-style object to manufacture [`UnsupportedDigitalSignatureMethodException`](crate::types::error::UnsupportedDigitalSignatureMethodException).
-    pub fn builder(
-    ) -> crate::types::error::builders::UnsupportedDigitalSignatureMethodExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::UnsupportedDigitalSignatureMethodExceptionBuilder {
         crate::types::error::builders::UnsupportedDigitalSignatureMethodExceptionBuilder::default()
     }
 }
 
 /// A builder for [`UnsupportedDigitalSignatureMethodException`](crate::types::error::UnsupportedDigitalSignatureMethodException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsupportedDigitalSignatureMethodExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl UnsupportedDigitalSignatureMethodExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }
