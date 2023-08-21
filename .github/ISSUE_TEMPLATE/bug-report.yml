@@ -86,8 +86,8 @@ body:
         initializing it (e.g., `tracing_subscriber::fmt::init();`),
         and then setting the environment variable `RUST_LOG` before
         running your program, as follows:
-        `RUST_LOG='aws_smithy_runtime=debug,aws_runtime=debug'`
+        `RUST_LOG=debug`
         For example:
-        `RUST_LOG='aws_smithy_runtime=debug,aws_runtime=debug' cargo run`
+        `RUST_LOG=debug cargo run`
         The SDK redacts sensitive information such as auth headers in these debug logs,
         but please look through them before posting just to be sure.
