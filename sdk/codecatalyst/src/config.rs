@@ -900,6 +900,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ConfigO
 
 pub use ::aws_smithy_runtime_api::client::interceptors::Interceptor;
 pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
+pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 pub use ::aws_smithy_types::config_bag::ConfigBag;
 
 pub use ::aws_credential_types::Credentials;
