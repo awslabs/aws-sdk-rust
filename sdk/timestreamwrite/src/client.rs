@@ -142,10 +142,9 @@ impl Client {
     ///
     /// # Panics
     ///
-    /// - This method will panic if the `conf` is missing an async sleep implementation. If you experience this panic, set
-    ///     the `sleep_impl` on the Config passed into this function to fix it.
-    /// - This method will panic if the `conf` is missing an HTTP connector. If you experience this panic, set the
-    ///     `http_connector` on the Config passed into this function to fix it.
+    /// This method will panic if the `conf` has retry or timeouts enabled without a `sleep_impl`.
+    /// If you experience this panic, it can be fixed by setting the `sleep_impl`, or by disabling
+    /// retries and timeouts.
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf
             .retry_config()
