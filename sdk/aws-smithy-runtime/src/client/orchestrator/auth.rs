@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::client::auth::no_auth::NO_AUTH_SCHEME_ID;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
     AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, AuthSchemeOptionResolver,
@@ -124,10 +125,15 @@ fn extract_endpoint_auth_scheme_config(
     endpoint: &Endpoint,
     scheme_id: AuthSchemeId,
 ) -> Result<AuthSchemeEndpointConfig<'_>, AuthOrchestrationError> {
+    // TODO(P96049742): Endpoint config doesn't currently have a concept of optional auth or "no auth", so
+    // we are short-circuiting lookup of endpoint auth scheme config if that is the selected scheme.
+    if scheme_id == NO_AUTH_SCHEME_ID {
+        return Ok(AuthSchemeEndpointConfig::empty());
+    }
     let auth_schemes = match endpoint.properties().get("authSchemes") {
         Some(Document::Array(schemes)) => schemes,
         // no auth schemes:
-        None => return Ok(AuthSchemeEndpointConfig::from(None)),
+        None => return Ok(AuthSchemeEndpointConfig::empty()),
         _other => {
             return Err(AuthOrchestrationError::BadAuthSchemeEndpointConfig(
                 "expected an array for `authSchemes` in endpoint config".into(),

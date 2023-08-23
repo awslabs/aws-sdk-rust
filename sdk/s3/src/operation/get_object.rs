@@ -129,6 +129,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetObje
                     ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
                         ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
                             ::aws_runtime::auth::sigv4::SCHEME_ID,
+                            ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,
                         ]),
                     ),
                 ))
