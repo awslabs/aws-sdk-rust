@@ -26,9 +26,9 @@ lazy_static = "1.4.0"
 aws-config= { version = "0.56.0", path = "../../../sdk/aws-config" }
 aws-credential-types= { version = "0.56.0", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
 aws-hyper= { version = "0.56.0", path = "../../../sdk/aws-hyper" }
-aws-sdk-iam= { version = "0.29.0", path = "../../../sdk/iam" }
-aws-sdk-s3= { version = "0.29.0", path = "../../../sdk/s3" }
-aws-sdk-sts= { version = "0.29.0", path = "../../../sdk/sts" }
+aws-sdk-iam= { version = "0.30.0", path = "../../../sdk/iam" }
+aws-sdk-s3= { version = "0.30.0", path = "../../../sdk/s3" }
+aws-sdk-sts= { version = "0.30.0", path = "../../../sdk/sts" }
 aws-smithy-client= { version = "0.56.0", path = "../../../sdk/aws-smithy-client", features = ["test-util"] }
 aws-smithy-http= { version = "0.56.0", path = "../../../sdk/aws-smithy-http" }
 aws-types= { version = "0.56.0", path = "../../../sdk/aws-types" }

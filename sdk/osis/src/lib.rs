@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.0"
-//! aws-sdk-osis = "0.2.0"
+//! aws-sdk-osis = "0.3.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

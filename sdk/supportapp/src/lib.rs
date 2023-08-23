@@ -40,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.0"
-//! aws-sdk-supportapp = "0.12.0"
+//! aws-sdk-supportapp = "0.13.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

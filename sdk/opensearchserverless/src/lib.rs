@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.0"
-//! aws-sdk-opensearchserverless = "0.7.0"
+//! aws-sdk-opensearchserverless = "0.8.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
