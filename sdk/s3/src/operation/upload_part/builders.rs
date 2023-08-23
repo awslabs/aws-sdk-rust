@@ -143,6 +143,9 @@ impl UploadPartFluentBuilder {
     /// Presigned requests can be given to other users or applications to access a resource or perform
     /// an operation without having access to the AWS security credentials.
     ///
+    /// _Important:_ If you're using credentials that can expire, such as those from STS AssumeRole or SSO, then
+    /// the presigned request can only be valid for as long as the credentials used to create it are.
+    ///
     #[allow(unused_mut)]
     pub async fn presigned(
         mut self,

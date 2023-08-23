@@ -4,7 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+// TODO(https://github.com/awslabs/smithy-rs/issues/2902): Code generate this documentation so that service-specific examples can be added.
 //! Presigned request types and configuration.
+//!
+//! The [`Client`](crate::Client) is used to create presigned requests. They are made
+//! by calling `.presigned()` instead of `.send()` on an operation, and require a
+//! [`PresigningConfig`](crate::presigning::PresigningConfig) to provide an expiration time.
+//!
+//! Only operations that support presigning have the `presigned()` method on them.
 
 use std::fmt;
 use std::time::{Duration, SystemTime};
