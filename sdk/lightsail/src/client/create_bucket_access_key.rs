@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateBucketAccessKey`](crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bucket_name(impl ::std::convert::Into<String>)`](crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyFluentBuilder::bucket_name) / [`set_bucket_name(Option<String>)`](crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyFluentBuilder::set_bucket_name): <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
+    ///   - [`bucket_name(impl Into<String>)`](crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyFluentBuilder::bucket_name) / [`set_bucket_name(Option<String>)`](crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyFluentBuilder::set_bucket_name): <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
     /// - On success, responds with [`CreateBucketAccessKeyOutput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput) with field(s):
     ///   - [`access_key(Option<AccessKey>)`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput::access_key): <p>An object that describes the access key that is created.</p>
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>

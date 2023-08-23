@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProject`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_name): <p>The name of the project to be deleted.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_name): <p>The name of the project to be deleted.</p>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_project::DeleteProjectOutput::name): <p>The name of the project that you deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)

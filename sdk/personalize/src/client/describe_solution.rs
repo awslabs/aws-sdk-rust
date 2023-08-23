@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSolution`](crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`solution_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder::solution_arn) / [`set_solution_arn(Option<String>)`](crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
+    ///   - [`solution_arn(impl Into<String>)`](crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder::solution_arn) / [`set_solution_arn(Option<String>)`](crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
     /// - On success, responds with [`DescribeSolutionOutput`](crate::operation::describe_solution::DescribeSolutionOutput) with field(s):
     ///   - [`solution(Option<Solution>)`](crate::operation::describe_solution::DescribeSolutionOutput::solution): <p>An object that describes the solution.</p>
     /// - On failure, responds with [`SdkError<DescribeSolutionError>`](crate::operation::describe_solution::DescribeSolutionError)

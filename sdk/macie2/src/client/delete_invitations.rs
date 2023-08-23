@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInvitations`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(Vec<String>)`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::set_account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::set_account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
     /// - On success, responds with [`DeleteInvitationsOutput`](crate::operation::delete_invitations::DeleteInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::delete_invitations::DeleteInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::operation::delete_invitations::DeleteInvitationsError)

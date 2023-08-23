@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAdministratorAccount`](crate::operation::get_administrator_account::builders::GetAdministratorAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_administrator_account::builders::GetAdministratorAccountFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_administrator_account::builders::GetAdministratorAccountFluentBuilder::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_administrator_account::builders::GetAdministratorAccountFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_administrator_account::builders::GetAdministratorAccountFluentBuilder::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
     /// - On success, responds with [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput) with field(s):
     ///   - [`administrator(Option<Administrator>)`](crate::operation::get_administrator_account::GetAdministratorAccountOutput::administrator): <p>The administrator account details.</p>
     /// - On failure, responds with [`SdkError<GetAdministratorAccountError>`](crate::operation::get_administrator_account::GetAdministratorAccountError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSourceServer`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl ::std::convert::Into<String>)`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder::set_source_server_id): <p>Request to delete Source Server from service by Server ID.</p>
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder::set_account_id): <p>Request to delete Source Server from service by Account ID.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder::set_source_server_id): <p>Request to delete Source Server from service by Server ID.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder::set_account_id): <p>Request to delete Source Server from service by Account ID.</p>
     /// - On success, responds with [`DeleteSourceServerOutput`](crate::operation::delete_source_server::DeleteSourceServerOutput)
     /// - On failure, responds with [`SdkError<DeleteSourceServerError>`](crate::operation::delete_source_server::DeleteSourceServerError)
     pub fn delete_source_server(&self) -> crate::operation::delete_source_server::builders::DeleteSourceServerFluentBuilder {

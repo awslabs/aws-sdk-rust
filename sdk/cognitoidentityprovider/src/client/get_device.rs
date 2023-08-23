@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDevice`](crate::operation::get_device::builders::GetDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_key(impl ::std::convert::Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_device_key): <p>The device key.</p>
-    ///   - [`access_token(impl ::std::convert::Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
+    ///   - [`device_key(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_device_key): <p>The device key.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
     /// - On success, responds with [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput) with field(s):
     ///   - [`device(Option<DeviceType>)`](crate::operation::get_device::GetDeviceOutput::device): <p>The device.</p>
     /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::operation::get_device::GetDeviceError)

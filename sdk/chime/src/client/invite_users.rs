@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`InviteUsers`](crate::operation::invite_users::builders::InviteUsersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_email_list(Vec<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::user_email_list) / [`set_user_email_list(Option<Vec<String>>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_user_email_list): <p>The user email addresses to which to send the email invitation.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`user_email_list(impl Into<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::user_email_list) / [`set_user_email_list(Option<Vec<String>>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_user_email_list): <p>The user email addresses to which to send the email invitation.</p>
     ///   - [`user_type(UserType)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::user_type) / [`set_user_type(Option<UserType>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_user_type): <p>The user type.</p>
     /// - On success, responds with [`InviteUsersOutput`](crate::operation::invite_users::InviteUsersOutput) with field(s):
     ///   - [`invites(Option<Vec<Invite>>)`](crate::operation::invite_users::InviteUsersOutput::invites): <p>The email invitation details.</p>

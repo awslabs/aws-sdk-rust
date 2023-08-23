@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::delete_route_table::builders::DeleteRouteTableFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_route_table::builders::DeleteRouteTableFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    ///   - [`route_table_id(impl ::std::convert::Into<String>)`](crate::operation::delete_route_table::builders::DeleteRouteTableFluentBuilder::route_table_id) / [`set_route_table_id(Option<String>)`](crate::operation::delete_route_table::builders::DeleteRouteTableFluentBuilder::set_route_table_id): <p>The ID of the route table.</p>
+    ///   - [`route_table_id(impl Into<String>)`](crate::operation::delete_route_table::builders::DeleteRouteTableFluentBuilder::route_table_id) / [`set_route_table_id(Option<String>)`](crate::operation::delete_route_table::builders::DeleteRouteTableFluentBuilder::set_route_table_id): <p>The ID of the route table.</p>
     /// - On success, responds with [`DeleteRouteTableOutput`](crate::operation::delete_route_table::DeleteRouteTableOutput)
     /// - On failure, responds with [`SdkError<DeleteRouteTableError>`](crate::operation::delete_route_table::DeleteRouteTableError)
     pub fn delete_route_table(&self) -> crate::operation::delete_route_table::builders::DeleteRouteTableFluentBuilder {

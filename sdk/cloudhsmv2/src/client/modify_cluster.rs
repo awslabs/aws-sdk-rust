@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`backup_retention_policy(BackupRetentionPolicy)`](crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::backup_retention_policy) / [`set_backup_retention_policy(Option<BackupRetentionPolicy>)`](crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::set_backup_retention_policy): <p>A policy that defines how the service retains backups.</p>
-    ///   - [`cluster_id(impl ::std::convert::Into<String>)`](crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::set_cluster_id): <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    ///   - [`cluster_id(impl Into<String>)`](crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::set_cluster_id): <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     /// - On success, responds with [`ModifyClusterOutput`](crate::operation::modify_cluster::ModifyClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::modify_cluster::ModifyClusterOutput::cluster): <p>Contains information about an AWS CloudHSM cluster.</p>
     /// - On failure, responds with [`SdkError<ModifyClusterError>`](crate::operation::modify_cluster::ModifyClusterError)

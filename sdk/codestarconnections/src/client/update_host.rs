@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateHost`](crate::operation::update_host::builders::UpdateHostFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`host_arn(impl ::std::convert::Into<String>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::host_arn) / [`set_host_arn(Option<String>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::set_host_arn): <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
-    ///   - [`provider_endpoint(impl ::std::convert::Into<String>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::provider_endpoint) / [`set_provider_endpoint(Option<String>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::set_provider_endpoint): <p>The URL or endpoint of the host to be updated.</p>
+    ///   - [`host_arn(impl Into<String>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::host_arn) / [`set_host_arn(Option<String>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::set_host_arn): <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
+    ///   - [`provider_endpoint(impl Into<String>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::provider_endpoint) / [`set_provider_endpoint(Option<String>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::set_provider_endpoint): <p>The URL or endpoint of the host to be updated.</p>
     ///   - [`vpc_configuration(VpcConfiguration)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::operation::update_host::builders::UpdateHostFluentBuilder::set_vpc_configuration): <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     /// - On success, responds with [`UpdateHostOutput`](crate::operation::update_host::UpdateHostOutput)
     /// - On failure, responds with [`SdkError<UpdateHostError>`](crate::operation::update_host::UpdateHostError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`VerifyTrust`](crate::operation::verify_trust::builders::VerifyTrustFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trust_id(impl ::std::convert::Into<String>)`](crate::operation::verify_trust::builders::VerifyTrustFluentBuilder::trust_id) / [`set_trust_id(Option<String>)`](crate::operation::verify_trust::builders::VerifyTrustFluentBuilder::set_trust_id): <p>The unique Trust ID of the trust relationship to verify.</p>
+    ///   - [`trust_id(impl Into<String>)`](crate::operation::verify_trust::builders::VerifyTrustFluentBuilder::trust_id) / [`set_trust_id(Option<String>)`](crate::operation::verify_trust::builders::VerifyTrustFluentBuilder::set_trust_id): <p>The unique Trust ID of the trust relationship to verify.</p>
     /// - On success, responds with [`VerifyTrustOutput`](crate::operation::verify_trust::VerifyTrustOutput) with field(s):
     ///   - [`trust_id(Option<String>)`](crate::operation::verify_trust::VerifyTrustOutput::trust_id): <p>The unique Trust ID of the trust relationship that was verified.</p>
     /// - On failure, responds with [`SdkError<VerifyTrustError>`](crate::operation::verify_trust::VerifyTrustError)

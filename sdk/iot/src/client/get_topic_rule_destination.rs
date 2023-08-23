@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTopicRuleDestination`](crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationFluentBuilder::set_arn): <p>The ARN of the topic rule destination.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationFluentBuilder::set_arn): <p>The ARN of the topic rule destination.</p>
     /// - On success, responds with [`GetTopicRuleDestinationOutput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput) with field(s):
     ///   - [`topic_rule_destination(Option<TopicRuleDestination>)`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput::topic_rule_destination): <p>The topic rule destination.</p>
     /// - On failure, responds with [`SdkError<GetTopicRuleDestinationError>`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError)

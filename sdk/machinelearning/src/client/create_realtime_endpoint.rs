@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateRealtimeEndpoint`](crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ml_model_id(impl ::std::convert::Into<String>)`](crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder::ml_model_id) / [`set_ml_model_id(Option<String>)`](crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder::set_ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    ///   - [`ml_model_id(impl Into<String>)`](crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder::ml_model_id) / [`set_ml_model_id(Option<String>)`](crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder::set_ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     /// - On success, responds with [`CreateRealtimeEndpointOutput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput) with field(s):
     ///   - [`ml_model_id(Option<String>)`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code> </p>

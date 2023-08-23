@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteControl`](crate::operation::delete_control::builders::DeleteControlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`control_id(impl ::std::convert::Into<String>)`](crate::operation::delete_control::builders::DeleteControlFluentBuilder::control_id) / [`set_control_id(Option<String>)`](crate::operation::delete_control::builders::DeleteControlFluentBuilder::set_control_id): <p> The unique identifier for the control. </p>
+    ///   - [`control_id(impl Into<String>)`](crate::operation::delete_control::builders::DeleteControlFluentBuilder::control_id) / [`set_control_id(Option<String>)`](crate::operation::delete_control::builders::DeleteControlFluentBuilder::set_control_id): <p> The unique identifier for the control. </p>
     /// - On success, responds with [`DeleteControlOutput`](crate::operation::delete_control::DeleteControlOutput)
     /// - On failure, responds with [`SdkError<DeleteControlError>`](crate::operation::delete_control::DeleteControlError)
     pub fn delete_control(&self) -> crate::operation::delete_control::builders::DeleteControlFluentBuilder {

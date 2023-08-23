@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateGroup`](crate::operation::create_group::builders::CreateGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_organization_id): <p>The organization under which the group is to be created.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_name): <p>The name of the group.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_organization_id): <p>The organization under which the group is to be created.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_name): <p>The name of the group.</p>
     /// - On success, responds with [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput) with field(s):
     ///   - [`group_id(Option<String>)`](crate::operation::create_group::CreateGroupOutput::group_id): <p>The identifier of the group.</p>
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::operation::create_group::CreateGroupError)

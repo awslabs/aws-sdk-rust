@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetListener`](crate::operation::get_listener::builders::GetListenerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::set_service_identifier): <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    ///   - [`listener_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::set_listener_identifier): <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::set_service_identifier): <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    ///   - [`listener_identifier(impl Into<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::set_listener_identifier): <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     /// - On success, responds with [`GetListenerOutput`](crate::operation::get_listener::GetListenerOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_listener::GetListenerOutput::arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_listener::GetListenerOutput::id): <p>The ID of the listener.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteModelQualityJobDefinition`](crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_definition_name(impl ::std::convert::Into<String>)`](crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder::set_job_definition_name): <p>The name of the model quality monitoring job definition to delete.</p>
+    ///   - [`job_definition_name(impl Into<String>)`](crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder::set_job_definition_name): <p>The name of the model quality monitoring job definition to delete.</p>
     /// - On success, responds with [`DeleteModelQualityJobDefinitionOutput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteModelQualityJobDefinitionError>`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionError)
     pub fn delete_model_quality_job_definition(

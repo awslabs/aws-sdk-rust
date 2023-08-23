@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetAccountStatus`](crate::operation::batch_get_account_status::builders::BatchGetAccountStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(Vec<String>)`](crate::operation::batch_get_account_status::builders::BatchGetAccountStatusFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::batch_get_account_status::builders::BatchGetAccountStatusFluentBuilder::set_account_ids): <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::batch_get_account_status::builders::BatchGetAccountStatusFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::batch_get_account_status::builders::BatchGetAccountStatusFluentBuilder::set_account_ids): <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
     /// - On success, responds with [`BatchGetAccountStatusOutput`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput) with field(s):
     ///   - [`accounts(Option<Vec<AccountState>>)`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput::accounts): <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
     ///   - [`failed_accounts(Option<Vec<FailedAccount>>)`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput::failed_accounts): <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>

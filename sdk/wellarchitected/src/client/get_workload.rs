@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkload`](crate::operation::get_workload::builders::GetWorkloadFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workload_id(impl ::std::convert::Into<String>)`](crate::operation::get_workload::builders::GetWorkloadFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::get_workload::builders::GetWorkloadFluentBuilder::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`workload_id(impl Into<String>)`](crate::operation::get_workload::builders::GetWorkloadFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::get_workload::builders::GetWorkloadFluentBuilder::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     /// - On success, responds with [`GetWorkloadOutput`](crate::operation::get_workload::GetWorkloadOutput) with field(s):
     ///   - [`workload(Option<Workload>)`](crate::operation::get_workload::GetWorkloadOutput::workload): <p>A workload return object.</p>
     /// - On failure, responds with [`SdkError<GetWorkloadError>`](crate::operation::get_workload::GetWorkloadError)

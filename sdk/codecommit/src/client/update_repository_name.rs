@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRepositoryName`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`old_name(impl ::std::convert::Into<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::old_name) / [`set_old_name(Option<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::set_old_name): <p>The current name of the repository.</p>
-    ///   - [`new_name(impl ::std::convert::Into<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::new_name) / [`set_new_name(Option<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::set_new_name): <p>The new name for the repository.</p>
+    ///   - [`old_name(impl Into<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::old_name) / [`set_old_name(Option<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::set_old_name): <p>The current name of the repository.</p>
+    ///   - [`new_name(impl Into<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::new_name) / [`set_new_name(Option<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::set_new_name): <p>The new name for the repository.</p>
     /// - On success, responds with [`UpdateRepositoryNameOutput`](crate::operation::update_repository_name::UpdateRepositoryNameOutput)
     /// - On failure, responds with [`SdkError<UpdateRepositoryNameError>`](crate::operation::update_repository_name::UpdateRepositoryNameError)
     pub fn update_repository_name(&self) -> crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUserPoolClient`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool where you want to delete the client.</p>
-    ///   - [`client_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::set_client_id): <p>The app client ID of the app associated with the user pool.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool where you want to delete the client.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder::set_client_id): <p>The app client ID of the app associated with the user pool.</p>
     /// - On success, responds with [`DeleteUserPoolClientOutput`](crate::operation::delete_user_pool_client::DeleteUserPoolClientOutput)
     /// - On failure, responds with [`SdkError<DeleteUserPoolClientError>`](crate::operation::delete_user_pool_client::DeleteUserPoolClientError)
     pub fn delete_user_pool_client(&self) -> crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIdentityPoolRoles`](crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl ::std::convert::Into<String>)`](crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
+    ///   - [`identity_pool_id(impl Into<String>)`](crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
     /// - On success, responds with [`GetIdentityPoolRolesOutput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput) with field(s):
     ///   - [`identity_pool_id(Option<String>)`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput::identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
     ///   - [`roles(Option<HashMap<String, String>>)`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput::roles): <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>

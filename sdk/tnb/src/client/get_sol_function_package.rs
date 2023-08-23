@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolFunctionPackage`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vnf_pkg_id(impl ::std::convert::Into<String>)`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder::vnf_pkg_id) / [`set_vnf_pkg_id(Option<String>)`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder::set_vnf_pkg_id): <p>ID of the function package.</p>
+    ///   - [`vnf_pkg_id(impl Into<String>)`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder::vnf_pkg_id) / [`set_vnf_pkg_id(Option<String>)`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder::set_vnf_pkg_id): <p>ID of the function package.</p>
     /// - On success, responds with [`GetSolFunctionPackageOutput`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::id): <p>Function package ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::arn): <p>Function package ARN.</p>

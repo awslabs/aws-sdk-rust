@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteThingGroup`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::set_thing_group_name): <p>The name of the thing group to delete.</p>
+    ///   - [`thing_group_name(impl Into<String>)`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::set_thing_group_name): <p>The name of the thing group to delete.</p>
     ///   - [`expected_version(i64)`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_thing_group::builders::DeleteThingGroupFluentBuilder::set_expected_version): <p>The expected version of the thing group to delete.</p>
     /// - On success, responds with [`DeleteThingGroupOutput`](crate::operation::delete_thing_group::DeleteThingGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteThingGroupError>`](crate::operation::delete_thing_group::DeleteThingGroupError)

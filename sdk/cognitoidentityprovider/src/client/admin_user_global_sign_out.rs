@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AdminUserGlobalSignOut`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
-    ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::set_username): <p>The user name.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::set_username): <p>The user name.</p>
     /// - On success, responds with [`AdminUserGlobalSignOutOutput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput)
     /// - On failure, responds with [`SdkError<AdminUserGlobalSignOutError>`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError)
     pub fn admin_user_global_sign_out(&self) -> crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder {

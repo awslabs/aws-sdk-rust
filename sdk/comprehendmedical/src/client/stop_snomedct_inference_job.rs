@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopSNOMEDCTInferenceJob`](crate::operation::stop_snomedct_inference_job::builders::StopSNOMEDCTInferenceJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_snomedct_inference_job::builders::StopSNOMEDCTInferenceJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_snomedct_inference_job::builders::StopSNOMEDCTInferenceJobFluentBuilder::set_job_id): <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_snomedct_inference_job::builders::StopSNOMEDCTInferenceJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_snomedct_inference_job::builders::StopSNOMEDCTInferenceJobFluentBuilder::set_job_id): <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
     /// - On success, responds with [`StopSnomedctInferenceJobOutput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobOutput::job_id): <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
     /// - On failure, responds with [`SdkError<StopSNOMEDCTInferenceJobError>`](crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError)

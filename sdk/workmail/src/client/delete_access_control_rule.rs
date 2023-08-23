@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccessControlRule`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder::set_organization_id): <p>The identifier for the organization.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder::set_name): <p>The name of the access control rule.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder::set_organization_id): <p>The identifier for the organization.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder::set_name): <p>The name of the access control rule.</p>
     /// - On success, responds with [`DeleteAccessControlRuleOutput`](crate::operation::delete_access_control_rule::DeleteAccessControlRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessControlRuleError>`](crate::operation::delete_access_control_rule::DeleteAccessControlRuleError)
     pub fn delete_access_control_rule(&self) -> crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicy`](crate::operation::get_policy::builders::GetPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_id(impl ::std::convert::Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_id): <p>The ID of the Firewall Manager policy that you want the details for.</p>
+    ///   - [`policy_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_id): <p>The ID of the Firewall Manager policy that you want the details for.</p>
     /// - On success, responds with [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::operation::get_policy::GetPolicyOutput::policy): <p>Information about the specified Firewall Manager policy.</p>
     ///   - [`policy_arn(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy_arn): <p>The Amazon Resource Name (ARN) of the specified policy.</p>

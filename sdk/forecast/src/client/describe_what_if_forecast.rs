@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWhatIfForecast`](crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`what_if_forecast_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastFluentBuilder::what_if_forecast_arn) / [`set_what_if_forecast_arn(Option<String>)`](crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastFluentBuilder::set_what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+    ///   - [`what_if_forecast_arn(impl Into<String>)`](crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastFluentBuilder::what_if_forecast_arn) / [`set_what_if_forecast_arn(Option<String>)`](crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastFluentBuilder::set_what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
     /// - On success, responds with [`DescribeWhatIfForecastOutput`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastOutput) with field(s):
     ///   - [`what_if_forecast_name(Option<String>)`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastOutput::what_if_forecast_name): <p>The name of the what-if forecast.</p>
     ///   - [`what_if_forecast_arn(Option<String>)`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastOutput::what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>

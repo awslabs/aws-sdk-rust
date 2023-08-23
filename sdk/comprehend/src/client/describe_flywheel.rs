@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFlywheel`](crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flywheel_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder::flywheel_arn) / [`set_flywheel_arn(Option<String>)`](crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder::set_flywheel_arn): <p>The Amazon Resource Number (ARN) of the flywheel.</p>
+    ///   - [`flywheel_arn(impl Into<String>)`](crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder::flywheel_arn) / [`set_flywheel_arn(Option<String>)`](crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder::set_flywheel_arn): <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     /// - On success, responds with [`DescribeFlywheelOutput`](crate::operation::describe_flywheel::DescribeFlywheelOutput) with field(s):
     ///   - [`flywheel_properties(Option<FlywheelProperties>)`](crate::operation::describe_flywheel::DescribeFlywheelOutput::flywheel_properties): <p>The flywheel properties.</p>
     /// - On failure, responds with [`SdkError<DescribeFlywheelError>`](crate::operation::describe_flywheel::DescribeFlywheelError)

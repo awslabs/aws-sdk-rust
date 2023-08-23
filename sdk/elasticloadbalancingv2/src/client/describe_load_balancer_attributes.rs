@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoadBalancerAttributes`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_balancer_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::load_balancer_arn) / [`set_load_balancer_arn(Option<String>)`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::set_load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    ///   - [`load_balancer_arn(impl Into<String>)`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::load_balancer_arn) / [`set_load_balancer_arn(Option<String>)`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::set_load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     /// - On success, responds with [`DescribeLoadBalancerAttributesOutput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<LoadBalancerAttribute>>)`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput::attributes): <p>Information about the load balancer attributes.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBalancerAttributesError>`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError)

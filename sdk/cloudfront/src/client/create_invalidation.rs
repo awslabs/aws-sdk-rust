@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateInvalidation`](crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl ::std::convert::Into<String>)`](crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder::distribution_id) / [`set_distribution_id(Option<String>)`](crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder::set_distribution_id): <p>The distribution's id.</p>
+    ///   - [`distribution_id(impl Into<String>)`](crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder::distribution_id) / [`set_distribution_id(Option<String>)`](crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder::set_distribution_id): <p>The distribution's id.</p>
     ///   - [`invalidation_batch(InvalidationBatch)`](crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder::invalidation_batch) / [`set_invalidation_batch(Option<InvalidationBatch>)`](crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder::set_invalidation_batch): <p>The batch information for the invalidation.</p>
     /// - On success, responds with [`CreateInvalidationOutput`](crate::operation::create_invalidation::CreateInvalidationOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::operation::create_invalidation::CreateInvalidationOutput::location): <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>

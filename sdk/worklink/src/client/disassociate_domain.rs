@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateDomain`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::set_domain_name): <p>The name of the domain.</p>
+    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::disassociate_domain::builders::DisassociateDomainFluentBuilder::set_domain_name): <p>The name of the domain.</p>
     /// - On success, responds with [`DisassociateDomainOutput`](crate::operation::disassociate_domain::DisassociateDomainOutput)
     /// - On failure, responds with [`SdkError<DisassociateDomainError>`](crate::operation::disassociate_domain::DisassociateDomainError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]

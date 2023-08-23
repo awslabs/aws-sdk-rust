@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeauthorizeConnection`](crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder::set_name): <p>The name of the connection to remove authorization from.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder::set_name): <p>The name of the connection to remove authorization from.</p>
     /// - On success, responds with [`DeauthorizeConnectionOutput`](crate::operation::deauthorize_connection::DeauthorizeConnectionOutput) with field(s):
     ///   - [`connection_arn(Option<String>)`](crate::operation::deauthorize_connection::DeauthorizeConnectionOutput::connection_arn): <p>The ARN of the connection that authorization was removed from.</p>
     ///   - [`connection_state(Option<ConnectionState>)`](crate::operation::deauthorize_connection::DeauthorizeConnectionOutput::connection_state): <p>The state of the connection.</p>

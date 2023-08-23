@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetForm`](crate::operation::get_form::builders::GetFormFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::set_app_id): <p>The unique ID of the Amplify app.</p>
-    ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::set_id): <p>The unique ID of the form.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::set_app_id): <p>The unique ID of the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_form::builders::GetFormFluentBuilder::set_id): <p>The unique ID of the form.</p>
     /// - On success, responds with [`GetFormOutput`](crate::operation::get_form::GetFormOutput) with field(s):
     ///   - [`form(Option<Form>)`](crate::operation::get_form::GetFormOutput::form): <p>Represents the configuration settings for the form.</p>
     /// - On failure, responds with [`SdkError<GetFormError>`](crate::operation::get_form::GetFormError)

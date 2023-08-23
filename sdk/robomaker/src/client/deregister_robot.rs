@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterRobot`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet(impl ::std::convert::Into<String>)`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    ///   - [`robot(impl ::std::convert::Into<String>)`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder::robot) / [`set_robot(Option<String>)`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder::set_robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    ///   - [`fleet(impl Into<String>)`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`robot(impl Into<String>)`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder::robot) / [`set_robot(Option<String>)`](crate::operation::deregister_robot::builders::DeregisterRobotFluentBuilder::set_robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
     /// - On success, responds with [`DeregisterRobotOutput`](crate::operation::deregister_robot::DeregisterRobotOutput) with field(s):
     ///   - [`fleet(Option<String>)`](crate::operation::deregister_robot::DeregisterRobotOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
     ///   - [`robot(Option<String>)`](crate::operation::deregister_robot::DeregisterRobotOutput::robot): <p>The Amazon Resource Name (ARN) of the robot.</p>

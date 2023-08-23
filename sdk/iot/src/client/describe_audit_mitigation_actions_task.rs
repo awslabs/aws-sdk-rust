@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAuditMitigationActionsTask`](crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskFluentBuilder::set_task_id): <p>The unique identifier for the audit mitigation task.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskFluentBuilder::set_task_id): <p>The unique identifier for the audit mitigation task.</p>
     /// - On success, responds with [`DescribeAuditMitigationActionsTaskOutput`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput) with field(s):
     ///   - [`task_status(Option<AuditMitigationActionsTaskStatus>)`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput::task_status): <p>The current status of the task.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput::start_time): <p>The date and time when the task was started.</p>

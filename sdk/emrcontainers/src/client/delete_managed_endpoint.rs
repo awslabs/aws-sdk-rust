@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteManagedEndpoint`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::set_id): <p>The ID of the managed endpoint.</p>
-    ///   - [`virtual_cluster_id(impl ::std::convert::Into<String>)`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::virtual_cluster_id) / [`set_virtual_cluster_id(Option<String>)`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::set_virtual_cluster_id): <p>The ID of the endpoint's virtual cluster.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::set_id): <p>The ID of the managed endpoint.</p>
+    ///   - [`virtual_cluster_id(impl Into<String>)`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::virtual_cluster_id) / [`set_virtual_cluster_id(Option<String>)`](crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::set_virtual_cluster_id): <p>The ID of the endpoint's virtual cluster.</p>
     /// - On success, responds with [`DeleteManagedEndpointOutput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput::id): <p>The output displays the ID of the managed endpoint.</p>
     ///   - [`virtual_cluster_id(Option<String>)`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput::virtual_cluster_id): <p>The output displays the ID of the endpoint's virtual cluster.</p>

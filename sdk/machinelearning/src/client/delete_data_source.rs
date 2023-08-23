@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataSource`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_source_id(impl ::std::convert::Into<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::data_source_id) / [`set_data_source_id(Option<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::set_data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    ///   - [`data_source_id(impl Into<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::data_source_id) / [`set_data_source_id(Option<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::set_data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     /// - On success, responds with [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput) with field(s):
     ///   - [`data_source_id(Option<String>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::operation::delete_data_source::DeleteDataSourceError)

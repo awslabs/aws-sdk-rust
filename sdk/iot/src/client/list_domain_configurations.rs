@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl ::std::convert::Into<String>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`marker(impl Into<String>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::set_marker): <p>The marker for the next set of results.</p>
     ///   - [`page_size(i32)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::set_page_size): <p>The result page size.</p>
     ///   - [`service_type(ServiceType)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::service_type) / [`set_service_type(Option<ServiceType>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::set_service_type): <p>The type of service delivered by the endpoint.</p>
     /// - On success, responds with [`ListDomainConfigurationsOutput`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput) with field(s):

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEnvironmentTemplate`](crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateFluentBuilder::set_name): <p>The name of the environment template to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateFluentBuilder::set_name): <p>The name of the environment template to delete.</p>
     /// - On success, responds with [`DeleteEnvironmentTemplateOutput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput) with field(s):
     ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput::environment_template): <p>The detailed data of the environment template being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentTemplateError>`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateError)

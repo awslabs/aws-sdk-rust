@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateLunaClient`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`label(impl ::std::convert::Into<String>)`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::label) / [`set_label(Option<String>)`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::set_label): <p>The label for the client.</p>
-    ///   - [`certificate(impl ::std::convert::Into<String>)`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::certificate) / [`set_certificate(Option<String>)`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::set_certificate): <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
+    ///   - [`label(impl Into<String>)`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::label) / [`set_label(Option<String>)`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::set_label): <p>The label for the client.</p>
+    ///   - [`certificate(impl Into<String>)`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::certificate) / [`set_certificate(Option<String>)`](crate::operation::create_luna_client::builders::CreateLunaClientFluentBuilder::set_certificate): <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
     /// - On success, responds with [`CreateLunaClientOutput`](crate::operation::create_luna_client::CreateLunaClientOutput) with field(s):
     ///   - [`client_arn(Option<String>)`](crate::operation::create_luna_client::CreateLunaClientOutput::client_arn): <p>The ARN of the client.</p>
     /// - On failure, responds with [`SdkError<CreateLunaClientError>`](crate::operation::create_luna_client::CreateLunaClientError)

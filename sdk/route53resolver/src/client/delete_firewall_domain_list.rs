@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFirewallDomainList`](crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`firewall_domain_list_id(impl ::std::convert::Into<String>)`](crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListFluentBuilder::firewall_domain_list_id) / [`set_firewall_domain_list_id(Option<String>)`](crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListFluentBuilder::set_firewall_domain_list_id): <p>The ID of the domain list that you want to delete. </p>
+    ///   - [`firewall_domain_list_id(impl Into<String>)`](crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListFluentBuilder::firewall_domain_list_id) / [`set_firewall_domain_list_id(Option<String>)`](crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListFluentBuilder::set_firewall_domain_list_id): <p>The ID of the domain list that you want to delete. </p>
     /// - On success, responds with [`DeleteFirewallDomainListOutput`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListOutput) with field(s):
     ///   - [`firewall_domain_list(Option<FirewallDomainList>)`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListOutput::firewall_domain_list): <p>The domain list that you just deleted. </p>
     /// - On failure, responds with [`SdkError<DeleteFirewallDomainListError>`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError)

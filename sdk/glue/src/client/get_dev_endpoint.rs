@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDevEndpoint`](crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_name(impl ::std::convert::Into<String>)`](crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder::set_endpoint_name): <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder::set_endpoint_name): <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
     /// - On success, responds with [`GetDevEndpointOutput`](crate::operation::get_dev_endpoint::GetDevEndpointOutput) with field(s):
     ///   - [`dev_endpoint(Option<DevEndpoint>)`](crate::operation::get_dev_endpoint::GetDevEndpointOutput::dev_endpoint): <p>A <code>DevEndpoint</code> definition.</p>
     /// - On failure, responds with [`SdkError<GetDevEndpointError>`](crate::operation::get_dev_endpoint::GetDevEndpointError)

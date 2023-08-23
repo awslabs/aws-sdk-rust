@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableApplicationLayerAutomaticResponse`](crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseFluentBuilder::set_resource_arn): <p>The ARN (Amazon Resource Name) of the protected resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseFluentBuilder::set_resource_arn): <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     /// - On success, responds with [`DisableApplicationLayerAutomaticResponseOutput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput)
     /// - On failure, responds with [`SdkError<DisableApplicationLayerAutomaticResponseError>`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError)
     pub fn disable_application_layer_automatic_response(

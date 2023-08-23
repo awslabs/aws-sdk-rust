@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetScan`](crate::operation::get_scan::builders::GetScanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scan_name(impl ::std::convert::Into<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::scan_name) / [`set_scan_name(Option<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::set_scan_name): <p>The name of the scan you want to view details about.</p>
-    ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::set_run_id): <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
+    ///   - [`scan_name(impl Into<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::scan_name) / [`set_scan_name(Option<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::set_scan_name): <p>The name of the scan you want to view details about.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::set_run_id): <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
     /// - On success, responds with [`GetScanOutput`](crate::operation::get_scan::GetScanOutput) with field(s):
     ///   - [`scan_name(Option<String>)`](crate::operation::get_scan::GetScanOutput::scan_name): <p>The name of the scan.</p>
     ///   - [`run_id(Option<String>)`](crate::operation::get_scan::GetScanOutput::run_id): <p>UUID that identifies the individual scan run.</p>

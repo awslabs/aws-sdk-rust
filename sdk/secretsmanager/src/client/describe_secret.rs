@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSecret`](crate::operation::describe_secret::builders::DescribeSecretFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`secret_id(impl ::std::convert::Into<String>)`](crate::operation::describe_secret::builders::DescribeSecretFluentBuilder::secret_id) / [`set_secret_id(Option<String>)`](crate::operation::describe_secret::builders::DescribeSecretFluentBuilder::set_secret_id): <p>The ARN or name of the secret. </p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    ///   - [`secret_id(impl Into<String>)`](crate::operation::describe_secret::builders::DescribeSecretFluentBuilder::secret_id) / [`set_secret_id(Option<String>)`](crate::operation::describe_secret::builders::DescribeSecretFluentBuilder::set_secret_id): <p>The ARN or name of the secret. </p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// - On success, responds with [`DescribeSecretOutput`](crate::operation::describe_secret::DescribeSecretOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_secret::DescribeSecretOutput::arn): <p>The ARN of the secret.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_secret::DescribeSecretOutput::name): <p>The name of the secret.</p>

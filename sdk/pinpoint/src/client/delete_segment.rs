@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSegment`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`segment_id(impl ::std::convert::Into<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::segment_id) / [`set_segment_id(Option<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::set_segment_id): <p>The unique identifier for the segment.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`segment_id(impl Into<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::segment_id) / [`set_segment_id(Option<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::set_segment_id): <p>The unique identifier for the segment.</p>
     /// - On success, responds with [`DeleteSegmentOutput`](crate::operation::delete_segment::DeleteSegmentOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::operation::delete_segment::DeleteSegmentOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<DeleteSegmentError>`](crate::operation::delete_segment::DeleteSegmentError)

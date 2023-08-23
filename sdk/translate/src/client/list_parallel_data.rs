@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::set_next_token): <p>A string that specifies the next page of results to return in a paginated response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::set_next_token): <p>A string that specifies the next page of results to return in a paginated response.</p>
     ///   - [`max_results(i32)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::set_max_results): <p>The maximum number of parallel data resources returned for each request.</p>
     /// - On success, responds with [`ListParallelDataOutput`](crate::operation::list_parallel_data::ListParallelDataOutput) with field(s):
     ///   - [`parallel_data_properties_list(Option<Vec<ParallelDataProperties>>)`](crate::operation::list_parallel_data::ListParallelDataOutput::parallel_data_properties_list): <p>The properties of the parallel data resources returned by this request.</p>

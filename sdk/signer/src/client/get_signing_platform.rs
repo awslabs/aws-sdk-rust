@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSigningPlatform`](crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`platform_id(impl ::std::convert::Into<String>)`](crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder::platform_id) / [`set_platform_id(Option<String>)`](crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder::set_platform_id): <p>The ID of the target signing platform.</p>
+    ///   - [`platform_id(impl Into<String>)`](crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder::platform_id) / [`set_platform_id(Option<String>)`](crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder::set_platform_id): <p>The ID of the target signing platform.</p>
     /// - On success, responds with [`GetSigningPlatformOutput`](crate::operation::get_signing_platform::GetSigningPlatformOutput) with field(s):
     ///   - [`platform_id(Option<String>)`](crate::operation::get_signing_platform::GetSigningPlatformOutput::platform_id): <p>The ID of the target signing platform.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::get_signing_platform::GetSigningPlatformOutput::display_name): <p>The display name of the target signing platform.</p>

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::set_resource_id): <p>Identifier (ID) of the directory from which to remove the tag.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::set_tag_keys): <p>The tag key (name) of the tag to be removed.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::set_resource_id): <p>Identifier (ID) of the directory from which to remove the tag.</p>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::set_tag_keys): <p>The tag key (name) of the tag to be removed.</p>
     /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder {

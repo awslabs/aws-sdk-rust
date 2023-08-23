@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PublishFunction`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder::set_name): <p>The name of the function that you are publishing.</p>
-    ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder::set_if_match): <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder::set_name): <p>The name of the function that you are publishing.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::publish_function::builders::PublishFunctionFluentBuilder::set_if_match): <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
     /// - On success, responds with [`PublishFunctionOutput`](crate::operation::publish_function::PublishFunctionOutput) with field(s):
     ///   - [`function_summary(Option<FunctionSummary>)`](crate::operation::publish_function::PublishFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
     /// - On failure, responds with [`SdkError<PublishFunctionError>`](crate::operation::publish_function::PublishFunctionError)

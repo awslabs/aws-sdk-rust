@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUICustomization`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool.</p>
-    ///   - [`client_id(impl ::std::convert::Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_client_id): <p>The client ID for the client app.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_client_id): <p>The client ID for the client app.</p>
     /// - On success, responds with [`GetUiCustomizationOutput`](crate::operation::get_ui_customization::GetUiCustomizationOutput) with field(s):
     ///   - [`ui_customization(Option<UiCustomizationType>)`](crate::operation::get_ui_customization::GetUiCustomizationOutput::ui_customization): <p>The UI customization information.</p>
     /// - On failure, responds with [`SdkError<GetUICustomizationError>`](crate::operation::get_ui_customization::GetUICustomizationError)

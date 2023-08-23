@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExport`](crate::operation::describe_export::builders::DescribeExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`export_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_export::builders::DescribeExportFluentBuilder::export_arn) / [`set_export_arn(Option<String>)`](crate::operation::describe_export::builders::DescribeExportFluentBuilder::set_export_arn): <p>The Amazon Resource Name (ARN) associated with the export.</p>
+    ///   - [`export_arn(impl Into<String>)`](crate::operation::describe_export::builders::DescribeExportFluentBuilder::export_arn) / [`set_export_arn(Option<String>)`](crate::operation::describe_export::builders::DescribeExportFluentBuilder::set_export_arn): <p>The Amazon Resource Name (ARN) associated with the export.</p>
     /// - On success, responds with [`DescribeExportOutput`](crate::operation::describe_export::DescribeExportOutput) with field(s):
     ///   - [`export_description(Option<ExportDescription>)`](crate::operation::describe_export::DescribeExportOutput::export_description): <p>Represents the properties of the export.</p>
     /// - On failure, responds with [`SdkError<DescribeExportError>`](crate::operation::describe_export::DescribeExportError)

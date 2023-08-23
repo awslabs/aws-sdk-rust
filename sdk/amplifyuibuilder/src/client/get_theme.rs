@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTheme`](crate::operation::get_theme::builders::GetThemeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::set_app_id): <p>The unique ID of the Amplify app.</p>
-    ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::set_id): <p>The unique ID for the theme.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::set_app_id): <p>The unique ID of the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_theme::builders::GetThemeFluentBuilder::set_id): <p>The unique ID for the theme.</p>
     /// - On success, responds with [`GetThemeOutput`](crate::operation::get_theme::GetThemeOutput) with field(s):
     ///   - [`theme(Option<Theme>)`](crate::operation::get_theme::GetThemeOutput::theme): <p>Represents the configuration settings for the theme.</p>
     /// - On failure, responds with [`SdkError<GetThemeError>`](crate::operation::get_theme::GetThemeError)

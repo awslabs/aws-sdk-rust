@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSubscriptionDefinition`](crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subscription_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionFluentBuilder::subscription_definition_id) / [`set_subscription_definition_id(Option<String>)`](crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionFluentBuilder::set_subscription_definition_id): The ID of the subscription definition.
+    ///   - [`subscription_definition_id(impl Into<String>)`](crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionFluentBuilder::subscription_definition_id) / [`set_subscription_definition_id(Option<String>)`](crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionFluentBuilder::set_subscription_definition_id): The ID of the subscription definition.
     /// - On success, responds with [`DeleteSubscriptionDefinitionOutput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteSubscriptionDefinitionError>`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionError)
     pub fn delete_subscription_definition(

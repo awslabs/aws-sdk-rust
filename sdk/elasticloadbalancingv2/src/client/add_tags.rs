@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddTags`](crate::operation::add_tags::builders::AddTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arns(Vec<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_resource_arns): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags): <p>The tags.</p>
+    ///   - [`resource_arns(impl Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_resource_arns): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags): <p>The tags.</p>
     /// - On success, responds with [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput)
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::operation::add_tags::AddTagsError)
     pub fn add_tags(&self) -> crate::operation::add_tags::builders::AddTagsFluentBuilder {

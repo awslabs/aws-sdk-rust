@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePipeline`](crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::set_name): <p>The name of the pipeline to be deleted.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::set_name): <p>The name of the pipeline to be deleted.</p>
     /// - On success, responds with [`DeletePipelineOutput`](crate::operation::delete_pipeline::DeletePipelineOutput)
     /// - On failure, responds with [`SdkError<DeletePipelineError>`](crate::operation::delete_pipeline::DeletePipelineError)
     pub fn delete_pipeline(&self) -> crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHumanTaskUi`](crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`human_task_ui_name(impl ::std::convert::Into<String>)`](crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder::human_task_ui_name) / [`set_human_task_ui_name(Option<String>)`](crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder::set_human_task_ui_name): <p>The name of the human task user interface (worker task template) you want information about.</p>
+    ///   - [`human_task_ui_name(impl Into<String>)`](crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder::human_task_ui_name) / [`set_human_task_ui_name(Option<String>)`](crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder::set_human_task_ui_name): <p>The name of the human task user interface (worker task template) you want information about.</p>
     /// - On success, responds with [`DescribeHumanTaskUiOutput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput) with field(s):
     ///   - [`human_task_ui_arn(Option<String>)`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput::human_task_ui_arn): <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
     ///   - [`human_task_ui_name(Option<String>)`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput::human_task_ui_name): <p>The name of the human task user interface (worker task template).</p>

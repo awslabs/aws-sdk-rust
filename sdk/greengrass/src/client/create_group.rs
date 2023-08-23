@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateGroup`](crate::operation::create_group::builders::CreateGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`amzn_client_token(impl ::std::convert::Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::amzn_client_token) / [`set_amzn_client_token(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`amzn_client_token(impl Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::amzn_client_token) / [`set_amzn_client_token(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_amzn_client_token): A client token used to correlate requests and responses.
     ///   - [`initial_version(GroupVersion)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::initial_version) / [`set_initial_version(Option<GroupVersion>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_initial_version): Information about the initial version of the group.
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_name): The name of the group.
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_tags): Tag(s) to add to the new resource.
+    ///   - [`name(impl Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_name): The name of the group.
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_tags): Tag(s) to add to the new resource.
     /// - On success, responds with [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_group::CreateGroupOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::create_group::CreateGroupOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.

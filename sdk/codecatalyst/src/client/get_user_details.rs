@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUserDetails`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::set_id): <p>The system-generated unique ID of the user. </p>
-    ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::set_user_name): <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::set_id): <p>The system-generated unique ID of the user. </p>
+    ///   - [`user_name(impl Into<String>)`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::get_user_details::builders::GetUserDetailsFluentBuilder::set_user_name): <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
     /// - On success, responds with [`GetUserDetailsOutput`](crate::operation::get_user_details::GetUserDetailsOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::get_user_details::GetUserDetailsOutput::user_id): <p>The system-generated unique ID of the user.</p>
     ///   - [`user_name(Option<String>)`](crate::operation::get_user_details::GetUserDetailsOutput::user_name): <p>The name of the user as displayed in Amazon CodeCatalyst.</p>

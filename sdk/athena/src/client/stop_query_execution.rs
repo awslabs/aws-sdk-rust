@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopQueryExecution`](crate::operation::stop_query_execution::builders::StopQueryExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_execution_id(impl ::std::convert::Into<String>)`](crate::operation::stop_query_execution::builders::StopQueryExecutionFluentBuilder::query_execution_id) / [`set_query_execution_id(Option<String>)`](crate::operation::stop_query_execution::builders::StopQueryExecutionFluentBuilder::set_query_execution_id): <p>The unique ID of the query execution to stop.</p>
+    ///   - [`query_execution_id(impl Into<String>)`](crate::operation::stop_query_execution::builders::StopQueryExecutionFluentBuilder::query_execution_id) / [`set_query_execution_id(Option<String>)`](crate::operation::stop_query_execution::builders::StopQueryExecutionFluentBuilder::set_query_execution_id): <p>The unique ID of the query execution to stop.</p>
     /// - On success, responds with [`StopQueryExecutionOutput`](crate::operation::stop_query_execution::StopQueryExecutionOutput)
     /// - On failure, responds with [`SdkError<StopQueryExecutionError>`](crate::operation::stop_query_execution::StopQueryExecutionError)
     pub fn stop_query_execution(&self) -> crate::operation::stop_query_execution::builders::StopQueryExecutionFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ImportCatalogToGlue`](crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_id(impl ::std::convert::Into<String>)`](crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueFluentBuilder::set_catalog_id): <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
+    ///   - [`catalog_id(impl Into<String>)`](crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueFluentBuilder::set_catalog_id): <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
     /// - On success, responds with [`ImportCatalogToGlueOutput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueOutput)
     /// - On failure, responds with [`SdkError<ImportCatalogToGlueError>`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueError)
     pub fn import_catalog_to_glue(&self) -> crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteExternalModel`](crate::operation::delete_external_model::builders::DeleteExternalModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_endpoint(impl ::std::convert::Into<String>)`](crate::operation::delete_external_model::builders::DeleteExternalModelFluentBuilder::model_endpoint) / [`set_model_endpoint(Option<String>)`](crate::operation::delete_external_model::builders::DeleteExternalModelFluentBuilder::set_model_endpoint): <p>The endpoint of the Amazon Sagemaker model to delete.</p>
+    ///   - [`model_endpoint(impl Into<String>)`](crate::operation::delete_external_model::builders::DeleteExternalModelFluentBuilder::model_endpoint) / [`set_model_endpoint(Option<String>)`](crate::operation::delete_external_model::builders::DeleteExternalModelFluentBuilder::set_model_endpoint): <p>The endpoint of the Amazon Sagemaker model to delete.</p>
     /// - On success, responds with [`DeleteExternalModelOutput`](crate::operation::delete_external_model::DeleteExternalModelOutput)
     /// - On failure, responds with [`SdkError<DeleteExternalModelError>`](crate::operation::delete_external_model::DeleteExternalModelError)
     pub fn delete_external_model(&self) -> crate::operation::delete_external_model::builders::DeleteExternalModelFluentBuilder {

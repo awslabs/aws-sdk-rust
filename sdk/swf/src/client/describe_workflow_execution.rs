@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWorkflowExecution`](crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl ::std::convert::Into<String>)`](crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder::set_domain): <p>The name of the domain containing the workflow execution.</p>
+    ///   - [`domain(impl Into<String>)`](crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder::set_domain): <p>The name of the domain containing the workflow execution.</p>
     ///   - [`execution(WorkflowExecution)`](crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder::execution) / [`set_execution(Option<WorkflowExecution>)`](crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionFluentBuilder::set_execution): <p>The workflow execution to describe.</p>
     /// - On success, responds with [`DescribeWorkflowExecutionOutput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionOutput) with field(s):
     ///   - [`execution_info(Option<WorkflowExecutionInfo>)`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionOutput::execution_info): <p>Information about the workflow execution.</p>

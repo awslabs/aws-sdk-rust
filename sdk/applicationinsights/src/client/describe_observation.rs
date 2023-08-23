@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeObservation`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`observation_id(impl ::std::convert::Into<String>)`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::observation_id) / [`set_observation_id(Option<String>)`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::set_observation_id): <p>The ID of the observation.</p>
+    ///   - [`observation_id(impl Into<String>)`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::observation_id) / [`set_observation_id(Option<String>)`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::set_observation_id): <p>The ID of the observation.</p>
     /// - On success, responds with [`DescribeObservationOutput`](crate::operation::describe_observation::DescribeObservationOutput) with field(s):
     ///   - [`observation(Option<Observation>)`](crate::operation::describe_observation::DescribeObservationOutput::observation): <p>Information about the observation.</p>
     /// - On failure, responds with [`SdkError<DescribeObservationError>`](crate::operation::describe_observation::DescribeObservationError)

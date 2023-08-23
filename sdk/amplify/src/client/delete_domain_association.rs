@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDomainAssociation`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::set_app_id): <p> The unique id for an Amplify app. </p>
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::set_domain_name): <p> The name of the domain. </p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::set_app_id): <p> The unique id for an Amplify app. </p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_domain_association::builders::DeleteDomainAssociationFluentBuilder::set_domain_name): <p> The name of the domain. </p>
     /// - On success, responds with [`DeleteDomainAssociationOutput`](crate::operation::delete_domain_association::DeleteDomainAssociationOutput) with field(s):
     ///   - [`domain_association(Option<DomainAssociation>)`](crate::operation::delete_domain_association::DeleteDomainAssociationOutput::domain_association): <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     /// - On failure, responds with [`SdkError<DeleteDomainAssociationError>`](crate::operation::delete_domain_association::DeleteDomainAssociationError)

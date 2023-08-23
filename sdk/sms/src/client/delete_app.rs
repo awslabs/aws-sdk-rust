@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApp`](crate::operation::delete_app::builders::DeleteAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_app_id): <p>The ID of the application.</p>
     ///   - [`force_stop_app_replication(bool)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::force_stop_app_replication) / [`set_force_stop_app_replication(Option<bool>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_force_stop_app_replication): <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     ///   - [`force_terminate_app(bool)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::force_terminate_app) / [`set_force_terminate_app(Option<bool>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_force_terminate_app): <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     /// - On success, responds with [`DeleteAppOutput`](crate::operation::delete_app::DeleteAppOutput)

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`registry_id(RegistryId)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::set_registry_id): <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::set_description): <p>A description of the registry. If description is not provided, this field will not be updated.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::set_description): <p>A description of the registry. If description is not provided, this field will not be updated.</p>
     /// - On success, responds with [`UpdateRegistryOutput`](crate::operation::update_registry::UpdateRegistryOutput) with field(s):
     ///   - [`registry_name(Option<String>)`](crate::operation::update_registry::UpdateRegistryOutput::registry_name): <p>The name of the updated registry.</p>
     ///   - [`registry_arn(Option<String>)`](crate::operation::update_registry::UpdateRegistryOutput::registry_arn): <p>The Amazon Resource name (ARN) of the updated registry.</p>

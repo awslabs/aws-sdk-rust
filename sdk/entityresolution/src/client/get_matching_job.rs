@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMatchingJob`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_name(impl ::std::convert::Into<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::set_workflow_name): <p>The name of the workflow.</p>
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::set_job_id): <p>The ID of the job.</p>
+    ///   - [`workflow_name(impl Into<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::set_workflow_name): <p>The name of the workflow.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::set_job_id): <p>The ID of the job.</p>
     /// - On success, responds with [`GetMatchingJobOutput`](crate::operation::get_matching_job::GetMatchingJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::get_matching_job::GetMatchingJobOutput::job_id): <p>The ID of the job.</p>
     ///   - [`status(Option<JobStatus>)`](crate::operation::get_matching_job::GetMatchingJobOutput::status): <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>

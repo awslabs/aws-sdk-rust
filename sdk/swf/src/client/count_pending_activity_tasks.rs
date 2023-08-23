@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CountPendingActivityTasks`](crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl ::std::convert::Into<String>)`](crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder::set_domain): <p>The name of the domain that contains the task list.</p>
+    ///   - [`domain(impl Into<String>)`](crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder::set_domain): <p>The name of the domain that contains the task list.</p>
     ///   - [`task_list(TaskList)`](crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder::task_list) / [`set_task_list(Option<TaskList>)`](crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder::set_task_list): <p>The name of the task list.</p>
     /// - On success, responds with [`CountPendingActivityTasksOutput`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput) with field(s):
     ///   - [`count(i32)`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput::count): <p>The number of tasks in the task list.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetHypervisor`](crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hypervisor_arn(impl ::std::convert::Into<String>)`](crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     /// - On success, responds with [`GetHypervisorOutput`](crate::operation::get_hypervisor::GetHypervisorOutput) with field(s):
     ///   - [`hypervisor(Option<HypervisorDetails>)`](crate::operation::get_hypervisor::GetHypervisorOutput::hypervisor): <p>Details about the requested hypervisor.</p>
     /// - On failure, responds with [`SdkError<GetHypervisorError>`](crate::operation::get_hypervisor::GetHypervisorError)

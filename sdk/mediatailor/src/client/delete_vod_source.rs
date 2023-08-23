@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVodSource`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_location_name(impl ::std::convert::Into<String>)`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder::set_source_location_name): <p>The name of the source location associated with this VOD Source.</p>
-    ///   - [`vod_source_name(impl ::std::convert::Into<String>)`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder::set_vod_source_name): <p>The name of the VOD source.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder::set_source_location_name): <p>The name of the source location associated with this VOD Source.</p>
+    ///   - [`vod_source_name(impl Into<String>)`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder::set_vod_source_name): <p>The name of the VOD source.</p>
     /// - On success, responds with [`DeleteVodSourceOutput`](crate::operation::delete_vod_source::DeleteVodSourceOutput)
     /// - On failure, responds with [`SdkError<DeleteVodSourceError>`](crate::operation::delete_vod_source::DeleteVodSourceError)
     pub fn delete_vod_source(&self) -> crate::operation::delete_vod_source::builders::DeleteVodSourceFluentBuilder {

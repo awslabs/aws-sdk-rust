@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUser`](crate::operation::delete_user::builders::DeleteUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_arn): <p>The ARN of the user to delete in the organization. Required.</p>
-    ///   - [`enrollment_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::enrollment_id) / [`set_enrollment_id(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_enrollment_id): <p>The ARN of the user's enrollment in the organization. Required.</p>
+    ///   - [`user_arn(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_arn): <p>The ARN of the user to delete in the organization. Required.</p>
+    ///   - [`enrollment_id(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::enrollment_id) / [`set_enrollment_id(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_enrollment_id): <p>The ARN of the user's enrollment in the organization. Required.</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput)
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::operation::delete_user::DeleteUserError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

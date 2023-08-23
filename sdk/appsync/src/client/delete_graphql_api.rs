@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGraphqlApi`](crate::operation::delete_graphql_api::builders::DeleteGraphqlApiFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_graphql_api::builders::DeleteGraphqlApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_graphql_api::builders::DeleteGraphqlApiFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_graphql_api::builders::DeleteGraphqlApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_graphql_api::builders::DeleteGraphqlApiFluentBuilder::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`DeleteGraphqlApiOutput`](crate::operation::delete_graphql_api::DeleteGraphqlApiOutput)
     /// - On failure, responds with [`SdkError<DeleteGraphqlApiError>`](crate::operation::delete_graphql_api::DeleteGraphqlApiError)
     pub fn delete_graphql_api(&self) -> crate::operation::delete_graphql_api::builders::DeleteGraphqlApiFluentBuilder {

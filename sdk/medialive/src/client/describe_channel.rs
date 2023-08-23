@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeChannel`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_id(impl ::std::convert::Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_id): channel ID
+    ///   - [`channel_id(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_id): channel ID
     /// - On success, responds with [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::arn): The unique arn of the channel.
     ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::operation::describe_channel::DescribeChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDataSet`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_set_id(impl ::std::convert::Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_data_set_id): <p>The unique identifier for a data set.</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_description): <p>The description for the data set.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_name): <p>The name of the data set.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_description): <p>The description for the data set.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_name): <p>The name of the data set.</p>
     /// - On success, responds with [`UpdateDataSetOutput`](crate::operation::update_data_set::UpdateDataSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::update_data_set::UpdateDataSetOutput::arn): <p>The ARN for the data set.</p>
     ///   - [`asset_type(Option<AssetType>)`](crate::operation::update_data_set::UpdateDataSetOutput::asset_type): <p>The type of asset that is added to a data set.</p>

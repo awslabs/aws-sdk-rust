@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutEvents`](crate::operation::put_events::builders::PutEventsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::put_events::builders::PutEventsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::put_events::builders::PutEventsFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::put_events::builders::PutEventsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::put_events::builders::PutEventsFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     ///   - [`events_request(EventsRequest)`](crate::operation::put_events::builders::PutEventsFluentBuilder::events_request) / [`set_events_request(Option<EventsRequest>)`](crate::operation::put_events::builders::PutEventsFluentBuilder::set_events_request): <p>Specifies a batch of events to process.</p>
     /// - On success, responds with [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput) with field(s):
     ///   - [`events_response(Option<EventsResponse>)`](crate::operation::put_events::PutEventsOutput::events_response): <p>Provides information about endpoints and the events that they're associated with.</p>

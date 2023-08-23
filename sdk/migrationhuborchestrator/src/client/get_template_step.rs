@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplateStep`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_id): <p>The ID of the step.</p>
-    ///   - [`template_id(impl ::std::convert::Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_template_id): <p>The ID of the template.</p>
-    ///   - [`step_group_id(impl ::std::convert::Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_step_group_id): <p>The ID of the step group.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_id): <p>The ID of the step.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_template_id): <p>The ID of the template.</p>
+    ///   - [`step_group_id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_step_group_id): <p>The ID of the step group.</p>
     /// - On success, responds with [`GetTemplateStepOutput`](crate::operation::get_template_step::GetTemplateStepOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_template_step::GetTemplateStepOutput::id): <p>The ID of the step.</p>
     ///   - [`step_group_id(Option<String>)`](crate::operation::get_template_step::GetTemplateStepOutput::step_group_id): <p>The ID of the step group.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApiDestination`](crate::operation::describe_api_destination::builders::DescribeApiDestinationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_api_destination::builders::DescribeApiDestinationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_api_destination::builders::DescribeApiDestinationFluentBuilder::set_name): <p>The name of the API destination to retrieve.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_api_destination::builders::DescribeApiDestinationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_api_destination::builders::DescribeApiDestinationFluentBuilder::set_name): <p>The name of the API destination to retrieve.</p>
     /// - On success, responds with [`DescribeApiDestinationOutput`](crate::operation::describe_api_destination::DescribeApiDestinationOutput) with field(s):
     ///   - [`api_destination_arn(Option<String>)`](crate::operation::describe_api_destination::DescribeApiDestinationOutput::api_destination_arn): <p>The ARN of the API destination retrieved.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_api_destination::DescribeApiDestinationOutput::name): <p>The name of the API destination retrieved.</p>

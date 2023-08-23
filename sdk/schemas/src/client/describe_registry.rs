@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRegistry`](crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`registry_name(impl ::std::convert::Into<String>)`](crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`DescribeRegistryOutput`](crate::operation::describe_registry::DescribeRegistryOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::operation::describe_registry::DescribeRegistryOutput::description): <p>The description of the registry.</p>
     ///   - [`registry_arn(Option<String>)`](crate::operation::describe_registry::DescribeRegistryOutput::registry_arn): <p>The ARN of the registry.</p>

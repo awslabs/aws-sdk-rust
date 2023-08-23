@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::set_name): <p>The name of the outcome or outcomes to get.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::set_next_token): <p>The next page token for the request. </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::set_name): <p>The name of the outcome or outcomes to get.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::set_next_token): <p>The next page token for the request. </p>
     ///   - [`max_results(i32)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::set_max_results): <p>The maximum number of objects to return for the request. </p>
     /// - On success, responds with [`GetOutcomesOutput`](crate::operation::get_outcomes::GetOutcomesOutput) with field(s):
     ///   - [`outcomes(Option<Vec<Outcome>>)`](crate::operation::get_outcomes::GetOutcomesOutput::outcomes): <p>The outcomes. </p>

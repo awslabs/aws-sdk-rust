@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEphemeris`](crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ephemeris_id(impl ::std::convert::Into<String>)`](crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder::ephemeris_id) / [`set_ephemeris_id(Option<String>)`](crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder::set_ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    ///   - [`ephemeris_id(impl Into<String>)`](crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder::ephemeris_id) / [`set_ephemeris_id(Option<String>)`](crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder::set_ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
     /// - On success, responds with [`DescribeEphemerisOutput`](crate::operation::describe_ephemeris::DescribeEphemerisOutput) with field(s):
     ///   - [`ephemeris_id(Option<String>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
     ///   - [`satellite_id(Option<String>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::satellite_id): <p>The AWS Ground Station satellite ID associated with ephemeris.</p>

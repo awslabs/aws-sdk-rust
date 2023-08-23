@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ReadPreset`](crate::operation::read_preset::builders::ReadPresetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::read_preset::builders::ReadPresetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::read_preset::builders::ReadPresetFluentBuilder::set_id): <p>The identifier of the preset for which you want to get detailed information.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::read_preset::builders::ReadPresetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::read_preset::builders::ReadPresetFluentBuilder::set_id): <p>The identifier of the preset for which you want to get detailed information.</p>
     /// - On success, responds with [`ReadPresetOutput`](crate::operation::read_preset::ReadPresetOutput) with field(s):
     ///   - [`preset(Option<Preset>)`](crate::operation::read_preset::ReadPresetOutput::preset): <p>A section of the response body that provides information about the preset.</p>
     /// - On failure, responds with [`SdkError<ReadPresetError>`](crate::operation::read_preset::ReadPresetError)

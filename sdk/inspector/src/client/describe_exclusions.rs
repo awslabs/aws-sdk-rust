@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExclusions`](crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`exclusion_arns(Vec<String>)`](crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder::exclusion_arns) / [`set_exclusion_arns(Option<Vec<String>>)`](crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder::set_exclusion_arns): <p>The list of ARNs that specify the exclusions that you want to describe.</p>
+    ///   - [`exclusion_arns(impl Into<String>)`](crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder::exclusion_arns) / [`set_exclusion_arns(Option<Vec<String>>)`](crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder::set_exclusion_arns): <p>The list of ARNs that specify the exclusions that you want to describe.</p>
     ///   - [`locale(Locale)`](crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder::locale) / [`set_locale(Option<Locale>)`](crate::operation::describe_exclusions::builders::DescribeExclusionsFluentBuilder::set_locale): <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     /// - On success, responds with [`DescribeExclusionsOutput`](crate::operation::describe_exclusions::DescribeExclusionsOutput) with field(s):
     ///   - [`exclusions(Option<HashMap<String, Exclusion>>)`](crate::operation::describe_exclusions::DescribeExclusionsOutput::exclusions): <p>Information about the exclusions.</p>

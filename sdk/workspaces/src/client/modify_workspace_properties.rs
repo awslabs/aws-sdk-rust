@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ModifyWorkspaceProperties`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
     ///   - [`workspace_properties(WorkspaceProperties)`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::workspace_properties) / [`set_workspace_properties(Option<WorkspaceProperties>)`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::set_workspace_properties): <p>The properties of the WorkSpace.</p>
     /// - On success, responds with [`ModifyWorkspacePropertiesOutput`](crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesOutput)
     /// - On failure, responds with [`SdkError<ModifyWorkspacePropertiesError>`](crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError)

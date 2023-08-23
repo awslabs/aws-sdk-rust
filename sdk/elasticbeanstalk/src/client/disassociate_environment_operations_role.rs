@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateEnvironmentOperationsRole`](crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder::set_environment_name): <p>The name of the environment from which to disassociate the operations role.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder::set_environment_name): <p>The name of the environment from which to disassociate the operations role.</p>
     /// - On success, responds with [`DisassociateEnvironmentOperationsRoleOutput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput)
     /// - On failure, responds with [`SdkError<DisassociateEnvironmentOperationsRoleError>`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleError)
     pub fn disassociate_environment_operations_role(

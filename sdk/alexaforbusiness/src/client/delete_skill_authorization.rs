@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSkillAuthorization`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`skill_id(impl ::std::convert::Into<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::set_skill_id): <p>The unique identifier of a skill.</p>
-    ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::set_room_arn): <p>The room that the skill is authorized for.</p>
+    ///   - [`skill_id(impl Into<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::set_skill_id): <p>The unique identifier of a skill.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::set_room_arn): <p>The room that the skill is authorized for.</p>
     /// - On success, responds with [`DeleteSkillAuthorizationOutput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput)
     /// - On failure, responds with [`SdkError<DeleteSkillAuthorizationError>`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

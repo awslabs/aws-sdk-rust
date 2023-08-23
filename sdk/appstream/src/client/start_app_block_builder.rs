@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartAppBlockBuilder`](crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder::set_name): <p>The name of the app block builder.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder::set_name): <p>The name of the app block builder.</p>
     /// - On success, responds with [`StartAppBlockBuilderOutput`](crate::operation::start_app_block_builder::StartAppBlockBuilderOutput) with field(s):
     ///   - [`app_block_builder(Option<AppBlockBuilder>)`](crate::operation::start_app_block_builder::StartAppBlockBuilderOutput::app_block_builder): <p>Describes an app block builder.</p>
     /// - On failure, responds with [`SdkError<StartAppBlockBuilderError>`](crate::operation::start_app_block_builder::StartAppBlockBuilderError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateJobForDevices`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_ids(Vec<String>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::device_ids) / [`set_device_ids(Option<Vec<String>>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::set_device_ids): <p>ID of target device.</p>
+    ///   - [`device_ids(impl Into<String>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::device_ids) / [`set_device_ids(Option<Vec<String>>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::set_device_ids): <p>ID of target device.</p>
     ///   - [`device_job_config(DeviceJobConfig)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::device_job_config) / [`set_device_job_config(Option<DeviceJobConfig>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::set_device_job_config): <p>Configuration settings for a software update job.</p>
     ///   - [`job_type(JobType)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::job_type) / [`set_job_type(Option<JobType>)`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::set_job_type): <p>The type of job to run.</p>
     /// - On success, responds with [`CreateJobForDevicesOutput`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput) with field(s):

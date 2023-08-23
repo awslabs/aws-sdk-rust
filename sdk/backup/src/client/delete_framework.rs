@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFramework`](crate::operation::delete_framework::builders::DeleteFrameworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`framework_name(impl ::std::convert::Into<String>)`](crate::operation::delete_framework::builders::DeleteFrameworkFluentBuilder::framework_name) / [`set_framework_name(Option<String>)`](crate::operation::delete_framework::builders::DeleteFrameworkFluentBuilder::set_framework_name): <p>The unique name of a framework.</p>
+    ///   - [`framework_name(impl Into<String>)`](crate::operation::delete_framework::builders::DeleteFrameworkFluentBuilder::framework_name) / [`set_framework_name(Option<String>)`](crate::operation::delete_framework::builders::DeleteFrameworkFluentBuilder::set_framework_name): <p>The unique name of a framework.</p>
     /// - On success, responds with [`DeleteFrameworkOutput`](crate::operation::delete_framework::DeleteFrameworkOutput)
     /// - On failure, responds with [`SdkError<DeleteFrameworkError>`](crate::operation::delete_framework::DeleteFrameworkError)
     pub fn delete_framework(&self) -> crate::operation::delete_framework::builders::DeleteFrameworkFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListLunaClients`](crate::operation::list_luna_clients::builders::ListLunaClientsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_luna_clients::builders::ListLunaClientsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_luna_clients::builders::ListLunaClientsFluentBuilder::set_next_token): <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_luna_clients::builders::ListLunaClientsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_luna_clients::builders::ListLunaClientsFluentBuilder::set_next_token): <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
     /// - On success, responds with [`ListLunaClientsOutput`](crate::operation::list_luna_clients::ListLunaClientsOutput) with field(s):
     ///   - [`client_list(Option<Vec<String>>)`](crate::operation::list_luna_clients::ListLunaClientsOutput::client_list): <p>The list of clients.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_luna_clients::ListLunaClientsOutput::next_token): <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>

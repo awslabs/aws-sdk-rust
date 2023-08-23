@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_environment_identifier): <p>The ID of the environment. </p>
-    ///   - [`application_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_identifier): <p>The ID of the application.</p>
+    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_environment_identifier): <p>The ID of the environment. </p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_identifier): <p>The ID of the application.</p>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::name): <p>The name of the application.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the application.</p>

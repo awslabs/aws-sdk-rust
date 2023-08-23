@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConnectionStatus`](crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target(impl ::std::convert::Into<String>)`](crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder::set_target): <p>The managed node ID.</p>
+    ///   - [`target(impl Into<String>)`](crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::get_connection_status::builders::GetConnectionStatusFluentBuilder::set_target): <p>The managed node ID.</p>
     /// - On success, responds with [`GetConnectionStatusOutput`](crate::operation::get_connection_status::GetConnectionStatusOutput) with field(s):
     ///   - [`target(Option<String>)`](crate::operation::get_connection_status::GetConnectionStatusOutput::target): <p>The ID of the managed node to check connection status. </p>
     ///   - [`status(Option<ConnectionStatus>)`](crate::operation::get_connection_status::GetConnectionStatusOutput::status): <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>

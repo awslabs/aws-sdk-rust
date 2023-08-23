@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateEncryptionKey`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`kms_key_id(impl ::std::convert::Into<String>)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::set_kms_key_id): <p>A KMS key ID for the encryption key.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::set_kms_key_id): <p>A KMS key ID for the encryption key.</p>
     ///   - [`scan_type(ScanType)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::scan_type) / [`set_scan_type(Option<ScanType>)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::set_scan_type): <p>The scan type for the encryption key.</p>
     ///   - [`resource_type(ResourceType)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::update_encryption_key::builders::UpdateEncryptionKeyFluentBuilder::set_resource_type): <p>The resource type for the encryption key.</p>
     /// - On success, responds with [`UpdateEncryptionKeyOutput`](crate::operation::update_encryption_key::UpdateEncryptionKeyOutput)

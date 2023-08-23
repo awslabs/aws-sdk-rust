@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAssessmentRuns`](crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_run_arns(Vec<String>)`](crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsFluentBuilder::assessment_run_arns) / [`set_assessment_run_arns(Option<Vec<String>>)`](crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsFluentBuilder::set_assessment_run_arns): <p>The ARN that specifies the assessment run that you want to describe.</p>
+    ///   - [`assessment_run_arns(impl Into<String>)`](crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsFluentBuilder::assessment_run_arns) / [`set_assessment_run_arns(Option<Vec<String>>)`](crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsFluentBuilder::set_assessment_run_arns): <p>The ARN that specifies the assessment run that you want to describe.</p>
     /// - On success, responds with [`DescribeAssessmentRunsOutput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput) with field(s):
     ///   - [`assessment_runs(Option<Vec<AssessmentRun>>)`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput::assessment_runs): <p>Information about the assessment run.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput::failed_items): <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>

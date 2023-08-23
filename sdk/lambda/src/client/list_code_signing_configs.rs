@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl ::std::convert::Into<String>)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::set_marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`marker(impl Into<String>)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::set_marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     ///   - [`max_items(i32)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::set_max_items): <p>Maximum number of items to return.</p>
     /// - On success, responds with [`ListCodeSigningConfigsOutput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>

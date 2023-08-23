@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartReportCreation`](crate::operation::start_report_creation::builders::StartReportCreationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`s3_bucket(impl ::std::convert::Into<String>)`](crate::operation::start_report_creation::builders::StartReportCreationFluentBuilder::s3_bucket) / [`set_s3_bucket(Option<String>)`](crate::operation::start_report_creation::builders::StartReportCreationFluentBuilder::set_s3_bucket): <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>  <p> <code>awsexamplebucket</code> </p>  <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    ///   - [`s3_bucket(impl Into<String>)`](crate::operation::start_report_creation::builders::StartReportCreationFluentBuilder::s3_bucket) / [`set_s3_bucket(Option<String>)`](crate::operation::start_report_creation::builders::StartReportCreationFluentBuilder::set_s3_bucket): <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>  <p> <code>awsexamplebucket</code> </p>  <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
     /// - On success, responds with [`StartReportCreationOutput`](crate::operation::start_report_creation::StartReportCreationOutput)
     /// - On failure, responds with [`SdkError<StartReportCreationError>`](crate::operation::start_report_creation::StartReportCreationError)
     pub fn start_report_creation(&self) -> crate::operation::start_report_creation::builders::StartReportCreationFluentBuilder {

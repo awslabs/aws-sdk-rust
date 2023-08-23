@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConfigurationSet`](crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl ::std::convert::Into<String>)`](crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::set_configuration_set_name): <p>The name of the configuration set.</p>
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::set_configuration_set_name): <p>The name of the configuration set.</p>
     /// - On success, responds with [`GetConfigurationSetOutput`](crate::operation::get_configuration_set::GetConfigurationSetOutput) with field(s):
     ///   - [`configuration_set_name(Option<String>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::configuration_set_name): <p>The name of the configuration set.</p>
     ///   - [`tracking_options(Option<TrackingOptions>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::tracking_options): <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetParameter`](crate::operation::get_parameter::builders::GetParameterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_parameter::builders::GetParameterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_parameter::builders::GetParameterFluentBuilder::set_name): <p>The name of the parameter you want to query.</p>  <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_parameter::builders::GetParameterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_parameter::builders::GetParameterFluentBuilder::set_name): <p>The name of the parameter you want to query.</p>  <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     ///   - [`with_decryption(bool)`](crate::operation::get_parameter::builders::GetParameterFluentBuilder::with_decryption) / [`set_with_decryption(Option<bool>)`](crate::operation::get_parameter::builders::GetParameterFluentBuilder::set_with_decryption): <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     /// - On success, responds with [`GetParameterOutput`](crate::operation::get_parameter::GetParameterOutput) with field(s):
     ///   - [`parameter(Option<Parameter>)`](crate::operation::get_parameter::GetParameterOutput::parameter): <p>Information about a parameter.</p>

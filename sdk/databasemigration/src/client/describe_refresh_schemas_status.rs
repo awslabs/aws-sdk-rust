@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRefreshSchemasStatus`](crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusFluentBuilder::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusFluentBuilder::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    ///   - [`endpoint_arn(impl Into<String>)`](crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusFluentBuilder::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::operation::describe_refresh_schemas_status::builders::DescribeRefreshSchemasStatusFluentBuilder::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     /// - On success, responds with [`DescribeRefreshSchemasStatusOutput`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusOutput) with field(s):
     ///   - [`refresh_schemas_status(Option<RefreshSchemasStatus>)`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusOutput::refresh_schemas_status): <p>The status of the schema.</p>
     /// - On failure, responds with [`SdkError<DescribeRefreshSchemasStatusError>`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInsight`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::set_id): <p>The ID of the insight.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::set_id): <p>The ID of the insight.</p>
     /// - On success, responds with [`DeleteInsightOutput`](crate::operation::delete_insight::DeleteInsightOutput)
     /// - On failure, responds with [`SdkError<DeleteInsightError>`](crate::operation::delete_insight::DeleteInsightError)
     pub fn delete_insight(&self) -> crate::operation::delete_insight::builders::DeleteInsightFluentBuilder {

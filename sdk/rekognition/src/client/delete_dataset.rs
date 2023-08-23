@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataset`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_dataset_arn): <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
+    ///   - [`dataset_arn(impl Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_dataset_arn): <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     /// - On success, responds with [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput)
     /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::operation::delete_dataset::DeleteDatasetError)
     pub fn delete_dataset(&self) -> crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder {

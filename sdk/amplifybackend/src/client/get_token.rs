@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetToken`](crate::operation::get_token::builders::GetTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_token::builders::GetTokenFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_token::builders::GetTokenFluentBuilder::set_app_id): <p>The app ID.</p>
-    ///   - [`session_id(impl ::std::convert::Into<String>)`](crate::operation::get_token::builders::GetTokenFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_token::builders::GetTokenFluentBuilder::set_session_id): <p>The session ID.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_token::builders::GetTokenFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_token::builders::GetTokenFluentBuilder::set_app_id): <p>The app ID.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::operation::get_token::builders::GetTokenFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_token::builders::GetTokenFluentBuilder::set_session_id): <p>The session ID.</p>
     /// - On success, responds with [`GetTokenOutput`](crate::operation::get_token::GetTokenOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::operation::get_token::GetTokenOutput::app_id): <p>The app ID.</p>
     ///   - [`challenge_code(Option<String>)`](crate::operation::get_token::GetTokenOutput::challenge_code): <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReusableDelegationSet`](crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetFluentBuilder::set_id): <p>The ID of the reusable delegation set that you want to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetFluentBuilder::set_id): <p>The ID of the reusable delegation set that you want to delete.</p>
     /// - On success, responds with [`DeleteReusableDelegationSetOutput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput)
     /// - On failure, responds with [`SdkError<DeleteReusableDelegationSetError>`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError)
     pub fn delete_reusable_delegation_set(

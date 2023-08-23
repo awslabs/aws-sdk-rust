@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ActivateEventSource`](crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder::set_name): <p>The name of the partner event source to activate.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder::set_name): <p>The name of the partner event source to activate.</p>
     /// - On success, responds with [`ActivateEventSourceOutput`](crate::operation::activate_event_source::ActivateEventSourceOutput)
     /// - On failure, responds with [`SdkError<ActivateEventSourceError>`](crate::operation::activate_event_source::ActivateEventSourceError)
     pub fn activate_event_source(&self) -> crate::operation::activate_event_source::builders::ActivateEventSourceFluentBuilder {

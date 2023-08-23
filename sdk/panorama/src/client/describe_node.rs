@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNode`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`node_id(impl ::std::convert::Into<String>)`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder::node_id) / [`set_node_id(Option<String>)`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder::set_node_id): <p>The node's ID.</p>
-    ///   - [`owner_account(impl ::std::convert::Into<String>)`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder::owner_account) / [`set_owner_account(Option<String>)`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder::set_owner_account): <p>The account ID of the node's owner.</p>
+    ///   - [`node_id(impl Into<String>)`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder::node_id) / [`set_node_id(Option<String>)`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder::set_node_id): <p>The node's ID.</p>
+    ///   - [`owner_account(impl Into<String>)`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder::owner_account) / [`set_owner_account(Option<String>)`](crate::operation::describe_node::builders::DescribeNodeFluentBuilder::set_owner_account): <p>The account ID of the node's owner.</p>
     /// - On success, responds with [`DescribeNodeOutput`](crate::operation::describe_node::DescribeNodeOutput) with field(s):
     ///   - [`node_id(Option<String>)`](crate::operation::describe_node::DescribeNodeOutput::node_id): <p>The node's ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_node::DescribeNodeOutput::name): <p>The node's name.</p>

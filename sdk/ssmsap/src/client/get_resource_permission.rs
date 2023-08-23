@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`action_type(PermissionActionType)`](crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder::action_type) / [`set_action_type(Option<PermissionActionType>)`](crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder::set_action_type): <p></p>
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_permission::builders::GetResourcePermissionFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`GetResourcePermissionOutput`](crate::operation::get_resource_permission::GetResourcePermissionOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_resource_permission::GetResourcePermissionOutput::policy): <p></p>
     /// - On failure, responds with [`SdkError<GetResourcePermissionError>`](crate::operation::get_resource_permission::GetResourcePermissionError)

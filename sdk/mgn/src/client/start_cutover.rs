@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartCutover`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_i_ds(Vec<String>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::set_source_server_i_ds): <p>Start Cutover by Source Server IDs.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::set_tags): <p>Start Cutover by Tags.</p>
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::set_account_id): <p>Start Cutover by Account IDs</p>
+    ///   - [`source_server_i_ds(impl Into<String>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::set_source_server_i_ds): <p>Start Cutover by Source Server IDs.</p>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::set_tags): <p>Start Cutover by Tags.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::start_cutover::builders::StartCutoverFluentBuilder::set_account_id): <p>Start Cutover by Account IDs</p>
     /// - On success, responds with [`StartCutoverOutput`](crate::operation::start_cutover::StartCutoverOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::start_cutover::StartCutoverOutput::job): <p>Start Cutover Job response.</p>
     /// - On failure, responds with [`SdkError<StartCutoverError>`](crate::operation::start_cutover::StartCutoverError)

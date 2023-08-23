@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopDeployment`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::set_application_id): <p>The application ID.</p>
-    ///   - [`environment_id(impl ::std::convert::Into<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::set_environment_id): <p>The environment ID.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::set_application_id): <p>The application ID.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::set_environment_id): <p>The environment ID.</p>
     ///   - [`deployment_number(i32)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::deployment_number) / [`set_deployment_number(Option<i32>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::set_deployment_number): <p>The sequence number of the deployment.</p>
     /// - On success, responds with [`StopDeploymentOutput`](crate::operation::stop_deployment::StopDeploymentOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::stop_deployment::StopDeploymentOutput::application_id): <p>The ID of the application that was deployed.</p>

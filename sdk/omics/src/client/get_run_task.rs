@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRunTask`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::set_id): <p>The task's ID.</p>
-    ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::set_task_id): <p>The task's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::set_id): <p>The task's ID.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::set_task_id): <p>The task's ID.</p>
     /// - On success, responds with [`GetRunTaskOutput`](crate::operation::get_run_task::GetRunTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::task_id): <p>The task's ID.</p>
     ///   - [`status(Option<TaskStatus>)`](crate::operation::get_run_task::GetRunTaskOutput::status): <p>The task's status.</p>

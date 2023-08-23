@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTrail`](crate::operation::delete_trail::builders::DeleteTrailFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_trail::builders::DeleteTrailFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_trail::builders::DeleteTrailFluentBuilder::set_name): <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_trail::builders::DeleteTrailFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_trail::builders::DeleteTrailFluentBuilder::set_name): <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// - On success, responds with [`DeleteTrailOutput`](crate::operation::delete_trail::DeleteTrailOutput)
     /// - On failure, responds with [`SdkError<DeleteTrailError>`](crate::operation::delete_trail::DeleteTrailError)
     pub fn delete_trail(&self) -> crate::operation::delete_trail::builders::DeleteTrailFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRoom`](crate::operation::get_room::builders::GetRoomFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::get_room::builders::GetRoomFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::get_room::builders::GetRoomFluentBuilder::set_room_arn): <p>The ARN of the room for which to request details. Required.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::operation::get_room::builders::GetRoomFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::get_room::builders::GetRoomFluentBuilder::set_room_arn): <p>The ARN of the room for which to request details. Required.</p>
     /// - On success, responds with [`GetRoomOutput`](crate::operation::get_room::GetRoomOutput) with field(s):
     ///   - [`room(Option<Room>)`](crate::operation::get_room::GetRoomOutput::room): <p>The details of the room requested.</p>
     /// - On failure, responds with [`SdkError<GetRoomError>`](crate::operation::get_room::GetRoomError)

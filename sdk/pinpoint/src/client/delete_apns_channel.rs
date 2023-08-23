@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApnsChannel`](crate::operation::delete_apns_channel::builders::DeleteApnsChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::delete_apns_channel::builders::DeleteApnsChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_apns_channel::builders::DeleteApnsChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_apns_channel::builders::DeleteApnsChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_apns_channel::builders::DeleteApnsChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteApnsChannelOutput`](crate::operation::delete_apns_channel::DeleteApnsChannelOutput) with field(s):
     ///   - [`apns_channel_response(Option<ApnsChannelResponse>)`](crate::operation::delete_apns_channel::DeleteApnsChannelOutput::apns_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteApnsChannelError>`](crate::operation::delete_apns_channel::DeleteApnsChannelError)

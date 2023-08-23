@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAssignment`](crate::operation::get_assignment::builders::GetAssignmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assignment_id(impl ::std::convert::Into<String>)`](crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::assignment_id) / [`set_assignment_id(Option<String>)`](crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::set_assignment_id): <p>The ID of the Assignment to be retrieved.</p>
+    ///   - [`assignment_id(impl Into<String>)`](crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::assignment_id) / [`set_assignment_id(Option<String>)`](crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::set_assignment_id): <p>The ID of the Assignment to be retrieved.</p>
     /// - On success, responds with [`GetAssignmentOutput`](crate::operation::get_assignment::GetAssignmentOutput) with field(s):
     ///   - [`assignment(Option<Assignment>)`](crate::operation::get_assignment::GetAssignmentOutput::assignment): <p> The assignment. The response includes one Assignment element. </p>
     ///   - [`hit(Option<Hit>)`](crate::operation::get_assignment::GetAssignmentOutput::hit): <p> The HIT associated with this assignment. The response includes one HIT element.</p>

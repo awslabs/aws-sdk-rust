@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeleteClusterSnapshots`](crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifiers(Vec<DeleteClusterSnapshotMessage>)`](crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsFluentBuilder::identifiers) / [`set_identifiers(Option<Vec<DeleteClusterSnapshotMessage>>)`](crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsFluentBuilder::set_identifiers): <p>A list of identifiers for the snapshots that you want to delete.</p>
+    ///   - [`identifiers(DeleteClusterSnapshotMessage)`](crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsFluentBuilder::identifiers) / [`set_identifiers(Option<Vec<DeleteClusterSnapshotMessage>>)`](crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsFluentBuilder::set_identifiers): <p>A list of identifiers for the snapshots that you want to delete.</p>
     /// - On success, responds with [`BatchDeleteClusterSnapshotsOutput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput) with field(s):
     ///   - [`resources(Option<Vec<String>>)`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput::resources): <p>A list of the snapshot identifiers that were deleted. </p>
     ///   - [`errors(Option<Vec<SnapshotErrorMessage>>)`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput::errors): <p>A list of any errors returned.</p>

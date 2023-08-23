@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKeyGroup`](crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder::set_id): <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder::set_id): <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     /// - On success, responds with [`GetKeyGroupOutput`](crate::operation::get_key_group::GetKeyGroupOutput) with field(s):
     ///   - [`key_group(Option<KeyGroup>)`](crate::operation::get_key_group::GetKeyGroupOutput::key_group): <p>The key group.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_key_group::GetKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>

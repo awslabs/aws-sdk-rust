@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetServiceTemplate`](crate::operation::get_service_template::builders::GetServiceTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_service_template::builders::GetServiceTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_service_template::builders::GetServiceTemplateFluentBuilder::set_name): <p>The name of the service template that you want to get detailed data for.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_service_template::builders::GetServiceTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_service_template::builders::GetServiceTemplateFluentBuilder::set_name): <p>The name of the service template that you want to get detailed data for.</p>
     /// - On success, responds with [`GetServiceTemplateOutput`](crate::operation::get_service_template::GetServiceTemplateOutput) with field(s):
     ///   - [`service_template(Option<ServiceTemplate>)`](crate::operation::get_service_template::GetServiceTemplateOutput::service_template): <p>The detailed data of the requested service template.</p>
     /// - On failure, responds with [`SdkError<GetServiceTemplateError>`](crate::operation::get_service_template::GetServiceTemplateError)

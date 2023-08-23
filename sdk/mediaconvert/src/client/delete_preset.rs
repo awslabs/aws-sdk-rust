@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePreset`](crate::operation::delete_preset::builders::DeletePresetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_preset::builders::DeletePresetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_preset::builders::DeletePresetFluentBuilder::set_name): The name of the preset to be deleted.
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_preset::builders::DeletePresetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_preset::builders::DeletePresetFluentBuilder::set_name): The name of the preset to be deleted.
     /// - On success, responds with [`DeletePresetOutput`](crate::operation::delete_preset::DeletePresetOutput)
     /// - On failure, responds with [`SdkError<DeletePresetError>`](crate::operation::delete_preset::DeletePresetError)
     pub fn delete_preset(&self) -> crate::operation::delete_preset::builders::DeletePresetFluentBuilder {

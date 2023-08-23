@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TestConnection`](crate::operation::test_connection::builders::TestConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connector_id(impl ::std::convert::Into<String>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::set_connector_id): <p>The unique identifier for the connector.</p>
+    ///   - [`connector_id(impl Into<String>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::set_connector_id): <p>The unique identifier for the connector.</p>
     /// - On success, responds with [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput) with field(s):
     ///   - [`connector_id(Option<String>)`](crate::operation::test_connection::TestConnectionOutput::connector_id): <p>Returns the identifier of the connector object that you are testing.</p>
     ///   - [`status(Option<String>)`](crate::operation::test_connection::TestConnectionOutput::status): <p>Returns <code>OK</code> for successful test, or <code>ERROR</code> if the test fails.</p>

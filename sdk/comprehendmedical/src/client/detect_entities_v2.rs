@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DetectEntitiesV2`](crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl ::std::convert::Into<String>)`](crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder::set_text): <p>A UTF-8 string containing the clinical content being examined for entities.</p>
+    ///   - [`text(impl Into<String>)`](crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder::set_text): <p>A UTF-8 string containing the clinical content being examined for entities.</p>
     /// - On success, responds with [`DetectEntitiesV2Output`](crate::operation::detect_entities_v2::DetectEntitiesV2Output) with field(s):
     ///   - [`entities(Option<Vec<Entity>>)`](crate::operation::detect_entities_v2::DetectEntitiesV2Output::entities): <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
     ///   - [`unmapped_attributes(Option<Vec<UnmappedAttribute>>)`](crate::operation::detect_entities_v2::DetectEntitiesV2Output::unmapped_attributes): <p>Attributes extracted from the input text that couldn't be related to an entity.</p>

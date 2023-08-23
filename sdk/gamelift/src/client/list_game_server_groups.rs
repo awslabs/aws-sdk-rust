@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`limit(i32)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::set_limit): <p>The game server groups' limit.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::set_next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::set_next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     /// - On success, responds with [`ListGameServerGroupsOutput`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput) with field(s):
     ///   - [`game_server_groups(Option<Vec<GameServerGroup>>)`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput::game_server_groups): <p>The game server groups' game server groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>

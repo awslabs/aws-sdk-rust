@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTapePool`](crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pool_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder::pool_arn) / [`set_pool_arn(Option<String>)`](crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder::set_pool_arn): <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
+    ///   - [`pool_arn(impl Into<String>)`](crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder::pool_arn) / [`set_pool_arn(Option<String>)`](crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder::set_pool_arn): <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
     /// - On success, responds with [`DeleteTapePoolOutput`](crate::operation::delete_tape_pool::DeleteTapePoolOutput) with field(s):
     ///   - [`pool_arn(Option<String>)`](crate::operation::delete_tape_pool::DeleteTapePoolOutput::pool_arn): <p>The Amazon Resource Name (ARN) of the custom tape pool being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTapePoolError>`](crate::operation::delete_tape_pool::DeleteTapePoolError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeployment`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`deployment_id(impl ::std::convert::Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_deployment_id): <p>The deployment ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_deployment_id): <p>The deployment ID.</p>
     /// - On success, responds with [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput) with field(s):
     ///   - [`auto_deployed(Option<bool>)`](crate::operation::get_deployment::GetDeploymentOutput::auto_deployed): <p>Specifies whether a deployment was automatically released.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_deployment::GetDeploymentOutput::created_date): <p>The date and time when the Deployment resource was created.</p>

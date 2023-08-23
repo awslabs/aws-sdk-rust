@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListApps`](crate::operation::list_apps::builders::ListAppsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token): <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token): <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     ///   - [`max_results(i32)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_max_results): <p> The maximum number of records to list in a single response. </p>
     /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
     ///   - [`apps(Option<Vec<App>>)`](crate::operation::list_apps::ListAppsOutput::apps): <p> A list of Amplify apps. </p>

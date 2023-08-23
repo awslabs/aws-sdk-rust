@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRuleset`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::set_name): <p>The name of the ruleset to be described.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::set_name): <p>The name of the ruleset to be described.</p>
     /// - On success, responds with [`DescribeRulesetOutput`](crate::operation::describe_ruleset::DescribeRulesetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::name): <p>The name of the ruleset.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::description): <p>The description of the ruleset.</p>

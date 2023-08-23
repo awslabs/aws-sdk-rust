@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAppBlock`](crate::operation::delete_app_block::builders::DeleteAppBlockFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_app_block::builders::DeleteAppBlockFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_app_block::builders::DeleteAppBlockFluentBuilder::set_name): <p>The name of the app block.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_app_block::builders::DeleteAppBlockFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_app_block::builders::DeleteAppBlockFluentBuilder::set_name): <p>The name of the app block.</p>
     /// - On success, responds with [`DeleteAppBlockOutput`](crate::operation::delete_app_block::DeleteAppBlockOutput)
     /// - On failure, responds with [`SdkError<DeleteAppBlockError>`](crate::operation::delete_app_block::DeleteAppBlockError)
     pub fn delete_app_block(&self) -> crate::operation::delete_app_block::builders::DeleteAppBlockFluentBuilder {

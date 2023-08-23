@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWirelessDeviceImportTask`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::set_id): <p>The identifier of the import task to be updated.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::set_id): <p>The identifier of the import task to be updated.</p>
     ///   - [`sidewalk(SidewalkUpdateImportInfo)`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::sidewalk) / [`set_sidewalk(Option<SidewalkUpdateImportInfo>)`](crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskFluentBuilder::set_sidewalk): <p>The Sidewalk-related parameters of the import task to be updated.</p>
     /// - On success, responds with [`UpdateWirelessDeviceImportTaskOutput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput)
     /// - On failure, responds with [`SdkError<UpdateWirelessDeviceImportTaskError>`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVehicle`](crate::operation::get_vehicle::builders::GetVehicleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vehicle_name(impl ::std::convert::Into<String>)`](crate::operation::get_vehicle::builders::GetVehicleFluentBuilder::vehicle_name) / [`set_vehicle_name(Option<String>)`](crate::operation::get_vehicle::builders::GetVehicleFluentBuilder::set_vehicle_name): <p> The ID of the vehicle to retrieve information about. </p>
+    ///   - [`vehicle_name(impl Into<String>)`](crate::operation::get_vehicle::builders::GetVehicleFluentBuilder::vehicle_name) / [`set_vehicle_name(Option<String>)`](crate::operation::get_vehicle::builders::GetVehicleFluentBuilder::set_vehicle_name): <p> The ID of the vehicle to retrieve information about. </p>
     /// - On success, responds with [`GetVehicleOutput`](crate::operation::get_vehicle::GetVehicleOutput) with field(s):
     ///   - [`vehicle_name(Option<String>)`](crate::operation::get_vehicle::GetVehicleOutput::vehicle_name): <p>The ID of the vehicle.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_vehicle::GetVehicleOutput::arn): <p> The Amazon Resource Name (ARN) of the vehicle to retrieve information about. </p>

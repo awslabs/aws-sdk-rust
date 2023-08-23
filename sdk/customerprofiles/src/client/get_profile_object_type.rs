@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProfileObjectType`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
-    ///   - [`object_type_name(impl ::std::convert::Into<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::object_type_name) / [`set_object_type_name(Option<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::set_object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`object_type_name(impl Into<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::object_type_name) / [`set_object_type_name(Option<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::set_object_type_name): <p>The name of the profile object type.</p>
     /// - On success, responds with [`GetProfileObjectTypeOutput`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput) with field(s):
     ///   - [`object_type_name(Option<String>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::object_type_name): <p>The name of the profile object type.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::description): <p>The description of the profile object type.</p>

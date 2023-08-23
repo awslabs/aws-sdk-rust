@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveBackendConfig`](crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder::set_app_id): <p>The app ID.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::remove_backend_config::builders::RemoveBackendConfigFluentBuilder::set_app_id): <p>The app ID.</p>
     /// - On success, responds with [`RemoveBackendConfigOutput`](crate::operation::remove_backend_config::RemoveBackendConfigOutput) with field(s):
     ///   - [`error(Option<String>)`](crate::operation::remove_backend_config::RemoveBackendConfigOutput::error): <p>If the request fails, this error is returned.</p>
     /// - On failure, responds with [`SdkError<RemoveBackendConfigError>`](crate::operation::remove_backend_config::RemoveBackendConfigError)

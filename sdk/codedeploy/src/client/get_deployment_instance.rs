@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeploymentInstance`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl ::std::convert::Into<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::set_deployment_id): <p> The unique ID of a deployment. </p>
-    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::set_instance_id): <p> The unique ID of an instance in the deployment group. </p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::set_instance_id): <p> The unique ID of an instance in the deployment group. </p>
     /// - On success, responds with [`GetDeploymentInstanceOutput`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput) with field(s):
     ///   - [`instance_summary(Option<InstanceSummary>)`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput::instance_summary): <p> Information about the instance. </p>
     /// - On failure, responds with [`SdkError<GetDeploymentInstanceError>`](crate::operation::get_deployment_instance::GetDeploymentInstanceError)

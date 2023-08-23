@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePage`](crate::operation::describe_page::builders::DescribePageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`page_id(impl ::std::convert::Into<String>)`](crate::operation::describe_page::builders::DescribePageFluentBuilder::page_id) / [`set_page_id(Option<String>)`](crate::operation::describe_page::builders::DescribePageFluentBuilder::set_page_id): <p>The ID of the engagement to a contact channel.</p>
+    ///   - [`page_id(impl Into<String>)`](crate::operation::describe_page::builders::DescribePageFluentBuilder::page_id) / [`set_page_id(Option<String>)`](crate::operation::describe_page::builders::DescribePageFluentBuilder::set_page_id): <p>The ID of the engagement to a contact channel.</p>
     /// - On success, responds with [`DescribePageOutput`](crate::operation::describe_page::DescribePageOutput) with field(s):
     ///   - [`page_arn(Option<String>)`](crate::operation::describe_page::DescribePageOutput::page_arn): <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     ///   - [`engagement_arn(Option<String>)`](crate::operation::describe_page::DescribePageOutput::engagement_arn): <p>The ARN of the engagement that engaged the contact channel.</p>

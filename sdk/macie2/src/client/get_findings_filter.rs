@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFindingsFilter`](crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`GetFindingsFilterOutput`](crate::operation::get_findings_filter::GetFindingsFilterOutput) with field(s):
     ///   - [`action(Option<FindingsFilterAction>)`](crate::operation::get_findings_filter::GetFindingsFilterOutput::action): <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_findings_filter::GetFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter.</p>

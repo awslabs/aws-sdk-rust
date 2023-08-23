@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJob`](crate::operation::get_job::builders::GetJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_id): <p>The unique identifier for a job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_id): <p>The unique identifier for a job.</p>
     /// - On success, responds with [`GetJobOutput`](crate::operation::get_job::GetJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_job::GetJobOutput::arn): <p>The ARN for the job.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::created_at): <p>The date and time that the job was created, in ISO 8601 format.</p>

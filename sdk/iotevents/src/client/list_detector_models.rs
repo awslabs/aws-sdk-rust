@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListDetectorModels`](crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder::set_next_token): <p>The token that you can use to return the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_detector_models::builders::ListDetectorModelsFluentBuilder::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListDetectorModelsOutput`](crate::operation::list_detector_models::ListDetectorModelsOutput) with field(s):
     ///   - [`detector_model_summaries(Option<Vec<DetectorModelSummary>>)`](crate::operation::list_detector_models::ListDetectorModelsOutput::detector_model_summaries): <p>Summary information about the detector models.</p>

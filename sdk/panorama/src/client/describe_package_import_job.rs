@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePackageImportJob`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
     /// - On success, responds with [`DescribePackageImportJobOutput`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::job_id): <p>The job's ID.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::client_token): <p>The job's client token.</p>

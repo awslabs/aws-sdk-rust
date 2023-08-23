@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJob`](crate::operation::describe_job::builders::DescribeJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
     /// - On success, responds with [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput) with field(s):
     ///   - [`document_source(Option<String>)`](crate::operation::describe_job::DescribeJobOutput::document_source): <p>An S3 link to the job document.</p>
     ///   - [`job(Option<Job>)`](crate::operation::describe_job::DescribeJobOutput::job): <p>Information about the job.</p>

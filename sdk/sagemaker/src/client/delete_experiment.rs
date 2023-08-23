@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteExperiment`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`experiment_name(impl ::std::convert::Into<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::experiment_name) / [`set_experiment_name(Option<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::set_experiment_name): <p>The name of the experiment to delete.</p>
+    ///   - [`experiment_name(impl Into<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::experiment_name) / [`set_experiment_name(Option<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::set_experiment_name): <p>The name of the experiment to delete.</p>
     /// - On success, responds with [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput) with field(s):
     ///   - [`experiment_arn(Option<String>)`](crate::operation::delete_experiment::DeleteExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteExperimentError>`](crate::operation::delete_experiment::DeleteExperimentError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJobRun`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_application_id): <p>The ID of the application on which the job run is submitted.</p>
-    ///   - [`job_run_id(impl ::std::convert::Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::job_run_id) / [`set_job_run_id(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_job_run_id): <p>The ID of the job run.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_application_id): <p>The ID of the application on which the job run is submitted.</p>
+    ///   - [`job_run_id(impl Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::job_run_id) / [`set_job_run_id(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_job_run_id): <p>The ID of the job run.</p>
     /// - On success, responds with [`GetJobRunOutput`](crate::operation::get_job_run::GetJobRunOutput) with field(s):
     ///   - [`job_run(Option<JobRun>)`](crate::operation::get_job_run::GetJobRunOutput::job_run): <p>The output displays information about the job run.</p>
     /// - On failure, responds with [`SdkError<GetJobRunError>`](crate::operation::get_job_run::GetJobRunError)

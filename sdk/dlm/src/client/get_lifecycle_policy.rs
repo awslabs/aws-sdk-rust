@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLifecyclePolicy`](crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_id(impl ::std::convert::Into<String>)`](crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder::set_policy_id): <p>The identifier of the lifecycle policy.</p>
+    ///   - [`policy_id(impl Into<String>)`](crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyFluentBuilder::set_policy_id): <p>The identifier of the lifecycle policy.</p>
     /// - On success, responds with [`GetLifecyclePolicyOutput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput) with field(s):
     ///   - [`policy(Option<LifecyclePolicy>)`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput::policy): <p>Detailed information about the lifecycle policy.</p>
     /// - On failure, responds with [`SdkError<GetLifecyclePolicyError>`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyError)

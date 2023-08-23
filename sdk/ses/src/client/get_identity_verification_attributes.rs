@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIdentityVerificationAttributes`](crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identities(Vec<String>)`](crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesFluentBuilder::identities) / [`set_identities(Option<Vec<String>>)`](crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesFluentBuilder::set_identities): <p>A list of identities.</p>
+    ///   - [`identities(impl Into<String>)`](crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesFluentBuilder::identities) / [`set_identities(Option<Vec<String>>)`](crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesFluentBuilder::set_identities): <p>A list of identities.</p>
     /// - On success, responds with [`GetIdentityVerificationAttributesOutput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput) with field(s):
     ///   - [`verification_attributes(Option<HashMap<String, IdentityVerificationAttributes>>)`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput::verification_attributes): <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     /// - On failure, responds with [`SdkError<GetIdentityVerificationAttributesError>`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesError)

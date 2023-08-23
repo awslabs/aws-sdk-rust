@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_id(impl ::std::convert::Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::portal_id) / [`set_portal_id(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_portal_id): <p>The ID of the portal.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`portal_id(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::portal_id) / [`set_portal_id(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_portal_id): <p>The ID of the portal.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token): <p>The token to be used for the next set of paginated results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
     ///   - [`project_summaries(Option<Vec<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::project_summaries): <p>A list that summarizes each project in the portal.</p>

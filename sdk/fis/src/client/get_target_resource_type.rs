@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTargetResourceType`](crate::operation::get_target_resource_type::builders::GetTargetResourceTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_type(impl ::std::convert::Into<String>)`](crate::operation::get_target_resource_type::builders::GetTargetResourceTypeFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::get_target_resource_type::builders::GetTargetResourceTypeFluentBuilder::set_resource_type): <p>The resource type.</p>
+    ///   - [`resource_type(impl Into<String>)`](crate::operation::get_target_resource_type::builders::GetTargetResourceTypeFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::get_target_resource_type::builders::GetTargetResourceTypeFluentBuilder::set_resource_type): <p>The resource type.</p>
     /// - On success, responds with [`GetTargetResourceTypeOutput`](crate::operation::get_target_resource_type::GetTargetResourceTypeOutput) with field(s):
     ///   - [`target_resource_type(Option<TargetResourceType>)`](crate::operation::get_target_resource_type::GetTargetResourceTypeOutput::target_resource_type): <p>Information about the resource type.</p>
     /// - On failure, responds with [`SdkError<GetTargetResourceTypeError>`](crate::operation::get_target_resource_type::GetTargetResourceTypeError)

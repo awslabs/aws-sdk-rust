@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterEcsCluster`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ecs_cluster_arn(impl ::std::convert::Into<String>)`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::ecs_cluster_arn) / [`set_ecs_cluster_arn(Option<String>)`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::set_ecs_cluster_arn): <p>The cluster's ARN.</p>
-    ///   - [`stack_id(impl ::std::convert::Into<String>)`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::set_stack_id): <p>The stack ID.</p>
+    ///   - [`ecs_cluster_arn(impl Into<String>)`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::ecs_cluster_arn) / [`set_ecs_cluster_arn(Option<String>)`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::set_ecs_cluster_arn): <p>The cluster's ARN.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::set_stack_id): <p>The stack ID.</p>
     /// - On success, responds with [`RegisterEcsClusterOutput`](crate::operation::register_ecs_cluster::RegisterEcsClusterOutput) with field(s):
     ///   - [`ecs_cluster_arn(Option<String>)`](crate::operation::register_ecs_cluster::RegisterEcsClusterOutput::ecs_cluster_arn): <p>The cluster's ARN.</p>
     /// - On failure, responds with [`SdkError<RegisterEcsClusterError>`](crate::operation::register_ecs_cluster::RegisterEcsClusterError)

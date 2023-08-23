@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// - On success, responds with [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput) with field(s):
     ///   - [`environment_summary_list(Option<Vec<EnvironmentSummary>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environment_summary_list): <p>The list of <code>EnvironmentSummary</code> objects. </p>

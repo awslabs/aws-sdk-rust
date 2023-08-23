@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGame`](crate::operation::delete_game::builders::DeleteGameFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_name(impl ::std::convert::Into<String>)`](crate::operation::delete_game::builders::DeleteGameFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::delete_game::builders::DeleteGameFluentBuilder::set_game_name): <p>The name of the game to delete.</p>
+    ///   - [`game_name(impl Into<String>)`](crate::operation::delete_game::builders::DeleteGameFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::delete_game::builders::DeleteGameFluentBuilder::set_game_name): <p>The name of the game to delete.</p>
     /// - On success, responds with [`DeleteGameOutput`](crate::operation::delete_game::DeleteGameOutput)
     /// - On failure, responds with [`SdkError<DeleteGameError>`](crate::operation::delete_game::DeleteGameError)
     pub fn delete_game(&self) -> crate::operation::delete_game::builders::DeleteGameFluentBuilder {

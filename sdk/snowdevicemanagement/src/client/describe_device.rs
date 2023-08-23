@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDevice`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`managed_device_id(impl ::std::convert::Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_managed_device_id): <p>The ID of the device that you are checking the information of.</p>
+    ///   - [`managed_device_id(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_managed_device_id): <p>The ID of the device that you are checking the information of.</p>
     /// - On success, responds with [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput) with field(s):
     ///   - [`last_reached_out_at(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::last_reached_out_at): <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::last_updated_at): <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>

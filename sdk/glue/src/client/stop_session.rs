@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopSession`](crate::operation::stop_session::builders::StopSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::stop_session::builders::StopSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_session::builders::StopSessionFluentBuilder::set_id): <p>The ID of the session to be stopped.</p>
-    ///   - [`request_origin(impl ::std::convert::Into<String>)`](crate::operation::stop_session::builders::StopSessionFluentBuilder::request_origin) / [`set_request_origin(Option<String>)`](crate::operation::stop_session::builders::StopSessionFluentBuilder::set_request_origin): <p>The origin of the request.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::stop_session::builders::StopSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_session::builders::StopSessionFluentBuilder::set_id): <p>The ID of the session to be stopped.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::operation::stop_session::builders::StopSessionFluentBuilder::request_origin) / [`set_request_origin(Option<String>)`](crate::operation::stop_session::builders::StopSessionFluentBuilder::set_request_origin): <p>The origin of the request.</p>
     /// - On success, responds with [`StopSessionOutput`](crate::operation::stop_session::StopSessionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::stop_session::StopSessionOutput::id): <p>Returns the Id of the stopped session.</p>
     /// - On failure, responds with [`SdkError<StopSessionError>`](crate::operation::stop_session::StopSessionError)

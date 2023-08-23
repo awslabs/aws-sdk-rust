@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTagOption`](crate::operation::delete_tag_option::builders::DeleteTagOptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_tag_option::builders::DeleteTagOptionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_tag_option::builders::DeleteTagOptionFluentBuilder::set_id): <p>The TagOption identifier.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_tag_option::builders::DeleteTagOptionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_tag_option::builders::DeleteTagOptionFluentBuilder::set_id): <p>The TagOption identifier.</p>
     /// - On success, responds with [`DeleteTagOptionOutput`](crate::operation::delete_tag_option::DeleteTagOptionOutput)
     /// - On failure, responds with [`SdkError<DeleteTagOptionError>`](crate::operation::delete_tag_option::DeleteTagOptionError)
     pub fn delete_tag_option(&self) -> crate::operation::delete_tag_option::builders::DeleteTagOptionFluentBuilder {

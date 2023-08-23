@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDetector`](crate::operation::get_detector::builders::GetDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::set_detector_id): <p>The unique ID of the detector that you want to get.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::set_detector_id): <p>The unique ID of the detector that you want to get.</p>
     /// - On success, responds with [`GetDetectorOutput`](crate::operation::get_detector::GetDetectorOutput) with field(s):
     ///   - [`created_at(Option<String>)`](crate::operation::get_detector::GetDetectorOutput::created_at): <p>The timestamp of when the detector was created.</p>
     ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::operation::get_detector::GetDetectorOutput::finding_publishing_frequency): <p>The publishing frequency of the finding.</p>

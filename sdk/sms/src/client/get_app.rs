@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApp`](crate::operation::get_app::builders::GetAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`GetAppOutput`](crate::operation::get_app::GetAppOutput) with field(s):
     ///   - [`app_summary(Option<AppSummary>)`](crate::operation::get_app::GetAppOutput::app_summary): <p>Information about the application.</p>
     ///   - [`server_groups(Option<Vec<ServerGroup>>)`](crate::operation::get_app::GetAppOutput::server_groups): <p>The server groups that belong to the application.</p>

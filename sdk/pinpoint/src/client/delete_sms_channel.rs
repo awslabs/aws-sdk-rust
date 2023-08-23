@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSmsChannel`](crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteSmsChannelOutput`](crate::operation::delete_sms_channel::DeleteSmsChannelOutput) with field(s):
     ///   - [`sms_channel_response(Option<SmsChannelResponse>)`](crate::operation::delete_sms_channel::DeleteSmsChannelOutput::sms_channel_response): <p>Provides information about the status and settings of the SMS channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteSmsChannelError>`](crate::operation::delete_sms_channel::DeleteSmsChannelError)

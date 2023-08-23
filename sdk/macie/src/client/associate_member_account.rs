@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateMemberAccount`](crate::operation::associate_member_account::builders::AssociateMemberAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`member_account_id(impl ::std::convert::Into<String>)`](crate::operation::associate_member_account::builders::AssociateMemberAccountFluentBuilder::member_account_id) / [`set_member_account_id(Option<String>)`](crate::operation::associate_member_account::builders::AssociateMemberAccountFluentBuilder::set_member_account_id): <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
+    ///   - [`member_account_id(impl Into<String>)`](crate::operation::associate_member_account::builders::AssociateMemberAccountFluentBuilder::member_account_id) / [`set_member_account_id(Option<String>)`](crate::operation::associate_member_account::builders::AssociateMemberAccountFluentBuilder::set_member_account_id): <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
     /// - On success, responds with [`AssociateMemberAccountOutput`](crate::operation::associate_member_account::AssociateMemberAccountOutput)
     /// - On failure, responds with [`SdkError<AssociateMemberAccountError>`](crate::operation::associate_member_account::AssociateMemberAccountError)
     pub fn associate_member_account(&self) -> crate::operation::associate_member_account::builders::AssociateMemberAccountFluentBuilder {

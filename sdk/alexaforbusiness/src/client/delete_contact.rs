@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContact`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::contact_arn) / [`set_contact_arn(Option<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::set_contact_arn): <p>The ARN of the contact to delete.</p>
+    ///   - [`contact_arn(impl Into<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::contact_arn) / [`set_contact_arn(Option<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::set_contact_arn): <p>The ARN of the contact to delete.</p>
     /// - On success, responds with [`DeleteContactOutput`](crate::operation::delete_contact::DeleteContactOutput)
     /// - On failure, responds with [`SdkError<DeleteContactError>`](crate::operation::delete_contact::DeleteContactError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

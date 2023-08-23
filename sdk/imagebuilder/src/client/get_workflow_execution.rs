@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkflowExecution`](crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_execution_id(impl ::std::convert::Into<String>)`](crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder::workflow_execution_id) / [`set_workflow_execution_id(Option<String>)`](crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder::set_workflow_execution_id): <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
+    ///   - [`workflow_execution_id(impl Into<String>)`](crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder::workflow_execution_id) / [`set_workflow_execution_id(Option<String>)`](crate::operation::get_workflow_execution::builders::GetWorkflowExecutionFluentBuilder::set_workflow_execution_id): <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
     /// - On success, responds with [`GetWorkflowExecutionOutput`](crate::operation::get_workflow_execution::GetWorkflowExecutionOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_workflow_execution::GetWorkflowExecutionOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`workflow_build_version_arn(Option<String>)`](crate::operation::get_workflow_execution::GetWorkflowExecutionOutput::workflow_build_version_arn): <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines the specified runtime instance of the workflow.</p>

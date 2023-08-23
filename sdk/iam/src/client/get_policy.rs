@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicy`](crate::operation::get_policy::builders::GetPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_arn(impl ::std::convert::Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_arn) / [`set_policy_arn(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_arn): <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_arn) / [`set_policy_arn(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_arn): <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// - On success, responds with [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::operation::get_policy::GetPolicyOutput::policy): <p>A structure containing details about the policy.</p>
     /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::operation::get_policy::GetPolicyError)

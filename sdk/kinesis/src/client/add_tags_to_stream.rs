@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddTagsToStream`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl ::std::convert::Into<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::set_stream_name): <p>The name of the stream.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::set_tags): <p>A set of up to 10 key-value pairs to use to create the tags.</p>
-    ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
+    ///   - [`stream_name(impl Into<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::set_stream_name): <p>The name of the stream.</p>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::set_tags): <p>A set of up to 10 key-value pairs to use to create the tags.</p>
+    ///   - [`stream_arn(impl Into<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`AddTagsToStreamOutput`](crate::operation::add_tags_to_stream::AddTagsToStreamOutput)
     /// - On failure, responds with [`SdkError<AddTagsToStreamError>`](crate::operation::add_tags_to_stream::AddTagsToStreamError)
     pub fn add_tags_to_stream(&self) -> crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder {

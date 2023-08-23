@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUser`](crate::operation::delete_user::builders::DeleteUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive.</p>  </note>
+    ///   - [`user_name(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive.</p>  </note>
     ///   - [`authentication_type(AuthenticationType)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_authentication_type): <p>The authentication type for the user. You must specify USERPOOL.</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput)
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::operation::delete_user::DeleteUserError)

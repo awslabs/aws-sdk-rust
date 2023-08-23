@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`product_type(PhoneNumberProductType)`](crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderFluentBuilder::product_type) / [`set_product_type(Option<PhoneNumberProductType>)`](crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderFluentBuilder::set_product_type): <p>The phone number product type.</p>
-    ///   - [`e164_phone_numbers(Vec<String>)`](crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderFluentBuilder::e164_phone_numbers) / [`set_e164_phone_numbers(Option<Vec<String>>)`](crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderFluentBuilder::set_e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
+    ///   - [`e164_phone_numbers(impl Into<String>)`](crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderFluentBuilder::e164_phone_numbers) / [`set_e164_phone_numbers(Option<Vec<String>>)`](crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderFluentBuilder::set_e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
     /// - On success, responds with [`CreatePhoneNumberOrderOutput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput) with field(s):
     ///   - [`phone_number_order(Option<PhoneNumberOrder>)`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput::phone_number_order): <p>The phone number order details.</p>
     /// - On failure, responds with [`SdkError<CreatePhoneNumberOrderError>`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderError)

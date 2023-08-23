@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ForgetSmartHomeAppliances`](crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder::set_room_arn): <p>The room that the appliances are associated with.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder::set_room_arn): <p>The room that the appliances are associated with.</p>
     /// - On success, responds with [`ForgetSmartHomeAppliancesOutput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput)
     /// - On failure, responds with [`SdkError<ForgetSmartHomeAppliancesError>`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

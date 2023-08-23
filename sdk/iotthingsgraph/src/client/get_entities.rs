@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEntities`](crate::operation::get_entities::builders::GetEntitiesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ids(Vec<String>)`](crate::operation::get_entities::builders::GetEntitiesFluentBuilder::ids) / [`set_ids(Option<Vec<String>>)`](crate::operation::get_entities::builders::GetEntitiesFluentBuilder::set_ids): <p>An array of entity IDs.</p>  <p>The IDs should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    ///   - [`ids(impl Into<String>)`](crate::operation::get_entities::builders::GetEntitiesFluentBuilder::ids) / [`set_ids(Option<Vec<String>>)`](crate::operation::get_entities::builders::GetEntitiesFluentBuilder::set_ids): <p>An array of entity IDs.</p>  <p>The IDs should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     ///   - [`namespace_version(i64)`](crate::operation::get_entities::builders::GetEntitiesFluentBuilder::namespace_version) / [`set_namespace_version(Option<i64>)`](crate::operation::get_entities::builders::GetEntitiesFluentBuilder::set_namespace_version): <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     /// - On success, responds with [`GetEntitiesOutput`](crate::operation::get_entities::GetEntitiesOutput) with field(s):
     ///   - [`descriptions(Option<Vec<EntityDescription>>)`](crate::operation::get_entities::GetEntitiesOutput::descriptions): <p>An array of descriptions for the specified entities.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContainerPolicy`](crate::operation::delete_container_policy::builders::DeleteContainerPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::delete_container_policy::builders::DeleteContainerPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::delete_container_policy::builders::DeleteContainerPolicyFluentBuilder::set_container_name): <p>The name of the container that holds the policy.</p>
+    ///   - [`container_name(impl Into<String>)`](crate::operation::delete_container_policy::builders::DeleteContainerPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::delete_container_policy::builders::DeleteContainerPolicyFluentBuilder::set_container_name): <p>The name of the container that holds the policy.</p>
     /// - On success, responds with [`DeleteContainerPolicyOutput`](crate::operation::delete_container_policy::DeleteContainerPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteContainerPolicyError>`](crate::operation::delete_container_policy::DeleteContainerPolicyError)
     pub fn delete_container_policy(&self) -> crate::operation::delete_container_policy::builders::DeleteContainerPolicyFluentBuilder {

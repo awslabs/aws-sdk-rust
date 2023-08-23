@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConfigurationAggregator`](crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_aggregator_name(impl ::std::convert::Into<String>)`](crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorFluentBuilder::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorFluentBuilder::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorFluentBuilder::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorFluentBuilder::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
     /// - On success, responds with [`DeleteConfigurationAggregatorOutput`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigurationAggregatorError>`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorError)
     pub fn delete_configuration_aggregator(

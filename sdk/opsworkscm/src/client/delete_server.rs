@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteServer`](crate::operation::delete_server::builders::DeleteServerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_name(impl ::std::convert::Into<String>)`](crate::operation::delete_server::builders::DeleteServerFluentBuilder::server_name) / [`set_server_name(Option<String>)`](crate::operation::delete_server::builders::DeleteServerFluentBuilder::set_server_name): <p>The ID of the server to delete.</p>
+    ///   - [`server_name(impl Into<String>)`](crate::operation::delete_server::builders::DeleteServerFluentBuilder::server_name) / [`set_server_name(Option<String>)`](crate::operation::delete_server::builders::DeleteServerFluentBuilder::set_server_name): <p>The ID of the server to delete.</p>
     /// - On success, responds with [`DeleteServerOutput`](crate::operation::delete_server::DeleteServerOutput)
     /// - On failure, responds with [`SdkError<DeleteServerError>`](crate::operation::delete_server::DeleteServerError)
     pub fn delete_server(&self) -> crate::operation::delete_server::builders::DeleteServerFluentBuilder {

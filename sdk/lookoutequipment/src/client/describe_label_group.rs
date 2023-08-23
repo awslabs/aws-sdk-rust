@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLabelGroup`](crate::operation::describe_label_group::builders::DescribeLabelGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`label_group_name(impl ::std::convert::Into<String>)`](crate::operation::describe_label_group::builders::DescribeLabelGroupFluentBuilder::label_group_name) / [`set_label_group_name(Option<String>)`](crate::operation::describe_label_group::builders::DescribeLabelGroupFluentBuilder::set_label_group_name): <p> Returns the name of the label group. </p>
+    ///   - [`label_group_name(impl Into<String>)`](crate::operation::describe_label_group::builders::DescribeLabelGroupFluentBuilder::label_group_name) / [`set_label_group_name(Option<String>)`](crate::operation::describe_label_group::builders::DescribeLabelGroupFluentBuilder::set_label_group_name): <p> Returns the name of the label group. </p>
     /// - On success, responds with [`DescribeLabelGroupOutput`](crate::operation::describe_label_group::DescribeLabelGroupOutput) with field(s):
     ///   - [`label_group_name(Option<String>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::label_group_name): <p> The name of the label group. </p>
     ///   - [`label_group_arn(Option<String>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::label_group_arn): <p> The ARN of the label group. </p>

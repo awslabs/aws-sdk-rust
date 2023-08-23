@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReportDefinition`](crate::operation::delete_report_definition::builders::DeleteReportDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_id(impl ::std::convert::Into<String>)`](crate::operation::delete_report_definition::builders::DeleteReportDefinitionFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::delete_report_definition::builders::DeleteReportDefinitionFluentBuilder::set_report_id): <p>Required. ID of the report to delete.</p>
+    ///   - [`report_id(impl Into<String>)`](crate::operation::delete_report_definition::builders::DeleteReportDefinitionFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::delete_report_definition::builders::DeleteReportDefinitionFluentBuilder::set_report_id): <p>Required. ID of the report to delete.</p>
     /// - On success, responds with [`DeleteReportDefinitionOutput`](crate::operation::delete_report_definition::DeleteReportDefinitionOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::delete_report_definition::DeleteReportDefinitionOutput::report_id): <p>ID of the report that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteReportDefinitionError>`](crate::operation::delete_report_definition::DeleteReportDefinitionError)

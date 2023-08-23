@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventDataStore`](crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_data_store(impl ::std::convert::Into<String>)`](crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+    ///   - [`event_data_store(impl Into<String>)`](crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
     /// - On success, responds with [`DeleteEventDataStoreOutput`](crate::operation::delete_event_data_store::DeleteEventDataStoreOutput)
     /// - On failure, responds with [`SdkError<DeleteEventDataStoreError>`](crate::operation::delete_event_data_store::DeleteEventDataStoreError)
     pub fn delete_event_data_store(&self) -> crate::operation::delete_event_data_store::builders::DeleteEventDataStoreFluentBuilder {

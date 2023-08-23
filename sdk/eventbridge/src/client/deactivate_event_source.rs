@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeactivateEventSource`](crate::operation::deactivate_event_source::builders::DeactivateEventSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::deactivate_event_source::builders::DeactivateEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::deactivate_event_source::builders::DeactivateEventSourceFluentBuilder::set_name): <p>The name of the partner event source to deactivate.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::deactivate_event_source::builders::DeactivateEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::deactivate_event_source::builders::DeactivateEventSourceFluentBuilder::set_name): <p>The name of the partner event source to deactivate.</p>
     /// - On success, responds with [`DeactivateEventSourceOutput`](crate::operation::deactivate_event_source::DeactivateEventSourceOutput)
     /// - On failure, responds with [`SdkError<DeactivateEventSourceError>`](crate::operation::deactivate_event_source::DeactivateEventSourceError)
     pub fn deactivate_event_source(&self) -> crate::operation::deactivate_event_source::builders::DeactivateEventSourceFluentBuilder {

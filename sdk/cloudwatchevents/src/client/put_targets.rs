@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutTargets`](crate::operation::put_targets::builders::PutTargetsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule(impl ::std::convert::Into<String>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::rule) / [`set_rule(Option<String>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::set_rule): <p>The name of the rule.</p>
-    ///   - [`event_bus_name(impl ::std::convert::Into<String>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::set_event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    ///   - [`targets(Vec<Target>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::targets) / [`set_targets(Option<Vec<Target>>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::set_targets): <p>The targets to update or add to the rule.</p>
+    ///   - [`rule(impl Into<String>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::rule) / [`set_rule(Option<String>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::set_rule): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(impl Into<String>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::set_event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    ///   - [`targets(Target)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::targets) / [`set_targets(Option<Vec<Target>>)`](crate::operation::put_targets::builders::PutTargetsFluentBuilder::set_targets): <p>The targets to update or add to the rule.</p>
     /// - On success, responds with [`PutTargetsOutput`](crate::operation::put_targets::PutTargetsOutput) with field(s):
     ///   - [`failed_entry_count(i32)`](crate::operation::put_targets::PutTargetsOutput::failed_entry_count): <p>The number of failed entries.</p>
     ///   - [`failed_entries(Option<Vec<PutTargetsResultEntry>>)`](crate::operation::put_targets::PutTargetsOutput::failed_entries): <p>The failed target entries.</p>

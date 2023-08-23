@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRule`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::set_identifier): <p>The unique ID of the retention rule.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::set_identifier): <p>The unique ID of the retention rule.</p>
     /// - On success, responds with [`DeleteRuleOutput`](crate::operation::delete_rule::DeleteRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::operation::delete_rule::DeleteRuleError)
     pub fn delete_rule(&self) -> crate::operation::delete_rule::builders::DeleteRuleFluentBuilder {

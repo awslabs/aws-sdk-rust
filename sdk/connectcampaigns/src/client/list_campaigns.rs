@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_max_results): The maximum number of results to return per page.
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_next_token): The token for the next set of results.
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_next_token): The token for the next set of results.
     ///   - [`filters(CampaignFilters)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::filters) / [`set_filters(Option<CampaignFilters>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_filters): Filter model by type
     /// - On success, responds with [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_campaigns::ListCampaignsOutput::next_token): The token for the next set of results.

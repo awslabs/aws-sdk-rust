@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`LogoutUser`](crate::operation::logout_user::builders::LogoutUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::logout_user::builders::LogoutUserFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::logout_user::builders::LogoutUserFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::logout_user::builders::LogoutUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::logout_user::builders::LogoutUserFluentBuilder::set_user_id): <p>The user ID.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::logout_user::builders::LogoutUserFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::logout_user::builders::LogoutUserFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::logout_user::builders::LogoutUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::logout_user::builders::LogoutUserFluentBuilder::set_user_id): <p>The user ID.</p>
     /// - On success, responds with [`LogoutUserOutput`](crate::operation::logout_user::LogoutUserOutput)
     /// - On failure, responds with [`SdkError<LogoutUserError>`](crate::operation::logout_user::LogoutUserError)
     pub fn logout_user(&self) -> crate::operation::logout_user::builders::LogoutUserFluentBuilder {

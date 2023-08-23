@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLoadBalancer`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_balancer_name(impl ::std::convert::Into<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::set_load_balancer_name): <p>The name of the load balancer you want to delete.</p>
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::set_load_balancer_name): <p>The name of the load balancer you want to delete.</p>
     /// - On success, responds with [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteLoadBalancerError>`](crate::operation::delete_load_balancer::DeleteLoadBalancerError)

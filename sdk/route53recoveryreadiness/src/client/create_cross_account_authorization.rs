@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateCrossAccountAuthorization`](crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cross_account_authorization(impl ::std::convert::Into<String>)`](crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationFluentBuilder::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationFluentBuilder::set_cross_account_authorization): <p>The cross-account authorization.</p>
+    ///   - [`cross_account_authorization(impl Into<String>)`](crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationFluentBuilder::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationFluentBuilder::set_cross_account_authorization): <p>The cross-account authorization.</p>
     /// - On success, responds with [`CreateCrossAccountAuthorizationOutput`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput) with field(s):
     ///   - [`cross_account_authorization(Option<String>)`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput::cross_account_authorization): <p>The cross-account authorization.</p>
     /// - On failure, responds with [`SdkError<CreateCrossAccountAuthorizationError>`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationError)

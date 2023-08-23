@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProject`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::project_arn) / [`set_project_arn(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_project_arn): <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
+    ///   - [`project_arn(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::project_arn) / [`set_project_arn(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_project_arn): <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput) with field(s):
     ///   - [`status(Option<ProjectStatus>)`](crate::operation::delete_project::DeleteProjectOutput::status): <p>The current status of the delete project operation.</p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddTags`](crate::operation::add_tags::builders::AddTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_arn): <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
-    ///   - [`tag_list(Vec<Tag>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tag_list): <p>List of resource tags.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_arn): <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.</p>
+    ///   - [`tag_list(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tag_list): <p>List of resource tags.</p>
     /// - On success, responds with [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput)
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::operation::add_tags::AddTagsError)
     pub fn add_tags(&self) -> crate::operation::add_tags::builders::AddTagsFluentBuilder {

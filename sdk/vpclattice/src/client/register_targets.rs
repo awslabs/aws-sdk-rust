@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterTargets`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_group_identifier(impl ::std::convert::Into<String>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::set_target_group_identifier): <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    ///   - [`targets(Vec<Target>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::targets) / [`set_targets(Option<Vec<Target>>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::set_targets): <p>The targets.</p>
+    ///   - [`target_group_identifier(impl Into<String>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::set_target_group_identifier): <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`targets(Target)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::targets) / [`set_targets(Option<Vec<Target>>)`](crate::operation::register_targets::builders::RegisterTargetsFluentBuilder::set_targets): <p>The targets.</p>
     /// - On success, responds with [`RegisterTargetsOutput`](crate::operation::register_targets::RegisterTargetsOutput) with field(s):
     ///   - [`successful(Option<Vec<Target>>)`](crate::operation::register_targets::RegisterTargetsOutput::successful): <p>The targets that were successfully registered.</p>
     ///   - [`unsuccessful(Option<Vec<TargetFailure>>)`](crate::operation::register_targets::RegisterTargetsOutput::unsuccessful): <p>The targets that were not registered.</p>

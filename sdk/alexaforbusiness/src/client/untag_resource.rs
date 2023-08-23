@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_arn): <p>The ARN of the resource from which to remove metadata tags. Required. </p>
-    ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys): <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_arn): <p>The ARN of the resource from which to remove metadata tags. Required. </p>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys): <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

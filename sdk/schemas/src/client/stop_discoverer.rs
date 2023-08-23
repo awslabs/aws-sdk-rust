@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopDiscoverer`](crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`discoverer_id(impl ::std::convert::Into<String>)`](crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder::set_discoverer_id): <p>The ID of the discoverer.</p>
+    ///   - [`discoverer_id(impl Into<String>)`](crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::operation::stop_discoverer::builders::StopDiscovererFluentBuilder::set_discoverer_id): <p>The ID of the discoverer.</p>
     /// - On success, responds with [`StopDiscovererOutput`](crate::operation::stop_discoverer::StopDiscovererOutput) with field(s):
     ///   - [`discoverer_id(Option<String>)`](crate::operation::stop_discoverer::StopDiscovererOutput::discoverer_id): <p>The ID of the discoverer.</p>
     ///   - [`state(Option<DiscovererState>)`](crate::operation::stop_discoverer::StopDiscovererOutput::state): <p>The state of the discoverer.</p>

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateTrial`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trial_name(impl ::std::convert::Into<String>)`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder::trial_name) / [`set_trial_name(Option<String>)`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder::set_trial_name): <p>The name of the trial to update.</p>
-    ///   - [`display_name(impl ::std::convert::Into<String>)`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder::display_name) / [`set_display_name(Option<String>)`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder::set_display_name): <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    ///   - [`trial_name(impl Into<String>)`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder::trial_name) / [`set_trial_name(Option<String>)`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder::set_trial_name): <p>The name of the trial to update.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder::display_name) / [`set_display_name(Option<String>)`](crate::operation::update_trial::builders::UpdateTrialFluentBuilder::set_display_name): <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     /// - On success, responds with [`UpdateTrialOutput`](crate::operation::update_trial::UpdateTrialOutput) with field(s):
     ///   - [`trial_arn(Option<String>)`](crate::operation::update_trial::UpdateTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<UpdateTrialError>`](crate::operation::update_trial::UpdateTrialError)

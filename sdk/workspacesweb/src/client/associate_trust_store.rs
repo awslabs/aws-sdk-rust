@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateTrustStore`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
-    ///   - [`trust_store_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::trust_store_arn) / [`set_trust_store_arn(Option<String>)`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::set_trust_store_arn): <p>The ARN of the trust store.</p>
+    ///   - [`portal_arn(impl Into<String>)`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`trust_store_arn(impl Into<String>)`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::trust_store_arn) / [`set_trust_store_arn(Option<String>)`](crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::set_trust_store_arn): <p>The ARN of the trust store.</p>
     /// - On success, responds with [`AssociateTrustStoreOutput`](crate::operation::associate_trust_store::AssociateTrustStoreOutput) with field(s):
     ///   - [`portal_arn(Option<String>)`](crate::operation::associate_trust_store::AssociateTrustStoreOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`trust_store_arn(Option<String>)`](crate::operation::associate_trust_store::AssociateTrustStoreOutput::trust_store_arn): <p>The ARN of the trust store.</p>

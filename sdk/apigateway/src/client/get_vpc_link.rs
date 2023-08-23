@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVpcLink`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_link_id(impl ::std::convert::Into<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::set_vpc_link_id): <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    ///   - [`vpc_link_id(impl Into<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::set_vpc_link_id): <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     /// - On success, responds with [`GetVpcLinkOutput`](crate::operation::get_vpc_link::GetVpcLinkOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::id): <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::name): <p>The name used to label and identify the VPC link.</p>

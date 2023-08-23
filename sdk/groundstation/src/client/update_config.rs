@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateConfig`](crate::operation::update_config::builders::UpdateConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`config_id(impl ::std::convert::Into<String>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::config_id) / [`set_config_id(Option<String>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::set_config_id): <p>UUID of a <code>Config</code>.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::set_name): <p>Name of a <code>Config</code>.</p>
+    ///   - [`config_id(impl Into<String>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::config_id) / [`set_config_id(Option<String>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::set_config_id): <p>UUID of a <code>Config</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::set_name): <p>Name of a <code>Config</code>.</p>
     ///   - [`config_type(ConfigCapabilityType)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::config_type) / [`set_config_type(Option<ConfigCapabilityType>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::set_config_type): <p>Type of a <code>Config</code>.</p>
     ///   - [`config_data(ConfigTypeData)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::config_data) / [`set_config_data(Option<ConfigTypeData>)`](crate::operation::update_config::builders::UpdateConfigFluentBuilder::set_config_data): <p>Parameters of a <code>Config</code>.</p>
     /// - On success, responds with [`UpdateConfigOutput`](crate::operation::update_config::UpdateConfigOutput) with field(s):

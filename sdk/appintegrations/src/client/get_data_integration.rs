@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataIntegration`](crate::operation::get_data_integration::builders::GetDataIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::get_data_integration::builders::GetDataIntegrationFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_data_integration::builders::GetDataIntegrationFluentBuilder::set_identifier): <p>A unique identifier.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_data_integration::builders::GetDataIntegrationFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_data_integration::builders::GetDataIntegrationFluentBuilder::set_identifier): <p>A unique identifier.</p>
     /// - On success, responds with [`GetDataIntegrationOutput`](crate::operation::get_data_integration::GetDataIntegrationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::arn): <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::id): <p>A unique identifier.</p>

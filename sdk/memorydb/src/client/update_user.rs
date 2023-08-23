@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateUser`](crate::operation::update_user::builders::UpdateUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::set_user_name): <p>The name of the user</p>
+    ///   - [`user_name(impl Into<String>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::set_user_name): <p>The name of the user</p>
     ///   - [`authentication_mode(AuthenticationMode)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::authentication_mode) / [`set_authentication_mode(Option<AuthenticationMode>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::set_authentication_mode): <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-    ///   - [`access_string(impl ::std::convert::Into<String>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::access_string) / [`set_access_string(Option<String>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::set_access_string): <p>Access permissions string used for this user.</p>
+    ///   - [`access_string(impl Into<String>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::access_string) / [`set_access_string(Option<String>)`](crate::operation::update_user::builders::UpdateUserFluentBuilder::set_access_string): <p>Access permissions string used for this user.</p>
     /// - On success, responds with [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::update_user::UpdateUserOutput::user): <p>The updated user</p>
     /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::operation::update_user::UpdateUserError)

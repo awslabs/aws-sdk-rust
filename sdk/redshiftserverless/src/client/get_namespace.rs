@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNamespace`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`namespace_name(impl ::std::convert::Into<String>)`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::namespace_name) / [`set_namespace_name(Option<String>)`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::set_namespace_name): <p>The name of the namespace to retrieve information for.</p>
+    ///   - [`namespace_name(impl Into<String>)`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::namespace_name) / [`set_namespace_name(Option<String>)`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::set_namespace_name): <p>The name of the namespace to retrieve information for.</p>
     /// - On success, responds with [`GetNamespaceOutput`](crate::operation::get_namespace::GetNamespaceOutput) with field(s):
     ///   - [`namespace(Option<Namespace>)`](crate::operation::get_namespace::GetNamespaceOutput::namespace): <p>The returned namespace object.</p>
     /// - On failure, responds with [`SdkError<GetNamespaceError>`](crate::operation::get_namespace::GetNamespaceError)

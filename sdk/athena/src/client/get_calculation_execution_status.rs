@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCalculationExecutionStatus`](crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`calculation_execution_id(impl ::std::convert::Into<String>)`](crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusFluentBuilder::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusFluentBuilder::set_calculation_execution_id): <p>The calculation execution UUID.</p>
+    ///   - [`calculation_execution_id(impl Into<String>)`](crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusFluentBuilder::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusFluentBuilder::set_calculation_execution_id): <p>The calculation execution UUID.</p>
     /// - On success, responds with [`GetCalculationExecutionStatusOutput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput) with field(s):
     ///   - [`status(Option<CalculationStatus>)`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput::status): <p>Contains information about the calculation execution status.</p>
     ///   - [`statistics(Option<CalculationStatistics>)`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput::statistics): <p>Contains information about the DPU execution time and progress.</p>

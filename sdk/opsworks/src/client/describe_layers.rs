@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLayers`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stack_id(impl ::std::convert::Into<String>)`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::set_stack_id): <p>The stack ID.</p>
-    ///   - [`layer_ids(Vec<String>)`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::set_layer_ids): <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::set_stack_id): <p>The stack ID.</p>
+    ///   - [`layer_ids(impl Into<String>)`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::set_layer_ids): <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     /// - On success, responds with [`DescribeLayersOutput`](crate::operation::describe_layers::DescribeLayersOutput) with field(s):
     ///   - [`layers(Option<Vec<Layer>>)`](crate::operation::describe_layers::DescribeLayersOutput::layers): <p>An array of <code>Layer</code> objects that describe the layers.</p>
     /// - On failure, responds with [`SdkError<DescribeLayersError>`](crate::operation::describe_layers::DescribeLayersError)

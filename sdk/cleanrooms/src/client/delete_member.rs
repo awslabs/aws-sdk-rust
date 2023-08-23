@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMember`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::set_collaboration_identifier): <p>The unique identifier for the associated collaboration.</p>
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::set_account_id): <p>The account ID of the member to remove.</p>
+    ///   - [`collaboration_identifier(impl Into<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::set_collaboration_identifier): <p>The unique identifier for the associated collaboration.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::set_account_id): <p>The account ID of the member to remove.</p>
     /// - On success, responds with [`DeleteMemberOutput`](crate::operation::delete_member::DeleteMemberOutput)
     /// - On failure, responds with [`SdkError<DeleteMemberError>`](crate::operation::delete_member::DeleteMemberError)
     pub fn delete_member(&self) -> crate::operation::delete_member::builders::DeleteMemberFluentBuilder {

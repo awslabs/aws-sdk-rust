@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteResolverRule`](crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resolver_rule_id(impl ::std::convert::Into<String>)`](crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder::resolver_rule_id) / [`set_resolver_rule_id(Option<String>)`](crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder::set_resolver_rule_id): <p>The ID of the Resolver rule that you want to delete.</p>
+    ///   - [`resolver_rule_id(impl Into<String>)`](crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder::resolver_rule_id) / [`set_resolver_rule_id(Option<String>)`](crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder::set_resolver_rule_id): <p>The ID of the Resolver rule that you want to delete.</p>
     /// - On success, responds with [`DeleteResolverRuleOutput`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput) with field(s):
     ///   - [`resolver_rule(Option<ResolverRule>)`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput::resolver_rule): <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteResolverRuleError>`](crate::operation::delete_resolver_rule::DeleteResolverRuleError)

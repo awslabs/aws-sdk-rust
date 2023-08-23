@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeModelPackageGroup`](crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_package_group_name(impl ::std::convert::Into<String>)`](crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder::set_model_package_group_name): <p>The name of gthe model group to describe.</p>
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupFluentBuilder::set_model_package_group_name): <p>The name of gthe model group to describe.</p>
     /// - On success, responds with [`DescribeModelPackageGroupOutput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput) with field(s):
     ///   - [`model_package_group_name(Option<String>)`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput::model_package_group_name): <p>The name of the model group.</p>
     ///   - [`model_package_group_arn(Option<String>)`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput::model_package_group_arn): <p>The Amazon Resource Name (ARN) of the model group.</p>

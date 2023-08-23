@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccuracyMetrics`](crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`predictor_arn(impl ::std::convert::Into<String>)`](crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder::set_predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
+    ///   - [`predictor_arn(impl Into<String>)`](crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsFluentBuilder::set_predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
     /// - On success, responds with [`GetAccuracyMetricsOutput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput) with field(s):
     ///   - [`predictor_evaluation_results(Option<Vec<EvaluationResult>>)`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput::predictor_evaluation_results): <p>An array of results from evaluating the predictor.</p>
     ///   - [`is_auto_predictor(Option<bool>)`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput::is_auto_predictor): <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>

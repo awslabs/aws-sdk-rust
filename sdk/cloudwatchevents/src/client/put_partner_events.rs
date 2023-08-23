@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutPartnerEvents`](crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`entries(Vec<PutPartnerEventsRequestEntry>)`](crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder::entries) / [`set_entries(Option<Vec<PutPartnerEventsRequestEntry>>)`](crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder::set_entries): <p>The list of events to write to the event bus.</p>
+    ///   - [`entries(PutPartnerEventsRequestEntry)`](crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder::entries) / [`set_entries(Option<Vec<PutPartnerEventsRequestEntry>>)`](crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder::set_entries): <p>The list of events to write to the event bus.</p>
     /// - On success, responds with [`PutPartnerEventsOutput`](crate::operation::put_partner_events::PutPartnerEventsOutput) with field(s):
     ///   - [`failed_entry_count(i32)`](crate::operation::put_partner_events::PutPartnerEventsOutput::failed_entry_count): <p>The number of events from this operation that could not be written to the partner event bus.</p>
     ///   - [`entries(Option<Vec<PutPartnerEventsResultEntry>>)`](crate::operation::put_partner_events::PutPartnerEventsOutput::entries): <p>The list of events from this operation that were successfully written to the partner event bus.</p>

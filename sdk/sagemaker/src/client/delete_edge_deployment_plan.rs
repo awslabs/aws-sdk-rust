@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEdgeDeploymentPlan`](crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`edge_deployment_plan_name(impl ::std::convert::Into<String>)`](crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanFluentBuilder::edge_deployment_plan_name) / [`set_edge_deployment_plan_name(Option<String>)`](crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanFluentBuilder::set_edge_deployment_plan_name): <p>The name of the edge deployment plan to delete.</p>
+    ///   - [`edge_deployment_plan_name(impl Into<String>)`](crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanFluentBuilder::edge_deployment_plan_name) / [`set_edge_deployment_plan_name(Option<String>)`](crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanFluentBuilder::set_edge_deployment_plan_name): <p>The name of the edge deployment plan to delete.</p>
     /// - On success, responds with [`DeleteEdgeDeploymentPlanOutput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanOutput)
     /// - On failure, responds with [`SdkError<DeleteEdgeDeploymentPlanError>`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanError)
     pub fn delete_edge_deployment_plan(&self) -> crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanFluentBuilder {

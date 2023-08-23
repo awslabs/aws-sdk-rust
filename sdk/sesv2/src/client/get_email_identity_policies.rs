@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEmailIdentityPolicies`](crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`email_identity(impl ::std::convert::Into<String>)`](crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder::email_identity) / [`set_email_identity(Option<String>)`](crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder::set_email_identity): <p>The email identity.</p>
+    ///   - [`email_identity(impl Into<String>)`](crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder::email_identity) / [`set_email_identity(Option<String>)`](crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder::set_email_identity): <p>The email identity.</p>
     /// - On success, responds with [`GetEmailIdentityPoliciesOutput`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput) with field(s):
     ///   - [`policies(Option<HashMap<String, String>>)`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput::policies): <p>A map of policy names to policies.</p>
     /// - On failure, responds with [`SdkError<GetEmailIdentityPoliciesError>`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError)

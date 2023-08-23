@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateDomain`](crate::operation::create_domain::builders::CreateDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::set_name): <p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::set_name): <p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput) with field(s):
     ///   - [`domain_id(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::domain_id): <p>The unique identifier of the Cases domain. </p>
     ///   - [`domain_arn(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) for the Cases domain.</p>

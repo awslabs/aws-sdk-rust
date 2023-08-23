@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDiscoveredSchema`](crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`events(Vec<String>)`](crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder::events) / [`set_events(Option<Vec<String>>)`](crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder::set_events): <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
+    ///   - [`events(impl Into<String>)`](crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder::events) / [`set_events(Option<Vec<String>>)`](crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder::set_events): <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
     ///   - [`r#type(Type)`](crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaFluentBuilder::set_type): <p>The type of event.</p>
     /// - On success, responds with [`GetDiscoveredSchemaOutput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::operation::get_discovered_schema::GetDiscoveredSchemaOutput::content): <p>The source of the schema definition.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApprovalRuleTemplate`](crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`approval_rule_template_name(impl ::std::convert::Into<String>)`](crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateFluentBuilder::approval_rule_template_name) / [`set_approval_rule_template_name(Option<String>)`](crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateFluentBuilder::set_approval_rule_template_name): <p>The name of the approval rule template for which you want to get information.</p>
+    ///   - [`approval_rule_template_name(impl Into<String>)`](crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateFluentBuilder::approval_rule_template_name) / [`set_approval_rule_template_name(Option<String>)`](crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateFluentBuilder::set_approval_rule_template_name): <p>The name of the approval rule template for which you want to get information.</p>
     /// - On success, responds with [`GetApprovalRuleTemplateOutput`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateOutput) with field(s):
     ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateOutput::approval_rule_template): <p>The content and structure of the approval rule template.</p>
     /// - On failure, responds with [`SdkError<GetApprovalRuleTemplateError>`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError)

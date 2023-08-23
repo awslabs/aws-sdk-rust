@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMetricStream`](crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder::set_name): <p>The name of the metric stream to retrieve information about.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_metric_stream::builders::GetMetricStreamFluentBuilder::set_name): <p>The name of the metric stream to retrieve information about.</p>
     /// - On success, responds with [`GetMetricStreamOutput`](crate::operation::get_metric_stream::GetMetricStreamOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_metric_stream::GetMetricStreamOutput::arn): <p>The ARN of the metric stream.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_metric_stream::GetMetricStreamOutput::name): <p>The name of the metric stream.</p>

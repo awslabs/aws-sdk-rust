@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelDataQualityRulesetEvaluationRun`](crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::cancel_data_quality_ruleset_evaluation_run::builders::CancelDataQualityRulesetEvaluationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
     /// - On success, responds with [`CancelDataQualityRulesetEvaluationRunOutput`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunOutput)
     /// - On failure, responds with [`SdkError<CancelDataQualityRulesetEvaluationRunError>`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunError)
     pub fn cancel_data_quality_ruleset_evaluation_run(

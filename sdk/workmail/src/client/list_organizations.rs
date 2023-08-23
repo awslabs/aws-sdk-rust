@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::set_next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::set_next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     ///   - [`max_results(i32)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::set_max_results): <p>The maximum number of results to return in a single call.</p>
     /// - On success, responds with [`ListOrganizationsOutput`](crate::operation::list_organizations::ListOrganizationsOutput) with field(s):
     ///   - [`organization_summaries(Option<Vec<OrganizationSummary>>)`](crate::operation::list_organizations::ListOrganizationsOutput::organization_summaries): <p>The overview of owned organizations presented as a list of organization summaries.</p>

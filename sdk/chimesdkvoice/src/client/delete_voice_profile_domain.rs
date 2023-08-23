@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVoiceProfileDomain`](crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_profile_domain_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainFluentBuilder::voice_profile_domain_id) / [`set_voice_profile_domain_id(Option<String>)`](crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainFluentBuilder::set_voice_profile_domain_id): <p>The voice profile domain ID.</p>
+    ///   - [`voice_profile_domain_id(impl Into<String>)`](crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainFluentBuilder::voice_profile_domain_id) / [`set_voice_profile_domain_id(Option<String>)`](crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainFluentBuilder::set_voice_profile_domain_id): <p>The voice profile domain ID.</p>
     /// - On success, responds with [`DeleteVoiceProfileDomainOutput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceProfileDomainError>`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainError)
     pub fn delete_voice_profile_domain(&self) -> crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainFluentBuilder {

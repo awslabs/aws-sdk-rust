@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateApiKey`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::set_api_id): <p>The ID for your GraphQL API.</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::set_description): <p>A description of the purpose of the API key.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::set_api_id): <p>The ID for your GraphQL API.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::set_description): <p>A description of the purpose of the API key.</p>
     ///   - [`expires(i64)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::expires) / [`set_expires(Option<i64>)`](crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::set_expires): <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     /// - On success, responds with [`CreateApiKeyOutput`](crate::operation::create_api_key::CreateApiKeyOutput) with field(s):
     ///   - [`api_key(Option<ApiKey>)`](crate::operation::create_api_key::CreateApiKeyOutput::api_key): <p>The API key.</p>

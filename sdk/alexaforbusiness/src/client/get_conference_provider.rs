@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConferenceProvider`](crate::operation::get_conference_provider::builders::GetConferenceProviderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`conference_provider_arn(impl ::std::convert::Into<String>)`](crate::operation::get_conference_provider::builders::GetConferenceProviderFluentBuilder::conference_provider_arn) / [`set_conference_provider_arn(Option<String>)`](crate::operation::get_conference_provider::builders::GetConferenceProviderFluentBuilder::set_conference_provider_arn): <p>The ARN of the newly created conference provider.</p>
+    ///   - [`conference_provider_arn(impl Into<String>)`](crate::operation::get_conference_provider::builders::GetConferenceProviderFluentBuilder::conference_provider_arn) / [`set_conference_provider_arn(Option<String>)`](crate::operation::get_conference_provider::builders::GetConferenceProviderFluentBuilder::set_conference_provider_arn): <p>The ARN of the newly created conference provider.</p>
     /// - On success, responds with [`GetConferenceProviderOutput`](crate::operation::get_conference_provider::GetConferenceProviderOutput) with field(s):
     ///   - [`conference_provider(Option<ConferenceProvider>)`](crate::operation::get_conference_provider::GetConferenceProviderOutput::conference_provider): <p>The conference provider.</p>
     /// - On failure, responds with [`SdkError<GetConferenceProviderError>`](crate::operation::get_conference_provider::GetConferenceProviderError)

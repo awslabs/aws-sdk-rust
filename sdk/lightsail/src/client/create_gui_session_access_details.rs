@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateGUISessionAccessDetails`](crate::operation::create_gui_session_access_details::builders::CreateGUISessionAccessDetailsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_name(impl ::std::convert::Into<String>)`](crate::operation::create_gui_session_access_details::builders::CreateGUISessionAccessDetailsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::create_gui_session_access_details::builders::CreateGUISessionAccessDetailsFluentBuilder::set_resource_name): <p>The resource name.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::create_gui_session_access_details::builders::CreateGUISessionAccessDetailsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::create_gui_session_access_details::builders::CreateGUISessionAccessDetailsFluentBuilder::set_resource_name): <p>The resource name.</p>
     /// - On success, responds with [`CreateGuiSessionAccessDetailsOutput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput) with field(s):
     ///   - [`resource_name(Option<String>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::resource_name): <p>The resource name.</p>
     ///   - [`status(Option<Status>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::status): <p>The status of the operation.</p>

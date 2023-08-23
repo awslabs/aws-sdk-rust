@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeleteImportData`](crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_task_ids(Vec<String>)`](crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataFluentBuilder::import_task_ids) / [`set_import_task_ids(Option<Vec<String>>)`](crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataFluentBuilder::set_import_task_ids): <p>The IDs for the import tasks that you want to delete.</p>
+    ///   - [`import_task_ids(impl Into<String>)`](crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataFluentBuilder::import_task_ids) / [`set_import_task_ids(Option<Vec<String>>)`](crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataFluentBuilder::set_import_task_ids): <p>The IDs for the import tasks that you want to delete.</p>
     /// - On success, responds with [`BatchDeleteImportDataOutput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchDeleteImportDataError>>)`](crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput::errors): <p>Error messages returned for each import task that you deleted as a response for this command.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteImportDataError>`](crate::operation::batch_delete_import_data::BatchDeleteImportDataError)

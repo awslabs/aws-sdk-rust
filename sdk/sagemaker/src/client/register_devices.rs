@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterDevices`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_fleet_name(impl ::std::convert::Into<String>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::set_device_fleet_name): <p>The name of the fleet.</p>
-    ///   - [`devices(Vec<Device>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::devices) / [`set_devices(Option<Vec<Device>>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::set_devices): <p>A list of devices to register with SageMaker Edge Manager.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::set_tags): <p>The tags associated with devices.</p>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::set_device_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`devices(Device)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::devices) / [`set_devices(Option<Vec<Device>>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::set_devices): <p>A list of devices to register with SageMaker Edge Manager.</p>
+    ///   - [`tags(Tag)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::register_devices::builders::RegisterDevicesFluentBuilder::set_tags): <p>The tags associated with devices.</p>
     /// - On success, responds with [`RegisterDevicesOutput`](crate::operation::register_devices::RegisterDevicesOutput)
     /// - On failure, responds with [`SdkError<RegisterDevicesError>`](crate::operation::register_devices::RegisterDevicesError)
     pub fn register_devices(&self) -> crate::operation::register_devices::builders::RegisterDevicesFluentBuilder {

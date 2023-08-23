@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBroker`](crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`broker_id(impl ::std::convert::Into<String>)`](crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder::broker_id) / [`set_broker_id(Option<String>)`](crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`broker_id(impl Into<String>)`](crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder::broker_id) / [`set_broker_id(Option<String>)`](crate::operation::delete_broker::builders::DeleteBrokerFluentBuilder::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On success, responds with [`DeleteBrokerOutput`](crate::operation::delete_broker::DeleteBrokerOutput) with field(s):
     ///   - [`broker_id(Option<String>)`](crate::operation::delete_broker::DeleteBrokerOutput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On failure, responds with [`SdkError<DeleteBrokerError>`](crate::operation::delete_broker::DeleteBrokerError)

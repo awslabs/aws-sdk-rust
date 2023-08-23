@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
     ///   - [`max_results(i32)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_settings::builders::ListUserSettingsFluentBuilder::set_max_results): <p>The maximum number of results to be included in the next page.</p>
     /// - On success, responds with [`ListUserSettingsOutput`](crate::operation::list_user_settings::ListUserSettingsOutput) with field(s):
     ///   - [`user_settings(Option<Vec<UserSettingsSummary>>)`](crate::operation::list_user_settings::ListUserSettingsOutput::user_settings): <p>The user settings.</p>

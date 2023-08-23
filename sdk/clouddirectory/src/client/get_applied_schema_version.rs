@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAppliedSchemaVersion`](crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_arn(impl ::std::convert::Into<String>)`](crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionFluentBuilder::set_schema_arn): <p>The ARN of the applied schema.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionFluentBuilder::set_schema_arn): <p>The ARN of the applied schema.</p>
     /// - On success, responds with [`GetAppliedSchemaVersionOutput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput) with field(s):
     ///   - [`applied_schema_arn(Option<String>)`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput::applied_schema_arn): <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
     /// - On failure, responds with [`SdkError<GetAppliedSchemaVersionError>`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError)

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`provider(RepositoryProvider)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::provider) / [`set_provider(Option<RepositoryProvider>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_provider): <p>The repository provider.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_name): <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_name): <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
     /// - On success, responds with [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput) with field(s):
     ///   - [`repository(Option<Repository>)`](crate::operation::get_repository::GetRepositoryOutput::repository): <p>The repository link's detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryError>`](crate::operation::get_repository::GetRepositoryError)

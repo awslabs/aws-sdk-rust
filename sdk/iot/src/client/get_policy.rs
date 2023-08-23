@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicy`](crate::operation::get_policy::builders::GetPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_name(impl ::std::convert::Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_name): <p>The name of the policy.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_name): <p>The name of the policy.</p>
     /// - On success, responds with [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput) with field(s):
     ///   - [`policy_name(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy_name): <p>The policy name.</p>
     ///   - [`policy_arn(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy_arn): <p>The policy ARN.</p>

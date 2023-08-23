@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTransaction`](crate::operation::get_transaction::builders::GetTransactionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transaction_hash(impl ::std::convert::Into<String>)`](crate::operation::get_transaction::builders::GetTransactionFluentBuilder::transaction_hash) / [`set_transaction_hash(Option<String>)`](crate::operation::get_transaction::builders::GetTransactionFluentBuilder::set_transaction_hash): <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    ///   - [`transaction_hash(impl Into<String>)`](crate::operation::get_transaction::builders::GetTransactionFluentBuilder::transaction_hash) / [`set_transaction_hash(Option<String>)`](crate::operation::get_transaction::builders::GetTransactionFluentBuilder::set_transaction_hash): <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     ///   - [`network(QueryNetwork)`](crate::operation::get_transaction::builders::GetTransactionFluentBuilder::network) / [`set_network(Option<QueryNetwork>)`](crate::operation::get_transaction::builders::GetTransactionFluentBuilder::set_network): <p>The blockchain network where the transaction occurred.</p>
     /// - On success, responds with [`GetTransactionOutput`](crate::operation::get_transaction::GetTransactionOutput) with field(s):
     ///   - [`transaction(Option<Transaction>)`](crate::operation::get_transaction::GetTransactionOutput::transaction): <p>Contains the details of the transaction.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCertificate`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`certificate_id(impl ::std::convert::Into<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    ///   - [`certificate_id(impl Into<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     ///   - [`force_delete(bool)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::set_force_delete): <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     /// - On success, responds with [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput)
     /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::operation::delete_certificate::DeleteCertificateError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CommitTransaction`](crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transaction_id(impl ::std::convert::Into<String>)`](crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder::set_transaction_id): <p>The transaction to commit.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::commit_transaction::builders::CommitTransactionFluentBuilder::set_transaction_id): <p>The transaction to commit.</p>
     /// - On success, responds with [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput) with field(s):
     ///   - [`transaction_status(Option<TransactionStatus>)`](crate::operation::commit_transaction::CommitTransactionOutput::transaction_status): <p>The status of the transaction.</p>
     /// - On failure, responds with [`SdkError<CommitTransactionError>`](crate::operation::commit_transaction::CommitTransactionError)

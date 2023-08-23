@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSecurityConfig`](crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder::set_id): <p>The unique identifier of the security configuration.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder::set_id): <p>The unique identifier of the security configuration.</p>
     /// - On success, responds with [`GetSecurityConfigOutput`](crate::operation::get_security_config::GetSecurityConfigOutput) with field(s):
     ///   - [`security_config_detail(Option<SecurityConfigDetail>)`](crate::operation::get_security_config::GetSecurityConfigOutput::security_config_detail): <p>Details of the requested security configuration.</p>
     /// - On failure, responds with [`SdkError<GetSecurityConfigError>`](crate::operation::get_security_config::GetSecurityConfigError)

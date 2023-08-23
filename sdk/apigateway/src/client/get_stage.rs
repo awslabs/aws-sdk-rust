@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStage`](crate::operation::get_stage::builders::GetStageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl ::std::convert::Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
-    ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_stage_name): <p>The name of the Stage resource to get information about.</p>
+    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_stage_name): <p>The name of the Stage resource to get information about.</p>
     /// - On success, responds with [`GetStageOutput`](crate::operation::get_stage::GetStageOutput) with field(s):
     ///   - [`deployment_id(Option<String>)`](crate::operation::get_stage::GetStageOutput::deployment_id): <p>The identifier of the Deployment that the stage points to.</p>
     ///   - [`client_certificate_id(Option<String>)`](crate::operation::get_stage::GetStageOutput::client_certificate_id): <p>The identifier of a client certificate for an API stage.</p>

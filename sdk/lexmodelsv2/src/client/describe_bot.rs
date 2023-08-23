@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBot`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bot_id(impl ::std::convert::Into<String>)`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder::set_bot_id): <p>The unique identifier of the bot to describe.</p>
+    ///   - [`bot_id(impl Into<String>)`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder::set_bot_id): <p>The unique identifier of the bot to describe.</p>
     /// - On success, responds with [`DescribeBotOutput`](crate::operation::describe_bot::DescribeBotOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::bot_id): <p>The unique identifier of the bot.</p>
     ///   - [`bot_name(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::bot_name): <p>The name of the bot.</p>

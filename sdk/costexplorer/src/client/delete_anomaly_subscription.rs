@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAnomalySubscription`](crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subscription_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionFluentBuilder::subscription_arn) / [`set_subscription_arn(Option<String>)`](crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionFluentBuilder::set_subscription_arn): <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    ///   - [`subscription_arn(impl Into<String>)`](crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionFluentBuilder::subscription_arn) / [`set_subscription_arn(Option<String>)`](crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionFluentBuilder::set_subscription_arn): <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
     /// - On success, responds with [`DeleteAnomalySubscriptionOutput`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteAnomalySubscriptionError>`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError)
     pub fn delete_anomaly_subscription(&self) -> crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionFluentBuilder {

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateUser`](crate::operation::create_user::builders::CreateUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::set_username): <p>The user name.</p>
-    ///   - [`email(impl ::std::convert::Into<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::email) / [`set_email(Option<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::set_email): <p>The user's email address.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::set_username): <p>The user name.</p>
+    ///   - [`email(impl Into<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::email) / [`set_email(Option<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::set_email): <p>The user's email address.</p>
     ///   - [`user_type(UserType)`](crate::operation::create_user::builders::CreateUserFluentBuilder::user_type) / [`set_user_type(Option<UserType>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::set_user_type): <p>The user type.</p>
     /// - On success, responds with [`CreateUserOutput`](crate::operation::create_user::CreateUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::create_user::CreateUserOutput::user): <p>The user on the Amazon Chime account.</p>

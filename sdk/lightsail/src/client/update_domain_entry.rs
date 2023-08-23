@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDomainEntry`](crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder::set_domain_name): <p>The name of the domain recordset to update.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder::set_domain_name): <p>The name of the domain recordset to update.</p>
     ///   - [`domain_entry(DomainEntry)`](crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder::domain_entry) / [`set_domain_entry(Option<DomainEntry>)`](crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder::set_domain_entry): <p>An array of key-value pairs containing information about the domain entry.</p>
     /// - On success, responds with [`UpdateDomainEntryOutput`](crate::operation::update_domain_entry::UpdateDomainEntryOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::update_domain_entry::UpdateDomainEntryOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>

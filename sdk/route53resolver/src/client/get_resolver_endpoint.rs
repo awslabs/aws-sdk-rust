@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResolverEndpoint`](crate::operation::get_resolver_endpoint::builders::GetResolverEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resolver_endpoint_id(impl ::std::convert::Into<String>)`](crate::operation::get_resolver_endpoint::builders::GetResolverEndpointFluentBuilder::resolver_endpoint_id) / [`set_resolver_endpoint_id(Option<String>)`](crate::operation::get_resolver_endpoint::builders::GetResolverEndpointFluentBuilder::set_resolver_endpoint_id): <p>The ID of the Resolver endpoint that you want to get information about.</p>
+    ///   - [`resolver_endpoint_id(impl Into<String>)`](crate::operation::get_resolver_endpoint::builders::GetResolverEndpointFluentBuilder::resolver_endpoint_id) / [`set_resolver_endpoint_id(Option<String>)`](crate::operation::get_resolver_endpoint::builders::GetResolverEndpointFluentBuilder::set_resolver_endpoint_id): <p>The ID of the Resolver endpoint that you want to get information about.</p>
     /// - On success, responds with [`GetResolverEndpointOutput`](crate::operation::get_resolver_endpoint::GetResolverEndpointOutput) with field(s):
     ///   - [`resolver_endpoint(Option<ResolverEndpoint>)`](crate::operation::get_resolver_endpoint::GetResolverEndpointOutput::resolver_endpoint): <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverEndpointError>`](crate::operation::get_resolver_endpoint::GetResolverEndpointError)

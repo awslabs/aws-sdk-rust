@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTags`](crate::operation::get_tags::builders::GetTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_resource_arn): <p>The ARN of a resource that can be tagged.</p>
-    ///   - [`position(impl ::std::convert::Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_position): <p>(Not currently supported) The current pagination position in the paged result set.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_resource_arn): <p>The ARN of a resource that can be tagged.</p>
+    ///   - [`position(impl Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_position): <p>(Not currently supported) The current pagination position in the paged result set.</p>
     ///   - [`limit(i32)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_limit): <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     /// - On success, responds with [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_tags::GetTagsOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>

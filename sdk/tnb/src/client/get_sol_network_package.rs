@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolNetworkPackage`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`nsd_info_id(impl ::std::convert::Into<String>)`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder::nsd_info_id) / [`set_nsd_info_id(Option<String>)`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder::set_nsd_info_id): <p>ID of the network service descriptor in the network package.</p>
+    ///   - [`nsd_info_id(impl Into<String>)`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder::nsd_info_id) / [`set_nsd_info_id(Option<String>)`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder::set_nsd_info_id): <p>ID of the network service descriptor in the network package.</p>
     /// - On success, responds with [`GetSolNetworkPackageOutput`](crate::operation::get_sol_network_package::GetSolNetworkPackageOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_sol_network_package::GetSolNetworkPackageOutput::id): <p>Network package ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_sol_network_package::GetSolNetworkPackageOutput::arn): <p>Network package ARN.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAutoSnapshots`](crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_name(impl ::std::convert::Into<String>)`](crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder::set_resource_name): <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder::set_resource_name): <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
     /// - On success, responds with [`GetAutoSnapshotsOutput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput) with field(s):
     ///   - [`resource_name(Option<String>)`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput::resource_name): <p>The name of the source instance or disk for the automatic snapshots.</p>
     ///   - [`resource_type(Option<ResourceType>)`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput::resource_type): <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>

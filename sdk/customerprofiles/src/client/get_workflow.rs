@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkflow`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
-    ///   - [`workflow_id(impl ::std::convert::Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_workflow_id): <p>Unique identifier for the workflow.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`workflow_id(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_workflow_id): <p>Unique identifier for the workflow.</p>
     /// - On success, responds with [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput) with field(s):
     ///   - [`workflow_id(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow_id): <p>Unique identifier for the workflow.</p>
     ///   - [`workflow_type(Option<WorkflowType>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow_type): <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>

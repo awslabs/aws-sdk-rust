@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeChannel`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_id): The ID of a Channel.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_id): The ID of a Channel.
     /// - On success, responds with [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`created_at(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::created_at): The date and time the Channel was created.

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBaiduChannel`](crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetBaiduChannelOutput`](crate::operation::get_baidu_channel::GetBaiduChannelOutput) with field(s):
     ///   - [`baidu_channel_response(Option<BaiduChannelResponse>)`](crate::operation::get_baidu_channel::GetBaiduChannelOutput::baidu_channel_response): <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetBaiduChannelError>`](crate::operation::get_baidu_channel::GetBaiduChannelError)

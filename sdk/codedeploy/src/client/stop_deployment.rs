@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopDeployment`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl ::std::convert::Into<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::set_deployment_id): <p> The unique ID of a deployment. </p>
     ///   - [`auto_rollback_enabled(bool)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::auto_rollback_enabled) / [`set_auto_rollback_enabled(Option<bool>)`](crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::set_auto_rollback_enabled): <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
     /// - On success, responds with [`StopDeploymentOutput`](crate::operation::stop_deployment::StopDeploymentOutput) with field(s):
     ///   - [`status(Option<StopStatus>)`](crate::operation::stop_deployment::StopDeploymentOutput::status): <p>The status of the stop deployment operation:</p>  <ul>   <li> <p>Pending: The stop operation is pending.</p> </li>   <li> <p>Succeeded: The stop operation was successful.</p> </li>  </ul>

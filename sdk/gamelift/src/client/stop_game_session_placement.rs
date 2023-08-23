@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopGameSessionPlacement`](crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`placement_id(impl ::std::convert::Into<String>)`](crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementFluentBuilder::placement_id) / [`set_placement_id(Option<String>)`](crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementFluentBuilder::set_placement_id): <p>A unique identifier for a game session placement to stop.</p>
+    ///   - [`placement_id(impl Into<String>)`](crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementFluentBuilder::placement_id) / [`set_placement_id(Option<String>)`](crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementFluentBuilder::set_placement_id): <p>A unique identifier for a game session placement to stop.</p>
     /// - On success, responds with [`StopGameSessionPlacementOutput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput) with field(s):
     ///   - [`game_session_placement(Option<GameSessionPlacement>)`](crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput::game_session_placement): <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     /// - On failure, responds with [`SdkError<StopGameSessionPlacementError>`](crate::operation::stop_game_session_placement::StopGameSessionPlacementError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTestSetGeneration`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`test_set_generation_id(impl ::std::convert::Into<String>)`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder::test_set_generation_id) / [`set_test_set_generation_id(Option<String>)`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder::set_test_set_generation_id): <p>The unique identifier of the test set generation.</p>
+    ///   - [`test_set_generation_id(impl Into<String>)`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder::test_set_generation_id) / [`set_test_set_generation_id(Option<String>)`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder::set_test_set_generation_id): <p>The unique identifier of the test set generation.</p>
     /// - On success, responds with [`DescribeTestSetGenerationOutput`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput) with field(s):
     ///   - [`test_set_generation_id(Option<String>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::test_set_generation_id): <p>The unique identifier of the test set generation.</p>
     ///   - [`test_set_generation_status(Option<TestSetGenerationStatus>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::test_set_generation_status): <p>The status for the test set generation.</p>

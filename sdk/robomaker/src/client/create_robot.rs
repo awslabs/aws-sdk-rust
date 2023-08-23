@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateRobot`](crate::operation::create_robot::builders::CreateRobotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::set_name): <p>The name for the robot.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::set_name): <p>The name for the robot.</p>
     ///   - [`architecture(Architecture)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::architecture) / [`set_architecture(Option<Architecture>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::set_architecture): <p>The target architecture of the robot.</p>
-    ///   - [`greengrass_group_id(impl ::std::convert::Into<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::greengrass_group_id) / [`set_greengrass_group_id(Option<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::set_greengrass_group_id): <p>The Greengrass group id.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::set_tags): <p>A map that contains tag keys and tag values that are attached to the robot.</p>
+    ///   - [`greengrass_group_id(impl Into<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::greengrass_group_id) / [`set_greengrass_group_id(Option<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::set_greengrass_group_id): <p>The Greengrass group id.</p>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_robot::builders::CreateRobotFluentBuilder::set_tags): <p>A map that contains tag keys and tag values that are attached to the robot.</p>
     /// - On success, responds with [`CreateRobotOutput`](crate::operation::create_robot::CreateRobotOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_robot::CreateRobotOutput::arn): <p>The Amazon Resource Name (ARN) of the robot.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_robot::CreateRobotOutput::name): <p>The name of the robot.</p>

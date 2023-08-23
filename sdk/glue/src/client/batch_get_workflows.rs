@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetWorkflows`](crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`names(Vec<String>)`](crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder::set_names): <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
+    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder::set_names): <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
     ///   - [`include_graph(bool)`](crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder::include_graph) / [`set_include_graph(Option<bool>)`](crate::operation::batch_get_workflows::builders::BatchGetWorkflowsFluentBuilder::set_include_graph): <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     /// - On success, responds with [`BatchGetWorkflowsOutput`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput) with field(s):
     ///   - [`workflows(Option<Vec<Workflow>>)`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput::workflows): <p>A list of workflow resource metadata.</p>

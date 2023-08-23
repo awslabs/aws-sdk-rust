@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDatasetGroup`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_group_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
     /// - On success, responds with [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput) with field(s):
     ///   - [`dataset_group(Option<DatasetGroup>)`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput::dataset_group): <p>A listing of the dataset group's properties.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetGroupError>`](crate::operation::describe_dataset_group::DescribeDatasetGroupError)

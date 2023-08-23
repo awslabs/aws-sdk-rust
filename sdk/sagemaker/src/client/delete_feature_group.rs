@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFeatureGroup`](crate::operation::delete_feature_group::builders::DeleteFeatureGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`feature_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_feature_group::builders::DeleteFeatureGroupFluentBuilder::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::operation::delete_feature_group::builders::DeleteFeatureGroupFluentBuilder::set_feature_group_name): <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    ///   - [`feature_group_name(impl Into<String>)`](crate::operation::delete_feature_group::builders::DeleteFeatureGroupFluentBuilder::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::operation::delete_feature_group::builders::DeleteFeatureGroupFluentBuilder::set_feature_group_name): <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
     /// - On success, responds with [`DeleteFeatureGroupOutput`](crate::operation::delete_feature_group::DeleteFeatureGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteFeatureGroupError>`](crate::operation::delete_feature_group::DeleteFeatureGroupError)
     pub fn delete_feature_group(&self) -> crate::operation::delete_feature_group::builders::DeleteFeatureGroupFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopConfigurationRecorder`](crate::operation::stop_configuration_recorder::builders::StopConfigurationRecorderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_recorder_name(impl ::std::convert::Into<String>)`](crate::operation::stop_configuration_recorder::builders::StopConfigurationRecorderFluentBuilder::configuration_recorder_name) / [`set_configuration_recorder_name(Option<String>)`](crate::operation::stop_configuration_recorder::builders::StopConfigurationRecorderFluentBuilder::set_configuration_recorder_name): <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    ///   - [`configuration_recorder_name(impl Into<String>)`](crate::operation::stop_configuration_recorder::builders::StopConfigurationRecorderFluentBuilder::configuration_recorder_name) / [`set_configuration_recorder_name(Option<String>)`](crate::operation::stop_configuration_recorder::builders::StopConfigurationRecorderFluentBuilder::set_configuration_recorder_name): <p>The name of the recorder object that records each configuration change made to the resources.</p>
     /// - On success, responds with [`StopConfigurationRecorderOutput`](crate::operation::stop_configuration_recorder::StopConfigurationRecorderOutput)
     /// - On failure, responds with [`SdkError<StopConfigurationRecorderError>`](crate::operation::stop_configuration_recorder::StopConfigurationRecorderError)
     pub fn stop_configuration_recorder(&self) -> crate::operation::stop_configuration_recorder::builders::StopConfigurationRecorderFluentBuilder {

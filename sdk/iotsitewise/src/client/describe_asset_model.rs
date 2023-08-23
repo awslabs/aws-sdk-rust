@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAssetModel`](crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`asset_model_id(impl ::std::convert::Into<String>)`](crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder::set_asset_model_id): <p>The ID of the asset model.</p>
+    ///   - [`asset_model_id(impl Into<String>)`](crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder::set_asset_model_id): <p>The ID of the asset model.</p>
     ///   - [`exclude_properties(bool)`](crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder::exclude_properties) / [`set_exclude_properties(Option<bool>)`](crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder::set_exclude_properties): <p> Whether or not to exclude asset model properties from the response. </p>
     /// - On success, responds with [`DescribeAssetModelOutput`](crate::operation::describe_asset_model::DescribeAssetModelOutput) with field(s):
     ///   - [`asset_model_id(Option<String>)`](crate::operation::describe_asset_model::DescribeAssetModelOutput::asset_model_id): <p>The ID of the asset model.</p>

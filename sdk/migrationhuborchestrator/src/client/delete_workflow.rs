@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkflow`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::set_id): <p>The ID of the migration workflow you want to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::set_id): <p>The ID of the migration workflow you want to delete.</p>
     /// - On success, responds with [`DeleteWorkflowOutput`](crate::operation::delete_workflow::DeleteWorkflowOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_workflow::DeleteWorkflowOutput::id): <p>The ID of the migration workflow.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_workflow::DeleteWorkflowOutput::arn): <p>The Amazon Resource Name (ARN) of the migration workflow.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVoiceConnectorTermination`](crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationFluentBuilder::set_voice_connector_id): <p>The Voice Connector ID.</p>
     /// - On success, responds with [`DeleteVoiceConnectorTerminationOutput`](crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorTerminationError>`](crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationError)
     pub fn delete_voice_connector_termination(

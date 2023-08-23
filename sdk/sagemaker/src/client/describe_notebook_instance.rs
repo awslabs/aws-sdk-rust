@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNotebookInstance`](crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notebook_instance_name(impl ::std::convert::Into<String>)`](crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceFluentBuilder::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceFluentBuilder::set_notebook_instance_name): <p>The name of the notebook instance that you want information about.</p>
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceFluentBuilder::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceFluentBuilder::set_notebook_instance_name): <p>The name of the notebook instance that you want information about.</p>
     /// - On success, responds with [`DescribeNotebookInstanceOutput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput) with field(s):
     ///   - [`notebook_instance_arn(Option<String>)`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput::notebook_instance_arn): <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
     ///   - [`notebook_instance_name(Option<String>)`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput::notebook_instance_name): <p>The name of the SageMaker notebook instance. </p>

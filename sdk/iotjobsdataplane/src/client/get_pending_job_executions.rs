@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPendingJobExecutions`](crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl ::std::convert::Into<String>)`](crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsFluentBuilder::set_thing_name): <p>The name of the thing that is executing the job.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsFluentBuilder::set_thing_name): <p>The name of the thing that is executing the job.</p>
     /// - On success, responds with [`GetPendingJobExecutionsOutput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput) with field(s):
     ///   - [`in_progress_jobs(Option<Vec<JobExecutionSummary>>)`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput::in_progress_jobs): <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
     ///   - [`queued_jobs(Option<Vec<JobExecutionSummary>>)`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput::queued_jobs): <p>A list of JobExecutionSummary objects with status QUEUED.</p>

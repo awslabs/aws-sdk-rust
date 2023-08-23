@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEndpointAccess`](crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_name(impl ::std::convert::Into<String>)`](crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder::set_endpoint_name): <p>The name of the VPC endpoint to return information for.</p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder::set_endpoint_name): <p>The name of the VPC endpoint to return information for.</p>
     /// - On success, responds with [`GetEndpointAccessOutput`](crate::operation::get_endpoint_access::GetEndpointAccessOutput) with field(s):
     ///   - [`endpoint(Option<EndpointAccess>)`](crate::operation::get_endpoint_access::GetEndpointAccessOutput::endpoint): <p>The returned VPC endpoint.</p>
     /// - On failure, responds with [`SdkError<GetEndpointAccessError>`](crate::operation::get_endpoint_access::GetEndpointAccessError)

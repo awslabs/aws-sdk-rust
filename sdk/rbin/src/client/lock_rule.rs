@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`LockRule`](crate::operation::lock_rule::builders::LockRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::lock_rule::builders::LockRuleFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::lock_rule::builders::LockRuleFluentBuilder::set_identifier): <p>The unique ID of the retention rule.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::lock_rule::builders::LockRuleFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::lock_rule::builders::LockRuleFluentBuilder::set_identifier): <p>The unique ID of the retention rule.</p>
     ///   - [`lock_configuration(LockConfiguration)`](crate::operation::lock_rule::builders::LockRuleFluentBuilder::lock_configuration) / [`set_lock_configuration(Option<LockConfiguration>)`](crate::operation::lock_rule::builders::LockRuleFluentBuilder::set_lock_configuration): <p>Information about the retention rule lock configuration.</p>
     /// - On success, responds with [`LockRuleOutput`](crate::operation::lock_rule::LockRuleOutput) with field(s):
     ///   - [`identifier(Option<String>)`](crate::operation::lock_rule::LockRuleOutput::identifier): <p>The unique ID of the retention rule.</p>

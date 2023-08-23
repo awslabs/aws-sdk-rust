@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateMyUserProfile`](crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ssh_public_key(impl ::std::convert::Into<String>)`](crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder::ssh_public_key) / [`set_ssh_public_key(Option<String>)`](crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder::set_ssh_public_key): <p>The user's SSH public key.</p>
+    ///   - [`ssh_public_key(impl Into<String>)`](crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder::ssh_public_key) / [`set_ssh_public_key(Option<String>)`](crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder::set_ssh_public_key): <p>The user's SSH public key.</p>
     /// - On success, responds with [`UpdateMyUserProfileOutput`](crate::operation::update_my_user_profile::UpdateMyUserProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateMyUserProfileError>`](crate::operation::update_my_user_profile::UpdateMyUserProfileError)
     pub fn update_my_user_profile(&self) -> crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUserGroup`](crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_group_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder::user_group_id) / [`set_user_group_id(Option<String>)`](crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder::set_user_group_id): <p>The ID of the user group.</p>
+    ///   - [`user_group_id(impl Into<String>)`](crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder::user_group_id) / [`set_user_group_id(Option<String>)`](crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder::set_user_group_id): <p>The ID of the user group.</p>
     /// - On success, responds with [`DeleteUserGroupOutput`](crate::operation::delete_user_group::DeleteUserGroupOutput) with field(s):
     ///   - [`user_group_id(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::user_group_id): <p>The ID of the user group.</p>
     ///   - [`status(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::status): <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>

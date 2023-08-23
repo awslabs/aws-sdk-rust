@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteObject`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`path(impl ::std::convert::Into<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::path) / [`set_path(Option<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
+    ///   - [`path(impl Into<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::path) / [`set_path(Option<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
     /// - On success, responds with [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput)
     /// - On failure, responds with [`SdkError<DeleteObjectError>`](crate::operation::delete_object::DeleteObjectError)
     pub fn delete_object(&self) -> crate::operation::delete_object::builders::DeleteObjectFluentBuilder {

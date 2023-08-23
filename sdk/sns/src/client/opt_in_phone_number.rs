@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`OptInPhoneNumber`](crate::operation::opt_in_phone_number::builders::OptInPhoneNumberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`phone_number(impl ::std::convert::Into<String>)`](crate::operation::opt_in_phone_number::builders::OptInPhoneNumberFluentBuilder::phone_number) / [`set_phone_number(Option<String>)`](crate::operation::opt_in_phone_number::builders::OptInPhoneNumberFluentBuilder::set_phone_number): <p>The phone number to opt in. Use E.164 format.</p>
+    ///   - [`phone_number(impl Into<String>)`](crate::operation::opt_in_phone_number::builders::OptInPhoneNumberFluentBuilder::phone_number) / [`set_phone_number(Option<String>)`](crate::operation::opt_in_phone_number::builders::OptInPhoneNumberFluentBuilder::set_phone_number): <p>The phone number to opt in. Use E.164 format.</p>
     /// - On success, responds with [`OptInPhoneNumberOutput`](crate::operation::opt_in_phone_number::OptInPhoneNumberOutput)
     /// - On failure, responds with [`SdkError<OptInPhoneNumberError>`](crate::operation::opt_in_phone_number::OptInPhoneNumberError)
     pub fn opt_in_phone_number(&self) -> crate::operation::opt_in_phone_number::builders::OptInPhoneNumberFluentBuilder {

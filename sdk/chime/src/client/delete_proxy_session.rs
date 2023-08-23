@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProxySession`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    ///   - [`proxy_session_id(impl ::std::convert::Into<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::set_proxy_session_id): <p>The proxy session ID.</p>
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
+    ///   - [`proxy_session_id(impl Into<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::set_proxy_session_id): <p>The proxy session ID.</p>
     /// - On success, responds with [`DeleteProxySessionOutput`](crate::operation::delete_proxy_session::DeleteProxySessionOutput)
     /// - On failure, responds with [`SdkError<DeleteProxySessionError>`](crate::operation::delete_proxy_session::DeleteProxySessionError)
     #[deprecated(note = "Replaced by DeleteProxySession in the Amazon Chime SDK Voice Namespace")]

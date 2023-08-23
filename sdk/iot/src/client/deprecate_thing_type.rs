@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeprecateThingType`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_type_name(impl ::std::convert::Into<String>)`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::set_thing_type_name): <p>The name of the thing type to deprecate.</p>
+    ///   - [`thing_type_name(impl Into<String>)`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::set_thing_type_name): <p>The name of the thing type to deprecate.</p>
     ///   - [`undo_deprecate(bool)`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::undo_deprecate) / [`set_undo_deprecate(Option<bool>)`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::set_undo_deprecate): <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     /// - On success, responds with [`DeprecateThingTypeOutput`](crate::operation::deprecate_thing_type::DeprecateThingTypeOutput)
     /// - On failure, responds with [`SdkError<DeprecateThingTypeError>`](crate::operation::deprecate_thing_type::DeprecateThingTypeError)

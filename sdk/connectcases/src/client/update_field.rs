@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateField`](crate::operation::update_field::builders::UpdateFieldFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_domain_id): <p>The unique identifier of the Cases domain. </p>
-    ///   - [`field_id(impl ::std::convert::Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::field_id) / [`set_field_id(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_field_id): <p>The unique identifier of a field.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_name): <p>The name of the field.</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_description): <p>The description of a field.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_domain_id): <p>The unique identifier of the Cases domain. </p>
+    ///   - [`field_id(impl Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::field_id) / [`set_field_id(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_field_id): <p>The unique identifier of a field.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_name): <p>The name of the field.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_description): <p>The description of a field.</p>
     /// - On success, responds with [`UpdateFieldOutput`](crate::operation::update_field::UpdateFieldOutput)
     /// - On failure, responds with [`SdkError<UpdateFieldError>`](crate::operation::update_field::UpdateFieldError)
     pub fn update_field(&self) -> crate::operation::update_field::builders::UpdateFieldFluentBuilder {

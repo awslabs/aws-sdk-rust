@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCertificate`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::set_certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    ///   - [`certificate_arn(impl Into<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::set_certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate.</p>
     /// - On success, responds with [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput) with field(s):
     ///   - [`certificate(Option<Certificate>)`](crate::operation::delete_certificate::DeleteCertificateOutput::certificate): <p>The Secure Sockets Layer (SSL) certificate.</p>
     /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::operation::delete_certificate::DeleteCertificateError)

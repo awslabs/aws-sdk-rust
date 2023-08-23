@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_next_token): <p>A token used for pagination of results returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_next_token): <p>A token used for pagination of results returned.</p>
     ///   - [`max_results(i32)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_max_results): <p>The maximum number of results to return in the response.</p>
     ///   - [`r#type(Type)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_type): <p>The type of analyzer.</p>
     /// - On success, responds with [`ListAnalyzersOutput`](crate::operation::list_analyzers::ListAnalyzersOutput) with field(s):

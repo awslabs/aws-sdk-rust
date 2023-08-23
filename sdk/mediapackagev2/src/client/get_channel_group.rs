@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetChannelGroup`](crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_group_name(impl ::std::convert::Into<String>)`](crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder::channel_group_name) / [`set_channel_group_name(Option<String>)`](crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder::set_channel_group_name): <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    ///   - [`channel_group_name(impl Into<String>)`](crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder::channel_group_name) / [`set_channel_group_name(Option<String>)`](crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder::set_channel_group_name): <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     /// - On success, responds with [`GetChannelGroupOutput`](crate::operation::get_channel_group::GetChannelGroupOutput) with field(s):
     ///   - [`channel_group_name(Option<String>)`](crate::operation::get_channel_group::GetChannelGroupOutput::channel_group_name): <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_channel_group::GetChannelGroupOutput::arn): <p>The Amazon Resource Name (ARN) associated with the resource.</p>

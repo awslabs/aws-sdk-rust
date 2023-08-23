@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DetachPolicy`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_name(impl ::std::convert::Into<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::set_policy_name): <p>The policy to detach.</p>
-    ///   - [`target(impl ::std::convert::Into<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::set_target): <p>The target from which the policy will be detached.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::set_policy_name): <p>The policy to detach.</p>
+    ///   - [`target(impl Into<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::set_target): <p>The target from which the policy will be detached.</p>
     /// - On success, responds with [`DetachPolicyOutput`](crate::operation::detach_policy::DetachPolicyOutput)
     /// - On failure, responds with [`SdkError<DetachPolicyError>`](crate::operation::detach_policy::DetachPolicyError)
     pub fn detach_policy(&self) -> crate::operation::detach_policy::builders::DetachPolicyFluentBuilder {

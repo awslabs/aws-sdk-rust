@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAppInstance`](crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`DeleteAppInstanceOutput`](crate::operation::delete_app_instance::DeleteAppInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteAppInstanceError>`](crate::operation::delete_app_instance::DeleteAppInstanceError)
     pub fn delete_app_instance(&self) -> crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder {

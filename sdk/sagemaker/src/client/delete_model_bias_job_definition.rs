@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteModelBiasJobDefinition`](crate::operation::delete_model_bias_job_definition::builders::DeleteModelBiasJobDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_definition_name(impl ::std::convert::Into<String>)`](crate::operation::delete_model_bias_job_definition::builders::DeleteModelBiasJobDefinitionFluentBuilder::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::operation::delete_model_bias_job_definition::builders::DeleteModelBiasJobDefinitionFluentBuilder::set_job_definition_name): <p>The name of the model bias job definition to delete.</p>
+    ///   - [`job_definition_name(impl Into<String>)`](crate::operation::delete_model_bias_job_definition::builders::DeleteModelBiasJobDefinitionFluentBuilder::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::operation::delete_model_bias_job_definition::builders::DeleteModelBiasJobDefinitionFluentBuilder::set_job_definition_name): <p>The name of the model bias job definition to delete.</p>
     /// - On success, responds with [`DeleteModelBiasJobDefinitionOutput`](crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteModelBiasJobDefinitionError>`](crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionError)
     pub fn delete_model_bias_job_definition(

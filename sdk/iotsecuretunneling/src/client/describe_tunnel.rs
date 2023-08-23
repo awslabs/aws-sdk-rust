@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTunnel`](crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tunnel_id(impl ::std::convert::Into<String>)`](crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder::tunnel_id) / [`set_tunnel_id(Option<String>)`](crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder::set_tunnel_id): <p>The tunnel to describe.</p>
+    ///   - [`tunnel_id(impl Into<String>)`](crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder::tunnel_id) / [`set_tunnel_id(Option<String>)`](crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder::set_tunnel_id): <p>The tunnel to describe.</p>
     /// - On success, responds with [`DescribeTunnelOutput`](crate::operation::describe_tunnel::DescribeTunnelOutput) with field(s):
     ///   - [`tunnel(Option<Tunnel>)`](crate::operation::describe_tunnel::DescribeTunnelOutput::tunnel): <p>The tunnel being described.</p>
     /// - On failure, responds with [`SdkError<DescribeTunnelError>`](crate::operation::describe_tunnel::DescribeTunnelError)

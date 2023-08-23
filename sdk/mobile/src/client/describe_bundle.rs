@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBundle`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bundle_id(impl ::std::convert::Into<String>)`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::set_bundle_id): <p> Unique bundle identifier. </p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::set_bundle_id): <p> Unique bundle identifier. </p>
     /// - On success, responds with [`DescribeBundleOutput`](crate::operation::describe_bundle::DescribeBundleOutput) with field(s):
     ///   - [`details(Option<BundleDetails>)`](crate::operation::describe_bundle::DescribeBundleOutput::details): <p> The details of the bundle. </p>
     /// - On failure, responds with [`SdkError<DescribeBundleError>`](crate::operation::describe_bundle::DescribeBundleError)

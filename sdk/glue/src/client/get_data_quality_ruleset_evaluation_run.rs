@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataQualityRulesetEvaluationRun`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
     /// - On success, responds with [`GetDataQualityRulesetEvaluationRunOutput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
     ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::data_source): <p>The data source (an Glue table) associated with this evaluation run.</p>

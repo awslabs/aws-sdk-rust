@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeContainer`](crate::operation::describe_container::builders::DescribeContainerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::describe_container::builders::DescribeContainerFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::describe_container::builders::DescribeContainerFluentBuilder::set_container_name): <p>The name of the container to query.</p>
+    ///   - [`container_name(impl Into<String>)`](crate::operation::describe_container::builders::DescribeContainerFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::describe_container::builders::DescribeContainerFluentBuilder::set_container_name): <p>The name of the container to query.</p>
     /// - On success, responds with [`DescribeContainerOutput`](crate::operation::describe_container::DescribeContainerOutput) with field(s):
     ///   - [`container(Option<Container>)`](crate::operation::describe_container::DescribeContainerOutput::container): <p>The name of the queried container.</p>
     /// - On failure, responds with [`SdkError<DescribeContainerError>`](crate::operation::describe_container::DescribeContainerError)

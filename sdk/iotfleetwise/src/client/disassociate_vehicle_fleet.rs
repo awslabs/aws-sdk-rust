@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateVehicleFleet`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vehicle_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::vehicle_name) / [`set_vehicle_name(Option<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::set_vehicle_name): <p> The unique ID of the vehicle to disassociate from the fleet.</p>
-    ///   - [`fleet_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::set_fleet_id): <p> The unique ID of a fleet. </p>
+    ///   - [`vehicle_name(impl Into<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::vehicle_name) / [`set_vehicle_name(Option<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::set_vehicle_name): <p> The unique ID of the vehicle to disassociate from the fleet.</p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::set_fleet_id): <p> The unique ID of a fleet. </p>
     /// - On success, responds with [`DisassociateVehicleFleetOutput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput)
     /// - On failure, responds with [`SdkError<DisassociateVehicleFleetError>`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError)
     pub fn disassociate_vehicle_fleet(&self) -> crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder {

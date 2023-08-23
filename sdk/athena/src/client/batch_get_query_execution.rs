@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetQueryExecution`](crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_execution_ids(Vec<String>)`](crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionFluentBuilder::query_execution_ids) / [`set_query_execution_ids(Option<Vec<String>>)`](crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionFluentBuilder::set_query_execution_ids): <p>An array of query execution IDs.</p>
+    ///   - [`query_execution_ids(impl Into<String>)`](crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionFluentBuilder::query_execution_ids) / [`set_query_execution_ids(Option<Vec<String>>)`](crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionFluentBuilder::set_query_execution_ids): <p>An array of query execution IDs.</p>
     /// - On success, responds with [`BatchGetQueryExecutionOutput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput) with field(s):
     ///   - [`query_executions(Option<Vec<QueryExecution>>)`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput::query_executions): <p>Information about a query execution.</p>
     ///   - [`unprocessed_query_execution_ids(Option<Vec<UnprocessedQueryExecutionId>>)`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput::unprocessed_query_execution_ids): <p>Information about the query executions that failed to run.</p>

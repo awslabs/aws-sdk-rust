@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMeeting`](crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl ::std::convert::Into<String>)`](crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`meeting_id(impl Into<String>)`](crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
     /// - On success, responds with [`DeleteMeetingOutput`](crate::operation::delete_meeting::DeleteMeetingOutput)
     /// - On failure, responds with [`SdkError<DeleteMeetingError>`](crate::operation::delete_meeting::DeleteMeetingError)
     #[deprecated(note = "Replaced by DeleteMeeting in the Amazon Chime SDK Meetings Namespace")]

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApiKey`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::set_api_id): <p>The API ID.</p>
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::set_id): <p>The ID for the API key.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::set_id): <p>The ID for the API key.</p>
     /// - On success, responds with [`DeleteApiKeyOutput`](crate::operation::delete_api_key::DeleteApiKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteApiKeyError>`](crate::operation::delete_api_key::DeleteApiKeyError)
     pub fn delete_api_key(&self) -> crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder {

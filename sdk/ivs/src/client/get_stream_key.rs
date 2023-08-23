@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStreamKey`](crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder::set_arn): <p>ARN for the stream key to be retrieved.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_stream_key::builders::GetStreamKeyFluentBuilder::set_arn): <p>ARN for the stream key to be retrieved.</p>
     /// - On success, responds with [`GetStreamKeyOutput`](crate::operation::get_stream_key::GetStreamKeyOutput) with field(s):
     ///   - [`stream_key(Option<StreamKey>)`](crate::operation::get_stream_key::GetStreamKeyOutput::stream_key): (undocumented)
     /// - On failure, responds with [`SdkError<GetStreamKeyError>`](crate::operation::get_stream_key::GetStreamKeyError)

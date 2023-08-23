@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLags`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lag_id(impl ::std::convert::Into<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::set_lag_id): <p>The ID of the LAG.</p>
+    ///   - [`lag_id(impl Into<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::set_lag_id): <p>The ID of the LAG.</p>
     /// - On success, responds with [`DescribeLagsOutput`](crate::operation::describe_lags::DescribeLagsOutput) with field(s):
     ///   - [`lags(Option<Vec<Lag>>)`](crate::operation::describe_lags::DescribeLagsOutput::lags): <p>The LAGs.</p>
     /// - On failure, responds with [`SdkError<DescribeLagsError>`](crate::operation::describe_lags::DescribeLagsError)

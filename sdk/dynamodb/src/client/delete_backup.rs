@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBackup`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::backup_arn) / [`set_backup_arn(Option<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::set_backup_arn): <p>The ARN associated with the backup.</p>
+    ///   - [`backup_arn(impl Into<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::backup_arn) / [`set_backup_arn(Option<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::set_backup_arn): <p>The ARN associated with the backup.</p>
     /// - On success, responds with [`DeleteBackupOutput`](crate::operation::delete_backup::DeleteBackupOutput) with field(s):
     ///   - [`backup_description(Option<BackupDescription>)`](crate::operation::delete_backup::DeleteBackupOutput::backup_description): <p>Contains the description of the backup created for the table.</p>
     /// - On failure, responds with [`SdkError<DeleteBackupError>`](crate::operation::delete_backup::DeleteBackupError)

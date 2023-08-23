@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAddressBook`](crate::operation::get_address_book::builders::GetAddressBookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`address_book_arn(impl ::std::convert::Into<String>)`](crate::operation::get_address_book::builders::GetAddressBookFluentBuilder::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::operation::get_address_book::builders::GetAddressBookFluentBuilder::set_address_book_arn): <p>The ARN of the address book for which to request details.</p>
+    ///   - [`address_book_arn(impl Into<String>)`](crate::operation::get_address_book::builders::GetAddressBookFluentBuilder::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::operation::get_address_book::builders::GetAddressBookFluentBuilder::set_address_book_arn): <p>The ARN of the address book for which to request details.</p>
     /// - On success, responds with [`GetAddressBookOutput`](crate::operation::get_address_book::GetAddressBookOutput) with field(s):
     ///   - [`address_book(Option<AddressBook>)`](crate::operation::get_address_book::GetAddressBookOutput::address_book): <p>The details of the requested address book.</p>
     /// - On failure, responds with [`SdkError<GetAddressBookError>`](crate::operation::get_address_book::GetAddressBookError)

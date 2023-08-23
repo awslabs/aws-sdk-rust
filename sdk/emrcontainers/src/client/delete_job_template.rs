@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteJobTemplate`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::set_id): <p>The ID of the job template that will be deleted.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::set_id): <p>The ID of the job template that will be deleted.</p>
     /// - On success, responds with [`DeleteJobTemplateOutput`](crate::operation::delete_job_template::DeleteJobTemplateOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_job_template::DeleteJobTemplateOutput::id): <p>This output contains the ID of the job template that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteJobTemplateError>`](crate::operation::delete_job_template::DeleteJobTemplateError)

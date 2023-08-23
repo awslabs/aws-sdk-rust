@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIntent`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::set_name): <p>The name of the intent. The name is case sensitive. </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::set_name): <p>The name of the intent. The name is case sensitive. </p>
     /// - On success, responds with [`DeleteIntentOutput`](crate::operation::delete_intent::DeleteIntentOutput)
     /// - On failure, responds with [`SdkError<DeleteIntentError>`](crate::operation::delete_intent::DeleteIntentError)
     pub fn delete_intent(&self) -> crate::operation::delete_intent::builders::DeleteIntentFluentBuilder {

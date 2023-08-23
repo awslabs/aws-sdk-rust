@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBackupPlanFromJSON`](crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJSONFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_plan_template_json(impl ::std::convert::Into<String>)`](crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJSONFluentBuilder::backup_plan_template_json) / [`set_backup_plan_template_json(Option<String>)`](crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJSONFluentBuilder::set_backup_plan_template_json): <p>A customer-supplied backup plan document in JSON format.</p>
+    ///   - [`backup_plan_template_json(impl Into<String>)`](crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJSONFluentBuilder::backup_plan_template_json) / [`set_backup_plan_template_json(Option<String>)`](crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJSONFluentBuilder::set_backup_plan_template_json): <p>A customer-supplied backup plan document in JSON format.</p>
     /// - On success, responds with [`GetBackupPlanFromJsonOutput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput) with field(s):
     ///   - [`backup_plan(Option<BackupPlan>)`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput::backup_plan): <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     /// - On failure, responds with [`SdkError<GetBackupPlanFromJSONError>`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError)

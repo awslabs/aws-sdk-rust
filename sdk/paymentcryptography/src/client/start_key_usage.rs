@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartKeyUsage`](crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_identifier(impl ::std::convert::Into<String>)`](crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder::key_identifier) / [`set_key_identifier(Option<String>)`](crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder::set_key_identifier): <p>The <code>KeyArn</code> of the key.</p>
+    ///   - [`key_identifier(impl Into<String>)`](crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder::key_identifier) / [`set_key_identifier(Option<String>)`](crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder::set_key_identifier): <p>The <code>KeyArn</code> of the key.</p>
     /// - On success, responds with [`StartKeyUsageOutput`](crate::operation::start_key_usage::StartKeyUsageOutput) with field(s):
     ///   - [`key(Option<Key>)`](crate::operation::start_key_usage::StartKeyUsageOutput::key): <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated for use.</p>
     /// - On failure, responds with [`SdkError<StartKeyUsageError>`](crate::operation::start_key_usage::StartKeyUsageError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIdentityProvider`](crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_provider_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder::identity_provider_arn) / [`set_identity_provider_arn(Option<String>)`](crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder::set_identity_provider_arn): <p>The ARN of the identity provider.</p>
+    ///   - [`identity_provider_arn(impl Into<String>)`](crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder::identity_provider_arn) / [`set_identity_provider_arn(Option<String>)`](crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder::set_identity_provider_arn): <p>The ARN of the identity provider.</p>
     /// - On success, responds with [`DeleteIdentityProviderOutput`](crate::operation::delete_identity_provider::DeleteIdentityProviderOutput)
     /// - On failure, responds with [`SdkError<DeleteIdentityProviderError>`](crate::operation::delete_identity_provider::DeleteIdentityProviderError)
     pub fn delete_identity_provider(&self) -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder {

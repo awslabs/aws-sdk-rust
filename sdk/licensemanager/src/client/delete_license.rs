@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLicense`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`license_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::license_arn) / [`set_license_arn(Option<String>)`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
-    ///   - [`source_version(impl ::std::convert::Into<String>)`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::source_version) / [`set_source_version(Option<String>)`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::set_source_version): <p>Current version of the license.</p>
+    ///   - [`license_arn(impl Into<String>)`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::license_arn) / [`set_license_arn(Option<String>)`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`source_version(impl Into<String>)`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::source_version) / [`set_source_version(Option<String>)`](crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::set_source_version): <p>Current version of the license.</p>
     /// - On success, responds with [`DeleteLicenseOutput`](crate::operation::delete_license::DeleteLicenseOutput) with field(s):
     ///   - [`status(Option<LicenseDeletionStatus>)`](crate::operation::delete_license::DeleteLicenseOutput::status): <p>License status.</p>
     ///   - [`deletion_date(Option<String>)`](crate::operation::delete_license::DeleteLicenseOutput::deletion_date): <p>Date when the license is deleted.</p>

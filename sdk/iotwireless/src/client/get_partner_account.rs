@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPartnerAccount`](crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`partner_account_id(impl ::std::convert::Into<String>)`](crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder::partner_account_id) / [`set_partner_account_id(Option<String>)`](crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder::set_partner_account_id): <p>The partner account ID to disassociate from the AWS account.</p>
+    ///   - [`partner_account_id(impl Into<String>)`](crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder::partner_account_id) / [`set_partner_account_id(Option<String>)`](crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder::set_partner_account_id): <p>The partner account ID to disassociate from the AWS account.</p>
     ///   - [`partner_type(PartnerType)`](crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder::partner_type) / [`set_partner_type(Option<PartnerType>)`](crate::operation::get_partner_account::builders::GetPartnerAccountFluentBuilder::set_partner_type): <p>The partner type.</p>
     /// - On success, responds with [`GetPartnerAccountOutput`](crate::operation::get_partner_account::GetPartnerAccountOutput) with field(s):
     ///   - [`sidewalk(Option<SidewalkAccountInfoWithFingerprint>)`](crate::operation::get_partner_account::GetPartnerAccountOutput::sidewalk): <p>The Sidewalk account credentials.</p>

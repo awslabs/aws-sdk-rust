@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateACL`](crate::operation::update_acl::builders::UpdateACLFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`acl_name(impl ::std::convert::Into<String>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::acl_name) / [`set_acl_name(Option<String>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::set_acl_name): <p>The name of the Access Control List</p>
-    ///   - [`user_names_to_add(Vec<String>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::user_names_to_add) / [`set_user_names_to_add(Option<Vec<String>>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::set_user_names_to_add): <p>The list of users to add to the Access Control List</p>
-    ///   - [`user_names_to_remove(Vec<String>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::user_names_to_remove) / [`set_user_names_to_remove(Option<Vec<String>>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::set_user_names_to_remove): <p>The list of users to remove from the Access Control List</p>
+    ///   - [`acl_name(impl Into<String>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::acl_name) / [`set_acl_name(Option<String>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::set_acl_name): <p>The name of the Access Control List</p>
+    ///   - [`user_names_to_add(impl Into<String>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::user_names_to_add) / [`set_user_names_to_add(Option<Vec<String>>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::set_user_names_to_add): <p>The list of users to add to the Access Control List</p>
+    ///   - [`user_names_to_remove(impl Into<String>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::user_names_to_remove) / [`set_user_names_to_remove(Option<Vec<String>>)`](crate::operation::update_acl::builders::UpdateACLFluentBuilder::set_user_names_to_remove): <p>The list of users to remove from the Access Control List</p>
     /// - On success, responds with [`UpdateAclOutput`](crate::operation::update_acl::UpdateAclOutput) with field(s):
     ///   - [`acl(Option<Acl>)`](crate::operation::update_acl::UpdateAclOutput::acl): <p>The updated Access Control List</p>
     /// - On failure, responds with [`SdkError<UpdateACLError>`](crate::operation::update_acl::UpdateACLError)

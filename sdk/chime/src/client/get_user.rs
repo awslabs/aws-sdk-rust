@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUser`](crate::operation::get_user::builders::GetUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_user_id): <p>The user ID.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_user_id): <p>The user ID.</p>
     /// - On success, responds with [`GetUserOutput`](crate::operation::get_user::GetUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::get_user::GetUserOutput::user): <p>The user details.</p>
     /// - On failure, responds with [`SdkError<GetUserError>`](crate::operation::get_user::GetUserError)

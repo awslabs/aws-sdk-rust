@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`source(CatalogEntry)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::source) / [`set_source(Option<CatalogEntry>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_source): <p>Specifies the source table.</p>
-    ///   - [`sinks(Vec<CatalogEntry>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::sinks) / [`set_sinks(Option<Vec<CatalogEntry>>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_sinks): <p>A list of target tables.</p>
+    ///   - [`sinks(CatalogEntry)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::sinks) / [`set_sinks(Option<Vec<CatalogEntry>>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_sinks): <p>A list of target tables.</p>
     ///   - [`location(Location)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::location) / [`set_location(Option<Location>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_location): <p>Parameters for the mapping.</p>
     /// - On success, responds with [`GetMappingOutput`](crate::operation::get_mapping::GetMappingOutput) with field(s):
     ///   - [`mapping(Option<Vec<MappingEntry>>)`](crate::operation::get_mapping::GetMappingOutput::mapping): <p>A list of mappings to the specified targets.</p>

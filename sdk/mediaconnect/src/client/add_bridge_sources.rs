@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddBridgeSources`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl ::std::convert::Into<String>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::set_bridge_arn): The ARN of the bridge that you want to update.
-    ///   - [`sources(Vec<AddBridgeSourceRequest>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::sources) / [`set_sources(Option<Vec<AddBridgeSourceRequest>>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::set_sources): The sources that you want to add to this bridge.
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::set_bridge_arn): The ARN of the bridge that you want to update.
+    ///   - [`sources(AddBridgeSourceRequest)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::sources) / [`set_sources(Option<Vec<AddBridgeSourceRequest>>)`](crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::set_sources): The sources that you want to add to this bridge.
     /// - On success, responds with [`AddBridgeSourcesOutput`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput) with field(s):
     ///   - [`bridge_arn(Option<String>)`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput::bridge_arn): The Amazon Resource Number (ARN) of the bridge.
     ///   - [`sources(Option<Vec<BridgeSource>>)`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput::sources): The sources that you added to this bridge.

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJobRun`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_name): <p>The name of the job being processed during this run.</p>
-    ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_run_id): <p>The unique identifier of the job run.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_name): <p>The name of the job being processed during this run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_run_id): <p>The unique identifier of the job run.</p>
     /// - On success, responds with [`DescribeJobRunOutput`](crate::operation::describe_job_run::DescribeJobRunOutput) with field(s):
     ///   - [`attempt(i32)`](crate::operation::describe_job_run::DescribeJobRunOutput::attempt): <p>The number of times that DataBrew has attempted to run the job.</p>
     ///   - [`completed_on(Option<DateTime>)`](crate::operation::describe_job_run::DescribeJobRunOutput::completed_on): <p>The date and time when the job completed processing.</p>

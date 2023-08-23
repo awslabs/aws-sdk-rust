@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelJobRun`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::set_application_id): <p>The ID of the application on which the job run will be canceled.</p>
-    ///   - [`job_run_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::job_run_id) / [`set_job_run_id(Option<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::set_job_run_id): <p>The ID of the job run to cancel.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::set_application_id): <p>The ID of the application on which the job run will be canceled.</p>
+    ///   - [`job_run_id(impl Into<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::job_run_id) / [`set_job_run_id(Option<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::set_job_run_id): <p>The ID of the job run to cancel.</p>
     /// - On success, responds with [`CancelJobRunOutput`](crate::operation::cancel_job_run::CancelJobRunOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::cancel_job_run::CancelJobRunOutput::application_id): <p>The output contains the application ID on which the job run is cancelled.</p>
     ///   - [`job_run_id(Option<String>)`](crate::operation::cancel_job_run::CancelJobRunOutput::job_run_id): <p>The output contains the ID of the cancelled job run.</p>

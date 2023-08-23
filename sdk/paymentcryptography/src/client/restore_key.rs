@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RestoreKey`](crate::operation::restore_key::builders::RestoreKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_identifier(impl ::std::convert::Into<String>)`](crate::operation::restore_key::builders::RestoreKeyFluentBuilder::key_identifier) / [`set_key_identifier(Option<String>)`](crate::operation::restore_key::builders::RestoreKeyFluentBuilder::set_key_identifier): <p>The <code>KeyARN</code> of the key to be restored within Amazon Web Services Payment Cryptography.</p>
+    ///   - [`key_identifier(impl Into<String>)`](crate::operation::restore_key::builders::RestoreKeyFluentBuilder::key_identifier) / [`set_key_identifier(Option<String>)`](crate::operation::restore_key::builders::RestoreKeyFluentBuilder::set_key_identifier): <p>The <code>KeyARN</code> of the key to be restored within Amazon Web Services Payment Cryptography.</p>
     /// - On success, responds with [`RestoreKeyOutput`](crate::operation::restore_key::RestoreKeyOutput) with field(s):
     ///   - [`key(Option<Key>)`](crate::operation::restore_key::RestoreKeyOutput::key): <p>The key material of the restored key. The <code>KeyState</code> will change to <code>CREATE_COMPLETE</code> and value for <code>DeletePendingTimestamp</code> gets removed. </p>
     /// - On failure, responds with [`SdkError<RestoreKeyError>`](crate::operation::restore_key::RestoreKeyError)

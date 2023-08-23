@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAppMonitor`](crate::operation::delete_app_monitor::builders::DeleteAppMonitorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_app_monitor::builders::DeleteAppMonitorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_app_monitor::builders::DeleteAppMonitorFluentBuilder::set_name): <p>The name of the app monitor to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_app_monitor::builders::DeleteAppMonitorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_app_monitor::builders::DeleteAppMonitorFluentBuilder::set_name): <p>The name of the app monitor to delete.</p>
     /// - On success, responds with [`DeleteAppMonitorOutput`](crate::operation::delete_app_monitor::DeleteAppMonitorOutput)
     /// - On failure, responds with [`SdkError<DeleteAppMonitorError>`](crate::operation::delete_app_monitor::DeleteAppMonitorError)
     pub fn delete_app_monitor(&self) -> crate::operation::delete_app_monitor::builders::DeleteAppMonitorFluentBuilder {

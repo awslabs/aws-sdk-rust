@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetActiveReceiptRuleSet`](crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_set_name(impl ::std::convert::Into<String>)`](crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetFluentBuilder::set_rule_set_name): <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
+    ///   - [`rule_set_name(impl Into<String>)`](crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetFluentBuilder::set_rule_set_name): <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
     /// - On success, responds with [`SetActiveReceiptRuleSetOutput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput)
     /// - On failure, responds with [`SdkError<SetActiveReceiptRuleSetError>`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError)
     pub fn set_active_receipt_rule_set(&self) -> crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetFluentBuilder {

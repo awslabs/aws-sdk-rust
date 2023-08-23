@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGatewayResponse`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
+    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
     ///   - [`response_type(GatewayResponseType)`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::response_type) / [`set_response_type(Option<GatewayResponseType>)`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::set_response_type): <p>The response type of the associated GatewayResponse.</p>
     /// - On success, responds with [`DeleteGatewayResponseOutput`](crate::operation::delete_gateway_response::DeleteGatewayResponseOutput)
     /// - On failure, responds with [`SdkError<DeleteGatewayResponseError>`](crate::operation::delete_gateway_response::DeleteGatewayResponseError)

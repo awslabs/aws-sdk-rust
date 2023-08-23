@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteHsmConfiguration`](crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hsm_configuration_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationFluentBuilder::hsm_configuration_identifier) / [`set_hsm_configuration_identifier(Option<String>)`](crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationFluentBuilder::set_hsm_configuration_identifier): <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+    ///   - [`hsm_configuration_identifier(impl Into<String>)`](crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationFluentBuilder::hsm_configuration_identifier) / [`set_hsm_configuration_identifier(Option<String>)`](crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationFluentBuilder::set_hsm_configuration_identifier): <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     /// - On success, responds with [`DeleteHsmConfigurationOutput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteHsmConfigurationError>`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationError)
     pub fn delete_hsm_configuration(&self) -> crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationFluentBuilder {

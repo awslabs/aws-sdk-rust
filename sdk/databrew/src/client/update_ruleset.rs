@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRuleset`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::set_name): <p>The name of the ruleset to be updated.</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::set_description): <p>The description of the ruleset.</p>
-    ///   - [`rules(Vec<Rule>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::set_rules): <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::set_name): <p>The name of the ruleset to be updated.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::set_description): <p>The description of the ruleset.</p>
+    ///   - [`rules(Rule)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::operation::update_ruleset::builders::UpdateRulesetFluentBuilder::set_rules): <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     /// - On success, responds with [`UpdateRulesetOutput`](crate::operation::update_ruleset::UpdateRulesetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_ruleset::UpdateRulesetOutput::name): <p>The name of the updated ruleset.</p>
     /// - On failure, responds with [`SdkError<UpdateRulesetError>`](crate::operation::update_ruleset::UpdateRulesetError)

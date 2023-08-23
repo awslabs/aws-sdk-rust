@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLaunch`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project(impl ::std::convert::Into<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::set_project): <p>The name or ARN of the project that contains the launch to delete.</p>
-    ///   - [`launch(impl ::std::convert::Into<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::launch) / [`set_launch(Option<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::set_launch): <p>The name of the launch to delete.</p>
+    ///   - [`project(impl Into<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::set_project): <p>The name or ARN of the project that contains the launch to delete.</p>
+    ///   - [`launch(impl Into<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::launch) / [`set_launch(Option<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::set_launch): <p>The name of the launch to delete.</p>
     /// - On success, responds with [`DeleteLaunchOutput`](crate::operation::delete_launch::DeleteLaunchOutput)
     /// - On failure, responds with [`SdkError<DeleteLaunchError>`](crate::operation::delete_launch::DeleteLaunchError)
     pub fn delete_launch(&self) -> crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder {

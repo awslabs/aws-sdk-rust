@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelCapacityReservation`](crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder::set_name): <p>The name of the capacity reservation to cancel.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder::set_name): <p>The name of the capacity reservation to cancel.</p>
     /// - On success, responds with [`CancelCapacityReservationOutput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput)
     /// - On failure, responds with [`SdkError<CancelCapacityReservationError>`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationError)
     pub fn cancel_capacity_reservation(&self) -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationFluentBuilder {

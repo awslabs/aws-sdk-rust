@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVoiceChannel`](crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteVoiceChannelOutput`](crate::operation::delete_voice_channel::DeleteVoiceChannelOutput) with field(s):
     ///   - [`voice_channel_response(Option<VoiceChannelResponse>)`](crate::operation::delete_voice_channel::DeleteVoiceChannelOutput::voice_channel_response): <p>Provides information about the status and settings of the voice channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteVoiceChannelError>`](crate::operation::delete_voice_channel::DeleteVoiceChannelError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMetricPolicy`](crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder::set_container_name): <p>The name of the container that is associated with the metric policy.</p>
+    ///   - [`container_name(impl Into<String>)`](crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder::set_container_name): <p>The name of the container that is associated with the metric policy.</p>
     /// - On success, responds with [`GetMetricPolicyOutput`](crate::operation::get_metric_policy::GetMetricPolicyOutput) with field(s):
     ///   - [`metric_policy(Option<MetricPolicy>)`](crate::operation::get_metric_policy::GetMetricPolicyOutput::metric_policy): <p>The metric policy that is associated with the specific container.</p>
     /// - On failure, responds with [`SdkError<GetMetricPolicyError>`](crate::operation::get_metric_policy::GetMetricPolicyError)

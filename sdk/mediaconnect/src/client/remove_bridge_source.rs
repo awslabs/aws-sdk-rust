@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveBridgeSource`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::set_bridge_arn): The ARN of the bridge that you want to update.
-    ///   - [`source_name(impl ::std::convert::Into<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::source_name) / [`set_source_name(Option<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::set_source_name): The name of the bridge source that you want to remove.
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::set_bridge_arn): The ARN of the bridge that you want to update.
+    ///   - [`source_name(impl Into<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::source_name) / [`set_source_name(Option<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::set_source_name): The name of the bridge source that you want to remove.
     /// - On success, responds with [`RemoveBridgeSourceOutput`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput) with field(s):
     ///   - [`bridge_arn(Option<String>)`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput::bridge_arn): (undocumented)
     ///   - [`source_name(Option<String>)`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput::source_name): (undocumented)

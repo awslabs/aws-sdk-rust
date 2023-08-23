@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExitStandby`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_ids(Vec<String>)`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::set_instance_ids): <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    ///   - [`auto_scaling_group_name(impl ::std::convert::Into<String>)`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
+    ///   - [`instance_ids(impl Into<String>)`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::set_instance_ids): <p>The IDs of the instances. You can specify up to 20 instances.</p>
+    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::exit_standby::builders::ExitStandbyFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     /// - On success, responds with [`ExitStandbyOutput`](crate::operation::exit_standby::ExitStandbyOutput) with field(s):
     ///   - [`activities(Option<Vec<Activity>>)`](crate::operation::exit_standby::ExitStandbyOutput::activities): <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
     /// - On failure, responds with [`SdkError<ExitStandbyError>`](crate::operation::exit_standby::ExitStandbyError)

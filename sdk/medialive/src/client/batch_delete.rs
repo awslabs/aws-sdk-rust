@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDelete`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_ids(Vec<String>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::channel_ids) / [`set_channel_ids(Option<Vec<String>>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::set_channel_ids): List of channel IDs
-    ///   - [`input_ids(Vec<String>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::input_ids) / [`set_input_ids(Option<Vec<String>>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::set_input_ids): List of input IDs
-    ///   - [`input_security_group_ids(Vec<String>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::input_security_group_ids) / [`set_input_security_group_ids(Option<Vec<String>>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::set_input_security_group_ids): List of input security group IDs
-    ///   - [`multiplex_ids(Vec<String>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::multiplex_ids) / [`set_multiplex_ids(Option<Vec<String>>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::set_multiplex_ids): List of multiplex IDs
+    ///   - [`channel_ids(impl Into<String>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::channel_ids) / [`set_channel_ids(Option<Vec<String>>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::set_channel_ids): List of channel IDs
+    ///   - [`input_ids(impl Into<String>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::input_ids) / [`set_input_ids(Option<Vec<String>>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::set_input_ids): List of input IDs
+    ///   - [`input_security_group_ids(impl Into<String>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::input_security_group_ids) / [`set_input_security_group_ids(Option<Vec<String>>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::set_input_security_group_ids): List of input security group IDs
+    ///   - [`multiplex_ids(impl Into<String>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::multiplex_ids) / [`set_multiplex_ids(Option<Vec<String>>)`](crate::operation::batch_delete::builders::BatchDeleteFluentBuilder::set_multiplex_ids): List of multiplex IDs
     /// - On success, responds with [`BatchDeleteOutput`](crate::operation::batch_delete::BatchDeleteOutput) with field(s):
     ///   - [`failed(Option<Vec<BatchFailedResultModel>>)`](crate::operation::batch_delete::BatchDeleteOutput::failed): List of failed operations
     ///   - [`successful(Option<Vec<BatchSuccessfulResultModel>>)`](crate::operation::batch_delete::BatchDeleteOutput::successful): List of successful operations

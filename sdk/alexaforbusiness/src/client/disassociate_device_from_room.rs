@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateDeviceFromRoom`](crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomFluentBuilder::set_device_arn): <p>The ARN of the device to disassociate from a room. Required.</p>
+    ///   - [`device_arn(impl Into<String>)`](crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomFluentBuilder::set_device_arn): <p>The ARN of the device to disassociate from a room. Required.</p>
     /// - On success, responds with [`DisassociateDeviceFromRoomOutput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput)
     /// - On failure, responds with [`SdkError<DisassociateDeviceFromRoomError>`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

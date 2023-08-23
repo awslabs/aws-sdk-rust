@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_byoip_cidrs::builders::ListByoipCidrsFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
     /// - On success, responds with [`ListByoipCidrsOutput`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput) with field(s):
     ///   - [`byoip_cidrs(Option<Vec<ByoipCidr>>)`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput::byoip_cidrs): <p>Information about your address ranges.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput::next_token): <p>The token for the next page of results.</p>

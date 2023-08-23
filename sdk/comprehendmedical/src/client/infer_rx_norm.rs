@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`InferRxNorm`](crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl ::std::convert::Into<String>)`](crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder::set_text): <p>The input text used for analysis.</p>
+    ///   - [`text(impl Into<String>)`](crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::infer_rx_norm::builders::InferRxNormFluentBuilder::set_text): <p>The input text used for analysis.</p>
     /// - On success, responds with [`InferRxNormOutput`](crate::operation::infer_rx_norm::InferRxNormOutput) with field(s):
     ///   - [`entities(Option<Vec<RxNormEntity>>)`](crate::operation::infer_rx_norm::InferRxNormOutput::entities): <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::infer_rx_norm::InferRxNormOutput::pagination_token): <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>

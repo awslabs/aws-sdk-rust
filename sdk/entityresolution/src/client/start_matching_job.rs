@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartMatchingJob`](crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_name(impl ::std::convert::Into<String>)`](crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder::set_workflow_name): <p>The name of the matching job to be retrieved.</p>
+    ///   - [`workflow_name(impl Into<String>)`](crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::start_matching_job::builders::StartMatchingJobFluentBuilder::set_workflow_name): <p>The name of the matching job to be retrieved.</p>
     /// - On success, responds with [`StartMatchingJobOutput`](crate::operation::start_matching_job::StartMatchingJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_matching_job::StartMatchingJobOutput::job_id): <p>The ID of the job.</p>
     /// - On failure, responds with [`SdkError<StartMatchingJobError>`](crate::operation::start_matching_job::StartMatchingJobError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DecodeAuthorizationMessage`](crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`encoded_message(impl ::std::convert::Into<String>)`](crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageFluentBuilder::encoded_message) / [`set_encoded_message(Option<String>)`](crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageFluentBuilder::set_encoded_message): <p>The encoded message that was returned with the response.</p>
+    ///   - [`encoded_message(impl Into<String>)`](crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageFluentBuilder::encoded_message) / [`set_encoded_message(Option<String>)`](crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageFluentBuilder::set_encoded_message): <p>The encoded message that was returned with the response.</p>
     /// - On success, responds with [`DecodeAuthorizationMessageOutput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput) with field(s):
     ///   - [`decoded_message(Option<String>)`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput::decoded_message): <p>The API returns a response with the decoded message.</p>
     /// - On failure, responds with [`SdkError<DecodeAuthorizationMessageError>`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageError)

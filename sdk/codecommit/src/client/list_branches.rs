@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`repository_name(impl ::std::convert::Into<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::set_repository_name): <p>The name of the repository that contains the branches.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::set_next_token): <p>An enumeration token that allows the operation to batch the results.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::set_repository_name): <p>The name of the repository that contains the branches.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_branches::builders::ListBranchesFluentBuilder::set_next_token): <p>An enumeration token that allows the operation to batch the results.</p>
     /// - On success, responds with [`ListBranchesOutput`](crate::operation::list_branches::ListBranchesOutput) with field(s):
     ///   - [`branches(Option<Vec<String>>)`](crate::operation::list_branches::ListBranchesOutput::branches): <p>The list of branch names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_branches::ListBranchesOutput::next_token): <p>An enumeration token that returns the batch of the results.</p>

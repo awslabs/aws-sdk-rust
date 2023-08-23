@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAppInstance`](crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`DescribeAppInstanceOutput`](crate::operation::describe_app_instance::DescribeAppInstanceOutput) with field(s):
     ///   - [`app_instance(Option<AppInstance>)`](crate::operation::describe_app_instance::DescribeAppInstanceOutput::app_instance): <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceError>`](crate::operation::describe_app_instance::DescribeAppInstanceError)

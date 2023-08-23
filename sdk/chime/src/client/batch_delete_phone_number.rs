@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeletePhoneNumber`](crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`phone_number_ids(Vec<String>)`](crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberFluentBuilder::phone_number_ids) / [`set_phone_number_ids(Option<Vec<String>>)`](crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberFluentBuilder::set_phone_number_ids): <p>List of phone number IDs.</p>
+    ///   - [`phone_number_ids(impl Into<String>)`](crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberFluentBuilder::phone_number_ids) / [`set_phone_number_ids(Option<Vec<String>>)`](crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberFluentBuilder::set_phone_number_ids): <p>List of phone number IDs.</p>
     /// - On success, responds with [`BatchDeletePhoneNumberOutput`](crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberOutput) with field(s):
     ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<BatchDeletePhoneNumberError>`](crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError)

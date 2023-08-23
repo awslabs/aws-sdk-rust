@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateBudget`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
     ///   - [`new_budget(Budget)`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::new_budget) / [`set_new_budget(Option<Budget>)`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::set_new_budget): <p>The budget that you want to update your budget to.</p>
     /// - On success, responds with [`UpdateBudgetOutput`](crate::operation::update_budget::UpdateBudgetOutput)
     /// - On failure, responds with [`SdkError<UpdateBudgetError>`](crate::operation::update_budget::UpdateBudgetError)

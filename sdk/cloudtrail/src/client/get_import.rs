@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImport`](crate::operation::get_import::builders::GetImportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_id(impl ::std::convert::Into<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::set_import_id): <p> The ID for the import. </p>
+    ///   - [`import_id(impl Into<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::set_import_id): <p> The ID for the import. </p>
     /// - On success, responds with [`GetImportOutput`](crate::operation::get_import::GetImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::operation::get_import::GetImportOutput::import_id): <p> The ID of the import. </p>
     ///   - [`destinations(Option<Vec<String>>)`](crate::operation::get_import::GetImportOutput::destinations): <p> The ARN of the destination event data store. </p>

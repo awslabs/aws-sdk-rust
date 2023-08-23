@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBrowserSettings`](crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`browser_settings_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder::browser_settings_arn) / [`set_browser_settings_arn(Option<String>)`](crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder::set_browser_settings_arn): <p>The ARN of the browser settings.</p>
+    ///   - [`browser_settings_arn(impl Into<String>)`](crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder::browser_settings_arn) / [`set_browser_settings_arn(Option<String>)`](crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder::set_browser_settings_arn): <p>The ARN of the browser settings.</p>
     /// - On success, responds with [`DeleteBrowserSettingsOutput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsOutput)
     /// - On failure, responds with [`SdkError<DeleteBrowserSettingsError>`](crate::operation::delete_browser_settings::DeleteBrowserSettingsError)
     pub fn delete_browser_settings(&self) -> crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateTypedLinkFacet`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_arn(impl ::std::convert::Into<String>)`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     ///   - [`facet(TypedLinkFacet)`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::facet) / [`set_facet(Option<TypedLinkFacet>)`](crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetFluentBuilder::set_facet): <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     /// - On success, responds with [`CreateTypedLinkFacetOutput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput)
     /// - On failure, responds with [`SdkError<CreateTypedLinkFacetError>`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetError)

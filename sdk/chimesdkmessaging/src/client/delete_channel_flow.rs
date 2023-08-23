@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteChannelFlow`](crate::operation::delete_channel_flow::builders::DeleteChannelFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_flow_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_channel_flow::builders::DeleteChannelFlowFluentBuilder::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::operation::delete_channel_flow::builders::DeleteChannelFlowFluentBuilder::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`channel_flow_arn(impl Into<String>)`](crate::operation::delete_channel_flow::builders::DeleteChannelFlowFluentBuilder::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::operation::delete_channel_flow::builders::DeleteChannelFlowFluentBuilder::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
     /// - On success, responds with [`DeleteChannelFlowOutput`](crate::operation::delete_channel_flow::DeleteChannelFlowOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelFlowError>`](crate::operation::delete_channel_flow::DeleteChannelFlowError)
     pub fn delete_channel_flow(&self) -> crate::operation::delete_channel_flow::builders::DeleteChannelFlowFluentBuilder {

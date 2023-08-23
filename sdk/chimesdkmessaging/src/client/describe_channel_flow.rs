@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeChannelFlow`](crate::operation::describe_channel_flow::builders::DescribeChannelFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_flow_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_channel_flow::builders::DescribeChannelFlowFluentBuilder::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::operation::describe_channel_flow::builders::DescribeChannelFlowFluentBuilder::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`channel_flow_arn(impl Into<String>)`](crate::operation::describe_channel_flow::builders::DescribeChannelFlowFluentBuilder::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::operation::describe_channel_flow::builders::DescribeChannelFlowFluentBuilder::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
     /// - On success, responds with [`DescribeChannelFlowOutput`](crate::operation::describe_channel_flow::DescribeChannelFlowOutput) with field(s):
     ///   - [`channel_flow(Option<ChannelFlow>)`](crate::operation::describe_channel_flow::DescribeChannelFlowOutput::channel_flow): <p>The channel flow details.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelFlowError>`](crate::operation::describe_channel_flow::DescribeChannelFlowError)

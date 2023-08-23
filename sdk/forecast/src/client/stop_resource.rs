@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopResource`](crate::operation::stop_resource::builders::StopResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_resource::builders::StopResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::stop_resource::builders::StopResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::stop_resource::builders::StopResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::stop_resource::builders::StopResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
     /// - On success, responds with [`StopResourceOutput`](crate::operation::stop_resource::StopResourceOutput)
     /// - On failure, responds with [`SdkError<StopResourceError>`](crate::operation::stop_resource::StopResourceError)
     pub fn stop_resource(&self) -> crate::operation::stop_resource::builders::StopResourceFluentBuilder {

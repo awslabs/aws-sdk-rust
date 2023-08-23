@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFindingAggregator`](crate::operation::get_finding_aggregator::builders::GetFindingAggregatorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`finding_aggregator_arn(impl ::std::convert::Into<String>)`](crate::operation::get_finding_aggregator::builders::GetFindingAggregatorFluentBuilder::finding_aggregator_arn) / [`set_finding_aggregator_arn(Option<String>)`](crate::operation::get_finding_aggregator::builders::GetFindingAggregatorFluentBuilder::set_finding_aggregator_arn): <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    ///   - [`finding_aggregator_arn(impl Into<String>)`](crate::operation::get_finding_aggregator::builders::GetFindingAggregatorFluentBuilder::finding_aggregator_arn) / [`set_finding_aggregator_arn(Option<String>)`](crate::operation::get_finding_aggregator::builders::GetFindingAggregatorFluentBuilder::set_finding_aggregator_arn): <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     /// - On success, responds with [`GetFindingAggregatorOutput`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput) with field(s):
     ///   - [`finding_aggregator_arn(Option<String>)`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput::finding_aggregator_arn): <p>The ARN of the finding aggregator.</p>
     ///   - [`finding_aggregation_region(Option<String>)`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput::finding_aggregation_region): <p>The aggregation Region.</p>

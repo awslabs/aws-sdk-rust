@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListPolicyVersions`](crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_name(impl ::std::convert::Into<String>)`](crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder::set_policy_name): <p>The policy name.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::list_policy_versions::builders::ListPolicyVersionsFluentBuilder::set_policy_name): <p>The policy name.</p>
     /// - On success, responds with [`ListPolicyVersionsOutput`](crate::operation::list_policy_versions::ListPolicyVersionsOutput) with field(s):
     ///   - [`policy_versions(Option<Vec<PolicyVersion>>)`](crate::operation::list_policy_versions::ListPolicyVersionsOutput::policy_versions): <p>The policy versions.</p>
     /// - On failure, responds with [`SdkError<ListPolicyVersionsError>`](crate::operation::list_policy_versions::ListPolicyVersionsError)

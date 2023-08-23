@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ContainsPiiEntities`](crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl ::std::convert::Into<String>)`](crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+    ///   - [`text(impl Into<String>)`](crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     ///   - [`language_code(LanguageCode)`](crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesFluentBuilder::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
     /// - On success, responds with [`ContainsPiiEntitiesOutput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput) with field(s):
     ///   - [`labels(Option<Vec<EntityLabel>>)`](crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput::labels): <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>

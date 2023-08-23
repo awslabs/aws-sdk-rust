@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHub`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hub_name(impl ::std::convert::Into<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::hub_name) / [`set_hub_name(Option<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::set_hub_name): <p>The name of the hub to describe.</p>
+    ///   - [`hub_name(impl Into<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::hub_name) / [`set_hub_name(Option<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::set_hub_name): <p>The name of the hub to describe.</p>
     /// - On success, responds with [`DescribeHubOutput`](crate::operation::describe_hub::DescribeHubOutput) with field(s):
     ///   - [`hub_name(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::hub_name): <p>The name of the hub.</p>
     ///   - [`hub_arn(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::hub_arn): <p>The Amazon Resource Name (ARN) of the hub.</p>

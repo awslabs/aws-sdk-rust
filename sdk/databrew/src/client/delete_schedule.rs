@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSchedule`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::set_name): <p>The name of the schedule to be deleted.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::set_name): <p>The name of the schedule to be deleted.</p>
     /// - On success, responds with [`DeleteScheduleOutput`](crate::operation::delete_schedule::DeleteScheduleOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_schedule::DeleteScheduleOutput::name): <p>The name of the schedule that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteScheduleError>`](crate::operation::delete_schedule::DeleteScheduleError)

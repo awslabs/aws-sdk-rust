@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteNodegroup`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_name(impl ::std::convert::Into<String>)`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::set_cluster_name): <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
-    ///   - [`nodegroup_name(impl ::std::convert::Into<String>)`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::nodegroup_name) / [`set_nodegroup_name(Option<String>)`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::set_nodegroup_name): <p>The name of the node group to delete.</p>
+    ///   - [`cluster_name(impl Into<String>)`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::set_cluster_name): <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
+    ///   - [`nodegroup_name(impl Into<String>)`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::nodegroup_name) / [`set_nodegroup_name(Option<String>)`](crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::set_nodegroup_name): <p>The name of the node group to delete.</p>
     /// - On success, responds with [`DeleteNodegroupOutput`](crate::operation::delete_nodegroup::DeleteNodegroupOutput) with field(s):
     ///   - [`nodegroup(Option<Nodegroup>)`](crate::operation::delete_nodegroup::DeleteNodegroupOutput::nodegroup): <p>The full description of your deleted node group.</p>
     /// - On failure, responds with [`SdkError<DeleteNodegroupError>`](crate::operation::delete_nodegroup::DeleteNodegroupError)

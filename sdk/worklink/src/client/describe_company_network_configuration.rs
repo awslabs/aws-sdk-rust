@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCompanyNetworkConfiguration`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
     /// - On success, responds with [`DescribeCompanyNetworkConfigurationOutput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput) with field(s):
     ///   - [`vpc_id(Option<String>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::vpc_id): <p>The VPC with connectivity to associated websites.</p>
     ///   - [`subnet_ids(Option<Vec<String>>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>

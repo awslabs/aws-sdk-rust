@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateLicense`](crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder::set_workspace_id): <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder::set_workspace_id): <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
     ///   - [`license_type(LicenseType)`](crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder::license_type) / [`set_license_type(Option<LicenseType>)`](crate::operation::disassociate_license::builders::DisassociateLicenseFluentBuilder::set_license_type): <p>The type of license to remove from the workspace.</p>
     /// - On success, responds with [`DisassociateLicenseOutput`](crate::operation::disassociate_license::DisassociateLicenseOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::disassociate_license::DisassociateLicenseOutput::workspace): <p>A structure containing information about the workspace.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource(impl ::std::convert::Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource): <p>An ARN of a CloudFront resource.</p>
+    ///   - [`resource(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource): <p>An ARN of a CloudFront resource.</p>
     ///   - [`tag_keys(TagKeys)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<TagKeys>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys): <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)

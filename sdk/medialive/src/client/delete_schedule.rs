@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSchedule`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_id(impl ::std::convert::Into<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::set_channel_id): Id of the channel whose schedule is being deleted.
+    ///   - [`channel_id(impl Into<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::set_channel_id): Id of the channel whose schedule is being deleted.
     /// - On success, responds with [`DeleteScheduleOutput`](crate::operation::delete_schedule::DeleteScheduleOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduleError>`](crate::operation::delete_schedule::DeleteScheduleError)
     pub fn delete_schedule(&self) -> crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder {

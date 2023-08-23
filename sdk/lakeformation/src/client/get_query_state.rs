@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQueryState`](crate::operation::get_query_state::builders::GetQueryStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_id(impl ::std::convert::Into<String>)`](crate::operation::get_query_state::builders::GetQueryStateFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_query_state::builders::GetQueryStateFluentBuilder::set_query_id): <p>The ID of the plan query operation.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::operation::get_query_state::builders::GetQueryStateFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_query_state::builders::GetQueryStateFluentBuilder::set_query_id): <p>The ID of the plan query operation.</p>
     /// - On success, responds with [`GetQueryStateOutput`](crate::operation::get_query_state::GetQueryStateOutput) with field(s):
     ///   - [`error(Option<String>)`](crate::operation::get_query_state::GetQueryStateOutput::error): <p>An error message when the operation fails.</p>
     ///   - [`state(Option<QueryStateString>)`](crate::operation::get_query_state::GetQueryStateOutput::state): <p>The state of a query previously submitted. The possible states are:</p>  <ul>   <li> <p>PENDING: the query is pending.</p> </li>   <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>   <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>   <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>  </ul>

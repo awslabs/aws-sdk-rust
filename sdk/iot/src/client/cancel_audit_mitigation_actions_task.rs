@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelAuditMitigationActionsTask`](crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskFluentBuilder::set_task_id): <p>The unique identifier for the task that you want to cancel. </p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskFluentBuilder::set_task_id): <p>The unique identifier for the task that you want to cancel. </p>
     /// - On success, responds with [`CancelAuditMitigationActionsTaskOutput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput)
     /// - On failure, responds with [`SdkError<CancelAuditMitigationActionsTaskError>`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError)
     pub fn cancel_audit_mitigation_actions_task(

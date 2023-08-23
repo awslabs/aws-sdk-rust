@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::set_max_results): <p>The maximum number of results to include in the response.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sol_network_instances::builders::ListSolNetworkInstancesFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
     /// - On success, responds with [`ListSolNetworkInstancesOutput`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`network_instances(Option<Vec<ListSolNetworkInstanceInfo>>)`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput::network_instances): <p>Lists network instances.</p>

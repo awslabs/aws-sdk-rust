@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::set_max_results): <p>The size of the list to return (optional).</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::set_next_token): <p>An optional continuation token.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::set_next_token): <p>An optional continuation token.</p>
     /// - On success, responds with [`GetClassifiersOutput`](crate::operation::get_classifiers::GetClassifiersOutput) with field(s):
     ///   - [`classifiers(Option<Vec<Classifier>>)`](crate::operation::get_classifiers::GetClassifiersOutput::classifiers): <p>The requested list of classifier objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_classifiers::GetClassifiersOutput::next_token): <p>A continuation token.</p>

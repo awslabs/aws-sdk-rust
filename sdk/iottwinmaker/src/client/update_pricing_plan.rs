@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`pricing_mode(PricingMode)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::pricing_mode) / [`set_pricing_mode(Option<PricingMode>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_pricing_mode): <p>The pricing mode.</p>
-    ///   - [`bundle_names(Vec<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::bundle_names) / [`set_bundle_names(Option<Vec<String>>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_bundle_names): <p>The bundle names.</p>
+    ///   - [`bundle_names(impl Into<String>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::bundle_names) / [`set_bundle_names(Option<Vec<String>>)`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::set_bundle_names): <p>The bundle names.</p>
     /// - On success, responds with [`UpdatePricingPlanOutput`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput) with field(s):
     ///   - [`current_pricing_plan(Option<PricingPlan>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::current_pricing_plan): <p>Update the current pricing plan.</p>
     ///   - [`pending_pricing_plan(Option<PricingPlan>)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::pending_pricing_plan): <p>Update the pending pricing plan.</p>

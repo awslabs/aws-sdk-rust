@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTestSet`](crate::operation::describe_test_set::builders::DescribeTestSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`test_set_id(impl ::std::convert::Into<String>)`](crate::operation::describe_test_set::builders::DescribeTestSetFluentBuilder::test_set_id) / [`set_test_set_id(Option<String>)`](crate::operation::describe_test_set::builders::DescribeTestSetFluentBuilder::set_test_set_id): <p>The test set Id for the test set request.</p>
+    ///   - [`test_set_id(impl Into<String>)`](crate::operation::describe_test_set::builders::DescribeTestSetFluentBuilder::test_set_id) / [`set_test_set_id(Option<String>)`](crate::operation::describe_test_set::builders::DescribeTestSetFluentBuilder::set_test_set_id): <p>The test set Id for the test set request.</p>
     /// - On success, responds with [`DescribeTestSetOutput`](crate::operation::describe_test_set::DescribeTestSetOutput) with field(s):
     ///   - [`test_set_id(Option<String>)`](crate::operation::describe_test_set::DescribeTestSetOutput::test_set_id): <p>The test set Id for the test set response.</p>
     ///   - [`test_set_name(Option<String>)`](crate::operation::describe_test_set::DescribeTestSetOutput::test_set_name): <p>The test set name of the test set.</p>

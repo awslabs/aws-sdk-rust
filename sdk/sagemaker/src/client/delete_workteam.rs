@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkteam`](crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workteam_name(impl ::std::convert::Into<String>)`](crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder::workteam_name) / [`set_workteam_name(Option<String>)`](crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder::set_workteam_name): <p>The name of the work team to delete.</p>
+    ///   - [`workteam_name(impl Into<String>)`](crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder::workteam_name) / [`set_workteam_name(Option<String>)`](crate::operation::delete_workteam::builders::DeleteWorkteamFluentBuilder::set_workteam_name): <p>The name of the work team to delete.</p>
     /// - On success, responds with [`DeleteWorkteamOutput`](crate::operation::delete_workteam::DeleteWorkteamOutput) with field(s):
     ///   - [`success(bool)`](crate::operation::delete_workteam::DeleteWorkteamOutput::success): <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkteamError>`](crate::operation::delete_workteam::DeleteWorkteamError)

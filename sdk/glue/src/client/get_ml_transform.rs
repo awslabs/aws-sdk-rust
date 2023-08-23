@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMLTransform`](crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transform_id(impl ::std::convert::Into<String>)`](crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder::transform_id) / [`set_transform_id(Option<String>)`](crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder::set_transform_id): <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
+    ///   - [`transform_id(impl Into<String>)`](crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder::transform_id) / [`set_transform_id(Option<String>)`](crate::operation::get_ml_transform::builders::GetMLTransformFluentBuilder::set_transform_id): <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     /// - On success, responds with [`GetMlTransformOutput`](crate::operation::get_ml_transform::GetMlTransformOutput) with field(s):
     ///   - [`transform_id(Option<String>)`](crate::operation::get_ml_transform::GetMlTransformOutput::transform_id): <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_ml_transform::GetMlTransformOutput::name): <p>The unique name given to the transform when it was created.</p>

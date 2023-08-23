@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDomainHealth`](crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder::set_domain_name): <p>The name of the domain.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_domain_health::builders::DescribeDomainHealthFluentBuilder::set_domain_name): <p>The name of the domain.</p>
     /// - On success, responds with [`DescribeDomainHealthOutput`](crate::operation::describe_domain_health::DescribeDomainHealthOutput) with field(s):
     ///   - [`domain_state(Option<DomainState>)`](crate::operation::describe_domain_health::DescribeDomainHealthOutput::domain_state): <p>The current state of the domain.</p>  <ul>   <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li>   <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li>  </ul>
     ///   - [`availability_zone_count(Option<String>)`](crate::operation::describe_domain_health::DescribeDomainHealthOutput::availability_zone_count): <p>The number of Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>

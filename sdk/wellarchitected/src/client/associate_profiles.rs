@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateProfiles`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workload_id(impl ::std::convert::Into<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`profile_arns(Vec<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::profile_arns) / [`set_profile_arns(Option<Vec<String>>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::set_profile_arns): <p>The list of profile ARNs to associate with the workload.</p>
+    ///   - [`workload_id(impl Into<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`profile_arns(impl Into<String>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::profile_arns) / [`set_profile_arns(Option<Vec<String>>)`](crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder::set_profile_arns): <p>The list of profile ARNs to associate with the workload.</p>
     /// - On success, responds with [`AssociateProfilesOutput`](crate::operation::associate_profiles::AssociateProfilesOutput)
     /// - On failure, responds with [`SdkError<AssociateProfilesError>`](crate::operation::associate_profiles::AssociateProfilesError)
     pub fn associate_profiles(&self) -> crate::operation::associate_profiles::builders::AssociateProfilesFluentBuilder {

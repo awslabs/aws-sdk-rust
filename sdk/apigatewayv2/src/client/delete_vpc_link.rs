@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVpcLink`](crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_link_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder::set_vpc_link_id): <p>The ID of the VPC link.</p>
+    ///   - [`vpc_link_id(impl Into<String>)`](crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder::set_vpc_link_id): <p>The ID of the VPC link.</p>
     /// - On success, responds with [`DeleteVpcLinkOutput`](crate::operation::delete_vpc_link::DeleteVpcLinkOutput)
     /// - On failure, responds with [`SdkError<DeleteVpcLinkError>`](crate::operation::delete_vpc_link::DeleteVpcLinkError)
     pub fn delete_vpc_link(&self) -> crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSecurityProfile`](crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`security_profile_name(impl ::std::convert::Into<String>)`](crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder::set_security_profile_name): <p>The name of the security profile whose information you want to get.</p>
+    ///   - [`security_profile_name(impl Into<String>)`](crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder::set_security_profile_name): <p>The name of the security profile whose information you want to get.</p>
     /// - On success, responds with [`DescribeSecurityProfileOutput`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput) with field(s):
     ///   - [`security_profile_name(Option<String>)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::security_profile_name): <p>The name of the security profile.</p>
     ///   - [`security_profile_arn(Option<String>)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::security_profile_arn): <p>The ARN of the security profile.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeKey`](crate::operation::describe_key::builders::DescribeKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_name(impl ::std::convert::Into<String>)`](crate::operation::describe_key::builders::DescribeKeyFluentBuilder::key_name) / [`set_key_name(Option<String>)`](crate::operation::describe_key::builders::DescribeKeyFluentBuilder::set_key_name): <p>The name of the API key resource.</p>
+    ///   - [`key_name(impl Into<String>)`](crate::operation::describe_key::builders::DescribeKeyFluentBuilder::key_name) / [`set_key_name(Option<String>)`](crate::operation::describe_key::builders::DescribeKeyFluentBuilder::set_key_name): <p>The name of the API key resource.</p>
     /// - On success, responds with [`DescribeKeyOutput`](crate::operation::describe_key::DescribeKeyOutput) with field(s):
     ///   - [`key(Option<String>)`](crate::operation::describe_key::DescribeKeyOutput::key): <p>The key value/string of an API key.</p>
     ///   - [`key_arn(Option<String>)`](crate::operation::describe_key::DescribeKeyOutput::key_arn): <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>  </ul>

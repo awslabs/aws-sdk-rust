@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TerminateJobFlows`](crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_flow_ids(Vec<String>)`](crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder::job_flow_ids) / [`set_job_flow_ids(Option<Vec<String>>)`](crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder::set_job_flow_ids): <p>A list of job flows to be shut down.</p>
+    ///   - [`job_flow_ids(impl Into<String>)`](crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder::job_flow_ids) / [`set_job_flow_ids(Option<Vec<String>>)`](crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder::set_job_flow_ids): <p>A list of job flows to be shut down.</p>
     /// - On success, responds with [`TerminateJobFlowsOutput`](crate::operation::terminate_job_flows::TerminateJobFlowsOutput)
     /// - On failure, responds with [`SdkError<TerminateJobFlowsError>`](crate::operation::terminate_job_flows::TerminateJobFlowsError)
     pub fn terminate_job_flows(&self) -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder {

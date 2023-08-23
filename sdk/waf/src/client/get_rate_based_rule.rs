@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRateBasedRule`](crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_id(impl ::std::convert::Into<String>)`](crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder::rule_id) / [`set_rule_id(Option<String>)`](crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder::set_rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    ///   - [`rule_id(impl Into<String>)`](crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder::rule_id) / [`set_rule_id(Option<String>)`](crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder::set_rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     /// - On success, responds with [`GetRateBasedRuleOutput`](crate::operation::get_rate_based_rule::GetRateBasedRuleOutput) with field(s):
     ///   - [`rule(Option<RateBasedRule>)`](crate::operation::get_rate_based_rule::GetRateBasedRuleOutput::rule): <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
     /// - On failure, responds with [`SdkError<GetRateBasedRuleError>`](crate::operation::get_rate_based_rule::GetRateBasedRuleError)

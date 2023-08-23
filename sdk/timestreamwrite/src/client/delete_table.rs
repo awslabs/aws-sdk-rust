@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTable`](crate::operation::delete_table::builders::DeleteTableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`database_name(impl ::std::convert::Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_database_name): <p>The name of the database where the Timestream database is to be deleted.</p>
-    ///   - [`table_name(impl ::std::convert::Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_table_name): <p>The name of the Timestream table to be deleted.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_database_name): <p>The name of the database where the Timestream database is to be deleted.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_table_name): <p>The name of the Timestream table to be deleted.</p>
     /// - On success, responds with [`DeleteTableOutput`](crate::operation::delete_table::DeleteTableOutput)
     /// - On failure, responds with [`SdkError<DeleteTableError>`](crate::operation::delete_table::DeleteTableError)
     pub fn delete_table(&self) -> crate::operation::delete_table::builders::DeleteTableFluentBuilder {

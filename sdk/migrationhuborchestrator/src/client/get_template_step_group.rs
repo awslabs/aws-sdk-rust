@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplateStepGroup`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_id(impl ::std::convert::Into<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::set_template_id): <p>The ID of the template.</p>
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::set_id): <p>The ID of the step group.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::set_template_id): <p>The ID of the template.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::set_id): <p>The ID of the step group.</p>
     /// - On success, responds with [`GetTemplateStepGroupOutput`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::template_id): <p>The ID of the template.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::id): <p>The ID of the step group.</p>

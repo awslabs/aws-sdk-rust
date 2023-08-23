@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopInferenceScheduler`](crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`inference_scheduler_name(impl ::std::convert::Into<String>)`](crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder::set_inference_scheduler_name): <p>The name of the inference scheduler to be stopped. </p>
+    ///   - [`inference_scheduler_name(impl Into<String>)`](crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder::set_inference_scheduler_name): <p>The name of the inference scheduler to be stopped. </p>
     /// - On success, responds with [`StopInferenceSchedulerOutput`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput) with field(s):
     ///   - [`model_arn(Option<String>)`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput::model_arn): <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
     ///   - [`model_name(Option<String>)`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput::model_name): <p>The name of the ML model used by the inference scheduler being stopped. </p>

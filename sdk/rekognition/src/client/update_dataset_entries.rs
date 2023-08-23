@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDatasetEntries`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_arn(impl ::std::convert::Into<String>)`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::set_dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    ///   - [`dataset_arn(impl Into<String>)`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::set_dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     ///   - [`changes(DatasetChanges)`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::changes) / [`set_changes(Option<DatasetChanges>)`](crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::set_changes): <p> The changes that you want to make to the dataset. </p>
     /// - On success, responds with [`UpdateDatasetEntriesOutput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput)
     /// - On failure, responds with [`SdkError<UpdateDatasetEntriesError>`](crate::operation::update_dataset_entries::UpdateDatasetEntriesError)

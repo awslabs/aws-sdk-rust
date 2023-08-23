@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeprovisionByoipCidr`](crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cidr(impl ::std::convert::Into<String>)`](crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder::cidr) / [`set_cidr(Option<String>)`](crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder::set_cidr): <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
+    ///   - [`cidr(impl Into<String>)`](crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder::cidr) / [`set_cidr(Option<String>)`](crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder::set_cidr): <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
     /// - On success, responds with [`DeprovisionByoipCidrOutput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput) with field(s):
     ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput::byoip_cidr): <p>Information about the address range.</p>
     /// - On failure, responds with [`SdkError<DeprovisionByoipCidrError>`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError)

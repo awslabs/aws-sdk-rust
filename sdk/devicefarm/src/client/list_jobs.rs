@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_arn): <p>The run's Amazon Resource Name (ARN).</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_arn): <p>The run's Amazon Resource Name (ARN).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On success, responds with [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec<Job>>)`](crate::operation::list_jobs::ListJobsOutput::jobs): <p>Information about the jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_jobs::ListJobsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>

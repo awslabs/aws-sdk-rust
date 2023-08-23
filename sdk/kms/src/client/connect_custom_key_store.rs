@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ConnectCustomKeyStore`](crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`custom_key_store_id(impl ::std::convert::Into<String>)`](crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreFluentBuilder::custom_key_store_id) / [`set_custom_key_store_id(Option<String>)`](crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreFluentBuilder::set_custom_key_store_id): <p>Enter the key store ID of the custom key store that you want to connect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
+    ///   - [`custom_key_store_id(impl Into<String>)`](crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreFluentBuilder::custom_key_store_id) / [`set_custom_key_store_id(Option<String>)`](crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreFluentBuilder::set_custom_key_store_id): <p>Enter the key store ID of the custom key store that you want to connect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// - On success, responds with [`ConnectCustomKeyStoreOutput`](crate::operation::connect_custom_key_store::ConnectCustomKeyStoreOutput)
     /// - On failure, responds with [`SdkError<ConnectCustomKeyStoreError>`](crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError)
     pub fn connect_custom_key_store(&self) -> crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreFluentBuilder {

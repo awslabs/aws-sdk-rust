@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTrail`](crate::operation::get_trail::builders::GetTrailFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_trail::builders::GetTrailFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_trail::builders::GetTrailFluentBuilder::set_name): <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_trail::builders::GetTrailFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_trail::builders::GetTrailFluentBuilder::set_name): <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
     /// - On success, responds with [`GetTrailOutput`](crate::operation::get_trail::GetTrailOutput) with field(s):
     ///   - [`trail(Option<Trail>)`](crate::operation::get_trail::GetTrailOutput::trail): <p>The settings for a trail.</p>
     /// - On failure, responds with [`SdkError<GetTrailError>`](crate::operation::get_trail::GetTrailError)

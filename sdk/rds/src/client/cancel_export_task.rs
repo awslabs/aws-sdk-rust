@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelExportTask`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`export_task_identifier(impl ::std::convert::Into<String>)`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::export_task_identifier) / [`set_export_task_identifier(Option<String>)`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::set_export_task_identifier): <p>The identifier of the snapshot or cluster export task to cancel.</p>
+    ///   - [`export_task_identifier(impl Into<String>)`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::export_task_identifier) / [`set_export_task_identifier(Option<String>)`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::set_export_task_identifier): <p>The identifier of the snapshot or cluster export task to cancel.</p>
     /// - On success, responds with [`CancelExportTaskOutput`](crate::operation::cancel_export_task::CancelExportTaskOutput) with field(s):
     ///   - [`export_task_identifier(Option<String>)`](crate::operation::cancel_export_task::CancelExportTaskOutput::export_task_identifier): <p>A unique identifier for the snapshot or cluster export task. This ID isn't an identifier for the Amazon S3 bucket where the data is exported.</p>
     ///   - [`source_arn(Option<String>)`](crate::operation::cancel_export_task::CancelExportTaskOutput::source_arn): <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>

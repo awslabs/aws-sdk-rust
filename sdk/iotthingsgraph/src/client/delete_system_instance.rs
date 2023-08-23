@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSystemInstance`](crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder::set_id): <p>The ID of the system instance to be deleted.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder::set_id): <p>The ID of the system instance to be deleted.</p>
     /// - On success, responds with [`DeleteSystemInstanceOutput`](crate::operation::delete_system_instance::DeleteSystemInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteSystemInstanceError>`](crate::operation::delete_system_instance::DeleteSystemInstanceError)
     #[deprecated(note = "since: 2022-08-30")]

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDomain`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_domain_id): <p>The identifier of the domain that you are describing.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_domain_id): <p>The identifier of the domain that you are describing.</p>
     /// - On success, responds with [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput) with field(s):
     ///   - [`domain(Option<Domain>)`](crate::operation::describe_domain::DescribeDomainOutput::domain): <p>Information about the specified domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::operation::describe_domain::DescribeDomainError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePortal`](crate::operation::describe_portal::builders::DescribePortalFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_id(impl ::std::convert::Into<String>)`](crate::operation::describe_portal::builders::DescribePortalFluentBuilder::portal_id) / [`set_portal_id(Option<String>)`](crate::operation::describe_portal::builders::DescribePortalFluentBuilder::set_portal_id): <p>The ID of the portal.</p>
+    ///   - [`portal_id(impl Into<String>)`](crate::operation::describe_portal::builders::DescribePortalFluentBuilder::portal_id) / [`set_portal_id(Option<String>)`](crate::operation::describe_portal::builders::DescribePortalFluentBuilder::set_portal_id): <p>The ID of the portal.</p>
     /// - On success, responds with [`DescribePortalOutput`](crate::operation::describe_portal::DescribePortalOutput) with field(s):
     ///   - [`portal_id(Option<String>)`](crate::operation::describe_portal::DescribePortalOutput::portal_id): <p>The ID of the portal.</p>
     ///   - [`portal_arn(Option<String>)`](crate::operation::describe_portal::DescribePortalOutput::portal_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>

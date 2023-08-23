@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_max_results): <p>The maximum number of results to return in this request.</p>  <p>The default value is 100.</p>
     /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
     ///   - [`pipeline_summaries(Option<Vec<PipelineSummary>>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipeline_summaries): <p>A list of <code>PipelineSummary</code> objects.</p>

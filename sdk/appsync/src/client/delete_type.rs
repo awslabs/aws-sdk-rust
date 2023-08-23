@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteType`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder::set_api_id): <p>The API ID.</p>
-    ///   - [`type_name(impl ::std::convert::Into<String>)`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder::set_type_name): <p>The type name.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::delete_type::builders::DeleteTypeFluentBuilder::set_type_name): <p>The type name.</p>
     /// - On success, responds with [`DeleteTypeOutput`](crate::operation::delete_type::DeleteTypeOutput)
     /// - On failure, responds with [`SdkError<DeleteTypeError>`](crate::operation::delete_type::DeleteTypeError)
     pub fn delete_type(&self) -> crate::operation::delete_type::builders::DeleteTypeFluentBuilder {

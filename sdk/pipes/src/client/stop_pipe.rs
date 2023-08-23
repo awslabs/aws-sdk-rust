@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopPipe`](crate::operation::stop_pipe::builders::StopPipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_pipe::builders::StopPipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_pipe::builders::StopPipeFluentBuilder::set_name): <p>The name of the pipe.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::stop_pipe::builders::StopPipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_pipe::builders::StopPipeFluentBuilder::set_name): <p>The name of the pipe.</p>
     /// - On success, responds with [`StopPipeOutput`](crate::operation::stop_pipe::StopPipeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::stop_pipe::StopPipeOutput::arn): <p>The ARN of the pipe.</p>
     ///   - [`name(Option<String>)`](crate::operation::stop_pipe::StopPipeOutput::name): <p>The name of the pipe.</p>

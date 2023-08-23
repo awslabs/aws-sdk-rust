@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateApi`](crate::operation::associate_api::builders::AssociateApiFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::associate_api::builders::AssociateApiFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::associate_api::builders::AssociateApiFluentBuilder::set_domain_name): <p>The domain name.</p>
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::associate_api::builders::AssociateApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::associate_api::builders::AssociateApiFluentBuilder::set_api_id): <p>The API ID. Private APIs can not be associated with custom domains.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::associate_api::builders::AssociateApiFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::associate_api::builders::AssociateApiFluentBuilder::set_domain_name): <p>The domain name.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::associate_api::builders::AssociateApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::associate_api::builders::AssociateApiFluentBuilder::set_api_id): <p>The API ID. Private APIs can not be associated with custom domains.</p>
     /// - On success, responds with [`AssociateApiOutput`](crate::operation::associate_api::AssociateApiOutput) with field(s):
     ///   - [`api_association(Option<ApiAssociation>)`](crate::operation::associate_api::AssociateApiOutput::api_association): <p>The <code>ApiAssociation</code> object.</p>
     /// - On failure, responds with [`SdkError<AssociateApiError>`](crate::operation::associate_api::AssociateApiError)

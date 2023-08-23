@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartFleet`](crate::operation::start_fleet::builders::StartFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_fleet::builders::StartFleetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_fleet::builders::StartFleetFluentBuilder::set_name): <p>The name of the fleet.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::start_fleet::builders::StartFleetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_fleet::builders::StartFleetFluentBuilder::set_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`StartFleetOutput`](crate::operation::start_fleet::StartFleetOutput)
     /// - On failure, responds with [`SdkError<StartFleetError>`](crate::operation::start_fleet::StartFleetError)
     pub fn start_fleet(&self) -> crate::operation::start_fleet::builders::StartFleetFluentBuilder {

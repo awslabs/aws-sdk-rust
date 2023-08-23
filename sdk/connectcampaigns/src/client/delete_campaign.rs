@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCampaign`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::set_id): Identifier representing a Campaign
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::set_id): Identifier representing a Campaign
     /// - On success, responds with [`DeleteCampaignOutput`](crate::operation::delete_campaign::DeleteCampaignOutput)
     /// - On failure, responds with [`SdkError<DeleteCampaignError>`](crate::operation::delete_campaign::DeleteCampaignError)
     pub fn delete_campaign(&self) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSubscribedWorkteam`](crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workteam_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamFluentBuilder::workteam_arn) / [`set_workteam_arn(Option<String>)`](crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamFluentBuilder::set_workteam_arn): <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
+    ///   - [`workteam_arn(impl Into<String>)`](crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamFluentBuilder::workteam_arn) / [`set_workteam_arn(Option<String>)`](crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamFluentBuilder::set_workteam_arn): <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
     /// - On success, responds with [`DescribeSubscribedWorkteamOutput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput) with field(s):
     ///   - [`subscribed_workteam(Option<SubscribedWorkteam>)`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput::subscribed_workteam): <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     /// - On failure, responds with [`SdkError<DescribeSubscribedWorkteamError>`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError)

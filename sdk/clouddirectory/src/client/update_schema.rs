@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateSchema`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_arn(impl ::std::convert::Into<String>)`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::set_name): <p>The name of the schema.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::set_name): <p>The name of the schema.</p>
     /// - On success, responds with [`UpdateSchemaOutput`](crate::operation::update_schema::UpdateSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::schema_arn): <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::operation::update_schema::UpdateSchemaError)

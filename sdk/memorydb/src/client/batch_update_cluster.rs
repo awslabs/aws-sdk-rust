@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchUpdateCluster`](crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_names(Vec<String>)`](crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder::cluster_names) / [`set_cluster_names(Option<Vec<String>>)`](crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder::set_cluster_names): <p>The cluster names to apply the updates.</p>
+    ///   - [`cluster_names(impl Into<String>)`](crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder::cluster_names) / [`set_cluster_names(Option<Vec<String>>)`](crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder::set_cluster_names): <p>The cluster names to apply the updates.</p>
     ///   - [`service_update(ServiceUpdateRequest)`](crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder::service_update) / [`set_service_update(Option<ServiceUpdateRequest>)`](crate::operation::batch_update_cluster::builders::BatchUpdateClusterFluentBuilder::set_service_update): <p>The unique ID of the service update</p>
     /// - On success, responds with [`BatchUpdateClusterOutput`](crate::operation::batch_update_cluster::BatchUpdateClusterOutput) with field(s):
     ///   - [`processed_clusters(Option<Vec<Cluster>>)`](crate::operation::batch_update_cluster::BatchUpdateClusterOutput::processed_clusters): <p>The list of clusters that have been updated.</p>

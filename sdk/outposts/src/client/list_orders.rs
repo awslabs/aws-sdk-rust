@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`outpost_identifier_filter(impl ::std::convert::Into<String>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::outpost_identifier_filter) / [`set_outpost_identifier_filter(Option<String>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::set_outpost_identifier_filter): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::set_next_token): <p>The pagination token.</p>
+    ///   - [`outpost_identifier_filter(impl Into<String>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::outpost_identifier_filter) / [`set_outpost_identifier_filter(Option<String>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::set_outpost_identifier_filter): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::set_next_token): <p>The pagination token.</p>
     ///   - [`max_results(i32)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_orders::builders::ListOrdersFluentBuilder::set_max_results): <p>The maximum page size.</p>
     /// - On success, responds with [`ListOrdersOutput`](crate::operation::list_orders::ListOrdersOutput) with field(s):
     ///   - [`orders(Option<Vec<OrderSummary>>)`](crate::operation::list_orders::ListOrdersOutput::orders): <p> Information about the orders. </p>

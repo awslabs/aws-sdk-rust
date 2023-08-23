@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMetadata`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder::set_app_id): <p>The unique ID of the Amplify app.</p>
-    ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder::set_app_id): <p>The unique ID of the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::get_metadata::builders::GetMetadataFluentBuilder::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
     /// - On success, responds with [`GetMetadataOutput`](crate::operation::get_metadata::GetMetadataOutput) with field(s):
     ///   - [`features(Option<HashMap<String, String>>)`](crate::operation::get_metadata::GetMetadataOutput::features): <p>Represents the configuration settings for the features metadata.</p>
     /// - On failure, responds with [`SdkError<GetMetadataError>`](crate::operation::get_metadata::GetMetadataError)

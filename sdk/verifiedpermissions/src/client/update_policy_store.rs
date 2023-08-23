@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdatePolicyStore`](crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_store_id(impl ::std::convert::Into<String>)`](crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that you want to update</p>
+    ///   - [`policy_store_id(impl Into<String>)`](crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that you want to update</p>
     ///   - [`validation_settings(ValidationSettings)`](crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder::validation_settings) / [`set_validation_settings(Option<ValidationSettings>)`](crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder::set_validation_settings): <p>A structure that defines the validation settings that want to enable for the policy store.</p>
     /// - On success, responds with [`UpdatePolicyStoreOutput`](crate::operation::update_policy_store::UpdatePolicyStoreOutput) with field(s):
     ///   - [`policy_store_id(Option<String>)`](crate::operation::update_policy_store::UpdatePolicyStoreOutput::policy_store_id): <p>The ID of the updated policy store.</p>

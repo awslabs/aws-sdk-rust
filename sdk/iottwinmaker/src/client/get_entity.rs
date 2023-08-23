@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEntity`](crate::operation::get_entity::builders::GetEntityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
-    ///   - [`entity_id(impl ::std::convert::Into<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::set_entity_id): <p>The ID of the entity.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`entity_id(impl Into<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::set_entity_id): <p>The ID of the entity.</p>
     /// - On success, responds with [`GetEntityOutput`](crate::operation::get_entity::GetEntityOutput) with field(s):
     ///   - [`entity_id(Option<String>)`](crate::operation::get_entity::GetEntityOutput::entity_id): <p>The ID of the entity.</p>
     ///   - [`entity_name(Option<String>)`](crate::operation::get_entity::GetEntityOutput::entity_name): <p>The name of the entity.</p>

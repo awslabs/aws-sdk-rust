@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMetricAttribution`](crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`metric_attribution_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionFluentBuilder::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionFluentBuilder::set_metric_attribution_arn): <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    ///   - [`metric_attribution_arn(impl Into<String>)`](crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionFluentBuilder::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionFluentBuilder::set_metric_attribution_arn): <p>The metric attribution's Amazon Resource Name (ARN).</p>
     /// - On success, responds with [`DescribeMetricAttributionOutput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput) with field(s):
     ///   - [`metric_attribution(Option<MetricAttribution>)`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput::metric_attribution): <p>The details of the metric attribution.</p>
     /// - On failure, responds with [`SdkError<DescribeMetricAttributionError>`](crate::operation::describe_metric_attribution::DescribeMetricAttributionError)

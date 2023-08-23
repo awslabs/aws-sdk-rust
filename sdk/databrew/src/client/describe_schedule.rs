@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSchedule`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_name): <p>The name of the schedule to be described.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_name): <p>The name of the schedule to be described.</p>
     /// - On success, responds with [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput) with field(s):
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_schedule::DescribeScheduleOutput::create_date): <p>The date and time that the schedule was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::created_by): <p>The identifier (user name) of the user who created the schedule. </p>

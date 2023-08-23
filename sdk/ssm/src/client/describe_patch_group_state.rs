@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePatchGroupState`](crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`patch_group(impl ::std::convert::Into<String>)`](crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateFluentBuilder::patch_group) / [`set_patch_group(Option<String>)`](crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateFluentBuilder::set_patch_group): <p>The name of the patch group whose patch snapshot should be retrieved.</p>
+    ///   - [`patch_group(impl Into<String>)`](crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateFluentBuilder::patch_group) / [`set_patch_group(Option<String>)`](crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateFluentBuilder::set_patch_group): <p>The name of the patch group whose patch snapshot should be retrieved.</p>
     /// - On success, responds with [`DescribePatchGroupStateOutput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput) with field(s):
     ///   - [`instances(i32)`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput::instances): <p>The number of managed nodes in the patch group.</p>
     ///   - [`instances_with_installed_patches(i32)`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput::instances_with_installed_patches): <p>The number of managed nodes with installed patches.</p>

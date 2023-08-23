@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopApp`](crate::operation::stop_app::builders::StopAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl ::std::convert::Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_simulation): <p>The name of the simulation of the app.</p>
-    ///   - [`domain(impl ::std::convert::Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_domain): <p>The name of the domain of the app.</p>
-    ///   - [`app(impl ::std::convert::Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::app) / [`set_app(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_app): <p>The name of the app.</p>
+    ///   - [`simulation(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_simulation): <p>The name of the simulation of the app.</p>
+    ///   - [`domain(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_domain): <p>The name of the domain of the app.</p>
+    ///   - [`app(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::app) / [`set_app(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_app): <p>The name of the app.</p>
     /// - On success, responds with [`StopAppOutput`](crate::operation::stop_app::StopAppOutput)
     /// - On failure, responds with [`SdkError<StopAppError>`](crate::operation::stop_app::StopAppError)
     pub fn stop_app(&self) -> crate::operation::stop_app::builders::StopAppFluentBuilder {

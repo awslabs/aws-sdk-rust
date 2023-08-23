@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateOrgEc2DeepInspectionConfiguration`](crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`org_package_paths(Vec<String>)`](crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationFluentBuilder::org_package_paths) / [`set_org_package_paths(Option<Vec<String>>)`](crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationFluentBuilder::set_org_package_paths): <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
+    ///   - [`org_package_paths(impl Into<String>)`](crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationFluentBuilder::org_package_paths) / [`set_org_package_paths(Option<Vec<String>>)`](crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationFluentBuilder::set_org_package_paths): <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
     /// - On success, responds with [`UpdateOrgEc2DeepInspectionConfigurationOutput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateOrgEc2DeepInspectionConfigurationError>`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError)
     pub fn update_org_ec2_deep_inspection_configuration(

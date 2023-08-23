@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopTrainingJob`](crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`training_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder::training_job_name) / [`set_training_job_name(Option<String>)`](crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder::set_training_job_name): <p>The name of the training job to stop.</p>
+    ///   - [`training_job_name(impl Into<String>)`](crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder::training_job_name) / [`set_training_job_name(Option<String>)`](crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder::set_training_job_name): <p>The name of the training job to stop.</p>
     /// - On success, responds with [`StopTrainingJobOutput`](crate::operation::stop_training_job::StopTrainingJobOutput)
     /// - On failure, responds with [`SdkError<StopTrainingJobError>`](crate::operation::stop_training_job::StopTrainingJobError)
     pub fn stop_training_job(&self) -> crate::operation::stop_training_job::builders::StopTrainingJobFluentBuilder {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddFlowVpcInterfaces`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl ::std::convert::Into<String>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::set_flow_arn): The flow that you want to mutate.
-    ///   - [`vpc_interfaces(Vec<VpcInterfaceRequest>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::vpc_interfaces) / [`set_vpc_interfaces(Option<Vec<VpcInterfaceRequest>>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::set_vpc_interfaces): A list of VPC interfaces that you want to add.
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::set_flow_arn): The flow that you want to mutate.
+    ///   - [`vpc_interfaces(VpcInterfaceRequest)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::vpc_interfaces) / [`set_vpc_interfaces(Option<Vec<VpcInterfaceRequest>>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::set_vpc_interfaces): A list of VPC interfaces that you want to add.
     /// - On success, responds with [`AddFlowVpcInterfacesOutput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput::flow_arn): The ARN of the flow that these VPC interfaces were added to.
     ///   - [`vpc_interfaces(Option<Vec<VpcInterface>>)`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput::vpc_interfaces): The details of the newly added VPC interfaces.

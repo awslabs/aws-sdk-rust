@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnassignInstance`](crate::operation::unassign_instance::builders::UnassignInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::unassign_instance::builders::UnassignInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::unassign_instance::builders::UnassignInstanceFluentBuilder::set_instance_id): <p>The instance ID.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::unassign_instance::builders::UnassignInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::unassign_instance::builders::UnassignInstanceFluentBuilder::set_instance_id): <p>The instance ID.</p>
     /// - On success, responds with [`UnassignInstanceOutput`](crate::operation::unassign_instance::UnassignInstanceOutput)
     /// - On failure, responds with [`SdkError<UnassignInstanceError>`](crate::operation::unassign_instance::UnassignInstanceError)
     pub fn unassign_instance(&self) -> crate::operation::unassign_instance::builders::UnassignInstanceFluentBuilder {

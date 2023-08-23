@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBudget`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
-    ///   - [`budget_name(impl ::std::convert::Into<String>)`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::budget_name) / [`set_budget_name(Option<String>)`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::set_budget_name): <p>The name of the budget that you want a description of.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::budget_name) / [`set_budget_name(Option<String>)`](crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::set_budget_name): <p>The name of the budget that you want a description of.</p>
     /// - On success, responds with [`DescribeBudgetOutput`](crate::operation::describe_budget::DescribeBudgetOutput) with field(s):
     ///   - [`budget(Option<Budget>)`](crate::operation::describe_budget::DescribeBudgetOutput::budget): <p>The description of the budget.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetError>`](crate::operation::describe_budget::DescribeBudgetError)

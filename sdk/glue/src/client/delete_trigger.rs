@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTrigger`](crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder::set_name): <p>The name of the trigger to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_trigger::builders::DeleteTriggerFluentBuilder::set_name): <p>The name of the trigger to delete.</p>
     /// - On success, responds with [`DeleteTriggerOutput`](crate::operation::delete_trigger::DeleteTriggerOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_trigger::DeleteTriggerOutput::name): <p>The name of the trigger that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTriggerError>`](crate::operation::delete_trigger::DeleteTriggerError)

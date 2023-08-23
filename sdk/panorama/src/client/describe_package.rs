@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePackage`](crate::operation::describe_package::builders::DescribePackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_id(impl ::std::convert::Into<String>)`](crate::operation::describe_package::builders::DescribePackageFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::describe_package::builders::DescribePackageFluentBuilder::set_package_id): <p>The package's ID.</p>
+    ///   - [`package_id(impl Into<String>)`](crate::operation::describe_package::builders::DescribePackageFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::describe_package::builders::DescribePackageFluentBuilder::set_package_id): <p>The package's ID.</p>
     /// - On success, responds with [`DescribePackageOutput`](crate::operation::describe_package::DescribePackageOutput) with field(s):
     ///   - [`package_id(Option<String>)`](crate::operation::describe_package::DescribePackageOutput::package_id): <p>The package's ID.</p>
     ///   - [`package_name(Option<String>)`](crate::operation::describe_package::DescribePackageOutput::package_name): <p>The package's name.</p>

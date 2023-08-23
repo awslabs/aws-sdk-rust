@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ModifyLunaClient`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_arn(impl ::std::convert::Into<String>)`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::client_arn) / [`set_client_arn(Option<String>)`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::set_client_arn): <p>The ARN of the client.</p>
-    ///   - [`certificate(impl ::std::convert::Into<String>)`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::certificate) / [`set_certificate(Option<String>)`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::set_certificate): <p>The new certificate for the client.</p>
+    ///   - [`client_arn(impl Into<String>)`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::client_arn) / [`set_client_arn(Option<String>)`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::set_client_arn): <p>The ARN of the client.</p>
+    ///   - [`certificate(impl Into<String>)`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::certificate) / [`set_certificate(Option<String>)`](crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::set_certificate): <p>The new certificate for the client.</p>
     /// - On success, responds with [`ModifyLunaClientOutput`](crate::operation::modify_luna_client::ModifyLunaClientOutput) with field(s):
     ///   - [`client_arn(Option<String>)`](crate::operation::modify_luna_client::ModifyLunaClientOutput::client_arn): <p>The ARN of the client.</p>
     /// - On failure, responds with [`SdkError<ModifyLunaClientError>`](crate::operation::modify_luna_client::ModifyLunaClientError)

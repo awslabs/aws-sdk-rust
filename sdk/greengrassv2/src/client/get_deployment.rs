@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeployment`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl ::std::convert::Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_deployment_id): <p>The ID of the deployment.</p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_deployment_id): <p>The ID of the deployment.</p>
     /// - On success, responds with [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput) with field(s):
     ///   - [`target_arn(Option<String>)`](crate::operation::get_deployment::GetDeploymentOutput::target_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::get_deployment::GetDeploymentOutput::revision_id): <p>The revision number of the deployment.</p>

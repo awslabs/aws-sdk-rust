@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProjectVersion`](crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_version_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder::project_version_arn) / [`set_project_version_arn(Option<String>)`](crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder::set_project_version_arn): <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    ///   - [`project_version_arn(impl Into<String>)`](crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder::project_version_arn) / [`set_project_version_arn(Option<String>)`](crate::operation::delete_project_version::builders::DeleteProjectVersionFluentBuilder::set_project_version_arn): <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// - On success, responds with [`DeleteProjectVersionOutput`](crate::operation::delete_project_version::DeleteProjectVersionOutput) with field(s):
     ///   - [`status(Option<ProjectVersionStatus>)`](crate::operation::delete_project_version::DeleteProjectVersionOutput::status): <p>The status of the deletion operation.</p>
     /// - On failure, responds with [`SdkError<DeleteProjectVersionError>`](crate::operation::delete_project_version::DeleteProjectVersionError)

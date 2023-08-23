@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkspace`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
     /// - On success, responds with [`GetWorkspaceOutput`](crate::operation::get_workspace::GetWorkspaceOutput) with field(s):
     ///   - [`workspace_id(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::workspace_id): <p>The ID of the workspace.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::arn): <p>The ARN of the workspace.</p>

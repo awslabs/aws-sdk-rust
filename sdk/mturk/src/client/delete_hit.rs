@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteHIT`](crate::operation::delete_hit::builders::DeleteHITFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hit_id(impl ::std::convert::Into<String>)`](crate::operation::delete_hit::builders::DeleteHITFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::delete_hit::builders::DeleteHITFluentBuilder::set_hit_id): <p>The ID of the HIT to be deleted.</p>
+    ///   - [`hit_id(impl Into<String>)`](crate::operation::delete_hit::builders::DeleteHITFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::delete_hit::builders::DeleteHITFluentBuilder::set_hit_id): <p>The ID of the HIT to be deleted.</p>
     /// - On success, responds with [`DeleteHitOutput`](crate::operation::delete_hit::DeleteHitOutput)
     /// - On failure, responds with [`SdkError<DeleteHITError>`](crate::operation::delete_hit::DeleteHITError)
     pub fn delete_hit(&self) -> crate::operation::delete_hit::builders::DeleteHITFluentBuilder {

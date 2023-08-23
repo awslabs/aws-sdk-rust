@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkerBlock`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`worker_id(impl ::std::convert::Into<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::worker_id) / [`set_worker_id(Option<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::set_worker_id): <p>The ID of the Worker to unblock.</p>
-    ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::set_reason): <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
+    ///   - [`worker_id(impl Into<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::worker_id) / [`set_worker_id(Option<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::set_worker_id): <p>The ID of the Worker to unblock.</p>
+    ///   - [`reason(impl Into<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder::set_reason): <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
     /// - On success, responds with [`DeleteWorkerBlockOutput`](crate::operation::delete_worker_block::DeleteWorkerBlockOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkerBlockError>`](crate::operation::delete_worker_block::DeleteWorkerBlockError)
     pub fn delete_worker_block(&self) -> crate::operation::delete_worker_block::builders::DeleteWorkerBlockFluentBuilder {

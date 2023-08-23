@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOrganization`](crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder::set_organization_id): <p>The identifier for the organization to be described.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder::set_organization_id): <p>The identifier for the organization to be described.</p>
     /// - On success, responds with [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput) with field(s):
     ///   - [`organization_id(Option<String>)`](crate::operation::describe_organization::DescribeOrganizationOutput::organization_id): <p>The identifier of an organization.</p>
     ///   - [`alias(Option<String>)`](crate::operation::describe_organization::DescribeOrganizationOutput::alias): <p>The alias for an organization.</p>

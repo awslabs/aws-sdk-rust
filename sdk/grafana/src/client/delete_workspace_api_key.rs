@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkspaceApiKey`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_name(impl ::std::convert::Into<String>)`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::key_name) / [`set_key_name(Option<String>)`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::set_key_name): <p>The name of the API key to delete.</p>
-    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::set_workspace_id): <p>The ID of the workspace to delete.</p>
+    ///   - [`key_name(impl Into<String>)`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::key_name) / [`set_key_name(Option<String>)`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::set_key_name): <p>The name of the API key to delete.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::set_workspace_id): <p>The ID of the workspace to delete.</p>
     /// - On success, responds with [`DeleteWorkspaceApiKeyOutput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput) with field(s):
     ///   - [`key_name(Option<String>)`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput::key_name): <p>The name of the key that was deleted.</p>
     ///   - [`workspace_id(Option<String>)`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace where the key was deleted.</p>

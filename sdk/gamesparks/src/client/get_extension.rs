@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetExtension`](crate::operation::get_extension::builders::GetExtensionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`namespace(impl ::std::convert::Into<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_namespace): <p>The namespace (qualifier) of the extension.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_name): <p>The name of the extension.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_namespace): <p>The namespace (qualifier) of the extension.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_name): <p>The name of the extension.</p>
     /// - On success, responds with [`GetExtensionOutput`](crate::operation::get_extension::GetExtensionOutput) with field(s):
     ///   - [`extension(Option<ExtensionDetails>)`](crate::operation::get_extension::GetExtensionOutput::extension): <p>Details about the extension.</p>
     /// - On failure, responds with [`SdkError<GetExtensionError>`](crate::operation::get_extension::GetExtensionError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMonitor`](crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monitor_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder::monitor_arn) / [`set_monitor_arn(Option<String>)`](crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder::set_monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+    ///   - [`monitor_arn(impl Into<String>)`](crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder::monitor_arn) / [`set_monitor_arn(Option<String>)`](crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder::set_monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
     /// - On success, responds with [`DeleteMonitorOutput`](crate::operation::delete_monitor::DeleteMonitorOutput)
     /// - On failure, responds with [`SdkError<DeleteMonitorError>`](crate::operation::delete_monitor::DeleteMonitorError)
     pub fn delete_monitor(&self) -> crate::operation::delete_monitor::builders::DeleteMonitorFluentBuilder {

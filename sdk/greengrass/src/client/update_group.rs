@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateGroup`](crate::operation::update_group::builders::UpdateGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_id(impl ::std::convert::Into<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::set_group_id): The ID of the Greengrass group.
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::set_name): The name of the definition.
+    ///   - [`group_id(impl Into<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::set_group_id): The ID of the Greengrass group.
+    ///   - [`name(impl Into<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::set_name): The name of the definition.
     /// - On success, responds with [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::operation::update_group::UpdateGroupError)
     pub fn update_group(&self) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {

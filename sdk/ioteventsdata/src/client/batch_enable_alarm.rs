@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchEnableAlarm`](crate::operation::batch_enable_alarm::builders::BatchEnableAlarmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`enable_action_requests(Vec<EnableAlarmActionRequest>)`](crate::operation::batch_enable_alarm::builders::BatchEnableAlarmFluentBuilder::enable_action_requests) / [`set_enable_action_requests(Option<Vec<EnableAlarmActionRequest>>)`](crate::operation::batch_enable_alarm::builders::BatchEnableAlarmFluentBuilder::set_enable_action_requests): <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
+    ///   - [`enable_action_requests(EnableAlarmActionRequest)`](crate::operation::batch_enable_alarm::builders::BatchEnableAlarmFluentBuilder::enable_action_requests) / [`set_enable_action_requests(Option<Vec<EnableAlarmActionRequest>>)`](crate::operation::batch_enable_alarm::builders::BatchEnableAlarmFluentBuilder::set_enable_action_requests): <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
     /// - On success, responds with [`BatchEnableAlarmOutput`](crate::operation::batch_enable_alarm::BatchEnableAlarmOutput) with field(s):
     ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::operation::batch_enable_alarm::BatchEnableAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     /// - On failure, responds with [`SdkError<BatchEnableAlarmError>`](crate::operation::batch_enable_alarm::BatchEnableAlarmError)

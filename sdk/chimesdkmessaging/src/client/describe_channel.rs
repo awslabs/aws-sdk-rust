@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeChannel`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`chime_bearer(impl ::std::convert::Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_chime_bearer): <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    ///   - [`channel_arn(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_chime_bearer): <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     /// - On success, responds with [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput) with field(s):
     ///   - [`channel(Option<Channel>)`](crate::operation::describe_channel::DescribeChannelOutput::channel): <p>The channel details.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)

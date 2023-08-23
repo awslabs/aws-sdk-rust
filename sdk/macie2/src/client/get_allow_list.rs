@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAllowList`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`GetAllowListOutput`](crate::operation::get_allow_list::GetAllowListOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_allow_list::GetAllowListOutput::arn): <p>The Amazon Resource Name (ARN) of the allow list.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_allow_list::GetAllowListOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkflow`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::set_id): <p>The workflow's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::set_id): <p>The workflow's ID.</p>
     /// - On success, responds with [`DeleteWorkflowOutput`](crate::operation::delete_workflow::DeleteWorkflowOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkflowError>`](crate::operation::delete_workflow::DeleteWorkflowError)
     pub fn delete_workflow(&self) -> crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`semantic_version(impl ::std::convert::Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::semantic_version) / [`set_semantic_version(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_semantic_version): <p>The semantic version of the application to get.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
+    ///   - [`semantic_version(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::semantic_version) / [`set_semantic_version(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_semantic_version): <p>The semantic version of the application to get.</p>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::application_id): <p>The application Amazon Resource Name (ARN).</p>
     ///   - [`author(Option<String>)`](crate::operation::get_application::GetApplicationOutput::author): <p>The name of the author publishing the app.</p> <p>Minimum length=1. Maximum length=127.</p> <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>

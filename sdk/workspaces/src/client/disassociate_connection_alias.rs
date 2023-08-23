@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateConnectionAlias`](crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alias_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder::set_alias_id): <p>The identifier of the connection alias to disassociate.</p>
+    ///   - [`alias_id(impl Into<String>)`](crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder::set_alias_id): <p>The identifier of the connection alias to disassociate.</p>
     /// - On success, responds with [`DisassociateConnectionAliasOutput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput)
     /// - On failure, responds with [`SdkError<DisassociateConnectionAliasError>`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError)
     pub fn disassociate_connection_alias(

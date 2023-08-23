@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVpcEndpoint`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_endpoint_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::vpc_endpoint_id) / [`set_vpc_endpoint_id(Option<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_vpc_endpoint_id): <p>The unique identifier of the endpoint to be deleted.</p>
+    ///   - [`vpc_endpoint_id(impl Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::vpc_endpoint_id) / [`set_vpc_endpoint_id(Option<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_vpc_endpoint_id): <p>The unique identifier of the endpoint to be deleted.</p>
     /// - On success, responds with [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput) with field(s):
     ///   - [`vpc_endpoint_summary(Option<VpcEndpointSummary>)`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput::vpc_endpoint_summary): <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
     /// - On failure, responds with [`SdkError<DeleteVpcEndpointError>`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointError)

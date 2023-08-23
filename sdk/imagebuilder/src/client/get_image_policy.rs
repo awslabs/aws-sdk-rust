@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImagePolicy`](crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_arn(impl ::std::convert::Into<String>)`](crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::image_arn) / [`set_image_arn(Option<String>)`](crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::set_image_arn): <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
+    ///   - [`image_arn(impl Into<String>)`](crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::image_arn) / [`set_image_arn(Option<String>)`](crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::set_image_arn): <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
     /// - On success, responds with [`GetImagePolicyOutput`](crate::operation::get_image_policy::GetImagePolicyOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_policy::GetImagePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_image_policy::GetImagePolicyOutput::policy): <p>The image policy object.</p>

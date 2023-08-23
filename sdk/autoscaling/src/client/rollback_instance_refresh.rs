@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RollbackInstanceRefresh`](crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl ::std::convert::Into<String>)`](crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
+    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     /// - On success, responds with [`RollbackInstanceRefreshOutput`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshOutput) with field(s):
     ///   - [`instance_refresh_id(Option<String>)`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshOutput::instance_refresh_id): <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
     /// - On failure, responds with [`SdkError<RollbackInstanceRefreshError>`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError)

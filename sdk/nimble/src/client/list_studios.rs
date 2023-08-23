@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_studios::builders::ListStudiosFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_studios::builders::ListStudiosFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_studios::builders::ListStudiosFluentBuilder::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_studios::builders::ListStudiosFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_studios::builders::ListStudiosFluentBuilder::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On success, responds with [`ListStudiosOutput`](crate::operation::list_studios::ListStudiosOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_studios::ListStudiosOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`studios(Option<Vec<Studio>>)`](crate::operation::list_studios::ListStudiosOutput::studios): <p>A collection of studios.</p>

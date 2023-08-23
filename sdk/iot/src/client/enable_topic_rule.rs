@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableTopicRule`](crate::operation::enable_topic_rule::builders::EnableTopicRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_name(impl ::std::convert::Into<String>)`](crate::operation::enable_topic_rule::builders::EnableTopicRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::enable_topic_rule::builders::EnableTopicRuleFluentBuilder::set_rule_name): <p>The name of the topic rule to enable.</p>
+    ///   - [`rule_name(impl Into<String>)`](crate::operation::enable_topic_rule::builders::EnableTopicRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::enable_topic_rule::builders::EnableTopicRuleFluentBuilder::set_rule_name): <p>The name of the topic rule to enable.</p>
     /// - On success, responds with [`EnableTopicRuleOutput`](crate::operation::enable_topic_rule::EnableTopicRuleOutput)
     /// - On failure, responds with [`SdkError<EnableTopicRuleError>`](crate::operation::enable_topic_rule::EnableTopicRuleError)
     pub fn enable_topic_rule(&self) -> crate::operation::enable_topic_rule::builders::EnableTopicRuleFluentBuilder {

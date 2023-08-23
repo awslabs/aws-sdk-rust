@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateSolNetworkPackage`](crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageFluentBuilder::set_tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageFluentBuilder::set_tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On success, responds with [`CreateSolNetworkPackageOutput`](crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput::id): <p>ID of the network package.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput::arn): <p>Network package ARN.</p>

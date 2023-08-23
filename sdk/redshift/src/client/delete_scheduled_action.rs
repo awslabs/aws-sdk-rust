@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteScheduledAction`](crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scheduled_action_name(impl ::std::convert::Into<String>)`](crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder::scheduled_action_name) / [`set_scheduled_action_name(Option<String>)`](crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder::set_scheduled_action_name): <p>The name of the scheduled action to delete. </p>
+    ///   - [`scheduled_action_name(impl Into<String>)`](crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder::scheduled_action_name) / [`set_scheduled_action_name(Option<String>)`](crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder::set_scheduled_action_name): <p>The name of the scheduled action to delete. </p>
     /// - On success, responds with [`DeleteScheduledActionOutput`](crate::operation::delete_scheduled_action::DeleteScheduledActionOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduledActionError>`](crate::operation::delete_scheduled_action::DeleteScheduledActionError)
     pub fn delete_scheduled_action(&self) -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionFluentBuilder {

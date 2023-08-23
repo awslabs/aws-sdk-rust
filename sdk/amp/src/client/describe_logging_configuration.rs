@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoggingConfiguration`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::set_workspace_id): The ID of the workspace to vend logs to.
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::set_workspace_id): The ID of the workspace to vend logs to.
     /// - On success, responds with [`DescribeLoggingConfigurationOutput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfigurationMetadata>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::logging_configuration): Metadata object containing information about the logging configuration of a workspace.
     /// - On failure, responds with [`SdkError<DescribeLoggingConfigurationError>`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError)

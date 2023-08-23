@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRadius`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::set_directory_id): <p>The identifier of the directory for which to update the RADIUS server information.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::set_directory_id): <p>The identifier of the directory for which to update the RADIUS server information.</p>
     ///   - [`radius_settings(RadiusSettings)`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::radius_settings) / [`set_radius_settings(Option<RadiusSettings>)`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::set_radius_settings): <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     /// - On success, responds with [`UpdateRadiusOutput`](crate::operation::update_radius::UpdateRadiusOutput)
     /// - On failure, responds with [`SdkError<UpdateRadiusError>`](crate::operation::update_radius::UpdateRadiusError)

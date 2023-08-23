@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeForecast`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`forecast_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    ///   - [`forecast_arn(impl Into<String>)`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast.</p>
     /// - On success, responds with [`DescribeForecastOutput`](crate::operation::describe_forecast::DescribeForecastOutput) with field(s):
     ///   - [`forecast_arn(Option<String>)`](crate::operation::describe_forecast::DescribeForecastOutput::forecast_arn): <p>The forecast ARN as specified in the request.</p>
     ///   - [`forecast_name(Option<String>)`](crate::operation::describe_forecast::DescribeForecastOutput::forecast_name): <p>The name of the forecast.</p>

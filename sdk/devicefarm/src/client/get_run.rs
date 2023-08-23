@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRun`](crate::operation::get_run::builders::GetRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_arn): <p>The run's ARN.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_arn): <p>The run's ARN.</p>
     /// - On success, responds with [`GetRunOutput`](crate::operation::get_run::GetRunOutput) with field(s):
     ///   - [`run(Option<Run>)`](crate::operation::get_run::GetRunOutput::run): <p>The run to get results from.</p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagDeliveryStream`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_stream_name(impl ::std::convert::Into<String>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::set_delivery_stream_name): <p>The name of the delivery stream to which you want to add the tags.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::set_tags): <p>A set of key-value pairs to use to create the tags.</p>
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::set_delivery_stream_name): <p>The name of the delivery stream to which you want to add the tags.</p>
+    ///   - [`tags(Tag)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder::set_tags): <p>A set of key-value pairs to use to create the tags.</p>
     /// - On success, responds with [`TagDeliveryStreamOutput`](crate::operation::tag_delivery_stream::TagDeliveryStreamOutput)
     /// - On failure, responds with [`SdkError<TagDeliveryStreamError>`](crate::operation::tag_delivery_stream::TagDeliveryStreamError)
     pub fn tag_delivery_stream(&self) -> crate::operation::tag_delivery_stream::builders::TagDeliveryStreamFluentBuilder {

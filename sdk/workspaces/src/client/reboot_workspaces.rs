@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RebootWorkspaces`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`reboot_workspace_requests(Vec<RebootRequest>)`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::reboot_workspace_requests) / [`set_reboot_workspace_requests(Option<Vec<RebootRequest>>)`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::set_reboot_workspace_requests): <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
+    ///   - [`reboot_workspace_requests(RebootRequest)`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::reboot_workspace_requests) / [`set_reboot_workspace_requests(Option<Vec<RebootRequest>>)`](crate::operation::reboot_workspaces::builders::RebootWorkspacesFluentBuilder::set_reboot_workspace_requests): <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
     /// - On success, responds with [`RebootWorkspacesOutput`](crate::operation::reboot_workspaces::RebootWorkspacesOutput) with field(s):
     ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::operation::reboot_workspaces::RebootWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be rebooted.</p>
     /// - On failure, responds with [`SdkError<RebootWorkspacesError>`](crate::operation::reboot_workspaces::RebootWorkspacesError)

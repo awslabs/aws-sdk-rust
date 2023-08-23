@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHsm`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hsm_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::set_hsm_arn): <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
-    ///   - [`hsm_serial_number(impl ::std::convert::Into<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::hsm_serial_number) / [`set_hsm_serial_number(Option<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::set_hsm_serial_number): <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
+    ///   - [`hsm_arn(impl Into<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::set_hsm_arn): <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
+    ///   - [`hsm_serial_number(impl Into<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::hsm_serial_number) / [`set_hsm_serial_number(Option<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::set_hsm_serial_number): <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
     /// - On success, responds with [`DescribeHsmOutput`](crate::operation::describe_hsm::DescribeHsmOutput) with field(s):
     ///   - [`hsm_arn(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::hsm_arn): <p>The ARN of the HSM.</p>
     ///   - [`status(Option<HsmStatus>)`](crate::operation::describe_hsm::DescribeHsmOutput::status): <p>The status of the HSM.</p>

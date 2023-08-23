@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBatchLoadTask`](crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskFluentBuilder::set_task_id): <p>The ID of the batch load task.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskFluentBuilder::set_task_id): <p>The ID of the batch load task.</p>
     /// - On success, responds with [`DescribeBatchLoadTaskOutput`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskOutput) with field(s):
     ///   - [`batch_load_task_description(Option<BatchLoadTaskDescription>)`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskOutput::batch_load_task_description): <p>Description of the batch load task.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchLoadTaskError>`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError)

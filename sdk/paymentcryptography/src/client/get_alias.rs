@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAlias`](crate::operation::get_alias::builders::GetAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alias_name(impl ::std::convert::Into<String>)`](crate::operation::get_alias::builders::GetAliasFluentBuilder::alias_name) / [`set_alias_name(Option<String>)`](crate::operation::get_alias::builders::GetAliasFluentBuilder::set_alias_name): <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::operation::get_alias::builders::GetAliasFluentBuilder::alias_name) / [`set_alias_name(Option<String>)`](crate::operation::get_alias::builders::GetAliasFluentBuilder::set_alias_name): <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
     /// - On success, responds with [`GetAliasOutput`](crate::operation::get_alias::GetAliasOutput) with field(s):
     ///   - [`alias(Option<Alias>)`](crate::operation::get_alias::GetAliasOutput::alias): <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
     /// - On failure, responds with [`SdkError<GetAliasError>`](crate::operation::get_alias::GetAliasError)

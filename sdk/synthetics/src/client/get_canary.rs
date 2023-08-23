@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCanary`](crate::operation::get_canary::builders::GetCanaryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_canary::builders::GetCanaryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_canary::builders::GetCanaryFluentBuilder::set_name): <p>The name of the canary that you want details for.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_canary::builders::GetCanaryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_canary::builders::GetCanaryFluentBuilder::set_name): <p>The name of the canary that you want details for.</p>
     /// - On success, responds with [`GetCanaryOutput`](crate::operation::get_canary::GetCanaryOutput) with field(s):
     ///   - [`canary(Option<Canary>)`](crate::operation::get_canary::GetCanaryOutput::canary): <p>A structure that contains the full information about the canary.</p>
     /// - On failure, responds with [`SdkError<GetCanaryError>`](crate::operation::get_canary::GetCanaryError)

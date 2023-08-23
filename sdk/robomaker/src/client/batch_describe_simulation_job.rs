@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDescribeSimulationJob`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`jobs(Vec<String>)`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::jobs) / [`set_jobs(Option<Vec<String>>)`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::set_jobs): <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
+    ///   - [`jobs(impl Into<String>)`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::jobs) / [`set_jobs(Option<Vec<String>>)`](crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::set_jobs): <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
     /// - On success, responds with [`BatchDescribeSimulationJobOutput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput) with field(s):
     ///   - [`jobs(Option<Vec<SimulationJob>>)`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput::jobs): <p>A list of simulation jobs.</p>
     ///   - [`unprocessed_jobs(Option<Vec<String>>)`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput::unprocessed_jobs): <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>

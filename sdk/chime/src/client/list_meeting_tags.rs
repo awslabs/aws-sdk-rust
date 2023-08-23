@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListMeetingTags`](crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl ::std::convert::Into<String>)`](crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`meeting_id(impl Into<String>)`](crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
     /// - On success, responds with [`ListMeetingTagsOutput`](crate::operation::list_meeting_tags::ListMeetingTagsOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_meeting_tags::ListMeetingTagsOutput::tags): <p>A list of tag key-value pairs.</p>
     /// - On failure, responds with [`SdkError<ListMeetingTagsError>`](crate::operation::list_meeting_tags::ListMeetingTagsError)

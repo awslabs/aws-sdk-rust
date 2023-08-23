@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::set_name): <p>The name of the label or labels to get.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::set_next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::set_name): <p>The name of the label or labels to get.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::set_next_token): <p>The next token for the subsequent request.</p>
     ///   - [`max_results(i32)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::set_max_results): <p>The maximum number of objects to return for the request.</p>
     /// - On success, responds with [`GetLabelsOutput`](crate::operation::get_labels::GetLabelsOutput) with field(s):
     ///   - [`labels(Option<Vec<Label>>)`](crate::operation::get_labels::GetLabelsOutput::labels): <p>An array of labels.</p>

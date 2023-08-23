@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRestoreJob`](crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`restore_job_id(impl ::std::convert::Into<String>)`](crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder::restore_job_id) / [`set_restore_job_id(Option<String>)`](crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder::set_restore_job_id): <p>Uniquely identifies the job that restores a recovery point.</p>
+    ///   - [`restore_job_id(impl Into<String>)`](crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder::restore_job_id) / [`set_restore_job_id(Option<String>)`](crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder::set_restore_job_id): <p>Uniquely identifies the job that restores a recovery point.</p>
     /// - On success, responds with [`DescribeRestoreJobOutput`](crate::operation::describe_restore_job::DescribeRestoreJobOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::operation::describe_restore_job::DescribeRestoreJobOutput::account_id): <p>Returns the account ID that owns the restore job.</p>
     ///   - [`restore_job_id(Option<String>)`](crate::operation::describe_restore_job::DescribeRestoreJobOutput::restore_job_id): <p>Uniquely identifies the job that restores a recovery point.</p>

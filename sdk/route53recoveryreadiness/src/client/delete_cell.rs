@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCell`](crate::operation::delete_cell::builders::DeleteCellFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl ::std::convert::Into<String>)`](crate::operation::delete_cell::builders::DeleteCellFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::delete_cell::builders::DeleteCellFluentBuilder::set_cell_name): <p>The name of the cell.</p>
+    ///   - [`cell_name(impl Into<String>)`](crate::operation::delete_cell::builders::DeleteCellFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::delete_cell::builders::DeleteCellFluentBuilder::set_cell_name): <p>The name of the cell.</p>
     /// - On success, responds with [`DeleteCellOutput`](crate::operation::delete_cell::DeleteCellOutput)
     /// - On failure, responds with [`SdkError<DeleteCellError>`](crate::operation::delete_cell::DeleteCellError)
     pub fn delete_cell(&self) -> crate::operation::delete_cell::builders::DeleteCellFluentBuilder {

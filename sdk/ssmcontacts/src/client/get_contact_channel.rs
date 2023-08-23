@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContactChannel`](crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_channel_id(impl ::std::convert::Into<String>)`](crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
     /// - On success, responds with [`GetContactChannelOutput`](crate::operation::get_contact_channel::GetContactChannelOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::operation::get_contact_channel::GetContactChannelOutput::contact_arn): <p>The ARN of the contact that the channel belongs to.</p>
     ///   - [`contact_channel_arn(Option<String>)`](crate::operation::get_contact_channel::GetContactChannelOutput::contact_channel_arn): <p>The ARN of the contact channel.</p>

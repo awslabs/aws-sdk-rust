@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetArchiveRule`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`analyzer_name(impl ::std::convert::Into<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::set_analyzer_name): <p>The name of the analyzer to retrieve rules from.</p>
-    ///   - [`rule_name(impl ::std::convert::Into<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::set_rule_name): <p>The name of the rule to retrieve.</p>
+    ///   - [`analyzer_name(impl Into<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::set_analyzer_name): <p>The name of the analyzer to retrieve rules from.</p>
+    ///   - [`rule_name(impl Into<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::get_archive_rule::builders::GetArchiveRuleFluentBuilder::set_rule_name): <p>The name of the rule to retrieve.</p>
     /// - On success, responds with [`GetArchiveRuleOutput`](crate::operation::get_archive_rule::GetArchiveRuleOutput) with field(s):
     ///   - [`archive_rule(Option<ArchiveRuleSummary>)`](crate::operation::get_archive_rule::GetArchiveRuleOutput::archive_rule): <p>Contains information about an archive rule.</p>
     /// - On failure, responds with [`SdkError<GetArchiveRuleError>`](crate::operation::get_archive_rule::GetArchiveRuleError)

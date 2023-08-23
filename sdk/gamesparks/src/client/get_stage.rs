@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStage`](crate::operation::get_stage::builders::GetStageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_name(impl ::std::convert::Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_stage_name): <p>The name of the stage.</p>
+    ///   - [`game_name(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_game_name): <p>The name of the game.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_stage_name): <p>The name of the stage.</p>
     /// - On success, responds with [`GetStageOutput`](crate::operation::get_stage::GetStageOutput) with field(s):
     ///   - [`stage(Option<StageDetails>)`](crate::operation::get_stage::GetStageOutput::stage): <p>Properties that provide details of the stage.</p>
     /// - On failure, responds with [`SdkError<GetStageError>`](crate::operation::get_stage::GetStageError)

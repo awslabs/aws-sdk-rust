@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveRegion`](crate::operation::remove_region::builders::RemoveRegionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::remove_region::builders::RemoveRegionFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::remove_region::builders::RemoveRegionFluentBuilder::set_directory_id): <p>The identifier of the directory for which you want to remove Region replication.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::operation::remove_region::builders::RemoveRegionFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::remove_region::builders::RemoveRegionFluentBuilder::set_directory_id): <p>The identifier of the directory for which you want to remove Region replication.</p>
     /// - On success, responds with [`RemoveRegionOutput`](crate::operation::remove_region::RemoveRegionOutput)
     /// - On failure, responds with [`SdkError<RemoveRegionError>`](crate::operation::remove_region::RemoveRegionError)
     pub fn remove_region(&self) -> crate::operation::remove_region::builders::RemoveRegionFluentBuilder {

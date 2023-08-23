@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLegalHold`](crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`legal_hold_id(impl ::std::convert::Into<String>)`](crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder::legal_hold_id) / [`set_legal_hold_id(Option<String>)`](crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder::set_legal_hold_id): <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    ///   - [`legal_hold_id(impl Into<String>)`](crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder::legal_hold_id) / [`set_legal_hold_id(Option<String>)`](crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder::set_legal_hold_id): <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
     /// - On success, responds with [`GetLegalHoldOutput`](crate::operation::get_legal_hold::GetLegalHoldOutput) with field(s):
     ///   - [`title(Option<String>)`](crate::operation::get_legal_hold::GetLegalHoldOutput::title): <p>This is the string title of the legal hold.</p>
     ///   - [`status(Option<LegalHoldStatus>)`](crate::operation::get_legal_hold::GetLegalHoldOutput::status): <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>

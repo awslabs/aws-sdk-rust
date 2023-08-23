@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDashboard`](crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dashboard_id(impl ::std::convert::Into<String>)`](crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder::set_dashboard_id): <p>The ID of the dashboard.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder::set_dashboard_id): <p>The ID of the dashboard.</p>
     /// - On success, responds with [`DescribeDashboardOutput`](crate::operation::describe_dashboard::DescribeDashboardOutput) with field(s):
     ///   - [`dashboard_id(Option<String>)`](crate::operation::describe_dashboard::DescribeDashboardOutput::dashboard_id): <p>The ID of the dashboard.</p>
     ///   - [`dashboard_arn(Option<String>)`](crate::operation::describe_dashboard::DescribeDashboardOutput::dashboard_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>

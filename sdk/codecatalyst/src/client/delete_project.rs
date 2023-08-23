@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProject`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`space_name(impl ::std::convert::Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_space_name): <p>The name of the space.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_name): <p>The name of the project in the space. To retrieve a list of project names, use <code>ListProjects</code>.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_space_name): <p>The name of the space.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_name): <p>The name of the project in the space. To retrieve a list of project names, use <code>ListProjects</code>.</p>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput) with field(s):
     ///   - [`space_name(Option<String>)`](crate::operation::delete_project::DeleteProjectOutput::space_name): <p>The name of the space.</p>
     ///   - [`name(Option<String>)`](crate::operation::delete_project::DeleteProjectOutput::name): <p>The name of the project in the space.</p>

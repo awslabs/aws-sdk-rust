@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTrustedAdvisorCheckSummaries`](crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`check_ids(Vec<Option<String>>)`](crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesFluentBuilder::check_ids) / [`set_check_ids(Option<Vec<Option<String>>>)`](crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesFluentBuilder::set_check_ids): <p>The IDs of the Trusted Advisor checks.</p>
+    ///   - [`check_ids(Option<String>)`](crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesFluentBuilder::check_ids) / [`set_check_ids(Option<Vec<Option<String>>>)`](crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesFluentBuilder::set_check_ids): <p>The IDs of the Trusted Advisor checks.</p>
     /// - On success, responds with [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput) with field(s):
     ///   - [`summaries(Option<Vec<TrustedAdvisorCheckSummary>>)`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput::summaries): <p>The summary information for the requested Trusted Advisor checks.</p>
     /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorCheckSummariesError>`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesError)

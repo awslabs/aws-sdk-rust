@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagQueue`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`queue_url(impl ::std::convert::Into<String>)`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder::set_queue_url): <p>The URL of the queue.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder::set_tag_keys): <p>The list of tags to be removed from the specified queue.</p>
+    ///   - [`queue_url(impl Into<String>)`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder::set_queue_url): <p>The URL of the queue.</p>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_queue::builders::UntagQueueFluentBuilder::set_tag_keys): <p>The list of tags to be removed from the specified queue.</p>
     /// - On success, responds with [`UntagQueueOutput`](crate::operation::untag_queue::UntagQueueOutput)
     /// - On failure, responds with [`SdkError<UntagQueueError>`](crate::operation::untag_queue::UntagQueueError)
     pub fn untag_queue(&self) -> crate::operation::untag_queue::builders::UntagQueueFluentBuilder {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRoute`](crate::operation::get_route::builders::GetRouteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_route::builders::GetRouteFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_route::builders::GetRouteFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`route_id(impl ::std::convert::Into<String>)`](crate::operation::get_route::builders::GetRouteFluentBuilder::route_id) / [`set_route_id(Option<String>)`](crate::operation::get_route::builders::GetRouteFluentBuilder::set_route_id): <p>The route ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_route::builders::GetRouteFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_route::builders::GetRouteFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::operation::get_route::builders::GetRouteFluentBuilder::route_id) / [`set_route_id(Option<String>)`](crate::operation::get_route::builders::GetRouteFluentBuilder::set_route_id): <p>The route ID.</p>
     /// - On success, responds with [`GetRouteOutput`](crate::operation::get_route::GetRouteOutput) with field(s):
     ///   - [`api_gateway_managed(Option<bool>)`](crate::operation::get_route::GetRouteOutput::api_gateway_managed): <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
     ///   - [`api_key_required(Option<bool>)`](crate::operation::get_route::GetRouteOutput::api_key_required): <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>

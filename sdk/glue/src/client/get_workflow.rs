@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkflow`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_name): <p>The name of the workflow to retrieve.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_name): <p>The name of the workflow to retrieve.</p>
     ///   - [`include_graph(bool)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::include_graph) / [`set_include_graph(Option<bool>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_include_graph): <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     /// - On success, responds with [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput) with field(s):
     ///   - [`workflow(Option<Workflow>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow): <p>The resource metadata for the workflow.</p>

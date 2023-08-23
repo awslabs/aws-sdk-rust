@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePlacement`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`placement_name(impl ::std::convert::Into<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::placement_name) / [`set_placement_name(Option<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::set_placement_name): <p>The name of the empty placement to delete.</p>
-    ///   - [`project_name(impl ::std::convert::Into<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::set_project_name): <p>The project containing the empty placement to delete.</p>
+    ///   - [`placement_name(impl Into<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::placement_name) / [`set_placement_name(Option<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::set_placement_name): <p>The name of the empty placement to delete.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::set_project_name): <p>The project containing the empty placement to delete.</p>
     /// - On success, responds with [`DeletePlacementOutput`](crate::operation::delete_placement::DeletePlacementOutput)
     /// - On failure, responds with [`SdkError<DeletePlacementError>`](crate::operation::delete_placement::DeletePlacementError)
     pub fn delete_placement(&self) -> crate::operation::delete_placement::builders::DeletePlacementFluentBuilder {

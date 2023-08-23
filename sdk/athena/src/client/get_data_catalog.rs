@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataCatalog`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::set_name): <p>The name of the data catalog to return.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::set_name): <p>The name of the data catalog to return.</p>
     /// - On success, responds with [`GetDataCatalogOutput`](crate::operation::get_data_catalog::GetDataCatalogOutput) with field(s):
     ///   - [`data_catalog(Option<DataCatalog>)`](crate::operation::get_data_catalog::GetDataCatalogOutput::data_catalog): <p>The data catalog returned.</p>
     /// - On failure, responds with [`SdkError<GetDataCatalogError>`](crate::operation::get_data_catalog::GetDataCatalogError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContent`](crate::operation::get_content::builders::GetContentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`content_id(impl ::std::convert::Into<String>)`](crate::operation::get_content::builders::GetContentFluentBuilder::content_id) / [`set_content_id(Option<String>)`](crate::operation::get_content::builders::GetContentFluentBuilder::set_content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    ///   - [`knowledge_base_id(impl ::std::convert::Into<String>)`](crate::operation::get_content::builders::GetContentFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::get_content::builders::GetContentFluentBuilder::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`content_id(impl Into<String>)`](crate::operation::get_content::builders::GetContentFluentBuilder::content_id) / [`set_content_id(Option<String>)`](crate::operation::get_content::builders::GetContentFluentBuilder::set_content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::get_content::builders::GetContentFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::get_content::builders::GetContentFluentBuilder::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`GetContentOutput`](crate::operation::get_content::GetContentOutput) with field(s):
     ///   - [`content(Option<ContentData>)`](crate::operation::get_content::GetContentOutput::content): <p>The content.</p>
     /// - On failure, responds with [`SdkError<GetContentError>`](crate::operation::get_content::GetContentError)

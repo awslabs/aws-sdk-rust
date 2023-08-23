@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDetectorVersion`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder::set_detector_id): <p>The detector ID.</p>
-    ///   - [`detector_version_id(impl ::std::convert::Into<String>)`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder::detector_version_id) / [`set_detector_version_id(Option<String>)`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder::set_detector_version_id): <p>The detector version ID.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder::set_detector_id): <p>The detector ID.</p>
+    ///   - [`detector_version_id(impl Into<String>)`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder::detector_version_id) / [`set_detector_version_id(Option<String>)`](crate::operation::get_detector_version::builders::GetDetectorVersionFluentBuilder::set_detector_version_id): <p>The detector version ID.</p>
     /// - On success, responds with [`GetDetectorVersionOutput`](crate::operation::get_detector_version::GetDetectorVersionOutput) with field(s):
     ///   - [`detector_id(Option<String>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::detector_id): <p>The detector ID.</p>
     ///   - [`detector_version_id(Option<String>)`](crate::operation::get_detector_version::GetDetectorVersionOutput::detector_version_id): <p>The detector version ID.</p>

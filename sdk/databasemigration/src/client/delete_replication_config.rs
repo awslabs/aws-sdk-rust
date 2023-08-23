@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReplicationConfig`](crate::operation::delete_replication_config::builders::DeleteReplicationConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replication_config_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_replication_config::builders::DeleteReplicationConfigFluentBuilder::replication_config_arn) / [`set_replication_config_arn(Option<String>)`](crate::operation::delete_replication_config::builders::DeleteReplicationConfigFluentBuilder::set_replication_config_arn): <p>The replication config to delete.</p>
+    ///   - [`replication_config_arn(impl Into<String>)`](crate::operation::delete_replication_config::builders::DeleteReplicationConfigFluentBuilder::replication_config_arn) / [`set_replication_config_arn(Option<String>)`](crate::operation::delete_replication_config::builders::DeleteReplicationConfigFluentBuilder::set_replication_config_arn): <p>The replication config to delete.</p>
     /// - On success, responds with [`DeleteReplicationConfigOutput`](crate::operation::delete_replication_config::DeleteReplicationConfigOutput) with field(s):
     ///   - [`replication_config(Option<ReplicationConfig>)`](crate::operation::delete_replication_config::DeleteReplicationConfigOutput::replication_config): <p>Configuration parameters returned for the DMS Serverless replication after it is deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteReplicationConfigError>`](crate::operation::delete_replication_config::DeleteReplicationConfigError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReplicationSubnetGroup`](crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replication_subnet_group_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupFluentBuilder::replication_subnet_group_identifier) / [`set_replication_subnet_group_identifier(Option<String>)`](crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupFluentBuilder::set_replication_subnet_group_identifier): <p>The subnet group name of the replication instance.</p>
+    ///   - [`replication_subnet_group_identifier(impl Into<String>)`](crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupFluentBuilder::replication_subnet_group_identifier) / [`set_replication_subnet_group_identifier(Option<String>)`](crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupFluentBuilder::set_replication_subnet_group_identifier): <p>The subnet group name of the replication instance.</p>
     /// - On success, responds with [`DeleteReplicationSubnetGroupOutput`](crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteReplicationSubnetGroupError>`](crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupError)
     pub fn delete_replication_subnet_group(

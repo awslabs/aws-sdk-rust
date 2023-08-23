@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`sidewalk(SidewalkUpdateAccount)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::sidewalk) / [`set_sidewalk(Option<SidewalkUpdateAccount>)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::set_sidewalk): <p>The Sidewalk account credentials.</p>
-    ///   - [`partner_account_id(impl ::std::convert::Into<String>)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::partner_account_id) / [`set_partner_account_id(Option<String>)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::set_partner_account_id): <p>The ID of the partner account to update.</p>
+    ///   - [`partner_account_id(impl Into<String>)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::partner_account_id) / [`set_partner_account_id(Option<String>)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::set_partner_account_id): <p>The ID of the partner account to update.</p>
     ///   - [`partner_type(PartnerType)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::partner_type) / [`set_partner_type(Option<PartnerType>)`](crate::operation::update_partner_account::builders::UpdatePartnerAccountFluentBuilder::set_partner_type): <p>The partner type.</p>
     /// - On success, responds with [`UpdatePartnerAccountOutput`](crate::operation::update_partner_account::UpdatePartnerAccountOutput)
     /// - On failure, responds with [`SdkError<UpdatePartnerAccountError>`](crate::operation::update_partner_account::UpdatePartnerAccountError)

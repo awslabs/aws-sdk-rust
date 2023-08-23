@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
     /// - On success, responds with [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput) with field(s):
     ///   - [`actions(Option<Vec<ActionSummary>>)`](crate::operation::list_actions::ListActionsOutput::actions): <p>The actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_actions::ListActionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

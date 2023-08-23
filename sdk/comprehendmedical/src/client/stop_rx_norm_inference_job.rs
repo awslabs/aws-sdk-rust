@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopRxNormInferenceJob`](crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobFluentBuilder::set_job_id): <p>The identifier of the job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobFluentBuilder::set_job_id): <p>The identifier of the job.</p>
     /// - On success, responds with [`StopRxNormInferenceJobOutput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopRxNormInferenceJobError>`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError)

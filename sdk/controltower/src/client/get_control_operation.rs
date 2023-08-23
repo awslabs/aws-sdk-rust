@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetControlOperation`](crate::operation::get_control_operation::builders::GetControlOperationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`operation_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_control_operation::builders::GetControlOperationFluentBuilder::operation_identifier) / [`set_operation_identifier(Option<String>)`](crate::operation::get_control_operation::builders::GetControlOperationFluentBuilder::set_operation_identifier): <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
+    ///   - [`operation_identifier(impl Into<String>)`](crate::operation::get_control_operation::builders::GetControlOperationFluentBuilder::operation_identifier) / [`set_operation_identifier(Option<String>)`](crate::operation::get_control_operation::builders::GetControlOperationFluentBuilder::set_operation_identifier): <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     /// - On success, responds with [`GetControlOperationOutput`](crate::operation::get_control_operation::GetControlOperationOutput) with field(s):
     ///   - [`control_operation(Option<ControlOperation>)`](crate::operation::get_control_operation::GetControlOperationOutput::control_operation): <p></p>
     /// - On failure, responds with [`SdkError<GetControlOperationError>`](crate::operation::get_control_operation::GetControlOperationError)

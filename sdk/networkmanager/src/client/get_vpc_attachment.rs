@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVpcAttachment`](crate::operation::get_vpc_attachment::builders::GetVpcAttachmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`attachment_id(impl ::std::convert::Into<String>)`](crate::operation::get_vpc_attachment::builders::GetVpcAttachmentFluentBuilder::attachment_id) / [`set_attachment_id(Option<String>)`](crate::operation::get_vpc_attachment::builders::GetVpcAttachmentFluentBuilder::set_attachment_id): <p>The ID of the attachment.</p>
+    ///   - [`attachment_id(impl Into<String>)`](crate::operation::get_vpc_attachment::builders::GetVpcAttachmentFluentBuilder::attachment_id) / [`set_attachment_id(Option<String>)`](crate::operation::get_vpc_attachment::builders::GetVpcAttachmentFluentBuilder::set_attachment_id): <p>The ID of the attachment.</p>
     /// - On success, responds with [`GetVpcAttachmentOutput`](crate::operation::get_vpc_attachment::GetVpcAttachmentOutput) with field(s):
     ///   - [`vpc_attachment(Option<VpcAttachment>)`](crate::operation::get_vpc_attachment::GetVpcAttachmentOutput::vpc_attachment): <p>Returns details about a VPC attachment.</p>
     /// - On failure, responds with [`SdkError<GetVpcAttachmentError>`](crate::operation::get_vpc_attachment::GetVpcAttachmentError)

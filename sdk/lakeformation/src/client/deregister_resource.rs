@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterResource`](crate::operation::deregister_resource::builders::DeregisterResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::deregister_resource::builders::DeregisterResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::deregister_resource::builders::DeregisterResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::deregister_resource::builders::DeregisterResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::deregister_resource::builders::DeregisterResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     /// - On success, responds with [`DeregisterResourceOutput`](crate::operation::deregister_resource::DeregisterResourceOutput)
     /// - On failure, responds with [`SdkError<DeregisterResourceError>`](crate::operation::deregister_resource::DeregisterResourceError)
     pub fn deregister_resource(&self) -> crate::operation::deregister_resource::builders::DeregisterResourceFluentBuilder {

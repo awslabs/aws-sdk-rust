@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteModel`](crate::operation::delete_model::builders::DeleteModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_name(impl ::std::convert::Into<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_model_name): <p>The name of the model to delete.</p>
+    ///   - [`model_name(impl Into<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_model_name): <p>The name of the model to delete.</p>
     /// - On success, responds with [`DeleteModelOutput`](crate::operation::delete_model::DeleteModelOutput)
     /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::operation::delete_model::DeleteModelError)
     pub fn delete_model(&self) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {

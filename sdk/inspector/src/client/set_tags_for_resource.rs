@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetTagsForResource`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::set_resource_arn): <p>The ARN of the assessment template that you want to set tags to.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::set_tags): <p>A collection of key and value pairs that you want to set to the assessment template.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::set_resource_arn): <p>The ARN of the assessment template that you want to set tags to.</p>
+    ///   - [`tags(Tag)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::set_tags): <p>A collection of key and value pairs that you want to set to the assessment template.</p>
     /// - On success, responds with [`SetTagsForResourceOutput`](crate::operation::set_tags_for_resource::SetTagsForResourceOutput)
     /// - On failure, responds with [`SdkError<SetTagsForResourceError>`](crate::operation::set_tags_for_resource::SetTagsForResourceError)
     pub fn set_tags_for_resource(&self) -> crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder {

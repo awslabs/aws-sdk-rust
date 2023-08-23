@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFlow`](crate::operation::describe_flow::builders::DescribeFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_name(impl ::std::convert::Into<String>)`](crate::operation::describe_flow::builders::DescribeFlowFluentBuilder::flow_name) / [`set_flow_name(Option<String>)`](crate::operation::describe_flow::builders::DescribeFlowFluentBuilder::set_flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    ///   - [`flow_name(impl Into<String>)`](crate::operation::describe_flow::builders::DescribeFlowFluentBuilder::flow_name) / [`set_flow_name(Option<String>)`](crate::operation::describe_flow::builders::DescribeFlowFluentBuilder::set_flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     /// - On success, responds with [`DescribeFlowOutput`](crate::operation::describe_flow::DescribeFlowOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::operation::describe_flow::DescribeFlowOutput::flow_arn): <p> The flow's Amazon Resource Name (ARN). </p>
     ///   - [`description(Option<String>)`](crate::operation::describe_flow::DescribeFlowOutput::description): <p> A description of the flow. </p>

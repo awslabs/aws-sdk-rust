@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataset`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_name): <p>The name of the dataset to be described.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_name): <p>The name of the dataset to be described.</p>
     /// - On success, responds with [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput) with field(s):
     ///   - [`created_by(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::created_by): <p>The identifier (user name) of the user who created the dataset.</p>
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_dataset::DescribeDatasetOutput::create_date): <p>The date and time that the dataset was created.</p>

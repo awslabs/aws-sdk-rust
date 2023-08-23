@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSchemaMapping`](crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_name(impl ::std::convert::Into<String>)`](crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder::schema_name) / [`set_schema_name(Option<String>)`](crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder::set_schema_name): <p>The name of the schema to be retrieved.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder::schema_name) / [`set_schema_name(Option<String>)`](crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder::set_schema_name): <p>The name of the schema to be retrieved.</p>
     /// - On success, responds with [`GetSchemaMappingOutput`](crate::operation::get_schema_mapping::GetSchemaMappingOutput) with field(s):
     ///   - [`schema_name(Option<String>)`](crate::operation::get_schema_mapping::GetSchemaMappingOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_arn(Option<String>)`](crate::operation::get_schema_mapping::GetSchemaMappingOutput::schema_arn): <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the SchemaMapping.</p>

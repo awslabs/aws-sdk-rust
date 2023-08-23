@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopExecution`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`execution_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::execution_arn) / [`set_execution_arn(Option<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
-    ///   - [`error(impl ::std::convert::Into<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::error) / [`set_error(Option<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::set_error): <p>The error code of the failure.</p>
-    ///   - [`cause(impl ::std::convert::Into<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::cause) / [`set_cause(Option<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::set_cause): <p>A more detailed explanation of the cause of the failure.</p>
+    ///   - [`execution_arn(impl Into<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::execution_arn) / [`set_execution_arn(Option<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
+    ///   - [`error(impl Into<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::error) / [`set_error(Option<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::set_error): <p>The error code of the failure.</p>
+    ///   - [`cause(impl Into<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::cause) / [`set_cause(Option<String>)`](crate::operation::stop_execution::builders::StopExecutionFluentBuilder::set_cause): <p>A more detailed explanation of the cause of the failure.</p>
     /// - On success, responds with [`StopExecutionOutput`](crate::operation::stop_execution::StopExecutionOutput) with field(s):
     ///   - [`stop_date(Option<DateTime>)`](crate::operation::stop_execution::StopExecutionOutput::stop_date): <p>The date the execution is stopped.</p>
     /// - On failure, responds with [`SdkError<StopExecutionError>`](crate::operation::stop_execution::StopExecutionError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEventBus`](crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder::set_name): <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder::set_name): <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
     /// - On success, responds with [`DescribeEventBusOutput`](crate::operation::describe_event_bus::DescribeEventBusOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::name): <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::arn): <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>

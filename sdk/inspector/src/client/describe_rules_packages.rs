@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRulesPackages`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rules_package_arns(Vec<String>)`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder::rules_package_arns) / [`set_rules_package_arns(Option<Vec<String>>)`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder::set_rules_package_arns): <p>The ARN that specifies the rules package that you want to describe.</p>
+    ///   - [`rules_package_arns(impl Into<String>)`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder::rules_package_arns) / [`set_rules_package_arns(Option<Vec<String>>)`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder::set_rules_package_arns): <p>The ARN that specifies the rules package that you want to describe.</p>
     ///   - [`locale(Locale)`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder::locale) / [`set_locale(Option<Locale>)`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesFluentBuilder::set_locale): <p>The locale that you want to translate a rules package description into.</p>
     /// - On success, responds with [`DescribeRulesPackagesOutput`](crate::operation::describe_rules_packages::DescribeRulesPackagesOutput) with field(s):
     ///   - [`rules_packages(Option<Vec<RulesPackage>>)`](crate::operation::describe_rules_packages::DescribeRulesPackagesOutput::rules_packages): <p>Information about the rules package.</p>

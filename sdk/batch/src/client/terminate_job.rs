@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TerminateJob`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::set_job_id): <p>The Batch job ID of the job to terminate.</p>
-    ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::set_reason): <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::set_job_id): <p>The Batch job ID of the job to terminate.</p>
+    ///   - [`reason(impl Into<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::terminate_job::builders::TerminateJobFluentBuilder::set_reason): <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
     /// - On success, responds with [`TerminateJobOutput`](crate::operation::terminate_job::TerminateJobOutput)
     /// - On failure, responds with [`SdkError<TerminateJobError>`](crate::operation::terminate_job::TerminateJobError)
     pub fn terminate_job(&self) -> crate::operation::terminate_job::builders::TerminateJobFluentBuilder {

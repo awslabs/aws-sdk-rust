@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`FailoverShard`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_name(impl ::std::convert::Into<String>)`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder::set_cluster_name): <p>The cluster being failed over</p>
-    ///   - [`shard_name(impl ::std::convert::Into<String>)`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder::shard_name) / [`set_shard_name(Option<String>)`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder::set_shard_name): <p>The name of the shard</p>
+    ///   - [`cluster_name(impl Into<String>)`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder::set_cluster_name): <p>The cluster being failed over</p>
+    ///   - [`shard_name(impl Into<String>)`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder::shard_name) / [`set_shard_name(Option<String>)`](crate::operation::failover_shard::builders::FailoverShardFluentBuilder::set_shard_name): <p>The name of the shard</p>
     /// - On success, responds with [`FailoverShardOutput`](crate::operation::failover_shard::FailoverShardOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::failover_shard::FailoverShardOutput::cluster): <p>The cluster being failed over</p>
     /// - On failure, responds with [`SdkError<FailoverShardError>`](crate::operation::failover_shard::FailoverShardError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventIntegration`](crate::operation::delete_event_integration::builders::DeleteEventIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_event_integration::builders::DeleteEventIntegrationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_event_integration::builders::DeleteEventIntegrationFluentBuilder::set_name): <p>The name of the event integration.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_event_integration::builders::DeleteEventIntegrationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_event_integration::builders::DeleteEventIntegrationFluentBuilder::set_name): <p>The name of the event integration.</p>
     /// - On success, responds with [`DeleteEventIntegrationOutput`](crate::operation::delete_event_integration::DeleteEventIntegrationOutput)
     /// - On failure, responds with [`SdkError<DeleteEventIntegrationError>`](crate::operation::delete_event_integration::DeleteEventIntegrationError)
     pub fn delete_event_integration(&self) -> crate::operation::delete_event_integration::builders::DeleteEventIntegrationFluentBuilder {

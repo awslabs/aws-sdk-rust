@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSourceNetwork`](crate::operation::delete_source_network::builders::DeleteSourceNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_network_id(impl ::std::convert::Into<String>)`](crate::operation::delete_source_network::builders::DeleteSourceNetworkFluentBuilder::source_network_id) / [`set_source_network_id(Option<String>)`](crate::operation::delete_source_network::builders::DeleteSourceNetworkFluentBuilder::set_source_network_id): <p>ID of the Source Network to delete.</p>
+    ///   - [`source_network_id(impl Into<String>)`](crate::operation::delete_source_network::builders::DeleteSourceNetworkFluentBuilder::source_network_id) / [`set_source_network_id(Option<String>)`](crate::operation::delete_source_network::builders::DeleteSourceNetworkFluentBuilder::set_source_network_id): <p>ID of the Source Network to delete.</p>
     /// - On success, responds with [`DeleteSourceNetworkOutput`](crate::operation::delete_source_network::DeleteSourceNetworkOutput)
     /// - On failure, responds with [`SdkError<DeleteSourceNetworkError>`](crate::operation::delete_source_network::DeleteSourceNetworkError)
     pub fn delete_source_network(&self) -> crate::operation::delete_source_network::builders::DeleteSourceNetworkFluentBuilder {

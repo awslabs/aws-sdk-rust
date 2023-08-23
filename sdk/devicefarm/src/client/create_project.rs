@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateProject`](crate::operation::create_project::builders::CreateProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_name): <p>The project's name.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_name): <p>The project's name.</p>
     ///   - [`default_job_timeout_minutes(i32)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::default_job_timeout_minutes) / [`set_default_job_timeout_minutes(Option<i32>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_default_job_timeout_minutes): <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
     ///   - [`vpc_config(VpcConfig)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_vpc_config): <p>The VPC security groups and subnets that are attached to a project.</p>
     /// - On success, responds with [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput) with field(s):

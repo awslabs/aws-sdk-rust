@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePackagingConfiguration`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingConfiguration resource.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingConfiguration resource.
     /// - On success, responds with [`DescribePackagingConfigurationOutput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::arn): The ARN of the PackagingConfiguration.
     ///   - [`cmaf_package(Option<CmafPackage>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::cmaf_package): A CMAF packaging configuration.

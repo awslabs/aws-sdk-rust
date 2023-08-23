@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWirelessDevice`](crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteWirelessDeviceOutput`](crate::operation::delete_wireless_device::DeleteWirelessDeviceOutput)
     /// - On failure, responds with [`SdkError<DeleteWirelessDeviceError>`](crate::operation::delete_wireless_device::DeleteWirelessDeviceError)
     pub fn delete_wireless_device(&self) -> crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceFluentBuilder {

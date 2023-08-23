@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateInput`](crate::operation::create_input::builders::CreateInputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_name(impl ::std::convert::Into<String>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::input_name) / [`set_input_name(Option<String>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::set_input_name): <p>The name you want to give to the input.</p>
-    ///   - [`input_description(impl ::std::convert::Into<String>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::input_description) / [`set_input_description(Option<String>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::set_input_description): <p>A brief description of the input.</p>
+    ///   - [`input_name(impl Into<String>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::input_name) / [`set_input_name(Option<String>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::set_input_name): <p>The name you want to give to the input.</p>
+    ///   - [`input_description(impl Into<String>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::input_description) / [`set_input_description(Option<String>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::set_input_description): <p>A brief description of the input.</p>
     ///   - [`input_definition(InputDefinition)`](crate::operation::create_input::builders::CreateInputFluentBuilder::input_definition) / [`set_input_definition(Option<InputDefinition>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::set_input_definition): <p>The definition of the input.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::set_tags): <p>Metadata that can be used to manage the input.</p>
+    ///   - [`tags(Tag)`](crate::operation::create_input::builders::CreateInputFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_input::builders::CreateInputFluentBuilder::set_tags): <p>Metadata that can be used to manage the input.</p>
     /// - On success, responds with [`CreateInputOutput`](crate::operation::create_input::CreateInputOutput) with field(s):
     ///   - [`input_configuration(Option<InputConfiguration>)`](crate::operation::create_input::CreateInputOutput::input_configuration): <p>Information about the configuration of the input.</p>
     /// - On failure, responds with [`SdkError<CreateInputError>`](crate::operation::create_input::CreateInputError)

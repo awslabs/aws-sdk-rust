@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAction`](crate::operation::describe_action::builders::DescribeActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action_name(impl ::std::convert::Into<String>)`](crate::operation::describe_action::builders::DescribeActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::describe_action::builders::DescribeActionFluentBuilder::set_action_name): <p>The name of the action to describe.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::operation::describe_action::builders::DescribeActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::describe_action::builders::DescribeActionFluentBuilder::set_action_name): <p>The name of the action to describe.</p>
     /// - On success, responds with [`DescribeActionOutput`](crate::operation::describe_action::DescribeActionOutput) with field(s):
     ///   - [`action_name(Option<String>)`](crate::operation::describe_action::DescribeActionOutput::action_name): <p>The name of the action.</p>
     ///   - [`action_arn(Option<String>)`](crate::operation::describe_action::DescribeActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>

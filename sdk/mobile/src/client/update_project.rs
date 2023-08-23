@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`contents(Blob)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::contents) / [`set_contents(Option<Blob>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_contents): <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
-    ///   - [`project_id(impl ::std::convert::Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_project_id): <p> Unique project identifier. </p>
+    ///   - [`project_id(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_project_id): <p> Unique project identifier. </p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput) with field(s):
     ///   - [`details(Option<ProjectDetails>)`](crate::operation::update_project::UpdateProjectOutput::details): <p> Detailed information about the updated AWS Mobile Hub project. </p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::operation::update_project::UpdateProjectError)

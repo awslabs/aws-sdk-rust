@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateMember`](crate::operation::associate_member::builders::AssociateMemberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::associate_member::builders::AssociateMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::associate_member::builders::AssociateMemberFluentBuilder::set_account_id): <p>The Amazon Web Services account ID of the member account to be associated.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::associate_member::builders::AssociateMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::associate_member::builders::AssociateMemberFluentBuilder::set_account_id): <p>The Amazon Web Services account ID of the member account to be associated.</p>
     /// - On success, responds with [`AssociateMemberOutput`](crate::operation::associate_member::AssociateMemberOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::operation::associate_member::AssociateMemberOutput::account_id): <p>The Amazon Web Services account ID of the successfully associated member account.</p>
     /// - On failure, responds with [`SdkError<AssociateMemberError>`](crate::operation::associate_member::AssociateMemberError)

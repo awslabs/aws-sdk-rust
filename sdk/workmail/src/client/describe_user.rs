@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeUser`](crate::operation::describe_user::builders::DescribeUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_organization_id): <p>The identifier for the organization under which the user exists.</p>
-    ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_user_id): <p>The identifier for the user to be described.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_organization_id): <p>The identifier for the organization under which the user exists.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_user_id): <p>The identifier for the user to be described.</p>
     /// - On success, responds with [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_id): <p>The identifier for the described user.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::name): <p>The name for the user.</p>

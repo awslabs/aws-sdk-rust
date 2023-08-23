@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInboundDmarcSettings`](crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsFluentBuilder::set_organization_id): <p>Lists the ID of the given organization.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsFluentBuilder::set_organization_id): <p>Lists the ID of the given organization.</p>
     /// - On success, responds with [`DescribeInboundDmarcSettingsOutput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput) with field(s):
     ///   - [`enforced(bool)`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput::enforced): <p>Lists the enforcement setting of the applied policy.</p>
     /// - On failure, responds with [`SdkError<DescribeInboundDmarcSettingsError>`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError)

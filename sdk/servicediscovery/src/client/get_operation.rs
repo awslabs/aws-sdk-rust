@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOperation`](crate::operation::get_operation::builders::GetOperationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`operation_id(impl ::std::convert::Into<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::set_operation_id): <p>The ID of the operation that you want to get more information about.</p>
+    ///   - [`operation_id(impl Into<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::set_operation_id): <p>The ID of the operation that you want to get more information about.</p>
     /// - On success, responds with [`GetOperationOutput`](crate::operation::get_operation::GetOperationOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::get_operation::GetOperationOutput::operation): <p>A complex type that contains information about the operation.</p>
     /// - On failure, responds with [`SdkError<GetOperationError>`](crate::operation::get_operation::GetOperationError)

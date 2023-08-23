@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetInstanceSnapshot`](crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_snapshot_name(impl ::std::convert::Into<String>)`](crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotFluentBuilder::instance_snapshot_name) / [`set_instance_snapshot_name(Option<String>)`](crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotFluentBuilder::set_instance_snapshot_name): <p>The name of the snapshot for which you are requesting information.</p>
+    ///   - [`instance_snapshot_name(impl Into<String>)`](crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotFluentBuilder::instance_snapshot_name) / [`set_instance_snapshot_name(Option<String>)`](crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotFluentBuilder::set_instance_snapshot_name): <p>The name of the snapshot for which you are requesting information.</p>
     /// - On success, responds with [`GetInstanceSnapshotOutput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotOutput) with field(s):
     ///   - [`instance_snapshot(Option<InstanceSnapshot>)`](crate::operation::get_instance_snapshot::GetInstanceSnapshotOutput::instance_snapshot): <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
     /// - On failure, responds with [`SdkError<GetInstanceSnapshotError>`](crate::operation::get_instance_snapshot::GetInstanceSnapshotError)

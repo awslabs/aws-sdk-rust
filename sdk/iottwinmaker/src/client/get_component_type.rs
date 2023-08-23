@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetComponentType`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::set_workspace_id): <p>The ID of the workspace that contains the component type.</p>
-    ///   - [`component_type_id(impl ::std::convert::Into<String>)`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::component_type_id) / [`set_component_type_id(Option<String>)`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::set_component_type_id): <p>The ID of the component type.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::set_workspace_id): <p>The ID of the workspace that contains the component type.</p>
+    ///   - [`component_type_id(impl Into<String>)`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::component_type_id) / [`set_component_type_id(Option<String>)`](crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::set_component_type_id): <p>The ID of the component type.</p>
     /// - On success, responds with [`GetComponentTypeOutput`](crate::operation::get_component_type::GetComponentTypeOutput) with field(s):
     ///   - [`workspace_id(Option<String>)`](crate::operation::get_component_type::GetComponentTypeOutput::workspace_id): <p>The ID of the workspace that contains the component type.</p>
     ///   - [`is_singleton(Option<bool>)`](crate::operation::get_component_type::GetComponentTypeOutput::is_singleton): <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteModel`](crate::operation::delete_model::builders::DeleteModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`model_id(impl ::std::convert::Into<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_model_id): <p>The model ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`model_id(impl Into<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_model_id): <p>The model ID.</p>
     /// - On success, responds with [`DeleteModelOutput`](crate::operation::delete_model::DeleteModelOutput)
     /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::operation::delete_model::DeleteModelError)
     pub fn delete_model(&self) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {

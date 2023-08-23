@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AdminGetUser`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool where you want to get information about the user.</p>
-    ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::set_username): <p>The user name of the user you want to retrieve.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool where you want to get information about the user.</p>
+    ///   - [`username(impl Into<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::set_username): <p>The user name of the user you want to retrieve.</p>
     /// - On success, responds with [`AdminGetUserOutput`](crate::operation::admin_get_user::AdminGetUserOutput) with field(s):
     ///   - [`username(Option<String>)`](crate::operation::admin_get_user::AdminGetUserOutput::username): <p>The user name of the user about whom you're receiving information.</p>
     ///   - [`user_attributes(Option<Vec<AttributeType>>)`](crate::operation::admin_get_user::AdminGetUserOutput::user_attributes): <p>An array of name-value pairs representing user attributes.</p>

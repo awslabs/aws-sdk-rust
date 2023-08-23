@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHumanLoop`](crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`human_loop_name(impl ::std::convert::Into<String>)`](crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder::human_loop_name) / [`set_human_loop_name(Option<String>)`](crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder::set_human_loop_name): <p>The name of the human loop that you want information about.</p>
+    ///   - [`human_loop_name(impl Into<String>)`](crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder::human_loop_name) / [`set_human_loop_name(Option<String>)`](crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder::set_human_loop_name): <p>The name of the human loop that you want information about.</p>
     /// - On success, responds with [`DescribeHumanLoopOutput`](crate::operation::describe_human_loop::DescribeHumanLoopOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_human_loop::DescribeHumanLoopOutput::creation_time): <p>The creation time when Amazon Augmented AI created the human loop.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_human_loop::DescribeHumanLoopOutput::failure_reason): <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>

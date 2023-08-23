@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDomain`](crate::operation::get_domain::builders::GetDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::get_domain::GetDomainOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`default_expiration_days(Option<i32>)`](crate::operation::get_domain::GetDomainOutput::default_expiration_days): <p>The default number of days until the data within the domain expires.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetTriggers`](crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trigger_names(Vec<String>)`](crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder::trigger_names) / [`set_trigger_names(Option<Vec<String>>)`](crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder::set_trigger_names): <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
+    ///   - [`trigger_names(impl Into<String>)`](crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder::trigger_names) / [`set_trigger_names(Option<Vec<String>>)`](crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder::set_trigger_names): <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
     /// - On success, responds with [`BatchGetTriggersOutput`](crate::operation::batch_get_triggers::BatchGetTriggersOutput) with field(s):
     ///   - [`triggers(Option<Vec<Trigger>>)`](crate::operation::batch_get_triggers::BatchGetTriggersOutput::triggers): <p>A list of trigger definitions.</p>
     ///   - [`triggers_not_found(Option<Vec<String>>)`](crate::operation::batch_get_triggers::BatchGetTriggersOutput::triggers_not_found): <p>A list of names of triggers not found.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopFleet`](crate::operation::stop_fleet::builders::StopFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_fleet::builders::StopFleetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_fleet::builders::StopFleetFluentBuilder::set_name): <p>The name of the fleet.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::stop_fleet::builders::StopFleetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_fleet::builders::StopFleetFluentBuilder::set_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`StopFleetOutput`](crate::operation::stop_fleet::StopFleetOutput)
     /// - On failure, responds with [`SdkError<StopFleetError>`](crate::operation::stop_fleet::StopFleetError)
     pub fn stop_fleet(&self) -> crate::operation::stop_fleet::builders::StopFleetFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRoutingControl`](crate::operation::describe_routing_control::builders::DescribeRoutingControlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`routing_control_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_routing_control::builders::DescribeRoutingControlFluentBuilder::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::operation::describe_routing_control::builders::DescribeRoutingControlFluentBuilder::set_routing_control_arn): <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    ///   - [`routing_control_arn(impl Into<String>)`](crate::operation::describe_routing_control::builders::DescribeRoutingControlFluentBuilder::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::operation::describe_routing_control::builders::DescribeRoutingControlFluentBuilder::set_routing_control_arn): <p>The Amazon Resource Name (ARN) of the routing control.</p>
     /// - On success, responds with [`DescribeRoutingControlOutput`](crate::operation::describe_routing_control::DescribeRoutingControlOutput) with field(s):
     ///   - [`routing_control(Option<RoutingControl>)`](crate::operation::describe_routing_control::DescribeRoutingControlOutput::routing_control): <p>Information about the routing control.</p>
     /// - On failure, responds with [`SdkError<DescribeRoutingControlError>`](crate::operation::describe_routing_control::DescribeRoutingControlError)

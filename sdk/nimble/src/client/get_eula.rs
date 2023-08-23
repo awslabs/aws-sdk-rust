@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEula`](crate::operation::get_eula::builders::GetEulaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`eula_id(impl ::std::convert::Into<String>)`](crate::operation::get_eula::builders::GetEulaFluentBuilder::eula_id) / [`set_eula_id(Option<String>)`](crate::operation::get_eula::builders::GetEulaFluentBuilder::set_eula_id): <p>The EULA ID.</p>
+    ///   - [`eula_id(impl Into<String>)`](crate::operation::get_eula::builders::GetEulaFluentBuilder::eula_id) / [`set_eula_id(Option<String>)`](crate::operation::get_eula::builders::GetEulaFluentBuilder::set_eula_id): <p>The EULA ID.</p>
     /// - On success, responds with [`GetEulaOutput`](crate::operation::get_eula::GetEulaOutput) with field(s):
     ///   - [`eula(Option<Eula>)`](crate::operation::get_eula::GetEulaOutput::eula): <p>The EULA.</p>
     /// - On failure, responds with [`SdkError<GetEulaError>`](crate::operation::get_eula::GetEulaError)

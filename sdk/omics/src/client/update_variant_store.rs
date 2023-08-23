@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateVariantStore`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder::set_name): <p>A name for the store.</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder::set_description): <p>A description for the store.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder::set_name): <p>A name for the store.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_variant_store::builders::UpdateVariantStoreFluentBuilder::set_description): <p>A description for the store.</p>
     /// - On success, responds with [`UpdateVariantStoreOutput`](crate::operation::update_variant_store::UpdateVariantStoreOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::update_variant_store::UpdateVariantStoreOutput::id): <p>The store's ID.</p>
     ///   - [`reference(Option<ReferenceItem>)`](crate::operation::update_variant_store::UpdateVariantStoreOutput::reference): <p>The store's genome reference.</p>

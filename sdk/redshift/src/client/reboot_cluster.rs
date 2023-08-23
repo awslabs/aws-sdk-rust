@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RebootCluster`](crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl ::std::convert::Into<String>)`](crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder::set_cluster_identifier): <p>The cluster identifier.</p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::reboot_cluster::builders::RebootClusterFluentBuilder::set_cluster_identifier): <p>The cluster identifier.</p>
     /// - On success, responds with [`RebootClusterOutput`](crate::operation::reboot_cluster::RebootClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::reboot_cluster::RebootClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<RebootClusterError>`](crate::operation::reboot_cluster::RebootClusterError)

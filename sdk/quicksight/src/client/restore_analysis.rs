@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RestoreAnalysis`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`aws_account_id(impl ::std::convert::Into<String>)`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-    ///   - [`analysis_id(impl ::std::convert::Into<String>)`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::analysis_id) / [`set_analysis_id(Option<String>)`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::set_analysis_id): <p>The ID of the analysis that you're restoring.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::analysis_id) / [`set_analysis_id(Option<String>)`](crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::set_analysis_id): <p>The ID of the analysis that you're restoring.</p>
     /// - On success, responds with [`RestoreAnalysisOutput`](crate::operation::restore_analysis::RestoreAnalysisOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::restore_analysis::RestoreAnalysisOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::operation::restore_analysis::RestoreAnalysisOutput::arn): <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>

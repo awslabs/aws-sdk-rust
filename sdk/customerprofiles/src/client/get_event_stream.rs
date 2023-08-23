@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEventStream`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
-    ///   - [`event_stream_name(impl ::std::convert::Into<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::event_stream_name) / [`set_event_stream_name(Option<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::set_event_stream_name): <p>The name of the event stream provided during create operations.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`event_stream_name(impl Into<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::event_stream_name) / [`set_event_stream_name(Option<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::set_event_stream_name): <p>The name of the event stream provided during create operations.</p>
     /// - On success, responds with [`GetEventStreamOutput`](crate::operation::get_event_stream::GetEventStreamOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::get_event_stream::GetEventStreamOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`event_stream_arn(Option<String>)`](crate::operation::get_event_stream::GetEventStreamOutput::event_stream_arn): <p>A unique identifier for the event stream.</p>

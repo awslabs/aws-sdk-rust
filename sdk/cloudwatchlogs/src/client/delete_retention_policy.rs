@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRetentionPolicy`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
     /// - On success, responds with [`DeleteRetentionPolicyOutput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteRetentionPolicyError>`](crate::operation::delete_retention_policy::DeleteRetentionPolicyError)
     pub fn delete_retention_policy(&self) -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder {

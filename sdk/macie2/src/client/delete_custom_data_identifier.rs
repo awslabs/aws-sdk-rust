@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCustomDataIdentifier`](crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`DeleteCustomDataIdentifierOutput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomDataIdentifierError>`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierError)
     pub fn delete_custom_data_identifier(

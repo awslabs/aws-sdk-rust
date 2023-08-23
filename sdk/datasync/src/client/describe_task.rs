@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTask`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder::task_arn) / [`set_task_arn(Option<String>)`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder::set_task_arn): <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    ///   - [`task_arn(impl Into<String>)`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder::task_arn) / [`set_task_arn(Option<String>)`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder::set_task_arn): <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
     /// - On success, responds with [`DescribeTaskOutput`](crate::operation::describe_task::DescribeTaskOutput) with field(s):
     ///   - [`task_arn(Option<String>)`](crate::operation::describe_task::DescribeTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task that was described.</p>
     ///   - [`status(Option<TaskStatus>)`](crate::operation::describe_task::DescribeTaskOutput::status): <p>The status of the task that was described.</p>  <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>

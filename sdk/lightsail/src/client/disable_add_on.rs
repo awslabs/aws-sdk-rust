@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`add_on_type(AddOnType)`](crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder::add_on_type) / [`set_add_on_type(Option<AddOnType>)`](crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder::set_add_on_type): <p>The add-on type to disable.</p>
-    ///   - [`resource_name(impl ::std::convert::Into<String>)`](crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder::set_resource_name): <p>The name of the source resource for which to disable the add-on.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder::set_resource_name): <p>The name of the source resource for which to disable the add-on.</p>
     /// - On success, responds with [`DisableAddOnOutput`](crate::operation::disable_add_on::DisableAddOnOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::disable_add_on::DisableAddOnOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DisableAddOnError>`](crate::operation::disable_add_on::DisableAddOnError)

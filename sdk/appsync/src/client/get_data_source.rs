@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataSource`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_api_id): <p>The API ID.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_name): <p>The name of the data source.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_name): <p>The name of the data source.</p>
     /// - On success, responds with [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput) with field(s):
     ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_source::GetDataSourceOutput::data_source): <p>The <code>DataSource</code> object.</p>
     /// - On failure, responds with [`SdkError<GetDataSourceError>`](crate::operation::get_data_source::GetDataSourceError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUser`](crate::operation::delete_user::builders::DeleteUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_name): <p>The name of the user to delete</p>
+    ///   - [`user_name(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_name): <p>The name of the user to delete</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::delete_user::DeleteUserOutput::user): <p>The user object that has been deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::operation::delete_user::DeleteUserError)

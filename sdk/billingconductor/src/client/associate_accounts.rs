@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateAccounts`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::set_arn): <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
-    ///   - [`account_ids(Vec<String>)`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::set_account_ids): <p> The associating array of account IDs. </p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::set_arn): <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::set_account_ids): <p> The associating array of account IDs. </p>
     /// - On success, responds with [`AssociateAccountsOutput`](crate::operation::associate_accounts::AssociateAccountsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::associate_accounts::AssociateAccountsOutput::arn): <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     /// - On failure, responds with [`SdkError<AssociateAccountsError>`](crate::operation::associate_accounts::AssociateAccountsError)

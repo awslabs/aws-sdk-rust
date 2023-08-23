@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeleteEventsByEventTypeStatus`](crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_type_name(impl ::std::convert::Into<String>)`](crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusFluentBuilder::event_type_name) / [`set_event_type_name(Option<String>)`](crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusFluentBuilder::set_event_type_name): <p>Name of event type for which to get the deletion status.</p>
+    ///   - [`event_type_name(impl Into<String>)`](crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusFluentBuilder::event_type_name) / [`set_event_type_name(Option<String>)`](crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusFluentBuilder::set_event_type_name): <p>Name of event type for which to get the deletion status.</p>
     /// - On success, responds with [`GetDeleteEventsByEventTypeStatusOutput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput) with field(s):
     ///   - [`event_type_name(Option<String>)`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput::event_type_name): <p>The event type name.</p>
     ///   - [`events_deletion_status(Option<AsyncJobStatus>)`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput::events_deletion_status): <p>The deletion status.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDatasetImportJob`](crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_import_job_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobFluentBuilder::dataset_import_job_arn) / [`set_dataset_import_job_arn(Option<String>)`](crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobFluentBuilder::set_dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    ///   - [`dataset_import_job_arn(impl Into<String>)`](crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobFluentBuilder::dataset_import_job_arn) / [`set_dataset_import_job_arn(Option<String>)`](crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobFluentBuilder::set_dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     /// - On success, responds with [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput) with field(s):
     ///   - [`dataset_import_job_name(Option<String>)`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput::dataset_import_job_name): <p>The name of the dataset import job.</p>
     ///   - [`dataset_import_job_arn(Option<String>)`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput::dataset_import_job_arn): <p>The ARN of the dataset import job.</p>

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_marker(impl ::std::convert::Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::next_marker) / [`set_next_marker(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_next_marker): <p></p>
+    ///   - [`next_marker(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::next_marker) / [`set_next_marker(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_next_marker): <p></p>
     ///   - [`limit(i32)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::limit) / [`set_limit(i32)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_limit): <p></p>
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_resource_arn): <p></p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_resource_arn): <p></p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::next_marker): <p></p>
     ///   - [`tag_info_for_resource(Option<TagInfoForResource>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tag_info_for_resource): <p></p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopApplication`](crate::operation::stop_application::builders::StopApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::set_application_id): <p>The unique identifier of the application you want to stop.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::set_application_id): <p>The unique identifier of the application you want to stop.</p>
     ///   - [`force_stop(bool)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::force_stop) / [`set_force_stop(bool)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::set_force_stop): <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
     /// - On success, responds with [`StopApplicationOutput`](crate::operation::stop_application::StopApplicationOutput)
     /// - On failure, responds with [`SdkError<StopApplicationError>`](crate::operation::stop_application::StopApplicationError)

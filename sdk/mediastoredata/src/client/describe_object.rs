@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeObject`](crate::operation::describe_object::builders::DescribeObjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`path(impl ::std::convert::Into<String>)`](crate::operation::describe_object::builders::DescribeObjectFluentBuilder::path) / [`set_path(Option<String>)`](crate::operation::describe_object::builders::DescribeObjectFluentBuilder::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
+    ///   - [`path(impl Into<String>)`](crate::operation::describe_object::builders::DescribeObjectFluentBuilder::path) / [`set_path(Option<String>)`](crate::operation::describe_object::builders::DescribeObjectFluentBuilder::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
     /// - On success, responds with [`DescribeObjectOutput`](crate::operation::describe_object::DescribeObjectOutput) with field(s):
     ///   - [`e_tag(Option<String>)`](crate::operation::describe_object::DescribeObjectOutput::e_tag): <p>The ETag that represents a unique instance of the object.</p>
     ///   - [`content_type(Option<String>)`](crate::operation::describe_object::DescribeObjectOutput::content_type): <p>The content type of the object.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAssessmentFramework`](crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`framework_id(impl ::std::convert::Into<String>)`](crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder::framework_id) / [`set_framework_id(Option<String>)`](crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder::set_framework_id): <p> The identifier for the framework. </p>
+    ///   - [`framework_id(impl Into<String>)`](crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder::framework_id) / [`set_framework_id(Option<String>)`](crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder::set_framework_id): <p> The identifier for the framework. </p>
     /// - On success, responds with [`GetAssessmentFrameworkOutput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput) with field(s):
     ///   - [`framework(Option<Framework>)`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput::framework): <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
     /// - On failure, responds with [`SdkError<GetAssessmentFrameworkError>`](crate::operation::get_assessment_framework::GetAssessmentFrameworkError)

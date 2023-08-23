@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateThingShadow`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl ::std::convert::Into<String>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(impl ::std::convert::Into<String>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::shadow_name) / [`set_shadow_name(Option<String>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::set_shadow_name): <p>The name of the shadow.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::set_thing_name): <p>The name of the thing.</p>
+    ///   - [`shadow_name(impl Into<String>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::shadow_name) / [`set_shadow_name(Option<String>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::set_shadow_name): <p>The name of the shadow.</p>
     ///   - [`payload(Blob)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::payload) / [`set_payload(Option<Blob>)`](crate::operation::update_thing_shadow::builders::UpdateThingShadowFluentBuilder::set_payload): <p>The state information, in JSON format.</p>
     /// - On success, responds with [`UpdateThingShadowOutput`](crate::operation::update_thing_shadow::UpdateThingShadowOutput) with field(s):
     ///   - [`payload(Option<Blob>)`](crate::operation::update_thing_shadow::UpdateThingShadowOutput::payload): <p>The state information, in JSON format.</p>

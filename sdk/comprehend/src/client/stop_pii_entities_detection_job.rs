@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopPiiEntitiesDetectionJob`](crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobFluentBuilder::set_job_id): <p>The identifier of the PII entities detection job to stop.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobFluentBuilder::set_job_id): <p>The identifier of the PII entities detection job to stop.</p>
     /// - On success, responds with [`StopPiiEntitiesDetectionJobOutput`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobOutput::job_id): <p>The identifier of the PII entities detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobOutput::job_status): <p>The status of the PII entities detection job.</p>

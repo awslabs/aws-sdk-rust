@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_next_token): <p>Retrieves the next page of the results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_next_token): <p>Retrieves the next page of the results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_max_results): <p>The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.</p>
     /// - On success, responds with [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput) with field(s):
     ///   - [`environments(Option<Vec<String>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environments): <p>Returns a list of Amazon MWAA environments.</p>

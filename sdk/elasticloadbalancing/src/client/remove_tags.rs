@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveTags`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_balancer_names(Vec<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_load_balancer_names): <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-    ///   - [`tags(Vec<TagKeyOnly>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tags) / [`set_tags(Option<Vec<TagKeyOnly>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tags): <p>The list of tag keys to remove.</p>
+    ///   - [`load_balancer_names(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_load_balancer_names): <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
+    ///   - [`tags(TagKeyOnly)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tags) / [`set_tags(Option<Vec<TagKeyOnly>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tags): <p>The list of tag keys to remove.</p>
     /// - On success, responds with [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::operation::remove_tags::RemoveTagsError)
     pub fn remove_tags(&self) -> crate::operation::remove_tags::builders::RemoveTagsFluentBuilder {

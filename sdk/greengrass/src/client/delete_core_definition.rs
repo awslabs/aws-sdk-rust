@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCoreDefinition`](crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`core_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder::core_definition_id) / [`set_core_definition_id(Option<String>)`](crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder::set_core_definition_id): The ID of the core definition.
+    ///   - [`core_definition_id(impl Into<String>)`](crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder::core_definition_id) / [`set_core_definition_id(Option<String>)`](crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder::set_core_definition_id): The ID of the core definition.
     /// - On success, responds with [`DeleteCoreDefinitionOutput`](crate::operation::delete_core_definition::DeleteCoreDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteCoreDefinitionError>`](crate::operation::delete_core_definition::DeleteCoreDefinitionError)
     pub fn delete_core_definition(&self) -> crate::operation::delete_core_definition::builders::DeleteCoreDefinitionFluentBuilder {

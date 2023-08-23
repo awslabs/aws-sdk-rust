@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetInsightResults`](crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`insight_arn(impl ::std::convert::Into<String>)`](crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder::insight_arn) / [`set_insight_arn(Option<String>)`](crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder::set_insight_arn): <p>The ARN of the insight for which to return results.</p>
+    ///   - [`insight_arn(impl Into<String>)`](crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder::insight_arn) / [`set_insight_arn(Option<String>)`](crate::operation::get_insight_results::builders::GetInsightResultsFluentBuilder::set_insight_arn): <p>The ARN of the insight for which to return results.</p>
     /// - On success, responds with [`GetInsightResultsOutput`](crate::operation::get_insight_results::GetInsightResultsOutput) with field(s):
     ///   - [`insight_results(Option<InsightResults>)`](crate::operation::get_insight_results::GetInsightResultsOutput::insight_results): <p>The insight results returned by the operation.</p>
     /// - On failure, responds with [`SdkError<GetInsightResultsError>`](crate::operation::get_insight_results::GetInsightResultsError)

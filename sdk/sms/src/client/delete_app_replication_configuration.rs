@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAppReplicationConfiguration`](crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`DeleteAppReplicationConfigurationOutput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteAppReplicationConfigurationError>`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError)
     pub fn delete_app_replication_configuration(

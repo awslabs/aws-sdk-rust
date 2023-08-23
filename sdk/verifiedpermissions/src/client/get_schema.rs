@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSchema`](crate::operation::get_schema::builders::GetSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_store_id(impl ::std::convert::Into<String>)`](crate::operation::get_schema::builders::GetSchemaFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_schema::builders::GetSchemaFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that contains the schema.</p>
+    ///   - [`policy_store_id(impl Into<String>)`](crate::operation::get_schema::builders::GetSchemaFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_schema::builders::GetSchemaFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that contains the schema.</p>
     /// - On success, responds with [`GetSchemaOutput`](crate::operation::get_schema::GetSchemaOutput) with field(s):
     ///   - [`policy_store_id(Option<String>)`](crate::operation::get_schema::GetSchemaOutput::policy_store_id): <p>The ID of the policy store that contains the schema.</p>
     ///   - [`schema(Option<String>)`](crate::operation::get_schema::GetSchemaOutput::schema): <p>The body of the schema, written in Cedar schema JSON.</p>

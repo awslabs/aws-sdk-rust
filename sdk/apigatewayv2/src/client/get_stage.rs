@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStage`](crate::operation::get_stage::builders::GetStageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     /// - On success, responds with [`GetStageOutput`](crate::operation::get_stage::GetStageOutput) with field(s):
     ///   - [`access_log_settings(Option<AccessLogSettings>)`](crate::operation::get_stage::GetStageOutput::access_log_settings): <p>Settings for logging access in this stage.</p>
     ///   - [`api_gateway_managed(Option<bool>)`](crate::operation::get_stage::GetStageOutput::api_gateway_managed): <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>

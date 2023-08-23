@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::set_max_results): <p>The maximum size of information to return.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation call.</p>
     /// - On success, responds with [`GetDevEndpointsOutput`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput) with field(s):
     ///   - [`dev_endpoints(Option<Vec<DevEndpoint>>)`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput::dev_endpoints): <p>A list of <code>DevEndpoint</code> definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput::next_token): <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>

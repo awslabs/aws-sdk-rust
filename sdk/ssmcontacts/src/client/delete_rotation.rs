@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRotation`](crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rotation_id(impl ::std::convert::Into<String>)`](crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder::rotation_id) / [`set_rotation_id(Option<String>)`](crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder::set_rotation_id): <p>The Amazon Resource Name (ARN) of the on-call rotation to delete.</p>
+    ///   - [`rotation_id(impl Into<String>)`](crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder::rotation_id) / [`set_rotation_id(Option<String>)`](crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder::set_rotation_id): <p>The Amazon Resource Name (ARN) of the on-call rotation to delete.</p>
     /// - On success, responds with [`DeleteRotationOutput`](crate::operation::delete_rotation::DeleteRotationOutput)
     /// - On failure, responds with [`SdkError<DeleteRotationError>`](crate::operation::delete_rotation::DeleteRotationError)
     pub fn delete_rotation(&self) -> crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder {

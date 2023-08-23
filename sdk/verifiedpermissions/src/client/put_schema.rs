@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutSchema`](crate::operation::put_schema::builders::PutSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_store_id(impl ::std::convert::Into<String>)`](crate::operation::put_schema::builders::PutSchemaFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::put_schema::builders::PutSchemaFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store in which to place the schema.</p>
+    ///   - [`policy_store_id(impl Into<String>)`](crate::operation::put_schema::builders::PutSchemaFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::put_schema::builders::PutSchemaFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store in which to place the schema.</p>
     ///   - [`definition(SchemaDefinition)`](crate::operation::put_schema::builders::PutSchemaFluentBuilder::definition) / [`set_definition(Option<SchemaDefinition>)`](crate::operation::put_schema::builders::PutSchemaFluentBuilder::set_definition): <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
     /// - On success, responds with [`PutSchemaOutput`](crate::operation::put_schema::PutSchemaOutput) with field(s):
     ///   - [`policy_store_id(Option<String>)`](crate::operation::put_schema::PutSchemaOutput::policy_store_id): <p>The unique ID of the policy store that contains the schema.</p>

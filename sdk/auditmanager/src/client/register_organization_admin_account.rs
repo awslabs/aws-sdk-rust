@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterOrganizationAdminAccount`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`admin_account_id(impl ::std::convert::Into<String>)`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::set_admin_account_id): <p> The identifier for the delegated administrator account. </p>
+    ///   - [`admin_account_id(impl Into<String>)`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountFluentBuilder::set_admin_account_id): <p> The identifier for the delegated administrator account. </p>
     /// - On success, responds with [`RegisterOrganizationAdminAccountOutput`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput) with field(s):
     ///   - [`admin_account_id(Option<String>)`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput::admin_account_id): <p> The identifier for the delegated administrator account. </p>
     ///   - [`organization_id(Option<String>)`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput::organization_id): <p> The identifier for the organization. </p>

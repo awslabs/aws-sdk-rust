@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterImage`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::image_id) / [`set_image_id(Option<String>)`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::set_image_id): <p>The ID of the AMI.</p>
+    ///   - [`image_id(impl Into<String>)`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::image_id) / [`set_image_id(Option<String>)`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::set_image_id): <p>The ID of the AMI.</p>
     ///   - [`dry_run(bool)`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::deregister_image::builders::DeregisterImageFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeregisterImageOutput`](crate::operation::deregister_image::DeregisterImageOutput)
     /// - On failure, responds with [`SdkError<DeregisterImageError>`](crate::operation::deregister_image::DeregisterImageError)

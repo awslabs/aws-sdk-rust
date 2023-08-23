@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_id(impl ::std::convert::Into<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::set_endpoint_id): <p>The ID of the endpoint.</p>
-    ///   - [`outpost_id(impl ::std::convert::Into<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::outpost_id) / [`set_outpost_id(Option<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::set_outpost_id): <p>The ID of the Outposts. </p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::set_endpoint_id): <p>The ID of the endpoint.</p>
+    ///   - [`outpost_id(impl Into<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::outpost_id) / [`set_outpost_id(Option<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::set_outpost_id): <p>The ID of the Outposts. </p>
     /// - On success, responds with [`DeleteEndpointOutput`](crate::operation::delete_endpoint::DeleteEndpointOutput)
     /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::operation::delete_endpoint::DeleteEndpointError)
     pub fn delete_endpoint(&self) -> crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder {

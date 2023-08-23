@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAppValidationConfiguration`](crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`DeleteAppValidationConfigurationOutput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteAppValidationConfigurationError>`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError)
     pub fn delete_app_validation_configuration(

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartDeviceSync`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::set_room_arn): <p>The ARN of the room with which the device to sync is associated. Required.</p>
-    ///   - [`device_arn(impl ::std::convert::Into<String>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::set_device_arn): <p>The ARN of the device to sync. Required.</p>
-    ///   - [`features(Vec<Feature>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::features) / [`set_features(Option<Vec<Feature>>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::set_features): <p>Request structure to start the device sync. Required.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::set_room_arn): <p>The ARN of the room with which the device to sync is associated. Required.</p>
+    ///   - [`device_arn(impl Into<String>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::set_device_arn): <p>The ARN of the device to sync. Required.</p>
+    ///   - [`features(Feature)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::features) / [`set_features(Option<Vec<Feature>>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::set_features): <p>Request structure to start the device sync. Required.</p>
     /// - On success, responds with [`StartDeviceSyncOutput`](crate::operation::start_device_sync::StartDeviceSyncOutput)
     /// - On failure, responds with [`SdkError<StartDeviceSyncError>`](crate::operation::start_device_sync::StartDeviceSyncError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

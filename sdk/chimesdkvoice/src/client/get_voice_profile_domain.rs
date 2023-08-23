@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVoiceProfileDomain`](crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_profile_domain_id(impl ::std::convert::Into<String>)`](crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainFluentBuilder::voice_profile_domain_id) / [`set_voice_profile_domain_id(Option<String>)`](crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainFluentBuilder::set_voice_profile_domain_id): <p>The voice profile domain ID.</p>
+    ///   - [`voice_profile_domain_id(impl Into<String>)`](crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainFluentBuilder::voice_profile_domain_id) / [`set_voice_profile_domain_id(Option<String>)`](crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainFluentBuilder::set_voice_profile_domain_id): <p>The voice profile domain ID.</p>
     /// - On success, responds with [`GetVoiceProfileDomainOutput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainOutput) with field(s):
     ///   - [`voice_profile_domain(Option<VoiceProfileDomain>)`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainOutput::voice_profile_domain): <p>The details of the voice profile domain.</p>
     /// - On failure, responds with [`SdkError<GetVoiceProfileDomainError>`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBackupJob`](crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_job_id(impl ::std::convert::Into<String>)`](crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder::set_backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    ///   - [`backup_job_id(impl Into<String>)`](crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder::set_backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>
     /// - On success, responds with [`DescribeBackupJobOutput`](crate::operation::describe_backup_job::DescribeBackupJobOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::operation::describe_backup_job::DescribeBackupJobOutput::account_id): <p>Returns the account ID that owns the backup job.</p>
     ///   - [`backup_job_id(Option<String>)`](crate::operation::describe_backup_job::DescribeBackupJobOutput::backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>

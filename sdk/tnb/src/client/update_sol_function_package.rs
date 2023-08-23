@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateSolFunctionPackage`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vnf_pkg_id(impl ::std::convert::Into<String>)`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder::vnf_pkg_id) / [`set_vnf_pkg_id(Option<String>)`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder::set_vnf_pkg_id): <p>ID of the function package.</p>
+    ///   - [`vnf_pkg_id(impl Into<String>)`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder::vnf_pkg_id) / [`set_vnf_pkg_id(Option<String>)`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder::set_vnf_pkg_id): <p>ID of the function package.</p>
     ///   - [`operational_state(OperationalState)`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder::operational_state) / [`set_operational_state(Option<OperationalState>)`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder::set_operational_state): <p>Operational state of the function package.</p>
     /// - On success, responds with [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput) with field(s):
     ///   - [`operational_state(Option<OperationalState>)`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput::operational_state): <p>Operational state of the function package.</p>

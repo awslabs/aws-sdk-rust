@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`egress_access_logs(EgressAccessLogs)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::egress_access_logs) / [`set_egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::set_egress_access_logs): Configure egress access logging.
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingGroup resource.
+    ///   - [`id(impl Into<String>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingGroup resource.
     /// - On success, responds with [`ConfigureLogsOutput`](crate::operation::configure_logs::ConfigureLogsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::arn): The ARN of the PackagingGroup.
     ///   - [`authorization(Option<Authorization>)`](crate::operation::configure_logs::ConfigureLogsOutput::authorization): CDN Authorization credentials

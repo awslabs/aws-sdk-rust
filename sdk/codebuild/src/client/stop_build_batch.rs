@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopBuildBatch`](crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder::set_id): <p>The identifier of the batch build to stop.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_build_batch::builders::StopBuildBatchFluentBuilder::set_id): <p>The identifier of the batch build to stop.</p>
     /// - On success, responds with [`StopBuildBatchOutput`](crate::operation::stop_build_batch::StopBuildBatchOutput) with field(s):
     ///   - [`build_batch(Option<BuildBatch>)`](crate::operation::stop_build_batch::StopBuildBatchOutput::build_batch): <p>Contains information about a batch build.</p>
     /// - On failure, responds with [`SdkError<StopBuildBatchError>`](crate::operation::stop_build_batch::StopBuildBatchError)

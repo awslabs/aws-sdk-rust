@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRepository`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`repository_name(impl ::std::convert::Into<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_repository_name): <p>The name of the repository to get information about.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_repository_name): <p>The name of the repository to get information about.</p>
     /// - On success, responds with [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput) with field(s):
     ///   - [`repository_metadata(Option<RepositoryMetadata>)`](crate::operation::get_repository::GetRepositoryOutput::repository_metadata): <p>Information about the repository.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryError>`](crate::operation::get_repository::GetRepositoryError)

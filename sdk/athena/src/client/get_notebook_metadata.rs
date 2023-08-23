@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNotebookMetadata`](crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notebook_id(impl ::std::convert::Into<String>)`](crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder::notebook_id) / [`set_notebook_id(Option<String>)`](crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder::set_notebook_id): <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    ///   - [`notebook_id(impl Into<String>)`](crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder::notebook_id) / [`set_notebook_id(Option<String>)`](crate::operation::get_notebook_metadata::builders::GetNotebookMetadataFluentBuilder::set_notebook_id): <p>The ID of the notebook whose metadata is to be retrieved.</p>
     /// - On success, responds with [`GetNotebookMetadataOutput`](crate::operation::get_notebook_metadata::GetNotebookMetadataOutput) with field(s):
     ///   - [`notebook_metadata(Option<NotebookMetadata>)`](crate::operation::get_notebook_metadata::GetNotebookMetadataOutput::notebook_metadata): <p>The metadata that is returned for the specified notebook ID.</p>
     /// - On failure, responds with [`SdkError<GetNotebookMetadataError>`](crate::operation::get_notebook_metadata::GetNotebookMetadataError)

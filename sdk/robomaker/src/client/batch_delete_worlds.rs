@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeleteWorlds`](crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`worlds(Vec<String>)`](crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder::worlds) / [`set_worlds(Option<Vec<String>>)`](crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder::set_worlds): <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
+    ///   - [`worlds(impl Into<String>)`](crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder::worlds) / [`set_worlds(Option<Vec<String>>)`](crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsFluentBuilder::set_worlds): <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
     /// - On success, responds with [`BatchDeleteWorldsOutput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput) with field(s):
     ///   - [`unprocessed_worlds(Option<Vec<String>>)`](crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput::unprocessed_worlds): <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteWorldsError>`](crate::operation::batch_delete_worlds::BatchDeleteWorldsError)

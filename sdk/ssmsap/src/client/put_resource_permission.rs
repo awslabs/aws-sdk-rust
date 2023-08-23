@@ -4,8 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`action_type(PermissionActionType)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::action_type) / [`set_action_type(Option<PermissionActionType>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::set_action_type): <p></p>
-    ///   - [`source_resource_arn(impl ::std::convert::Into<String>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::source_resource_arn) / [`set_source_resource_arn(Option<String>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::set_source_resource_arn): <p></p>
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::set_resource_arn): <p></p>
+    ///   - [`source_resource_arn(impl Into<String>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::source_resource_arn) / [`set_source_resource_arn(Option<String>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::set_source_resource_arn): <p></p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::put_resource_permission::builders::PutResourcePermissionFluentBuilder::set_resource_arn): <p></p>
     /// - On success, responds with [`PutResourcePermissionOutput`](crate::operation::put_resource_permission::PutResourcePermissionOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::put_resource_permission::PutResourcePermissionOutput::policy): <p></p>
     /// - On failure, responds with [`SdkError<PutResourcePermissionError>`](crate::operation::put_resource_permission::PutResourcePermissionError)

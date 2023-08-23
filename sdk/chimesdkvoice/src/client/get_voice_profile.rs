@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVoiceProfile`](crate::operation::get_voice_profile::builders::GetVoiceProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_profile_id(impl ::std::convert::Into<String>)`](crate::operation::get_voice_profile::builders::GetVoiceProfileFluentBuilder::voice_profile_id) / [`set_voice_profile_id(Option<String>)`](crate::operation::get_voice_profile::builders::GetVoiceProfileFluentBuilder::set_voice_profile_id): <p>The voice profile ID.</p>
+    ///   - [`voice_profile_id(impl Into<String>)`](crate::operation::get_voice_profile::builders::GetVoiceProfileFluentBuilder::voice_profile_id) / [`set_voice_profile_id(Option<String>)`](crate::operation::get_voice_profile::builders::GetVoiceProfileFluentBuilder::set_voice_profile_id): <p>The voice profile ID.</p>
     /// - On success, responds with [`GetVoiceProfileOutput`](crate::operation::get_voice_profile::GetVoiceProfileOutput) with field(s):
     ///   - [`voice_profile(Option<VoiceProfile>)`](crate::operation::get_voice_profile::GetVoiceProfileOutput::voice_profile): <p>The voice profile details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceProfileError>`](crate::operation::get_voice_profile::GetVoiceProfileError)

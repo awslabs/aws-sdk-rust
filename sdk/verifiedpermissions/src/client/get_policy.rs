@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicy`](crate::operation::get_policy::builders::GetPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_store_id(impl ::std::convert::Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that contains the policy that you want information about.</p>
-    ///   - [`policy_id(impl ::std::convert::Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_id): <p>Specifies the ID of the policy you want information about.</p>
+    ///   - [`policy_store_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that contains the policy that you want information about.</p>
+    ///   - [`policy_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_id): <p>Specifies the ID of the policy you want information about.</p>
     /// - On success, responds with [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput) with field(s):
     ///   - [`policy_store_id(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy_store_id): <p>The ID of the policy store that contains the policy that you want information about.</p>
     ///   - [`policy_id(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy_id): <p>The unique ID of the policy that you want information about.</p>

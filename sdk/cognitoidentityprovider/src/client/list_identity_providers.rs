@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
     ///   - [`max_results(i32)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_max_results): <p>The maximum number of IdPs to return.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_next_token): <p>A pagination token.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_next_token): <p>A pagination token.</p>
     /// - On success, responds with [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput) with field(s):
     ///   - [`providers(Option<Vec<ProviderDescription>>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::providers): <p>A list of IdP objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::next_token): <p>A pagination token.</p>

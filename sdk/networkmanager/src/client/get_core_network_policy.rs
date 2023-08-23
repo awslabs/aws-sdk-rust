@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCoreNetworkPolicy`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`core_network_id(impl ::std::convert::Into<String>)`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::set_core_network_id): <p>The ID of a core network.</p>
+    ///   - [`core_network_id(impl Into<String>)`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::set_core_network_id): <p>The ID of a core network.</p>
     ///   - [`policy_version_id(i32)`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::policy_version_id) / [`set_policy_version_id(Option<i32>)`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::set_policy_version_id): <p>The ID of a core network policy version.</p>
     ///   - [`alias(CoreNetworkPolicyAlias)`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::alias) / [`set_alias(Option<CoreNetworkPolicyAlias>)`](crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::set_alias): <p>The alias of a core network policy </p>
     /// - On success, responds with [`GetCoreNetworkPolicyOutput`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyOutput) with field(s):

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResolveAlias`](crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alias_id(impl ::std::convert::Into<String>)`](crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder::set_alias_id): <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
+    ///   - [`alias_id(impl Into<String>)`](crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder::set_alias_id): <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
     /// - On success, responds with [`ResolveAliasOutput`](crate::operation::resolve_alias::ResolveAliasOutput) with field(s):
     ///   - [`fleet_id(Option<String>)`](crate::operation::resolve_alias::ResolveAliasOutput::fleet_id): <p>The fleet identifier that the alias is pointing to.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::operation::resolve_alias::ResolveAliasOutput::fleet_arn): <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>

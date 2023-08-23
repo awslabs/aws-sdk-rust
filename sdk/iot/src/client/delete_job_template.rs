@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteJobTemplate`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_template_id(impl ::std::convert::Into<String>)`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::job_template_id) / [`set_job_template_id(Option<String>)`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::set_job_template_id): <p>The unique identifier of the job template to delete.</p>
+    ///   - [`job_template_id(impl Into<String>)`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::job_template_id) / [`set_job_template_id(Option<String>)`](crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::set_job_template_id): <p>The unique identifier of the job template to delete.</p>
     /// - On success, responds with [`DeleteJobTemplateOutput`](crate::operation::delete_job_template::DeleteJobTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteJobTemplateError>`](crate::operation::delete_job_template::DeleteJobTemplateError)
     pub fn delete_job_template(&self) -> crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder {

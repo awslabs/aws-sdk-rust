@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFramework`](crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`framework_name(impl ::std::convert::Into<String>)`](crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder::framework_name) / [`set_framework_name(Option<String>)`](crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder::set_framework_name): <p>The unique name of a framework.</p>
+    ///   - [`framework_name(impl Into<String>)`](crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder::framework_name) / [`set_framework_name(Option<String>)`](crate::operation::describe_framework::builders::DescribeFrameworkFluentBuilder::set_framework_name): <p>The unique name of a framework.</p>
     /// - On success, responds with [`DescribeFrameworkOutput`](crate::operation::describe_framework::DescribeFrameworkOutput) with field(s):
     ///   - [`framework_name(Option<String>)`](crate::operation::describe_framework::DescribeFrameworkOutput::framework_name): <p>The unique name of a framework.</p>
     ///   - [`framework_arn(Option<String>)`](crate::operation::describe_framework::DescribeFrameworkOutput::framework_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>

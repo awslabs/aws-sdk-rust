@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteThingType`](crate::operation::delete_thing_type::builders::DeleteThingTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_type_name(impl ::std::convert::Into<String>)`](crate::operation::delete_thing_type::builders::DeleteThingTypeFluentBuilder::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::operation::delete_thing_type::builders::DeleteThingTypeFluentBuilder::set_thing_type_name): <p>The name of the thing type.</p>
+    ///   - [`thing_type_name(impl Into<String>)`](crate::operation::delete_thing_type::builders::DeleteThingTypeFluentBuilder::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::operation::delete_thing_type::builders::DeleteThingTypeFluentBuilder::set_thing_type_name): <p>The name of the thing type.</p>
     /// - On success, responds with [`DeleteThingTypeOutput`](crate::operation::delete_thing_type::DeleteThingTypeOutput)
     /// - On failure, responds with [`SdkError<DeleteThingTypeError>`](crate::operation::delete_thing_type::DeleteThingTypeError)
     pub fn delete_thing_type(&self) -> crate::operation::delete_thing_type::builders::DeleteThingTypeFluentBuilder {

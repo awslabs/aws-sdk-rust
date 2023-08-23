@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkerFleet`](crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder::set_id): Full ARN of the worker fleet.
+    ///   - [`id(impl Into<String>)`](crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder::set_id): Full ARN of the worker fleet.
     /// - On success, responds with [`GetWorkerFleetOutput`](crate::operation::get_worker_fleet::GetWorkerFleetOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_worker_fleet::GetWorkerFleetOutput::id): Filters access by the worker fleet's identifier
     ///   - [`arn(Option<String>)`](crate::operation::get_worker_fleet::GetWorkerFleetOutput::arn): Full ARN of the worker fleet.

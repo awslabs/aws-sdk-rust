@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUploadStatus`](crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`upload_id(impl ::std::convert::Into<String>)`](crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder::upload_id) / [`set_upload_id(Option<String>)`](crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder::set_upload_id): <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
+    ///   - [`upload_id(impl Into<String>)`](crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder::upload_id) / [`set_upload_id(Option<String>)`](crate::operation::get_upload_status::builders::GetUploadStatusFluentBuilder::set_upload_id): <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
     /// - On success, responds with [`GetUploadStatusOutput`](crate::operation::get_upload_status::GetUploadStatusOutput) with field(s):
     ///   - [`upload_id(Option<String>)`](crate::operation::get_upload_status::GetUploadStatusOutput::upload_id): <p>The ID of the upload.</p>
     ///   - [`upload_status(Option<UploadStatus>)`](crate::operation::get_upload_status::GetUploadStatusOutput::upload_status): <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>

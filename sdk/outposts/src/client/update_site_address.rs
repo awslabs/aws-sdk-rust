@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateSiteAddress`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl ::std::convert::Into<String>)`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`site_id(impl Into<String>)`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     ///   - [`address_type(AddressType)`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::address_type) / [`set_address_type(Option<AddressType>)`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::set_address_type): <p> The type of the address. </p>
     ///   - [`address(Address)`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::address) / [`set_address(Option<Address>)`](crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::set_address): <p> The address for the site. </p>
     /// - On success, responds with [`UpdateSiteAddressOutput`](crate::operation::update_site_address::UpdateSiteAddressOutput) with field(s):

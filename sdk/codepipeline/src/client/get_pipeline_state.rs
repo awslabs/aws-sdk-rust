@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPipelineState`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::set_name): <p>The name of the pipeline about which you want to get information.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::set_name): <p>The name of the pipeline about which you want to get information.</p>
     /// - On success, responds with [`GetPipelineStateOutput`](crate::operation::get_pipeline_state::GetPipelineStateOutput) with field(s):
     ///   - [`pipeline_name(Option<String>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::pipeline_name): <p>The name of the pipeline for which you want to get the state.</p>
     ///   - [`pipeline_version(Option<i32>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::pipeline_version): <p>The version number of the pipeline.</p> <note>   <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>  </note>

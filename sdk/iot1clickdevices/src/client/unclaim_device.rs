@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnclaimDevice`](crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_id(impl ::std::convert::Into<String>)`](crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder::set_device_id): <p>The unique identifier of the device.</p>
+    ///   - [`device_id(impl Into<String>)`](crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder::set_device_id): <p>The unique identifier of the device.</p>
     /// - On success, responds with [`UnclaimDeviceOutput`](crate::operation::unclaim_device::UnclaimDeviceOutput) with field(s):
     ///   - [`state(Option<String>)`](crate::operation::unclaim_device::UnclaimDeviceOutput::state): <p>The device's final claim state.</p>
     /// - On failure, responds with [`SdkError<UnclaimDeviceError>`](crate::operation::unclaim_device::UnclaimDeviceError)

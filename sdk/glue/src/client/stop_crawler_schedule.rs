@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopCrawlerSchedule`](crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`crawler_name(impl ::std::convert::Into<String>)`](crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleFluentBuilder::crawler_name) / [`set_crawler_name(Option<String>)`](crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleFluentBuilder::set_crawler_name): <p>Name of the crawler whose schedule state to set.</p>
+    ///   - [`crawler_name(impl Into<String>)`](crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleFluentBuilder::crawler_name) / [`set_crawler_name(Option<String>)`](crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleFluentBuilder::set_crawler_name): <p>Name of the crawler whose schedule state to set.</p>
     /// - On success, responds with [`StopCrawlerScheduleOutput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput)
     /// - On failure, responds with [`SdkError<StopCrawlerScheduleError>`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleError)
     pub fn stop_crawler_schedule(&self) -> crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCostCategoryDefinition`](crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cost_category_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionFluentBuilder::cost_category_arn) / [`set_cost_category_arn(Option<String>)`](crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionFluentBuilder::set_cost_category_arn): <p>The unique identifier for your Cost Category. </p>
+    ///   - [`cost_category_arn(impl Into<String>)`](crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionFluentBuilder::cost_category_arn) / [`set_cost_category_arn(Option<String>)`](crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionFluentBuilder::set_cost_category_arn): <p>The unique identifier for your Cost Category. </p>
     /// - On success, responds with [`DeleteCostCategoryDefinitionOutput`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput) with field(s):
     ///   - [`cost_category_arn(Option<String>)`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput::cost_category_arn): <p>The unique identifier for your Cost Category. </p>
     ///   - [`effective_end(Option<String>)`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput::effective_end): <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>

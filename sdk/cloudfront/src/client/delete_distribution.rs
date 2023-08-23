@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDistribution`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::set_id): <p>The distribution ID.</p>
-    ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::set_id): <p>The distribution ID.</p>
+    ///   - [`if_match(impl Into<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeleteDistributionOutput`](crate::operation::delete_distribution::DeleteDistributionOutput)
     /// - On failure, responds with [`SdkError<DeleteDistributionError>`](crate::operation::delete_distribution::DeleteDistributionError)
     pub fn delete_distribution(&self) -> crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder {

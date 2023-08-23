@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFaces`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collection_id(impl ::std::convert::Into<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::set_collection_id): <p>Collection from which to remove the specific faces.</p>
-    ///   - [`face_ids(Vec<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::face_ids) / [`set_face_ids(Option<Vec<String>>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::set_face_ids): <p>An array of face IDs to delete.</p>
+    ///   - [`collection_id(impl Into<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::set_collection_id): <p>Collection from which to remove the specific faces.</p>
+    ///   - [`face_ids(impl Into<String>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::face_ids) / [`set_face_ids(Option<Vec<String>>)`](crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::set_face_ids): <p>An array of face IDs to delete.</p>
     /// - On success, responds with [`DeleteFacesOutput`](crate::operation::delete_faces::DeleteFacesOutput) with field(s):
     ///   - [`deleted_faces(Option<Vec<String>>)`](crate::operation::delete_faces::DeleteFacesOutput::deleted_faces): <p>An array of strings (face IDs) of the faces that were deleted.</p>
     ///   - [`unsuccessful_face_deletions(Option<Vec<UnsuccessfulFaceDeletion>>)`](crate::operation::delete_faces::DeleteFacesOutput::unsuccessful_face_deletions): <p>An array of any faces that weren't deleted.</p>

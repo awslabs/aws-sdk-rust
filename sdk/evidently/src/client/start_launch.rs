@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartLaunch`](crate::operation::start_launch::builders::StartLaunchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project(impl ::std::convert::Into<String>)`](crate::operation::start_launch::builders::StartLaunchFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::start_launch::builders::StartLaunchFluentBuilder::set_project): <p>The name or ARN of the project that contains the launch to start.</p>
-    ///   - [`launch(impl ::std::convert::Into<String>)`](crate::operation::start_launch::builders::StartLaunchFluentBuilder::launch) / [`set_launch(Option<String>)`](crate::operation::start_launch::builders::StartLaunchFluentBuilder::set_launch): <p>The name of the launch to start.</p>
+    ///   - [`project(impl Into<String>)`](crate::operation::start_launch::builders::StartLaunchFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::start_launch::builders::StartLaunchFluentBuilder::set_project): <p>The name or ARN of the project that contains the launch to start.</p>
+    ///   - [`launch(impl Into<String>)`](crate::operation::start_launch::builders::StartLaunchFluentBuilder::launch) / [`set_launch(Option<String>)`](crate::operation::start_launch::builders::StartLaunchFluentBuilder::set_launch): <p>The name of the launch to start.</p>
     /// - On success, responds with [`StartLaunchOutput`](crate::operation::start_launch::StartLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::operation::start_launch::StartLaunchOutput::launch): <p>A structure that contains information about the launch that was started.</p>
     /// - On failure, responds with [`SdkError<StartLaunchError>`](crate::operation::start_launch::StartLaunchError)

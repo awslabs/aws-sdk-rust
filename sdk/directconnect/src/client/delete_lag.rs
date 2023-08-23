@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLag`](crate::operation::delete_lag::builders::DeleteLagFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lag_id(impl ::std::convert::Into<String>)`](crate::operation::delete_lag::builders::DeleteLagFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::delete_lag::builders::DeleteLagFluentBuilder::set_lag_id): <p>The ID of the LAG.</p>
+    ///   - [`lag_id(impl Into<String>)`](crate::operation::delete_lag::builders::DeleteLagFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::delete_lag::builders::DeleteLagFluentBuilder::set_lag_id): <p>The ID of the LAG.</p>
     /// - On success, responds with [`DeleteLagOutput`](crate::operation::delete_lag::DeleteLagOutput) with field(s):
     ///   - [`connections_bandwidth(Option<String>)`](crate::operation::delete_lag::DeleteLagOutput::connections_bandwidth): <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     ///   - [`number_of_connections(i32)`](crate::operation::delete_lag::DeleteLagOutput::number_of_connections): <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>

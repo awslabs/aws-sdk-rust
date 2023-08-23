@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExecuteCoreNetworkChangeSet`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`core_network_id(impl ::std::convert::Into<String>)`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::set_core_network_id): <p>The ID of a core network.</p>
+    ///   - [`core_network_id(impl Into<String>)`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::set_core_network_id): <p>The ID of a core network.</p>
     ///   - [`policy_version_id(i32)`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::policy_version_id) / [`set_policy_version_id(Option<i32>)`](crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetFluentBuilder::set_policy_version_id): <p>The ID of the policy version.</p>
     /// - On success, responds with [`ExecuteCoreNetworkChangeSetOutput`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput)
     /// - On failure, responds with [`SdkError<ExecuteCoreNetworkChangeSetError>`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError)

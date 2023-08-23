@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl ::std::convert::Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_id): <p>The identifier of the FinSpace environment.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_id): <p>The identifier of the FinSpace environment.</p>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::get_environment::GetEnvironmentOutput::environment): <p>The name of the FinSpace environment.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::operation::get_environment::GetEnvironmentError)

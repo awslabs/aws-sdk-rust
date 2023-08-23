@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteOutpostResolver`](crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder::set_id): <p>A unique string that identifies the Resolver on the Outpost.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverFluentBuilder::set_id): <p>A unique string that identifies the Resolver on the Outpost.</p>
     /// - On success, responds with [`DeleteOutpostResolverOutput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput) with field(s):
     ///   - [`outpost_resolver(Option<OutpostResolver>)`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput::outpost_resolver): <p>Information about the <code>DeleteOutpostResolver</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteOutpostResolverError>`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverError)

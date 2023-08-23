@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociatePhoneNumberFromUser`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::set_user_id): <p>The user ID.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::set_user_id): <p>The user ID.</p>
     /// - On success, responds with [`DisassociatePhoneNumberFromUserOutput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput)
     /// - On failure, responds with [`SdkError<DisassociatePhoneNumberFromUserError>`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserError)
     pub fn disassociate_phone_number_from_user(

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCampaignState`](crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder::set_id): Identifier representing a Campaign
+    ///   - [`id(impl Into<String>)`](crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder::set_id): Identifier representing a Campaign
     /// - On success, responds with [`GetCampaignStateOutput`](crate::operation::get_campaign_state::GetCampaignStateOutput) with field(s):
     ///   - [`state(Option<CampaignState>)`](crate::operation::get_campaign_state::GetCampaignStateOutput::state): State of a campaign
     /// - On failure, responds with [`SdkError<GetCampaignStateError>`](crate::operation::get_campaign_state::GetCampaignStateError)

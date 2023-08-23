@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProject`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_id(impl ::std::convert::Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_project_id): <p>The ID of the project.</p>
+    ///   - [`project_id(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_project_id): <p>The ID of the project.</p>
     /// - On success, responds with [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput) with field(s):
     ///   - [`project_id(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::project_id): <p>The ID of the project.</p>
     ///   - [`project_arn(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::project_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>

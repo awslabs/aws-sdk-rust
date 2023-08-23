@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIntrospectionSchema`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::set_api_id): <p>The API ID.</p>
     ///   - [`format(OutputType)`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::format) / [`set_format(Option<OutputType>)`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::set_format): <p>The schema format: SDL or JSON.</p>
     ///   - [`include_directives(bool)`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::include_directives) / [`set_include_directives(Option<bool>)`](crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::set_include_directives): <p>A flag that specifies whether the schema introspection should contain directives.</p>
     /// - On success, responds with [`GetIntrospectionSchemaOutput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput) with field(s):

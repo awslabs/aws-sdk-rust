@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`Promote`](crate::operation::promote::builders::PromoteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`broker_id(impl ::std::convert::Into<String>)`](crate::operation::promote::builders::PromoteFluentBuilder::broker_id) / [`set_broker_id(Option<String>)`](crate::operation::promote::builders::PromoteFluentBuilder::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`broker_id(impl Into<String>)`](crate::operation::promote::builders::PromoteFluentBuilder::broker_id) / [`set_broker_id(Option<String>)`](crate::operation::promote::builders::PromoteFluentBuilder::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     ///   - [`mode(PromoteMode)`](crate::operation::promote::builders::PromoteFluentBuilder::mode) / [`set_mode(Option<PromoteMode>)`](crate::operation::promote::builders::PromoteFluentBuilder::set_mode): <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
     /// - On success, responds with [`PromoteOutput`](crate::operation::promote::PromoteOutput) with field(s):
     ///   - [`broker_id(Option<String>)`](crate::operation::promote::PromoteOutput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetJobs`](crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_names(Vec<String>)`](crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder::job_names) / [`set_job_names(Option<Vec<String>>)`](crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder::set_job_names): <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
+    ///   - [`job_names(impl Into<String>)`](crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder::job_names) / [`set_job_names(Option<Vec<String>>)`](crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder::set_job_names): <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
     /// - On success, responds with [`BatchGetJobsOutput`](crate::operation::batch_get_jobs::BatchGetJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec<Job>>)`](crate::operation::batch_get_jobs::BatchGetJobsOutput::jobs): <p>A list of job definitions.</p>
     ///   - [`jobs_not_found(Option<Vec<String>>)`](crate::operation::batch_get_jobs::BatchGetJobsOutput::jobs_not_found): <p>A list of names of jobs not found.</p>

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ConfigureLogsForChannel`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl ::std::convert::Into<String>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::set_channel_name): <p>The name of the channel.</p>
-    ///   - [`log_types(Vec<LogType>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::log_types) / [`set_log_types(Option<Vec<LogType>>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::set_log_types): <p>The types of logs to collect.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::set_channel_name): <p>The name of the channel.</p>
+    ///   - [`log_types(LogType)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::log_types) / [`set_log_types(Option<Vec<LogType>>)`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::set_log_types): <p>The types of logs to collect.</p>
     /// - On success, responds with [`ConfigureLogsForChannelOutput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput) with field(s):
     ///   - [`channel_name(Option<String>)`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput::channel_name): <p>The name of the channel.</p>
     ///   - [`log_types(Option<Vec<LogType>>)`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput::log_types): <p>The types of logs collected.</p>

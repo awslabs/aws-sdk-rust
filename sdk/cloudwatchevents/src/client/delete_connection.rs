@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnection`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_name): <p>The name of the connection to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_name): <p>The name of the connection to delete.</p>
     /// - On success, responds with [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput) with field(s):
     ///   - [`connection_arn(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::connection_arn): <p>The ARN of the connection that was deleted.</p>
     ///   - [`connection_state(Option<ConnectionState>)`](crate::operation::delete_connection::DeleteConnectionOutput::connection_state): <p>The state of the connection before it was deleted.</p>

@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_max_results): <p>The maximum number of results to display for the instance.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput) with field(s):
     ///   - [`instances(Option<Vec<InstanceMetadata>>)`](crate::operation::list_instances::ListInstancesOutput::instances): <p>Lists the IAM Identity Center instances that the caller has access to.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instances::ListInstancesOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>

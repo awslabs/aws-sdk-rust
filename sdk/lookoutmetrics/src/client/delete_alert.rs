@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAlert`](crate::operation::delete_alert::builders::DeleteAlertFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alert_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_alert::builders::DeleteAlertFluentBuilder::alert_arn) / [`set_alert_arn(Option<String>)`](crate::operation::delete_alert::builders::DeleteAlertFluentBuilder::set_alert_arn): <p>The ARN of the alert to delete.</p>
+    ///   - [`alert_arn(impl Into<String>)`](crate::operation::delete_alert::builders::DeleteAlertFluentBuilder::alert_arn) / [`set_alert_arn(Option<String>)`](crate::operation::delete_alert::builders::DeleteAlertFluentBuilder::set_alert_arn): <p>The ARN of the alert to delete.</p>
     /// - On success, responds with [`DeleteAlertOutput`](crate::operation::delete_alert::DeleteAlertOutput)
     /// - On failure, responds with [`SdkError<DeleteAlertError>`](crate::operation::delete_alert::DeleteAlertError)
     pub fn delete_alert(&self) -> crate::operation::delete_alert::builders::DeleteAlertFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBillingGroup`](crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`billing_group_name(impl ::std::convert::Into<String>)`](crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder::set_billing_group_name): <p>The name of the billing group.</p>
+    ///   - [`billing_group_name(impl Into<String>)`](crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::operation::describe_billing_group::builders::DescribeBillingGroupFluentBuilder::set_billing_group_name): <p>The name of the billing group.</p>
     /// - On success, responds with [`DescribeBillingGroupOutput`](crate::operation::describe_billing_group::DescribeBillingGroupOutput) with field(s):
     ///   - [`billing_group_name(Option<String>)`](crate::operation::describe_billing_group::DescribeBillingGroupOutput::billing_group_name): <p>The name of the billing group.</p>
     ///   - [`billing_group_id(Option<String>)`](crate::operation::describe_billing_group::DescribeBillingGroupOutput::billing_group_id): <p>The ID of the billing group.</p>

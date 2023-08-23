@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLabelingJob`](crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`labeling_job_name(impl ::std::convert::Into<String>)`](crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder::labeling_job_name) / [`set_labeling_job_name(Option<String>)`](crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder::set_labeling_job_name): <p>The name of the labeling job to return information for.</p>
+    ///   - [`labeling_job_name(impl Into<String>)`](crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder::labeling_job_name) / [`set_labeling_job_name(Option<String>)`](crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder::set_labeling_job_name): <p>The name of the labeling job to return information for.</p>
     /// - On success, responds with [`DescribeLabelingJobOutput`](crate::operation::describe_labeling_job::DescribeLabelingJobOutput) with field(s):
     ///   - [`labeling_job_status(Option<LabelingJobStatus>)`](crate::operation::describe_labeling_job::DescribeLabelingJobOutput::labeling_job_status): <p>The processing status of the labeling job. </p>
     ///   - [`label_counters(Option<LabelCounters>)`](crate::operation::describe_labeling_job::DescribeLabelingJobOutput::label_counters): <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>

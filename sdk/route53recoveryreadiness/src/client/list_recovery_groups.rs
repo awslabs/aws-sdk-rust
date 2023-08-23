@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recovery_groups::builders::ListRecoveryGroupsFluentBuilder::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListRecoveryGroupsOutput`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`recovery_groups(Option<Vec<RecoveryGroupOutput>>)`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput::recovery_groups): <p>A list of recovery groups.</p>

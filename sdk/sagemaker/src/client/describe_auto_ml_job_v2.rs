@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAutoMLJobV2`](crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_ml_job_name(impl ::std::convert::Into<String>)`](crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder::set_auto_ml_job_name): <p>Requests information about an AutoML job V2 using its unique name.</p>
+    ///   - [`auto_ml_job_name(impl Into<String>)`](crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder::set_auto_ml_job_name): <p>Requests information about an AutoML job V2 using its unique name.</p>
     /// - On success, responds with [`DescribeAutoMlJobV2Output`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output) with field(s):
     ///   - [`auto_ml_job_name(Option<String>)`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output::auto_ml_job_name): <p>Returns the name of the AutoML job V2.</p>
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output::auto_ml_job_arn): <p>Returns the Amazon Resource Name (ARN) of the AutoML job V2.</p>

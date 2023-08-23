@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterInstance`](crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder::set_instance_id): <p>The instance ID.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder::set_instance_id): <p>The instance ID.</p>
     /// - On success, responds with [`DeregisterInstanceOutput`](crate::operation::deregister_instance::DeregisterInstanceOutput)
     /// - On failure, responds with [`SdkError<DeregisterInstanceError>`](crate::operation::deregister_instance::DeregisterInstanceError)
     pub fn deregister_instance(&self) -> crate::operation::deregister_instance::builders::DeregisterInstanceFluentBuilder {

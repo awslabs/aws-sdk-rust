@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApi`](crate::operation::get_api::builders::GetApiFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_api::builders::GetApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_api::builders::GetApiFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_api::builders::GetApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_api::builders::GetApiFluentBuilder::set_api_id): <p>The API identifier.</p>
     /// - On success, responds with [`GetApiOutput`](crate::operation::get_api::GetApiOutput) with field(s):
     ///   - [`api_endpoint(Option<String>)`](crate::operation::get_api::GetApiOutput::api_endpoint): <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     ///   - [`api_gateway_managed(Option<bool>)`](crate::operation::get_api::GetApiOutput::api_gateway_managed): <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>

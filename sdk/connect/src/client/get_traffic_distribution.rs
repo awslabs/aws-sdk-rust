@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTrafficDistribution`](crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder::set_id): <p>The identifier of the traffic distribution group.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder::set_id): <p>The identifier of the traffic distribution group.</p>
     /// - On success, responds with [`GetTrafficDistributionOutput`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput) with field(s):
     ///   - [`telephony_config(Option<TelephonyConfig>)`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput::telephony_config): <p>The distribution of traffic between the instance and its replicas.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput::id): <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>

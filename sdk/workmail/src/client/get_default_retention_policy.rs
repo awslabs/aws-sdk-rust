@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDefaultRetentionPolicy`](crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyFluentBuilder::set_organization_id): <p>The organization ID.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyFluentBuilder::set_organization_id): <p>The organization ID.</p>
     /// - On success, responds with [`GetDefaultRetentionPolicyOutput`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput::id): <p>The retention policy ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput::name): <p>The retention policy name.</p>

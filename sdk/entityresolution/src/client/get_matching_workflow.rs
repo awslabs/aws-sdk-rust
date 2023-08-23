@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMatchingWorkflow`](crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_name(impl ::std::convert::Into<String>)`](crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder::set_workflow_name): <p>The name of the workflow.</p>
+    ///   - [`workflow_name(impl Into<String>)`](crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder::set_workflow_name): <p>The name of the workflow.</p>
     /// - On success, responds with [`GetMatchingWorkflowOutput`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput) with field(s):
     ///   - [`workflow_name(Option<String>)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::workflow_name): <p>The name of the workflow.</p>
     ///   - [`workflow_arn(Option<String>)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::workflow_arn): <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>

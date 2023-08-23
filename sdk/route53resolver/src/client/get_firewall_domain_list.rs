@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFirewallDomainList`](crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`firewall_domain_list_id(impl ::std::convert::Into<String>)`](crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListFluentBuilder::firewall_domain_list_id) / [`set_firewall_domain_list_id(Option<String>)`](crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListFluentBuilder::set_firewall_domain_list_id): <p>The ID of the domain list. </p>
+    ///   - [`firewall_domain_list_id(impl Into<String>)`](crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListFluentBuilder::firewall_domain_list_id) / [`set_firewall_domain_list_id(Option<String>)`](crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListFluentBuilder::set_firewall_domain_list_id): <p>The ID of the domain list. </p>
     /// - On success, responds with [`GetFirewallDomainListOutput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput) with field(s):
     ///   - [`firewall_domain_list(Option<FirewallDomainList>)`](crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput::firewall_domain_list): <p>The domain list that you requested. </p>
     /// - On failure, responds with [`SdkError<GetFirewallDomainListError>`](crate::operation::get_firewall_domain_list::GetFirewallDomainListError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelSimulationJobBatch`](crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`batch(impl ::std::convert::Into<String>)`](crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchFluentBuilder::batch) / [`set_batch(Option<String>)`](crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchFluentBuilder::set_batch): <p>The id of the batch to cancel.</p>
+    ///   - [`batch(impl Into<String>)`](crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchFluentBuilder::batch) / [`set_batch(Option<String>)`](crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchFluentBuilder::set_batch): <p>The id of the batch to cancel.</p>
     /// - On success, responds with [`CancelSimulationJobBatchOutput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput)
     /// - On failure, responds with [`SdkError<CancelSimulationJobBatchError>`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError)
     pub fn cancel_simulation_job_batch(&self) -> crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchFluentBuilder {

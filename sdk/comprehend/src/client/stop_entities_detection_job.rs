@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopEntitiesDetectionJob`](crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobFluentBuilder::set_job_id): <p>The identifier of the entities detection job to stop.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobFluentBuilder::set_job_id): <p>The identifier of the entities detection job to stop.</p>
     /// - On success, responds with [`StopEntitiesDetectionJobOutput`](crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobOutput::job_id): <p>The identifier of the entities detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopEntitiesDetectionJob</code> operation.</p>

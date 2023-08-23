@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateMembership`](crate::operation::update_membership::builders::UpdateMembershipFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl ::std::convert::Into<String>)`](crate::operation::update_membership::builders::UpdateMembershipFluentBuilder::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::operation::update_membership::builders::UpdateMembershipFluentBuilder::set_membership_identifier): <p>The unique identifier of the membership.</p>
+    ///   - [`membership_identifier(impl Into<String>)`](crate::operation::update_membership::builders::UpdateMembershipFluentBuilder::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::operation::update_membership::builders::UpdateMembershipFluentBuilder::set_membership_identifier): <p>The unique identifier of the membership.</p>
     ///   - [`query_log_status(MembershipQueryLogStatus)`](crate::operation::update_membership::builders::UpdateMembershipFluentBuilder::query_log_status) / [`set_query_log_status(Option<MembershipQueryLogStatus>)`](crate::operation::update_membership::builders::UpdateMembershipFluentBuilder::set_query_log_status): <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     /// - On success, responds with [`UpdateMembershipOutput`](crate::operation::update_membership::UpdateMembershipOutput) with field(s):
     ///   - [`membership(Option<Membership>)`](crate::operation::update_membership::UpdateMembershipOutput::membership): <p>The membership object.</p>

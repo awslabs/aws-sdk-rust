@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeleteBuilds`](crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ids(Vec<String>)`](crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder::ids) / [`set_ids(Option<Vec<String>>)`](crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder::set_ids): <p>The IDs of the builds to delete.</p>
+    ///   - [`ids(impl Into<String>)`](crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder::ids) / [`set_ids(Option<Vec<String>>)`](crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder::set_ids): <p>The IDs of the builds to delete.</p>
     /// - On success, responds with [`BatchDeleteBuildsOutput`](crate::operation::batch_delete_builds::BatchDeleteBuildsOutput) with field(s):
     ///   - [`builds_deleted(Option<Vec<String>>)`](crate::operation::batch_delete_builds::BatchDeleteBuildsOutput::builds_deleted): <p>The IDs of the builds that were successfully deleted.</p>
     ///   - [`builds_not_deleted(Option<Vec<BuildNotDeleted>>)`](crate::operation::batch_delete_builds::BatchDeleteBuildsOutput::builds_not_deleted): <p>Information about any builds that could not be successfully deleted.</p>

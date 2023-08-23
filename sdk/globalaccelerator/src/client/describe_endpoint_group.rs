@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEndpointGroup`](crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_group_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
+    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
     /// - On success, responds with [`DescribeEndpointGroupOutput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput) with field(s):
     ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput::endpoint_group): <p>The description of an endpoint group.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointGroupError>`](crate::operation::describe_endpoint_group::DescribeEndpointGroupError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CloseAccount`](crate::operation::close_account::builders::CloseAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::close_account::builders::CloseAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::close_account::builders::CloseAccountFluentBuilder::set_account_id): <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::close_account::builders::CloseAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::close_account::builders::CloseAccountFluentBuilder::set_account_id): <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
     /// - On success, responds with [`CloseAccountOutput`](crate::operation::close_account::CloseAccountOutput)
     /// - On failure, responds with [`SdkError<CloseAccountError>`](crate::operation::close_account::CloseAccountError)
     pub fn close_account(&self) -> crate::operation::close_account::builders::CloseAccountFluentBuilder {

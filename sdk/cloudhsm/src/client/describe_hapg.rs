@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHapg`](crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hapg_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder::hapg_arn) / [`set_hapg_arn(Option<String>)`](crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder::set_hapg_arn): <p>The ARN of the high-availability partition group to describe.</p>
+    ///   - [`hapg_arn(impl Into<String>)`](crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder::hapg_arn) / [`set_hapg_arn(Option<String>)`](crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder::set_hapg_arn): <p>The ARN of the high-availability partition group to describe.</p>
     /// - On success, responds with [`DescribeHapgOutput`](crate::operation::describe_hapg::DescribeHapgOutput) with field(s):
     ///   - [`hapg_arn(Option<String>)`](crate::operation::describe_hapg::DescribeHapgOutput::hapg_arn): <p>The ARN of the high-availability partition group.</p>
     ///   - [`hapg_serial(Option<String>)`](crate::operation::describe_hapg::DescribeHapgOutput::hapg_serial): <p>The serial number of the high-availability partition group.</p>

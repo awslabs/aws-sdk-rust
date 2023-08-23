@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteKeyspace`](crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl ::std::convert::Into<String>)`](crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder::set_keyspace_name): <p>The name of the keyspace to be deleted.</p>
+    ///   - [`keyspace_name(impl Into<String>)`](crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder::set_keyspace_name): <p>The name of the keyspace to be deleted.</p>
     /// - On success, responds with [`DeleteKeyspaceOutput`](crate::operation::delete_keyspace::DeleteKeyspaceOutput)
     /// - On failure, responds with [`SdkError<DeleteKeyspaceError>`](crate::operation::delete_keyspace::DeleteKeyspaceError)
     pub fn delete_keyspace(&self) -> crate::operation::delete_keyspace::builders::DeleteKeyspaceFluentBuilder {

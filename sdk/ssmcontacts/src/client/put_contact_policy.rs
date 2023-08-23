@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutContactPolicy`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_arn(impl ::std::convert::Into<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::contact_arn) / [`set_contact_arn(Option<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::set_contact_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::set_policy): <p>Details of the resource policy.</p>
+    ///   - [`contact_arn(impl Into<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::contact_arn) / [`set_contact_arn(Option<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::set_contact_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    ///   - [`policy(impl Into<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::set_policy): <p>Details of the resource policy.</p>
     /// - On success, responds with [`PutContactPolicyOutput`](crate::operation::put_contact_policy::PutContactPolicyOutput)
     /// - On failure, responds with [`SdkError<PutContactPolicyError>`](crate::operation::put_contact_policy::PutContactPolicyError)
     pub fn put_contact_policy(&self) -> crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder {

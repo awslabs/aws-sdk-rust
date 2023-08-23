@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_users::builders::ListUsersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collection_id(impl ::std::convert::Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_collection_id): <p>The ID of an existing collection.</p>
+    ///   - [`collection_id(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_collection_id): <p>The ID of an existing collection.</p>
     ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results): <p>Maximum number of UsersID to return. </p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token): <p>Pagingation token to receive the next set of UsersID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token): <p>Pagingation token to receive the next set of UsersID.</p>
     /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
     ///   - [`users(Option<Vec<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>List of UsersID associated with the specified collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users::ListUsersOutput::next_token): <p>A pagination token to be used with the subsequent request if the response is truncated.</p>

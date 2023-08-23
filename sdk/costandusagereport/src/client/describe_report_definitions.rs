@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::set_max_results): <p>The maximum number of results that AWS returns for the operation.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::set_next_token): <p>A generic string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::set_next_token): <p>A generic string.</p>
     /// - On success, responds with [`DescribeReportDefinitionsOutput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput) with field(s):
     ///   - [`report_definitions(Option<Vec<ReportDefinition>>)`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput::report_definitions): <p>A list of AWS Cost and Usage reports owned by the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput::next_token): <p>A generic string.</p>

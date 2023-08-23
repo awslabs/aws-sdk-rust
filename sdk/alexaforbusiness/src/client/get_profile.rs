@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProfile`](crate::operation::get_profile::builders::GetProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_arn(impl ::std::convert::Into<String>)`](crate::operation::get_profile::builders::GetProfileFluentBuilder::profile_arn) / [`set_profile_arn(Option<String>)`](crate::operation::get_profile::builders::GetProfileFluentBuilder::set_profile_arn): <p>The ARN of the room profile for which to request details. Required.</p>
+    ///   - [`profile_arn(impl Into<String>)`](crate::operation::get_profile::builders::GetProfileFluentBuilder::profile_arn) / [`set_profile_arn(Option<String>)`](crate::operation::get_profile::builders::GetProfileFluentBuilder::set_profile_arn): <p>The ARN of the room profile for which to request details. Required.</p>
     /// - On success, responds with [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput) with field(s):
     ///   - [`profile(Option<Profile>)`](crate::operation::get_profile::GetProfileOutput::profile): <p>The details of the room profile requested. Required.</p>
     /// - On failure, responds with [`SdkError<GetProfileError>`](crate::operation::get_profile::GetProfileError)

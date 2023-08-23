@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIdentityProvider`](crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_provider_arn(impl ::std::convert::Into<String>)`](crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder::identity_provider_arn) / [`set_identity_provider_arn(Option<String>)`](crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder::set_identity_provider_arn): <p>The ARN of the identity provider.</p>
+    ///   - [`identity_provider_arn(impl Into<String>)`](crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder::identity_provider_arn) / [`set_identity_provider_arn(Option<String>)`](crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder::set_identity_provider_arn): <p>The ARN of the identity provider.</p>
     /// - On success, responds with [`GetIdentityProviderOutput`](crate::operation::get_identity_provider::GetIdentityProviderOutput) with field(s):
     ///   - [`identity_provider(Option<IdentityProvider>)`](crate::operation::get_identity_provider::GetIdentityProviderOutput::identity_provider): <p>The identity provider.</p>
     /// - On failure, responds with [`SdkError<GetIdentityProviderError>`](crate::operation::get_identity_provider::GetIdentityProviderError)

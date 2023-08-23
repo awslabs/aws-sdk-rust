@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReservation`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`reservation_id(impl ::std::convert::Into<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::set_reservation_id): Unique reservation ID, e.g. '1234567'
+    ///   - [`reservation_id(impl Into<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::set_reservation_id): Unique reservation ID, e.g. '1234567'
     /// - On success, responds with [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::arn): Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     ///   - [`count(Option<i32>)`](crate::operation::describe_reservation::DescribeReservationOutput::count): Number of reserved resources

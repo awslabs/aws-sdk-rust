@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPipeline`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::set_name): <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::set_name): <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
     ///   - [`version(i32)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::version) / [`set_version(Option<i32>)`](crate::operation::get_pipeline::builders::GetPipelineFluentBuilder::set_version): <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
     /// - On success, responds with [`GetPipelineOutput`](crate::operation::get_pipeline::GetPipelineOutput) with field(s):
     ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::operation::get_pipeline::GetPipelineOutput::pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline. </p>

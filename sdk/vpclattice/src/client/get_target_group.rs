@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTargetGroup`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_group_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::set_target_group_identifier): <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`target_group_identifier(impl Into<String>)`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::set_target_group_identifier): <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     /// - On success, responds with [`GetTargetGroupOutput`](crate::operation::get_target_group::GetTargetGroupOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::id): <p>The ID of the target group.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the target group.</p>

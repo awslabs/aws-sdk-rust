@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIdentityDkimAttributes`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identities(Vec<String>)`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::identities) / [`set_identities(Option<Vec<String>>)`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::set_identities): <p>A list of one or more verified identities - email addresses, domains, or both.</p>
+    ///   - [`identities(impl Into<String>)`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::identities) / [`set_identities(Option<Vec<String>>)`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesFluentBuilder::set_identities): <p>A list of one or more verified identities - email addresses, domains, or both.</p>
     /// - On success, responds with [`GetIdentityDkimAttributesOutput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput) with field(s):
     ///   - [`dkim_attributes(Option<HashMap<String, IdentityDkimAttributes>>)`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput::dkim_attributes): <p>The DKIM attributes for an email address or a domain.</p>
     /// - On failure, responds with [`SdkError<GetIdentityDkimAttributesError>`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAccountLimits`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl ::std::convert::Into<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::set_marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`marker(impl Into<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::set_marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     ///   - [`page_size(i32)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::set_page_size): <p>The maximum number of results to return with this call.</p>
     /// - On success, responds with [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput) with field(s):
     ///   - [`limits(Option<Vec<Limit>>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::limits): <p>Information about the limits.</p>

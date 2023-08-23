@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUserSettings`](crate::operation::delete_user_settings::builders::DeleteUserSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_settings_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_user_settings::builders::DeleteUserSettingsFluentBuilder::user_settings_arn) / [`set_user_settings_arn(Option<String>)`](crate::operation::delete_user_settings::builders::DeleteUserSettingsFluentBuilder::set_user_settings_arn): <p>The ARN of the user settings.</p>
+    ///   - [`user_settings_arn(impl Into<String>)`](crate::operation::delete_user_settings::builders::DeleteUserSettingsFluentBuilder::user_settings_arn) / [`set_user_settings_arn(Option<String>)`](crate::operation::delete_user_settings::builders::DeleteUserSettingsFluentBuilder::set_user_settings_arn): <p>The ARN of the user settings.</p>
     /// - On success, responds with [`DeleteUserSettingsOutput`](crate::operation::delete_user_settings::DeleteUserSettingsOutput)
     /// - On failure, responds with [`SdkError<DeleteUserSettingsError>`](crate::operation::delete_user_settings::DeleteUserSettingsError)
     pub fn delete_user_settings(&self) -> crate::operation::delete_user_settings::builders::DeleteUserSettingsFluentBuilder {

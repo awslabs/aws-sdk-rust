@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventAction`](crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_action_id(impl ::std::convert::Into<String>)`](crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder::event_action_id) / [`set_event_action_id(Option<String>)`](crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder::set_event_action_id): <p>The unique identifier for the event action.</p>
+    ///   - [`event_action_id(impl Into<String>)`](crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder::event_action_id) / [`set_event_action_id(Option<String>)`](crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder::set_event_action_id): <p>The unique identifier for the event action.</p>
     /// - On success, responds with [`DeleteEventActionOutput`](crate::operation::delete_event_action::DeleteEventActionOutput)
     /// - On failure, responds with [`SdkError<DeleteEventActionError>`](crate::operation::delete_event_action::DeleteEventActionError)
     pub fn delete_event_action(&self) -> crate::operation::delete_event_action::builders::DeleteEventActionFluentBuilder {

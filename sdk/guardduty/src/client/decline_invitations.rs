@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeclineInvitations`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(Vec<String>)`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::set_account_ids): <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::set_account_ids): <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
     /// - On success, responds with [`DeclineInvitationsOutput`](crate::operation::decline_invitations::DeclineInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::decline_invitations::DeclineInvitationsOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     /// - On failure, responds with [`SdkError<DeclineInvitationsError>`](crate::operation::decline_invitations::DeclineInvitationsError)

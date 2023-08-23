@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     ///   - [`max_results(i32)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_max_results): <p>The maximum number of results to be included in the next page.</p>
     /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
     ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::operation::list_domains::ListDomainsOutput::domains): <p>Information about the domains.</p>

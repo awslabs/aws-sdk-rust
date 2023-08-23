@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVerifiedEmailAddress`](crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder::set_email_address): <p>An email address to be removed from the list of verified addresses.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressFluentBuilder::set_email_address): <p>An email address to be removed from the list of verified addresses.</p>
     /// - On success, responds with [`DeleteVerifiedEmailAddressOutput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput)
     /// - On failure, responds with [`SdkError<DeleteVerifiedEmailAddressError>`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError)
     pub fn delete_verified_email_address(

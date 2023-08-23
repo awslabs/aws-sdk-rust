@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetCodeSnippet`](crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`finding_arns(Vec<String>)`](crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder::finding_arns) / [`set_finding_arns(Option<Vec<String>>)`](crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder::set_finding_arns): <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
+    ///   - [`finding_arns(impl Into<String>)`](crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder::finding_arns) / [`set_finding_arns(Option<Vec<String>>)`](crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder::set_finding_arns): <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
     /// - On success, responds with [`BatchGetCodeSnippetOutput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput) with field(s):
     ///   - [`code_snippet_results(Option<Vec<CodeSnippetResult>>)`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput::code_snippet_results): <p>The retrieved code snippets associated with the provided finding ARNs.</p>
     ///   - [`errors(Option<Vec<CodeSnippetError>>)`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput::errors): <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>

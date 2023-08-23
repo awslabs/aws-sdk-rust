@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeleteReadSet`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ids(Vec<String>)`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::ids) / [`set_ids(Option<Vec<String>>)`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::set_ids): <p>The read sets' IDs.</p>
-    ///   - [`sequence_store_id(impl ::std::convert::Into<String>)`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::set_sequence_store_id): <p>The read sets' sequence store ID.</p>
+    ///   - [`ids(impl Into<String>)`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::ids) / [`set_ids(Option<Vec<String>>)`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::set_ids): <p>The read sets' IDs.</p>
+    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::set_sequence_store_id): <p>The read sets' sequence store ID.</p>
     /// - On success, responds with [`BatchDeleteReadSetOutput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput) with field(s):
     ///   - [`errors(Option<Vec<ReadSetBatchError>>)`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput::errors): <p>Errors returned by individual delete operations.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteReadSetError>`](crate::operation::batch_delete_read_set::BatchDeleteReadSetError)

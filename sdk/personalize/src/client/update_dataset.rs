@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDataset`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_arn(impl ::std::convert::Into<String>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::set_dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
-    ///   - [`schema_arn(impl ::std::convert::Into<String>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) of the new schema you want use.</p>
+    ///   - [`dataset_arn(impl Into<String>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::set_dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) of the new schema you want use.</p>
     /// - On success, responds with [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput) with field(s):
     ///   - [`dataset_arn(Option<String>)`](crate::operation::update_dataset::UpdateDatasetOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateDatasetError>`](crate::operation::update_dataset::UpdateDatasetError)

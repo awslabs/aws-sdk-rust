@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::set_next_token): <p>The pagination token.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::set_next_token): <p>The pagination token.</p>
     ///   - [`max_results(i32)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::set_max_results): <p>The maximum number of results to retrieve.</p>
     ///   - [`state(DirectoryState)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::state) / [`set_state(Option<DirectoryState>)`](crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::set_state): <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
     /// - On success, responds with [`ListDirectoriesOutput`](crate::operation::list_directories::ListDirectoriesOutput) with field(s):

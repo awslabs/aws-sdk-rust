@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCampaign`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::set_id): Identifier representing a Campaign
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::set_id): Identifier representing a Campaign
     /// - On success, responds with [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput) with field(s):
     ///   - [`campaign(Option<Campaign>)`](crate::operation::describe_campaign::DescribeCampaignOutput::campaign): An Amazon Connect campaign.
     /// - On failure, responds with [`SdkError<DescribeCampaignError>`](crate::operation::describe_campaign::DescribeCampaignError)

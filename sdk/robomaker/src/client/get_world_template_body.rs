@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorldTemplateBody`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template(impl ::std::convert::Into<String>)`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::template) / [`set_template(Option<String>)`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::set_template): <p>The Amazon Resource Name (arn) of the world template.</p>
-    ///   - [`generation_job(impl ::std::convert::Into<String>)`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::generation_job) / [`set_generation_job(Option<String>)`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::set_generation_job): <p>The Amazon Resource Name (arn) of the world generator job.</p>
+    ///   - [`template(impl Into<String>)`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::template) / [`set_template(Option<String>)`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::set_template): <p>The Amazon Resource Name (arn) of the world template.</p>
+    ///   - [`generation_job(impl Into<String>)`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::generation_job) / [`set_generation_job(Option<String>)`](crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::set_generation_job): <p>The Amazon Resource Name (arn) of the world generator job.</p>
     /// - On success, responds with [`GetWorldTemplateBodyOutput`](crate::operation::get_world_template_body::GetWorldTemplateBodyOutput) with field(s):
     ///   - [`template_body(Option<String>)`](crate::operation::get_world_template_body::GetWorldTemplateBodyOutput::template_body): <p>The world template body.</p>
     /// - On failure, responds with [`SdkError<GetWorldTemplateBodyError>`](crate::operation::get_world_template_body::GetWorldTemplateBodyError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RevokeInvitation`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_arn(impl ::std::convert::Into<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::set_user_arn): <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
-    ///   - [`enrollment_id(impl ::std::convert::Into<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::enrollment_id) / [`set_enrollment_id(Option<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::set_enrollment_id): <p>The ARN of the enrollment invitation to revoke. Required.</p>
+    ///   - [`user_arn(impl Into<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::set_user_arn): <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
+    ///   - [`enrollment_id(impl Into<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::enrollment_id) / [`set_enrollment_id(Option<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::set_enrollment_id): <p>The ARN of the enrollment invitation to revoke. Required.</p>
     /// - On success, responds with [`RevokeInvitationOutput`](crate::operation::revoke_invitation::RevokeInvitationOutput)
     /// - On failure, responds with [`SdkError<RevokeInvitationError>`](crate::operation::revoke_invitation::RevokeInvitationError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

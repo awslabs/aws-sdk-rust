@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopCompilationJob`](crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`compilation_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder::set_compilation_job_name): <p>The name of the model compilation job to stop.</p>
+    ///   - [`compilation_job_name(impl Into<String>)`](crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder::set_compilation_job_name): <p>The name of the model compilation job to stop.</p>
     /// - On success, responds with [`StopCompilationJobOutput`](crate::operation::stop_compilation_job::StopCompilationJobOutput)
     /// - On failure, responds with [`SdkError<StopCompilationJobError>`](crate::operation::stop_compilation_job::StopCompilationJobError)
     pub fn stop_compilation_job(&self) -> crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder {

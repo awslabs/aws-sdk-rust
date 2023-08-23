@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccessLogSubscription`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_log_subscription_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::access_log_subscription_identifier) / [`set_access_log_subscription_identifier(Option<String>)`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::set_access_log_subscription_identifier): <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    ///   - [`access_log_subscription_identifier(impl Into<String>)`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::access_log_subscription_identifier) / [`set_access_log_subscription_identifier(Option<String>)`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::set_access_log_subscription_identifier): <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
     /// - On success, responds with [`GetAccessLogSubscriptionOutput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::id): <p>The ID of the access log subscription.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::arn): <p>The Amazon Resource Name (ARN) of the access log subscription.</p>

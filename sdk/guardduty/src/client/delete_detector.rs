@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDetector`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder::set_detector_id): <p>The unique ID of the detector that you want to delete.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder::set_detector_id): <p>The unique ID of the detector that you want to delete.</p>
     /// - On success, responds with [`DeleteDetectorOutput`](crate::operation::delete_detector::DeleteDetectorOutput)
     /// - On failure, responds with [`SdkError<DeleteDetectorError>`](crate::operation::delete_detector::DeleteDetectorError)
     pub fn delete_detector(&self) -> crate::operation::delete_detector::builders::DeleteDetectorFluentBuilder {

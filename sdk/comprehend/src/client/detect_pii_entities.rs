@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DetectPiiEntities`](crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl ::std::convert::Into<String>)`](crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+    ///   - [`text(impl Into<String>)`](crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder::set_text): <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     ///   - [`language_code(LanguageCode)`](crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder::set_language_code): <p>The language of the input documents. Currently, English is the only valid language.</p>
     /// - On success, responds with [`DetectPiiEntitiesOutput`](crate::operation::detect_pii_entities::DetectPiiEntitiesOutput) with field(s):
     ///   - [`entities(Option<Vec<PiiEntity>>)`](crate::operation::detect_pii_entities::DetectPiiEntitiesOutput::entities): <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>

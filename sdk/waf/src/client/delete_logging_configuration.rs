@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLoggingConfiguration`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     /// - On success, responds with [`DeleteLoggingConfigurationOutput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteLoggingConfigurationError>`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError)
     pub fn delete_logging_configuration(&self) -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder {

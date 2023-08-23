@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::set_max_results): <p>The maximum number of results to retrieve at one time.</p>
     /// - On success, responds with [`ListDimensionsOutput`](crate::operation::list_dimensions::ListDimensionsOutput) with field(s):
     ///   - [`dimension_names(Option<Vec<String>>)`](crate::operation::list_dimensions::ListDimensionsOutput::dimension_names): <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCrawler`](crate::operation::get_crawler::builders::GetCrawlerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_crawler::builders::GetCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_crawler::builders::GetCrawlerFluentBuilder::set_name): <p>The name of the crawler to retrieve metadata for.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_crawler::builders::GetCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_crawler::builders::GetCrawlerFluentBuilder::set_name): <p>The name of the crawler to retrieve metadata for.</p>
     /// - On success, responds with [`GetCrawlerOutput`](crate::operation::get_crawler::GetCrawlerOutput) with field(s):
     ///   - [`crawler(Option<Crawler>)`](crate::operation::get_crawler::GetCrawlerOutput::crawler): <p>The metadata for the specified crawler.</p>
     /// - On failure, responds with [`SdkError<GetCrawlerError>`](crate::operation::get_crawler::GetCrawlerError)

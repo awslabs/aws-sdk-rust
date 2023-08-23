@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateFolder`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`aws_account_id(impl ::std::convert::Into<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    ///   - [`folder_id(impl ::std::convert::Into<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::set_folder_id): <p>The ID of the folder.</p>
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::set_name): <p>The name of the folder.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::set_name): <p>The name of the folder.</p>
     /// - On success, responds with [`UpdateFolderOutput`](crate::operation::update_folder::UpdateFolderOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::update_folder::UpdateFolderOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_folder::UpdateFolderOutput::arn): <p>The Amazon Resource Name (ARN) of the folder.</p>

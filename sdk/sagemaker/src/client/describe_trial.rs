@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTrial`](crate::operation::describe_trial::builders::DescribeTrialFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trial_name(impl ::std::convert::Into<String>)`](crate::operation::describe_trial::builders::DescribeTrialFluentBuilder::trial_name) / [`set_trial_name(Option<String>)`](crate::operation::describe_trial::builders::DescribeTrialFluentBuilder::set_trial_name): <p>The name of the trial to describe.</p>
+    ///   - [`trial_name(impl Into<String>)`](crate::operation::describe_trial::builders::DescribeTrialFluentBuilder::trial_name) / [`set_trial_name(Option<String>)`](crate::operation::describe_trial::builders::DescribeTrialFluentBuilder::set_trial_name): <p>The name of the trial to describe.</p>
     /// - On success, responds with [`DescribeTrialOutput`](crate::operation::describe_trial::DescribeTrialOutput) with field(s):
     ///   - [`trial_name(Option<String>)`](crate::operation::describe_trial::DescribeTrialOutput::trial_name): <p>The name of the trial.</p>
     ///   - [`trial_arn(Option<String>)`](crate::operation::describe_trial::DescribeTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResumeResource`](crate::operation::resume_resource::builders::ResumeResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::resume_resource::builders::ResumeResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::resume_resource::builders::ResumeResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to resume.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::resume_resource::builders::ResumeResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::resume_resource::builders::ResumeResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to resume.</p>
     /// - On success, responds with [`ResumeResourceOutput`](crate::operation::resume_resource::ResumeResourceOutput)
     /// - On failure, responds with [`SdkError<ResumeResourceError>`](crate::operation::resume_resource::ResumeResourceError)
     pub fn resume_resource(&self) -> crate::operation::resume_resource::builders::ResumeResourceFluentBuilder {

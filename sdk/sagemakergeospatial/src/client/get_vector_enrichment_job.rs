@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVectorEnrichmentJob`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     /// - On success, responds with [`GetVectorEnrichmentJobOutput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     ///   - [`r#type(Option<VectorEnrichmentJobType>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::type): <p>The type of the Vector Enrichment job being initiated.</p>

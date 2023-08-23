@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRecipe`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::set_name): <p>The name of the recipe to be described.</p>
-    ///   - [`recipe_version(impl ::std::convert::Into<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::recipe_version) / [`set_recipe_version(Option<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::set_recipe_version): <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::set_name): <p>The name of the recipe to be described.</p>
+    ///   - [`recipe_version(impl Into<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::recipe_version) / [`set_recipe_version(Option<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::set_recipe_version): <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
     /// - On success, responds with [`DescribeRecipeOutput`](crate::operation::describe_recipe::DescribeRecipeOutput) with field(s):
     ///   - [`created_by(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::created_by): <p>The identifier (user name) of the user who created the recipe.</p>
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_recipe::DescribeRecipeOutput::create_date): <p>The date and time that the recipe was created.</p>

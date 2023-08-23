@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCommit`](crate::operation::get_commit::builders::GetCommitFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`repository_name(impl ::std::convert::Into<String>)`](crate::operation::get_commit::builders::GetCommitFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_commit::builders::GetCommitFluentBuilder::set_repository_name): <p>The name of the repository to which the commit was made.</p>
-    ///   - [`commit_id(impl ::std::convert::Into<String>)`](crate::operation::get_commit::builders::GetCommitFluentBuilder::commit_id) / [`set_commit_id(Option<String>)`](crate::operation::get_commit::builders::GetCommitFluentBuilder::set_commit_id): <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::operation::get_commit::builders::GetCommitFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_commit::builders::GetCommitFluentBuilder::set_repository_name): <p>The name of the repository to which the commit was made.</p>
+    ///   - [`commit_id(impl Into<String>)`](crate::operation::get_commit::builders::GetCommitFluentBuilder::commit_id) / [`set_commit_id(Option<String>)`](crate::operation::get_commit::builders::GetCommitFluentBuilder::set_commit_id): <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
     /// - On success, responds with [`GetCommitOutput`](crate::operation::get_commit::GetCommitOutput) with field(s):
     ///   - [`commit(Option<Commit>)`](crate::operation::get_commit::GetCommitOutput::commit): <p>A commit data type object that contains information about the specified commit.</p>
     /// - On failure, responds with [`SdkError<GetCommitError>`](crate::operation::get_commit::GetCommitError)

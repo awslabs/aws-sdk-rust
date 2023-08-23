@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoggingStatus`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl ::std::convert::Into<String>)`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::set_cluster_identifier): <p>The identifier of the cluster from which to get the logging status.</p>  <p>Example: <code>examplecluster</code> </p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::set_cluster_identifier): <p>The identifier of the cluster from which to get the logging status.</p>  <p>Example: <code>examplecluster</code> </p>
     /// - On success, responds with [`DescribeLoggingStatusOutput`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput) with field(s):
     ///   - [`logging_enabled(bool)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::logging_enabled): <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     ///   - [`bucket_name(Option<String>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::bucket_name): <p>The name of the S3 bucket where the log files are stored.</p>

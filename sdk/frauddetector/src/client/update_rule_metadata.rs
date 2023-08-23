@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`rule(Rule)`](crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::rule) / [`set_rule(Option<Rule>)`](crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::set_rule): <p>The rule to update.</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::set_description): <p>The rule description.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::set_description): <p>The rule description.</p>
     /// - On success, responds with [`UpdateRuleMetadataOutput`](crate::operation::update_rule_metadata::UpdateRuleMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateRuleMetadataError>`](crate::operation::update_rule_metadata::UpdateRuleMetadataError)
     pub fn update_rule_metadata(&self) -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder {

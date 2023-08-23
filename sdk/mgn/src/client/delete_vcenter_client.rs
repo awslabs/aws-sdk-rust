@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVcenterClient`](crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vcenter_client_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder::vcenter_client_id) / [`set_vcenter_client_id(Option<String>)`](crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder::set_vcenter_client_id): <p>ID of resource to be deleted.</p>
+    ///   - [`vcenter_client_id(impl Into<String>)`](crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder::vcenter_client_id) / [`set_vcenter_client_id(Option<String>)`](crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder::set_vcenter_client_id): <p>ID of resource to be deleted.</p>
     /// - On success, responds with [`DeleteVcenterClientOutput`](crate::operation::delete_vcenter_client::DeleteVcenterClientOutput)
     /// - On failure, responds with [`SdkError<DeleteVcenterClientError>`](crate::operation::delete_vcenter_client::DeleteVcenterClientError)
     pub fn delete_vcenter_client(&self) -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientFluentBuilder {

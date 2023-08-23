@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConnection`](crate::operation::get_connection::builders::GetConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_arn(impl ::std::convert::Into<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::connection_arn) / [`set_connection_arn(Option<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::set_connection_arn): <p>The Amazon Resource Name (ARN) of a connection.</p>
+    ///   - [`connection_arn(impl Into<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::connection_arn) / [`set_connection_arn(Option<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::set_connection_arn): <p>The Amazon Resource Name (ARN) of a connection.</p>
     /// - On success, responds with [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput) with field(s):
     ///   - [`connection(Option<Connection>)`](crate::operation::get_connection::GetConnectionOutput::connection): <p>The connection details, such as status, owner, and provider type.</p>
     /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::operation::get_connection::GetConnectionError)

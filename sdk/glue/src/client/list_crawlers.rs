@@ -5,8 +5,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::set_max_results): <p>The maximum size of a list to return.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation request.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::set_tags): <p>Specifies to return only these tagged resources.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::set_tags): <p>Specifies to return only these tagged resources.</p>
     /// - On success, responds with [`ListCrawlersOutput`](crate::operation::list_crawlers::ListCrawlersOutput) with field(s):
     ///   - [`crawler_names(Option<Vec<String>>)`](crate::operation::list_crawlers::ListCrawlersOutput::crawler_names): <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_crawlers::ListCrawlersOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>

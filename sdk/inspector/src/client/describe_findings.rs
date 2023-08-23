@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFindings`](crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`finding_arns(Vec<String>)`](crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder::finding_arns) / [`set_finding_arns(Option<Vec<String>>)`](crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder::set_finding_arns): <p>The ARN that specifies the finding that you want to describe.</p>
+    ///   - [`finding_arns(impl Into<String>)`](crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder::finding_arns) / [`set_finding_arns(Option<Vec<String>>)`](crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder::set_finding_arns): <p>The ARN that specifies the finding that you want to describe.</p>
     ///   - [`locale(Locale)`](crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder::locale) / [`set_locale(Option<Locale>)`](crate::operation::describe_findings::builders::DescribeFindingsFluentBuilder::set_locale): <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
     /// - On success, responds with [`DescribeFindingsOutput`](crate::operation::describe_findings::DescribeFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<Finding>>)`](crate::operation::describe_findings::DescribeFindingsOutput::findings): <p>Information about the finding.</p>

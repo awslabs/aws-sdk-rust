@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNotebookExecution`](crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notebook_execution_id(impl ::std::convert::Into<String>)`](crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionFluentBuilder::notebook_execution_id) / [`set_notebook_execution_id(Option<String>)`](crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionFluentBuilder::set_notebook_execution_id): <p>The unique identifier of the notebook execution.</p>
+    ///   - [`notebook_execution_id(impl Into<String>)`](crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionFluentBuilder::notebook_execution_id) / [`set_notebook_execution_id(Option<String>)`](crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionFluentBuilder::set_notebook_execution_id): <p>The unique identifier of the notebook execution.</p>
     /// - On success, responds with [`DescribeNotebookExecutionOutput`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput) with field(s):
     ///   - [`notebook_execution(Option<NotebookExecution>)`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput::notebook_execution): <p>Properties of the notebook execution.</p>
     /// - On failure, responds with [`SdkError<DescribeNotebookExecutionError>`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVpc`](crate::operation::delete_vpc::builders::DeleteVpcFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc::builders::DeleteVpcFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::delete_vpc::builders::DeleteVpcFluentBuilder::set_vpc_id): <p>The ID of the VPC.</p>
+    ///   - [`vpc_id(impl Into<String>)`](crate::operation::delete_vpc::builders::DeleteVpcFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::delete_vpc::builders::DeleteVpcFluentBuilder::set_vpc_id): <p>The ID of the VPC.</p>
     ///   - [`dry_run(bool)`](crate::operation::delete_vpc::builders::DeleteVpcFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_vpc::builders::DeleteVpcFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeleteVpcOutput`](crate::operation::delete_vpc::DeleteVpcOutput)
     /// - On failure, responds with [`SdkError<DeleteVpcError>`](crate::operation::delete_vpc::DeleteVpcError)

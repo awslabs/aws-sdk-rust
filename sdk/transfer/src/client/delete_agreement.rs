@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAgreement`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agreement_id(impl ::std::convert::Into<String>)`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder::agreement_id) / [`set_agreement_id(Option<String>)`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder::set_agreement_id): <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    ///   - [`server_id(impl ::std::convert::Into<String>)`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder::set_server_id): <p>The server identifier associated with the agreement that you are deleting.</p>
+    ///   - [`agreement_id(impl Into<String>)`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder::agreement_id) / [`set_agreement_id(Option<String>)`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder::set_agreement_id): <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder::set_server_id): <p>The server identifier associated with the agreement that you are deleting.</p>
     /// - On success, responds with [`DeleteAgreementOutput`](crate::operation::delete_agreement::DeleteAgreementOutput)
     /// - On failure, responds with [`SdkError<DeleteAgreementError>`](crate::operation::delete_agreement::DeleteAgreementError)
     pub fn delete_agreement(&self) -> crate::operation::delete_agreement::builders::DeleteAgreementFluentBuilder {

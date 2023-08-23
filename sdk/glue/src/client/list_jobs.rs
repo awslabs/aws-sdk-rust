@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation request.</p>
     ///   - [`max_results(i32)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_max_results): <p>The maximum size of a list to return.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_tags): <p>Specifies to return only these tagged resources.</p>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_tags): <p>Specifies to return only these tagged resources.</p>
     /// - On success, responds with [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput) with field(s):
     ///   - [`job_names(Option<Vec<String>>)`](crate::operation::list_jobs::ListJobsOutput::job_names): <p>The names of all jobs in the account, or the jobs with the specified tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_jobs::ListJobsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>

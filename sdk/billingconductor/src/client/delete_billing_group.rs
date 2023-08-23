@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBillingGroup`](crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_billing_group::builders::DeleteBillingGroupFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
     /// - On success, responds with [`DeleteBillingGroupOutput`](crate::operation::delete_billing_group::DeleteBillingGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_billing_group::DeleteBillingGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
     /// - On failure, responds with [`SdkError<DeleteBillingGroupError>`](crate::operation::delete_billing_group::DeleteBillingGroupError)

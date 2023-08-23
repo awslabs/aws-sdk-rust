@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder::set_dry_run): <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    ///   - [`ipam_scope_id(impl ::std::convert::Into<String>)`](crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder::ipam_scope_id) / [`set_ipam_scope_id(Option<String>)`](crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder::set_ipam_scope_id): <p>The ID of the scope to delete.</p>
+    ///   - [`ipam_scope_id(impl Into<String>)`](crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder::ipam_scope_id) / [`set_ipam_scope_id(Option<String>)`](crate::operation::delete_ipam_scope::builders::DeleteIpamScopeFluentBuilder::set_ipam_scope_id): <p>The ID of the scope to delete.</p>
     /// - On success, responds with [`DeleteIpamScopeOutput`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput) with field(s):
     ///   - [`ipam_scope(Option<IpamScope>)`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput::ipam_scope): <p>Information about the results of the deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteIpamScopeError>`](crate::operation::delete_ipam_scope::DeleteIpamScopeError)

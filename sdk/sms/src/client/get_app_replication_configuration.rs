@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAppReplicationConfiguration`](crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app_replication_configuration::builders::GetAppReplicationConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`GetAppReplicationConfigurationOutput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput) with field(s):
     ///   - [`server_group_replication_configurations(Option<Vec<ServerGroupReplicationConfiguration>>)`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput::server_group_replication_configurations): <p>The replication configurations associated with server groups in this application.</p>
     /// - On failure, responds with [`SdkError<GetAppReplicationConfigurationError>`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError)

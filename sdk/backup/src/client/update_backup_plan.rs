@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateBackupPlan`](crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_plan_id(impl ::std::convert::Into<String>)`](crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
     ///   - [`backup_plan(BackupPlanInput)`](crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::backup_plan) / [`set_backup_plan(Option<BackupPlanInput>)`](crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::set_backup_plan): <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     /// - On success, responds with [`UpdateBackupPlanOutput`](crate::operation::update_backup_plan::UpdateBackupPlanOutput) with field(s):
     ///   - [`backup_plan_id(Option<String>)`](crate::operation::update_backup_plan::UpdateBackupPlanOutput::backup_plan_id): <p>Uniquely identifies a backup plan.</p>

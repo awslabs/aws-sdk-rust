@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDimension`](crate::operation::delete_dimension::builders::DeleteDimensionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_dimension::builders::DeleteDimensionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_dimension::builders::DeleteDimensionFluentBuilder::set_name): <p>The unique identifier for the dimension that you want to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_dimension::builders::DeleteDimensionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_dimension::builders::DeleteDimensionFluentBuilder::set_name): <p>The unique identifier for the dimension that you want to delete.</p>
     /// - On success, responds with [`DeleteDimensionOutput`](crate::operation::delete_dimension::DeleteDimensionOutput)
     /// - On failure, responds with [`SdkError<DeleteDimensionError>`](crate::operation::delete_dimension::DeleteDimensionError)
     pub fn delete_dimension(&self) -> crate::operation::delete_dimension::builders::DeleteDimensionFluentBuilder {

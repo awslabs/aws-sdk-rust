@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ReplaceTopicRule`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_name(impl ::std::convert::Into<String>)`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::set_rule_name): <p>The name of the rule.</p>
+    ///   - [`rule_name(impl Into<String>)`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::set_rule_name): <p>The name of the rule.</p>
     ///   - [`topic_rule_payload(TopicRulePayload)`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::topic_rule_payload) / [`set_topic_rule_payload(Option<TopicRulePayload>)`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::set_topic_rule_payload): <p>The rule payload.</p>
     /// - On success, responds with [`ReplaceTopicRuleOutput`](crate::operation::replace_topic_rule::ReplaceTopicRuleOutput)
     /// - On failure, responds with [`SdkError<ReplaceTopicRuleError>`](crate::operation::replace_topic_rule::ReplaceTopicRuleError)

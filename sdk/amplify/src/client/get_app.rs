@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApp`](crate::operation::get_app::builders::GetAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::set_app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app::builders::GetAppFluentBuilder::set_app_id): <p> The unique ID for an Amplify app. </p>
     /// - On success, responds with [`GetAppOutput`](crate::operation::get_app::GetAppOutput) with field(s):
     ///   - [`app(Option<App>)`](crate::operation::get_app::GetAppOutput::app): <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     /// - On failure, responds with [`SdkError<GetAppError>`](crate::operation::get_app::GetAppError)

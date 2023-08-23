@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApplicationState`](crate::operation::describe_application_state::builders::DescribeApplicationStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::describe_application_state::builders::DescribeApplicationStateFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::describe_application_state::builders::DescribeApplicationStateFluentBuilder::set_application_id): <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::describe_application_state::builders::DescribeApplicationStateFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::describe_application_state::builders::DescribeApplicationStateFluentBuilder::set_application_id): <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     /// - On success, responds with [`DescribeApplicationStateOutput`](crate::operation::describe_application_state::DescribeApplicationStateOutput) with field(s):
     ///   - [`application_status(Option<ApplicationStatus>)`](crate::operation::describe_application_state::DescribeApplicationStateOutput::application_status): <p>Status of the application - Not Started, In-Progress, Complete.</p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::describe_application_state::DescribeApplicationStateOutput::last_updated_time): <p>The timestamp when the application status was last updated.</p>

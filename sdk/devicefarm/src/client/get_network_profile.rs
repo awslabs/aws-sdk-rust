@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNetworkProfile`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::set_arn): <p>The ARN of the network profile to return information about.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::set_arn): <p>The ARN of the network profile to return information about.</p>
     /// - On success, responds with [`GetNetworkProfileOutput`](crate::operation::get_network_profile::GetNetworkProfileOutput) with field(s):
     ///   - [`network_profile(Option<NetworkProfile>)`](crate::operation::get_network_profile::GetNetworkProfileOutput::network_profile): <p>The network profile.</p>
     /// - On failure, responds with [`SdkError<GetNetworkProfileError>`](crate::operation::get_network_profile::GetNetworkProfileError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReference`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder::set_id): <p>The reference's ID.</p>
-    ///   - [`reference_store_id(impl ::std::convert::Into<String>)`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder::set_reference_store_id): <p>The reference's store ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder::set_id): <p>The reference's ID.</p>
+    ///   - [`reference_store_id(impl Into<String>)`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder::set_reference_store_id): <p>The reference's store ID.</p>
     /// - On success, responds with [`DeleteReferenceOutput`](crate::operation::delete_reference::DeleteReferenceOutput)
     /// - On failure, responds with [`SdkError<DeleteReferenceError>`](crate::operation::delete_reference::DeleteReferenceError)
     pub fn delete_reference(&self) -> crate::operation::delete_reference::builders::DeleteReferenceFluentBuilder {

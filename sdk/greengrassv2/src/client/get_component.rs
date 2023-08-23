@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`recipe_output_format(RecipeOutputFormat)`](crate::operation::get_component::builders::GetComponentFluentBuilder::recipe_output_format) / [`set_recipe_output_format(Option<RecipeOutputFormat>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_recipe_output_format): <p>The format of the recipe.</p>
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     /// - On success, responds with [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput) with field(s):
     ///   - [`recipe_output_format(Option<RecipeOutputFormat>)`](crate::operation::get_component::GetComponentOutput::recipe_output_format): <p>The format of the recipe.</p>
     ///   - [`recipe(Option<Blob>)`](crate::operation::get_component::GetComponentOutput::recipe): <p>The recipe of the component version.</p>

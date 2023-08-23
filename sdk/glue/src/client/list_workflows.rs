@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation request.</p>
     ///   - [`max_results(i32)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_max_results): <p>The maximum size of a list to return.</p>
     /// - On success, responds with [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput) with field(s):
     ///   - [`workflows(Option<Vec<String>>)`](crate::operation::list_workflows::ListWorkflowsOutput::workflows): <p>List of names of workflows in the account.</p>

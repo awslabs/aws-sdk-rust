@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateTrigger`](crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder::set_name): <p>The name of the trigger to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder::set_name): <p>The name of the trigger to update.</p>
     ///   - [`trigger_update(TriggerUpdate)`](crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder::trigger_update) / [`set_trigger_update(Option<TriggerUpdate>)`](crate::operation::update_trigger::builders::UpdateTriggerFluentBuilder::set_trigger_update): <p>The new values with which to update the trigger.</p>
     /// - On success, responds with [`UpdateTriggerOutput`](crate::operation::update_trigger::UpdateTriggerOutput) with field(s):
     ///   - [`trigger(Option<Trigger>)`](crate::operation::update_trigger::UpdateTriggerOutput::trigger): <p>The resulting trigger definition.</p>

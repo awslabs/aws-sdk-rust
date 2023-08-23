@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteToken`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`token_id(impl ::std::convert::Into<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::token_id) / [`set_token_id(Option<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::set_token_id): <p>Token ID.</p>
+    ///   - [`token_id(impl Into<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::token_id) / [`set_token_id(Option<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::set_token_id): <p>Token ID.</p>
     /// - On success, responds with [`DeleteTokenOutput`](crate::operation::delete_token::DeleteTokenOutput)
     /// - On failure, responds with [`SdkError<DeleteTokenError>`](crate::operation::delete_token::DeleteTokenError)
     pub fn delete_token(&self) -> crate::operation::delete_token::builders::DeleteTokenFluentBuilder {

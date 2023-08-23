@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartFlow`](crate::operation::start_flow::builders::StartFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl ::std::convert::Into<String>)`](crate::operation::start_flow::builders::StartFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::start_flow::builders::StartFlowFluentBuilder::set_flow_arn): The ARN of the flow that you want to start.
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::start_flow::builders::StartFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::start_flow::builders::StartFlowFluentBuilder::set_flow_arn): The ARN of the flow that you want to start.
     /// - On success, responds with [`StartFlowOutput`](crate::operation::start_flow::StartFlowOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::operation::start_flow::StartFlowOutput::flow_arn): The ARN of the flow that you started.
     ///   - [`status(Option<Status>)`](crate::operation::start_flow::StartFlowOutput::status): The status of the flow when the StartFlow process begins.

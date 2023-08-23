@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteServiceTemplate`](crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder::set_name): <p>The name of the service template to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_service_template::builders::DeleteServiceTemplateFluentBuilder::set_name): <p>The name of the service template to delete.</p>
     /// - On success, responds with [`DeleteServiceTemplateOutput`](crate::operation::delete_service_template::DeleteServiceTemplateOutput) with field(s):
     ///   - [`service_template(Option<ServiceTemplate>)`](crate::operation::delete_service_template::DeleteServiceTemplateOutput::service_template): <p>The detailed data of the service template being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceTemplateError>`](crate::operation::delete_service_template::DeleteServiceTemplateError)

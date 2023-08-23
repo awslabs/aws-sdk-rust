@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_max_results): <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
     /// - On success, responds with [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec<GroupSummary>>)`](crate::operation::list_groups::ListGroupsOutput::groups): <p>An array of structures that each contain information about one group.</p>

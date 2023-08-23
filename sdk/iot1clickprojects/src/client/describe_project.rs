@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProject`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_name(impl ::std::convert::Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_project_name): <p>The name of the project to be described.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_project_name): <p>The name of the project to be described.</p>
     /// - On success, responds with [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput) with field(s):
     ///   - [`project(Option<ProjectDescription>)`](crate::operation::describe_project::DescribeProjectOutput::project): <p>An object describing the project.</p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::operation::describe_project::DescribeProjectError)

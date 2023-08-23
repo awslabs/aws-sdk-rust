@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`Untag`](crate::operation::untag::builders::UntagFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::untag::builders::UntagFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::untag::builders::UntagFluentBuilder::set_arn): <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
-    ///   - [`keys(Vec<String>)`](crate::operation::untag::builders::UntagFluentBuilder::keys) / [`set_keys(Option<Vec<String>>)`](crate::operation::untag::builders::UntagFluentBuilder::set_keys): <p>The keys of the tags to be removed.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::untag::builders::UntagFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::untag::builders::UntagFluentBuilder::set_arn): <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
+    ///   - [`keys(impl Into<String>)`](crate::operation::untag::builders::UntagFluentBuilder::keys) / [`set_keys(Option<Vec<String>>)`](crate::operation::untag::builders::UntagFluentBuilder::set_keys): <p>The keys of the tags to be removed.</p>
     /// - On success, responds with [`UntagOutput`](crate::operation::untag::UntagOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::untag::UntagOutput::arn): <p>The ARN of the resource group from which tags have been removed.</p>
     ///   - [`keys(Option<Vec<String>>)`](crate::operation::untag::UntagOutput::keys): <p>The keys of the tags that were removed.</p>

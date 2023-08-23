@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateGlobalSettings`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`global_settings(HashMap<String, String>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::global_settings) / [`set_global_settings(Option<HashMap<String, String>>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::set_global_settings): <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
+    ///   - [`global_settings(impl Into<String>, impl Into<String>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::global_settings) / [`set_global_settings(Option<HashMap<String, String>>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::set_global_settings): <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
     /// - On success, responds with [`UpdateGlobalSettingsOutput`](crate::operation::update_global_settings::UpdateGlobalSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateGlobalSettingsError>`](crate::operation::update_global_settings::UpdateGlobalSettingsError)
     pub fn update_global_settings(&self) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder {

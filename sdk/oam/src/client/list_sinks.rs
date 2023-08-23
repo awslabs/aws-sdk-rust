@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::set_max_results): <p>Limits the number of returned links to the specified number.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::set_next_token): <p>The token for the next set of items to return. You received this token from a previous call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::set_next_token): <p>The token for the next set of items to return. You received this token from a previous call.</p>
     /// - On success, responds with [`ListSinksOutput`](crate::operation::list_sinks::ListSinksOutput) with field(s):
     ///   - [`items(Option<Vec<ListSinksItem>>)`](crate::operation::list_sinks::ListSinksOutput::items): <p>An array of structures that contain the information about the returned sinks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sinks::ListSinksOutput::next_token): <p>The token to use when requesting the next set of sinks.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVpcConnector`](crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_connector_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder::vpc_connector_arn) / [`set_vpc_connector_arn(Option<String>)`](crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder::set_vpc_connector_arn): <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>  <p>The ARN must be a full VPC connector ARN.</p>
+    ///   - [`vpc_connector_arn(impl Into<String>)`](crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder::vpc_connector_arn) / [`set_vpc_connector_arn(Option<String>)`](crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder::set_vpc_connector_arn): <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>  <p>The ARN must be a full VPC connector ARN.</p>
     /// - On success, responds with [`DeleteVpcConnectorOutput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput) with field(s):
     ///   - [`vpc_connector(Option<VpcConnector>)`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput::vpc_connector): <p>A description of the App Runner VPC connector that this request just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcConnectorError>`](crate::operation::delete_vpc_connector::DeleteVpcConnectorError)

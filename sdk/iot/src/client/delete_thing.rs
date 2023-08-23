@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteThing`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl ::std::convert::Into<String>)`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder::set_thing_name): <p>The name of the thing to delete.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder::set_thing_name): <p>The name of the thing to delete.</p>
     ///   - [`expected_version(i64)`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_thing::builders::DeleteThingFluentBuilder::set_expected_version): <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     /// - On success, responds with [`DeleteThingOutput`](crate::operation::delete_thing::DeleteThingOutput)
     /// - On failure, responds with [`SdkError<DeleteThingError>`](crate::operation::delete_thing::DeleteThingError)

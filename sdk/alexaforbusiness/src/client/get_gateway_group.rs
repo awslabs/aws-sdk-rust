@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGatewayGroup`](crate::operation::get_gateway_group::builders::GetGatewayGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_group_arn(impl ::std::convert::Into<String>)`](crate::operation::get_gateway_group::builders::GetGatewayGroupFluentBuilder::gateway_group_arn) / [`set_gateway_group_arn(Option<String>)`](crate::operation::get_gateway_group::builders::GetGatewayGroupFluentBuilder::set_gateway_group_arn): <p>The ARN of the gateway group to get.</p>
+    ///   - [`gateway_group_arn(impl Into<String>)`](crate::operation::get_gateway_group::builders::GetGatewayGroupFluentBuilder::gateway_group_arn) / [`set_gateway_group_arn(Option<String>)`](crate::operation::get_gateway_group::builders::GetGatewayGroupFluentBuilder::set_gateway_group_arn): <p>The ARN of the gateway group to get.</p>
     /// - On success, responds with [`GetGatewayGroupOutput`](crate::operation::get_gateway_group::GetGatewayGroupOutput) with field(s):
     ///   - [`gateway_group(Option<GatewayGroup>)`](crate::operation::get_gateway_group::GetGatewayGroupOutput::gateway_group): <p>The details of the gateway group.</p>
     /// - On failure, responds with [`SdkError<GetGatewayGroupError>`](crate::operation::get_gateway_group::GetGatewayGroupError)

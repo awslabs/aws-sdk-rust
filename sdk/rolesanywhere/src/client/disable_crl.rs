@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableCrl`](crate::operation::disable_crl::builders::DisableCrlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`crl_id(impl ::std::convert::Into<String>)`](crate::operation::disable_crl::builders::DisableCrlFluentBuilder::crl_id) / [`set_crl_id(Option<String>)`](crate::operation::disable_crl::builders::DisableCrlFluentBuilder::set_crl_id): <p>The unique identifier of the certificate revocation list (CRL).</p>
+    ///   - [`crl_id(impl Into<String>)`](crate::operation::disable_crl::builders::DisableCrlFluentBuilder::crl_id) / [`set_crl_id(Option<String>)`](crate::operation::disable_crl::builders::DisableCrlFluentBuilder::set_crl_id): <p>The unique identifier of the certificate revocation list (CRL).</p>
     /// - On success, responds with [`DisableCrlOutput`](crate::operation::disable_crl::DisableCrlOutput) with field(s):
     ///   - [`crl(Option<CrlDetail>)`](crate::operation::disable_crl::DisableCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<DisableCrlError>`](crate::operation::disable_crl::DisableCrlError)

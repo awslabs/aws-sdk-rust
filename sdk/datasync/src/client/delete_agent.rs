@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAgent`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::agent_arn) / [`set_agent_arn(Option<String>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::set_agent_arn): <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
+    ///   - [`agent_arn(impl Into<String>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::agent_arn) / [`set_agent_arn(Option<String>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::set_agent_arn): <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     /// - On success, responds with [`DeleteAgentOutput`](crate::operation::delete_agent::DeleteAgentOutput)
     /// - On failure, responds with [`SdkError<DeleteAgentError>`](crate::operation::delete_agent::DeleteAgentError)
     pub fn delete_agent(&self) -> crate::operation::delete_agent::builders::DeleteAgentFluentBuilder {

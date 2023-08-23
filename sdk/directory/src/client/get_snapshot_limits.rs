@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSnapshotLimits`](crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder::set_directory_id): <p>Contains the identifier of the directory to obtain the limits for.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsFluentBuilder::set_directory_id): <p>Contains the identifier of the directory to obtain the limits for.</p>
     /// - On success, responds with [`GetSnapshotLimitsOutput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput) with field(s):
     ///   - [`snapshot_limits(Option<SnapshotLimits>)`](crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput::snapshot_limits): <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     /// - On failure, responds with [`SdkError<GetSnapshotLimitsError>`](crate::operation::get_snapshot_limits::GetSnapshotLimitsError)

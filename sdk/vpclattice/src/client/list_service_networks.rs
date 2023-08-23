@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_next_token): <p>A pagination token for the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_next_token): <p>A pagination token for the next page of results.</p>
     /// - On success, responds with [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput) with field(s):
     ///   - [`items(Option<Vec<ServiceNetworkSummary>>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::items): <p>Information about the service networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>

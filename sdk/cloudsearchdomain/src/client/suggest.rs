@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`Suggest`](crate::operation::suggest::builders::SuggestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query(impl ::std::convert::Into<String>)`](crate::operation::suggest::builders::SuggestFluentBuilder::query) / [`set_query(Option<String>)`](crate::operation::suggest::builders::SuggestFluentBuilder::set_query): <p>Specifies the string for which you want to get suggestions.</p>
-    ///   - [`suggester(impl ::std::convert::Into<String>)`](crate::operation::suggest::builders::SuggestFluentBuilder::suggester) / [`set_suggester(Option<String>)`](crate::operation::suggest::builders::SuggestFluentBuilder::set_suggester): <p>Specifies the name of the suggester to use to find suggested matches.</p>
+    ///   - [`query(impl Into<String>)`](crate::operation::suggest::builders::SuggestFluentBuilder::query) / [`set_query(Option<String>)`](crate::operation::suggest::builders::SuggestFluentBuilder::set_query): <p>Specifies the string for which you want to get suggestions.</p>
+    ///   - [`suggester(impl Into<String>)`](crate::operation::suggest::builders::SuggestFluentBuilder::suggester) / [`set_suggester(Option<String>)`](crate::operation::suggest::builders::SuggestFluentBuilder::set_suggester): <p>Specifies the name of the suggester to use to find suggested matches.</p>
     ///   - [`size(i64)`](crate::operation::suggest::builders::SuggestFluentBuilder::size) / [`set_size(i64)`](crate::operation::suggest::builders::SuggestFluentBuilder::set_size): <p>Specifies the maximum number of suggestions to return. </p>
     /// - On success, responds with [`SuggestOutput`](crate::operation::suggest::SuggestOutput) with field(s):
     ///   - [`status(Option<SuggestStatus>)`](crate::operation::suggest::SuggestOutput::status): <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`InvalidateProjectCache`](crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_name(impl ::std::convert::Into<String>)`](crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheFluentBuilder::set_project_name): <p>The name of the CodeBuild build project that the cache is reset for.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheFluentBuilder::set_project_name): <p>The name of the CodeBuild build project that the cache is reset for.</p>
     /// - On success, responds with [`InvalidateProjectCacheOutput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput)
     /// - On failure, responds with [`SdkError<InvalidateProjectCacheError>`](crate::operation::invalidate_project_cache::InvalidateProjectCacheError)
     pub fn invalidate_project_cache(&self) -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheFluentBuilder {

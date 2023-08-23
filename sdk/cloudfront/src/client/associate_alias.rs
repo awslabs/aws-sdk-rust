@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateAlias`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_distribution_id(impl ::std::convert::Into<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::target_distribution_id) / [`set_target_distribution_id(Option<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::set_target_distribution_id): <p>The ID of the distribution that you're associating the alias with.</p>
-    ///   - [`alias(impl ::std::convert::Into<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::set_alias): <p>The alias (also known as a CNAME) to add to the target distribution.</p>
+    ///   - [`target_distribution_id(impl Into<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::target_distribution_id) / [`set_target_distribution_id(Option<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::set_target_distribution_id): <p>The ID of the distribution that you're associating the alias with.</p>
+    ///   - [`alias(impl Into<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::associate_alias::builders::AssociateAliasFluentBuilder::set_alias): <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     /// - On success, responds with [`AssociateAliasOutput`](crate::operation::associate_alias::AssociateAliasOutput)
     /// - On failure, responds with [`SdkError<AssociateAliasError>`](crate::operation::associate_alias::AssociateAliasError)
     pub fn associate_alias(&self) -> crate::operation::associate_alias::builders::AssociateAliasFluentBuilder {

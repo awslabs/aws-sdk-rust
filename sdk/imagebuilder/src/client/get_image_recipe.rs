@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImageRecipe`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_recipe_arn(impl ::std::convert::Into<String>)`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::image_recipe_arn) / [`set_image_recipe_arn(Option<String>)`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::set_image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    ///   - [`image_recipe_arn(impl Into<String>)`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::image_recipe_arn) / [`set_image_recipe_arn(Option<String>)`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::set_image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
     /// - On success, responds with [`GetImageRecipeOutput`](crate::operation::get_image_recipe::GetImageRecipeOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_recipe(Option<ImageRecipe>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::image_recipe): <p>The image recipe object.</p>

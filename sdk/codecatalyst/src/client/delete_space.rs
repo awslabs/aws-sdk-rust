@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSpace`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::set_name): <p>The name of the space. To retrieve a list of space names, use <code>ListSpaces</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::set_name): <p>The name of the space. To retrieve a list of space names, use <code>ListSpaces</code>.</p>
     /// - On success, responds with [`DeleteSpaceOutput`](crate::operation::delete_space::DeleteSpaceOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_space::DeleteSpaceOutput::name): <p>The name of the space.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::delete_space::DeleteSpaceOutput::display_name): <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UndeprecateActivityType`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl ::std::convert::Into<String>)`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::set_domain): <p>The name of the domain of the deprecated activity type.</p>
+    ///   - [`domain(impl Into<String>)`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::set_domain): <p>The name of the domain of the deprecated activity type.</p>
     ///   - [`activity_type(ActivityType)`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::activity_type) / [`set_activity_type(Option<ActivityType>)`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::set_activity_type): <p>The activity type to undeprecate.</p>
     /// - On success, responds with [`UndeprecateActivityTypeOutput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput)
     /// - On failure, responds with [`SdkError<UndeprecateActivityTypeError>`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError)

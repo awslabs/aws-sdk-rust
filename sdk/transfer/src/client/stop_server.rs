@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopServer`](crate::operation::stop_server::builders::StopServerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl ::std::convert::Into<String>)`](crate::operation::stop_server::builders::StopServerFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::stop_server::builders::StopServerFluentBuilder::set_server_id): <p>A system-assigned unique identifier for a server that you stopped.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::operation::stop_server::builders::StopServerFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::stop_server::builders::StopServerFluentBuilder::set_server_id): <p>A system-assigned unique identifier for a server that you stopped.</p>
     /// - On success, responds with [`StopServerOutput`](crate::operation::stop_server::StopServerOutput)
     /// - On failure, responds with [`SdkError<StopServerError>`](crate::operation::stop_server::StopServerError)
     pub fn stop_server(&self) -> crate::operation::stop_server::builders::StopServerFluentBuilder {

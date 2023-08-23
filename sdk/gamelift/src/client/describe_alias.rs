@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAlias`](crate::operation::describe_alias::builders::DescribeAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alias_id(impl ::std::convert::Into<String>)`](crate::operation::describe_alias::builders::DescribeAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::describe_alias::builders::DescribeAliasFluentBuilder::set_alias_id): <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    ///   - [`alias_id(impl Into<String>)`](crate::operation::describe_alias::builders::DescribeAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::describe_alias::builders::DescribeAliasFluentBuilder::set_alias_id): <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     /// - On success, responds with [`DescribeAliasOutput`](crate::operation::describe_alias::DescribeAliasOutput) with field(s):
     ///   - [`alias(Option<Alias>)`](crate::operation::describe_alias::DescribeAliasOutput::alias): <p>The requested alias resource.</p>
     /// - On failure, responds with [`SdkError<DescribeAliasError>`](crate::operation::describe_alias::DescribeAliasError)

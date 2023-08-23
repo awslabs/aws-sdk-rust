@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelTask`](crate::operation::cancel_task::builders::CancelTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_task::builders::CancelTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_task::builders::CancelTaskFluentBuilder::set_task_id): <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::cancel_task::builders::CancelTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_task::builders::CancelTaskFluentBuilder::set_task_id): <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
     /// - On success, responds with [`CancelTaskOutput`](crate::operation::cancel_task::CancelTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::cancel_task::CancelTaskOutput::task_id): <p>The ID of the task that you are attempting to cancel.</p>
     /// - On failure, responds with [`SdkError<CancelTaskError>`](crate::operation::cancel_task::CancelTaskError)

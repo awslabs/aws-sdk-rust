@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIdentity`](crate::operation::delete_identity::builders::DeleteIdentityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity(impl ::std::convert::Into<String>)`](crate::operation::delete_identity::builders::DeleteIdentityFluentBuilder::identity) / [`set_identity(Option<String>)`](crate::operation::delete_identity::builders::DeleteIdentityFluentBuilder::set_identity): <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    ///   - [`identity(impl Into<String>)`](crate::operation::delete_identity::builders::DeleteIdentityFluentBuilder::identity) / [`set_identity(Option<String>)`](crate::operation::delete_identity::builders::DeleteIdentityFluentBuilder::set_identity): <p>The identity to be removed from the list of identities for the AWS Account.</p>
     /// - On success, responds with [`DeleteIdentityOutput`](crate::operation::delete_identity::DeleteIdentityOutput)
     /// - On failure, responds with [`SdkError<DeleteIdentityError>`](crate::operation::delete_identity::DeleteIdentityError)
     pub fn delete_identity(&self) -> crate::operation::delete_identity::builders::DeleteIdentityFluentBuilder {

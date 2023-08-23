@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBatchPrediction`](crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`batch_prediction_id(impl ::std::convert::Into<String>)`](crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder::batch_prediction_id) / [`set_batch_prediction_id(Option<String>)`](crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder::set_batch_prediction_id): <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
+    ///   - [`batch_prediction_id(impl Into<String>)`](crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder::batch_prediction_id) / [`set_batch_prediction_id(Option<String>)`](crate::operation::get_batch_prediction::builders::GetBatchPredictionFluentBuilder::set_batch_prediction_id): <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
     /// - On success, responds with [`GetBatchPredictionOutput`](crate::operation::get_batch_prediction::GetBatchPredictionOutput) with field(s):
     ///   - [`batch_prediction_id(Option<String>)`](crate::operation::get_batch_prediction::GetBatchPredictionOutput::batch_prediction_id): <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
     ///   - [`ml_model_id(Option<String>)`](crate::operation::get_batch_prediction::GetBatchPredictionOutput::ml_model_id): <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>

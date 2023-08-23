@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCodeRepository`](crate::operation::describe_code_repository::builders::DescribeCodeRepositoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`code_repository_name(impl ::std::convert::Into<String>)`](crate::operation::describe_code_repository::builders::DescribeCodeRepositoryFluentBuilder::code_repository_name) / [`set_code_repository_name(Option<String>)`](crate::operation::describe_code_repository::builders::DescribeCodeRepositoryFluentBuilder::set_code_repository_name): <p>The name of the Git repository to describe.</p>
+    ///   - [`code_repository_name(impl Into<String>)`](crate::operation::describe_code_repository::builders::DescribeCodeRepositoryFluentBuilder::code_repository_name) / [`set_code_repository_name(Option<String>)`](crate::operation::describe_code_repository::builders::DescribeCodeRepositoryFluentBuilder::set_code_repository_name): <p>The name of the Git repository to describe.</p>
     /// - On success, responds with [`DescribeCodeRepositoryOutput`](crate::operation::describe_code_repository::DescribeCodeRepositoryOutput) with field(s):
     ///   - [`code_repository_name(Option<String>)`](crate::operation::describe_code_repository::DescribeCodeRepositoryOutput::code_repository_name): <p>The name of the Git repository.</p>
     ///   - [`code_repository_arn(Option<String>)`](crate::operation::describe_code_repository::DescribeCodeRepositoryOutput::code_repository_arn): <p>The Amazon Resource Name (ARN) of the Git repository.</p>

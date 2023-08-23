@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicyStore`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_store_id(impl ::std::convert::Into<String>)`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that you want information about.</p>
+    ///   - [`policy_store_id(impl Into<String>)`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that you want information about.</p>
     /// - On success, responds with [`GetPolicyStoreOutput`](crate::operation::get_policy_store::GetPolicyStoreOutput) with field(s):
     ///   - [`policy_store_id(Option<String>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::policy_store_id): <p>The ID of the policy store;</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::arn): <p>The Amazon Resource Name (ARN) of the policy store.</p>

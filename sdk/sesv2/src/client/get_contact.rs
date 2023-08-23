@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContact`](crate::operation::get_contact::builders::GetContactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_list_name(impl ::std::convert::Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
-    ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_email_address): <p>The contact's email address.</p>
+    ///   - [`contact_list_name(impl Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_email_address): <p>The contact's email address.</p>
     /// - On success, responds with [`GetContactOutput`](crate::operation::get_contact::GetContactOutput) with field(s):
     ///   - [`contact_list_name(Option<String>)`](crate::operation::get_contact::GetContactOutput::contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
     ///   - [`email_address(Option<String>)`](crate::operation::get_contact::GetContactOutput::email_address): <p>The contact's email address.</p>

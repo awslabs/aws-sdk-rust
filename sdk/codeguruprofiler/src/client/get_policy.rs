@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicy`](crate::operation::get_policy::builders::GetPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profiling_group_name(impl ::std::convert::Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_profiling_group_name): <p>The name of the profiling group.</p>
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_profiling_group_name): <p>The name of the profiling group.</p>
     /// - On success, responds with [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy): <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::revision_id): <p>A unique identifier for the current revision of the returned policy.</p>

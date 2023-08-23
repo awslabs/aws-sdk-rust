@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRoleDescription`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`role_name(impl ::std::convert::Into<String>)`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::role_name) / [`set_role_name(Option<String>)`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::set_role_name): <p>The name of the role that you want to modify.</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::set_description): <p>The new description that you want to apply to the specified role.</p>
+    ///   - [`role_name(impl Into<String>)`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::role_name) / [`set_role_name(Option<String>)`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::set_role_name): <p>The name of the role that you want to modify.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::set_description): <p>The new description that you want to apply to the specified role.</p>
     /// - On success, responds with [`UpdateRoleDescriptionOutput`](crate::operation::update_role_description::UpdateRoleDescriptionOutput) with field(s):
     ///   - [`role(Option<Role>)`](crate::operation::update_role_description::UpdateRoleDescriptionOutput::role): <p>A structure that contains details about the modified role.</p>
     /// - On failure, responds with [`SdkError<UpdateRoleDescriptionError>`](crate::operation::update_role_description::UpdateRoleDescriptionError)

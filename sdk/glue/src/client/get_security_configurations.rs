@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::set_max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_security_configurations::builders::GetSecurityConfigurationsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation call.</p>
     /// - On success, responds with [`GetSecurityConfigurationsOutput`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput) with field(s):
     ///   - [`security_configurations(Option<Vec<SecurityConfiguration>>)`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput::security_configurations): <p>A list of security configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_security_configurations::GetSecurityConfigurationsOutput::next_token): <p>A continuation token, if there are more security configurations to return.</p>

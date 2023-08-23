@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeModel`](crate::operation::describe_model::builders::DescribeModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_name(impl ::std::convert::Into<String>)`](crate::operation::describe_model::builders::DescribeModelFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::describe_model::builders::DescribeModelFluentBuilder::set_model_name): <p>The name of the ML model to be described. </p>
+    ///   - [`model_name(impl Into<String>)`](crate::operation::describe_model::builders::DescribeModelFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::describe_model::builders::DescribeModelFluentBuilder::set_model_name): <p>The name of the ML model to be described. </p>
     /// - On success, responds with [`DescribeModelOutput`](crate::operation::describe_model::DescribeModelOutput) with field(s):
     ///   - [`model_name(Option<String>)`](crate::operation::describe_model::DescribeModelOutput::model_name): <p>The name of the ML model being described. </p>
     ///   - [`model_arn(Option<String>)`](crate::operation::describe_model::DescribeModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the ML model being described. </p>

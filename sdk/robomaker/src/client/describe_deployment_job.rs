@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDeploymentJob`](crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job(impl ::std::convert::Into<String>)`](crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder::set_job): <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    ///   - [`job(impl Into<String>)`](crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::describe_deployment_job::builders::DescribeDeploymentJobFluentBuilder::set_job): <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     /// - On success, responds with [`DescribeDeploymentJobOutput`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::arn): <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     ///   - [`fleet(Option<String>)`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateApiKey`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_api_id): <p>The ID for the GraphQL API.</p>
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_id): <p>The API key ID.</p>
-    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_description): <p>A description of the purpose of the API key.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_api_id): <p>The ID for the GraphQL API.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_id): <p>The API key ID.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_description): <p>A description of the purpose of the API key.</p>
     ///   - [`expires(i64)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::expires) / [`set_expires(Option<i64>)`](crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::set_expires): <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     /// - On success, responds with [`UpdateApiKeyOutput`](crate::operation::update_api_key::UpdateApiKeyOutput) with field(s):
     ///   - [`api_key(Option<ApiKey>)`](crate::operation::update_api_key::UpdateApiKeyOutput::api_key): <p>The API key.</p>

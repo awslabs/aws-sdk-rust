@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProfile`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl ::std::convert::Into<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::set_profile_id): <p>The unique identifier of the profile.</p>
+    ///   - [`profile_id(impl Into<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::set_profile_id): <p>The unique identifier of the profile.</p>
     /// - On success, responds with [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput) with field(s):
     ///   - [`profile(Option<ProfileDetail>)`](crate::operation::delete_profile::DeleteProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::operation::delete_profile::DeleteProfileError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetMembershipDatasources`](crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`graph_arns(Vec<String>)`](crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesFluentBuilder::graph_arns) / [`set_graph_arns(Option<Vec<String>>)`](crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesFluentBuilder::set_graph_arns): <p>The ARN of the behavior graph.</p>
+    ///   - [`graph_arns(impl Into<String>)`](crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesFluentBuilder::graph_arns) / [`set_graph_arns(Option<Vec<String>>)`](crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesFluentBuilder::set_graph_arns): <p>The ARN of the behavior graph.</p>
     /// - On success, responds with [`BatchGetMembershipDatasourcesOutput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput) with field(s):
     ///   - [`membership_datasources(Option<Vec<MembershipDatasources>>)`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput::membership_datasources): <p>Details on the data source package history for an member of the behavior graph.</p>
     ///   - [`unprocessed_graphs(Option<Vec<UnprocessedGraph>>)`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput::unprocessed_graphs): <p>Graphs that data source package information could not be retrieved for.</p>

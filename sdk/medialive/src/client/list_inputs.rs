@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_max_results): Placeholder documentation for MaxResults
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_next_token): Placeholder documentation for __string
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_next_token): Placeholder documentation for __string
     /// - On success, responds with [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput) with field(s):
     ///   - [`inputs(Option<Vec<Input>>)`](crate::operation::list_inputs::ListInputsOutput::inputs): Placeholder documentation for __listOfInput
     ///   - [`next_token(Option<String>)`](crate::operation::list_inputs::ListInputsOutput::next_token): Placeholder documentation for __string

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetClientCertificate`](crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_certificate_id(impl ::std::convert::Into<String>)`](crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder::client_certificate_id) / [`set_client_certificate_id(Option<String>)`](crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder::set_client_certificate_id): <p>The identifier of the ClientCertificate resource to be described.</p>
+    ///   - [`client_certificate_id(impl Into<String>)`](crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder::client_certificate_id) / [`set_client_certificate_id(Option<String>)`](crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder::set_client_certificate_id): <p>The identifier of the ClientCertificate resource to be described.</p>
     /// - On success, responds with [`GetClientCertificateOutput`](crate::operation::get_client_certificate::GetClientCertificateOutput) with field(s):
     ///   - [`client_certificate_id(Option<String>)`](crate::operation::get_client_certificate::GetClientCertificateOutput::client_certificate_id): <p>The identifier of the client certificate.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_client_certificate::GetClientCertificateOutput::description): <p>The description of the client certificate.</p>

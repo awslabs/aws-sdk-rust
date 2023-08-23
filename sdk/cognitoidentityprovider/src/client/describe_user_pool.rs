@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeUserPool`](crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool you want to describe.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool you want to describe.</p>
     /// - On success, responds with [`DescribeUserPoolOutput`](crate::operation::describe_user_pool::DescribeUserPoolOutput) with field(s):
     ///   - [`user_pool(Option<UserPoolType>)`](crate::operation::describe_user_pool::DescribeUserPoolOutput::user_pool): <p>The container of metadata returned by the server to describe the pool.</p>
     /// - On failure, responds with [`SdkError<DescribeUserPoolError>`](crate::operation::describe_user_pool::DescribeUserPoolError)

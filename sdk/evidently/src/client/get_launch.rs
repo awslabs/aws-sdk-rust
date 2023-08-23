@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLaunch`](crate::operation::get_launch::builders::GetLaunchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project(impl ::std::convert::Into<String>)`](crate::operation::get_launch::builders::GetLaunchFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::get_launch::builders::GetLaunchFluentBuilder::set_project): <p>The name or ARN of the project that contains the launch.</p>
-    ///   - [`launch(impl ::std::convert::Into<String>)`](crate::operation::get_launch::builders::GetLaunchFluentBuilder::launch) / [`set_launch(Option<String>)`](crate::operation::get_launch::builders::GetLaunchFluentBuilder::set_launch): <p>The name of the launch that you want to see the details of.</p>
+    ///   - [`project(impl Into<String>)`](crate::operation::get_launch::builders::GetLaunchFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::get_launch::builders::GetLaunchFluentBuilder::set_project): <p>The name or ARN of the project that contains the launch.</p>
+    ///   - [`launch(impl Into<String>)`](crate::operation::get_launch::builders::GetLaunchFluentBuilder::launch) / [`set_launch(Option<String>)`](crate::operation::get_launch::builders::GetLaunchFluentBuilder::set_launch): <p>The name of the launch that you want to see the details of.</p>
     /// - On success, responds with [`GetLaunchOutput`](crate::operation::get_launch::GetLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::operation::get_launch::GetLaunchOutput::launch): <p>A structure containing the configuration details of the launch.</p>
     /// - On failure, responds with [`SdkError<GetLaunchError>`](crate::operation::get_launch::GetLaunchError)

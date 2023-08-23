@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStage`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_name(impl ::std::convert::Into<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::set_stage_name): <p>The name of the stage to delete.</p>
+    ///   - [`game_name(impl Into<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::set_game_name): <p>The name of the game.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::set_stage_name): <p>The name of the stage to delete.</p>
     /// - On success, responds with [`DeleteStageOutput`](crate::operation::delete_stage::DeleteStageOutput)
     /// - On failure, responds with [`SdkError<DeleteStageError>`](crate::operation::delete_stage::DeleteStageError)
     pub fn delete_stage(&self) -> crate::operation::delete_stage::builders::DeleteStageFluentBuilder {

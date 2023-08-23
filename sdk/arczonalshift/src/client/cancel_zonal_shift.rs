@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelZonalShift`](crate::operation::cancel_zonal_shift::builders::CancelZonalShiftFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`zonal_shift_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_zonal_shift::builders::CancelZonalShiftFluentBuilder::zonal_shift_id) / [`set_zonal_shift_id(Option<String>)`](crate::operation::cancel_zonal_shift::builders::CancelZonalShiftFluentBuilder::set_zonal_shift_id): <p>The internally-generated identifier of a zonal shift.</p>
+    ///   - [`zonal_shift_id(impl Into<String>)`](crate::operation::cancel_zonal_shift::builders::CancelZonalShiftFluentBuilder::zonal_shift_id) / [`set_zonal_shift_id(Option<String>)`](crate::operation::cancel_zonal_shift::builders::CancelZonalShiftFluentBuilder::set_zonal_shift_id): <p>The internally-generated identifier of a zonal shift.</p>
     /// - On success, responds with [`CancelZonalShiftOutput`](crate::operation::cancel_zonal_shift::CancelZonalShiftOutput) with field(s):
     ///   - [`zonal_shift_id(Option<String>)`](crate::operation::cancel_zonal_shift::CancelZonalShiftOutput::zonal_shift_id): <p>The identifier of a zonal shift.</p>
     ///   - [`resource_identifier(Option<String>)`](crate::operation::cancel_zonal_shift::CancelZonalShiftOutput::resource_identifier): <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>  <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>

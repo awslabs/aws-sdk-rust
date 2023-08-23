@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGeofence`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl ::std::convert::Into<String>)`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::collection_name) / [`set_collection_name(Option<String>)`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::set_collection_name): <p>The geofence collection storing the target geofence.</p>
-    ///   - [`geofence_id(impl ::std::convert::Into<String>)`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::geofence_id) / [`set_geofence_id(Option<String>)`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::set_geofence_id): <p>The geofence you're retrieving details for.</p>
+    ///   - [`collection_name(impl Into<String>)`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::collection_name) / [`set_collection_name(Option<String>)`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::set_collection_name): <p>The geofence collection storing the target geofence.</p>
+    ///   - [`geofence_id(impl Into<String>)`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::geofence_id) / [`set_geofence_id(Option<String>)`](crate::operation::get_geofence::builders::GetGeofenceFluentBuilder::set_geofence_id): <p>The geofence you're retrieving details for.</p>
     /// - On success, responds with [`GetGeofenceOutput`](crate::operation::get_geofence::GetGeofenceOutput) with field(s):
     ///   - [`geofence_id(Option<String>)`](crate::operation::get_geofence::GetGeofenceOutput::geofence_id): <p>The geofence identifier.</p>
     ///   - [`geometry(Option<GeofenceGeometry>)`](crate::operation::get_geofence::GetGeofenceOutput::geometry): <p>Contains the geofence geometry details describing a polygon or a circle.</p>

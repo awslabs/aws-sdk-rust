@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMonitoringSchedule`](crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monitoring_schedule_name(impl ::std::convert::Into<String>)`](crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleFluentBuilder::set_monitoring_schedule_name): <p>Name of a previously created monitoring schedule.</p>
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleFluentBuilder::set_monitoring_schedule_name): <p>Name of a previously created monitoring schedule.</p>
     /// - On success, responds with [`DescribeMonitoringScheduleOutput`](crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleOutput) with field(s):
     ///   - [`monitoring_schedule_arn(Option<String>)`](crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleOutput::monitoring_schedule_arn): <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     ///   - [`monitoring_schedule_name(Option<String>)`](crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleOutput::monitoring_schedule_name): <p>Name of the monitoring schedule.</p>

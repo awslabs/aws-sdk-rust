@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::set_next_token): <p>A string that identifies the next page of limits that you want to retrieve.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::set_next_token): <p>A string that identifies the next page of limits that you want to retrieve.</p>
     /// - On success, responds with [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput) with field(s):
     ///   - [`account_limits(Option<Vec<AccountLimit>>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::account_limits): <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::next_token): <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>

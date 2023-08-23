@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWorldTemplate`](crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template(impl ::std::convert::Into<String>)`](crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder::template) / [`set_template(Option<String>)`](crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder::set_template): <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
+    ///   - [`template(impl Into<String>)`](crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder::template) / [`set_template(Option<String>)`](crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder::set_template): <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
     /// - On success, responds with [`DescribeWorldTemplateOutput`](crate::operation::describe_world_template::DescribeWorldTemplateOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::arn): <p>The Amazon Resource Name (ARN) of the world template.</p>
     ///   - [`client_request_token(Option<String>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>

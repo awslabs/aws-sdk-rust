@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVpcConnection`](crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.</p>
     /// - On success, responds with [`DescribeVpcConnectionOutput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput) with field(s):
     ///   - [`vpc_connection_arn(Option<String>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::vpc_connection_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.</p>
     ///   - [`target_cluster_arn(Option<String>)`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput::target_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK cluster.</p>

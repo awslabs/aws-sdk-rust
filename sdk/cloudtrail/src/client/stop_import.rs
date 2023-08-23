@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopImport`](crate::operation::stop_import::builders::StopImportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_id(impl ::std::convert::Into<String>)`](crate::operation::stop_import::builders::StopImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::stop_import::builders::StopImportFluentBuilder::set_import_id): <p> The ID of the import. </p>
+    ///   - [`import_id(impl Into<String>)`](crate::operation::stop_import::builders::StopImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::stop_import::builders::StopImportFluentBuilder::set_import_id): <p> The ID of the import. </p>
     /// - On success, responds with [`StopImportOutput`](crate::operation::stop_import::StopImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::operation::stop_import::StopImportOutput::import_id): <p> The ID for the import. </p>
     ///   - [`import_source(Option<ImportSource>)`](crate::operation::stop_import::StopImportOutput::import_source): <p> The source S3 bucket for the import. </p>

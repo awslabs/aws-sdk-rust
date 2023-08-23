@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagLogGroup`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl ::std::convert::Into<String>)`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::set_tags): <p>The key-value pairs to use for the tags.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::set_tags): <p>The key-value pairs to use for the tags.</p>
     /// - On success, responds with [`TagLogGroupOutput`](crate::operation::tag_log_group::TagLogGroupOutput)
     /// - On failure, responds with [`SdkError<TagLogGroupError>`](crate::operation::tag_log_group::TagLogGroupError)
     #[deprecated(note = "Please use the generic tagging API TagResource")]

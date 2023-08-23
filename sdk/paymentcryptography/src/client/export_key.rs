@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`key_material(ExportKeyMaterial)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::key_material) / [`set_key_material(Option<ExportKeyMaterial>)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::set_key_material): <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
-    ///   - [`export_key_identifier(impl ::std::convert::Into<String>)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::export_key_identifier) / [`set_export_key_identifier(Option<String>)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::set_export_key_identifier): <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
+    ///   - [`export_key_identifier(impl Into<String>)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::export_key_identifier) / [`set_export_key_identifier(Option<String>)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::set_export_key_identifier): <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
     /// - On success, responds with [`ExportKeyOutput`](crate::operation::export_key::ExportKeyOutput) with field(s):
     ///   - [`wrapped_key(Option<WrappedKey>)`](crate::operation::export_key::ExportKeyOutput::wrapped_key): <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
     /// - On failure, responds with [`SdkError<ExportKeyError>`](crate::operation::export_key::ExportKeyError)

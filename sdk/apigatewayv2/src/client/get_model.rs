@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetModel`](crate::operation::get_model::builders::GetModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_model::builders::GetModelFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_model::builders::GetModelFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`model_id(impl ::std::convert::Into<String>)`](crate::operation::get_model::builders::GetModelFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_model::builders::GetModelFluentBuilder::set_model_id): <p>The model ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_model::builders::GetModelFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_model::builders::GetModelFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`model_id(impl Into<String>)`](crate::operation::get_model::builders::GetModelFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_model::builders::GetModelFluentBuilder::set_model_id): <p>The model ID.</p>
     /// - On success, responds with [`GetModelOutput`](crate::operation::get_model::GetModelOutput) with field(s):
     ///   - [`content_type(Option<String>)`](crate::operation::get_model::GetModelOutput::content_type): <p>The content-type for the model, for example, "application/json".</p>
     ///   - [`description(Option<String>)`](crate::operation::get_model::GetModelOutput::description): <p>The description of the model.</p>

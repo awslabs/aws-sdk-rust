@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSpace`](crate::operation::get_space::builders::GetSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_space::builders::GetSpaceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_space::builders::GetSpaceFluentBuilder::set_name): <p>The name of the space.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_space::builders::GetSpaceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_space::builders::GetSpaceFluentBuilder::set_name): <p>The name of the space.</p>
     /// - On success, responds with [`GetSpaceOutput`](crate::operation::get_space::GetSpaceOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_space::GetSpaceOutput::name): <p>The name of the space.</p>
     ///   - [`region_name(Option<String>)`](crate::operation::get_space::GetSpaceOutput::region_name): <p>The Amazon Web Services Region where the space exists.</p>

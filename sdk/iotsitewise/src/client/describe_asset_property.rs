@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAssetProperty`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`asset_id(impl ::std::convert::Into<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::set_asset_id): <p>The ID of the asset.</p>
-    ///   - [`property_id(impl ::std::convert::Into<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::property_id) / [`set_property_id(Option<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::property_id) / [`set_property_id(Option<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::set_property_id): <p>The ID of the asset property.</p>
     /// - On success, responds with [`DescribeAssetPropertyOutput`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput) with field(s):
     ///   - [`asset_id(Option<String>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_id): <p>The ID of the asset.</p>
     ///   - [`asset_name(Option<String>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_name): <p>The name of the asset.</p>

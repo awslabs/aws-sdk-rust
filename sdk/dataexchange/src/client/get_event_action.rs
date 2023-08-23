@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEventAction`](crate::operation::get_event_action::builders::GetEventActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_action_id(impl ::std::convert::Into<String>)`](crate::operation::get_event_action::builders::GetEventActionFluentBuilder::event_action_id) / [`set_event_action_id(Option<String>)`](crate::operation::get_event_action::builders::GetEventActionFluentBuilder::set_event_action_id): <p>The unique identifier for the event action.</p>
+    ///   - [`event_action_id(impl Into<String>)`](crate::operation::get_event_action::builders::GetEventActionFluentBuilder::event_action_id) / [`set_event_action_id(Option<String>)`](crate::operation::get_event_action::builders::GetEventActionFluentBuilder::set_event_action_id): <p>The unique identifier for the event action.</p>
     /// - On success, responds with [`GetEventActionOutput`](crate::operation::get_event_action::GetEventActionOutput) with field(s):
     ///   - [`action(Option<Action>)`](crate::operation::get_event_action::GetEventActionOutput::action): <p>What occurs after a certain event.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_event_action::GetEventActionOutput::arn): <p>The ARN for the event action.</p>

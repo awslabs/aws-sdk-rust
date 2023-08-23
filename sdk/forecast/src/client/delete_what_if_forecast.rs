@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWhatIfForecast`](crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`what_if_forecast_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastFluentBuilder::what_if_forecast_arn) / [`set_what_if_forecast_arn(Option<String>)`](crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastFluentBuilder::set_what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+    ///   - [`what_if_forecast_arn(impl Into<String>)`](crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastFluentBuilder::what_if_forecast_arn) / [`set_what_if_forecast_arn(Option<String>)`](crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastFluentBuilder::set_what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
     /// - On success, responds with [`DeleteWhatIfForecastOutput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput)
     /// - On failure, responds with [`SdkError<DeleteWhatIfForecastError>`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastError)
     pub fn delete_what_if_forecast(&self) -> crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastFluentBuilder {

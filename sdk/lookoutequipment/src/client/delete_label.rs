@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLabel`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`label_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::label_group_name) / [`set_label_group_name(Option<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::set_label_group_name): <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    ///   - [`label_id(impl ::std::convert::Into<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::label_id) / [`set_label_id(Option<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::set_label_id): <p> The ID of the label that you want to delete. </p>
+    ///   - [`label_group_name(impl Into<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::label_group_name) / [`set_label_group_name(Option<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::set_label_group_name): <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    ///   - [`label_id(impl Into<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::label_id) / [`set_label_id(Option<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::set_label_id): <p> The ID of the label that you want to delete. </p>
     /// - On success, responds with [`DeleteLabelOutput`](crate::operation::delete_label::DeleteLabelOutput)
     /// - On failure, responds with [`SdkError<DeleteLabelError>`](crate::operation::delete_label::DeleteLabelError)
     pub fn delete_label(&self) -> crate::operation::delete_label::builders::DeleteLabelFluentBuilder {

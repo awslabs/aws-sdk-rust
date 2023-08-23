@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataQualityResult`](crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`result_id(impl ::std::convert::Into<String>)`](crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder::result_id) / [`set_result_id(Option<String>)`](crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder::set_result_id): <p>A unique result ID for the data quality result.</p>
+    ///   - [`result_id(impl Into<String>)`](crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder::result_id) / [`set_result_id(Option<String>)`](crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder::set_result_id): <p>A unique result ID for the data quality result.</p>
     /// - On success, responds with [`GetDataQualityResultOutput`](crate::operation::get_data_quality_result::GetDataQualityResultOutput) with field(s):
     ///   - [`result_id(Option<String>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::result_id): <p>A unique result ID for the data quality result.</p>
     ///   - [`score(Option<f64>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::score): <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>

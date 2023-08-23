@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationNfs`](crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
+    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
     /// - On success, responds with [`DescribeLocationNfsOutput`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::location_uri): <p>The URL of the source NFS location that was described.</p>

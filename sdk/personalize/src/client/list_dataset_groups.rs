@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::set_next_token): <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::set_next_token): <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
     ///   - [`max_results(i32)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::set_max_results): <p>The maximum number of dataset groups to return.</p>
     /// - On success, responds with [`ListDatasetGroupsOutput`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput) with field(s):
     ///   - [`dataset_groups(Option<Vec<DatasetGroupSummary>>)`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput::dataset_groups): <p>The list of your dataset groups.</p>

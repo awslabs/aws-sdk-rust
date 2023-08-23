@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConfig`](crate::operation::get_config::builders::GetConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_arn(impl ::std::convert::Into<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::client_arn) / [`set_client_arn(Option<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_client_arn): <p>The ARN of the client.</p>
+    ///   - [`client_arn(impl Into<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::client_arn) / [`set_client_arn(Option<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_client_arn): <p>The ARN of the client.</p>
     ///   - [`client_version(ClientVersion)`](crate::operation::get_config::builders::GetConfigFluentBuilder::client_version) / [`set_client_version(Option<ClientVersion>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_client_version): <p>The client version.</p>
-    ///   - [`hapg_list(Vec<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::hapg_list) / [`set_hapg_list(Option<Vec<String>>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_hapg_list): <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
+    ///   - [`hapg_list(impl Into<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::hapg_list) / [`set_hapg_list(Option<Vec<String>>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_hapg_list): <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
     /// - On success, responds with [`GetConfigOutput`](crate::operation::get_config::GetConfigOutput) with field(s):
     ///   - [`config_type(Option<String>)`](crate::operation::get_config::GetConfigOutput::config_type): <p>The type of credentials.</p>
     ///   - [`config_file(Option<String>)`](crate::operation::get_config::GetConfigOutput::config_file): <p>The chrystoki.conf configuration file.</p>

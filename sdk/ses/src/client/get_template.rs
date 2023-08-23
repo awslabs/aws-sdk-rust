@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplate`](crate::operation::get_template::builders::GetTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl ::std::convert::Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_template_name): <p>The name of the template you want to retrieve.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_template_name): <p>The name of the template you want to retrieve.</p>
     /// - On success, responds with [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput) with field(s):
     ///   - [`template(Option<Template>)`](crate::operation::get_template::GetTemplateOutput::template): <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)

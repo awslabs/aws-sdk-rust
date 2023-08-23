@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDatabase`](crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`database_name(impl ::std::convert::Into<String>)`](crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder::set_database_name): <p>The name of the Timestream database.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::describe_database::builders::DescribeDatabaseFluentBuilder::set_database_name): <p>The name of the Timestream database.</p>
     /// - On success, responds with [`DescribeDatabaseOutput`](crate::operation::describe_database::DescribeDatabaseOutput) with field(s):
     ///   - [`database(Option<Database>)`](crate::operation::describe_database::DescribeDatabaseOutput::database): <p>The name of the Timestream table.</p>
     /// - On failure, responds with [`SdkError<DescribeDatabaseError>`](crate::operation::describe_database::DescribeDatabaseError)

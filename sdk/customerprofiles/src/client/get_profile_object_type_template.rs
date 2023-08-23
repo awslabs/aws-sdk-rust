@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProfileObjectTypeTemplate`](crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_id(impl ::std::convert::Into<String>)`](crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateFluentBuilder::set_template_id): <p>A unique identifier for the object template.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateFluentBuilder::set_template_id): <p>A unique identifier for the object template.</p>
     /// - On success, responds with [`GetProfileObjectTypeTemplateOutput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput::template_id): <p>A unique identifier for the object template.</p>
     ///   - [`source_name(Option<String>)`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput::source_name): <p>The name of the source of the object template.</p>

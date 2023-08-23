@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolFunctionInstance`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vnf_instance_id(impl ::std::convert::Into<String>)`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceFluentBuilder::vnf_instance_id) / [`set_vnf_instance_id(Option<String>)`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceFluentBuilder::set_vnf_instance_id): <p>ID of the network function.</p>
+    ///   - [`vnf_instance_id(impl Into<String>)`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceFluentBuilder::vnf_instance_id) / [`set_vnf_instance_id(Option<String>)`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceFluentBuilder::set_vnf_instance_id): <p>ID of the network function.</p>
     /// - On success, responds with [`GetSolFunctionInstanceOutput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput::id): <p>Network function instance ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput::arn): <p>Network function instance ARN.</p>

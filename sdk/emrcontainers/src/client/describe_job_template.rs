@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJobTemplate`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::set_id): <p>The ID of the job template that will be described.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::set_id): <p>The ID of the job template that will be described.</p>
     /// - On success, responds with [`DescribeJobTemplateOutput`](crate::operation::describe_job_template::DescribeJobTemplateOutput) with field(s):
     ///   - [`job_template(Option<JobTemplate>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::job_template): <p>This output displays information about the specified job template.</p>
     /// - On failure, responds with [`SdkError<DescribeJobTemplateError>`](crate::operation::describe_job_template::DescribeJobTemplateError)

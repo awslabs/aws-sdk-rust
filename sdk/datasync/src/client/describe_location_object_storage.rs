@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationObjectStorage`](crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
+    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
     /// - On success, responds with [`DescribeLocationObjectStorageOutput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::location_arn): <p>The ARN of the object storage system location.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::location_uri): <p>The URL of the object storage system location.</p>

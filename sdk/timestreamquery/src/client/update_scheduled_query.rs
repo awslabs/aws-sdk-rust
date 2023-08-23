@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateScheduledQuery`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scheduled_query_arn(impl ::std::convert::Into<String>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::scheduled_query_arn) / [`set_scheduled_query_arn(Option<String>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::set_scheduled_query_arn): <p>ARN of the scheuled query.</p>
+    ///   - [`scheduled_query_arn(impl Into<String>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::scheduled_query_arn) / [`set_scheduled_query_arn(Option<String>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::set_scheduled_query_arn): <p>ARN of the scheuled query.</p>
     ///   - [`state(ScheduledQueryState)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::state) / [`set_state(Option<ScheduledQueryState>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::set_state): <p>State of the scheduled query. </p>
     /// - On success, responds with [`UpdateScheduledQueryOutput`](crate::operation::update_scheduled_query::UpdateScheduledQueryOutput)
     /// - On failure, responds with [`SdkError<UpdateScheduledQueryError>`](crate::operation::update_scheduled_query::UpdateScheduledQueryError)

@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::set_next_token): <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::set_next_token): <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     ///   - [`page_size(i32)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_crls::builders::ListCrlsFluentBuilder::set_page_size): <p>The number of resources in the paginated list. </p>
     /// - On success, responds with [`ListCrlsOutput`](crate::operation::list_crls::ListCrlsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_crls::ListCrlsOutput::next_token): <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>

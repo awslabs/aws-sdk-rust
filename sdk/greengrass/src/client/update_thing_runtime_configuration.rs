@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`telemetry_configuration(TelemetryConfigurationUpdate)`](crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::telemetry_configuration) / [`set_telemetry_configuration(Option<TelemetryConfigurationUpdate>)`](crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::set_telemetry_configuration): Configuration for telemetry service.
-    ///   - [`thing_name(impl ::std::convert::Into<String>)`](crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::set_thing_name): The thing name.
+    ///   - [`thing_name(impl Into<String>)`](crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::set_thing_name): The thing name.
     /// - On success, responds with [`UpdateThingRuntimeConfigurationOutput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateThingRuntimeConfigurationError>`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationError)
     pub fn update_thing_runtime_configuration(

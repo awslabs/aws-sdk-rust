@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExtendTransaction`](crate::operation::extend_transaction::builders::ExtendTransactionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transaction_id(impl ::std::convert::Into<String>)`](crate::operation::extend_transaction::builders::ExtendTransactionFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::extend_transaction::builders::ExtendTransactionFluentBuilder::set_transaction_id): <p>The transaction to extend.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::operation::extend_transaction::builders::ExtendTransactionFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::extend_transaction::builders::ExtendTransactionFluentBuilder::set_transaction_id): <p>The transaction to extend.</p>
     /// - On success, responds with [`ExtendTransactionOutput`](crate::operation::extend_transaction::ExtendTransactionOutput)
     /// - On failure, responds with [`SdkError<ExtendTransactionError>`](crate::operation::extend_transaction::ExtendTransactionError)
     pub fn extend_transaction(&self) -> crate::operation::extend_transaction::builders::ExtendTransactionFluentBuilder {

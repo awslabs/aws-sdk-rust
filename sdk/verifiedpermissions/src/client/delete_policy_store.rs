@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePolicyStore`](crate::operation::delete_policy_store::builders::DeletePolicyStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_store_id(impl ::std::convert::Into<String>)`](crate::operation::delete_policy_store::builders::DeletePolicyStoreFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::delete_policy_store::builders::DeletePolicyStoreFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that you want to delete.</p>
+    ///   - [`policy_store_id(impl Into<String>)`](crate::operation::delete_policy_store::builders::DeletePolicyStoreFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::delete_policy_store::builders::DeletePolicyStoreFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that you want to delete.</p>
     /// - On success, responds with [`DeletePolicyStoreOutput`](crate::operation::delete_policy_store::DeletePolicyStoreOutput)
     /// - On failure, responds with [`SdkError<DeletePolicyStoreError>`](crate::operation::delete_policy_store::DeletePolicyStoreError)
     pub fn delete_policy_store(&self) -> crate::operation::delete_policy_store::builders::DeletePolicyStoreFluentBuilder {

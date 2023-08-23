@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopEdgePackagingJob`](crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`edge_packaging_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobFluentBuilder::edge_packaging_job_name) / [`set_edge_packaging_job_name(Option<String>)`](crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobFluentBuilder::set_edge_packaging_job_name): <p>The name of the edge packaging job.</p>
+    ///   - [`edge_packaging_job_name(impl Into<String>)`](crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobFluentBuilder::edge_packaging_job_name) / [`set_edge_packaging_job_name(Option<String>)`](crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobFluentBuilder::set_edge_packaging_job_name): <p>The name of the edge packaging job.</p>
     /// - On success, responds with [`StopEdgePackagingJobOutput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobOutput)
     /// - On failure, responds with [`SdkError<StopEdgePackagingJobError>`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobError)
     pub fn stop_edge_packaging_job(&self) -> crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobFluentBuilder {

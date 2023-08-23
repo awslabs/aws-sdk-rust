@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetNamedQuery`](crate::operation::batch_get_named_query::builders::BatchGetNamedQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`named_query_ids(Vec<String>)`](crate::operation::batch_get_named_query::builders::BatchGetNamedQueryFluentBuilder::named_query_ids) / [`set_named_query_ids(Option<Vec<String>>)`](crate::operation::batch_get_named_query::builders::BatchGetNamedQueryFluentBuilder::set_named_query_ids): <p>An array of query IDs.</p>
+    ///   - [`named_query_ids(impl Into<String>)`](crate::operation::batch_get_named_query::builders::BatchGetNamedQueryFluentBuilder::named_query_ids) / [`set_named_query_ids(Option<Vec<String>>)`](crate::operation::batch_get_named_query::builders::BatchGetNamedQueryFluentBuilder::set_named_query_ids): <p>An array of query IDs.</p>
     /// - On success, responds with [`BatchGetNamedQueryOutput`](crate::operation::batch_get_named_query::BatchGetNamedQueryOutput) with field(s):
     ///   - [`named_queries(Option<Vec<NamedQuery>>)`](crate::operation::batch_get_named_query::BatchGetNamedQueryOutput::named_queries): <p>Information about the named query IDs submitted.</p>
     ///   - [`unprocessed_named_query_ids(Option<Vec<UnprocessedNamedQueryId>>)`](crate::operation::batch_get_named_query::BatchGetNamedQueryOutput::unprocessed_named_query_ids): <p>Information about provided query IDs.</p>

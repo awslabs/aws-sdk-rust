@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateFleet`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_name(impl ::std::convert::Into<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::fleet_name) / [`set_fleet_name(Option<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::set_fleet_name): <p>The name of the fleet. </p>
-    ///   - [`stack_name(impl ::std::convert::Into<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::set_stack_name): <p>The name of the stack.</p>
+    ///   - [`fleet_name(impl Into<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::fleet_name) / [`set_fleet_name(Option<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::set_fleet_name): <p>The name of the fleet. </p>
+    ///   - [`stack_name(impl Into<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::set_stack_name): <p>The name of the stack.</p>
     /// - On success, responds with [`AssociateFleetOutput`](crate::operation::associate_fleet::AssociateFleetOutput)
     /// - On failure, responds with [`SdkError<AssociateFleetError>`](crate::operation::associate_fleet::AssociateFleetError)
     pub fn associate_fleet(&self) -> crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder {

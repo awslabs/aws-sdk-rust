@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateAwsLogSource`](crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sources(Vec<AwsLogSourceConfiguration>)`](crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder::sources) / [`set_sources(Option<Vec<AwsLogSourceConfiguration>>)`](crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder::set_sources): <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
+    ///   - [`sources(AwsLogSourceConfiguration)`](crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder::sources) / [`set_sources(Option<Vec<AwsLogSourceConfiguration>>)`](crate::operation::create_aws_log_source::builders::CreateAwsLogSourceFluentBuilder::set_sources): <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
     /// - On success, responds with [`CreateAwsLogSourceOutput`](crate::operation::create_aws_log_source::CreateAwsLogSourceOutput) with field(s):
     ///   - [`failed(Option<Vec<String>>)`](crate::operation::create_aws_log_source::CreateAwsLogSourceOutput::failed): <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
     /// - On failure, responds with [`SdkError<CreateAwsLogSourceError>`](crate::operation::create_aws_log_source::CreateAwsLogSourceError)

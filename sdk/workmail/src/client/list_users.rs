@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_users::builders::ListUsersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_organization_id): <p>The identifier for the organization under which the users exist.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_organization_id): <p>The identifier for the organization under which the users exist.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results): <p>The maximum number of results to return in a single call.</p>
     /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
     ///   - [`users(Option<Vec<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>The overview of users for an organization.</p>

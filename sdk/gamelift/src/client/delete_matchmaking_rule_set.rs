@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMatchmakingRuleSet`](crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetFluentBuilder::set_name): <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetFluentBuilder::set_name): <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
     /// - On success, responds with [`DeleteMatchmakingRuleSetOutput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput)
     /// - On failure, responds with [`SdkError<DeleteMatchmakingRuleSetError>`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError)
     pub fn delete_matchmaking_rule_set(&self) -> crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetFluentBuilder {

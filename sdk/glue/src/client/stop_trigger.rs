@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopTrigger`](crate::operation::stop_trigger::builders::StopTriggerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_trigger::builders::StopTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_trigger::builders::StopTriggerFluentBuilder::set_name): <p>The name of the trigger to stop.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::stop_trigger::builders::StopTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_trigger::builders::StopTriggerFluentBuilder::set_name): <p>The name of the trigger to stop.</p>
     /// - On success, responds with [`StopTriggerOutput`](crate::operation::stop_trigger::StopTriggerOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::stop_trigger::StopTriggerOutput::name): <p>The name of the trigger that was stopped.</p>
     /// - On failure, responds with [`SdkError<StopTriggerError>`](crate::operation::stop_trigger::StopTriggerError)

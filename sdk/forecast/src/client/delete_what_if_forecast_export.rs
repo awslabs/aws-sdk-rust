@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWhatIfForecastExport`](crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`what_if_forecast_export_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportFluentBuilder::what_if_forecast_export_arn) / [`set_what_if_forecast_export_arn(Option<String>)`](crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportFluentBuilder::set_what_if_forecast_export_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+    ///   - [`what_if_forecast_export_arn(impl Into<String>)`](crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportFluentBuilder::what_if_forecast_export_arn) / [`set_what_if_forecast_export_arn(Option<String>)`](crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportFluentBuilder::set_what_if_forecast_export_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
     /// - On success, responds with [`DeleteWhatIfForecastExportOutput`](crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput)
     /// - On failure, responds with [`SdkError<DeleteWhatIfForecastExportError>`](crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError)
     pub fn delete_what_if_forecast_export(

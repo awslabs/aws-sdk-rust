@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_rules::builders::GetRulesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_id(impl ::std::convert::Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::rule_id) / [`set_rule_id(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_rule_id): <p>The rule ID.</p>
-    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_detector_id): <p>The detector ID.</p>
-    ///   - [`rule_version(impl ::std::convert::Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::rule_version) / [`set_rule_version(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_rule_version): <p>The rule version.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_next_token): <p>The next page token.</p>
+    ///   - [`rule_id(impl Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::rule_id) / [`set_rule_id(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_rule_id): <p>The rule ID.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_detector_id): <p>The detector ID.</p>
+    ///   - [`rule_version(impl Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::rule_version) / [`set_rule_version(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_rule_version): <p>The rule version.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_next_token): <p>The next page token.</p>
     ///   - [`max_results(i32)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_rules::builders::GetRulesFluentBuilder::set_max_results): <p>The maximum number of rules to return for the request.</p>
     /// - On success, responds with [`GetRulesOutput`](crate::operation::get_rules::GetRulesOutput) with field(s):
     ///   - [`rule_details(Option<Vec<RuleDetail>>)`](crate::operation::get_rules::GetRulesOutput::rule_details): <p>The details of the requested rule.</p>

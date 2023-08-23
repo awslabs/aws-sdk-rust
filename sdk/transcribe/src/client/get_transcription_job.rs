@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTranscriptionJob`](crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transcription_job_name(impl ::std::convert::Into<String>)`](crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder::set_transcription_job_name): <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
+    ///   - [`transcription_job_name(impl Into<String>)`](crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder::set_transcription_job_name): <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
     /// - On success, responds with [`GetTranscriptionJobOutput`](crate::operation::get_transcription_job::GetTranscriptionJobOutput) with field(s):
     ///   - [`transcription_job(Option<TranscriptionJob>)`](crate::operation::get_transcription_job::GetTranscriptionJobOutput::transcription_job): <p>Provides detailed information about the specified transcription job, including job status and, if applicable, failure reason.</p>
     /// - On failure, responds with [`SdkError<GetTranscriptionJobError>`](crate::operation::get_transcription_job::GetTranscriptionJobError)

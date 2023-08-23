@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEndpointAccess`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_name(impl ::std::convert::Into<String>)`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::set_endpoint_name): <p>The Redshift-managed VPC endpoint to delete.</p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::set_endpoint_name): <p>The Redshift-managed VPC endpoint to delete.</p>
     /// - On success, responds with [`DeleteEndpointAccessOutput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput) with field(s):
     ///   - [`cluster_identifier(Option<String>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::cluster_identifier): <p>The cluster identifier of the cluster associated with the endpoint.</p>
     ///   - [`resource_owner(Option<String>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::resource_owner): <p>The Amazon Web Services account ID of the owner of the cluster.</p>

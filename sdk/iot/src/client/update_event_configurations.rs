@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateEventConfigurations`](crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_configurations(HashMap<EventType, Configuration>)`](crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder::event_configurations) / [`set_event_configurations(Option<HashMap<EventType, Configuration>>)`](crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder::set_event_configurations): <p>The new event configuration values.</p>
+    ///   - [`event_configurations(EventType, Configuration)`](crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder::event_configurations) / [`set_event_configurations(Option<HashMap<EventType, Configuration>>)`](crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder::set_event_configurations): <p>The new event configuration values.</p>
     /// - On success, responds with [`UpdateEventConfigurationsOutput`](crate::operation::update_event_configurations::UpdateEventConfigurationsOutput)
     /// - On failure, responds with [`SdkError<UpdateEventConfigurationsError>`](crate::operation::update_event_configurations::UpdateEventConfigurationsError)
     pub fn update_event_configurations(&self) -> crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder {

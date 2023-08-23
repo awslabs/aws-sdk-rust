@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIdentityMailFromDomainAttributes`](crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identities(Vec<String>)`](crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder::identities) / [`set_identities(Option<Vec<String>>)`](crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder::set_identities): <p>A list of one or more identities.</p>
+    ///   - [`identities(impl Into<String>)`](crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder::identities) / [`set_identities(Option<Vec<String>>)`](crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesFluentBuilder::set_identities): <p>A list of one or more identities.</p>
     /// - On success, responds with [`GetIdentityMailFromDomainAttributesOutput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput) with field(s):
     ///   - [`mail_from_domain_attributes(Option<HashMap<String, IdentityMailFromDomainAttributes>>)`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput::mail_from_domain_attributes): <p>A map of identities to custom MAIL FROM attributes.</p>
     /// - On failure, responds with [`SdkError<GetIdentityMailFromDomainAttributesError>`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesError)

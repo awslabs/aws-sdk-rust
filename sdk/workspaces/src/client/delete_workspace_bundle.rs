@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkspaceBundle`](crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bundle_id(impl ::std::convert::Into<String>)`](crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleFluentBuilder::set_bundle_id): <p>The identifier of the bundle.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleFluentBuilder::set_bundle_id): <p>The identifier of the bundle.</p>
     /// - On success, responds with [`DeleteWorkspaceBundleOutput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkspaceBundleError>`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleError)
     pub fn delete_workspace_bundle(&self) -> crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleFluentBuilder {

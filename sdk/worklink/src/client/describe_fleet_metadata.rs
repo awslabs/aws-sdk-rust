@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFleetMetadata`](crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder::set_fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder::set_fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
     /// - On success, responds with [`DescribeFleetMetadataOutput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput) with field(s):
     ///   - [`created_time(Option<DateTime>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::created_time): <p>The time that the fleet was created.</p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::last_updated_time): <p>The time that the fleet was last updated.</p>

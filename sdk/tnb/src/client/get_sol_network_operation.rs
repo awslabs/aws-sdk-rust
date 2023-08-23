@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolNetworkOperation`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ns_lcm_op_occ_id(impl ::std::convert::Into<String>)`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::ns_lcm_op_occ_id) / [`set_ns_lcm_op_occ_id(Option<String>)`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::set_ns_lcm_op_occ_id): <p>The identifier of the network operation.</p>
+    ///   - [`ns_lcm_op_occ_id(impl Into<String>)`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::ns_lcm_op_occ_id) / [`set_ns_lcm_op_occ_id(Option<String>)`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::set_ns_lcm_op_occ_id): <p>The identifier of the network operation.</p>
     /// - On success, responds with [`GetSolNetworkOperationOutput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::id): <p>ID of this network operation occurrence.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::arn): <p>Network operation ARN.</p>

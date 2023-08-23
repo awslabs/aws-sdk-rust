@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVPCEConfiguration`](crate::operation::delete_vpce_configuration::builders::DeleteVPCEConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_vpce_configuration::builders::DeleteVPCEConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_vpce_configuration::builders::DeleteVPCEConfigurationFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_vpce_configuration::builders::DeleteVPCEConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_vpce_configuration::builders::DeleteVPCEConfigurationFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
     /// - On success, responds with [`DeleteVpceConfigurationOutput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteVPCEConfigurationError>`](crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError)
     pub fn delete_vpce_configuration(&self) -> crate::operation::delete_vpce_configuration::builders::DeleteVPCEConfigurationFluentBuilder {

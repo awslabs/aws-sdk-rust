@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_name(impl ::std::convert::Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource_name): <p>The name of the DAX resource from which the tags should be removed.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys): <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource_name): <p>The name of the DAX resource from which the tags should be removed.</p>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys): <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::untag_resource::UntagResourceOutput::tags): <p>The tag keys that have been removed from the cluster.</p>
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)

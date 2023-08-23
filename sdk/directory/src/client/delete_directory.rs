@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDirectory`](crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder::set_directory_id): <p>The identifier of the directory to delete.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder::set_directory_id): <p>The identifier of the directory to delete.</p>
     /// - On success, responds with [`DeleteDirectoryOutput`](crate::operation::delete_directory::DeleteDirectoryOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::operation::delete_directory::DeleteDirectoryOutput::directory_id): <p>The directory identifier.</p>
     /// - On failure, responds with [`SdkError<DeleteDirectoryError>`](crate::operation::delete_directory::DeleteDirectoryError)

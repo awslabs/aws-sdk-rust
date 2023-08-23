@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSequenceStore`](crate::operation::delete_sequence_store::builders::DeleteSequenceStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_sequence_store::builders::DeleteSequenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_sequence_store::builders::DeleteSequenceStoreFluentBuilder::set_id): <p>The sequence store's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_sequence_store::builders::DeleteSequenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_sequence_store::builders::DeleteSequenceStoreFluentBuilder::set_id): <p>The sequence store's ID.</p>
     /// - On success, responds with [`DeleteSequenceStoreOutput`](crate::operation::delete_sequence_store::DeleteSequenceStoreOutput)
     /// - On failure, responds with [`SdkError<DeleteSequenceStoreError>`](crate::operation::delete_sequence_store::DeleteSequenceStoreError)
     pub fn delete_sequence_store(&self) -> crate::operation::delete_sequence_store::builders::DeleteSequenceStoreFluentBuilder {

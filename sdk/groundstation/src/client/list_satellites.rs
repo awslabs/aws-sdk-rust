@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_satellites::builders::ListSatellitesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_satellites::builders::ListSatellitesFluentBuilder::set_max_results): <p>Maximum number of satellites returned.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_satellites::builders::ListSatellitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_satellites::builders::ListSatellitesFluentBuilder::set_next_token): <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_satellites::builders::ListSatellitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_satellites::builders::ListSatellitesFluentBuilder::set_next_token): <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     /// - On success, responds with [`ListSatellitesOutput`](crate::operation::list_satellites::ListSatellitesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_satellites::ListSatellitesOutput::next_token): <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     ///   - [`satellites(Option<Vec<SatelliteListItem>>)`](crate::operation::list_satellites::ListSatellitesOutput::satellites): <p>List of satellites.</p>

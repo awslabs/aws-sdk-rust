@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddTags`](crate::operation::add_tags::builders::AddTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_id(impl ::std::convert::Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags): <p>The tags to add, as key/value pairs.</p>
+    ///   - [`pipeline_id(impl Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`tags(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags): <p>The tags to add, as key/value pairs.</p>
     /// - On success, responds with [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput)
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::operation::add_tags::AddTagsError)
     pub fn add_tags(&self) -> crate::operation::add_tags::builders::AddTagsFluentBuilder {

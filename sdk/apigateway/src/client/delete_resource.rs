@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteResource`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
-    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::set_resource_id): <p>The identifier of the Resource resource.</p>
+    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::set_resource_id): <p>The identifier of the Resource resource.</p>
     /// - On success, responds with [`DeleteResourceOutput`](crate::operation::delete_resource::DeleteResourceOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceError>`](crate::operation::delete_resource::DeleteResourceError)
     pub fn delete_resource(&self) -> crate::operation::delete_resource::builders::DeleteResourceFluentBuilder {

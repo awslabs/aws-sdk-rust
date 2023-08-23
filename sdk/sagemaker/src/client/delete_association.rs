@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAssociation`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::set_source_arn): <p>The ARN of the source.</p>
-    ///   - [`destination_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::destination_arn) / [`set_destination_arn(Option<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::set_destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
+    ///   - [`source_arn(impl Into<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::set_source_arn): <p>The ARN of the source.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::destination_arn) / [`set_destination_arn(Option<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::set_destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
     /// - On success, responds with [`DeleteAssociationOutput`](crate::operation::delete_association::DeleteAssociationOutput) with field(s):
     ///   - [`source_arn(Option<String>)`](crate::operation::delete_association::DeleteAssociationOutput::source_arn): <p>The ARN of the source.</p>
     ///   - [`destination_arn(Option<String>)`](crate::operation::delete_association::DeleteAssociationOutput::destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>

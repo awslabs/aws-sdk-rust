@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEventIntegration`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::set_name): <p>The name of the event integration. </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::set_name): <p>The name of the event integration. </p>
     /// - On success, responds with [`GetEventIntegrationOutput`](crate::operation::get_event_integration::GetEventIntegrationOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::name): <p>The name of the event integration. </p>
     ///   - [`description(Option<String>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::description): <p>The description of the event integration.</p>

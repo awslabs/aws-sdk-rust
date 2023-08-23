@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePrompt`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    ///   - [`prompt_id(impl ::std::convert::Into<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::prompt_id) / [`set_prompt_id(Option<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::set_prompt_id): <p>A unique identifier for the prompt.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    ///   - [`prompt_id(impl Into<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::prompt_id) / [`set_prompt_id(Option<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::set_prompt_id): <p>A unique identifier for the prompt.</p>
     /// - On success, responds with [`DeletePromptOutput`](crate::operation::delete_prompt::DeletePromptOutput)
     /// - On failure, responds with [`SdkError<DeletePromptError>`](crate::operation::delete_prompt::DeletePromptError)
     pub fn delete_prompt(&self) -> crate::operation::delete_prompt::builders::DeletePromptFluentBuilder {

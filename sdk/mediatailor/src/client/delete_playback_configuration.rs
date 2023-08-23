@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePlaybackConfiguration`](crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationFluentBuilder::set_name): <p>The name of the playback configuration.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationFluentBuilder::set_name): <p>The name of the playback configuration.</p>
     /// - On success, responds with [`DeletePlaybackConfigurationOutput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeletePlaybackConfigurationError>`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError)
     pub fn delete_playback_configuration(

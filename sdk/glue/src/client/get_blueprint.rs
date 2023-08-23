@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBlueprint`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder::set_name): <p>The name of the blueprint.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder::set_name): <p>The name of the blueprint.</p>
     ///   - [`include_blueprint(bool)`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder::include_blueprint) / [`set_include_blueprint(Option<bool>)`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder::set_include_blueprint): <p>Specifies whether or not to include the blueprint in the response.</p>
     ///   - [`include_parameter_spec(bool)`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder::include_parameter_spec) / [`set_include_parameter_spec(Option<bool>)`](crate::operation::get_blueprint::builders::GetBlueprintFluentBuilder::set_include_parameter_spec): <p>Specifies whether or not to include the parameter specification.</p>
     /// - On success, responds with [`GetBlueprintOutput`](crate::operation::get_blueprint::GetBlueprintOutput) with field(s):

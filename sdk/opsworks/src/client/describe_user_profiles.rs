@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeUserProfiles`](crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`iam_user_arns(Vec<String>)`](crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder::iam_user_arns) / [`set_iam_user_arns(Option<Vec<String>>)`](crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder::set_iam_user_arns): <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
+    ///   - [`iam_user_arns(impl Into<String>)`](crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder::iam_user_arns) / [`set_iam_user_arns(Option<Vec<String>>)`](crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder::set_iam_user_arns): <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
     /// - On success, responds with [`DescribeUserProfilesOutput`](crate::operation::describe_user_profiles::DescribeUserProfilesOutput) with field(s):
     ///   - [`user_profiles(Option<Vec<UserProfile>>)`](crate::operation::describe_user_profiles::DescribeUserProfilesOutput::user_profiles): <p>A <code>Users</code> object that describes the specified users.</p>
     /// - On failure, responds with [`SdkError<DescribeUserProfilesError>`](crate::operation::describe_user_profiles::DescribeUserProfilesError)

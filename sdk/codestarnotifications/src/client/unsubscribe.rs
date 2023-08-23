@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`Unsubscribe`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    ///   - [`target_address(impl ::std::convert::Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::target_address) / [`set_target_address(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_target_address): <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    ///   - [`target_address(impl Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::target_address) / [`set_target_address(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_target_address): <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
     /// - On success, responds with [`UnsubscribeOutput`](crate::operation::unsubscribe::UnsubscribeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::unsubscribe::UnsubscribeOutput::arn): <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
     /// - On failure, responds with [`SdkError<UnsubscribeError>`](crate::operation::unsubscribe::UnsubscribeError)

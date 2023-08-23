@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAnnotationStore`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::set_name): <p>The store's name.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::set_name): <p>The store's name.</p>
     ///   - [`force(bool)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::set_force): <p>Whether to force deletion.</p>
     /// - On success, responds with [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput) with field(s):
     ///   - [`status(Option<StoreStatus>)`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput::status): <p>The store's status.</p>

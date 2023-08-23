@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteJob`](crate::operation::delete_job::builders::DeleteJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_app_id): <p> The unique ID for an Amplify app. </p>
-    ///   - [`branch_name(impl ::std::convert::Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_branch_name): <p> The name for the branch, for the job. </p>
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_job_id): <p> The unique ID for the job. </p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(impl Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_branch_name): <p> The name for the branch, for the job. </p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_job_id): <p> The unique ID for the job. </p>
     /// - On success, responds with [`DeleteJobOutput`](crate::operation::delete_job::DeleteJobOutput) with field(s):
     ///   - [`job_summary(Option<JobSummary>)`](crate::operation::delete_job::DeleteJobOutput::job_summary): <p> Describes the summary for an execution job for an Amplify app. </p>
     /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::operation::delete_job::DeleteJobError)

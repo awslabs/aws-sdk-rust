@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCorsConfiguration`](crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationFluentBuilder::set_api_id): <p>The API identifier.</p>
     /// - On success, responds with [`DeleteCorsConfigurationOutput`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteCorsConfigurationError>`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationError)
     pub fn delete_cors_configuration(&self) -> crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationFluentBuilder {

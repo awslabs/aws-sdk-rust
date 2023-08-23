@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSkillGroup`](crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`skill_group_arn(impl ::std::convert::Into<String>)`](crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder::set_skill_group_arn): <p>The ARN of the skill group for which to get details. Required.</p>
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder::set_skill_group_arn): <p>The ARN of the skill group for which to get details. Required.</p>
     /// - On success, responds with [`GetSkillGroupOutput`](crate::operation::get_skill_group::GetSkillGroupOutput) with field(s):
     ///   - [`skill_group(Option<SkillGroup>)`](crate::operation::get_skill_group::GetSkillGroupOutput::skill_group): <p>The details of the skill group requested. Required.</p>
     /// - On failure, responds with [`SdkError<GetSkillGroupError>`](crate::operation::get_skill_group::GetSkillGroupError)

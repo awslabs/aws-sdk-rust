@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBot`](crate::operation::delete_bot::builders::DeleteBotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_bot::builders::DeleteBotFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_bot::builders::DeleteBotFluentBuilder::set_name): <p>The name of the bot. The name is case sensitive. </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_bot::builders::DeleteBotFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_bot::builders::DeleteBotFluentBuilder::set_name): <p>The name of the bot. The name is case sensitive. </p>
     /// - On success, responds with [`DeleteBotOutput`](crate::operation::delete_bot::DeleteBotOutput)
     /// - On failure, responds with [`SdkError<DeleteBotError>`](crate::operation::delete_bot::DeleteBotError)
     pub fn delete_bot(&self) -> crate::operation::delete_bot::builders::DeleteBotFluentBuilder {

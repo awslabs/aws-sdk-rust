@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableImportFindingsForProduct`](crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`product_arn(impl ::std::convert::Into<String>)`](crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductFluentBuilder::product_arn) / [`set_product_arn(Option<String>)`](crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductFluentBuilder::set_product_arn): <p>The ARN of the product to enable the integration for.</p>
+    ///   - [`product_arn(impl Into<String>)`](crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductFluentBuilder::product_arn) / [`set_product_arn(Option<String>)`](crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductFluentBuilder::set_product_arn): <p>The ARN of the product to enable the integration for.</p>
     /// - On success, responds with [`EnableImportFindingsForProductOutput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput) with field(s):
     ///   - [`product_subscription_arn(Option<String>)`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput::product_subscription_arn): <p>The ARN of your subscription to the product to enable integrations for.</p>
     /// - On failure, responds with [`SdkError<EnableImportFindingsForProductError>`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductError)

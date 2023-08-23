@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteModelCard`](crate::operation::delete_model_card::builders::DeleteModelCardFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_card_name(impl ::std::convert::Into<String>)`](crate::operation::delete_model_card::builders::DeleteModelCardFluentBuilder::model_card_name) / [`set_model_card_name(Option<String>)`](crate::operation::delete_model_card::builders::DeleteModelCardFluentBuilder::set_model_card_name): <p>The name of the model card to delete.</p>
+    ///   - [`model_card_name(impl Into<String>)`](crate::operation::delete_model_card::builders::DeleteModelCardFluentBuilder::model_card_name) / [`set_model_card_name(Option<String>)`](crate::operation::delete_model_card::builders::DeleteModelCardFluentBuilder::set_model_card_name): <p>The name of the model card to delete.</p>
     /// - On success, responds with [`DeleteModelCardOutput`](crate::operation::delete_model_card::DeleteModelCardOutput)
     /// - On failure, responds with [`SdkError<DeleteModelCardError>`](crate::operation::delete_model_card::DeleteModelCardError)
     pub fn delete_model_card(&self) -> crate::operation::delete_model_card::builders::DeleteModelCardFluentBuilder {

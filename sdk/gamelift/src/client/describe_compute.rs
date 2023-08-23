@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCompute`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl ::std::convert::Into<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::set_fleet_id): <p>A unique identifier for the fleet the compute is registered to.</p>
-    ///   - [`compute_name(impl ::std::convert::Into<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::compute_name) / [`set_compute_name(Option<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::set_compute_name): <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::set_fleet_id): <p>A unique identifier for the fleet the compute is registered to.</p>
+    ///   - [`compute_name(impl Into<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::compute_name) / [`set_compute_name(Option<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::set_compute_name): <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
     /// - On success, responds with [`DescribeComputeOutput`](crate::operation::describe_compute::DescribeComputeOutput) with field(s):
     ///   - [`compute(Option<Compute>)`](crate::operation::describe_compute::DescribeComputeOutput::compute): <p>The details of the compute resource you registered to the specified fleet.</p>
     /// - On failure, responds with [`SdkError<DescribeComputeError>`](crate::operation::describe_compute::DescribeComputeError)

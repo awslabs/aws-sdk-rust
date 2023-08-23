@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDomain`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain_name): <p>Name of the domain to be deleted.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain_name): <p>Name of the domain to be deleted.</p>
     /// - On success, responds with [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::delete_domain::DeleteDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::operation::delete_domain::DeleteDomainError)

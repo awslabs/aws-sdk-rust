@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`Subscribe`](crate::operation::subscribe::builders::SubscribeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
     ///   - [`target(Target)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::target) / [`set_target(Option<Target>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::set_target): <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
-    ///   - [`client_request_token(impl ::std::convert::Into<String>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::set_client_request_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::subscribe::builders::SubscribeFluentBuilder::set_client_request_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     /// - On success, responds with [`SubscribeOutput`](crate::operation::subscribe::SubscribeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::subscribe::SubscribeOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
     /// - On failure, responds with [`SdkError<SubscribeError>`](crate::operation::subscribe::SubscribeError)

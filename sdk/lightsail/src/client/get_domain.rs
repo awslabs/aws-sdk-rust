@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDomain`](crate::operation::get_domain::builders::GetDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::set_domain_name): <p>The domain name for which your want to return information about.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::set_domain_name): <p>The domain name for which your want to return information about.</p>
     /// - On success, responds with [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput) with field(s):
     ///   - [`domain(Option<Domain>)`](crate::operation::get_domain::GetDomainOutput::domain): <p>An array of key-value pairs containing information about your get domain request.</p>
     /// - On failure, responds with [`SdkError<GetDomainError>`](crate::operation::get_domain::GetDomainError)

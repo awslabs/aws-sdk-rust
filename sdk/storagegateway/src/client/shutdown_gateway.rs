@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ShutdownGateway`](crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl ::std::convert::Into<String>)`](crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::shutdown_gateway::builders::ShutdownGatewayFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On success, responds with [`ShutdownGatewayOutput`](crate::operation::shutdown_gateway::ShutdownGatewayOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::shutdown_gateway::ShutdownGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<ShutdownGatewayError>`](crate::operation::shutdown_gateway::ShutdownGatewayError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListAlarmModels`](crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder::set_next_token): <p>The token that you can use to return the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListAlarmModelsOutput`](crate::operation::list_alarm_models::ListAlarmModelsOutput) with field(s):
     ///   - [`alarm_model_summaries(Option<Vec<AlarmModelSummary>>)`](crate::operation::list_alarm_models::ListAlarmModelsOutput::alarm_model_summaries): <p>A list that summarizes each alarm model.</p>

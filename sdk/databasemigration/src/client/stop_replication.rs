@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopReplication`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replication_config_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::replication_config_arn) / [`set_replication_config_arn(Option<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::set_replication_config_arn): <p>The Amazon Resource Name of the replication to stop.</p>
+    ///   - [`replication_config_arn(impl Into<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::replication_config_arn) / [`set_replication_config_arn(Option<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::set_replication_config_arn): <p>The Amazon Resource Name of the replication to stop.</p>
     /// - On success, responds with [`StopReplicationOutput`](crate::operation::stop_replication::StopReplicationOutput) with field(s):
     ///   - [`replication(Option<Replication>)`](crate::operation::stop_replication::StopReplicationOutput::replication): <p>The replication that DMS stopped.</p>
     /// - On failure, responds with [`SdkError<StopReplicationError>`](crate::operation::stop_replication::StopReplicationError)

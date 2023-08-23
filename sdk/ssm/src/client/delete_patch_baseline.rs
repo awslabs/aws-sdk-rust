@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePatchBaseline`](crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`baseline_id(impl ::std::convert::Into<String>)`](crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder::baseline_id) / [`set_baseline_id(Option<String>)`](crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder::set_baseline_id): <p>The ID of the patch baseline to delete.</p>
+    ///   - [`baseline_id(impl Into<String>)`](crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder::baseline_id) / [`set_baseline_id(Option<String>)`](crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder::set_baseline_id): <p>The ID of the patch baseline to delete.</p>
     /// - On success, responds with [`DeletePatchBaselineOutput`](crate::operation::delete_patch_baseline::DeletePatchBaselineOutput) with field(s):
     ///   - [`baseline_id(Option<String>)`](crate::operation::delete_patch_baseline::DeletePatchBaselineOutput::baseline_id): <p>The ID of the deleted patch baseline.</p>
     /// - On failure, responds with [`SdkError<DeletePatchBaselineError>`](crate::operation::delete_patch_baseline::DeletePatchBaselineError)

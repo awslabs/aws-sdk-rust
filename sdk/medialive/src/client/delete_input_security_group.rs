@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInputSecurityGroup`](crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_security_group_id(impl ::std::convert::Into<String>)`](crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupFluentBuilder::input_security_group_id) / [`set_input_security_group_id(Option<String>)`](crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupFluentBuilder::set_input_security_group_id): The Input Security Group to delete
+    ///   - [`input_security_group_id(impl Into<String>)`](crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupFluentBuilder::input_security_group_id) / [`set_input_security_group_id(Option<String>)`](crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupFluentBuilder::set_input_security_group_id): The Input Security Group to delete
     /// - On success, responds with [`DeleteInputSecurityGroupOutput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteInputSecurityGroupError>`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupError)
     pub fn delete_input_security_group(&self) -> crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupFluentBuilder {

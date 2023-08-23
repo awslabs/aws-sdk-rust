@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSinkPolicy`](crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sink_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder::sink_identifier) / [`set_sink_identifier(Option<String>)`](crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder::set_sink_identifier): <p>The ARN of the sink to retrieve the policy of.</p>
+    ///   - [`sink_identifier(impl Into<String>)`](crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder::sink_identifier) / [`set_sink_identifier(Option<String>)`](crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder::set_sink_identifier): <p>The ARN of the sink to retrieve the policy of.</p>
     /// - On success, responds with [`GetSinkPolicyOutput`](crate::operation::get_sink_policy::GetSinkPolicyOutput) with field(s):
     ///   - [`sink_arn(Option<String>)`](crate::operation::get_sink_policy::GetSinkPolicyOutput::sink_arn): <p>The ARN of the sink.</p>
     ///   - [`sink_id(Option<String>)`](crate::operation::get_sink_policy::GetSinkPolicyOutput::sink_id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>

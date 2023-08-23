@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnshareApplication`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::set_organization_id): <p>The AWS Organization ID to unshare the application from.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder::set_organization_id): <p>The AWS Organization ID to unshare the application from.</p>
     /// - On success, responds with [`UnshareApplicationOutput`](crate::operation::unshare_application::UnshareApplicationOutput)
     /// - On failure, responds with [`SdkError<UnshareApplicationError>`](crate::operation::unshare_application::UnshareApplicationError)
     pub fn unshare_application(&self) -> crate::operation::unshare_application::builders::UnshareApplicationFluentBuilder {

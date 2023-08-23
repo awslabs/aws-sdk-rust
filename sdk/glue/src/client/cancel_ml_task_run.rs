@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelMLTaskRun`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transform_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::transform_id) / [`set_transform_id(Option<String>)`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
-    ///   - [`task_run_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::task_run_id) / [`set_task_run_id(Option<String>)`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::set_task_run_id): <p>A unique identifier for the task run.</p>
+    ///   - [`transform_id(impl Into<String>)`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::transform_id) / [`set_transform_id(Option<String>)`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
+    ///   - [`task_run_id(impl Into<String>)`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::task_run_id) / [`set_task_run_id(Option<String>)`](crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::set_task_run_id): <p>A unique identifier for the task run.</p>
     /// - On success, responds with [`CancelMlTaskRunOutput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput) with field(s):
     ///   - [`transform_id(Option<String>)`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput::transform_id): <p>The unique identifier of the machine learning transform.</p>
     ///   - [`task_run_id(Option<String>)`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput::task_run_id): <p>The unique identifier for the task run.</p>

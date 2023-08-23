@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListUserProfiles`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_next_token): <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_next_token): <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     ///   - [`max_results(i32)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_max_results): <p>The maximum number of results to return in a response.</p>
     /// - On success, responds with [`ListUserProfilesOutput`](crate::operation::list_user_profiles::ListUserProfilesOutput) with field(s):
     ///   - [`user_profiles(Option<Vec<UserProfileSummary>>)`](crate::operation::list_user_profiles::ListUserProfilesOutput::user_profiles): <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>

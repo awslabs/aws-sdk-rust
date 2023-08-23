@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWebhook`](crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_name(impl ::std::convert::Into<String>)`](crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder::set_project_name): <p>The name of the CodeBuild project.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder::set_project_name): <p>The name of the CodeBuild project.</p>
     /// - On success, responds with [`DeleteWebhookOutput`](crate::operation::delete_webhook::DeleteWebhookOutput)
     /// - On failure, responds with [`SdkError<DeleteWebhookError>`](crate::operation::delete_webhook::DeleteWebhookError)
     pub fn delete_webhook(&self) -> crate::operation::delete_webhook::builders::DeleteWebhookFluentBuilder {

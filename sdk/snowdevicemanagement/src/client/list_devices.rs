@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_job_id): <p>The ID of the job used to order the device.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_job_id): <p>The ID of the job used to order the device.</p>
     ///   - [`max_results(i32)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_max_results): <p>The maximum number of devices to list per page.</p>
-    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token): <p>A pagination token to continue to the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token): <p>A pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
     ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>A list of device structures that contain information about the device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>A pagination token to continue to the next page of devices.</p>

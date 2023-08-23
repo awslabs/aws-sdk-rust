@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProfile`](crate::operation::describe_profile::builders::DescribeProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl ::std::convert::Into<String>)`](crate::operation::describe_profile::builders::DescribeProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::describe_profile::builders::DescribeProfileFluentBuilder::set_profile_id): <p>The identifier of the profile that you want described.</p>
+    ///   - [`profile_id(impl Into<String>)`](crate::operation::describe_profile::builders::DescribeProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::describe_profile::builders::DescribeProfileFluentBuilder::set_profile_id): <p>The identifier of the profile that you want described.</p>
     /// - On success, responds with [`DescribeProfileOutput`](crate::operation::describe_profile::DescribeProfileOutput) with field(s):
     ///   - [`profile(Option<DescribedProfile>)`](crate::operation::describe_profile::DescribeProfileOutput::profile): <p>The details of the specified profile, returned as an object.</p>
     /// - On failure, responds with [`SdkError<DescribeProfileError>`](crate::operation::describe_profile::DescribeProfileError)

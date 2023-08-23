@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAssessmentTemplates`](crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_template_arns(Vec<String>)`](crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesFluentBuilder::assessment_template_arns) / [`set_assessment_template_arns(Option<Vec<String>>)`](crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesFluentBuilder::set_assessment_template_arns): (undocumented)
+    ///   - [`assessment_template_arns(impl Into<String>)`](crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesFluentBuilder::assessment_template_arns) / [`set_assessment_template_arns(Option<Vec<String>>)`](crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesFluentBuilder::set_assessment_template_arns): (undocumented)
     /// - On success, responds with [`DescribeAssessmentTemplatesOutput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput) with field(s):
     ///   - [`assessment_templates(Option<Vec<AssessmentTemplate>>)`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput::assessment_templates): <p>Information about the assessment templates.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput::failed_items): <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>

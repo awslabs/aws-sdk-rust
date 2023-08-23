@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateBackendConfig`](crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder::set_app_id): <p>The app ID.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder::set_app_id): <p>The app ID.</p>
     ///   - [`login_auth_config(LoginAuthConfigReqObj)`](crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder::login_auth_config) / [`set_login_auth_config(Option<LoginAuthConfigReqObj>)`](crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder::set_login_auth_config): <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
     /// - On success, responds with [`UpdateBackendConfigOutput`](crate::operation::update_backend_config::UpdateBackendConfigOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::operation::update_backend_config::UpdateBackendConfigOutput::app_id): <p>The app ID.</p>

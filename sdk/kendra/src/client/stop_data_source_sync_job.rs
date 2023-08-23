@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopDataSourceSyncJob`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::set_id): <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
-    ///   - [`index_id(impl ::std::convert::Into<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::set_index_id): <p>The identifier of the index used with the data source connector.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::set_id): <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     /// - On success, responds with [`StopDataSourceSyncJobOutput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobOutput)
     /// - On failure, responds with [`SdkError<StopDataSourceSyncJobError>`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobError)
     pub fn stop_data_source_sync_job(&self) -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder {

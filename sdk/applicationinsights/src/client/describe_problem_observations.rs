@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProblemObservations`](crate::operation::describe_problem_observations::builders::DescribeProblemObservationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`problem_id(impl ::std::convert::Into<String>)`](crate::operation::describe_problem_observations::builders::DescribeProblemObservationsFluentBuilder::problem_id) / [`set_problem_id(Option<String>)`](crate::operation::describe_problem_observations::builders::DescribeProblemObservationsFluentBuilder::set_problem_id): <p>The ID of the problem.</p>
+    ///   - [`problem_id(impl Into<String>)`](crate::operation::describe_problem_observations::builders::DescribeProblemObservationsFluentBuilder::problem_id) / [`set_problem_id(Option<String>)`](crate::operation::describe_problem_observations::builders::DescribeProblemObservationsFluentBuilder::set_problem_id): <p>The ID of the problem.</p>
     /// - On success, responds with [`DescribeProblemObservationsOutput`](crate::operation::describe_problem_observations::DescribeProblemObservationsOutput) with field(s):
     ///   - [`related_observations(Option<RelatedObservations>)`](crate::operation::describe_problem_observations::DescribeProblemObservationsOutput::related_observations): <p>Observations related to the problem.</p>
     /// - On failure, responds with [`SdkError<DescribeProblemObservationsError>`](crate::operation::describe_problem_observations::DescribeProblemObservationsError)

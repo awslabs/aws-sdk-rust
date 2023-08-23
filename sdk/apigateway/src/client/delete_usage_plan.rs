@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUsagePlan`](crate::operation::delete_usage_plan::builders::DeleteUsagePlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`usage_plan_id(impl ::std::convert::Into<String>)`](crate::operation::delete_usage_plan::builders::DeleteUsagePlanFluentBuilder::usage_plan_id) / [`set_usage_plan_id(Option<String>)`](crate::operation::delete_usage_plan::builders::DeleteUsagePlanFluentBuilder::set_usage_plan_id): <p>The Id of the to-be-deleted usage plan.</p>
+    ///   - [`usage_plan_id(impl Into<String>)`](crate::operation::delete_usage_plan::builders::DeleteUsagePlanFluentBuilder::usage_plan_id) / [`set_usage_plan_id(Option<String>)`](crate::operation::delete_usage_plan::builders::DeleteUsagePlanFluentBuilder::set_usage_plan_id): <p>The Id of the to-be-deleted usage plan.</p>
     /// - On success, responds with [`DeleteUsagePlanOutput`](crate::operation::delete_usage_plan::DeleteUsagePlanOutput)
     /// - On failure, responds with [`SdkError<DeleteUsagePlanError>`](crate::operation::delete_usage_plan::DeleteUsagePlanError)
     pub fn delete_usage_plan(&self) -> crate::operation::delete_usage_plan::builders::DeleteUsagePlanFluentBuilder {

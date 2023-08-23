@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopClock`](crate::operation::stop_clock::builders::StopClockFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl ::std::convert::Into<String>)`](crate::operation::stop_clock::builders::StopClockFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::stop_clock::builders::StopClockFluentBuilder::set_simulation): <p>The name of the simulation.</p>
+    ///   - [`simulation(impl Into<String>)`](crate::operation::stop_clock::builders::StopClockFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::stop_clock::builders::StopClockFluentBuilder::set_simulation): <p>The name of the simulation.</p>
     /// - On success, responds with [`StopClockOutput`](crate::operation::stop_clock::StopClockOutput)
     /// - On failure, responds with [`SdkError<StopClockError>`](crate::operation::stop_clock::StopClockError)
     pub fn stop_clock(&self) -> crate::operation::stop_clock::builders::StopClockFluentBuilder {

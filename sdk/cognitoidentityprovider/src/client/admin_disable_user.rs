@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AdminDisableUser`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool where you want to disable the user.</p>
-    ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::set_username): <p>The user name of the user you want to disable.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool where you want to disable the user.</p>
+    ///   - [`username(impl Into<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::set_username): <p>The user name of the user you want to disable.</p>
     /// - On success, responds with [`AdminDisableUserOutput`](crate::operation::admin_disable_user::AdminDisableUserOutput)
     /// - On failure, responds with [`SdkError<AdminDisableUserError>`](crate::operation::admin_disable_user::AdminDisableUserError)
     pub fn admin_disable_user(&self) -> crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateCertificate`](crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder::set_arn): The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
+    ///   - [`arn(impl Into<String>)`](crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder::set_arn): The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
     /// - On success, responds with [`AssociateCertificateOutput`](crate::operation::associate_certificate::AssociateCertificateOutput)
     /// - On failure, responds with [`SdkError<AssociateCertificateError>`](crate::operation::associate_certificate::AssociateCertificateError)
     pub fn associate_certificate(&self) -> crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEngagement`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`engagement_id(impl ::std::convert::Into<String>)`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::engagement_id) / [`set_engagement_id(Option<String>)`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::set_engagement_id): <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
+    ///   - [`engagement_id(impl Into<String>)`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::engagement_id) / [`set_engagement_id(Option<String>)`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::set_engagement_id): <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     /// - On success, responds with [`DescribeEngagementOutput`](crate::operation::describe_engagement::DescribeEngagementOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::contact_arn): <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
     ///   - [`engagement_arn(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::engagement_arn): <p>The ARN of the engagement.</p>

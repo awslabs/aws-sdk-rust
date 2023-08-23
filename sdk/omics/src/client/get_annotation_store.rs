@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAnnotationStore`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::set_name): <p>The store's name.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::set_name): <p>The store's name.</p>
     /// - On success, responds with [`GetAnnotationStoreOutput`](crate::operation::get_annotation_store::GetAnnotationStoreOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::id): <p>The store's ID.</p>
     ///   - [`reference(Option<ReferenceItem>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::reference): <p>The store's genome reference.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCallAnalyticsJob`](crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`call_analytics_job_name(impl ::std::convert::Into<String>)`](crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobFluentBuilder::call_analytics_job_name) / [`set_call_analytics_job_name(Option<String>)`](crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobFluentBuilder::set_call_analytics_job_name): <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
+    ///   - [`call_analytics_job_name(impl Into<String>)`](crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobFluentBuilder::call_analytics_job_name) / [`set_call_analytics_job_name(Option<String>)`](crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobFluentBuilder::set_call_analytics_job_name): <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
     /// - On success, responds with [`DeleteCallAnalyticsJobOutput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput)
     /// - On failure, responds with [`SdkError<DeleteCallAnalyticsJobError>`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError)
     pub fn delete_call_analytics_job(&self) -> crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDatasetGroup`](crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_group_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
     /// - On success, responds with [`DeleteDatasetGroupOutput`](crate::operation::delete_dataset_group::DeleteDatasetGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteDatasetGroupError>`](crate::operation::delete_dataset_group::DeleteDatasetGroupError)
     pub fn delete_dataset_group(&self) -> crate::operation::delete_dataset_group::builders::DeleteDatasetGroupFluentBuilder {

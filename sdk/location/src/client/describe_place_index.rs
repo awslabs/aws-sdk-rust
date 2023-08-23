@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePlaceIndex`](crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_name(impl ::std::convert::Into<String>)`](crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder::index_name) / [`set_index_name(Option<String>)`](crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder::set_index_name): <p>The name of the place index resource.</p>
+    ///   - [`index_name(impl Into<String>)`](crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder::index_name) / [`set_index_name(Option<String>)`](crate::operation::describe_place_index::builders::DescribePlaceIndexFluentBuilder::set_index_name): <p>The name of the place index resource.</p>
     /// - On success, responds with [`DescribePlaceIndexOutput`](crate::operation::describe_place_index::DescribePlaceIndexOutput) with field(s):
     ///   - [`index_name(Option<String>)`](crate::operation::describe_place_index::DescribePlaceIndexOutput::index_name): <p>The name of the place index resource being described.</p>
     ///   - [`index_arn(Option<String>)`](crate::operation::describe_place_index::DescribePlaceIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>  </ul>

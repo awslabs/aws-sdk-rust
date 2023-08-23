@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSession`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder::set_id): <p>The ID of the session to be deleted.</p>
-    ///   - [`request_origin(impl ::std::convert::Into<String>)`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder::request_origin) / [`set_request_origin(Option<String>)`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder::set_request_origin): <p>The name of the origin of the delete session request.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder::set_id): <p>The ID of the session to be deleted.</p>
+    ///   - [`request_origin(impl Into<String>)`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder::request_origin) / [`set_request_origin(Option<String>)`](crate::operation::delete_session::builders::DeleteSessionFluentBuilder::set_request_origin): <p>The name of the origin of the delete session request.</p>
     /// - On success, responds with [`DeleteSessionOutput`](crate::operation::delete_session::DeleteSessionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_session::DeleteSessionOutput::id): <p>Returns the ID of the deleted session.</p>
     /// - On failure, responds with [`SdkError<DeleteSessionError>`](crate::operation::delete_session::DeleteSessionError)
