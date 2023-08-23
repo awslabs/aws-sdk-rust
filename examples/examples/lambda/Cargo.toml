@@ -5,8 +5,6 @@ version = "0.1.0"
 edition = "2021"
 publish = false
 
-[workspace]
-
 [dependencies]
 tracing = "0.1.37"
 serde_json = "1.0.94"

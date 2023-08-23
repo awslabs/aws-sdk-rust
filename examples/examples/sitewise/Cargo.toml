@@ -6,8 +6,6 @@ authors = ["Lawrence Xiao <delonx@amazon.com>"]
 edition = "2021"
 publish = false
 
-[workspace]
-
 [dependencies]
 thiserror = "1.0"
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }

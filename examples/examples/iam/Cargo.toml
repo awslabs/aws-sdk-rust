@@ -11,8 +11,6 @@ edition = "2021"
 description = "Example usage of the IAM service"
 publish = false
 
-[workspace]
-
 [lib]
 name = "iam_service"
 path = "src/iam-service-lib.rs"
@@ -25,13 +23,9 @@ async_once = "0.2.6"
 lazy_static = "1.4.0"
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
 aws-credential-types= { version = "0.56.1", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
-aws-hyper= { version = "0.56.1", path = "../../../sdk/aws-hyper" }
 aws-sdk-iam= { version = "0.30.0", path = "../../../sdk/iam" }
 aws-sdk-s3= { version = "0.30.0", path = "../../../sdk/s3" }
 aws-sdk-sts= { version = "0.30.0", path = "../../../sdk/sts" }
-aws-smithy-client= { version = "0.56.1", path = "../../../sdk/aws-smithy-client", features = ["test-util"] }
-aws-smithy-http= { version = "0.56.1", path = "../../../sdk/aws-smithy-http" }
-aws-types= { version = "0.56.1", path = "../../../sdk/aws-types" }
 
 [dependencies.sdk-examples-test-utils]
 path = "../../test-utils"

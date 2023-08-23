@@ -6,8 +6,6 @@ authors = ["Doug Schwartz <dougsch@amazon.com>"]
 edition = "2021"
 publish = false
 
-[workspace]
-
 [dependencies]
 http = "0.2"
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }

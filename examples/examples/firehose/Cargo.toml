@@ -9,7 +9,6 @@ publish = false
 [dependencies]
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
 aws-sdk-firehose= { version = "0.30.0", path = "../../../sdk/firehose" }
-aws-types= { version = "0.56.1", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]
 version = "1.20.1"
@@ -22,5 +21,3 @@ features = ["derive"]
 [dependencies.tracing-subscriber]
 version = "0.3.15"
 features = ["env-filter"]
-
-[workspace]

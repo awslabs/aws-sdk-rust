@@ -13,8 +13,6 @@ STORAGE_BUCKET_NAME = "FROM_CDK"
 WORKING_BUCKET_NAME = "FROM_CDK"
 _HANDLER = "labels"
 
-[workspace]
-
 [dependencies]
 anyhow = "1.0.70"
 bytes = "1.4.0"

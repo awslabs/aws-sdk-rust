@@ -1,5 +1,5 @@
-smithy_rs_revision = 'a08c9bf70678576df28c40ee407e4d56b8b1508e'
-aws_doc_sdk_examples_revision = '0ad4881d968af7c35fc1535c7fed6bb2c13b2f76'
+smithy_rs_revision = 'daa1af18ac92bdeca4dc4b51c5c836eab32067aa'
+aws_doc_sdk_examples_revision = '577a55916047897a0ef2e2aac1e855dccc3614f9'
 
 [manual_interventions]
 crates_to_remove = []
@@ -1163,7 +1163,7 @@ model_hash = 'cb92698be63d66090c90dbdd7288dab830af35c37ea7d541e4d0b1c447aa8b6e'
 [crates.aws-sdk-lambda]
 category = 'AwsSdk'
 version = '0.30.0'
-source_hash = '9bebacce45842e7c36dd0a8ae183a21f21cb777819c126112cb7651eae164049'
+source_hash = '97da5cc2a0a4a39c8951ff83dcede769eab48399f4afc53a0c3c40ceec97519b'
 model_hash = '15164ae31be738d60654f015a22f22b8e2fb3a8575c4116d12990dd3f89f0a52'
 
 [crates.aws-sdk-lexmodelbuilding]

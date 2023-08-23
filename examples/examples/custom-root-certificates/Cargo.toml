@@ -7,8 +7,6 @@ edition = "2021"
 description = "An example demonstrating setting a custom root certificate with rustls"
 publish = false
 
-[workspace]
-
 [dependencies]
 rustls = "0.20.7"
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }

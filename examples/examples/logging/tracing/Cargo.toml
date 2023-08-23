@@ -21,5 +21,3 @@ features = ["full"]
 [dependencies.tracing-subscriber]
 version = "0.3"
 features = ["env-filter"]
-
-[workspace]
