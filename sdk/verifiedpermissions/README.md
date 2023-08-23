@@ -31,7 +31,7 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.56.0"
+aws-config = "0.56.1"
 aws-sdk-verifiedpermissions = "0.2.0"
 tokio = { version = "1", features = ["full"] }
 ```

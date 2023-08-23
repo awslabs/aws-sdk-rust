@@ -9,55 +9,55 @@ license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
 readme = "README.md"
 [package.metadata.smithy]
-codegen-version = "0.56.0-daa1af18ac92bdeca4dc4b51c5c836eab32067aa"
+codegen-version = "0.56.1-daa1af18ac92bdeca4dc4b51c5c836eab32067aa"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-http]
 path = "../aws-http"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-runtime]
 path = "../aws-runtime"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.aws-types]
 path = "../aws-types"
-version = "0.56.0"
+version = "0.56.1"
 
 [dependencies.bytes]
 version = "1.0.0"
@@ -81,46 +81,46 @@ version = "0.5.1"
 
 [dev-dependencies.aws-config]
 path = "../aws-config"
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["test-util"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 features = ["test-util"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 features = ["test-util", "wiremock"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["test-util"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
-version = "0.56.0"
+version = "0.56.1"
 
 [dev-dependencies.criterion]
 version = "0.4.0"

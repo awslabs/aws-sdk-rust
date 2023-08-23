@@ -7,9 +7,9 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.56.0", path = "../../../sdk/aws-config" }
+aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
 aws-sdk-iot= { version = "0.30.0", path = "../../../sdk/iot" }
-aws-types= { version = "0.56.0", path = "../../../sdk/aws-types" }
+aws-types= { version = "0.56.1", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]
 version = "1.20.1"

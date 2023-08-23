@@ -11,8 +11,8 @@ publish = false
 
 [dependencies]
 rustls = "0.20.7"
-aws-config= { version = "0.56.0", path = "../../../sdk/aws-config" }
-aws-smithy-client= { version = "0.56.0", path = "../../../sdk/aws-smithy-client" }
+aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
+aws-smithy-client= { version = "0.56.1", path = "../../../sdk/aws-smithy-client" }
 aws-sdk-s3= { version = "0.30.0", path = "../../../sdk/s3", default-features = false }
 
 [dependencies.tokio]

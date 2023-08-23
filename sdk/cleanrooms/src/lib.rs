@@ -32,7 +32,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.56.0"
+//! aws-config = "0.56.1"
 //! aws-sdk-cleanrooms = "0.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
