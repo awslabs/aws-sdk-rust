@@ -1,9 +1,9 @@
 on:
-  pull_request:
-    paths-ignore:
-      - 'aws-models/**'
+  push:
     branches:
       - main
+  # delete before merge    
+  pull_request:
 
 name: CI
 
@@ -94,6 +94,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ matrix.rust_version }}
+          targets: wasm32-unknown-unknown
       # Pinned to the commit hash of v2.1.0
       - uses: Swatinem/rust-cache@b894d59a8d236e2979b247b80dac8d053ab340dd
         with:
