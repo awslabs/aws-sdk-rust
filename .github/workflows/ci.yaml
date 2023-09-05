@@ -2,8 +2,6 @@ on:
   push:
     branches:
       - main
-  # delete before merge    
-  pull_request:
 
 name: CI
 
