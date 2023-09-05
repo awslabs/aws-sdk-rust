@@ -74,5 +74,5 @@ jobs:
           done
 
           # Generate a lockfile at the minimum possible versions
-          cargo generate-lockfile -Zminimal-versions
+          cargo generate-lockfile -Zdirect-minimal-versions
           cargo audit ${{ env.cargo_audit_flags }}
