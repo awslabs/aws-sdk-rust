@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   pull_request:
 env:
-  rust_version: nightly-2022-07-25
+  rust_version: nightly-2023-07-31
 
   # RUSTSEC-2020-0071 , RUSTSEC-2020-0159
   # chrono, a Rust date-time crate we use for timestamp parsing was added
@@ -74,5 +74,5 @@ jobs:
           done
 
           # Generate a lockfile at the minimum possible versions
-          cargo generate-lockfile -Zminimal-versions
+          cargo generate-lockfile -Zdirect-minimal-versions
           cargo audit ${{ env.cargo_audit_flags }}
