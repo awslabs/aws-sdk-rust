@@ -835,11 +835,24 @@ mod tests {
         );
     }
 
+    fn valid_input(input: &Vec<String>) -> bool {
+        [
+            "content-length".to_owned(),
+            "content-type".to_owned(),
+            "host".to_owned(),
+        ]
+        .iter()
+        .all(|element| !input.contains(&element))
+    }
+
     proptest! {
-       #[test]
-       fn presigning_header_exclusion_with_explicit_exclusion_list_specified(
-           excluded_headers in prop::collection::vec("[a-z]{1,20}", 1..10),
-       ) {
+        #[test]
+        fn presigning_header_exclusion_with_explicit_exclusion_list_specified(
+            excluded_headers in prop::collection::vec("[a-z]{1,20}", 1..10).prop_filter(
+                "`excluded_headers` should pass the `valid_input` check",
+                valid_input,
+            )
+        ) {
             let mut request_builder = http::Request::builder()
                 .uri("https://some-endpoint.some-region.amazonaws.com")
                 .header("content-type", "application/xml")
