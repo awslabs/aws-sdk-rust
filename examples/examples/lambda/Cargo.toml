@@ -20,7 +20,7 @@ aws-smithy-types= { version = "0.56.1", path = "../../../sdk/aws-smithy-types" }
 aws-types= { version = "0.56.1", path = "../../../sdk/aws-types" }
 
 [dependencies.clap]
-version = "4.2.1"
+version = "~4.2"
 features = ["derive"]
 
 [dependencies.tokio]

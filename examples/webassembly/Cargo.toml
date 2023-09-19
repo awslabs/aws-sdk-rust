@@ -21,12 +21,15 @@ tower = "0.4.13"
 wasm-bindgen = "0.2.83"
 wasm-bindgen-futures = "0.4.33"
 wasm-timer = "0.2.5"
+tracing-wasm = "0.2.1"
+tracing = "0.1.37"
 aws-config= { version = "0.56.1", path = "../../sdk/aws-config", default-features = false }
 aws-credential-types= { version = "0.56.1", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
 aws-sdk-lambda= { version = "0.31.0", path = "../../sdk/lambda", default-features = false }
 aws-smithy-client= { version = "0.56.1", path = "../../sdk/aws-smithy-client", default-features = false }
 aws-smithy-http= { version = "0.56.1", path = "../../sdk/aws-smithy-http", features = ["event-stream"] }
 aws-smithy-types= { version = "0.56.1", path = "../../sdk/aws-smithy-types" }
+aws-smithy-async= { version = "0.56.1", path = "../../sdk/aws-smithy-async" }
 
 [dependencies.serde]
 version = "1.0.152"
