@@ -6,21 +6,38 @@ pub(crate) mod internal {
     pub type SendResult<T, E> =
         ::std::result::Result<T, ::aws_smithy_http::result::SdkError<E, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>;
 
-    pub trait CustomizableSend<T, E>: ::std::ops::FnOnce(crate::config::Builder) -> BoxFuture<SendResult<T, E>> {}
-
-    impl<F, T, E> CustomizableSend<T, E> for F where F: ::std::ops::FnOnce(crate::config::Builder) -> BoxFuture<SendResult<T, E>> {}
+    pub trait CustomizableSend<T, E>: ::std::marker::Send + ::std::marker::Sync {
+        // Takes an owned `self` as the implementation will internally call methods that take `self`.
+        // If it took `&self`, that would make this trait object safe, but some implementing types do not
+        // derive `Clone`, unable to yield `self` from `&self`.
+        fn send(self, config_override: crate::config::Builder) -> BoxFuture<SendResult<T, E>>;
+    }
 }
 /// Module for defining types for `CustomizableOperation` in the orchestrator
 pub mod orchestrator {
     /// `CustomizableOperation` allows for configuring a single operation invocation before it is sent.
-    pub struct CustomizableOperation<T, E> {
-        pub(crate) customizable_send: ::std::boxed::Box<dyn crate::client::customize::internal::CustomizableSend<T, E>>,
-        pub(crate) config_override: ::std::option::Option<crate::config::Builder>,
-        pub(crate) interceptors: Vec<::aws_smithy_runtime_api::client::interceptors::SharedInterceptor>,
-        pub(crate) runtime_plugins: Vec<::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin>,
+    pub struct CustomizableOperation<T, E, B> {
+        customizable_send: B,
+        config_override: ::std::option::Option<crate::config::Builder>,
+        interceptors: Vec<::aws_smithy_runtime_api::client::interceptors::SharedInterceptor>,
+        runtime_plugins: Vec<::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin>,
+        _output: ::std::marker::PhantomData<T>,
+        _error: ::std::marker::PhantomData<E>,
     }
 
-    impl<T, E> CustomizableOperation<T, E> {
+    impl<T, E, B> CustomizableOperation<T, E, B> {
+        /// Creates a new `CustomizableOperation` from `customizable_send`.
+        pub(crate) fn new(customizable_send: B) -> Self {
+            Self {
+                customizable_send,
+                config_override: ::std::option::Option::None,
+                interceptors: vec![],
+                runtime_plugins: vec![],
+                _output: ::std::marker::PhantomData,
+                _error: ::std::marker::PhantomData,
+            }
+        }
+
         /// Adds an [`Interceptor`](::aws_smithy_runtime_api::client::interceptors::Interceptor) that runs at specific stages of the request execution pipeline.
         ///
         /// Note that interceptors can also be added to `CustomizableOperation` by `config_override`,
@@ -93,6 +110,7 @@ pub mod orchestrator {
         pub async fn send(self) -> crate::client::customize::internal::SendResult<T, E>
         where
             E: std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+            B: crate::client::customize::internal::CustomizableSend<T, E>,
         {
             let mut config_override = if let Some(config_override) = self.config_override {
                 config_override
@@ -107,7 +125,7 @@ pub mod orchestrator {
                 config_override.push_runtime_plugin(plugin);
             });
 
-            (self.customizable_send)(config_override).await
+            self.customizable_send.send(config_override).await
         }
 
         #[doc(hidden)]

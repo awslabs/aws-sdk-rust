@@ -29,6 +29,24 @@ pub struct GetOrganizationConfigRuleDetailedStatusFluentBuilder {
     inner: crate::operation::get_organization_config_rule_detailed_status::builders::GetOrganizationConfigRuleDetailedStatusInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusOutput,
+        crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError,
+    > for GetOrganizationConfigRuleDetailedStatusFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusOutput,
+            crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl GetOrganizationConfigRuleDetailedStatusFluentBuilder {
     /// Creates a new `GetOrganizationConfigRuleDetailedStatus`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -81,19 +99,13 @@ impl GetOrganizationConfigRuleDetailedStatusFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusOutput,
             crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<
             crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

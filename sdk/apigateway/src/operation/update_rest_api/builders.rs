@@ -29,6 +29,24 @@ pub struct UpdateRestApiFluentBuilder {
     inner: crate::operation::update_rest_api::builders::UpdateRestApiInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::update_rest_api::UpdateRestApiOutput,
+        crate::operation::update_rest_api::UpdateRestApiError,
+    > for UpdateRestApiFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::update_rest_api::UpdateRestApiOutput,
+            crate::operation::update_rest_api::UpdateRestApiError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl UpdateRestApiFluentBuilder {
     /// Creates a new `UpdateRestApi`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl UpdateRestApiFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::update_rest_api::UpdateRestApiOutput,
             crate::operation::update_rest_api::UpdateRestApiError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_rest_api::UpdateRestApiError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

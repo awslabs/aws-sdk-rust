@@ -30,6 +30,24 @@ pub struct ListVolumeRecoveryPointsFluentBuilder {
     inner: crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput,
+        crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError,
+    > for ListVolumeRecoveryPointsFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput,
+            crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ListVolumeRecoveryPointsFluentBuilder {
     /// Creates a new `ListVolumeRecoveryPoints`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl ListVolumeRecoveryPointsFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput,
             crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -33,6 +33,24 @@ pub struct ValidateE911AddressFluentBuilder {
     inner: crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::validate_e911_address::ValidateE911AddressOutput,
+        crate::operation::validate_e911_address::ValidateE911AddressError,
+    > for ValidateE911AddressFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::validate_e911_address::ValidateE911AddressOutput,
+            crate::operation::validate_e911_address::ValidateE911AddressError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ValidateE911AddressFluentBuilder {
     /// Creates a new `ValidateE911Address`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -81,17 +99,11 @@ impl ValidateE911AddressFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::validate_e911_address::ValidateE911AddressOutput,
             crate::operation::validate_e911_address::ValidateE911AddressError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -136,7 +136,7 @@ impl DateTimeExt for DateTime {
                 self.secs(),
                 self.subsec_nanos()
             ))),
-            Some(dt) => Ok(chrono::DateTime::<chrono::Utc>::from_utc(dt, chrono::Utc)),
+            Some(dt) => Ok(chrono::TimeZone::from_utc_datetime(&chrono::Utc, &dt)),
         }
     }
 

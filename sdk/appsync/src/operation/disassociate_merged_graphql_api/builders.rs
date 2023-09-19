@@ -29,6 +29,24 @@ pub struct DisassociateMergedGraphqlApiFluentBuilder {
     inner: crate::operation::disassociate_merged_graphql_api::builders::DisassociateMergedGraphqlApiInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput,
+        crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError,
+    > for DisassociateMergedGraphqlApiFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput,
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DisassociateMergedGraphqlApiFluentBuilder {
     /// Creates a new `DisassociateMergedGraphqlApi`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl DisassociateMergedGraphqlApiFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput,
             crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

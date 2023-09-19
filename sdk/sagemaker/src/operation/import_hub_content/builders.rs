@@ -31,6 +31,24 @@ pub struct ImportHubContentFluentBuilder {
     inner: crate::operation::import_hub_content::builders::ImportHubContentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::import_hub_content::ImportHubContentOutput,
+        crate::operation::import_hub_content::ImportHubContentError,
+    > for ImportHubContentFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::import_hub_content::ImportHubContentOutput,
+            crate::operation::import_hub_content::ImportHubContentError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ImportHubContentFluentBuilder {
     /// Creates a new `ImportHubContent`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl ImportHubContentFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::import_hub_content::ImportHubContentOutput,
             crate::operation::import_hub_content::ImportHubContentError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::import_hub_content::ImportHubContentError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

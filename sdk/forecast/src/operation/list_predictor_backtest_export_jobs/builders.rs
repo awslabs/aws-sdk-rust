@@ -30,6 +30,24 @@ pub struct ListPredictorBacktestExportJobsFluentBuilder {
     inner: crate::operation::list_predictor_backtest_export_jobs::builders::ListPredictorBacktestExportJobsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput,
+        crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsError,
+    > for ListPredictorBacktestExportJobsFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput,
+            crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ListPredictorBacktestExportJobsFluentBuilder {
     /// Creates a new `ListPredictorBacktestExportJobs`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl ListPredictorBacktestExportJobsFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput,
             crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

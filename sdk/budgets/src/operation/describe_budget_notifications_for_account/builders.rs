@@ -29,6 +29,24 @@ pub struct DescribeBudgetNotificationsForAccountFluentBuilder {
     inner: crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput,
+        crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError,
+    > for DescribeBudgetNotificationsForAccountFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput,
+            crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DescribeBudgetNotificationsForAccountFluentBuilder {
     /// Creates a new `DescribeBudgetNotificationsForAccount`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -80,17 +98,11 @@ impl DescribeBudgetNotificationsForAccountFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput,
             crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

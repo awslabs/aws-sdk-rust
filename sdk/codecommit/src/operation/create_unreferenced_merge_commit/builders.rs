@@ -31,6 +31,24 @@ pub struct CreateUnreferencedMergeCommitFluentBuilder {
     inner: crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput,
+        crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
+    > for CreateUnreferencedMergeCommitFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput,
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl CreateUnreferencedMergeCommitFluentBuilder {
     /// Creates a new `CreateUnreferencedMergeCommit`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput,
             crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

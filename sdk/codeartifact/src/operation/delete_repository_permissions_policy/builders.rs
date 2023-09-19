@@ -31,6 +31,24 @@ pub struct DeleteRepositoryPermissionsPolicyFluentBuilder {
     inner: crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput,
+        crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError,
+    > for DeleteRepositoryPermissionsPolicyFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput,
+            crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DeleteRepositoryPermissionsPolicyFluentBuilder {
     /// Creates a new `DeleteRepositoryPermissionsPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl DeleteRepositoryPermissionsPolicyFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput,
             crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

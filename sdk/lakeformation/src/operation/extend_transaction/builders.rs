@@ -30,6 +30,24 @@ pub struct ExtendTransactionFluentBuilder {
     inner: crate::operation::extend_transaction::builders::ExtendTransactionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::extend_transaction::ExtendTransactionOutput,
+        crate::operation::extend_transaction::ExtendTransactionError,
+    > for ExtendTransactionFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::extend_transaction::ExtendTransactionOutput,
+            crate::operation::extend_transaction::ExtendTransactionError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ExtendTransactionFluentBuilder {
     /// Creates a new `ExtendTransaction`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl ExtendTransactionFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::extend_transaction::ExtendTransactionOutput,
             crate::operation::extend_transaction::ExtendTransactionError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::extend_transaction::ExtendTransactionError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -30,6 +30,24 @@ pub struct AdminAddUserToGroupFluentBuilder {
     inner: crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput,
+        crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
+    > for AdminAddUserToGroupFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput,
+            crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl AdminAddUserToGroupFluentBuilder {
     /// Creates a new `AdminAddUserToGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl AdminAddUserToGroupFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput,
             crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::admin_add_user_to_group::AdminAddUserToGroupError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

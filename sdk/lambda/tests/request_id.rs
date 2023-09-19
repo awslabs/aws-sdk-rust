@@ -22,7 +22,7 @@ async fn run_test(
     let client = Client::from_conf(conf);
     let resp = client.list_functions().send().await;
     if expect_error {
-        let err = resp.err().expect("should be an error").into_service_error();
+        let err = resp.expect_err("should be an error").into_service_error();
         assert!(matches!(err, ListFunctionsError::Unhandled(_)));
         assert_eq!(Some("correct-request-id"), err.request_id());
         assert_eq!(Some("correct-request-id"), err.meta().request_id());

@@ -32,6 +32,24 @@ pub struct CreateFeatureGroupFluentBuilder {
     inner: crate::operation::create_feature_group::builders::CreateFeatureGroupInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::create_feature_group::CreateFeatureGroupOutput,
+        crate::operation::create_feature_group::CreateFeatureGroupError,
+    > for CreateFeatureGroupFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::create_feature_group::CreateFeatureGroupOutput,
+            crate::operation::create_feature_group::CreateFeatureGroupError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl CreateFeatureGroupFluentBuilder {
     /// Creates a new `CreateFeatureGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -80,17 +98,11 @@ impl CreateFeatureGroupFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::create_feature_group::CreateFeatureGroupOutput,
             crate::operation::create_feature_group::CreateFeatureGroupError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_feature_group::CreateFeatureGroupError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -33,6 +33,24 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorGroupFluentBuilder {
     inner: crate::operation::associate_phone_numbers_with_voice_connector_group::builders::AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupOutput,
+        crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupError,
+    > for AssociatePhoneNumbersWithVoiceConnectorGroupFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupOutput,
+            crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl AssociatePhoneNumbersWithVoiceConnectorGroupFluentBuilder {
     /// Creates a new `AssociatePhoneNumbersWithVoiceConnectorGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -88,19 +106,13 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupOutput,
             crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<
             crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

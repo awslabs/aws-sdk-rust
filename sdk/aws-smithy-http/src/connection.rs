@@ -94,6 +94,7 @@ mod test {
     use crate::connection::{CaptureSmithyConnection, ConnectionMetadata};
 
     #[test]
+    #[allow(clippy::redundant_clone)]
     fn retrieve_connection_metadata() {
         let retriever = CaptureSmithyConnection::new();
         let retriever_clone = retriever.clone();

@@ -577,7 +577,7 @@ pub mod wire_mock {
                     rx.await.ok();
                     tracing::info!("server shutdown!");
                 });
-            spawn(async move { server.await });
+            spawn(server);
             Self {
                 event_log: wire_events,
                 bind_addr: listener_addr,

@@ -38,6 +38,24 @@ pub struct RespondActivityTaskFailedFluentBuilder {
     inner: crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
+        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
+    > for RespondActivityTaskFailedFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
+            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl RespondActivityTaskFailedFluentBuilder {
     /// Creates a new `RespondActivityTaskFailed`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -86,17 +104,11 @@ impl RespondActivityTaskFailedFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
             crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

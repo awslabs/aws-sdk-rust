@@ -32,6 +32,24 @@ pub struct DescribeJournalS3ExportFluentBuilder {
     inner: crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput,
+        crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError,
+    > for DescribeJournalS3ExportFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput,
+            crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DescribeJournalS3ExportFluentBuilder {
     /// Creates a new `DescribeJournalS3Export`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -80,17 +98,11 @@ impl DescribeJournalS3ExportFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput,
             crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -29,6 +29,24 @@ pub struct ListResolverQueryLogConfigAssociationsFluentBuilder {
     inner: crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput,
+        crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError,
+    > for ListResolverQueryLogConfigAssociationsFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput,
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ListResolverQueryLogConfigAssociationsFluentBuilder {
     /// Creates a new `ListResolverQueryLogConfigAssociations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -81,19 +99,13 @@ impl ListResolverQueryLogConfigAssociationsFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput,
             crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<
             crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

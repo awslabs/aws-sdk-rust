@@ -29,6 +29,24 @@ pub struct CreateStorageLocationFluentBuilder {
     inner: crate::operation::create_storage_location::builders::CreateStorageLocationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::create_storage_location::CreateStorageLocationOutput,
+        crate::operation::create_storage_location::CreateStorageLocationError,
+    > for CreateStorageLocationFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::create_storage_location::CreateStorageLocationOutput,
+            crate::operation::create_storage_location::CreateStorageLocationError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl CreateStorageLocationFluentBuilder {
     /// Creates a new `CreateStorageLocation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl CreateStorageLocationFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::create_storage_location::CreateStorageLocationOutput,
             crate::operation::create_storage_location::CreateStorageLocationError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_storage_location::CreateStorageLocationError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

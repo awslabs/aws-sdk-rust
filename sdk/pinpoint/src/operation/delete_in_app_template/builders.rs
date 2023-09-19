@@ -29,6 +29,24 @@ pub struct DeleteInAppTemplateFluentBuilder {
     inner: crate::operation::delete_in_app_template::builders::DeleteInAppTemplateInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::delete_in_app_template::DeleteInAppTemplateOutput,
+        crate::operation::delete_in_app_template::DeleteInAppTemplateError,
+    > for DeleteInAppTemplateFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::delete_in_app_template::DeleteInAppTemplateOutput,
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DeleteInAppTemplateFluentBuilder {
     /// Creates a new `DeleteInAppTemplate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl DeleteInAppTemplateFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::delete_in_app_template::DeleteInAppTemplateOutput,
             crate::operation::delete_in_app_template::DeleteInAppTemplateError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_in_app_template::DeleteInAppTemplateError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

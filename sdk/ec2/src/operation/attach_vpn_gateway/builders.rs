@@ -30,6 +30,24 @@ pub struct AttachVpnGatewayFluentBuilder {
     inner: crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
+        crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
+    > for AttachVpnGatewayFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
+            crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl AttachVpnGatewayFluentBuilder {
     /// Creates a new `AttachVpnGateway`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl AttachVpnGatewayFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
             crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::attach_vpn_gateway::AttachVpnGatewayError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

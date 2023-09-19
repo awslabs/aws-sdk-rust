@@ -30,6 +30,24 @@ pub struct GetEC2InstanceRecommendationsFluentBuilder {
     inner: crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput,
+        crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
+    > for GetEC2InstanceRecommendationsFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput,
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl GetEC2InstanceRecommendationsFluentBuilder {
     /// Creates a new `GetEC2InstanceRecommendations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput,
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

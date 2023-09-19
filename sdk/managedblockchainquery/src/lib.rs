@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-managedblockchainquery = "0.2.0"
+//! aws-sdk-managedblockchainquery = "0.3.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

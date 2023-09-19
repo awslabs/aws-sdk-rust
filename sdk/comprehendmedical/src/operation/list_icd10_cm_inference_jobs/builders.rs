@@ -29,6 +29,24 @@ pub struct ListICD10CMInferenceJobsFluentBuilder {
     inner: crate::operation::list_icd10_cm_inference_jobs::builders::ListIcd10CmInferenceJobsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput,
+        crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,
+    > for ListICD10CMInferenceJobsFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput,
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ListICD10CMInferenceJobsFluentBuilder {
     /// Creates a new `ListICD10CMInferenceJobs`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl ListICD10CMInferenceJobsFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput,
             crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

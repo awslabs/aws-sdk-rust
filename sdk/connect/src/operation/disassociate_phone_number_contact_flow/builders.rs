@@ -31,6 +31,24 @@ pub struct DisassociatePhoneNumberContactFlowFluentBuilder {
     inner: crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput,
+        crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowError,
+    > for DisassociatePhoneNumberContactFlowFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput,
+            crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DisassociatePhoneNumberContactFlowFluentBuilder {
     /// Creates a new `DisassociatePhoneNumberContactFlow`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl DisassociatePhoneNumberContactFlowFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput,
             crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

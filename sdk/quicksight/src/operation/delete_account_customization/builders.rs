@@ -29,6 +29,24 @@ pub struct DeleteAccountCustomizationFluentBuilder {
     inner: crate::operation::delete_account_customization::builders::DeleteAccountCustomizationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::delete_account_customization::DeleteAccountCustomizationOutput,
+        crate::operation::delete_account_customization::DeleteAccountCustomizationError,
+    > for DeleteAccountCustomizationFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::delete_account_customization::DeleteAccountCustomizationOutput,
+            crate::operation::delete_account_customization::DeleteAccountCustomizationError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DeleteAccountCustomizationFluentBuilder {
     /// Creates a new `DeleteAccountCustomization`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl DeleteAccountCustomizationFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::delete_account_customization::DeleteAccountCustomizationOutput,
             crate::operation::delete_account_customization::DeleteAccountCustomizationError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_account_customization::DeleteAccountCustomizationError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

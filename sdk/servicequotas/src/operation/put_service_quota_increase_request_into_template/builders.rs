@@ -29,6 +29,24 @@ pub struct PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder {
     inner: crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput,
+        crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError,
+    > for PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput,
+            crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder {
     /// Creates a new `PutServiceQuotaIncreaseRequestIntoTemplate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -84,19 +102,13 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput,
             crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<
             crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

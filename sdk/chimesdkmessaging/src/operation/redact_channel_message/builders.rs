@@ -31,6 +31,24 @@ pub struct RedactChannelMessageFluentBuilder {
     inner: crate::operation::redact_channel_message::builders::RedactChannelMessageInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::redact_channel_message::RedactChannelMessageOutput,
+        crate::operation::redact_channel_message::RedactChannelMessageError,
+    > for RedactChannelMessageFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::redact_channel_message::RedactChannelMessageOutput,
+            crate::operation::redact_channel_message::RedactChannelMessageError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl RedactChannelMessageFluentBuilder {
     /// Creates a new `RedactChannelMessage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl RedactChannelMessageFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::redact_channel_message::RedactChannelMessageOutput,
             crate::operation::redact_channel_message::RedactChannelMessageError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::redact_channel_message::RedactChannelMessageError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

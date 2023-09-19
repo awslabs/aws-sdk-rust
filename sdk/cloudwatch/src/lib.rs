@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-cloudwatch = "0.30.0"
+//! aws-sdk-cloudwatch = "0.31.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

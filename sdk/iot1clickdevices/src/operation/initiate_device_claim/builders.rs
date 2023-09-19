@@ -31,6 +31,24 @@ pub struct InitiateDeviceClaimFluentBuilder {
     inner: crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::initiate_device_claim::InitiateDeviceClaimOutput,
+        crate::operation::initiate_device_claim::InitiateDeviceClaimError,
+    > for InitiateDeviceClaimFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::initiate_device_claim::InitiateDeviceClaimOutput,
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl InitiateDeviceClaimFluentBuilder {
     /// Creates a new `InitiateDeviceClaim`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl InitiateDeviceClaimFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::initiate_device_claim::InitiateDeviceClaimOutput,
             crate::operation::initiate_device_claim::InitiateDeviceClaimError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::initiate_device_claim::InitiateDeviceClaimError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

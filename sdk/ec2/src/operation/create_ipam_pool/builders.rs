@@ -30,6 +30,24 @@ pub struct CreateIpamPoolFluentBuilder {
     inner: crate::operation::create_ipam_pool::builders::CreateIpamPoolInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::create_ipam_pool::CreateIpamPoolOutput,
+        crate::operation::create_ipam_pool::CreateIpamPoolError,
+    > for CreateIpamPoolFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::create_ipam_pool::CreateIpamPoolOutput,
+            crate::operation::create_ipam_pool::CreateIpamPoolError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl CreateIpamPoolFluentBuilder {
     /// Creates a new `CreateIpamPool`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl CreateIpamPoolFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::create_ipam_pool::CreateIpamPoolOutput,
             crate::operation::create_ipam_pool::CreateIpamPoolError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_pool::CreateIpamPoolError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -29,6 +29,24 @@ pub struct StartSingleWirelessDeviceImportTaskFluentBuilder {
     inner: crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput,
+        crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError,
+    > for StartSingleWirelessDeviceImportTaskFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput,
+            crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl StartSingleWirelessDeviceImportTaskFluentBuilder {
     /// Creates a new `StartSingleWirelessDeviceImportTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl StartSingleWirelessDeviceImportTaskFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput,
             crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

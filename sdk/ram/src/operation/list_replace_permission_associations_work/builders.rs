@@ -29,6 +29,24 @@ pub struct ListReplacePermissionAssociationsWorkFluentBuilder {
     inner: crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput,
+        crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError,
+    > for ListReplacePermissionAssociationsWorkFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput,
+            crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ListReplacePermissionAssociationsWorkFluentBuilder {
     /// Creates a new `ListReplacePermissionAssociationsWork`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -80,17 +98,11 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput,
             crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

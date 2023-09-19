@@ -29,6 +29,24 @@ pub struct NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
                     inner: crate::operation::notify_terminate_provisioned_product_engine_workflow_result::builders::NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput,
+        crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError,
+    > for NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder
+{
+    fn send(
+                        self,
+                        config_override: crate::config::Builder,
+                    ) -> crate::client::customize::internal::BoxFuture<
+                        crate::client::customize::internal::SendResult<
+                            crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput,
+                            crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError,
+                        >,
+    >{
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
     /// Creates a new `NotifyTerminateProvisionedProductEngineWorkflowResult`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,18 +95,12 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
                                 crate::client::customize::orchestrator::CustomizableOperation<
                                     crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput,
                                     crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError,
+                                    Self,
                                 >,
                                 ::aws_smithy_http::result::SdkError<crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError>,
                             >
                             {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

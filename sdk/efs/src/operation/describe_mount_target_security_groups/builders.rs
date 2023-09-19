@@ -34,6 +34,24 @@ pub struct DescribeMountTargetSecurityGroupsFluentBuilder {
     inner: crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
+        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError,
+    > for DescribeMountTargetSecurityGroupsFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
+            crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DescribeMountTargetSecurityGroupsFluentBuilder {
     /// Creates a new `DescribeMountTargetSecurityGroups`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -82,17 +100,11 @@ impl DescribeMountTargetSecurityGroupsFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
             crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

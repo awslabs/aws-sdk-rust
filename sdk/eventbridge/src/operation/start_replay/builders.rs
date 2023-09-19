@@ -29,6 +29,24 @@ pub struct StartReplayFluentBuilder {
     inner: crate::operation::start_replay::builders::StartReplayInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::start_replay::StartReplayOutput,
+        crate::operation::start_replay::StartReplayError,
+    > for StartReplayFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::start_replay::StartReplayOutput,
+            crate::operation::start_replay::StartReplayError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl StartReplayFluentBuilder {
     /// Creates a new `StartReplay`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl StartReplayFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::start_replay::StartReplayOutput,
             crate::operation::start_replay::StartReplayError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::start_replay::StartReplayError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

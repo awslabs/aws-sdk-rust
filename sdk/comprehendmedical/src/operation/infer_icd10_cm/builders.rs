@@ -29,6 +29,24 @@ pub struct InferICD10CMFluentBuilder {
     inner: crate::operation::infer_icd10_cm::builders::InferIcd10CmInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::infer_icd10_cm::InferIcd10CmOutput,
+        crate::operation::infer_icd10_cm::InferICD10CMError,
+    > for InferICD10CMFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::infer_icd10_cm::InferIcd10CmOutput,
+            crate::operation::infer_icd10_cm::InferICD10CMError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl InferICD10CMFluentBuilder {
     /// Creates a new `InferICD10CM`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl InferICD10CMFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::infer_icd10_cm::InferIcd10CmOutput,
             crate::operation::infer_icd10_cm::InferICD10CMError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::infer_icd10_cm::InferICD10CMError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

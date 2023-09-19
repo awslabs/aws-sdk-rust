@@ -30,6 +30,24 @@ pub struct SetPermissionFluentBuilder {
     inner: crate::operation::set_permission::builders::SetPermissionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::set_permission::SetPermissionOutput,
+        crate::operation::set_permission::SetPermissionError,
+    > for SetPermissionFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::set_permission::SetPermissionOutput,
+            crate::operation::set_permission::SetPermissionError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl SetPermissionFluentBuilder {
     /// Creates a new `SetPermission`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl SetPermissionFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::set_permission::SetPermissionOutput,
             crate::operation::set_permission::SetPermissionError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::set_permission::SetPermissionError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

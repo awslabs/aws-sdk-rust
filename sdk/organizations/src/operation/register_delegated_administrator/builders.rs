@@ -31,6 +31,24 @@ pub struct RegisterDelegatedAdministratorFluentBuilder {
     inner: crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput,
+        crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError,
+    > for RegisterDelegatedAdministratorFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput,
+            crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl RegisterDelegatedAdministratorFluentBuilder {
     /// Creates a new `RegisterDelegatedAdministrator`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl RegisterDelegatedAdministratorFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput,
             crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

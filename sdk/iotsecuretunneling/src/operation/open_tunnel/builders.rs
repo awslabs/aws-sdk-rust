@@ -30,6 +30,24 @@ pub struct OpenTunnelFluentBuilder {
     inner: crate::operation::open_tunnel::builders::OpenTunnelInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::open_tunnel::OpenTunnelOutput,
+        crate::operation::open_tunnel::OpenTunnelError,
+    > for OpenTunnelFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::open_tunnel::OpenTunnelOutput,
+            crate::operation::open_tunnel::OpenTunnelError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl OpenTunnelFluentBuilder {
     /// Creates a new `OpenTunnel`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl OpenTunnelFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::open_tunnel::OpenTunnelOutput,
             crate::operation::open_tunnel::OpenTunnelError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::open_tunnel::OpenTunnelError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

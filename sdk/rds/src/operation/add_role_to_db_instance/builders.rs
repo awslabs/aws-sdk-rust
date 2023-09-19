@@ -32,6 +32,24 @@ pub struct AddRoleToDBInstanceFluentBuilder {
     inner: crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput,
+        crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
+    > for AddRoleToDBInstanceFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput,
+            crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl AddRoleToDBInstanceFluentBuilder {
     /// Creates a new `AddRoleToDBInstance`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -80,17 +98,11 @@ impl AddRoleToDBInstanceFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput,
             crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

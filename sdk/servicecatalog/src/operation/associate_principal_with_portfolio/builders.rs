@@ -34,6 +34,24 @@ pub struct AssociatePrincipalWithPortfolioFluentBuilder {
     inner: crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput,
+        crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError,
+    > for AssociatePrincipalWithPortfolioFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput,
+            crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// Creates a new `AssociatePrincipalWithPortfolio`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -82,17 +100,11 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput,
             crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

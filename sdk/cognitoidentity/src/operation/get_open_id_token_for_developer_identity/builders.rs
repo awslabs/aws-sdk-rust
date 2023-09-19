@@ -31,6 +31,24 @@ pub struct GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     inner: crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
+        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
+    > for GetOpenIdTokenForDeveloperIdentityFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
+            crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     /// Creates a new `GetOpenIdTokenForDeveloperIdentity`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -80,17 +98,11 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
             crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

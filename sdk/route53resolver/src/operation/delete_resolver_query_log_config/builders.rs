@@ -31,6 +31,24 @@ pub struct DeleteResolverQueryLogConfigFluentBuilder {
     inner: crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput,
+        crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError,
+    > for DeleteResolverQueryLogConfigFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput,
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DeleteResolverQueryLogConfigFluentBuilder {
     /// Creates a new `DeleteResolverQueryLogConfig`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl DeleteResolverQueryLogConfigFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput,
             crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

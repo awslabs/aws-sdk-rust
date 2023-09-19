@@ -30,6 +30,24 @@ pub struct ListTagsOfResourceFluentBuilder {
     inner: crate::operation::list_tags_of_resource::builders::ListTagsOfResourceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::list_tags_of_resource::ListTagsOfResourceOutput,
+        crate::operation::list_tags_of_resource::ListTagsOfResourceError,
+    > for ListTagsOfResourceFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::list_tags_of_resource::ListTagsOfResourceOutput,
+            crate::operation::list_tags_of_resource::ListTagsOfResourceError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ListTagsOfResourceFluentBuilder {
     /// Creates a new `ListTagsOfResource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl ListTagsOfResourceFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::list_tags_of_resource::ListTagsOfResourceOutput,
             crate::operation::list_tags_of_resource::ListTagsOfResourceError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tags_of_resource::ListTagsOfResourceError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

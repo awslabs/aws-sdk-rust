@@ -29,6 +29,24 @@ pub struct DeleteDedicatedIpPoolFluentBuilder {
     inner: crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput,
+        crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError,
+    > for DeleteDedicatedIpPoolFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput,
+            crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DeleteDedicatedIpPoolFluentBuilder {
     /// Creates a new `DeleteDedicatedIpPool`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl DeleteDedicatedIpPoolFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput,
             crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

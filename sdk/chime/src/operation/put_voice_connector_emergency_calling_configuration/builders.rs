@@ -34,6 +34,24 @@ pub struct PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
         crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput,
+        crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError,
+    > for PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput,
+            crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
     /// Creates a new `PutVoiceConnectorEmergencyCallingConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -89,19 +107,13 @@ impl PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput,
             crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<
             crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

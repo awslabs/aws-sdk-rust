@@ -29,6 +29,24 @@ pub struct DescribeProblemObservationsFluentBuilder {
     inner: crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::describe_problem_observations::DescribeProblemObservationsOutput,
+        crate::operation::describe_problem_observations::DescribeProblemObservationsError,
+    > for DescribeProblemObservationsFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::describe_problem_observations::DescribeProblemObservationsOutput,
+            crate::operation::describe_problem_observations::DescribeProblemObservationsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DescribeProblemObservationsFluentBuilder {
     /// Creates a new `DescribeProblemObservations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl DescribeProblemObservationsFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::describe_problem_observations::DescribeProblemObservationsOutput,
             crate::operation::describe_problem_observations::DescribeProblemObservationsError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_problem_observations::DescribeProblemObservationsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

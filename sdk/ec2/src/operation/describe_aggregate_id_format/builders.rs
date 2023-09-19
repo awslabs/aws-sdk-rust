@@ -31,6 +31,24 @@ pub struct DescribeAggregateIdFormatFluentBuilder {
     inner: crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput,
+        crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatError,
+    > for DescribeAggregateIdFormatFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput,
+            crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl DescribeAggregateIdFormatFluentBuilder {
     /// Creates a new `DescribeAggregateIdFormat`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -79,17 +97,11 @@ impl DescribeAggregateIdFormatFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput,
             crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

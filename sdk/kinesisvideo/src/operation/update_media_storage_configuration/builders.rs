@@ -33,6 +33,24 @@ pub struct UpdateMediaStorageConfigurationFluentBuilder {
     inner: crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput,
+        crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError,
+    > for UpdateMediaStorageConfigurationFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput,
+            crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl UpdateMediaStorageConfigurationFluentBuilder {
     /// Creates a new `UpdateMediaStorageConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -81,17 +99,11 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput,
             crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

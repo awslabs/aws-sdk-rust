@@ -35,6 +35,24 @@ pub struct GetMetricWidgetImageFluentBuilder {
     inner: crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput,
+        crate::operation::get_metric_widget_image::GetMetricWidgetImageError,
+    > for GetMetricWidgetImageFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput,
+            crate::operation::get_metric_widget_image::GetMetricWidgetImageError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl GetMetricWidgetImageFluentBuilder {
     /// Creates a new `GetMetricWidgetImage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -83,17 +101,11 @@ impl GetMetricWidgetImageFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput,
             crate::operation::get_metric_widget_image::GetMetricWidgetImageError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_metric_widget_image::GetMetricWidgetImageError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

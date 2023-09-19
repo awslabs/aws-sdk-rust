@@ -30,6 +30,24 @@ pub struct AcceptTransitGatewayVpcAttachmentFluentBuilder {
     inner: crate::operation::accept_transit_gateway_vpc_attachment::builders::AcceptTransitGatewayVpcAttachmentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput,
+        crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentError,
+    > for AcceptTransitGatewayVpcAttachmentFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput,
+            crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl AcceptTransitGatewayVpcAttachmentFluentBuilder {
     /// Creates a new `AcceptTransitGatewayVpcAttachment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -78,17 +96,11 @@ impl AcceptTransitGatewayVpcAttachmentFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput,
             crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

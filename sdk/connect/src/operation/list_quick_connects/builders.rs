@@ -29,6 +29,24 @@ pub struct ListQuickConnectsFluentBuilder {
     inner: crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
+impl
+    crate::client::customize::internal::CustomizableSend<
+        crate::operation::list_quick_connects::ListQuickConnectsOutput,
+        crate::operation::list_quick_connects::ListQuickConnectsError,
+    > for ListQuickConnectsFluentBuilder
+{
+    fn send(
+        self,
+        config_override: crate::config::Builder,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::operation::list_quick_connects::ListQuickConnectsOutput,
+            crate::operation::list_quick_connects::ListQuickConnectsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+    }
+}
 impl ListQuickConnectsFluentBuilder {
     /// Creates a new `ListQuickConnects`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -77,17 +95,11 @@ impl ListQuickConnectsFluentBuilder {
         crate::client::customize::orchestrator::CustomizableOperation<
             crate::operation::list_quick_connects::ListQuickConnectsOutput,
             crate::operation::list_quick_connects::ListQuickConnectsError,
+            Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_quick_connects::ListQuickConnectsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        })
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
