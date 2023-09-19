@@ -25,7 +25,7 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_component;
 
-pub fn rest_json_unsetpayload() -> ::std::vec::Vec<u8> {
+pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
     b"{}"[..].into()
 }
 

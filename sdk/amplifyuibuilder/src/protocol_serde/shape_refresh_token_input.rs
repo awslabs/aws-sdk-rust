@@ -4,7 +4,7 @@ pub fn ser_refresh_token_body_http_payload(
 ) -> Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
+        None => return Ok(crate::protocol_serde::rest_json_unset_struct_payload()),
     };
     Ok(crate::protocol_serde::shape_refresh_token_input::ser_refresh_token_body_payload(payload)?)
 }

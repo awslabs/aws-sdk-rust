@@ -4,7 +4,7 @@ pub fn ser_write_event_stream_http_payload(
 ) -> Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
+        None => return Ok(crate::protocol_serde::rest_json_unset_struct_payload()),
     };
     Ok(crate::protocol_serde::shape_put_event_stream_input::ser_write_event_stream_payload(
         payload,

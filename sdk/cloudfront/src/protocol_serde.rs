@@ -29,7 +29,7 @@ pub(crate) mod shape_copy_distribution;
 
 pub(crate) mod shape_create_cache_policy;
 
-pub fn rest_xml_unset_payload() -> ::std::vec::Vec<u8> {
+pub fn rest_xml_unset_struct_payload() -> ::std::vec::Vec<u8> {
     Vec::new()
 }
 

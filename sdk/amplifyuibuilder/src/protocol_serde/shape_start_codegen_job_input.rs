@@ -4,7 +4,7 @@ pub fn ser_codegen_job_to_create_http_payload(
 ) -> Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
+        None => return Ok(crate::protocol_serde::rest_json_unset_struct_payload()),
     };
     Ok(crate::protocol_serde::shape_start_codegen_job_input::ser_codegen_job_to_create_payload(
         payload,

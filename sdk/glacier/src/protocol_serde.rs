@@ -59,7 +59,7 @@ pub(crate) mod shape_get_vault_notifications;
 
 pub(crate) mod shape_initiate_job;
 
-pub fn rest_json_unsetpayload() -> ::std::vec::Vec<u8> {
+pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
     b"{}"[..].into()
 }
 

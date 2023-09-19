@@ -29,7 +29,7 @@ pub(crate) mod shape_create_access_point_for_object_lambda;
 
 pub(crate) mod shape_create_bucket;
 
-pub fn rest_xml_unset_payload() -> ::std::vec::Vec<u8> {
+pub fn rest_xml_unset_struct_payload() -> ::std::vec::Vec<u8> {
     Vec::new()
 }
 

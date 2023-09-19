@@ -4,7 +4,7 @@ pub fn ser_logging_options_payload_http_payload(
 ) -> Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
+        None => return Ok(crate::protocol_serde::rest_json_unset_struct_payload()),
     };
     Ok(crate::protocol_serde::shape_set_logging_options_input::ser_logging_options_payload_payload(payload)?)
 }

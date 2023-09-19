@@ -37,7 +37,7 @@ pub(crate) mod shape_abort_multipart_upload;
 
 pub(crate) mod shape_complete_multipart_upload;
 
-pub fn rest_xml_unset_payload() -> ::std::vec::Vec<u8> {
+pub fn rest_xml_unset_struct_payload() -> ::std::vec::Vec<u8> {
     Vec::new()
 }
 

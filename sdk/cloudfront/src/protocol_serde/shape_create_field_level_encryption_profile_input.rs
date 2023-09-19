@@ -4,7 +4,7 @@ pub fn ser_field_level_encryption_profile_config_http_payload(
 ) -> Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(crate::protocol_serde::rest_xml_unset_payload()),
+        None => return Ok(crate::protocol_serde::rest_xml_unset_struct_payload()),
     };
     Ok(crate::protocol_serde::shape_create_field_level_encryption_profile_input::ser_field_level_encryption_profile_config_payload(payload)?)
 }

@@ -115,7 +115,7 @@ pub(crate) mod shape_create_topic_rule;
 
 pub(crate) mod shape_create_topic_rule_destination;
 
-pub fn rest_json_unsetpayload() -> ::std::vec::Vec<u8> {
+pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
     b"{}"[..].into()
 }
 
