@@ -4,7 +4,7 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 env:
-  tool_rust_version: 1.68.2
+  tool_rust_version: 1.70.0
 
 jobs:
   generate-canary-matrix:
